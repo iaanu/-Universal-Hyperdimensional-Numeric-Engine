@@ -291,24 +291,24 @@
     .fields-meta ul.fgrid li.f4 { border-left: 4px solid #2563EB; } .fields-meta ul.fgrid li.f4 .ficon { background: #2563EB; }
     .fields-meta ul.fgrid li.f5 { border-left: 4px solid #6C0AC9; } .fields-meta ul.fgrid li.f5 .ficon { background: #6C0AC9; }
 
-    /* Vocalic Pulse — heartbeat panel */
-    .v-pulse { position: relative; margin: 18px 0 4px; padding: 18px 20px 16px; background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 55%, #6C0AC9 100%); color: #fff; border-radius: 12px; box-shadow: 0 4px 18px rgba(108,10,201,0.18); overflow: hidden; }
-    .v-pulse::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 18% 30%, rgba(255,215,0,0.18), transparent 45%), radial-gradient(circle at 82% 70%, rgba(255,255,255,0.12), transparent 50%); pointer-events:none; }
+    /* Vocalic Pulse — heartbeat panel (themed to match top banner + Active Dataset Release) */
+    .v-pulse { position: relative; margin: 18px 0 4px; padding: 18px 20px 16px; background: linear-gradient(135deg, #0a2447 0%, #0f3460 55%, #1E8CB8 100%); color: #fff; border-radius: 12px; box-shadow: 0 4px 18px rgba(15,52,96,0.32); overflow: hidden; }
+    .v-pulse::before { content:""; position:absolute; inset:0; background: radial-gradient(circle at 18% 30%, rgba(255,215,0,0.20), transparent 45%), radial-gradient(circle at 82% 70%, rgba(255,255,255,0.14), transparent 50%); pointer-events:none; }
     .v-pulse .vp-head { position: relative; display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 12px; }
-    .v-pulse .vp-eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.22em; color: #FFD700; text-transform: uppercase; }
+    .v-pulse .vp-eyebrow { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.22em; color: #FFE873; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.35); }
     .v-pulse .vp-title { font-size: 1.08rem; font-weight: 800; color: #fff; letter-spacing: 0.04em; }
-    .v-pulse .vp-beat { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #E63946; box-shadow: 0 0 0 0 rgba(230,57,70,0.7); animation: vpulse 1.6s ease-out infinite; }
-    @keyframes vpulse { 0% { box-shadow: 0 0 0 0 rgba(230,57,70,0.7);} 70% { box-shadow: 0 0 0 12px rgba(230,57,70,0);} 100% { box-shadow: 0 0 0 0 rgba(230,57,70,0);} }
-    .v-pulse .vp-lede { position: relative; text-align: center; font-size: 0.96rem; color: #f5e9ff; margin: 0 0 14px; line-height: 1.55; }
+    .v-pulse .vp-beat { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #FFD700; box-shadow: 0 0 0 0 rgba(255,215,0,0.75); animation: vpulse 1.6s ease-out infinite; }
+    @keyframes vpulse { 0% { box-shadow: 0 0 0 0 rgba(255,215,0,0.75);} 70% { box-shadow: 0 0 0 12px rgba(255,215,0,0);} 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0);} }
+    .v-pulse .vp-lede { position: relative; text-align: center; font-size: 0.96rem; color: #f0fbff; margin: 0 0 14px; line-height: 1.55; }
     .v-pulse .vp-lede b { color: #FFD700; }
-    .v-pulse .vp-lede i { color: #FF7AB6; font-style: italic; font-weight: 700; text-shadow: 0 0 6px rgba(255,122,182,0.45); }
+    .v-pulse .vp-lede i { color: #FFE873; font-style: italic; font-weight: 700; text-shadow: 0 0 6px rgba(255,232,115,0.45); }
     .v-pulse .vp-grid { position: relative; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
-    .v-pulse .vp-grid .stage { padding: 12px 14px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,215,0,0.35); border-radius: 10px; backdrop-filter: blur(2px); }
-    .v-pulse .vp-grid .stage .sname { display:block; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: #FFD700; font-weight: 700; margin-bottom: 4px; }
+    .v-pulse .vp-grid .stage { padding: 12px 14px; background: rgba(255,255,255,0.10); border: 1px solid rgba(255,232,115,0.40); border-radius: 10px; backdrop-filter: blur(2px); }
+    .v-pulse .vp-grid .stage .sname { display:block; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: #FFE873; font-weight: 700; margin-bottom: 4px; }
     .v-pulse .vp-grid .stage .sdesc { display:block; font-size: 0.88rem; color: #ffffff; line-height: 1.4; }
-    .v-pulse .vp-grid .stage.s1 { border-left: 4px solid #E63946; }
-    .v-pulse .vp-grid .stage.s2 { border-left: 4px solid #F4A300; }
-    .v-pulse .vp-grid .stage.s3 { border-left: 4px solid #B5179E; }
+    .v-pulse .vp-grid .stage.s1 { border-left: 4px solid #FFD700; }
+    .v-pulse .vp-grid .stage.s2 { border-left: 4px solid #27BCED; }
+    .v-pulse .vp-grid .stage.s3 { border-left: 4px solid #FFE873; }
     .v-pulse .vp-coda { position: relative; margin: 12px 0 0; text-align: center; font-size: 0.86rem; color: #FFD700; font-style: italic; letter-spacing: 0.04em; }
 
     /* Dataset metrics strip */
@@ -478,6 +478,7 @@
 
       <!-- LANGUAGE REGISTRY -->
       <div class="sec-head">
+        <p class="eyebrow" style="text-transform:uppercase;letter-spacing:0.22em;font-size:0.78rem;color:#0f3460;font-weight:800;margin:0 0 6px;">Pilot Languages</p>
         <h2>Active Implementations &amp; Planned Languages</h2>
         <p>Yor&ugrave;b&aacute; is complete &mdash; 1,127 indexed tiers. Additional languages are onboarding.</p>
       </div>
@@ -562,6 +563,9 @@
           <a href="mailto:godreigninlove@outlook.com?subject=Propose%20a%20Language%20for%20the%20World%20Numerals%20Atlas" class="lang-card propose-card"><div class="flag">➕</div><div class="name">Propose a Language</div><div class="region">Contribute your tradition</div></a>
         </div>
       </div>
+
+      <!-- UHNE BRIDGE BANNER -->
+      <p style="margin:24px 0 14px; padding:14px 20px; text-align:center; background:linear-gradient(135deg,#0f3460 0%,#1E8CB8 55%,#27BCED 100%); color:#fff; font-size:1.0rem; font-weight:600; border-radius:10px; box-shadow:0 4px 14px rgba(30,140,184,0.25); letter-spacing:0.01em;">This is the first fully implemented module of the <b style="color:#FFD700;">Universal Hyperdimensional Numeric Engine</b>.</p>
 
       <!-- YORUBA MASTER INDEX -->
       <div id="yoruba-master" class="sec-head">
