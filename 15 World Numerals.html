@@ -125,7 +125,7 @@
     /* Table */
     .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid #d6e0ea; }
     table.master { border-collapse: collapse; width: 100%; font-size: 0.88rem; background: #fff; }
-    table.master thead th { background: #0f3460; color: #fff; padding: 10px 12px; text-align: left; font-weight: 700; font-size: 0.85rem; border-right: 1px solid rgba(255,255,255,0.15); }
+    table.master thead th { background: #0f3460; color: #fff; padding: 10px 12px; text-align: left; font-weight: 700; font-size: 0.85rem; border-right: 1px solid rgba(255,255,255,0.15); position: sticky; top: 60px; z-index: 50; box-shadow: 0 2px 6px rgba(15,52,96,0.25); }
     table.master tbody td { padding: 7px 12px; border: 1px solid #e3ebf3; vertical-align: top; }
     table.master tbody tr:nth-child(even) td { background: #f5f9fc; }
     table.master tbody tr:hover td { background: #fff4ce; }
@@ -359,6 +359,23 @@
     .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
     .back-to-top:hover { box-shadow: 0 8px 30px rgba(30,140,184,0.6); }
 
+    /* Floating “Back to Dataset Controls” button (left side, twin of back-to-top) */
+    .back-to-controls { position: fixed; bottom: 30px; left: 30px; padding: 11px 18px; border-radius: 999px; background: linear-gradient(135deg, #0f3460 0%, #1E8CB8 100%); color: #FFD700; border: 2px solid rgba(255,215,0,0.55); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; box-shadow: 0 4px 20px rgba(15,52,96,0.45); opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); z-index: 1500; font-family: inherit; display: inline-flex; align-items: center; gap: 8px; text-decoration: none; }
+    .back-to-controls.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-controls:hover { background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%); color: #fff; border-color: #FFD700; box-shadow: 0 8px 30px rgba(30,140,184,0.55); }
+
+    /* End-of-Dataset closing band */
+    .dataset-end { max-width: 1100px; margin: 36px auto 30px; padding: 34px 32px; background: linear-gradient(135deg, #0a2447 0%, #0f3460 55%, #1E8CB8 100%); color: #fff; border-radius: 14px; text-align: center; box-shadow: 0 4px 18px rgba(15,52,96,0.32); border: 1px solid rgba(255,215,0,0.3); }
+    .dataset-end .de-eyebrow { display: inline-block; padding: 4px 12px; background: rgba(255,215,0,0.18); color: #FFE873; border: 1px solid rgba(255,215,0,0.55); border-radius: 999px; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 10px; }
+    .dataset-end h3 { margin: 0 0 6px; color: #fff; font-size: 1.35rem; font-weight: 800; letter-spacing: 0.01em; }
+    .dataset-end .de-sub { margin: 0 0 16px; color: rgba(255,255,255,0.85); font-size: 0.95rem; font-style: italic; }
+    .dataset-end .de-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .dataset-end .de-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 999px; font-size: 0.86rem; font-weight: 700; text-decoration: none; transition: all 0.25s ease; border: 2px solid transparent; }
+    .dataset-end .de-btn.primary { background: #FFD700; color: #0f3460; border-color: #FFD700; }
+    .dataset-end .de-btn.primary:hover { background: #fff; color: #0a2447; box-shadow: 0 4px 18px rgba(255,215,0,0.45); }
+    .dataset-end .de-btn.ghost { background: transparent; color: #FFE873; border-color: rgba(255,215,0,0.55); }
+    .dataset-end .de-btn.ghost:hover { background: rgba(255,215,0,0.15); border-color: #FFD700; color: #fff; }
+
     @media (max-width: 700px) {
       .container { margin: 10px; }
       .content { padding: 24px 16px; }
@@ -477,7 +494,7 @@
       </div>
 
       <!-- LANGUAGE REGISTRY -->
-      <div class="sec-head">
+      <div class="sec-head" id="worldwide-map">
         <p class="eyebrow" style="text-transform:uppercase;letter-spacing:0.22em;font-size:0.78rem;color:#0f3460;font-weight:800;margin:0 0 6px;">Pilot Languages</p>
         <h2>Active Implementations &amp; Planned Languages</h2>
         <p>Yor&ugrave;b&aacute; is complete &mdash; 1,127 indexed tiers. Additional languages are onboarding.</p>
@@ -569,7 +586,7 @@
 
       <!-- YORUBA MASTER INDEX -->
       <div id="yoruba-master" class="sec-head">
-        <h2>Yor&ugrave;b&aacute; Master Numerical Index &mdash; 1,127 Entries <span class="open-badge" title="Open Public Dataset">Open Public Dataset</span></h2>
+        <h2>Yor&ugrave;b&aacute; Master Numerical Index &mdash; A 1,127&#8209;Row Symphonic Masterpiece <span class="open-badge" title="Open Public Dataset">Open Public Dataset</span></h2>
         <p>The complete tier index from <strong>Million</strong> to <strong>Septenvigintcentimillinillion</strong>, built on the <em>Universal Hyperdimensional Numeric Engine</em>.</p>
         <div class="registry-strip" role="note" aria-label="Dataset metadata">
           <span class="pill">Dataset&nbsp;v1.127</span><span class="sep">&middot;</span>
@@ -596,8 +613,9 @@
         <p style="background:linear-gradient(90deg,#FFF7E0,#FFEAD0);border-left:4px solid #FFD700;padding:10px 16px;border-radius:6px;font-size:1.02rem;">
           🎵 <b>And it sings.</b> At the heart of every name beats one tiny chant of seven middles &mdash;
           <b>&egrave;ẹ́ &middot; &ograve;ẹ́ &middot; &ograve;ọ́ &middot; &egrave;&eacute; &middot; ẹ̀ẹ̀ &middot; ẹ́ẹ́ &middot; &eacute;ẹ̀</b> &hellip; <i>r&#x01D4;n!</i> 🥁
-          Sing it under <b>&Aacute;</b>, then change the first letter to <b>&Eacute;, Ẹ́, &Iacute;, &Oacute;, Ọ́, &Uacute;</b> &mdash; and on through <b>B, D, F &hellip; Z</b>. Seven middles, one alphabet, <b>1,127 magnitudes</b> reaching to 10<sup>135</sup>. A nursery rhyme that scales to the stars.
+          Sing it under <b>&Aacute;</b>, then change the first letter to <b>&Eacute;, Ẹ́, &Iacute;, &Oacute;, Ọ́, &Uacute;</b> &mdash; and on through <b>B, D, F &hellip; Z</b>. Seven middles, one alphabet, <b>1,127 magnitudes</b> reaching to 10<sup>135</sup>. A nursery rhyme that scales to the stars &mdash; the <b>Sonic Cheat Code</b> of magnitude.
         </p>
+        <p style="text-align:center;font-size:1.05rem;color:#0f3460;margin:14px 0 0;font-style:italic;font-weight:600;letter-spacing:0.01em;">&ldquo;If you can say seven, you can say a decillion.&rdquo;<br><span style="font-size:0.86rem;font-style:normal;font-weight:500;color:#1a2940;opacity:0.85;">A <b>Linguistic Fractal</b> &mdash; the <b>Nursery of Magnitude</b>.</span></p>
 
         <div class="v-pulse" role="note" aria-label="The Vocalic Pulse">
           <div class="vp-head">
@@ -606,7 +624,7 @@
             <span class="vp-title">&middot; Heartbeat of the Engine</span>
             <span class="vp-beat" aria-hidden="true"></span>
           </div>
-          <p class="vp-lede">If the <b>G&#8209;Pulse</b> is the engine&rsquo;s spark and the <b>Z&#8209;Pulse</b> is its calibration, the <b>V&#8209;Pulse</b> is its living breath. Seven primordial vowels &mdash; <b>A&nbsp;E&nbsp;&#7864;&nbsp;I&nbsp;O&nbsp;&#7884;&nbsp;U</b> &mdash; carry the rhythm that turns numeric sequence into a <b>Linguistic Superconductor</b>, ending zero&#8209;fatigue and letting the mind <i>breathe</i> with magnitude.</p>
+          <p class="vp-lede">If the <b>G&#8209;Pulse</b> is the engine&rsquo;s spark and the <b>Z&#8209;Pulse</b> is its calibration, the <b>V&#8209;Pulse</b> is its living breath. Seven primordial vowels &mdash; <b>A&nbsp;E&nbsp;&#7864;&nbsp;I&nbsp;O&nbsp;&#7884;&nbsp;U</b> &mdash; carry the rhythm that turns numeric sequence into a <b>Linguistic Superconductor</b>, ending zero&#8209;fatigue and letting the mind <i>breathe</i> with magnitude. The middle stays still; only the first letter shifts &mdash; <b>plug&#8209;and&#8209;play mastery</b> over the infinite.</p>
           <div class="vp-grid">
             <div class="stage s1"><span class="sname">Low Thrum</span><span class="sdesc">At the base units, the pulse is a grounded, resonant anchor.</span></div>
             <div class="stage s2"><span class="sname">High Shimmer</span><span class="sdesc">Climbing into the vigintillions, the pulse accelerates into vocalic light.</span></div>
@@ -614,7 +632,7 @@
           </div>
           <p class="vp-coda">Every language can dock into the V&#8209;Pulse to find its own heartbeat of magnitude.</p>
         </div>
-        <p>The table below is a <b>chromatic chord engine</b>: every seven rows, the row number, the equation brackets, and the underline ribbon all sing in one voice. Toggle between two themes &mdash; both drive the same data, the same code, the same prototype.</p>
+        <p>The table below is a <b>chromatic chord engine</b> &mdash; a <b>Stealth Symphony</b> in which every seven rows, the row number, the equation brackets, and the underline ribbon all sing in one voice. The slim border bands are the <b>Surgical GPS</b> of the page: peripheral runway lights that guide the eye without ever overwhelming it. Toggle between two themes &mdash; both drive the same data, the same code, the same prototype.</p>
 
         <div class="theme-toggle" role="group" aria-label="Colour theme switcher">
           <span class="t-label">🎨 Colour Theme</span>
@@ -648,7 +666,7 @@
         <p class="callout">If you ever felt that mathematics was not for you &mdash; scroll on. This time, the numbers are speaking your colour.</p>
       </div>
 
-      <div class="search-wrap">
+      <div class="search-wrap" id="datasetControls">
         <div class="lang-row">
           <div>
             <label for="langSelect">🌍 Active Dataset Release</label>
@@ -2075,6 +2093,17 @@
     </div>
   </div>
 
+  <!-- End of Yorùbá Master Numerical Index — closure & navigation loop -->
+  <div class="dataset-end" id="datasetEnd" role="note" aria-label="End of Yorùbá Master Numerical Index">
+    <span class="de-eyebrow">● End of Dataset</span>
+    <h3>End of the Yor&ugrave;b&aacute; Master Numerical Index</h3>
+    <p class="de-sub">You&rsquo;ve reached the end of <b>Dataset v1.127</b> &mdash; all 1,127 magnitudes, from <i>Million</i> to <i>Septenvigintcentimillinillion</i>.</p>
+    <div class="de-actions">
+      <a href="#datasetControls" class="de-btn primary">↑ Back to Dataset Controls</a>
+      <a href="#worldwide-map" class="de-btn ghost">← Return to Worldwide Implementation Map</a>
+    </div>
+  </div>
+
 </div>
 </section>
 
@@ -2091,16 +2120,27 @@
   <!-- /.container -->
 
   <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Scroll to top">▲</button>
+  <a href="#datasetControls" class="back-to-controls" id="backToControls" title="Back to Dataset Controls" aria-label="Back to Dataset Controls"><span aria-hidden="true">↑</span> Dataset Controls</a>
 
   <script>
     // Scroll progress
     const progressBar = document.getElementById('scrollProgress');
     const topBtn = document.getElementById('backToTop');
+    const ctrlBtn = document.getElementById('backToControls');
+    const ctrlAnchor = document.getElementById('datasetControls');
+    const endAnchor = document.getElementById('datasetEnd');
     window.addEventListener('scroll', () => {
       const s = document.documentElement.scrollTop || document.body.scrollTop;
       const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       progressBar.style.width = (h > 0 ? (s / h) * 100 : 0) + '%';
       if (window.scrollY > 600) topBtn.classList.add('visible'); else topBtn.classList.remove('visible');
+      // Show “Back to Dataset Controls” only while user is inside / past the dataset controls
+      if (ctrlBtn && ctrlAnchor) {
+        const ctrlBottom = ctrlAnchor.getBoundingClientRect().bottom;
+        const endTop = endAnchor ? endAnchor.getBoundingClientRect().top : Infinity;
+        if (ctrlBottom < 0 && endTop > 200) ctrlBtn.classList.add('visible');
+        else ctrlBtn.classList.remove('visible');
+      }
     }, { passive: true });
     topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
