@@ -1109,25 +1109,459 @@
 
     <div class="content">
 
-        <div class="intro-text">
-            <div style="display:flex; flex-wrap:wrap; gap:28px; align-items:flex-start;">
-                <div style="flex:0 0 340px; max-width:400px;">
-                    <img src="Godreign.jpg" alt="Godreign Government On Earth" style="width:100%; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.13);">
-                 
-                  </div>
-                <div style="flex:1; min-width:280px;">
-                               <p><strong><span style="font-family: Arial; font-size:1.1em;">A Long Awaited Solution From Above</span></strong></p>
-<p>After all the skyscrapers have risen, after roads have stretched across deserts and river,</p>
-<p>&nbsp;After satellites have mapped the heavens and machines have whispered the language of algorithms, what remains of a soul untouched by truth? What becomes of a nation with brilliant cities but broken spirits? What is the value of progress that leads nowhere beyond the grave? In a world obsessed with advancement, humanity has built towering economies, engineered cities of steel and glass, and crafted technologies that pierce the clouds, yet the soul remains disoriented and wandering. The glory of technological and economic growth, while dazzling, becomes hollow when severed from eternal purpose. The modern world has neglected the one crown that gives meaning to all other achievements: spiritual development. What profit is there in building the future, if the soul is unprepared for eternity? What legacy can a nation truly leave behind if its people inherit the earth, but lose their place in heaven? It is here that Godreign emerges, not as a theory, not as a rebranded ideology, but as a prophetic alignment with heaven&rsquo;s original blueprint for Earth. It is the embodiment of Christ&rsquo;s prayer in Matthew 6:10: &ldquo;Thy kingdom come, Thy will be done, on earth as it is in heaven.&rdquo;</p>
-<p>This is not democracy dressed in new language. It is not human ideology upgraded. Godreign is heaven revealed. A divine system of governance rooted in righteousness, justice, mercy, and eternal truth. Where democracy exalts public opinion, Godreign exalts divine instruction. Where earthly governments cater to personal freedom at any cost, Godreign is anchored in spiritual order and the eternal destiny of every soul. Godreign is built on the divine science of love, not abstract sentiment, but love that governs with justice, compassion, humility, and sacred discipline. It is not driven by personal gain, party loyalty, or fleeting applause, but by spiritual brotherhood and radical selflessness.</p>
-<p>&nbsp;It is justice with purity, power with compassion, leadership that kneels to serve. In a world drowning in vanity and vice, where politics has become performance, and policy a tool of indulgence, Godreign walks a narrow road: higher, holy, and eternally relevant.</p>
-<p>This is a governance where: Love becomes law, such that the law of morality, for instance, flows from hearts of love. Purity becomes power. And every policy considers not just earthly consequence, but eternal placement. Where democracy builds cities of lust and industries of moral confusion, Godreign seeks to moralize science and sanctify innovation, to direct every advancement, whether digital, medical, or technological, toward the healing of souls, the upliftment of the poor, and the preparation of nations for heavenly royalty. Godreign, however, does not appear overnight. In the midst of a storm, it rises to seal spiritual gaps that lead to cycles of sorrow and judgment in societies.</p>
-<p>The earth is being infiltrated by antichrist systems, demonic ideologies, and even manipulated beings, unauthorized intrusions from extraterrestrial and spiritual realms, designed to distort the divine image in humanity. Through corrupted pregnancies and systemic social engineering, these agents now parade immorality under the protection of law. They promote identity confusion, glorify sexual perversion, and redefine what it means to be human. Make no mistake: these are not simply social trends. They are spiritual assaults, strategies of deception and eternal sabotage. Behind the curtain of &ldquo;freedom&rdquo; lies a sinister agenda, designed to disconnect the soul from its Creator and derail heaven&rsquo;s inheritance for God&rsquo;s children. But God is not silent. He is not threatened; He permits it to eventually transform the enemy&apos;s plans to His ultimate glory. He is positioning a remnant. A kingdom people. Those who do not merely survive, but shine. Those who carry the fragrance of heaven into the polluted streets of Babylon. Those who will not imitate Babylon but embody Zion.</p>
-<p>Godreign does not simply seek to replace a government; it seeks to restore a kingdom. It is a call for nations to stop drinking from the cup of Sodom and Gomorrah, to stop funding destruction with taxpayers&rsquo; gold, and to rise into their prophetic identity, as builders of holy culture, defenders of divine design, and guardians of generational destiny. Where democracy dissolves marriages, Godreign rebuilds family. Where governments legalize confusion, Godreign restores order and identity. Where the world trades truth for trends, Godreign holds the eternal roadmap firmly in hand. This is not a reaction to failure, but a divine restoration of order. It is a clarion call to all governments, leaders, and citizens: To return. To realign. To reign in righteousness. Rejecting Deception. Choosing Eternal Life. Just as BRICS nations are breaking free from dollar dependency, Godreign calls the nations to dump the democracy that costs souls their eternity. The democracy that silences God. That legalizes what heaven calls sin. That wins elections, but loses souls.</p>
-<p>Godreign is not merely an alternative. It is the answer. Not just for today&rsquo;s justice, but for tomorrow&rsquo;s eternity. Not just for policy, but for paradise. The world has reached the edge. This is the terminal hour of Western dominion. And only one door leads forward: The door of righteousness, and the door of divine order for the success of human souls. Let those who have ears, hear. Let those who have hearts, choose. Let the nations of the earth rise, not in rebellion, but in holy submission to the reign of God on earth. The kingdoms of this world are fading. But the kingdom of God shall stand forever.</p>
-                </div>
-            </div>
+      <style>
+        /* ════════════════════════════════════════════════════════════
+           GODREIGN MIDDLE-SECTION — Alternating Scripture Panels
+           Single source image (Godreign.jpg) cropped 3 ways via
+           background-position. Animated logo+dove poster. Two book
+           rows. Stripe dividers + drop caps for emotional cadence.
+           ════════════════════════════════════════════════════════════ */
+        .g-preview{
+          display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
+          margin: 6px 0 28px; padding:14px;
+          background: linear-gradient(135deg,#f4f7fb 0%,#e6edf7 100%);
+          border-radius:14px; border:2px solid #0f3460;
+          box-shadow:0 6px 22px rgba(15,52,96,.12);
+        }
+        .g-prev{
+          display:flex; gap:12px; align-items:center;
+          padding:10px 12px; border-radius:10px; text-decoration:none;
+          background:#fff; border-left:5px solid #FFD700;
+          transition:transform .25s ease, box-shadow .25s ease;
+        }
+        .g-prev:hover{ transform:translateY(-3px); box-shadow:0 8px 22px rgba(10,36,71,.18); }
+        .g-prev-thumb{
+          flex:0 0 64px; width:64px; height:80px; border-radius:8px;
+          background-image:url('Godreign.jpg'); background-repeat:no-repeat;
+          background-size:100% 300%; border:2px solid #0a2447;
+          box-shadow:0 4px 10px rgba(0,0,0,.18);
+        }
+        .g-prev-thumb.t-poster{ background-position:50%   0%; }
+        .g-prev-thumb.t-book1 { background-position:50%  50%; }
+        .g-prev-thumb.t-book2 { background-position:50% 100%; }
+        .g-prev-meta span.num{
+          display:inline-block; background:#0a2447; color:#FFD700;
+          padding:2px 9px; border-radius:20px; font-weight:700; font-size:.72rem;
+          letter-spacing:1.5px;
+        }
+        .g-prev-meta h4{
+          color:#0a2447; margin:5px 0 3px; font-size:.98rem; line-height:1.2; font-weight:700;
+        }
+        .g-prev-meta em{
+          color:#0f3460; font-size:.78rem; line-height:1.3; display:block;
+          font-style:italic;
+        }
+
+        /* ── Chapter rows — image outside, pale-blue panel wraps text only ── */
+        .g-chapter{
+          display:grid; grid-template-columns: 240px 1fr; gap:32px;
+          align-items:stretch; margin: 0 0 22px;
+          padding: 0;
+          min-height: 240px;
+          background: transparent;
+          border:0; border-radius:0; box-shadow:none;
+        }
+        .g-chapter .g-text{
+          background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+          border-left: 4px solid #1E8CB8;
+          border-radius: 14px;
+          box-shadow: 0 4px 16px rgba(30,140,184,.08);
+          padding: 22px 28px;
+          display:flex; flex-direction:column; justify-content:center;
+          align-items:flex-start;
+          min-height: 240px;
+        }
+        .g-chapter.t-portrait .g-text{ min-height: 340px; }
+
+        /* Image — floating, no frame (like reference) */
+        .g-photo-wrap{
+          position:relative;
+          width:240px; height:240px;
+          background:transparent;
+          border:0;
+          border-radius:0;
+          box-shadow:none;
+          overflow:visible;
+          align-self:center;
+        }
+        /* Portrait variant — used for the dove so the image isn't cropped */
+        .g-chapter.t-portrait{ grid-template-columns: 240px 1fr; }
+        .g-chapter.t-portrait .g-photo-wrap{
+          width:240px; height:340px;
+          background:#0a2447;
+          border:2px solid #0f3460;
+          border-radius:12px;
+          box-shadow:0 8px 22px rgba(10,36,71,.28);
+          overflow:hidden;
+        }
+        .g-chapter.t-portrait .g-photo.t-dove{
+          background-size: cover; background-position:center center;
+          background-color:#0a2447;
+        }
+
+        /* Glow + shimmer + rise for the dove only */
+        .g-chapter.t-portrait .g-photo-wrap::before{
+          content:""; position:absolute; inset:-20%;
+          background: radial-gradient(circle at 50% 30%, rgba(255,215,0,.45), transparent 55%);
+          animation: g-glow 4.5s ease-in-out infinite;
+          pointer-events:none; z-index:1;
+        }
+        .g-chapter.t-portrait .g-photo-wrap::after{
+          content:""; position:absolute; inset:0;
+          background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+          background-size:220% 100%;
+          animation: g-shimmer 6s linear infinite;
+          pointer-events:none; z-index:2; mix-blend-mode:screen;
+        }
+        .g-chapter.t-portrait .g-photo.t-dove{
+          animation: g-rise 5s ease-in-out infinite;
+          transform-origin: 50% 60%;
+          position:relative; z-index:0;
+        }
+        @keyframes g-glow{
+          0%,100%{ opacity:.55; transform:scale(1); }
+          50%    { opacity:.95; transform:scale(1.06); }
+        }
+        @keyframes g-shimmer{
+          0%  { background-position: 200% 0; }
+          100%{ background-position: -100% 0; }
+        }
+        @keyframes g-rise{
+          0%,100%{ transform: scale(1)   translateY(0); }
+          50%    { transform: scale(1.025) translateY(-6px); }
+        }
+
+        /* Neutral divider between thumbnails and main essay */
+        .g-neutral-divider{
+          border:0; height:3px;
+          background: linear-gradient(90deg, transparent 0%, #0f3460 20%, #FFD700 50%, #0f3460 80%, transparent 100%);
+          margin: 32px auto 32px; max-width: 100%;
+          border-radius:2px;
+        }
+        .g-photo-wrap .g-photo{
+          width:100%; height:100%;
+          background-repeat:no-repeat;
+          background-size: cover;
+          background-position: center center;
+        }
+        .g-photo-wrap .g-badge{
+          position:absolute; top:14px; left:14px; z-index:5;
+          background:#FFD700; color:#0a2447;
+          padding:5px 12px; border-radius:18px;
+          font-size:.7rem; font-weight:800; letter-spacing:1.5px;
+          box-shadow:0 3px 8px rgba(10,36,71,.28);
+        }
+
+        /* Per-chapter image */
+        .g-photo.t-book1{ background-image:url('Book02.jpg'); background-size: contain; background-color:#ffffff; }
+        .g-photo.t-book2{ background-image:url('Book03.jpg'); background-size: contain; background-color:#ffffff; }
+        .g-photo.t-crown{ background-image:url('Crown.jpg'); }
+        .g-photo.t-dove { background-image:url('Dove01.jpg'); }
+
+        /* ── Animation ONLY on the poster (logo + dove) ── */
+        .g-photo-wrap.g-anim::before{
+          content:""; position:absolute; inset:-20%;
+          background: radial-gradient(circle at 50% 30%, rgba(255,215,0,.45), transparent 55%);
+          animation: g-glow 4.5s ease-in-out infinite;
+          pointer-events:none; z-index:1;
+        }
+        .g-photo-wrap.g-anim::after{
+          content:""; position:absolute; inset:0;
+          background: linear-gradient( 110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+          background-size:220% 100%;
+          animation: g-shimmer 6s linear infinite;
+          pointer-events:none; z-index:2; mix-blend-mode:screen;
+        }
+        .g-photo-wrap.g-anim .g-photo{
+          animation: g-rise 5s ease-in-out infinite;
+          transform-origin: 50% 60%;
+          position:relative; z-index:0;
+        }
+        @keyframes g-glow{
+          0%,100%{ opacity:.55; transform:scale(1); }
+          50%    { opacity:.95; transform:scale(1.06); }
+        }
+        @keyframes g-shimmer{
+          0%  { background-position: 200% 0; }
+          100%{ background-position: -100% 0; }
+        }
+        @keyframes g-rise{
+          0%,100%{ transform: scale(1)   translateY(0); }
+          50%    { transform: scale(1.025) translateY(-6px); }
+        }
+
+        /* ── Text column ── */
+        .g-text .eyebrow{
+          display:inline-block; align-self:flex-start;
+          background:transparent; color:#0f3460;
+          padding:0 0 4px 0; border-bottom:2px solid #FFD700;
+          font-size:.78rem; letter-spacing:3px; font-weight:800;
+          text-transform:uppercase;
+        }
+        .g-text h2{
+          display:block; background:transparent;
+          color:#000000; font-size:1.55rem; line-height:1.2;
+          margin:0 0 10px; padding:0;
+          border-left:0;
+          font-weight:800; letter-spacing:.2px;
+        }
+        .g-text h2 .accent{ color:#000000; font-style:normal; font-weight:800; }
+        .g-text .stripe-divider{ width:200px; max-width:200px; margin: 4px 0 12px; align-self:flex-start; }
+        .g-text p{
+          color:#3a4a63; line-height:1.55; margin-bottom:8px; font-size:.95rem;
+          text-align: justify; width:100%;
+        }
+        .g-text .lede{
+          color:#0a2447; font-weight:700; font-size:1rem; margin-bottom:10px;
+        }
+        .g-text .quote-box{
+          display:inline-block; margin-top:8px; padding:10px 22px;
+          background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+          border:0; border-radius:30px;
+          color:#ffffff; font-style:normal; font-weight:700;
+          font-size:.92rem; line-height:1.3; letter-spacing:.2px;
+          box-shadow:0 6px 16px rgba(30,140,184,.32);
+        }
+
+        /* Stripe divider (used in full essay / closing block) */
+        .stripe-divider{
+          display:flex; gap:3px; height:5px; border-radius:4px; overflow:hidden;
+          margin: 5px 0 9px; max-width: 200px;
+        }
+        .stripe-divider i{ flex:1; }
+        .stripe-divider i:nth-child(1){ background:#0891B2; }
+        .stripe-divider i:nth-child(2){ background:#16A34A; }
+        .stripe-divider i:nth-child(3){ background:#2563EB; }
+        .stripe-divider i:nth-child(4){ background:#9333EA; }
+        .stripe-divider i:nth-child(5){ background:#DC2626; }
+        .stripe-divider i:nth-child(6){ background:#FFD700; }
+        .stripe-divider i:nth-child(7){ background:#FF13F0; }
+        .g-text .lead-lines{
+          margin: 4px 0 8px; padding: 0;
+          list-style: none;
+        }
+        .g-text .lead-lines li{
+          color:#1a1a2e; line-height:1.5; font-size:.95rem;
+          padding: 3px 0 3px 18px; position: relative;
+        }
+        .g-text .lead-lines li::before{
+          content:""; position:absolute; left:0; top:11px;
+          width:8px; height:8px; border-radius:50%;
+          background: linear-gradient(135deg,#FFD700,#0f3460);
+        }
+
+        /* ── FULL ESSAY (text-only, image-1 style) ── */
+        .g-full{
+          margin: 30px 0 14px; padding: 0;
+          background: transparent;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+        .g-full > h2.full-title{
+          text-align:center; color:#000000; font-size:1.55rem; font-weight:800;
+          margin: 0 0 22px; padding: 0;
+          letter-spacing:.3px;
+        }
+        .g-full > .full-eyebrow{
+          display:block; text-align:center;
+          color:#0f3460; font-size:.78rem; letter-spacing:4px;
+          font-weight:800; text-transform:uppercase;
+          margin: 0 0 6px;
+        }
+        .g-full > .full-bridge{
+          margin: 0 0 22px;
+          background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+          border-left: 4px solid #1E8CB8;
+          border-radius: 14px;
+          box-shadow: 0 4px 16px rgba(30,140,184,.08);
+          padding: 18px 28px;
+          color:#0a2447; font-style:italic; font-weight:600;
+          font-size:1rem; line-height:1.6; letter-spacing:.2px;
+          text-align:justify;
+        }
+        .g-full > .full-flourish{
+          display:flex; align-items:center; justify-content:center; gap:10px;
+          margin: 0 auto 26px; max-width:260px;
+        }
+        .g-full > .full-flourish::before,
+        .g-full > .full-flourish::after{
+          content:""; flex:1; height:2px;
+          background: linear-gradient(90deg, transparent 0%, #1E8CB8 50%, transparent 100%);
+        }
+        .g-full > .full-flourish .dot{
+          width:8px; height:8px; border-radius:50%;
+          background: linear-gradient(135deg,#FFD700 0%,#0f3460 130%);
+          box-shadow:0 0 6px rgba(255,215,0,.55);
+        }
+        .g-full .full-chapter{
+          margin-bottom: 22px;
+          background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+          border-left: 4px solid #1E8CB8;
+          border-radius: 14px;
+          box-shadow: 0 4px 16px rgba(30,140,184,.08);
+          padding: 22px 28px;
+        }
+        .g-full .full-chapter h3{
+          color:#000000; font-size:1.4rem; font-weight:800;
+          padding-left:0; border-left:0;
+          margin-bottom:8px; letter-spacing:.2px;
+        }
+        .g-full .full-chapter .stripe-divider{ max-width:200px; margin: 6px 0 12px; }
+        .g-full .full-chapter p{
+          color:#1a1a2e; line-height:1.78; margin-bottom:10px; font-size:1rem; text-align:justify;
+        }
+        .g-full .full-chapter.dropcap p:first-of-type::first-letter{
+          float:left; font-size:3.4rem; line-height:.85;
+          padding:6px 12px 0 0; color:#0a2447; font-weight:700;
+          background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
+          -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        }
+
+        /* ── Looped short rainbow divider (between chapters and full essay) ── */
+        .g-loop-divider{
+          display:flex; gap:4px; height:6px; border-radius:4px; overflow:hidden;
+          margin: 22px auto 22px; max-width: 100%;
+        }
+        .g-loop-divider span{ flex:1; }
+        .g-loop-divider span:nth-child(7n+1){ background:#0891B2; }
+        .g-loop-divider span:nth-child(7n+2){ background:#16A34A; }
+        .g-loop-divider span:nth-child(7n+3){ background:#2563EB; }
+        .g-loop-divider span:nth-child(7n+4){ background:#9333EA; }
+        .g-loop-divider span:nth-child(7n+5){ background:#DC2626; }
+        .g-loop-divider span:nth-child(7n+6){ background:#FFD700; }
+        .g-loop-divider span:nth-child(7n+7){ background:#FF13F0; }
+
+        /* ── Closing manifesto block (same look as a chapter panel) ── */
+        .g-closing{
+          margin: 30px 0 14px;
+          background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+          border-left: 4px solid #1E8CB8;
+          border-radius: 14px;
+          box-shadow: 0 4px 16px rgba(30,140,184,.08);
+          padding: 22px 28px;
+        }
+        .g-closing.dropcap p:first-of-type::first-letter{
+          float:left; font-size:3.4rem; line-height:.85;
+          padding:6px 12px 0 0; color:#0a2447; font-weight:700;
+          background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
+          -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        }
+        .g-closing h3{
+          color:#000000; font-size:1.4rem; font-weight:800;
+          padding-left:0; border-left:0;
+          margin-bottom:8px; text-align:left; letter-spacing:.2px;
+        }
+        .g-closing .stripe-divider{ max-width:200px; margin: 6px 0 12px; }
+        .g-closing p{ color:#1a1a2e; line-height:1.78; margin-bottom:10px; font-size:1rem; text-align:justify; }
+
+        /* Summary line, mirrors the thumbnail quote tone but without the cyan pill */
+        .g-full .summary-pill,
+        .g-closing .summary-pill{
+          display:block; margin-top:14px; padding:6px 0 6px 14px;
+          background: transparent;
+          border:0; border-left: 3px solid #FFD700;
+          color:#0a2447; font-style:italic; font-weight:600;
+          font-size:.98rem; line-height:1.45; letter-spacing:.1px;
+          box-shadow:none;
+        }
+        .g-closing .verdict{
+          margin-top:14px; text-align:left; font-size:1.05rem;
+          color:#0a2447; font-weight:700; font-style:italic;
+        }
+
+        @media (max-width: 820px){
+          .g-chapter, .g-chapter.reverse{ grid-template-columns:1fr; }
+          .g-chapter.reverse .g-photo-wrap{ order:0; }
+          .g-chapter.reverse .g-text{ order:1; }
+          .g-photo-wrap{ position: static; }
+          .g-text h2{ font-size:1.45rem; }
+        }
+      </style>
+
+      <!-- ░░ Chapter I — Dove (image left) ░░ -->
+      <article id="g-ch1" class="g-chapter t-portrait">
+        <div class="g-photo-wrap">
+          <div class="g-photo t-dove" role="img" aria-label="Dove — Heaven's blueprint"></div>
         </div>
+        <div class="g-text">
+          <h2>I &middot; A Long-Awaited Solution From Above</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>After all the skyscrapers have risen and machines have whispered the language of algorithms, what remains of a soul untouched by truth? Humanity has built towering economies and crafted technologies that pierce the clouds, yet the soul remains disoriented and wandering.</p>
+          <p>The glory of technological growth, while dazzling, becomes hollow when severed from eternal purpose.</p>
+          <div class="quote-box">&ldquo;Heaven&rsquo;s blueprint, returning at last to align Earth with its source.&rdquo;</div>
+        </div>
+      </article>
+
+      <!-- ░░ Chapter II — Manifesto (image left) ░░ -->
+      <article id="g-ch2" class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-photo t-book1" role="img" aria-label="Godreign Manifesto Volume I"></div>
+        </div>
+        <div class="g-text">
+          <h2>II &middot; Heaven Revealed, Not Democracy Re-dressed</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>This is not democracy dressed in new language. Godreign is heaven revealed: a divine system of governance rooted in righteousness, justice, mercy, and eternal truth. Built on the divine science of love &mdash; not abstract sentiment, but love that governs with compassion and sacred discipline.</p>
+          <div class="quote-box">&ldquo;Thy kingdom come, Thy will be done, on earth as it is in heaven.&rdquo; &mdash; Matthew 6:10</div>
+        </div>
+      </article>
+
+      <!-- ░░ Chapter III — Crown (image left) ░░ -->
+      <article id="g-ch3" class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-photo t-book2" role="img" aria-label="Godreign Manifesto Volume II"></div>
+        </div>
+        <div class="g-text">
+          <h2>III &middot; The Call to the Nations</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Where democracy dissolves marriages, Godreign rebuilds family. Where governments legalize confusion, Godreign restores order and identity. Where the world trades truth for trends, Godreign holds the eternal roadmap firmly in hand.</p>
+          <p>Let the nations of the earth rise &mdash; not in rebellion, but in holy submission to the reign of God on earth.</p>
+          <div class="quote-box">&ldquo;Rise &mdash; not in rebellion, but in holy submission to the reign of God.&rdquo;</div>
+        </div>
+      </article>
+
+      <!-- ░░ Neutral divider between thumbnails and full essay ░░ -->
+      <hr class="g-neutral-divider" aria-hidden="true" />
+
+      <!-- ░░ Full Manifesto Essay — text-only, image-1 style ░░ -->
+      <section class="g-full" aria-label="Full Godreign Manifesto">
+        <p class="full-bridge">From the three pillars above, the call now unfolds in fuller measure &mdash; a closer look at heaven&rsquo;s blueprint for the nations, the doctrine that re-aligns governance with the eternal, and the charge laid upon every people who would walk in the light of the kingdom yet to come.</p>
+        <div class="full-chapter dropcap">
+          <h3>I &middot; A Long-Awaited Solution From Above</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>After all the skyscrapers have risen, after roads have stretched across deserts and rivers, after satellites have mapped the heavens and machines have whispered the language of algorithms, what remains of a soul untouched by truth? What becomes of a nation with brilliant cities but broken spirits? What is the value of progress that leads nowhere beyond the grave? In a world obsessed with advancement, humanity has built towering economies, engineered cities of steel and glass, and crafted technologies that pierce the clouds, yet the soul remains disoriented and wandering.</p>
+          <p>The glory of technological and economic growth, while dazzling, becomes hollow when severed from eternal purpose. The modern world has neglected the one crown that gives meaning to all other achievements: spiritual development. What profit is there in building the future, if the soul is unprepared for eternity? What legacy can a nation truly leave behind if its people inherit the earth, but lose their place in heaven? It is here that Godreign emerges &mdash; not as a theory, not as a rebranded ideology, but as a prophetic alignment with heaven&rsquo;s original blueprint for Earth. It is the embodiment of Christ&rsquo;s prayer in Matthew 6:10: &ldquo;Thy kingdom come, Thy will be done, on earth as it is in heaven.&rdquo;</p>
+          <div class="summary-pill">&ldquo;Heaven&rsquo;s blueprint, returning at last to align Earth with its source.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap">
+          <h3>II &middot; Heaven Revealed, Not Democracy Re-dressed</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>This is not democracy dressed in new language. It is not human ideology upgraded. Godreign is heaven revealed &mdash; a divine system of governance rooted in righteousness, justice, mercy, and eternal truth. Where democracy exalts public opinion, Godreign exalts divine instruction. Where earthly governments cater to personal freedom at any cost, Godreign is anchored in spiritual order and the eternal destiny of every soul. Godreign is built on the divine science of love &mdash; not abstract sentiment, but love that governs with justice, compassion, humility, and sacred discipline. It is not driven by personal gain, party loyalty, or fleeting applause, but by spiritual brotherhood and radical selflessness.</p>
+          <p>It is justice with purity, power with compassion, leadership that kneels to serve. In a world drowning in vanity and vice, where politics has become performance, and policy a tool of indulgence, Godreign walks a narrow road: higher, holy, and eternally relevant. This is a governance where Love becomes law &mdash; the law of morality flowing from hearts of love. Purity becomes power. Every policy considers not just earthly consequence, but eternal placement. Where democracy builds cities of lust and industries of moral confusion, Godreign moralizes science and sanctifies innovation, directing every advancement &mdash; digital, medical, technological &mdash; toward the healing of souls, the upliftment of the poor, and the preparation of nations for heavenly royalty.</p>
+          <div class="summary-pill">&ldquo;Love becomes law. Purity becomes power.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap">
+          <h3>III &middot; The Call to the Nations</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>The earth is being infiltrated by antichrist systems, demonic ideologies, and even manipulated beings &mdash; unauthorized intrusions from extraterrestrial and spiritual realms, designed to distort the divine image in humanity. Through corrupted pregnancies and systemic social engineering, these agents now parade immorality under the protection of law. They promote identity confusion, glorify sexual perversion, and redefine what it means to be human. Make no mistake: these are not simply social trends. They are spiritual assaults, strategies of deception and eternal sabotage. Behind the curtain of &ldquo;freedom&rdquo; lies a sinister agenda, designed to disconnect the soul from its Creator and derail heaven&rsquo;s inheritance for God&rsquo;s children.</p>
+          <p>But God is not silent. He is not threatened; He permits it to eventually transform the enemy&rsquo;s plans to His ultimate glory. He is positioning a remnant &mdash; a kingdom people. Those who do not merely survive, but shine. Those who carry the fragrance of heaven into the polluted streets of Babylon. Those who will not imitate Babylon but embody Zion. Godreign does not simply seek to replace a government; it seeks to restore a kingdom &mdash; a call for nations to rise into their prophetic identity as builders of holy culture, defenders of divine design, and guardians of generational destiny.</p>
+          <p>Just as BRICS nations are breaking free from dollar dependency, Godreign calls the nations to dump the democracy that costs souls their eternity &mdash; the democracy that silences God, that legalizes what heaven calls sin, that wins elections but loses souls. Where democracy dissolves marriages, Godreign rebuilds family. Where governments legalize confusion, Godreign restores order and identity. Where the world trades truth for trends, Godreign holds the eternal roadmap firmly in hand. Let those who have ears, hear. Let those who have hearts, choose. The kingdoms of this world are fading &mdash; but the kingdom of God shall stand forever.</p>
+          <div class="summary-pill">&ldquo;Rise &mdash; not in rebellion, but in holy submission to the reign of God.&rdquo;</div>
+        </div>
+      </section>
+
+      <!-- ░░ Closing manifesto — golden charge ░░ -->
+      <div class="g-closing full-chapter dropcap">
+        <h3>IV &middot; The Final Charge</h3>
+        <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p>Godreign does not simply seek to replace a government; it seeks to restore a kingdom. It is a call for nations to stop drinking from the cup of Sodom and Gomorrah, to stop funding destruction with taxpayers&rsquo; gold, and to rise into their prophetic identity &mdash; as builders of holy culture, defenders of divine design, and guardians of generational destiny. This is not a reaction to failure, but a divine restoration of order.</p>
+        <p>Godreign is not merely an alternative. It is the answer. Not just for today&rsquo;s justice, but for tomorrow&rsquo;s eternity. Not just for policy, but for paradise. The world has reached the edge. This is the terminal hour of Western dominion &mdash; and only one door leads forward: the door of righteousness, and the door of divine order for the success of human souls.</p>
+        <p class="verdict">Let those who have ears, hear. Let those who have hearts, choose.<br>The kingdoms of this world are fading &mdash; but the kingdom of God shall stand forever.</p>
+        <div class="summary-pill">&ldquo;The door of righteousness. The door of divine order.&rdquo;</div>
+      </div>
+
     </div>
 
     <!-- 47-Colour Bar -->
