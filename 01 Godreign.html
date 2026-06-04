@@ -1046,7 +1046,7 @@
     <div class="header">
       <h1>GODREIGN</h1>
       <h2>A Divine Framework for Righteous Governance on Earth</h2>
-      <h2 style="margin-top: 15px; font-size: 1.2rem; color: #FFD700; font-weight: 700;">Sovereign Foundation of the Universal Hyperdimensional Numeric Engine</h2>
+      <h2 style="margin-top: 15px; font-size: 1.2rem; color: #FFD700; font-weight: 700;">Restoring Heaven's Blueprint Through Righteous Governance and Numerical Sovereignty</h2>
       <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">Where heaven's blueprint governs science, civilization, and numerical sovereignty</p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published under the Godreign Numerical Civilization Project<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 8px;">Designed for nations, scholars, educators, and every soul seeking to realign with divine order.</p>
@@ -1156,7 +1156,7 @@
         /* ── Chapter rows — image outside, pale-blue panel wraps text only ── */
         .g-chapter{
           display:grid; grid-template-columns: 240px 1fr; gap:32px;
-          align-items:stretch; margin: 0 0 22px;
+          align-items:stretch; margin: 0 0 28px;
           padding: 0;
           min-height: 240px;
           background: transparent;
@@ -1305,6 +1305,15 @@
           border-left:0;
           font-weight:800; letter-spacing:.2px;
         }
+        .g-text h2 .section-marker{
+          display:inline-flex; align-items:center; justify-content:center;
+          width:32px; height:32px; margin-right:10px;
+          border-radius:50%;
+          background: linear-gradient(135deg,#16A34A 0%,#1E8CB8 100%);
+          color:#ffffff; font-size:.85rem; font-weight:900; line-height:1;
+          box-shadow:0 5px 12px rgba(22,163,74,.22);
+          vertical-align:middle;
+        }
         .g-text h2 .accent{ color:#000000; font-style:normal; font-weight:800; }
         .g-text .stripe-divider{ width:200px; max-width:200px; margin: 4px 0 12px; align-self:flex-start; }
         .g-text p{
@@ -1411,6 +1420,16 @@
         .g-full .full-chapter p{
           color:#1a1a2e; line-height:1.78; margin-bottom:10px; font-size:1rem; text-align:justify;
         }
+        .g-full .full-chapter.framework-declaration{
+          border-left-color:#16A34A;
+          background: linear-gradient(135deg,#f8fff9 0%,#eef8fb 100%);
+          box-shadow:0 8px 24px rgba(22,163,74,.12);
+        }
+        .g-full .full-chapter.framework-declaration > h3:first-child{
+          color:#0a2447;
+          text-transform:uppercase;
+          letter-spacing:1.2px;
+        }
         .g-full .full-chapter.dropcap p:first-of-type::first-letter{
           float:left; font-size:3.4rem; line-height:.85;
           padding:6px 12px 0 0; color:#0a2447; font-weight:700;
@@ -1454,6 +1473,19 @@
         }
         .g-closing .stripe-divider{ max-width:200px; margin: 6px 0 12px; }
         .g-closing p{ color:#1a1a2e; line-height:1.78; margin-bottom:10px; font-size:1rem; text-align:justify; }
+        .g-closing .lead-lines{
+          margin: 6px 0 10px; padding: 0;
+          list-style: none;
+        }
+        .g-closing .lead-lines li{
+          color:#1a1a2e; line-height:1.55; font-size:1rem;
+          padding: 4px 0 4px 20px; position: relative;
+        }
+        .g-closing .lead-lines li::before{
+          content:""; position:absolute; left:0; top:13px;
+          width:8px; height:8px; border-radius:50%;
+          background: linear-gradient(135deg,#FFD700,#0f3460);
+        }
 
         /* Summary line, mirrors the thumbnail quote tone but without the cyan pill */
         .g-full .summary-pill,
@@ -1479,13 +1511,29 @@
         }
       </style>
 
+      <!-- ░░ About This Book — Back Cover Declaration ░░ -->
+      <div class="g-closing full-chapter dropcap">
+        <h3>About This Book</h3>
+        <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p><strong>Godreign</strong> is a sovereign manifesto for the restoration of earthly order under heaven's original blueprint. It begins where ordinary policy cannot begin: with the soul, the conscience, and the eternal destiny of nations.</p>
+        <p>This book presents governance as sacred responsibility, not public performance. It calls science, education, technology, family, and civic life back beneath righteousness, justice, mercy, truth, and the law of love.</p>
+        <p>At the heart of this work stands a threefold charge:</p>
+        <ul class="lead-lines">
+          <li><strong>Governance</strong> &mdash; restoring righteousness to public order</li>
+          <li><strong>Science</strong> &mdash; disciplining innovation by divine purpose</li>
+          <li><strong>Destiny</strong> &mdash; preparing souls and nations for heavenly royalty</li>
+        </ul>
+        <p><strong>Godreign</strong> is not merely a political idea. It is a constitutional call to realign civilization with eternal truth, so that power serves mercy, knowledge serves wisdom, and progress remembers the soul.</p>
+        <div class="summary-pill">&ldquo;A sovereign manifesto for heaven's blueprint, righteous science, numerical order, and the preparation of nations for eternal purpose.&rdquo;</div>
+      </div>
+
       <!-- ░░ Chapter I — Dove (image left) ░░ -->
       <article id="g-ch1" class="g-chapter t-portrait">
         <div class="g-photo-wrap">
           <div class="g-photo t-dove" role="img" aria-label="Dove — Heaven's blueprint"></div>
         </div>
         <div class="g-text">
-          <h2>I &middot; A Long-Awaited Solution From Above</h2>
+          <h2><span class="section-marker">I</span>A Long-Awaited Solution From Above</h2>
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p>After the towers have risen and the machines have mastered the language of algorithms, one question still governs the age: what becomes of a civilization whose soul is left unruled by truth? Humanity has amassed power, scale, and speed, yet the inner life of nations remains unstable and disoriented.</p>
           <p>Godreign enters that crisis not as ornament, but as answer: the return of heaven&rsquo;s governing order to the center of earthly destiny.</p>
@@ -1499,7 +1547,7 @@
           <div class="g-photo t-book1" role="img" aria-label="Godreign Manifesto Volume I"></div>
         </div>
         <div class="g-text">
-          <h2>II &middot; Heaven Revealed, Not Democracy Re-dressed</h2>
+          <h2><span class="section-marker">II</span>Heaven Revealed, Not Democracy Re-dressed</h2>
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p>This is not democracy dressed in new language. Godreign presents itself as heaven revealed in governing form: a divine order rooted in righteousness, justice, mercy, and eternal truth, and sustained by a law of love that governs with compassion, purity, and sacred discipline.</p>
           <div class="quote-box">&ldquo;Thy kingdom come, Thy will be done, on earth as it is in heaven.&rdquo; &mdash; Matthew 6:10</div>
@@ -1512,7 +1560,7 @@
           <div class="g-photo t-book2" role="img" aria-label="Godreign Manifesto Volume II"></div>
         </div>
         <div class="g-text">
-          <h2>III &middot; The Call to the Nations</h2>
+          <h2><span class="section-marker">III</span>The Call to the Nations</h2>
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p>Where earthly systems dissolve covenant, Godreign restores family. Where public authority legitimizes disorder, Godreign restores identity, hierarchy, and moral clarity. Where the age trades truth for fashion, Godreign holds fast to the eternal roadmap.</p>
           <p>Let the nations therefore rise &mdash; not in rebellion, but in holy submission to the reign of God upon the earth.</p>
@@ -1534,7 +1582,7 @@
           <div class="summary-pill">&ldquo;Heaven&rsquo;s blueprint, returning at last to align Earth with its source.&rdquo;</div>
         </div>
 
-        <div class="full-chapter dropcap">
+        <div class="full-chapter dropcap framework-declaration">
           <h3>II &middot; Heaven Revealed, Not Democracy Re-dressed</h3>
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p>This is not democracy dressed in new language. It is not human ideology upgraded. Godreign is heaven revealed &mdash; a divine system of governance rooted in righteousness, justice, mercy, and eternal truth. Where democracy exalts public opinion, Godreign exalts divine instruction. Where earthly governments cater to personal freedom at any cost, Godreign is anchored in spiritual order and the eternal destiny of every soul. Godreign is built on the divine science of love &mdash; not abstract sentiment, but love that governs with justice, compassion, humility, and sacred discipline. It is not driven by personal gain, party loyalty, or fleeting applause, but by spiritual brotherhood and radical selflessness.</p>
@@ -1557,7 +1605,7 @@
         <h3>IV &middot; The Final Charge</h3>
         <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <p>Godreign does not simply seek to replace a government; it calls for the restoration of kingdom order. It is a call for nations to stop drinking from the cup of Sodom and Gomorrah, to stop funding destruction with taxpayers’ gold, to reject moral collapse as policy, and to rise into prophetic responsibility as builders of holy culture, defenders of divine design, and guardians of generational destiny.</p>
-        <p>Godreign is not merely an alternative among alternatives. It is the answer. Not just for today’s justice, but for tomorrow’s eternity. Not just for policy, but for paradise. The world has reached the edge. This is the terminal hour of unrighteous dominion — and only one door leads forward: the door of righteousness, and the door of divine order for the success of human souls..</p>
+        <p>Godreign is not merely an alternative among alternatives. It is the answer. Not just for today’s justice, but for tomorrow’s eternity. Not just for policy, but for paradise. The world has reached the edge. This is the terminal hour of unrighteous dominion — and only one door leads forward: the door of righteousness, and the door of divine order for the success of human souls.</p>
         <p class="verdict">Let those who have ears, hear. Let those who have hearts, choose.<br>The kingdoms of this world are fading &mdash; but the kingdom of God shall stand forever.</p>
         <div class="summary-pill">&ldquo;The door of righteousness. The door of divine order. The door that leads nations unto heaven's eternity.&rdquo;</div>
       </div>
