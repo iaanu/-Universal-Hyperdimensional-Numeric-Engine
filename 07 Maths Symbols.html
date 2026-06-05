@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="yo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maths Symbols | Universal Hyperdimensional Numeric Engine</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+    /* ── Top progress bar ── */
+    .scroll-progress{
+      position: fixed; top:0; left:0; width:0; height:4px; z-index:2000;
+      background: linear-gradient(90deg, #1E8CB8, #FFD700, #FF13F0);
+      transition: width .12s linear;
+    }
+
+    /* ── Menu bar ── */
+    .menu-bar {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 14px 20px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      border-bottom: 11px solid #6C6ACD;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .menu-bar a {
+      color: #FFD700; text-decoration: none;
+      padding: 8px 16px; border-radius: 25px;
+      font-size: 0.85rem; font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,215,0,0.3);
+      white-space: nowrap;
+    }
+    .menu-bar a:hover {
+      background: rgba(255,215,0,0.2); border-color: #FFD700;
+      box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+    }
+    .menu-bar a.current{
+      background: rgba(255,215,0,0.18); border-color:#FFD700;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 28px 20px; margin: 0; border-bottom: 15px solid #6C6ACD;
+    }
+    .footer-content { text-align: center; max-width: 800px; margin: 0 auto; }
+    .footer-content .copyright { display: block; color: #ffeb3b; font-size: 1.1em; font-weight: 700; margin-bottom: 10px; }
+    .footer-content .english-mission { color: #e0e0e0; font-size: 0.95em; margin: 0; }
+
+    /* ── Base layout ── */
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%);
+      min-height: 100vh; margin: 0; padding: 0; color: #1a1a1a;
+    }
+    .container {
+      background: #fff; max-width: 1400px; margin: 0 auto;
+      padding: 0 20px; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .header {
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%);
+      color: #fff; padding: 30px 40px; text-align: center;
+    }
+    .header h1 { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; letter-spacing: 1px; }
+    .header h2 { font-size: 1.15rem; font-weight: 600; opacity: 0.95; margin: 0; }
+    .content { padding: 40px; }
+
+    /* ── 47-colour bar ── */
+    .colour-bar-animated {
+      display: flex; height: 10px; overflow: hidden;
+      border-radius: 0 0 8px 8px; margin: 0; position: relative;
+    }
+    .colour-bar-animated > div {
+      flex: 1; transition: flex 0.4s ease, transform 0.4s ease; cursor: pointer;
+    }
+    .colour-bar-animated:hover > div { flex: 0.7; }
+    .colour-bar-animated > div:hover { flex: 4; transform: scaleY(1.6); }
+    .colour-bar-animated::after {
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.45) 50%, transparent 65%);
+      background-size:220% 100%;
+      animation: cb-shimmer 7s linear infinite;
+      pointer-events:none; mix-blend-mode:screen;
+    }
+    @keyframes cb-shimmer { 0%{background-position:200% 0} 100%{background-position:-100% 0} }
+
+    /* ── Coming-soon hero panel ── */
+    .ms-coming{
+      margin: 30px 0 14px;
+      background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+      border-left: 4px solid #1E8CB8; border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(30,140,184,.08);
+      padding: 32px 36px; text-align: center;
+    }
+    .ms-coming h3{
+      color:#0a2447; font-size:1.6rem; font-weight:800;
+      margin: 0 0 10px; letter-spacing:.2px;
+    }
+    .ms-coming p{
+      color:#1a1a2e; line-height:1.78; margin: 0 auto 14px;
+      font-size:1rem; max-width: 780px;
+    }
+    .ms-coming .badge-row{
+      display: flex; flex-wrap: wrap; gap: 10px;
+      justify-content: center; margin: 18px 0 6px;
+    }
+    .ms-coming .badge-row span{
+      display:inline-block; padding:6px 14px; border-radius:20px;
+      font-size:.78rem; font-weight:700; letter-spacing:.4px;
+      background: rgba(30,140,184,.10); color:#0f3460;
+      border:1px solid rgba(30,140,184,.25);
+    }
+    .ms-coming .badge-row span.gold{
+      background: rgba(255,215,0,.18); color:#0a2447; border-color:#FFD700;
+    }
+    .ms-coming .badge-row span.pink{
+      background: rgba(255,19,240,.10); color:#7a006e; border-color:#FF13F0;
+    }
+    .ms-coming .summary-pill{
+      display:inline-block; margin-top:18px; padding:8px 20px 8px 22px;
+      border-left: 3px solid #FFD700;
+      color:#0a2447; font-style:italic; font-weight:600;
+      font-size:1rem; line-height:1.45; text-align:left;
+    }
+
+    /* ── Stripe divider ── */
+    .stripe-divider{
+      display:flex; gap:3px; height:5px; border-radius:4px; overflow:hidden;
+      margin: 14px auto 16px; max-width: 240px;
+    }
+    .stripe-divider i{ flex:1; }
+    .stripe-divider i:nth-child(1){ background:#0891B2; }
+    .stripe-divider i:nth-child(2){ background:#16A34A; }
+    .stripe-divider i:nth-child(3){ background:#2563EB; }
+    .stripe-divider i:nth-child(4){ background:#9333EA; }
+    .stripe-divider i:nth-child(5){ background:#DC2626; }
+    .stripe-divider i:nth-child(6){ background:#FFD700; }
+    .stripe-divider i:nth-child(7){ background:#FF13F0; }
+
+    /* ── Symbol grid preview ── */
+    .ms-grid{
+      margin: 28px 0 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 14px;
+    }
+    .ms-cell{
+      background: #fff;
+      border: 1px solid rgba(30,140,184,.18);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(30,140,184,.06);
+      padding: 18px 14px 14px;
+      text-align: center;
+      transition: transform .15s ease, box-shadow .25s ease, border-color .2s ease;
+    }
+    .ms-cell:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 10px 22px rgba(30,140,184,.18);
+      border-color: #FFD700;
+    }
+    .ms-cell .glyph{
+      font-size: 2.4rem; line-height: 1;
+      color: #0a2447; font-weight: 700;
+      display: block; margin-bottom: 6px;
+    }
+    .ms-cell .en{
+      color: #0f3460; font-size: .82rem; font-weight: 700;
+      letter-spacing: .3px; text-transform: uppercase;
+      display: block; margin-bottom: 2px;
+    }
+    .ms-cell .yo{
+      color: #1a1a2e; font-size: .92rem; font-style: italic;
+      display: block;
+    }
+
+    /* ── Section heading ── */
+    .ms-section-h{
+      color: #0a2447; font-size: 1.25rem; font-weight: 800;
+      margin: 36px 0 8px; letter-spacing: .2px; text-align: center;
+    }
+    .ms-lead{
+      color: #1a1a2e; line-height: 1.7; margin: 0 auto 6px;
+      font-size: .98rem; max-width: 820px; text-align: center;
+    }
+
+    /* ── Back to top ── */
+    .back-to-top{
+      position: fixed; bottom: 28px; right: 28px;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+      color: #fff; border: 0; font-size: 1rem;
+      cursor: pointer; opacity: 0; pointer-events: none;
+      transition: opacity .25s ease, transform .15s ease;
+      box-shadow: 0 8px 22px rgba(10,36,71,.35);
+      z-index: 1500;
+    }
+    .back-to-top.visible{ opacity:1; pointer-events:auto; }
+    .back-to-top:hover{ transform: translateY(-3px); }
+
+    @media (max-width: 720px){
+      .header h1{ font-size: 1.65rem; }
+      .content{ padding: 24px 18px; }
+      .ms-coming{ padding: 24px 22px; }
+      .ms-cell .glyph{ font-size: 2rem; }
+    }
+  </style>
+  <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="menu-bar">
+    <a href="01 Godreign.html">Godreign</a>
+    <a href="02 Ọ̀rọ̀ Ẹlohîm.html">Ọ̀rọ̀ Ẹlohîm</a>
+    <a href="index.html">Numeric Engine</a>
+    <a href="03 Master Index.html">Master Index</a>
+    <a href="04 Scaling Engines.html">Scaling Engines</a>
+    <a href="05 Equation Engines.html">Equation Engines</a>
+    <a href="06 Applied Systems.html">Applied Systems</a>
+    <a class="current" href="07 Maths Symbols.html">Maths Symbols</a>
+    <a href="08 World Numerals.html">World Numerals</a>
+    <a href="09 Numeric Products.html">Numeric Products</a>
+    <a href="10 About Us.html">About Us</a>
+  </div>
+
+  <div class="container">
+    <div class="header">
+      <h1>MATHS SYMBOLS</h1>
+      <h2>Mathematical Symbols Translated into Yorùbá</h2>
+      <h2 style="margin-top: 14px; font-size: 1.1rem; color: #FFD700; font-weight: 700;">A Sovereign Glossary of Operators, Constants, Greek Letters &amp; Notations &mdash; Spoken in Yorùbá</h2>
+      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">Every symbol of mathematics &mdash; given a Yorùbá voice.</p>
+      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published under the Godreign Numerical Civilization Project<br><strong style="color: rgba(255,215,0,0.85);">Version 0.1 · 2026 · Coming Soon</strong></p>
+      <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 14px; font-style: italic; text-align: justify; line-height: 1.7;">The Maths Symbols page is the sovereign glossary of mathematical notation translated into Yorùbá. Where the Master Index names every magnitude and the Equation Engines describe every operation, this page names every <em>symbol</em> &mdash; from the humble plus sign to the integral, sigma, pi, infinity, and the operators of set theory, calculus, and logic. It serves as the linguistic bridge between the thirty-two Yorùbá Math Posters and the live products of the suite, ensuring that every symbol a learner encounters can also be <em>spoken</em> in Yorùbá.</p>
+    </div>
+
+    <!-- 47-Colour Bar -->
+    <div class="colour-bar-animated">
+      <div style="background:#0891B2" title="Zero &mdash; Cerulean"></div>
+      <div style="background:#16A34A" title="Units &mdash; Vibrant Green"></div>
+      <div style="background:#2563EB" title="Tens &mdash; Royal Blue"></div>
+      <div style="background:#9333EA" title="Hundreds &mdash; Purple"></div>
+      <div style="background:#DC2626" title="Thousands &mdash; Red"></div>
+      <div style="background:#B59410" title="Tens of Thousands &mdash; Dark Goldenrod"></div>
+      <div style="background:#4EAAE4" title="Hundreds of Thousands &mdash; Sky Blue"></div>
+      <div style="background:#8B4513" title="Millions &mdash; Saddle Brown"></div>
+      <div style="background:#228B22" title="Tens of Millions &mdash; Forest Green"></div>
+      <div style="background:#EF6000" title="Hundreds of Millions &mdash; Dark Orange"></div>
+      <div style="background:#000080" title="Billions &mdash; Navy Blue"></div>
+      <div style="background:#FC5D8D" title="Tens of Billions &mdash; Hot Pink"></div>
+      <div style="background:#808000" title="Hundreds of Billions &mdash; Olive"></div>
+      <div style="background:#CD853F" title="Trillions &mdash; Peru"></div>
+      <div style="background:#6A5ACD" title="Tens of Trillions &mdash; Slate Blue"></div>
+      <div style="background:#800000" title="Hundreds of Trillions &mdash; Maroon"></div>
+      <div style="background:#1E90FF" title="Quadrillions &mdash; Dodger Blue"></div>
+      <div style="background:#F59E0B" title="Tens of Quadrillions &mdash; Amber"></div>
+      <div style="background:#8B0000" title="Hundreds of Quadrillions &mdash; Dark Red"></div>
+      <div style="background:#047857" title="Quintillions &mdash; Emerald"></div>
+      <div style="background:#A855F7" title="Tens of Quintillions &mdash; Bright Violet"></div>
+      <div style="background:#D2691E" title="Hundreds of Quintillions &mdash; Chocolate"></div>
+      <div style="background:#6C0AC9" title="Sextillions &mdash; Electric Violet"></div>
+      <div style="background:#B91C1C" title="Tens of Sextillions &mdash; Crimson"></div>
+      <div style="background:#65A30D" title="Hundreds of Sextillions &mdash; Lime"></div>
+      <div style="background:#4B0082" title="Septillions &mdash; Indigo"></div>
+      <div style="background:#FA8072" title="Tens of Septillions &mdash; Salmon"></div>
+      <div style="background:#008B8B" title="Hundreds of Septillions &mdash; Dark Teal"></div>
+      <div style="background:#B8860B" title="Octillions &mdash; Dark Goldenrod"></div>
+      <div style="background:#7B2D8E" title="Tens of Octillions &mdash; Deep Violet"></div>
+      <div style="background:#20B2AA" title="Hundreds of Octillions &mdash; Light Sea Green"></div>
+      <div style="background:#B22222" title="Nonillions &mdash; Firebrick"></div>
+      <div style="background:#9370DB" title="Tens of Nonillions &mdash; Medium Purple"></div>
+      <div style="background:#A0522D" title="Hundreds of Nonillions &mdash; Sienna"></div>
+      <div style="background:#191970" title="Decillions &mdash; Midnight"></div>
+      <div style="background:#E11D48" title="Tens of Decillions &mdash; Rose"></div>
+      <div style="background:#5F9EA0" title="Hundreds of Decillions &mdash; Cadet"></div>
+      <div style="background:#CD7F32" title="Undecillions &mdash; Bronze"></div>
+      <div style="background:#9932CC" title="Tens of Undecillions &mdash; Dark Orchid"></div>
+      <div style="background:#DAA520" title="Hundreds of Undecillions &mdash; Goldenrod"></div>
+      <div style="background:#483D8B" title="Duodecillions &mdash; Dark Slate Blue"></div>
+      <div style="background:#FF6347" title="Tens of Duodecillions &mdash; Tomato"></div>
+      <div style="background:#8B008B" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
+      <div style="background:#94AA00" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div style="background:#808080" title="Unassigned State &mdash; Grey"></div>
+      <div style="background:#FF13F0" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
+      <div style="background:#4682B4" title="Large Numbers &mdash; Steel Blue"></div>
+    </div>
+
+    <div class="content">
+
+      <!-- ░░ Coming Soon Hero ░░ -->
+      <div class="ms-coming">
+        <h3>The Sovereign Glossary &mdash; Coming Soon</h3>
+        <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p>This page will gather every mathematical symbol used across the Universal Hyperdimensional Numeric Engine and translate it into Yorùbá &mdash; complete with pronunciation, etymology, contextual examples, and 46-Colour visual coding. It is being assembled from the thirty-two themed posters of the <strong>Yorùbá Math Posters</strong> series, including arithmetic, comparison, calculus, set theory, trigonometry, logarithms, statistics, geometry, linear algebra, number theory, complex numbers, logic, combinatorics, and the Greek alphabet.</p>
+        <div class="badge-row">
+          <span>32 Source Posters</span>
+          <span>Operators</span>
+          <span>Constants</span>
+          <span>Greek Letters</span>
+          <span class="gold">46-Colour</span>
+          <span class="pink">Yorùbá Voice</span>
+        </div>
+        <span class="summary-pill">&ldquo;Every symbol of mathematics &mdash; given a Yorùbá voice.&rdquo;</span>
+      </div>
+
+      <!-- ░░ Sample preview ░░ -->
+      <h3 class="ms-section-h">A Glimpse of the Glossary</h3>
+      <p class="ms-lead">A small preview of the kind of entries that will populate this page. Each symbol pairs its standard glyph with its Yorùbá designation.</p>
+
+      <div class="ms-grid">
+        <div class="ms-cell">
+          <span class="glyph">+</span>
+          <span class="en">Plus</span>
+          <span class="yo">Àfikún</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&minus;</span>
+          <span class="en">Minus</span>
+          <span class="yo">Àyọkúrò</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&times;</span>
+          <span class="en">Times</span>
+          <span class="yo">Àlòpọ̀</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&divide;</span>
+          <span class="en">Divide</span>
+          <span class="yo">Ìpín</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">=</span>
+          <span class="en">Equals</span>
+          <span class="yo">Bákannáà</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&ne;</span>
+          <span class="en">Not Equal</span>
+          <span class="yo">Kò Bákannáà</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&lt;</span>
+          <span class="en">Less Than</span>
+          <span class="yo">Kéré Sí</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&gt;</span>
+          <span class="en">Greater Than</span>
+          <span class="yo">Tóbi Ju</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&radic;</span>
+          <span class="en">Square Root</span>
+          <span class="yo">Gbòǹgbò Ọrẹ́</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&pi;</span>
+          <span class="en">Pi</span>
+          <span class="yo">Pí</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&Sigma;</span>
+          <span class="en">Sigma · Sum</span>
+          <span class="yo">Àròpọ̀</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&int;</span>
+          <span class="en">Integral</span>
+          <span class="yo">Àkójọpọ̀</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&infin;</span>
+          <span class="en">Infinity</span>
+          <span class="yo">Àìlópin</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&Delta;</span>
+          <span class="en">Delta · Change</span>
+          <span class="yo">Ìyípadà</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&forall;</span>
+          <span class="en">For All</span>
+          <span class="yo">Fún Gbogbo</span>
+        </div>
+        <div class="ms-cell">
+          <span class="glyph">&exist;</span>
+          <span class="en">There Exists</span>
+          <span class="yo">Ó Wà</span>
+        </div>
+      </div>
+
+      <p class="ms-lead" style="margin-top:30px;">The full Yorùbá Maths Symbols glossary &mdash; complete with pronunciation, etymology, contextual usage, and links to the source posters &mdash; will be published here in a forthcoming release.</p>
+
+    </div><!-- /.content -->
+  </div><!-- /.container -->
+
+<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   GLASSMORPHISM NEON — Scholarly Reference Section
+   Deep-space background, frosted glass cards, neon accents
+══════════════════════════════════════════════════════════════ */
+.osp-wrap{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(160deg,#141c32 0%,#111830 50%,#0e1a38 100%);
+  padding:72px 28px 64px;
+  font-family:'Poppins','Segoe UI',sans-serif;
+}
+/* Floating particle dots */
+.osp-wrap::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(2px 2px at 15% 25%,rgba(255,215,0,0.3),transparent),
+    radial-gradient(2px 2px at 45% 70%,rgba(255,19,240,0.25),transparent),
+    radial-gradient(1px 1px at 75% 15%,rgba(37,99,235,0.4),transparent),
+    radial-gradient(1px 1px at 85% 85%,rgba(255,215,0,0.2),transparent),
+    radial-gradient(2px 2px at 55% 45%,rgba(147,51,234,0.2),transparent);
+  animation:driftParticles 20s linear infinite;
+  pointer-events:none;
+}
+@keyframes driftParticles{
+  0%  {transform:translateY(0);}
+  100%{transform:translateY(-30px);}
+}
+/* Neon glow line at top */
+.osp-wrap::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:10%;right:10%;height:2px;
+  background:linear-gradient(90deg,transparent,#FFD700,#FF13F0,#2563EB,transparent);
+  border-radius:2px;
+  box-shadow:0 0 20px rgba(255,215,0,0.4),0 0 40px rgba(255,19,240,0.2);
+}
+.osp-head{text-align:center;margin-bottom:42px;position:relative;z-index:1;}
+.osp-head h3{
+  color:#FFD700;font-size:.72rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;margin:0 0 8px;
+  text-shadow:0 0 12px rgba(255,215,0,0.4);
+}
+.osp-head p{color:rgba(255,255,255,.75);font-size:.78rem;margin:0;font-weight:400;}
+/* Diamond divider */
+.osp-divider{
+  display:flex;align-items:center;gap:14px;max-width:440px;
+  margin:0 auto 38px;position:relative;z-index:1;
+}
+.osp-divider span{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.5),transparent);}
+.osp-divider em{
+  color:rgba(255,255,255,.85);font-size:.62rem;
+  font-style:normal;white-space:nowrap;letter-spacing:.08em;
+}
+/* Card grid */
+.osp-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+  gap:26px;max-width:1220px;margin:0 auto;position:relative;z-index:1;
+}
+/* Glassmorphism cards */
+.osp-card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:20px;padding:32px 28px;
+  position:relative;overflow:hidden;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+}
+.osp-card:hover{
+  border-color:rgba(255,215,0,0.5);
+  box-shadow:0 8px 40px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,215,0,0.15);
+  transform:translateY(-3px);
+}
+/* Neon accent stripe at card top */
+.osp-card::before{
+  content:'';position:absolute;
+  top:0;left:24px;right:24px;height:2px;
+  background:var(--card-accent,linear-gradient(90deg,#FFD700,#FF13F0));
+  border-radius:0 0 4px 4px;opacity:.7;transition:opacity .3s;
+}
+.osp-card:hover::before{opacity:1;}
+.osp-card:nth-child(1){--card-accent:linear-gradient(90deg,#FF13F0,#9333EA);}
+.osp-card:nth-child(2){--card-accent:linear-gradient(90deg,#FFD700,#EF6000);}
+.osp-card:nth-child(3){--card-accent:linear-gradient(90deg,#2563EB,#0891B2);}
+.osp-icon{
+  font-size:1.8rem;display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:14px;
+  background:rgba(255,255,255,0.07);margin-bottom:14px;
+}
+.osp-label{
+  color:#FFD700;font-size:.66rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  padding-bottom:12px;margin-bottom:18px;
+}
+/* ── Card ①: Classification Key ── */
+.osp-keytbl{width:100%;border-collapse:collapse;}
+.osp-keytbl tr+tr td{border-top:1px solid rgba(255,255,255,0.08);}
+.osp-keytbl td{padding:9px 0;font-size:.79rem;vertical-align:top;}
+.osp-ksym{
+  color:#FF13F0;font-weight:700;
+  padding-right:16px;min-width:72px;white-space:nowrap;font-size:.78rem;
+}
+.osp-kdesc{color:rgba(255,255,255,.88);line-height:1.6;}
+/* ── Card ②: Cite This Work ── */
+.osp-cite{
+  background:rgba(255,215,0,0.04);
+  border-left:3px solid #FFD700;
+  border-radius:0 12px 12px 0;
+  padding:16px 18px;font-size:.82rem;
+  color:rgba(255,255,255,.92);line-height:1.75;font-style:italic;
+}
+.osp-cite strong{color:#FFD700;font-style:normal;}
+.osp-cite-meta{
+  margin-top:12px;font-size:.7rem;
+  color:rgba(255,255,255,.6);font-style:normal;
+  padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);
+}
+/* ── Card ③: API Notice ── */
+.osp-badge{
+  display:inline-block;
+  background:linear-gradient(90deg,#A855F7,#2563EB);
+  color:#fff;font-size:.6rem;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 14px;border-radius:20px;margin-bottom:14px;
+  box-shadow:0 2px 12px rgba(168,85,247,0.3);
+}
+.osp-api-p{color:rgba(255,255,255,.88);font-size:.82rem;line-height:1.72;}
+.osp-api-p strong{color:#fff3b0;}
+.osp-endpoint{
+  margin-top:14px;
+  background:rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:10px;padding:12px 16px;
+  font-family:'Courier New',monospace;
+  font-size:.74rem;color:#7FDBCA;
+  letter-spacing:.03em;line-height:1.7;
+}
+.osp-arrow{color:#FF13F0;}
+</style>
+
+<div class="osp-head">
+  <h3>Research, Publications &amp; Technology</h3>
+  <p>Academic standards, publication references, and technical guidance for the Universal Hyperdimensional Numeric Engine</p>
+</div>
+<div class="osp-divider">
+  <span></span><em>◆ Ìwé Ìmọ̀ Ònkà ◆</em><span></span>
+</div>
+
+<div class="osp-grid">
+
+  <!-- ① TABLE CLASSIFICATION KEY -->
+  <div class="osp-card">
+    <span class="osp-icon">🔑</span>
+    <div class="osp-label">Research Classification Framework</div>
+    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
+      <tbody><tr>
+        <td class="osp-ksym">Symbol</td>
+        <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Name</td>
+        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Scale</td>
+        <td class="osp-kdesc">Power-of-ten magnitude classification, for example 10&sup3; in the thousands tier and 10&sup6; in the millions tier</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Tier</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym"><span style="color:#FF13F0;font-weight:700;">l</span> Link</td>
+        <td class="osp-kdesc">The <em>l</em> multiplier connector, displayed in neon pink (#FF13F0), which governs chained magnitude extension across large-order expressions</td>
+      </tr>
+    </tbody></table>
+  </div>
+
+  <!-- ② CITATION STATEMENT -->
+  <div class="osp-card">
+    <span class="osp-icon">📜</span>
+    <div class="osp-label">Publications</div>
+    <div class="osp-cite">
+      <strong>Universal Hyperdimensional Numeric Engine Institute</strong> (2026).
+      <em>Numerical Index Database, v1.0.</em>
+      Godreign Digital Publishing.
+      <em>Universal Hyperdimensional Numeric Engine.</em>
+      <div class="osp-cite-meta">
+        ISBN (979-8-90148-351-0) &nbsp;·&nbsp;
+        Freely accessible for academic, educational &amp; research use &nbsp;·&nbsp;
+        © 2026 Godreign. Universal Hyperdimensional Numeric Engine.
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ FUTURE API NOTICE -->
+  <div class="osp-card">
+    <span class="osp-icon">⚡</span>
+    <div class="osp-label">Technology &amp; Implementation</div>
+    <span class="osp-badge">Coming Soon</span>
+    <p class="osp-api-p">
+      Public API access to the <strong>Yoruba Numerical Index Database</strong> is planned for a future
+      release, enabling developers, researchers, and digital platforms to programmatically
+      query more than a <strong>tredecillion</strong> Yorùbá number entries in real time for analytical and implementation purposes.
+    </p>
+    <div class="osp-endpoint">
+      GET /api/v1/onka-yoruba/number/{n}<br>
+      <span class="osp-arrow">→</span>&nbsp;{ yoruba: "…", tier: "…", colour: "…", power: "…" }
+    </div>
+  </div>
+
+</div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <span class="copyright">&copy; 2026 Godreign. The Universal Hyperdimensional Numeric Engine.</span>
+
+    <p class="english-mission">
+      Honouring the numerical heritage of humanity while advancing an open, language-independent path toward inclusive global computation.
+    </p>
+
+    </div>
+</footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Scroll to top">▲</button>
+
+  <script>
+    // --- Scroll Progress Bar ---
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = scrolled + '%';
+    }, { passive: true });
+
+    // --- Back-to-Top Button ---
+    const topBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) topBtn.classList.add('visible');
+      else topBtn.classList.remove('visible');
+    }, { passive: true });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

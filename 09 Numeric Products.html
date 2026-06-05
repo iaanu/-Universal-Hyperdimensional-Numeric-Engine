@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="yo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numeric Products | Universal Hyperdimensional Numeric Engine</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+    /* ── Top progress bar ── */
+    .scroll-progress{
+      position: fixed; top:0; left:0; width:0; height:4px; z-index:2000;
+      background: linear-gradient(90deg, #1E8CB8, #FFD700, #FF13F0);
+      transition: width .12s linear;
+    }
+
+    /* ── Menu bar ── */
+    .menu-bar {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 14px 20px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      border-bottom: 11px solid #6C6ACD;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .menu-bar a {
+      color: #FFD700; text-decoration: none;
+      padding: 8px 16px; border-radius: 25px;
+      font-size: 0.85rem; font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,215,0,0.3);
+      white-space: nowrap;
+    }
+    .menu-bar a:hover {
+      background: rgba(255,215,0,0.2); border-color: #FFD700;
+      box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+    }
+    .menu-bar a.current{
+      background: rgba(255,215,0,0.18); border-color:#FFD700;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 28px 20px; margin: 0; border-bottom: 15px solid #6C6ACD;
+    }
+    .footer-content { text-align: center; max-width: 800px; margin: 0 auto; }
+    .footer-content .copyright { display: block; color: #ffeb3b; font-size: 1.1em; font-weight: 700; margin-bottom: 10px; }
+    .footer-content .english-mission { color: #e0e0e0; font-size: 0.95em; margin: 0; }
+
+    /* ── Base layout ── */
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%);
+      min-height: 100vh; margin: 0; padding: 0; color: #1a1a1a;
+    }
+    .container {
+      background: #fff; max-width: 1400px; margin: 0 auto;
+      padding: 0 20px; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .header {
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%);
+      color: #fff; padding: 30px 40px; text-align: center;
+    }
+    .header h1 { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; letter-spacing: 1px; }
+    .header h2 { font-size: 1.15rem; font-weight: 600; opacity: 0.95; margin: 0; }
+    .content { padding: 40px; }
+
+    /* ── 47-colour bar ── */
+    .colour-bar-animated {
+      display: flex; height: 10px; overflow: hidden;
+      border-radius: 0 0 8px 8px; margin: 0; position: relative;
+    }
+    .colour-bar-animated > div {
+      flex: 1; transition: flex 0.4s ease, transform 0.4s ease;
+      cursor: pointer;
+    }
+    .colour-bar-animated:hover > div { flex: 0.7; }
+    .colour-bar-animated > div:hover { flex: 4; transform: scaleY(1.6); }
+    .colour-bar-animated::after {
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.45) 50%, transparent 65%);
+      background-size:220% 100%;
+      animation: cb-shimmer 7s linear infinite;
+      pointer-events:none; mix-blend-mode:screen;
+    }
+    @keyframes cb-shimmer { 0%{background-position:200% 0} 100%{background-position:-100% 0} }
+
+    /* ── About the Products closing-style block ── */
+    .g-closing{
+      margin: 30px 0 14px;
+      background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+      border-left: 4px solid #1E8CB8; border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(30,140,184,.08);
+      padding: 22px 28px;
+    }
+    .g-closing.dropcap p:first-of-type::first-letter{
+      float:left; font-size:3.4rem; line-height:.85;
+      padding:6px 12px 0 0; color:#0a2447; font-weight:700;
+      background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .g-closing h3{
+      color:#000; font-size:1.45rem; font-weight:800;
+      margin:0 0 8px; letter-spacing:.2px;
+    }
+    .g-closing p{ color:#1a1a2e; line-height:1.78; margin-bottom:10px; font-size:1rem; text-align:justify; }
+    .g-closing ul.lead-lines{ margin: 6px 0 10px; padding-left: 22px; }
+    .g-closing ul.lead-lines li{ margin-bottom:6px; line-height:1.55; }
+    .g-closing .summary-pill{
+      display:block; margin-top:14px; padding:6px 0 6px 14px;
+      border-left: 3px solid #FFD700;
+      color:#0a2447; font-style:italic; font-weight:600;
+      font-size:.98rem; line-height:1.45;
+    }
+
+    /* ── Stripe divider ── */
+    .stripe-divider{
+      display:flex; gap:3px; height:5px; border-radius:4px; overflow:hidden;
+      margin: 5px 0 12px; max-width: 200px;
+    }
+    .stripe-divider i{ flex:1; }
+    .stripe-divider i:nth-child(1){ background:#0891B2; }
+    .stripe-divider i:nth-child(2){ background:#16A34A; }
+    .stripe-divider i:nth-child(3){ background:#2563EB; }
+    .stripe-divider i:nth-child(4){ background:#9333EA; }
+    .stripe-divider i:nth-child(5){ background:#DC2626; }
+    .stripe-divider i:nth-child(6){ background:#FFD700; }
+    .stripe-divider i:nth-child(7){ background:#FF13F0; }
+
+    /* ── Product thumbnail rows (image left, summary right) ── */
+    .g-chapter{
+      display:grid; grid-template-columns: 280px 1fr; gap:32px;
+      align-items:stretch; margin: 0 0 28px; padding: 0;
+      min-height: 240px;
+    }
+    .g-chapter .g-text{
+      background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+      border-left: 4px solid #1E8CB8; border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(30,140,184,.08);
+      padding: 24px 30px;
+      display:flex; flex-direction:column; justify-content:center;
+      align-items:flex-start; min-height: 240px;
+    }
+    .g-photo-wrap{
+      position:relative; width:280px; height:240px;
+      background:#0a2447;
+      border:2px solid #0f3460; border-radius:14px;
+      box-shadow:0 8px 22px rgba(10,36,71,.28);
+      overflow:hidden; align-self:center;
+    }
+    .g-photo-wrap .g-photo{
+      width:100%; height:100%;
+      background-repeat:no-repeat;
+      background-size: cover;
+      background-position: center center;
+      animation: g-rise 6s ease-in-out infinite;
+      transform-origin: 50% 60%;
+    }
+    .g-photo-wrap::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+      background-size:220% 100%;
+      animation: g-shimmer 7s linear infinite;
+      pointer-events:none; mix-blend-mode:screen;
+    }
+    @keyframes g-rise{
+      0%,100%{ transform: scale(1)   translateY(0); }
+      50%    { transform: scale(1.03) translateY(-6px); }
+    }
+    @keyframes g-shimmer{ 0%{background-position:200% 0} 100%{background-position:-100% 0} }
+    .g-photo-wrap .g-badge{
+      position:absolute; top:12px; left:12px; z-index:5;
+      background:#FFD700; color:#0a2447;
+      padding:4px 11px; border-radius:18px;
+      font-size:.7rem; font-weight:800; letter-spacing:1.5px;
+      box-shadow:0 3px 8px rgba(10,36,71,.28);
+    }
+
+    /* per-product image */
+    .g-photo.p-numgen { background-image:url('Number%20Generator.jpg'); }
+    .g-photo.p-calc   { background-image:url('Calculator.jpg'); }
+    .g-photo.p-conv   { background-image:url('Converter.jpg'); }
+    .g-photo.p-age    { background-image:url('AgeCalculator.jpg'); }
+    .g-photo.p-cal    { background-image:url('Calendar.jpg'); }
+    .g-photo.p-drum   { background-image:url('TalkingDrum.jpg'); }
+    .g-photo.p-guitar { background-image:url('16Strings.jpg'); }
+
+    /* text column */
+    .g-text h3.product-eyebrow{
+      display:inline-block; align-self:flex-start; margin:0 0 6px;
+      background:transparent; color:#0f3460;
+      padding:0 0 4px 0; border-bottom:2px solid #FFD700;
+      font-size:.78rem; letter-spacing:3px; font-weight:800;
+      text-transform:uppercase;
+    }
+    .g-text h2{
+      display:flex; align-items:center; gap:10px;
+      color:#000; font-size:1.45rem; line-height:1.2;
+      margin:0 0 8px; padding:0; border-left:0;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .g-text h2 .section-marker{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:34px; height:34px; border-radius:50%;
+      background: linear-gradient(135deg,#16A34A 0%,#1E8CB8 100%);
+      color:#fff; font-size:.9rem; font-weight:900; line-height:1;
+      box-shadow:0 5px 12px rgba(22,163,74,.22);
+      flex-shrink:0;
+    }
+    .g-text .tagline{
+      color:#0a2447; font-weight:700; font-style:italic;
+      font-size:.95rem; margin: 0 0 8px;
+    }
+    .g-text p.summary{
+      color:#3a4a63; line-height:1.6; margin:0 0 14px;
+      font-size:.95rem; text-align: justify; width:100%;
+    }
+    .g-text .pulse-tags{
+      display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;
+    }
+    .g-text .pulse-tags span{
+      display:inline-block; padding:3px 10px; border-radius:20px;
+      font-size:.72rem; font-weight:700; letter-spacing:.4px;
+      background: rgba(30,140,184,.10); color:#0f3460;
+      border:1px solid rgba(30,140,184,.25);
+    }
+    .g-text .pulse-tags span.gold{
+      background: rgba(255,215,0,.18); color:#0a2447; border-color:#FFD700;
+    }
+    .g-text .pulse-tags span.pink{
+      background: rgba(255,19,240,.10); color:#7a006e; border-color:#FF13F0;
+    }
+    .g-launch{
+      display:inline-block; margin-top:auto;
+      padding:10px 22px; border-radius:30px;
+      background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+      color:#fff !important; font-weight:700; font-size:.92rem;
+      text-decoration:none; letter-spacing:.3px;
+      box-shadow:0 6px 16px rgba(30,140,184,.32);
+      transition: transform .15s ease, box-shadow .25s ease;
+    }
+    .g-launch:hover{
+      transform: translateY(-2px);
+      box-shadow:0 10px 22px rgba(30,140,184,.45);
+    }
+    .g-launch-row{
+      display:flex; flex-wrap:wrap; align-items:center; gap:14px;
+      margin-top:auto;
+    }
+    .g-secondary{
+      color:#0f3460; font-weight:700; font-size:.82rem;
+      text-decoration:none; letter-spacing:.2px;
+      padding: 8px 14px; border-radius: 20px;
+      border: 1px solid rgba(15,52,96,.25);
+      background: rgba(255,255,255,.6);
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .g-secondary:hover{
+      background: rgba(255,215,0,.18);
+      border-color: #FFD700;
+      color:#0a2447;
+    }
+
+    /* ── Sticky in-page TOC (left edge) ── */
+    .ms-toc{
+      position: fixed;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 800;
+      display: flex; flex-direction: column; gap: 8px;
+      padding: 12px 8px;
+      background: rgba(10,36,71,.78);
+      border: 1px solid rgba(255,215,0,.3);
+      border-radius: 30px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 24px rgba(10,36,71,.30);
+    }
+    .ms-toc a{
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      color: #FFD700; text-decoration: none;
+      font-size: .72rem; font-weight: 800; letter-spacing: .3px;
+      border: 1px solid rgba(255,215,0,.22);
+      transition: all .2s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+    .ms-toc a:hover{
+      background: rgba(255,215,0,.22);
+      border-color: #FFD700;
+      transform: scale(1.08);
+      box-shadow: 0 4px 10px rgba(255,215,0,.28);
+    }
+    .ms-toc a.top{
+      background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+      color:#fff; border-color: rgba(255,255,255,.4);
+      font-size: .85rem;
+    }
+    .ms-toc a.top:hover{
+      box-shadow: 0 4px 10px rgba(30,140,184,.55);
+    }
+    .ms-toc::before{
+      content: "";
+      position: absolute; left: 50%; transform: translateX(-50%);
+      top: -8px; bottom: -8px; width: 2px;
+      background: linear-gradient(180deg, transparent 0%, rgba(255,215,0,.4) 50%, transparent 100%);
+      z-index: -1;
+    }
+    @media (max-width: 1100px){
+      .ms-toc{ display: none; }
+    }
+
+    /* ── Neutral divider ── */
+    .g-neutral-divider{
+      border:0; height:3px;
+      background: linear-gradient(90deg, transparent 0%, #0f3460 20%, #FFD700 50%, #0f3460 80%, transparent 100%);
+      margin: 36px auto 32px; max-width: 100%; border-radius:2px;
+    }
+
+    /* ── Full descriptions section ── */
+    .g-full{ margin: 0 0 30px; }
+    .g-full .full-bridge{
+      color:#1a1a2e; line-height:1.78; margin: 0 0 22px;
+      font-size:1.02rem; text-align:justify;
+      padding: 16px 22px;
+      background: linear-gradient(135deg,#f0f7fa 0%,#e6f3f9 100%);
+      border-left: 4px solid #FFD700; border-radius: 12px;
+    }
+    .full-chapter{
+      margin: 0 0 22px;
+      background: #fff;
+      border:1px solid rgba(30,140,184,.18);
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(30,140,184,.06);
+      padding: 22px 28px;
+    }
+    .full-chapter.dropcap p:first-of-type::first-letter{
+      float:left; font-size:3rem; line-height:.85;
+      padding:6px 12px 0 0; color:#0a2447; font-weight:700;
+      background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .full-chapter h3{
+      color:#0a2447; font-size:1.3rem; font-weight:800;
+      margin: 0 0 8px; letter-spacing:.2px;
+    }
+    .full-chapter p{
+      color:#1a1a2e; line-height:1.72; margin:0 0 10px;
+      font-size:.98rem; text-align:justify;
+    }
+    .full-chapter .summary-pill{
+      display:block; margin-top:14px; padding:6px 0 6px 14px;
+      border-left: 3px solid #FFD700;
+      color:#0a2447; font-style:italic; font-weight:600;
+      font-size:.96rem; line-height:1.45;
+    }
+
+    /* ── Back to top ── */
+    .back-to-top{
+      position: fixed; bottom: 28px; right: 28px;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+      color: #fff; border: 0; font-size: 1rem;
+      cursor: pointer; opacity: 0; pointer-events: none;
+      transition: opacity .25s ease, transform .15s ease;
+      box-shadow: 0 8px 22px rgba(10,36,71,.35);
+      z-index: 1500;
+    }
+    .back-to-top.visible{ opacity:1; pointer-events:auto; }
+    .back-to-top:hover{ transform: translateY(-3px); }
+
+    /* ── Responsive ── */
+    @media (max-width: 880px){
+      .g-chapter{ grid-template-columns: 1fr; }
+      .g-photo-wrap{ width: 100%; max-width: 380px; height: 220px; margin: 0 auto; }
+      .header h1{ font-size: 1.7rem; }
+      .content{ padding: 24px 18px; }
+      .full-chapter{ padding: 18px 20px; }
+    }
+  </style>
+  <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="menu-bar">
+    <a href="01 Godreign.html">Godreign</a>
+    <a href="02 Ọ̀rọ̀ Ẹlohîm.html">Ọ̀rọ̀ Ẹlohîm</a>
+    <a href="index.html">Numeric Engine</a>
+    <a href="03 Master Index.html">Master Index</a>
+    <a href="04 Scaling Engines.html">Scaling Engines</a>
+    <a href="05 Equation Engines.html">Equation Engines</a>
+    <a href="06 Applied Systems.html">Applied Systems</a>
+        <a href="07 Maths Symbols.html">Maths Symbols</a>
+        <a href="08 World Numerals.html">World Numerals</a>
+    <a class="current" href="09 Numeric Products.html">Numeric Products</a>
+    <a href="10 About Us.html">About Us</a>
+  </div>
+
+  <!-- Sticky In-Page TOC (left edge, desktop only) -->
+  <nav class="ms-toc" aria-label="Jump to product">
+    <a class="top" href="#top" title="Back to top">&uarr;</a>
+    <a href="#prod-1" title="I · Number Generator">I</a>
+    <a href="#prod-2" title="II · Calculator">II</a>
+    <a href="#prod-3" title="III · Number Converter">III</a>
+    <a href="#prod-4" title="IV · Age Calculator">IV</a>
+    <a href="#prod-5" title="V · Kàlẹ́ndà">V</a>
+    <a href="#prod-6" title="VI · Talking Drum">VI</a>
+    <a href="#prod-7" title="VII · Acoustic Guitar">VII</a>
+  </nav>
+
+  <div class="container" id="top">
+    <div class="header">
+      <h1>NUMERIC PRODUCTS</h1>
+      <h2>The Living Suite of Ònka Yorùbá Tools</h2>
+      <h2 style="margin-top: 14px; font-size: 1.1rem; color: #FFD700; font-weight: 700;">Seven Sovereign Instruments &mdash; One 46-Colour Numeric Civilization</h2>
+      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">From recursive number generation to acoustic harmonic exploration &mdash; the Ònka Yorùbá engine, embodied in seven products.</p>
+      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published under the Godreign Numerical Civilization Project<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
+      <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 14px; font-style: italic; text-align: justify; line-height: 1.7;">The Numeric Products suite is the practical embodiment of the Universal Hyperdimensional Numeric Engine. Where the Master Index, Scaling Engines, Equation Engines, and Applied Systems define the theoretical architecture, these seven instruments place that architecture into the hand of the user. Together they cover number generation, calculation, conversion, biographical time, calendrical sovereignty, percussive language, and harmonic exploration &mdash; each governed by the same 46-Colour visual protocol and the &ldquo;l&rdquo; multiplier logic that make Ònka Yorùbá a fully programmable numeric civilization for the 21st century.</p>
+    </div>
+
+    <!-- 47-Colour Bar -->
+    <div class="colour-bar-animated">
+      <div style="background:#0891B2" title="Zero &mdash; Cerulean"></div>
+      <div style="background:#16A34A" title="Units &mdash; Vibrant Green"></div>
+      <div style="background:#2563EB" title="Tens &mdash; Royal Blue"></div>
+      <div style="background:#9333EA" title="Hundreds &mdash; Purple"></div>
+      <div style="background:#DC2626" title="Thousands &mdash; Red"></div>
+      <div style="background:#B59410" title="Tens of Thousands &mdash; Dark Goldenrod"></div>
+      <div style="background:#4EAAE4" title="Hundreds of Thousands &mdash; Sky Blue"></div>
+      <div style="background:#8B4513" title="Millions &mdash; Saddle Brown"></div>
+      <div style="background:#228B22" title="Tens of Millions &mdash; Forest Green"></div>
+      <div style="background:#EF6000" title="Hundreds of Millions &mdash; Dark Orange"></div>
+      <div style="background:#000080" title="Billions &mdash; Navy Blue"></div>
+      <div style="background:#FC5D8D" title="Tens of Billions &mdash; Hot Pink"></div>
+      <div style="background:#808000" title="Hundreds of Billions &mdash; Olive"></div>
+      <div style="background:#CD853F" title="Trillions &mdash; Peru"></div>
+      <div style="background:#6A5ACD" title="Tens of Trillions &mdash; Slate Blue"></div>
+      <div style="background:#800000" title="Hundreds of Trillions &mdash; Maroon"></div>
+      <div style="background:#1E90FF" title="Quadrillions &mdash; Dodger Blue"></div>
+      <div style="background:#F59E0B" title="Tens of Quadrillions &mdash; Amber"></div>
+      <div style="background:#8B0000" title="Hundreds of Quadrillions &mdash; Dark Red"></div>
+      <div style="background:#047857" title="Quintillions &mdash; Emerald"></div>
+      <div style="background:#A855F7" title="Tens of Quintillions &mdash; Bright Violet"></div>
+      <div style="background:#D2691E" title="Hundreds of Quintillions &mdash; Chocolate"></div>
+      <div style="background:#6C0AC9" title="Sextillions &mdash; Electric Violet"></div>
+      <div style="background:#B91C1C" title="Tens of Sextillions &mdash; Crimson"></div>
+      <div style="background:#65A30D" title="Hundreds of Sextillions &mdash; Lime"></div>
+      <div style="background:#4B0082" title="Septillions &mdash; Indigo"></div>
+      <div style="background:#FA8072" title="Tens of Septillions &mdash; Salmon"></div>
+      <div style="background:#008B8B" title="Hundreds of Septillions &mdash; Dark Teal"></div>
+      <div style="background:#B8860B" title="Octillions &mdash; Dark Goldenrod"></div>
+      <div style="background:#7B2D8E" title="Tens of Octillions &mdash; Deep Violet"></div>
+      <div style="background:#20B2AA" title="Hundreds of Octillions &mdash; Light Sea Green"></div>
+      <div style="background:#B22222" title="Nonillions &mdash; Firebrick"></div>
+      <div style="background:#9370DB" title="Tens of Nonillions &mdash; Medium Purple"></div>
+      <div style="background:#A0522D" title="Hundreds of Nonillions &mdash; Sienna"></div>
+      <div style="background:#191970" title="Decillions &mdash; Midnight"></div>
+      <div style="background:#E11D48" title="Tens of Decillions &mdash; Rose"></div>
+      <div style="background:#5F9EA0" title="Hundreds of Decillions &mdash; Cadet"></div>
+      <div style="background:#CD7F32" title="Undecillions &mdash; Bronze"></div>
+      <div style="background:#9932CC" title="Tens of Undecillions &mdash; Dark Orchid"></div>
+      <div style="background:#DAA520" title="Hundreds of Undecillions &mdash; Goldenrod"></div>
+      <div style="background:#483D8B" title="Duodecillions &mdash; Dark Slate Blue"></div>
+      <div style="background:#FF6347" title="Tens of Duodecillions &mdash; Tomato"></div>
+      <div style="background:#8B008B" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
+      <div style="background:#94AA00" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div style="background:#808080" title="Unassigned State &mdash; Grey"></div>
+      <div style="background:#FF13F0" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
+      <div style="background:#4682B4" title="Large Numbers &mdash; Steel Blue"></div>
+    </div>
+
+    <div class="content">
+
+      <!-- ░░ About the Products ░░ -->
+      <div class="g-closing dropcap">
+        <h3>About the Products</h3>
+        <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p><strong>The Numeric Products suite</strong> is a living, sovereign expression of the Ònka Yorùbá numeric system in seven coordinated digital instruments. Each product translates one face of the Universal Hyperdimensional Numeric Engine into a hands-on tool that anyone &mdash; child, elder, scholar, artist, engineer &mdash; can open and use immediately, online or offline, with no installation required.</p>
+        <p>This is not a marketplace of unrelated apps. It is a single computational civilization rendered seven ways:</p>
+        <ul class="lead-lines">
+          <li><strong>I &middot; Number Generator</strong> &mdash; recursive proof that any integer from <em>Ení</em> to <em>Ẹgbẹ̀rǔnlẹ́gbẹ̀rǔnléwǎ</em> can be spoken in modern Yorùbá.</li>
+          <li><strong>II &middot; Calculator</strong> &mdash; everyday arithmetic dressed in the 46-Colour System for accessibility and pride.</li>
+          <li><strong>III &middot; Number Converter</strong> &mdash; a portal turning any digit into a colour-coded Yorùbá phrase.</li>
+          <li><strong>IV &middot; Age Calculator</strong> &mdash; the mirror of your days, reading biography in ancestral tongue.</li>
+          <li><strong>V &middot; Kàlẹ́ndà</strong> &mdash; the digital-compliant 13-month, 28-day calendar of cultural sovereignty.</li>
+          <li><strong>VI &middot; Talking Drum Simulator</strong> &mdash; a VST that lets the Gangan and Shekere speak again.</li>
+          <li><strong>VII &middot; 16-String Acoustic Guitar Explorer</strong> &mdash; the world&rsquo;s first 46-Colour Infinite Circle of Fifths.</li>
+        </ul>
+        <p>Every instrument shares the same colour grammar, the same &ldquo;l&rdquo; multiplier logic, and the same 45-digit precision ceiling, so a learner who masters one tool already understands the syntax of the others. The thumbnails below provide quick summaries and direct launch links; the full descriptions that follow expand each product&rsquo;s philosophy, features, and cultural mission.</p>
+        <div class="summary-pill">&ldquo;Seven instruments, one Numeric Civilization &mdash; the same colour, the same logic, the same breath.&rdquo;</div>
+      </div>
+
+      <!-- ░░ Product I — Number Generator ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">I</div>
+          <div class="g-photo p-numgen" role="img" aria-label="Yorùbá Number Generator"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Recursive Generation</h3>
+          <h2><span class="section-marker">I</span>Yorùbá Number Generator</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">Algorithmic generation engine for Yorùbá numbers from 1 to 10,000,000.</p>
+          <p class="summary">Ten self-contained scroll books generating every Yorùbá number name from <em>Ení</em> to <em>Ẹgbẹ̀rǔnlẹ́gbẹ̀rǔnléwǎ</em> entirely offline. Each scroll covers one million numbers in twenty volumes of fifty thousand. A single recursive function &mdash; <code>genYoruba(n)</code> &mdash; decomposes any integer into base words, tens, hundreds, thousands, and millions, joined by the legendary &ldquo;l&rdquo; multiplier and rendered through the 46-Colour visual protocol.</p>
+          <div class="pulse-tags">
+            <span>10 Scrolls</span>
+            <span>10M Numbers</span>
+            <span class="gold">46-Colour</span>
+            <span class="pink">l Multiplier</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Number Generator.html">Open the Generator &rarr;</a>
+            <a class="g-secondary" href="#prod-1">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product II — Calculator ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">II</div>
+          <div class="g-photo p-calc" role="img" aria-label="Yorùbá Numerical Calculator"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Everyday Arithmetic</h3>
+          <h2><span class="section-marker">II</span>Yorùbá Numerical Calculator</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">A calculator built for everyone &mdash; the 46-Colour System made tactile.</p>
+          <p class="summary">Stunning orange design, large square keys, and a crystal-clear screen built for the curious child, the elder reconnecting with ancestral wisdom, and the professional demanding both beauty and precision. Each colour is a teacher: <em>Ọgọ́rǔn</em> glows purple, <em>Àádọ́ta</em> shines blue, <em>Ẹ́rin</em> stands proud in green &mdash; revealing the architecture of Yorùbá mathematical thought block by block.</p>
+          <div class="pulse-tags">
+            <span>Big Keys</span>
+            <span>46-Colour</span>
+            <span class="gold">Accessibility</span>
+            <span>BigInt 45-digit</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Calculator.html">Open the Calculator &rarr;</a>
+            <a class="g-secondary" href="#prod-2">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product III — Number Converter ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">III</div>
+          <div class="g-photo p-conv" role="img" aria-label="Yorùbá Number Converter"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Digit &rarr; Yorùbá Phrase</h3>
+          <h2><span class="section-marker">III</span>Yorùbá Number Conversion Tool</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">The portal in your pocket &mdash; forty-six colours, forty-six keys, one people.</p>
+          <p class="summary">Type any number from <em>Ódo</em> (0) to over a Tredecillion and watch the screen breathe life into digits once foreign. Thousands glow red like ancestral fire, hundreds pulse purple like royalty, units dance in green like new growth. Designed with deliberate curves, gradients of orange and amber, and the welcoming warmth of a grandparent&rsquo;s embrace.</p>
+          <div class="pulse-tags">
+            <span>0 &rarr; Tredecillion+</span>
+            <span class="gold">46-Colour</span>
+            <span>No Sign-up</span>
+            <span>Offline</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Converter.html">Open the Converter &rarr;</a>
+            <a class="g-secondary" href="#prod-3">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product IV — Age Calculator ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">IV</div>
+          <div class="g-photo p-age" role="img" aria-label="Yorùbá Age Calculator"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Time in Forty-Six Colours</h3>
+          <h2><span class="section-marker">IV</span>Yorùbá Age Calculator</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">The mirror of your days &mdash; biography in ancestral tongue.</p>
+          <p class="summary">Type your birthdate and your years become <em>Ogójìárǔn</em>, glowing blue like the steady tide of a life well-lived. Months become <em>Éje</em>, shimmering green like new growth. The total days lived &mdash; perhaps 16,437 &mdash; render in red, purple, blue, and green: every sunrise, every breath, every laugh and tear compressed into one magnificent colour-coded phrase.</p>
+          <div class="pulse-tags">
+            <span>Years &middot; Months &middot; Days</span>
+            <span class="gold">46-Colour</span>
+            <span>Heritage</span>
+            <span>Biographical</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Age Calculator.html">Open the Age Calculator &rarr;</a>
+            <a class="g-secondary" href="#prod-4">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product V — Kàlẹ́ndà ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">V</div>
+          <div class="g-photo p-cal" role="img" aria-label="Yorùbá Kàlẹ́ndà"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">13 Months · 28 Days</h3>
+          <h2><span class="section-marker">V</span>Yorùbá Kàlẹ́ndà</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">Reclaiming our time &mdash; the lunar cycle in a digital-compliant framework.</p>
+          <p class="summary">A pillar of cultural sovereignty grounding the global diaspora in over 10,068 years of recorded time. Maps the 4-day and 8-day market cycles (<em>Ọjọ́ Ọjà</em>), aligns the 13-month lunar rhythm with rainfall and the New Yam Festival, and synchronizes sacred days globally. The Yorùbá New Year (<em>Odun Ifa</em>) opens June 3, 2026, beginning the 10,068th year. Dates render in the Ètò Àwọ̀ colour system for instant readability.</p>
+          <div class="pulse-tags">
+            <span>13 &times; 28 = 364</span>
+            <span class="gold">Ètò Àwọ̀</span>
+            <span>Ọjọ́ Ọjà</span>
+            <span>Year 10,068</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Kàlẹ́ndà.html">Open the Kàlẹ́ndà &rarr;</a>
+            <a class="g-secondary" href="#prod-5">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product VI — Talking Drum Simulator ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">VI</div>
+          <div class="g-photo p-drum" role="img" aria-label="Yorùbá Talking Drum Simulator"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Spoken Percussion VST</h3>
+          <h2><span class="section-marker">VI</span>Yorùbá Talking Drum Simulator</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">The drum speaks again &mdash; restoring the spiritual frequency of our people.</p>
+          <p class="summary">A cultural time machine digitizing an ancient speaking technology. Sacred instruments live within: the <em>Gangan</em> &mdash; the master talking drum carrying messages, proverbs, and lineages &mdash; and the <em>Shekere</em>, the gourd rattle that keeps time. Seventeen variations per instrument, professional-grade audio, a reimagined Circle of Fifths in deep oranges and rich earth tones, full mixer, bus routing, FX chains, and real-time level meters.</p>
+          <div class="pulse-tags">
+            <span>Gangan</span>
+            <span>Shekere</span>
+            <span class="gold">17 Variations</span>
+            <span class="pink">Tonal Speech</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Talking Drum.html">Open the Drum Simulator &rarr;</a>
+            <a class="g-secondary" href="#prod-6">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product VII — 16-String Acoustic Guitar Explorer ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">VII</div>
+          <div class="g-photo p-guitar" role="img" aria-label="16-String Acoustic Guitar Explorer"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Infinite Circle of Fifths</h3>
+          <h2><span class="section-marker">VII</span>16-String Acoustic Guitar Explorer</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">Powered by Ònka Yorùbá 46-Colour Infinite Notation.</p>
+          <p class="summary">The world&rsquo;s first 3D Design and VST suite engineered with Visual Rescue Philosophy &mdash; navigate the harmonic universe from 0 to over a Tredecillion at light speed. The Infinite Circle of Fifths uses the 46-Colour Index for unique visual coordinates at every modulation. The Neon Pink &ldquo;l&rdquo; multiplier acts as a Harmonic Landmark, allowing instant transpositions across massive octaves. Sovereign Chord Detection groups complex 16-string voicings into colour-keyed Sovereign Families.</p>
+          <div class="pulse-tags">
+            <span>16 Strings</span>
+            <span>46-Colour CoF</span>
+            <span class="pink">Neon Pivot</span>
+            <span class="gold">Tredecillion+</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Acoustic Guitar.html">Open the Guitar Explorer &rarr;</a>
+            <a class="g-secondary" href="#prod-7">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Neutral divider before full descriptions ░░ -->
+      <hr class="g-neutral-divider" aria-hidden="true" />
+
+      <!-- ░░ Full Descriptions Essay ░░ -->
+      <section class="g-full" aria-label="Full Descriptions of the Seven Numeric Products">
+        <p class="full-bridge">The thumbnails above present the seven products at a glance. The expanded descriptions that follow lay out each instrument&rsquo;s philosophy, signature features, and cultural mission in fuller form &mdash; written so a reader can understand not only <em>what</em> each product does, but <em>why</em> it exists within the larger Ònka Yorùbá numeric civilization.</p>
+
+        <div class="full-chapter dropcap" id="prod-1">
+          <h3>I &middot; Yorùbá Number Generator &mdash; A Living Recursive Engine</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>This is not a static database; it is a living recursive generation engine that proves the modern Ònka Yorùbá base-10 system can algorithmically produce any number name on demand, from <strong>Ení</strong> (1) to <strong>Ẹgbẹ̀rǔnlẹ́gbẹ̀rǔnléwǎ</strong> (10,000,000), using only nine base words and the legendary &ldquo;l&rdquo; multiplier. Each Scroll Book handles exactly one million numbers, and the ten scrolls together cover the complete range from 1 to 10,000,000 &mdash; ten million unique Yorùbá number names rendered in real time.</p>
+          <p>Every generated number is passed through a colorization engine that splits compound words at uppercase boundaries and wraps each component in a colour matching its mathematical magnitude. The 46-Colour Visual Protocol transforms what would otherwise be a wall of text into an instant visual map of the number&rsquo;s structure: thousands burn red, hundreds pulse purple, tens settle into royal blue, units glow vibrant green. At the heart of every Scroll Book lies a single recursive JavaScript function, <code>genYoruba(n)</code>, which decomposes any integer into base words, tens, hundreds, thousands, and millions, each connected by the &ldquo;l&rdquo; multiplier where required &mdash; an algorithm mirroring the organic structure of Yorùbá number-naming itself.</p>
+          <p>Each Scroll Book is a single self-contained HTML file with no build tools, no frameworks, and no server required. It runs entirely offline, employs zero dependencies, and uses async batch rendering with a visible progress bar to prevent UI freeze. Volume segmentation balances load time (about fifty thousand rows per batch) with navigational convenience, with each card clearly labeling its range.</p>
+          <div class="summary-pill">&ldquo;Ten million proofs that Yorùbá number-naming is fully programmable, fully visual, fully alive.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-2">
+          <h3>II &middot; Yorùbá Numerical Calculator &mdash; A Calculator Built for Everyone</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>With its stunning orange design radiating warmth and pride, a bigger screen for crystal-clear visibility, and large square keys that feel confident under the fingertips, this calculator was built for everyone: the curious child taking their first steps into numbers, the elder reconnecting with ancestral wisdom, and the professional who demands both beauty and precision. Every tap is effortless, every number is bold, and every Yorùbá word displayed is a reminder that our language was never meant to be silent in the world of mathematics.</p>
+          <p>The revolutionary 46-Colour System transforms how we learn and perceive numbers. Each colour is a visual guide, a teacher, and a companion. When you see <strong>Ọgọ́rǔn</strong> glow in purple, <strong>Àádọ́ta</strong> shine in blue, and <strong>Ẹ́rin</strong> stand proud in green, you are witnessing the architecture of Yorùbá mathematical thought, block by block, colour by colour. This is accessibility at its finest: children learn faster, adults retain longer, and for those with learning differences, the colours become bridges where words alone could not reach. The Yorùbá numerical structure is not primitive; it is profoundly logical, elegantly multiplicative, and deserves to stand alongside any numbering system in the world.</p>
+          <p>The calculator embodies what has been called Visual Rescue Philosophy &mdash; grounding the global diaspora in a history spanning over ten thousand years and fostering pride that transcends colonial borders. Every feature prioritizes digital compliance while maintaining cultural authenticity, a balance achieved through careful design and deep respect for heritage. Whether in Lagos, London, New York, or Toronto, this calculator speaks to the awakening of a people destined to count &mdash; and to count for something great.</p>
+          <div class="summary-pill">&ldquo;Forty-six colours, forty-six keys, one people learning to count in their own tongue.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-3">
+          <h3>III &middot; Yorùbá Number Conversion Tool &mdash; The Portal in Your Pocket</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Imagine standing at a market in Ibadan, and a price flashes: ₦47,500. In days past, that number would pass through your mind in borrowed tongue. But now, you pause, type, and watch the screen transform into <strong>Ẹgbẹ̀rǔnlógójìÉjeỌgọ́rǔnlárǔn</strong> &mdash; thousands glowing red like ancestral fire, hundreds pulsing purple like royalty. You are not just reading a price; you are reclaiming it.</p>
+          <p>This app was not designed in haste. Every curve, every gradient of orange and amber, every shadow and glow was crafted with one purpose: making the user feel at home. The moment you open it you are greeted not by complexity but by warmth, welcomed like a grandparent&rsquo;s embrace &mdash; familiar, safe, full of wisdom. The input field asks one simple question: &ldquo;What number lives in your heart today?&rdquo; Type any number from <em>Ódo</em> to over a Tredecillion, and watch the app breathe life into digits once foreign.</p>
+          <p>The 46-Colour System is not decoration; it is revelation. Cerulean speaks of zero&rsquo;s void before creation. Vibrant green echoes fresh leaves of new growth. Royal blue rises steady as the ocean. Purple announces royalty and significance. Red ignites the fire of thousands. Golden treasures shimmer like ancient Ilé-Ifẹ̀. Brown anchors the Tredecillions, rooted in heritage. The app asks nothing but curiosity &mdash; no registration, no passwords, no payments, no barriers. Just open, type, and witness.</p>
+          <div class="summary-pill">&ldquo;A door of light, colour, and ancestral memory turning cold digits into warm, living language.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-4">
+          <h3>IV &middot; Yorùbá Age Calculator &mdash; The Mirror of Your Days</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Type your birthdate and suddenly your forty-five years are no longer just &ldquo;45&rdquo; &mdash; they become <strong>Ogójìárǔn</strong>, glowing blue like the steady tide of a life well-lived. Your seven months become <strong>Éje</strong>, shimmering green like new growth. Your twenty-three days pulse with the same green vitality, <strong>Ogúnẹ́ta</strong>: each day a gift, each day counted, each day yours. Then comes the revelation &mdash; your total days lived. Not years, not decades, but every sunrise witnessed, every night survived, every breath compressed into one magnificent number.</p>
+          <p>Perhaps 16,437 days. In Yorùbá: <strong>Ẹgbẹ̀rǔnléwǎẹ́fàỌgọ́rǔnlẹ́rinỌgbọ̀néje</strong>. The thousands burn red with resilience. The hundreds glow purple with experience. Tens and units dance in royal blue and vibrant green &mdash; the ordinary days that compose an extraordinary life. This is not mathematics; this is biography told in your ancestral tongue. The elders say, &ldquo;We do not merely count a person&rsquo;s days; we count their deeds.&rdquo; But what if counting the days <em>itself</em> is a deed? What if every day acknowledged becomes an act of remembrance, resistance, and love?</p>
+          <p>The 46-Colour System illuminates rather than decorates. Cerulean breathes for zero, for the stillness before your first cry. Vibrant green celebrates units &mdash; single days that seem small but build mountains. Royal blue honours tens, weeks becoming months, patience becoming wisdom. Purple announces hundreds &mdash; you have entered a palace of experience. Red ignites thousands. Sky blue crowns those with 36,500 days or more &mdash; a century of sunrises, treasures richer than any vault. When a grandfather sees his age in these colours, something stirs. When a teenager sees five thousand days painted in red and purple, something awakens.</p>
+          <div class="summary-pill">&ldquo;Time wears forty-six colours; every sunrise belongs to a colour family.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-5">
+          <h3>V &middot; Yorùbá Kàlẹ́ndà &mdash; Reclaiming Our Time</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>The Ònka Yorùbá Kàlẹ́ndà is more than a tool for tracking days; it is a pillar of cultural sovereignty. By integrating the new Yorùbá numeric system, it transforms an ancient legacy into a digital-compliant, decimalized framework for the twenty-first century, removing the complexity of traditional subtraction and making indigenous logic ready for global computational use.</p>
+          <p>The calendar offers a restoration of cultural identity, grounding the global diaspora in a history spanning over 10,068 years and fostering pride that transcends colonial borders. Its digital efficiency allows Yorùbá logic to be programmed easily into modern software and apps. It maps the 4-day and 8-day market cycles (<em>Ọjọ́ Ọjà</em>) so entrepreneurs can calculate peak trade days with modern precision. Agricultural intelligence aligns the 13-month lunar cycle with rainfall patterns and the New Yam Festival, securing food heritage through precise seasonal tracking. The calendar also synchronizes sacred days globally, ensuring communities observe rituals in perfect unison.</p>
+          <p>Using the <em>Ètò Àwọ̀</em> colour system, dates become instantly readable: cerulean for zero, vibrant green for units, royal blue for tens. In the date <strong>Ẹ́wǎẸ́je</strong> (17), royal blue marks the second week-cycle and vibrant green marks the seventh day. The 364-day rhythm divides into thirteen months of exactly twenty-eight days each. The Yorùbá New Year (<em>Odun Ifa</em>) begins June 3, 2026, marking entry into the 10,068th year of recorded time. This calendar invites the listener to hear the rhythm of ancestors through the lens of modern digital logic.</p>
+          <div class="summary-pill">&ldquo;Thirteen months, twenty-eight days, one decimalized rhythm of cultural sovereignty.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-6">
+          <h3>VI &middot; Yorùbá Talking Drum Simulator &mdash; The Drum Speaks Again</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>This software is more than a sample pack of &ldquo;African sounds&rdquo;; it is restoration. Inside lives the authentic voice of sacred instruments. The <strong>Gangan</strong> &mdash; the master Talking Drum, the lead voice carrying messages. In traditional ensembles, the Gangan player knows not rhythm but language, making drums speak proverbs, recite lineages, call names. With seventeen variations, you hold seventeen different voices of this ancient messenger. The <strong>Shekere</strong> &mdash; the gourd rattle wrapped in beads, providing shimmering persistent rhythm; the timekeeper, the steady pulse beneath conversations.</p>
+          <p>The interface was designed with a choice: do we make it &ldquo;modern&rdquo; (which often means &ldquo;Western&rdquo;), or strip cultural identity for &ldquo;professionalism&rdquo;? We chose differently. We made the interface unmistakably, unapologetically, magnificently African. At the interface&rsquo;s heart sits a reimagined Circle of Fifths rendered with Yorùbá aesthetic sensibility, glowing in deep oranges and rich earth tones. It pulses with the colours that adorn traditional textiles, palace walls, and ceremonial robes. Dark panels honour the discipline of master drummers who train for years before earning the right to speak through the Gangan.</p>
+          <p>The professional mixer section meets every standard of world-class audio production &mdash; because excellence is not a Western invention; our ancestors were masters of precision. The VST includes individual instrument channels, bus routing (Main, FX, Aux), multiple instrument variations for studio layering, effects chains (Reverb, Delay, Compression, EQ presets), chord-type selectors and interval controls for harmonic exploration, and real-time level meters. Whether you have never produced a beat or already hold platinum records, this VST meets you where you are. The drums do not discriminate; rhythm does not judge; heritage belongs to everyone willing to receive it.</p>
+          <div class="summary-pill">&ldquo;The Gangan and Shekere, recorded in seventeen voices each, ready to speak any sentence Yorùbá tongues can shape.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-7">
+          <h3>VII &middot; 16-String Acoustic Guitar Explorer &mdash; Infinite 46-Colour Notation</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>The world&rsquo;s first 3D design and VST suite engineered with Visual Rescue Philosophy, allowing navigation of the harmonic universe from zero to over a Tredecillion at light speed. Unlike traditional twelve-tone systems that repeat, this Infinite Circle of Fifths uses the 46-Colour Index, providing unique visual coordinates for every harmonic modulation. Chromatic Sovereignty ensures musicians never get lost in complex frequencies. The Neon Pink Pivot implements the &ldquo;l&rdquo; multiplier logic as a Harmonic Landmark, allowing instant transpositions across massive octaves.</p>
+          <p>For beginners, the sixteen-string is no longer intimidating &mdash; it becomes a vibrant discovery map. Intuitive Chromatic Mapping visualizes relationships between tension and tone using 0-to-Tredecillion logic; if you lose your place, simply &ldquo;follow the colour&rdquo; back to the root. Sovereign Chord Detection groups notes into Sovereign Families using Ònka logic, making complex sixteen-string chords playable without years of finger-strength training. For professionals, this software provides a Universal Passport to unexplored sonic territories. Tredecillion-Scale Precision fine-tunes internal body resonances using databases scaling to Tredecillion-plus calculations, creating Signature Tones that are mathematically perfect.</p>
+          <p>The Infinite Notation Workflow uses the 46-Colour Sovereign Index instead of standard MIDI blocks, enabling hyper-precise microtonal compositions. Luthier-to-Logic Prototyping allows professional luthiers to export CNC-ready tool paths from Ònka numerical blueprints, ensuring physical sixteen-string guitars vibrate in perfect symmetry with the 46-Colour harmonic scale. The fretboard uses Visual Rescue design: always rooted in the primary colour of the chosen scale, extending to the full 46-Colour spectrum for the highest crystalline harmonics beyond standard human hearing, with a &ldquo;Found Myself&rdquo; toggle restoring clarity during complex solos.</p>
+          <div class="summary-pill">&ldquo;Sixteen strings, forty-six colours, one Infinite Circle of Fifths &mdash; harmonic sovereignty made visible.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap">
+          <h3>One Civilization &middot; Seven Instruments</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Although each product solves a distinct problem &mdash; generation, computation, conversion, biographical time, calendrical sovereignty, percussive language, harmonic exploration &mdash; all seven share the same colour grammar, the same &ldquo;l&rdquo; multiplier logic, and the same forty-five-digit precision ceiling enforced across the engine. A learner who masters the Calculator already reads the Number Converter; a producer who internalises the Talking Drum&rsquo;s tonal logic already understands the Guitar Explorer&rsquo;s 46-Colour Circle of Fifths.</p>
+          <p>Together they constitute a complete <strong>Numeric Civilization in your hand</strong>: a coherent, sovereign, hyper-accessible toolkit ready for the classroom, the studio, the marketplace, the temple, the laboratory, and the home. Open any one of them and you are not learning a language &mdash; you are <em>arriving</em> in it.</p>
+          <div class="summary-pill">&ldquo;Seven products. One numeric breath. Forty-six colours. Infinite reach.&rdquo;</div>
+        </div>
+      </section>
+
+    </div><!-- /.content -->
+  </div><!-- /.container -->
+
+<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   GLASSMORPHISM NEON — Scholarly Reference Section
+   Deep-space background, frosted glass cards, neon accents
+══════════════════════════════════════════════════════════════ */
+.osp-wrap{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(160deg,#141c32 0%,#111830 50%,#0e1a38 100%);
+  padding:72px 28px 64px;
+  font-family:'Poppins','Segoe UI',sans-serif;
+}
+/* Floating particle dots */
+.osp-wrap::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(2px 2px at 15% 25%,rgba(255,215,0,0.3),transparent),
+    radial-gradient(2px 2px at 45% 70%,rgba(255,19,240,0.25),transparent),
+    radial-gradient(1px 1px at 75% 15%,rgba(37,99,235,0.4),transparent),
+    radial-gradient(1px 1px at 85% 85%,rgba(255,215,0,0.2),transparent),
+    radial-gradient(2px 2px at 55% 45%,rgba(147,51,234,0.2),transparent);
+  animation:driftParticles 20s linear infinite;
+  pointer-events:none;
+}
+@keyframes driftParticles{
+  0%  {transform:translateY(0);}
+  100%{transform:translateY(-30px);}
+}
+/* Neon glow line at top */
+.osp-wrap::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:10%;right:10%;height:2px;
+  background:linear-gradient(90deg,transparent,#FFD700,#FF13F0,#2563EB,transparent);
+  border-radius:2px;
+  box-shadow:0 0 20px rgba(255,215,0,0.4),0 0 40px rgba(255,19,240,0.2);
+}
+.osp-head{text-align:center;margin-bottom:42px;position:relative;z-index:1;}
+.osp-head h3{
+  color:#FFD700;font-size:.72rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;margin:0 0 8px;
+  text-shadow:0 0 12px rgba(255,215,0,0.4);
+}
+.osp-head p{color:rgba(255,255,255,.75);font-size:.78rem;margin:0;font-weight:400;}
+/* Diamond divider */
+.osp-divider{
+  display:flex;align-items:center;gap:14px;max-width:440px;
+  margin:0 auto 38px;position:relative;z-index:1;
+}
+.osp-divider span{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.5),transparent);}
+.osp-divider em{
+  color:rgba(255,255,255,.85);font-size:.62rem;
+  font-style:normal;white-space:nowrap;letter-spacing:.08em;
+}
+/* Card grid */
+.osp-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+  gap:26px;max-width:1220px;margin:0 auto;position:relative;z-index:1;
+}
+/* Glassmorphism cards */
+.osp-card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:20px;padding:32px 28px;
+  position:relative;overflow:hidden;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+}
+.osp-card:hover{
+  border-color:rgba(255,215,0,0.5);
+  box-shadow:0 8px 40px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,215,0,0.15);
+  transform:translateY(-3px);
+}
+/* Neon accent stripe at card top */
+.osp-card::before{
+  content:'';position:absolute;
+  top:0;left:24px;right:24px;height:2px;
+  background:var(--card-accent,linear-gradient(90deg,#FFD700,#FF13F0));
+  border-radius:0 0 4px 4px;opacity:.7;transition:opacity .3s;
+}
+.osp-card:hover::before{opacity:1;}
+.osp-card:nth-child(1){--card-accent:linear-gradient(90deg,#FF13F0,#9333EA);}
+.osp-card:nth-child(2){--card-accent:linear-gradient(90deg,#FFD700,#EF6000);}
+.osp-card:nth-child(3){--card-accent:linear-gradient(90deg,#2563EB,#0891B2);}
+.osp-icon{
+  font-size:1.8rem;display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:14px;
+  background:rgba(255,255,255,0.07);margin-bottom:14px;
+}
+.osp-label{
+  color:#FFD700;font-size:.66rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  padding-bottom:12px;margin-bottom:18px;
+}
+/* ── Card ①: Classification Key ── */
+.osp-keytbl{width:100%;border-collapse:collapse;}
+.osp-keytbl tr+tr td{border-top:1px solid rgba(255,255,255,0.08);}
+.osp-keytbl td{padding:9px 0;font-size:.79rem;vertical-align:top;}
+.osp-ksym{
+  color:#FF13F0;font-weight:700;
+  padding-right:16px;min-width:72px;white-space:nowrap;font-size:.78rem;
+}
+.osp-kdesc{color:rgba(255,255,255,.88);line-height:1.6;}
+/* ── Card ②: Cite This Work ── */
+.osp-cite{
+  background:rgba(255,215,0,0.04);
+  border-left:3px solid #FFD700;
+  border-radius:0 12px 12px 0;
+  padding:16px 18px;font-size:.82rem;
+  color:rgba(255,255,255,.92);line-height:1.75;font-style:italic;
+}
+.osp-cite strong{color:#FFD700;font-style:normal;}
+.osp-cite-meta{
+  margin-top:12px;font-size:.7rem;
+  color:rgba(255,255,255,.6);font-style:normal;
+  padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);
+}
+/* ── Card ③: API Notice ── */
+.osp-badge{
+  display:inline-block;
+  background:linear-gradient(90deg,#A855F7,#2563EB);
+  color:#fff;font-size:.6rem;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 14px;border-radius:20px;margin-bottom:14px;
+  box-shadow:0 2px 12px rgba(168,85,247,0.3);
+}
+.osp-api-p{color:rgba(255,255,255,.88);font-size:.82rem;line-height:1.72;}
+.osp-api-p strong{color:#fff3b0;}
+.osp-endpoint{
+  margin-top:14px;
+  background:rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:10px;padding:12px 16px;
+  font-family:'Courier New',monospace;
+  font-size:.74rem;color:#7FDBCA;
+  letter-spacing:.03em;line-height:1.7;
+}
+.osp-arrow{color:#FF13F0;}
+</style>
+
+<div class="osp-head">
+  <h3>Research, Publications &amp; Technology</h3>
+  <p>Academic standards, publication references, and technical guidance for the Universal Hyperdimensional Numeric Engine</p>
+</div>
+<div class="osp-divider">
+  <span></span><em>◆ Ìwé Ìmọ̀ Ònkà ◆</em><span></span>
+</div>
+
+<div class="osp-grid">
+
+  <!-- ① TABLE CLASSIFICATION KEY -->
+  <div class="osp-card">
+    <span class="osp-icon">🔑</span>
+    <div class="osp-label">Research Classification Framework</div>
+    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
+      <tbody><tr>
+        <td class="osp-ksym">Symbol</td>
+        <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Name</td>
+        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Scale</td>
+        <td class="osp-kdesc">Power-of-ten magnitude classification, for example 10&sup3; in the thousands tier and 10&sup6; in the millions tier</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Tier</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym"><span style="color:#FF13F0;font-weight:700;">l</span> Link</td>
+        <td class="osp-kdesc">The <em>l</em> multiplier connector, displayed in neon pink (#FF13F0), which governs chained magnitude extension across large-order expressions</td>
+      </tr>
+    </tbody></table>
+  </div>
+
+  <!-- ② CITATION STATEMENT -->
+  <div class="osp-card">
+    <span class="osp-icon">📜</span>
+    <div class="osp-label">Publications</div>
+    <div class="osp-cite">
+      <strong>Universal Hyperdimensional Numeric Engine Institute</strong> (2026).
+      <em>Numerical Index Database, v1.0.</em>
+      Godreign Digital Publishing.
+      <em>Universal Hyperdimensional Numeric Engine.</em>
+      <div class="osp-cite-meta">
+        ISBN (979-8-90148-351-0) &nbsp;·&nbsp;
+        Freely accessible for academic, educational &amp; research use &nbsp;·&nbsp;
+        © 2026 Godreign. Universal Hyperdimensional Numeric Engine.
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ FUTURE API NOTICE -->
+  <div class="osp-card">
+    <span class="osp-icon">⚡</span>
+    <div class="osp-label">Technology &amp; Implementation</div>
+    <span class="osp-badge">Coming Soon</span>
+    <p class="osp-api-p">
+      Public API access to the <strong>Yoruba Numerical Index Database</strong> is planned for a future
+      release, enabling developers, researchers, and digital platforms to programmatically
+      query more than a <strong>tredecillion</strong> Yorùbá number entries in real time for analytical and implementation purposes.
+    </p>
+    <div class="osp-endpoint">
+      GET /api/v1/onka-yoruba/number/{n}<br>
+      <span class="osp-arrow">→</span>&nbsp;{ yoruba: "…", tier: "…", colour: "…", power: "…" }
+    </div>
+  </div>
+
+</div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <span class="copyright">&copy; 2026 Godreign. The Universal Hyperdimensional Numeric Engine.</span>
+
+    <p class="english-mission">
+      Honouring the numerical heritage of humanity while advancing an open, language-independent path toward inclusive global computation.
+    </p>
+
+    </div>
+</footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Scroll to top">▲</button>
+
+  <script>
+    // --- Scroll Progress Bar ---
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = scrolled + '%';
+    }, { passive: true });
+
+    // --- Back-to-Top Button ---
+    const topBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) topBtn.classList.add('visible');
+      else topBtn.classList.remove('visible');
+    }, { passive: true });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
