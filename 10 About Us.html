@@ -37,6 +37,7 @@
             border-color: #FFD700;
             box-shadow: 0 4px 15px rgba(255,215,0,0.3);
         }
+        .menu-bar a.current { background: rgba(255,215,0,0.18); border-color: #FFD700; box-shadow: 0 4px 15px rgba(255,215,0,0.3); }
         footer {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             padding: 28px 20px;
@@ -1034,13 +1035,14 @@
         <a href="07 Maths Symbols.html">Maths Symbols</a>
         <a href="08 World Numerals.html">World Numerals</a>
         <a href="09 Numeric Products.html">Numeric Products</a>
-        <a href="10 About Us.html">About Us</a>
+        <a class="current" href="10 About Us.html">About Us</a>
     </div>
 
   <div class="container">
     <div class="header">
       <h1>ABOUT US</h1>
       <h2>The Team Behind Ònka Yorùbá</h2>
+      <p style="font-size: 1rem; color: #FFD700; margin: 6px auto 0; font-weight: 700; letter-spacing: .4px; max-width: 920px; line-height: 1.5;">A Research, Educational, and Linguistic Infrastructure for Indigenous Numerical Sovereignty</p>
       <h2 style="margin-top: 15px; font-size: 1.2rem; color: #FFD700; font-weight: 700;">Universal Hyperdimensional Numeric Engine</h2>
       <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">The operating platform for language-independent numeric systems</p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published by the Universal Hyperdimensional Numeric Engine Research Initiative<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
@@ -1107,15 +1109,92 @@
             <div style="display:flex; flex-wrap:wrap; gap:28px; align-items:flex-start;">
                 <div style="flex:0 0 340px; max-width:400px;">
                     <img src="Crown.jpg" alt="Ònka Yorùbá" style="width:100%; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.13);">
+                    <div class="founder-caption" style="margin-top:14px; padding:14px 18px; background:linear-gradient(135deg,#0a2447 0%,#0f3460 100%); border-left:4px solid #FFD700; border-radius:0 12px 12px 0; color:#fff; text-align:left;">
+                        <div style="font-size:1.15rem; font-weight:800; color:#FFD700; letter-spacing:.3px;">Godreign</div>
+                        <div style="font-size:.85rem; font-weight:700; color:#ffffff; margin-top:2px;">Founder and Chief Architect</div>
+                        <div style="font-size:.75rem; font-weight:600; color:rgba(255,255,255,0.78); margin-top:4px; letter-spacing:.3px;">Universal Hyperdimensional Numeric Engine (UHNE)</div>
+                    </div>
                 </div>
                 <div style="flex:1; min-width:280px;">
 
+<style>
+    /* ============ Premium Research Institute Components ============ */
+    .exec-summary{
+        margin:0 0 22px; padding:22px 26px;
+        background:linear-gradient(135deg, rgba(30,140,184,0.08) 0%, rgba(39,188,237,0.05) 100%);
+        border-left:4px solid #1E8CB8; border-radius:0 14px 14px 0;
+        box-shadow:0 4px 16px rgba(30,140,184,.08);
+    }
+    .exec-eyebrow{
+        display:inline-block; margin:0 0 8px; color:#0f3460;
+        padding:0 0 4px; border-bottom:2px solid #FFD700;
+        font-size:.75rem; letter-spacing:3px; font-weight:800; text-transform:uppercase;
+    }
+    .exec-summary p{ margin:8px 0 0; color:#1a1a2e; line-height:1.75; font-size:.97rem; text-align:justify; }
+    .exec-summary p strong{ color:#0a2447; }
+
+    /* Research Objectives */
+    .rsch-section{ margin:30px 0 24px; padding:24px 26px;
+        background:linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+        border-left:4px solid #1E8CB8; border-radius:14px;
+        box-shadow:0 4px 16px rgba(30,140,184,.08);
+    }
+    .rsch-head{ color:#000; font-size:1.35rem; font-weight:800; margin:6px 0 12px; letter-spacing:.2px; }
+    .rsch-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:12px; }
+    .rsch-card{ padding:14px 16px; background:#fff; border-radius:10px; border:1px solid rgba(30,140,184,.18); box-shadow:0 2px 8px rgba(15,52,96,.06); }
+    .rsch-card .rsch-num{ display:inline-block; font-size:.72rem; font-weight:800; color:#0f3460; background:rgba(255,215,0,.20); padding:2px 8px; border-radius:12px; letter-spacing:.5px; }
+    .rsch-card h4{ margin:8px 0 4px; font-size:1rem; color:#0a2447; font-weight:800; }
+    .rsch-card p{ margin:0; font-size:.85rem; color:#3a4a63; line-height:1.55; }
+
+    /* Institutional Impact */
+    .impact-section{ margin:24px 0; padding:24px 26px;
+        background:linear-gradient(160deg,#0e1730 0%,#111c38 55%,#0d1a36 100%);
+        border:1px solid rgba(255,215,0,.22); border-radius:14px;
+        box-shadow:0 14px 32px rgba(10,20,46,.30);
+        color:#f2f6fd;
+    }
+    .impact-section .exec-eyebrow{ color:#FFE873; border-bottom-color:#FFD700; }
+    .impact-section h3{ color:#FFE873; font-size:1.35rem; font-weight:800; margin:6px 0 10px; letter-spacing:.2px; }
+    .impact-section p{ color:#dde7f5; line-height:1.75; margin:0 0 14px; font-size:.96rem; }
+    .impact-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:14px; }
+    .impact-pill{ padding:12px 14px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,215,0,.18); border-radius:10px; text-align:center; }
+    .impact-pill .icon{ font-size:1.6rem; display:block; margin-bottom:4px; }
+    .impact-pill .label{ font-size:.82rem; font-weight:700; color:#bfe6ff; letter-spacing:.3px; }
+
+    /* Research Gravity / Stats */
+    .stats-section{ margin:24px 0 30px; padding:26px 28px;
+        background:linear-gradient(135deg,#fff 0%,#f5fbff 100%);
+        border:1px solid rgba(30,140,184,.22); border-radius:14px;
+        box-shadow:0 4px 16px rgba(30,140,184,.10);
+    }
+    .stats-head{ color:#000; font-size:1.35rem; font-weight:800; margin:6px 0 14px; letter-spacing:.2px; }
+    .stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-top:10px; }
+    .stat-card{ padding:18px 14px; background:linear-gradient(135deg,#0a2447 0%,#0f3460 100%); border-radius:12px; text-align:center; color:#fff; box-shadow:0 6px 18px rgba(10,36,71,.20); }
+    .stat-card .stat-num{ display:block; font-size:1.8rem; font-weight:800; color:#FFE873; line-height:1.1; letter-spacing:.5px; }
+    .stat-card .stat-label{ display:block; font-size:.72rem; font-weight:700; color:#bfe6ff; margin-top:6px; letter-spacing:.5px; text-transform:uppercase; }
+
+    /* Academic opener */
+    .why-opener{
+        margin:6px 0 14px; padding:14px 18px;
+        background:rgba(255,215,0,0.08); border-left:3px solid #FFD700; border-radius:0 10px 10px 0;
+        font-size:.97rem; color:#0a2447; line-height:1.7; font-weight:500;
+    }
+    .why-opener strong{ color:#0f3460; }
+</style>
+
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>&Ograve;nka Yor&ugrave;b&aacute;</strong> is the current project we&apos;re working on alongside <strong>Godreign&rsquo;s</strong> government&mdash;where Godreign addresses the social fabric and spirituality of humanity, &Ograve;nka Yor&ugrave;b&aacute; strengthens the <em>numeric destiny</em> of an entire civilisation, a <strong>monumental digital engine</strong> dedicated to preserving, documenting, and unleashing the full complexity of any indigenous numerical ecosystem around the world&mdash; currently scaling from <strong>1 to over a Tredecillion&nbsp;</strong>and still climbing.</p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>🎯</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Our Mission</span><span style="color:#1E8CB8;"> </span></strong></p>
+
+<div class="exec-summary">
+    <span class="exec-eyebrow">Executive Summary</span>
+    <p>The <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong> is a research-driven numerical infrastructure designed to advance indigenous language computation, large-number representation, educational accessibility, and linguistic preservation. Developed through the pioneering work of <strong>Godreign</strong>, UHNE seeks to establish a scalable framework through which any language can participate in the future of numerical expression, computation, and cultural continuity.</p>
+</div>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>🎯</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Founder&rsquo;s Vision</span><span style="color:#1E8CB8;"> </span></strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Our mission ignites with the Yor&ugrave;b&aacute; people&mdash;but its flame is destined for the heart of <em>every</em> indigenous language on Earth. By restoring the infinite logic of the <strong>&Ograve;nka Yor&ugrave;b&aacute;</strong> system, we are forging a <strong>repeatable model of linguistic liberation</strong>&mdash;a blueprint that any nation can seize, adapt, and deploy. One language restored proves the concept; a global language restored fulfils the mandate.</p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>👁️</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Our Vision</span><span style="color:#1E8CB8;"> </span></strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>We envision a world in which Yor&ugrave;b&aacute; mathematics <strong>controls its own destiny</strong> through the &Ograve;nka Yor&ugrave;b&aacute; Project&mdash;and in which every indigenous nation follows the same sovereign path. A world where numbers speak in <em>every</em> native dialect. Where what was once scattered is being <strong>gathered</strong>; what was nearly forgotten is now <strong>numbered, named, and returned to its rightful people</strong>. The New Numbering System is a digital nation-building at its most profound.</p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>💡</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Why This Matters</span></strong></p>
+<p class="why-opener">Despite extraordinary advances in science and computation, many indigenous languages remain excluded from large-scale numerical infrastructure. <strong>UHNE</strong> addresses this challenge by exploring methods through which linguistic identity and computational scalability may coexist within a unified framework.</p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Language is identity. Numbers are the bedrock of science, technology, commerce, and the entire A.I. revolution. By preserving the Yor&ugrave;b&aacute; numerical system&mdash;and extending that same generosity to indigenous languages around the globe&mdash;we are:</p>
 <ul style="margin-bottom:0cm;margin-top:0cm;" type="disc">
     <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Reconnecting generations</strong> with their ancestral mathematical heritage</li>
@@ -1124,6 +1203,51 @@
     <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Building sovereign tools</strong> for education, research, and indigenous software development</li>
     <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Guaranteeing children around the world</strong> inherit a complete, infinite numerical vocabulary.</li>
 </ul>
+
+<!-- ============ Research Objectives ============ -->
+<section class="rsch-section">
+    <span class="exec-eyebrow">Research Objectives</span>
+    <h3 class="rsch-head">Core Mandates Guiding UHNE</h3>
+    <div class="rsch-grid">
+        <div class="rsch-card"><span class="rsch-num">RO 01</span><h4>Numerical Scalability</h4><p>Engineering a base-10 architecture that scales without ceiling — from <em>Íƹkẹní</em> (1) past Tredecillion and into transfinite operator territory.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 02</span><h4>Indigenous Language Integration</h4><p>Providing a portable framework any indigenous language can adopt, map, and deploy without sacrificing phonetic or cultural specificity.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 03</span><h4>Educational Accessibility</h4><p>Producing scroll books, calculators, and learning tools that are free, offline-ready, and pedagogically progressive for every classroom.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 04</span><h4>Computational Efficiency</h4><p>Reducing complexity through native scientific notation and the &lsquo;l&rsquo; Multiplier engine for high-velocity algorithmic implementation.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 05</span><h4>Cultural Preservation</h4><p>Archiving ancestral counting traditions in machine-readable form to ensure intergenerational continuity beyond oral transmission.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 06</span><h4>Global Linguistic Implementation</h4><p>Establishing partnerships and protocols to extend UHNE’s logic blueprint across continents, communities, and curricula worldwide.</p></div>
+    </div>
+</section>
+
+<!-- ============ Institutional Impact ============ -->
+<section class="impact-section">
+    <span class="exec-eyebrow">Institutional Impact</span>
+    <h3>Designed for Cross-Sector Adoption</h3>
+    <p>UHNE is designed not only as a numerical framework but also as a platform for <strong>educational innovation</strong>, <strong>computational experimentation</strong>, <strong>linguistic preservation</strong>, and <strong>interdisciplinary research</strong>. Its modular structure invites adoption across formal and informal knowledge ecosystems.</p>
+    <div class="impact-grid">
+        <div class="impact-pill"><span class="icon">🏫</span><span class="label">Schools</span></div>
+        <div class="impact-pill"><span class="icon">🎓</span><span class="label">Universities</span></div>
+        <div class="impact-pill"><span class="icon">📚</span><span class="label">Libraries</span></div>
+        <div class="impact-pill"><span class="icon">🔬</span><span class="label">Researchers</span></div>
+        <div class="impact-pill"><span class="icon">🌍</span><span class="label">Communities</span></div>
+        <div class="impact-pill"><span class="icon">🤖</span><span class="label">AI &amp; Data</span></div>
+    </div>
+</section>
+
+<!-- ============ Research Gravity / Measurable Scope ============ -->
+<section class="stats-section">
+    <span class="exec-eyebrow">Research Gravity</span>
+    <h3 class="stats-head">Measurable Scope of the Engine</h3>
+    <div class="stats-grid">
+        <div class="stat-card"><span class="stat-num">44</span><span class="stat-label">Jumps</span></div>
+        <div class="stat-card"><span class="stat-num">301</span><span class="stat-label">Pulses</span></div>
+        <div class="stat-card"><span class="stat-num">47</span><span class="stat-label">Colours</span></div>
+        <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Core Operators</span></div>
+        <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Database Architecture</span></div>
+        <div class="stat-card"><span class="stat-num">1,127</span><span class="stat-label">Master Index Entries</span></div>
+        <div class="stat-card"><span class="stat-num">833</span><span class="stat-label">Bilingual -illion Refs</span></div>
+    </div>
+</section>
+
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Frequently Asked Questions (FAQ)</span></strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>What is the purpose of this site?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is the <strong>Digital Sanctuary of the New Yor&ugrave;b&aacute; Numeric System</strong>&mdash;a living archive where ancestral counting meets twenty-first-century precision. We have digitised our numerical legacy so that it delivers the exhaustive base-10 accuracy demanded by modern algorithms, sovereign coding frameworks, and advanced global finance. Here, an indigenous tongue is not a relic of the past; it is the <em>literal source code</em> for a self-determined future. Every number on this site is a declaration: <strong>our language computes.</strong></p>
