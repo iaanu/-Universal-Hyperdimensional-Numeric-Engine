@@ -1183,6 +1183,140 @@
         font-size:.97rem; color:#0a2447; line-height:1.7; font-weight:500;
     }
     .why-opener strong{ color:#0f3460; }
+
+    /* Research Foundations divider */
+    .rf-divider{ margin:38px 0 26px; padding:0; text-align:left; }
+    .rf-divider .rf-rule{
+        display:flex; align-items:center; gap:14px;
+        margin:0 0 14px; max-width:560px;
+    }
+    .rf-divider .rf-rule::after{
+        content:""; flex:1; height:1px;
+        background:linear-gradient(90deg, rgba(255,215,0,.55) 0%, rgba(15,52,96,0) 100%);
+    }
+    .rf-divider .rf-mark{
+        font-size:.7rem; font-weight:800; color:#0f3460;
+        letter-spacing:4px; text-transform:uppercase; padding:0 4px 0 0;
+    }
+    .rf-divider .rf-eyebrow{
+        display:inline-block; margin:0 0 8px; color:#0f3460;
+        padding:0 0 4px; border-bottom:2px solid #FFD700;
+        font-size:.78rem; letter-spacing:3.5px; font-weight:800; text-transform:uppercase;
+    }
+    .rf-divider h3{
+        font-family:'Playfair Display','Georgia',serif;
+        font-size:1.85rem; font-weight:700; color:#0a2447;
+        margin:8px 0 6px; letter-spacing:.4px; line-height:1.2;
+    }
+    .rf-divider .rf-sub{
+        font-size:.95rem; color:#3a4a63; font-weight:500;
+        margin:0; max-width:640px; line-height:1.6; font-style:italic;
+    }
+
+    /* ============ Premium Research Foundations sub-sections ============ */
+    .rf-section{
+        margin:0 0 28px; padding:28px 30px;
+        background:linear-gradient(135deg,#ffffff 0%,#f8fbfe 100%);
+        border:1px solid rgba(30,140,184,.16);
+        border-radius:14px;
+        box-shadow:0 4px 16px rgba(30,140,184,.06);
+    }
+    .rf-section .rf-eyebrow-sm{
+        display:inline-block; margin:0 0 6px; color:#0f3460;
+        padding:0 0 4px; border-bottom:2px solid #FFD700;
+        font-size:.72rem; letter-spacing:3px; font-weight:800; text-transform:uppercase;
+    }
+    .rf-section .rf-title{
+        font-family:'Playfair Display','Georgia',serif;
+        font-size:1.6rem; font-weight:700; color:#0a2447;
+        margin:6px 0 14px; letter-spacing:.3px; line-height:1.25;
+    }
+    .rf-section .rf-intro{
+        color:#3a4a63; font-size:.97rem; line-height:1.7; margin:0 0 14px;
+    }
+
+    /* FAQ — gold-rule emphasis on each question */
+    .faq-section > p:has(> strong:only-child){
+        margin:18px 0 4px !important;
+        padding:6px 0 6px 14px !important;
+        border-left:3px solid #FFD700 !important;
+        color:#0a2447 !important;
+        font-size:1.02rem !important;
+        line-height:1.5 !important;
+    }
+    .faq-section > p:has(> strong:only-child) strong{
+        color:#0a2447 !important; font-weight:800 !important;
+    }
+    .faq-section > p{ color:#3a4a63; line-height:1.75 !important; }
+
+    /* Discovery card grid */
+    .discover-grid{
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:14px; margin:14px 0 12px;
+    }
+    .discover-card{
+        padding:18px; background:#fff; border-radius:12px;
+        border:1px solid rgba(30,140,184,.18);
+        box-shadow:0 2px 8px rgba(15,52,96,.06);
+    }
+    .discover-card .icon{ font-size:1.6rem; display:block; margin-bottom:6px; }
+    .discover-card h4{ margin:4px 0 6px; color:#0a2447; font-size:1rem; font-weight:800; }
+    .discover-card p{ margin:0; font-size:.88rem; color:#3a4a63; line-height:1.6; }
+
+    /* Join — dark institutional CTA */
+    .join-section{
+        background:linear-gradient(160deg,#0e1730 0%,#111c38 55%,#0d1a36 100%);
+        border:1px solid rgba(255,215,0,.22);
+        color:#f2f6fd;
+        box-shadow:0 14px 32px rgba(10,20,46,.30);
+    }
+    .join-section .rf-eyebrow-sm{ color:#FFE873; border-bottom-color:#FFD700; }
+    .join-section .rf-title{ color:#FFE873; }
+    .join-section .rf-intro{ color:#dde7f5; }
+    .join-section p{ color:#dde7f5 !important; line-height:1.75 !important; }
+    .join-section p strong{ color:#FFE873 !important; }
+    .join-section .rf-subhead{
+        display:block; margin:18px 0 8px;
+        color:#FFE873; font-size:1rem; font-weight:800; letter-spacing:.4px;
+        text-transform:uppercase;
+    }
+    .join-features{
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+        gap:12px; margin:8px 0 16px;
+    }
+    .join-feature{
+        padding:16px 18px;
+        background:rgba(255,255,255,0.06);
+        border:1px solid rgba(255,215,0,.18);
+        border-radius:10px;
+    }
+    .join-feature .icon{ font-size:1.4rem; display:block; margin-bottom:4px; }
+    .join-feature h5{ margin:4px 0 4px; color:#FFE873; font-size:.92rem; font-weight:800; letter-spacing:.2px; }
+    .join-feature p{ margin:0 !important; font-size:.82rem; color:#bfe6ff !important; line-height:1.55 !important; }
+    .join-feature p strong{ color:#fff !important; }
+
+    .join-cta-line{ margin:14px 0 8px !important; font-size:1rem !important; }
+    .join-cta{
+        display:inline-block; margin:6px 0;
+        padding:12px 22px;
+        background:linear-gradient(135deg,#FFD700,#FFE873);
+        color:#0a2447 !important; text-decoration:none !important;
+        font-weight:800; border-radius:10px; letter-spacing:.5px;
+        box-shadow:0 6px 18px rgba(255,215,0,.35);
+        transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .join-cta:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(255,215,0,.45); }
+
+    .closing-quote{
+        margin:22px 0 0; padding:22px 26px;
+        background:rgba(255,215,0,.08);
+        border-left:4px solid #FFD700;
+        border-radius:0 14px 14px 0;
+        color:#FFE873;
+        font-family:'Playfair Display','Georgia',serif;
+        font-style:italic;
+        font-size:1.05rem; line-height:1.65;
+    }
 </style>
 
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>&Ograve;nka Yor&ugrave;b&aacute;</strong> is the current project we&apos;re working on alongside <strong>Godreign&rsquo;s</strong> government&mdash;where Godreign addresses the social fabric and spirituality of humanity, &Ograve;nka Yor&ugrave;b&aacute; strengthens the <em>numeric destiny</em> of an entire civilisation, a <strong>monumental digital engine</strong> dedicated to preserving, documenting, and unleashing the full complexity of any indigenous numerical ecosystem around the world&mdash; currently scaling from <strong>1 to over a Tredecillion&nbsp;</strong>and still climbing.</p>
@@ -1252,7 +1386,16 @@
     </div>
 </section>
 
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Frequently Asked Questions (FAQ)</span></strong></p>
+<!-- ============ Research Foundations Divider ============ -->
+<section class="rf-divider">
+    <span class="rf-eyebrow">Research Foundations</span>
+    <h3>Research Narrative &amp; Rationale</h3>
+    <p class="rf-sub">The questions, principles, and scholarly commitments that ground the Universal Hyperdimensional Numeric Engine.</p>
+</section>
+
+<section class="rf-section faq-section">
+    <span class="rf-eyebrow-sm">Frequently Asked Questions</span>
+    <h3 class="rf-title">Common Questions, Considered Answers</h3>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>What is the purpose of this site?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is the <strong>Digital Sanctuary of the New Yor&ugrave;b&aacute; Numeric System</strong>&mdash;a living archive where ancestral counting meets twenty-first-century precision. We have digitised our numerical legacy so that it delivers the exhaustive base-10 accuracy demanded by modern algorithms, sovereign coding frameworks, and advanced global finance. Here, an indigenous tongue is not a relic of the past; it is the <em>literal source code</em> for a self-determined future. Every number on this site is a declaration: <strong>our language computes.</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>My language is different from Yor&ugrave;b&aacute;, and we face similar historical limitations that disconnect our culture from modern digital scaling. Is the 47-Colour System adaptable for other indigenous nations?</strong></p>
@@ -1269,27 +1412,70 @@
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Is there more to explore beyond the main page?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><em>Beyond the Horizon: The Infinite Depth of &Ograve;nka Yor&ugrave;b&aacute;</em></strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is only the beginning. The primary indices are visible for immediate use, but the true heartbeat of our restoration pulses within the <strong>200 Volumes</strong> of our digital scroll books. Dive into these deep archives and rediscover the infinite capacity of a numeric system whose scaling soars upward past a <strong>Tredecillion</strong>. But &Ograve;nka Yor&ugrave;b&aacute; is more than a library&mdash;it is a <strong>living, breathing ecosystem</strong>. Our suite of indigenous software is engineered to be a lifelong companion for the Yor&ugrave;b&aacute; soul, delivering intellectual engagement that keeps the mind razor-sharp and the spirit ablaze.</p>
+</section>
 
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>🎯</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Discover your heritage through our innovative software lab:</span><span style="color:#1E8CB8;"> </span></strong></p>
-<ul style="margin-bottom:0cm;margin-top:0cm;" type="disc">
-    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>The Utility Suite:</strong> Master daily life with the Yor&ugrave;b&aacute; Calculator, Number Converter, Age Calculator, and the ancient precision of the K&agrave;lẹ́nd&agrave; Yor&ugrave;b&aacute;.</li>
-    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>The Musical Frontier:</strong> Experience the Yor&ugrave;b&aacute; Talking Drum 3D Design and our custom VST Software&mdash;emulate and modulate the sacred language of the drum in pure digital form.</li>
-    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>The Future of Sound:</strong> Preview the upcoming 16-String Acoustic Guitar 3D Design and VST software&mdash;a digital masterclass in string theory and tonal harmony.</li>
-</ul>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>These are not mere tools; they are <strong>hidden treasures</strong> designed to keep the brain busy, the heart full, and the mind far from the shadows of depression. Engage with the logic of your ancestors and discover that there is always more to learn, more to build, and more to celebrate.</p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Join the Restoration: Become a Citizen of this Creative Sanctuary</span></strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>The journey does not end with the scrolls. We are assembling a global community of visionaries, creators, and thinkers who believe that the future of every nation should be built on its <em>own</em> indigenous logic. By joining our community, you are not merely signing up for updates&mdash;you are <strong>claiming your seat in the Godreign Digital Laboratory</strong>.</p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Stay in the loop as the mandate unfolds:</span></strong></p>
-<ul style="margin-bottom:0cm;margin-top:0cm;" type="square">
-    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>🥁</span> <strong>First Access:</strong> Be the first to know when the <strong>Yor&ugrave;b&aacute; Talking Drum VST</strong> and <strong>3D Design</strong> officially launch.</li>
-    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>🎸</span> <strong>Development Insights:</strong> Get behind-the-scenes updates on the <strong>16-String Acoustic Guitar</strong> and our <strong>musical software suite</strong>.</li>
-    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>📱</span> <strong>App Drops:</strong> Receive instant notifications for new versions of the <strong>Yor&ugrave;b&aacute; Calculator</strong> and <strong>K&agrave;lẹ́nd&agrave;</strong>.</li>
-    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>🌟</span> <strong>Sacred Logic:</strong> Receive exclusive insights into the &ldquo;hidden treasures&rdquo; found within our 200-volume archive. Whether you want to integrate the &Ograve;nka Yor&ugrave;b&aacute; logic into your software, contribute to our growing VST ecosystem, or learn how to apply the <strong>47-Colour System</strong> to your own indigenous language projects&mdash;<strong>your hands are welcome on this plough</strong>.</li>
-</ul>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Don&rsquo;t just watch history happen&mdash;help us count it.</span></strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Your privacy is a sacred trust. We only send messages that nourish the mind and soul.</p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>📩</span> <strong>Become a Multiplier:</strong> <a href="mailto:godreigninlove@outlook.com"><strong>godreigninlove@outlook.com</strong></a></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><em>&ldquo;One language restored is a victory; a global language restored is the mandate. Let every indigenous tongue count its way into digital sovereignty.&rdquo;</em></strong></p>
+<section class="rf-section discover-section">
+    <span class="rf-eyebrow-sm">🎯 Discover</span>
+    <h3 class="rf-title">Innovative Software Lab</h3>
+    <p class="rf-intro">A growing suite of tools, instruments, and digital scholarship — designed as lifelong companions for the Yorùbá soul, and for every soul that honours their ancestral tongue.</p>
+
+    <div class="discover-grid">
+        <div class="discover-card">
+            <span class="icon">🧮</span>
+            <h4>The Utility Suite</h4>
+            <p>Master daily life with the Yorùbá Calculator, Number Converter, Age Calculator, and the ancient precision of the Kàlẹ́ndà Yorùbá.</p>
+        </div>
+        <div class="discover-card">
+            <span class="icon">🥁</span>
+            <h4>The Musical Frontier</h4>
+            <p>Experience the Yorùbá Talking Drum 3D Design and our custom VST Software — emulate and modulate the sacred language of the drum in pure digital form.</p>
+        </div>
+        <div class="discover-card">
+            <span class="icon">🎸</span>
+            <h4>The Future of Sound</h4>
+            <p>Preview the upcoming 16-String Acoustic Guitar 3D Design and VST software — a digital masterclass in string theory and tonal harmony.</p>
+        </div>
+    </div>
+
+    <p class="rf-intro">These are not mere tools; they are <strong>hidden treasures</strong> designed to keep the brain busy, the heart full, and the mind far from the shadows of depression. Engage with the logic of your ancestors and discover that there is always more to learn, more to build, and more to celebrate.</p>
+</section>
+
+<section class="rf-section join-section">
+    <span class="rf-eyebrow-sm">Join the Restoration</span>
+    <h3 class="rf-title">Become a Citizen of this Creative Sanctuary</h3>
+    <p class="rf-intro">The journey does not end with the scrolls. We are assembling a global community of visionaries, creators, and thinkers who believe that the future of every nation should be built on its <em>own</em> indigenous logic. By joining our community, you are not merely signing up for updates — you are <strong>claiming your seat in the Godreign Digital Laboratory</strong>.</p>
+
+    <span class="rf-subhead">Stay in the loop as the mandate unfolds</span>
+    <div class="join-features">
+        <div class="join-feature">
+            <span class="icon">🥁</span>
+            <h5>First Access</h5>
+            <p>Be the first to know when the <strong>Yorùbá Talking Drum VST</strong> and <strong>3D Design</strong> officially launch.</p>
+        </div>
+        <div class="join-feature">
+            <span class="icon">🎸</span>
+            <h5>Development Insights</h5>
+            <p>Get behind-the-scenes updates on the <strong>16-String Acoustic Guitar</strong> and our <strong>musical software suite</strong>.</p>
+        </div>
+        <div class="join-feature">
+            <span class="icon">📱</span>
+            <h5>App Drops</h5>
+            <p>Receive instant notifications for new versions of the <strong>Yorùbá Calculator</strong> and <strong>Kàlẹ́ndà</strong>.</p>
+        </div>
+        <div class="join-feature">
+            <span class="icon">🌟</span>
+            <h5>Sacred Logic</h5>
+            <p>Exclusive insights into the &ldquo;hidden treasures&rdquo; within our 200-volume archive — your hands are welcome on this plough.</p>
+        </div>
+    </div>
+
+    <p class="join-cta-line"><strong>Don’t just watch history happen — help us count it.</strong></p>
+    <p style="font-size:.88rem; opacity:.85;">Your privacy is a sacred trust. We only send messages that nourish the mind and soul.</p>
+    <p style="margin-top:14px;"><a href="mailto:godreigninlove@outlook.com" class="join-cta">📩 Become a Multiplier — godreigninlove@outlook.com</a></p>
+
+    <blockquote class="closing-quote">“One language restored is a victory; a global language restored is the mandate. Let every indigenous tongue count its way into digital sovereignty.”</blockquote>
+</section>
+
 </div>
               
                                
