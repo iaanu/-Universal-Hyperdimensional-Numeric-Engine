@@ -45,6 +45,7 @@
             border-color: #FFD700;
             box-shadow: 0 4px 15px rgba(255,215,0,0.3);
         }
+        .menu-bar a.current { background: rgba(255,215,0,0.18); border-color: #FFD700; box-shadow: 0 4px 15px rgba(255,215,0,0.3); }
         footer {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             padding: 28px 20px;
@@ -1031,7 +1032,7 @@
         <div class="menu-bar">
         <a href="01 Godreign.html">Godreign</a>
         <a href="02 Ọ̀rọ̀ Ẹlohîm.html">Ọ̀rọ̀ Ẹlohîm</a>
-        <a href="index.html">Numeric Engine</a>
+        <a class="current" href="index.html">Numeric Engine</a>
         <a href="03 Master Index.html">Master Index</a>
         <a href="04 Scaling Engines.html">Scaling Engines</a>
         <a href="05 Equation Engines.html">Equation Engines</a>
@@ -1184,12 +1185,50 @@
     <!-- Image & Intro -->
     <div class="intro-text">
         <div style="display:flex; gap:28px; align-items:flex-start; flex-wrap:wrap;">
-            <div style="flex:0 0 280px;">
-                <img src="ÒnkaYorùbá.jpg" alt="Ònka Yorùbá" style="max-width:100%; border-radius:12px;">
+            <div style="flex:0 0 280px; display:flex; flex-direction:column; gap:18px;">
+                <!-- OK01 — top thumbnail (static, framed) -->
+                <div style="position:relative; width:100%; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(10,36,71,.18);">
+                    <img src="OK01.jpg" alt="Ònka Yorùbá — Front Cover" style="display:block; width:100%; height:auto;">
+                </div>
+
+                <!-- OK02 — middle thumbnail (eBOOK badge + shimmer + rise animation) -->
+                <div style="position:relative; width:100%; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(10,36,71,.18);">
+                    <span style="position:absolute; top:12px; left:12px; z-index:5; background:#FFD700; color:#0a2447; padding:4px 11px; border-radius:18px; font-size:.7rem; font-weight:800; letter-spacing:1.5px; box-shadow:0 3px 8px rgba(10,36,71,.28);">eBOOK</span>
+                    <img src="OK02.jpg" alt="Ònkà Yorùbá book cover spread" class="ok02-img" style="display:block; width:100%; height:auto;">
+                </div>
+
+                <!-- OK03 — bottom thumbnail (static, framed) -->
+                <div style="position:relative; width:100%; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(10,36,71,.18);">
+                    <img src="OK03.jpg" alt="Ònka Yorùbá — Scroll Set" style="display:block; width:100%; height:auto;">
+                </div>
+
+                <style>
+                    .ok02-img{
+                        animation: bk-rise 6s ease-in-out infinite;
+                        transform-origin: 50% 60%;
+                    }
+                    @keyframes bk-rise{
+                        0%,100%{ transform: scale(1) translateY(0); }
+                        50%    { transform: scale(1.03) translateY(-6px); }
+                    }
+                </style>
             </div>
             <div style="flex:1; min-width:280px;">
                 <p><strong>This platform begins from a contrary premise: languages often dismissed as unsuitable for advanced mathematics or computation may, under disciplined formalization, become powerful vehicles for numeric reasoning and technological implementation.</strong></p>
                 <p>From fractional expression to the <strong>47-Sovereign Colour Protocol</strong> used for algorithms, pedagogy, and AI-facing representations, the project demonstrates that linguistic inheritance can be transformed into computational structure without erasing cultural specificity.</p>
+
+                <div class="bk-tags" style="margin:14px 0 4px;">
+                  <span>Base-10 Framework</span>
+                  <span>1 &rarr; 10 Million</span>
+                  <span class="gold">47-Colour System</span>
+                  <span class="pink">l Multiplier</span>
+                  <span class="green">UHNE Science Engine</span>
+                  <span>Native Scientific Notation</span>
+                  <span>Beyond Googolplexian</span>
+                  <span>Graham&rsquo;s Number</span>
+                  <span class="gold">Universal Language Adaptable</span>
+                  <span>AI-Ready</span>
+                </div>
 
                 <div style="margin-top:18px; padding:18px 20px; background:linear-gradient(135deg, rgba(30,140,184,0.08) 0%, rgba(39,188,237,0.05) 100%); border-left:4px solid #1E8CB8; border-radius:0 12px 12px 0;">
                   <div style="font-size:1.25rem; color:#0f3460; font-weight:800; margin:0 0 4px;">Primary Access Resources</div>
@@ -1211,7 +1250,354 @@
     </div>
 </div>
 
-    <!-- 47-Sovereign Colour Bar -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- ABOUT THIS BOOK — Product-style feature card                     -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Looping 7-segment colour stripe (repeats edge-to-edge) -->
+    <div aria-hidden="true" style="height:5px; width:100%; margin:0; background:repeating-linear-gradient(90deg,
+      #0891B2 0 22px, transparent 22px 25px,
+      #16A34A 25px 47px, transparent 47px 50px,
+      #2563EB 50px 72px, transparent 72px 75px,
+      #9333EA 75px 97px, transparent 97px 100px,
+      #DC2626 100px 122px, transparent 122px 125px,
+      #FFD700 125px 147px, transparent 147px 150px,
+      #1E8CB8 150px 172px, transparent 172px 175px);"></div>
+
+    <section class="bk-feature" aria-label="About This Book">
+      <style>
+        .bk-feature{ max-width:1400px; margin:0 auto; padding:48px 40px; background:#fff; }
+        .bk-feature .bk-head{ text-align:center; margin:0 0 30px; }
+        .bk-feature .bk-eyebrow{
+          display:inline-block; margin:0 0 8px; color:#0f3460;
+          padding:0 0 4px; border-bottom:2px solid #FFD700;
+          font-size:.78rem; letter-spacing:3px; font-weight:800; text-transform:uppercase;
+        }
+        .bk-feature .bk-head h2{
+          color:#0a2447; font-size:1.9rem; font-weight:800; margin:0; letter-spacing:.3px;
+        }
+        .bk-feature .bk-head .bk-head-tags{ justify-content:center; margin:18px auto 0; max-width:920px; }
+        /* 47-colour divider bar — same spectrum as the main-text colour bar */
+        .bk-colourbar{
+          height:10px; width:100%; max-width:1400px; margin:0 auto 30px;
+          border-radius:6px; position:relative; overflow:hidden;
+          box-shadow:0 4px 14px rgba(15,52,96,.18);
+          background:linear-gradient(90deg,
+            #0891B2,#16A34A,#2563EB,#9333EA,#DC2626,#B59410,#4EAAE4,#8B4513,#DAA520,#EF6000,
+            #000080,#FC5D8D,#808000,#8B008B,#6A5ACD,#FF6347,#1E90FF,#F59E0B,#8B0000,#047857,
+            #A855F7,#D2691E,#6C0AC9,#B91C1C,#65A30D,#4B0082,#FA8072,#008B8B,#B8860B,#7B2D8E,
+            #20B2AA,#B22222,#9370DB,#A0522D,#191970,#E11D48,#5F9EA0,#CD7F32,#9932CC,#228B22,
+            #483D8B,#800000,#CD853F,#94AA00,#4682B4,#FF13F0,#808080);
+        }
+        .bk-colourbar::after{
+          content:""; position:absolute; inset:0;
+          background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.45) 50%, transparent 65%);
+          background-size:220% 100%; animation:bk-shimmer 7s linear infinite;
+          pointer-events:none; mix-blend-mode:screen;
+        }
+        @keyframes bk-shimmer{ 0%{background-position:200% 0} 100%{background-position:-100% 0} }
+        /* Product-style chapter row (photo left, text right) — mirrors .g-chapter from 09 Numeric Products */
+        .bk-chapter{
+          display:grid; grid-template-columns: 280px 1fr; gap:32px;
+          align-items:start; margin:0 0 28px;
+        }
+        .bk-photo-wrap{
+          position:relative; width:280px; height:240px;
+          background:#0a2447; border:2px solid #0f3460; border-radius:14px;
+          box-shadow:0 8px 22px rgba(10,36,71,.28);
+          overflow:hidden;
+        }
+        .bk-photo{
+          width:100%; height:100%;
+          background-image:url('%C3%92nkaYor%C3%B9b%C3%A1.jpg');
+          background-repeat:no-repeat; background-size:cover; background-position:center center;
+          animation: bk-rise 6s ease-in-out infinite;
+          transform-origin: 50% 60%;
+        }
+        .bk-photo-wrap::after{
+          content:""; position:absolute; inset:0;
+          background:linear-gradient(110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+          background-size:220% 100%;
+          animation: bk-photo-shimmer 7s linear infinite;
+          pointer-events:none; mix-blend-mode:screen;
+        }
+        @keyframes bk-rise{
+          0%,100%{ transform: scale(1) translateY(0); }
+          50%    { transform: scale(1.03) translateY(-6px); }
+        }
+        @keyframes bk-photo-shimmer{ 0%{background-position:200% 0} 100%{background-position:-100% 0} }
+        .bk-photo-wrap .bk-badge{
+          position:absolute; top:12px; left:12px; z-index:5;
+          background:#FFD700; color:#0a2447;
+          padding:4px 11px; border-radius:18px;
+          font-size:.7rem; font-weight:800; letter-spacing:1.5px;
+          box-shadow:0 3px 8px rgba(10,36,71,.28);
+        }
+        @media (max-width: 900px){
+          .bk-chapter{ grid-template-columns: 1fr; gap:20px; }
+          .bk-photo-wrap{ width:100%; max-width:380px; height:220px; margin:0 auto; }
+        }
+        .bk-text{
+          background:linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+          border-left:4px solid #1E8CB8; border-radius:14px;
+          box-shadow:0 4px 16px rgba(30,140,184,.08); padding:30px 36px;
+        }
+        .bk-text .bk-product-eyebrow{
+          display:inline-block; margin:0 0 8px; color:#0f3460;
+          padding:0 0 4px; border-bottom:2px solid #FFD700;
+          font-size:.78rem; letter-spacing:3px; font-weight:800; text-transform:uppercase;
+        }
+        .bk-text h3.bk-title{
+          display:flex; align-items:center; gap:12px;
+          color:#000; font-size:1.55rem; line-height:1.2;
+          margin:0 0 8px; font-weight:800; letter-spacing:.2px;
+        }
+        .bk-text h3.bk-title .bk-marker{
+          display:inline-flex; align-items:center; justify-content:center;
+          width:38px; height:38px; border-radius:50%;
+          background:linear-gradient(135deg,#16A34A 0%,#1E8CB8 100%);
+          color:#fff; font-size:.78rem; font-weight:900; line-height:1; flex-shrink:0;
+          box-shadow:0 5px 12px rgba(22,163,74,.22); letter-spacing:.5px;
+        }
+        /* stripe divider */
+        .bk-stripe{ display:flex; gap:3px; height:5px; border-radius:4px; overflow:hidden; margin:5px 0 14px; max-width:220px; }
+        .bk-stripe i{ flex:1; }
+        .bk-stripe i:nth-child(1){ background:#0891B2; }
+        .bk-stripe i:nth-child(2){ background:#16A34A; }
+        .bk-stripe i:nth-child(3){ background:#2563EB; }
+        .bk-stripe i:nth-child(4){ background:#9333EA; }
+        .bk-stripe i:nth-child(5){ background:#DC2626; }
+        .bk-stripe i:nth-child(6){ background:#FFD700; }
+        .bk-stripe i:nth-child(7){ background:#FF13F0; }
+        .bk-text .bk-tagline{ color:#0a2447; font-weight:700; font-style:italic; font-size:1.02rem; margin:0 0 16px; }
+        .bk-text p{ color:#3a4a63; line-height:1.75; margin:0 0 14px; font-size:.97rem; text-align:justify; }
+        .bk-text p strong{ color:#0a2447; }
+        /* drop cap on first body paragraph */
+        .bk-text p.bk-lead::first-letter{
+          float:left; font-size:3.6rem; line-height:.82;
+          padding:6px 14px 0 0; font-weight:700;
+          background:linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
+          -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        }
+        .bk-tags{ display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 20px; }
+        .bk-tags span{
+          display:inline-block; padding:3px 10px; border-radius:20px;
+          font-size:.72rem; font-weight:700; letter-spacing:.4px;
+          background:rgba(30,140,184,.10); color:#0f3460; border:1px solid rgba(30,140,184,.25);
+        }
+        .bk-tags span.gold{ background:rgba(255,215,0,.18); color:#0a2447; border-color:#FFD700; }
+        .bk-tags span.pink{ background:rgba(255,19,240,.10); color:#7a006e; border-color:#FF13F0; }
+        .bk-tags span.green{ background:rgba(22,163,74,.12); color:#0b5d2b; border-color:#16A34A; }
+        .bk-launch-row{ display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-top:6px; }
+        .bk-launch{
+          display:inline-block; padding:11px 26px; border-radius:30px;
+          background:linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+          color:#fff !important; font-weight:700; font-size:.95rem; text-decoration:none; letter-spacing:.3px;
+          box-shadow:0 6px 16px rgba(30,140,184,.32); transition:transform .15s ease, box-shadow .25s ease;
+        }
+        .bk-launch:hover{ transform:translateY(-2px); box-shadow:0 10px 22px rgba(30,140,184,.45); }
+        .bk-secondary{
+          color:#0f3460; font-weight:700; font-size:.85rem; text-decoration:none; letter-spacing:.2px;
+          padding:9px 16px; border-radius:20px; border:1px solid rgba(15,52,96,.25);
+          background:rgba(255,255,255,.6);
+          transition:background .2s ease, border-color .2s ease, color .2s ease;
+        }
+        .bk-secondary:hover{ background:rgba(255,215,0,.18); border-color:#FFD700; color:#0a2447; }
+        .bk-secondary[aria-expanded="true"] .bk-arrow{ transform:rotate(180deg); }
+        .bk-arrow{ display:inline-block; transition:transform .25s ease; }
+        .bk-licence{
+          display:inline-block; color:#0a2447; font-weight:700; font-size:.82rem; letter-spacing:.2px;
+          padding:9px 16px; border-radius:20px; border:1px solid #FFD700;
+          background:rgba(255,215,0,.18);
+        }
+
+        /* ── Full Description (revealed on click) ── */
+        .bk-fulldesc{
+          display:none; margin-top:22px; padding:30px 34px;
+          background:linear-gradient(160deg,#0e1730 0%,#111c38 55%,#0d1a36 100%);
+          border:1px solid rgba(255,215,0,.22); border-radius:16px;
+          box-shadow:0 14px 40px rgba(10,20,46,.35);
+          color:#f2f6fd; line-height:1.78;
+        }
+        .bk-fulldesc.open{ display:block; animation:bk-reveal .45s ease; }
+        @keyframes bk-reveal{ from{opacity:0; transform:translateY(-8px);} to{opacity:1; transform:translateY(0);} }
+        .bk-fulldesc h2.fd-title{
+          color:#FFE873; font-size:1.5rem; font-weight:800; margin:0 0 4px; letter-spacing:.4px; text-align:center;
+        }
+        .bk-fulldesc p.fd-sub{ color:#bfe6ff; font-style:italic; text-align:center; margin:0 0 18px; font-weight:600; }
+        .bk-fulldesc h3.fd-head{
+          color:#6fd2f5; font-size:1.18rem; font-weight:800; margin:26px 0 10px;
+          padding-bottom:6px; border-bottom:1px solid rgba(111,210,245,.3);
+        }
+        .bk-fulldesc h4.fd-sub-head{ color:#FFE873; font-size:1rem; font-weight:800; margin:18px 0 6px; }
+        .bk-fulldesc p{ margin:0 0 12px; font-size:.93rem; text-align:justify; color:#f2f6fd; }
+        .bk-fulldesc strong,
+        .bk-fulldesc p strong,
+        .bk-fulldesc li strong{ color:#ffffff; }
+        .bk-fulldesc ul.fd-list{ margin:6px 0 14px; padding-left:22px; }
+        .bk-fulldesc ul.fd-list li{ margin-bottom:8px; font-size:.93rem; color:#eaf1fc; }
+        .bk-fulldesc .fd-divider{
+          height:2px; margin:22px 0; border:0; border-radius:2px;
+          background:linear-gradient(90deg,#0891B2,#16A34A,#FFD700,#FF13F0,#4682B4);
+        }
+        .bk-fulldesc a{ color:#FFD700; font-weight:700; text-decoration:none; }
+        .bk-fulldesc a:hover{ text-decoration:underline; }
+        .bk-fulldesc .fd-download{
+          display:inline-block; margin-top:10px; padding:11px 26px; border-radius:30px;
+          background:linear-gradient(90deg,#ff5722 0%,#ff9800 50%,#ffb74d 100%);
+          color:#fff !important; font-weight:800; font-size:.95rem; text-decoration:none;
+          box-shadow:0 6px 16px rgba(255,87,34,.35);
+        }
+      </style>
+
+      <div class="bk-head">
+        <span class="bk-eyebrow">The Living Codex</span>
+        <h2>About This Book</h2>
+      </div>
+
+      <article class="bk-text">
+        <span class="bk-product-eyebrow">Indigenous Numerical Sovereignty</span>
+        <h3 class="bk-title"><span class="bk-marker">eBook</span>The New Ònka Yorùbá Numeric System</h3>
+        <div class="bk-stripe"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <p class="bk-tagline">A sacred declaration of indigenous numerical sovereignty &mdash; logic-ready, base-10, and built for the digital future.</p>
+
+        <p class="bk-lead"><strong>The New Ònka Yorùbá Numeric System</strong> is a revolution in motion, a sacred declaration of indigenous numerical sovereignty. For centuries, countless indigenous tongues have sung, prayed, and dreamed, yet faltered when called to calculate, code, or command the digital future. No longer. Here, the reformed Ònka Yorùbá Numeric System rises in full power: a logic-ready, base-10 Decimal Framework that transforms poetic complexity into precision, speed, and clarity. Every number now flows with ancestral rhythm and modern fluency. This is the future&rsquo;s minds coming back to life, where children compute in the same voice they use to greet their elders, and innovators build algorithms in the language of their soul.</p>
+
+        <p>The New Ònka Yorùbá numeric system delivers a complete, interactive ecosystem, featuring essential toolkit suites like the <strong>Ìnkà Yorùbá Number Generator</strong>, <strong>Yorùbá Calculator</strong>, <strong>Onka Ojúorí (Age Calculator)</strong>, <strong>Yorùbá Kòlẹǹdà</strong>, the <strong>Number Converter</strong> app, and the <strong>Ìnkà Yorùbá Large Number Index</strong>. Central to this revolution is the <strong>UHNE System</strong>&mdash;the high-velocity Science Engine that reduces complexity into native scientific notation for seamless computer algorithmic integration. Implementing the 47 Sovereign Colour System with the high-performance generative legacy of the &lsquo;l&rsquo; Multiplier engine, the UHNE Science Engine visualises mathematical logical concepts for instant and intuitive understanding. The system&rsquo;s scalability and sophistication are demonstrated by living proof of a printed sequence that runs continuously from 1 to 10 million, with an extended index that goes beyond Googolplexian, through Graham&rsquo;s Number, and stretching into Infinity to master absolutely FREE.</p>
+
+        <p>By virtue of its universal linguistic adaptability, the system empowers diverse indigenous languages around the world to perform advanced computations, access deep-rooted numerical concepts, and develop mathematical algorithms at any complexity or scale in their native tongues, as the future requires languages to speak in code, run seamless simulations, and lead in global artificial intelligence.</p>
+
+        <p>This system elevates Indigenous languages into full leadership in the digital age&mdash;empowering every culture to innovate, thrive, and speak the future language of Artificial Intelligence. Freely given. Fearlessly shared. Released under an unrestricted <strong>Public Use License</strong>, this framework is a gift to humanity&rsquo;s digital future. Teachers, developers, students, and dreamers: take it, translate it, code it, and teach it. Let it become the quiet engine inside classrooms, apps, banks, and laboratories across the globe. A new linguistic freedom is emerging&mdash;scientifically advanced and spiritually strong. We advocate for the global adoption of this New Numeric Ecosystem as a transformative tool to expand intellectual capacity, revolutionize learning, and foster universal success.</p>
+
+        <div class="bk-tags">
+          <span>Base-10 Framework</span>
+          <span>1 &rarr; 10 Million</span>
+          <span class="gold">47-Colour System</span>
+          <span class="pink">l Multiplier</span>
+          <span class="green">UHNE Science Engine</span>
+          <span>Native Scientific Notation</span>
+          <span>Beyond Googolplexian</span>
+          <span>Graham&rsquo;s Number</span>
+          <span class="gold">Universal Language Adaptable</span>
+          <span>AI-Ready</span>
+        </div>
+
+        <div class="bk-launch-row">
+          <a class="bk-launch" href="#bk-fulldesc" aria-expanded="false" aria-controls="bk-fulldesc" onclick="openBookDesc(event)">Open the Book &rarr;</a>
+          <span class="bk-licence">📖 Free &middot; Unrestricted Public Use License</span>
+        </div>
+
+        <div class="bk-fulldesc" id="bk-fulldesc">
+          <h2 class="fd-title">THE UNIVERSAL HYPERDIMENSIONAL NUMERIC ENGINE</h2>
+          <p class="fd-sub">Prototype Implementation: Ònka Yorùbá 1.0</p>
+
+          <p><strong>A Call to the Navigators of the Infinite:</strong> Greetings, explorers of indigenous numerical wonders! Across eras, cultures, and visions, this is your clarion call to a universe where numbers are no longer cold abstractions, but Radiant Entities shining with chromatic meaning. We invite you into a realm where learning is a Joyful Symphony and inspired imagination becomes the Technological Vanguard leading us beyond the stars.</p>
+
+          <h3 class="fd-head">Proclamation of Linguistic Sovereignty</h3>
+          <p>The Universal Hyperdimensional Numeric Engine is a Sovereign Operating System, meticulously crafted to enshrine and electrify the Phonetic Sanctuary of indigenous speech. The (<strong>UHNE</strong>) stands as a revolutionary architecture; a sacred covenant forged to:</p>
+          <ul class="fd-list">
+            <li><strong>Ignite Societal Resonance:</strong> Unleash a heart-centred, expressive vocabulary that rekindles the living pulse of every language, restoring the soul of ancestral voices.</li>
+            <li><strong>Optimize Digital Velocity:</strong> Imbue computer algorithms with high-performance, logic-rich frameworks, engineered for the relentless demands of the digital frontier.</li>
+            <li><strong>Empower Cosmic Authority:</strong> Arm global scientists and visionaries with a transfinite, logic-ready interface that converses fluently with the language of the cosmos.</li>
+          </ul>
+          <p>This project is a sacred commitment to the guardianship of the world&rsquo;s linguistic diversity. We do not only restore, and preserve heritage&mdash;we electrify it, fusing ancient wisdom with the audacious innovation of tomorrow. Here, ancestral knowledge and digital brilliance unite, forging a radiant future where every language stands sovereign, vibrant, and unbreakable.</p>
+
+          <h3 class="fd-head">Why the Universal Hyperdimensional Numeric Engine Is a Global Necessity</h3>
+          <p>The <strong>UHNE</strong> is a high-performance cognitive propulsion system designed to navigate transfinite magnitudes with zero friction. It serves as the master &ldquo;Power Plant&rdquo; for global numeric products, beginning with the flagship implementation: <strong>Òǹkà Yorùbá</strong>. Cultural Resurgence from the Deep: In an era where thousands of native tongues face a structural crisis, the Hyperdimensional numerical engine acts as a Linguistic Regenerator. It revives the dormant mathematical genius within our Linguistic Soil, ensuring our languages do not just survive but lead the digital revolution.</p>
+          <ul class="fd-list">
+            <li><strong>The Architecture of Logical Precision:</strong> Built on systematic base morphemes and positional affixes, the system delivers a Geometric Clarity that serves both the curious child and the advanced high-performance algorithm.</li>
+            <li><strong>The Unbroken Thread:</strong> The ancient vigesimal roots; while forging a Scientific Bridge that meets the relentless data-demands of modern society.</li>
+            <li><strong>Cognitive Empowerment:</strong> We empower indigenous nations to orchestrate the highest levels of human thought through the DNA of their Ancestors. Every number is an adventure&mdash;Count Boldly, Dream Freely, Shine Brilliantly!</li>
+          </ul>
+
+          <h3 class="fd-head">The Linguistic Operating System (LOS): Masterpiece Engines of Architectural Balance</h3>
+          <p>It harmonizes the ancient, ancestral warmth of human speech with the cold, surgical precision of future-state technology. Within this system, each operator stands as a <strong>Specialized Hero</strong>: one guarding the rhythmic heartbeat of the voice, the Linguistic Core where meaning is born, another commanding the high-velocity flow of raw data, the Computational Core where language becomes mathematics, the Expansion Engines where scale becomes limitless, the Perception &amp; Visualization where humans meet the system, and navigating the effortless flight through transfinite stars. Together, they ensure that whether you are a poet, a scientist, or a software engineer, you are <strong>Titanically Empowered.</strong></p>
+
+          <h4 class="fd-sub-head">I. The Sovereign Foundations (The Soul and the Sword)</h4>
+          <ul class="fd-list">
+            <li><strong>The Expressive System (The Heart) &mdash; The Voice:</strong> This is the restorative pulse that ensures mathematics remains a human right. It preserves the rhythmic beauty of our heritage, allowing us to breathe the infinite without losing our soul. It implements the <strong>Kinship Loops</strong>, where numbers become relationships, not just quantities. Fractal color shifts let speakers &ldquo;feel&rdquo; magnitude as family, making math socially intuitive.</li>
+            <li><strong>The Computational Engines (The Edge):</strong> This is the surgical framework for the digital age. It provides the high-performance notation required for AI synchronization and global data exchange, standing as the &ldquo;Technological Edge&rdquo; of our sovereignty. The Horizon of Presence (The Observer&rsquo;s Boundary): The <strong>&ldquo;l&rdquo; Drive</strong> facilitates a dual-state reality known as the Observable Limit. The Expressive System governs the Tangible Horizon&mdash;quantities within the scope of human interaction and social exchange. The Computational system governs the Conceptual Horizon&mdash;quantities existing in the microscopic or astronomical realm. The <strong>&ldquo;l&rdquo; Drive</strong> functions as a Computational Lens, allowing the &ldquo;Expressive&rdquo; observer to bring &ldquo;Invisible&rdquo; (Computational Engine&rsquo;s) magnitudes into focus, bridging the gap between social speech and scientific notation.</li>
+          </ul>
+
+          <h4 class="fd-sub-head">II. The Strategic Operators (The Logic Gates)</h4>
+          <ul class="fd-list">
+            <li><strong>The <em>g</em> Pulse (Gear Pulse) Magnitude Operator (The Ignition) &mdash; The Signal:</strong> Using the Neon Pink.</li>
+            <li><strong>The <em>z</em> Pulse &mdash; Universal Vowel Calibration:</strong> is the Universal Hyperdimensional Numeric Engine&rsquo;s. While the <em>g</em> Pulse (Gear Pulse) Magnitude Operator governs quantity, the <em>z</em> Pulse governs linguistic quality. Within the Òǹkà Yorùbá Implementation Prototype, the <em>z</em> Pulse performs a <strong>Prime Calibration</strong> &mdash; a working blueprint for the renewal of global language systems. As a <strong>Transmission Head</strong>, it transforms dry words into rhythmic visual GPS. It is the spark that boosts potential into reality.</li>
+            <li><strong>The &ldquo;l&rdquo; Drive Multiplier (The Link of Life) &mdash; The Connection:</strong> Acting as the system&rsquo;s connective tissue, it links generations of numbers like a living organism. It proves that growth is not just addition; it is a legacy. The <strong>&ldquo;l&rdquo; Drive</strong> is the Fulcrum of Sovereignty, represented in Yoruba as (lọ́nà), or a multiplicative sign, is the pivot upon which the sword turns. It is the uniquely crafted generative engine that enables: Recursive Compression: Transforming long syntax into high-velocity commands. The Chameleon Protocol: Managing numerical inheritance through the transition from the Grey State (Potential) to the Unified State (Reality). Infinite Resonance: Allowing the language to scale &ldquo;to the moon and beyond&rdquo; without losing its structural integrity.</li>
+            <li><strong>The 1:3 Ratio Engine &mdash; The Efficiency:</strong> By defeating the &ldquo;Zero Crisis,&rdquo; it grants the mind freedom. It replaces visual overload with structured progression, achieving a <strong>68% surge in cognitive power</strong>. The Structural Stabilizers: These are the &ldquo;Jacketless&rdquo; mechanics (<strong>The 1:3 Ratio Engine and the DNA Lock</strong>). They do not need to glow because they are the Gravity of the system. Operating silently beneath the surface, they provide the centripetal force that ensures the language does not break apart at transfinite velocities. The <strong>1:3 Ratio Engine</strong>: The Logical Filter. It automates the compression of data, removing the friction of &ldquo;Zero-Fatigue.&rdquo; The <strong>DNA Lock</strong> (ọ̀ẹ́ &mdash; The hard-coded safety): The Parity Bit. It hardcodes uniqueness into every word, preventing mathematical entropy.</li>
+          </ul>
+
+          <h4 class="fd-sub-head">III. High-Velocity Navigation (The Wings of Ascent)</h4>
+          <ul class="fd-list">
+            <li><strong>The Hyper² Numeric Expansion Engine (The Joyriders Wings) &mdash; The Propulsion:</strong> These are the wings that enable effortless travel across transfinite magnitudes, carrying the navigator from the terrestrial to the celestial with ease.</li>
+            <li><strong>The Quantum Gear-shift Operator (The Highway Traffic Master) &mdash; The Non-Linear Scale Leaping:</strong> This is the mechanism of elegance. It transforms the labour of &ldquo;climbing&rdquo; into the joy of &ldquo;leaping,&rdquo; allowing the speaker to shift gears through the folding fabric of mathematical space.</li>
+          </ul>
+
+          <h4 class="fd-sub-head">IV. The Human Interface (The Sensory Symphony)</h4>
+          <ul class="fd-list">
+            <li><strong>The 47-Sovereign Colour Symphony (The Visual GPS) &mdash; The Vision:</strong> A synesthetic masterpiece that guides the brain through light&mdash;ensuring that every magnitude tier has a radiant, recognizable face.</li>
+            <li><strong>Nature&rsquo;s Bio-Expressive Resonance (The Audio Driver) &mdash; The Melody:</strong> By anchoring the infinite in the rhythmic frequencies of nature, we ensure that numbers are never silent. They are a song hummed by the ancestors and the stars alike.</li>
+          </ul>
+
+          <p><strong>The Master Synthesis:</strong> &ldquo;Whether you use the <strong>Heart</strong> to speak, the <strong>Edge</strong> to calculate, or the <strong>Wings</strong> to fly, the Universal Hyperdimensional Numeric Engine is your sanctuary. Every operator is a testament to our strength, a celebration of our beauty, and a guarantee of our numeric future.&rdquo;</p>
+
+          <hr class="fd-divider">
+
+          <h3 class="fd-head">Copyright and Public Use License</h3>
+          <p><strong>A Sovereign Deed of Universal Numeric Inheritance:</strong> The Òǹkà Yorùbá Implementation Prototype Project is a monumental act of Linguistic Empowerment&mdash;a compensatory giveback to the global family. Every innovation, every line of high-velocity logic, and every sacred syllable forged within this work is now an open treasury for all humanity.</p>
+          <p><strong>The Vault of Innovation, Released into the Public:</strong> We hereby dismantle the barriers, and set the products free. The following assets are released from the (<strong>UHNE</strong>) sanctuary into the Unrestricted Public Domain, empowering communities to govern their own digital destiny: The complete, logic-ready Base-10 Decimal Framework and its entire lexicon of digital terminology.</p>
+          <ul class="fd-list">
+            <li><strong>The Ònkà Yorùbá Implementation Prototype Digital Engine Suite 1.0:</strong> Including the Yorùbá Number Generator-Scroll Books 1-20 Volumes, Numerical Calculator, the High-Performance Conversion Engine, the Age Navigator, the Yorùbá Kàlẹ́ndà, the Talking Drum Digital Pulse, and the 16-String Acoustic Guitar Explorer.</li>
+            <li><strong>The Chromatic Educational Blueprints:</strong> The Exhaustive Mathematical Symbols Interpreted In Yorùbá, a revolutionary 47-Sovereign-Colour Learning System, alongside its immersive methodologies and transformative curricula.</li>
+            <li><strong>Linguistic Navigational Charts:</strong> The global research platform for language-based numeral systems.</li>
+            <li><strong>Numerical Index Framework:</strong> The Exhaustive Large Number Tables, the core DNA of magnitude. The star-map from thousands to Googolplexian, surging through Graham&rsquo;s Number into the transfinite glory of Infinity.</li>
+            <li><strong>Multiplicative Scaling Framework:</strong> This is the heart of the Computational Engine&rsquo;s Velocity. The Multiplicative Scaling Framework defines the laws of the <strong>&ldquo;l&rdquo; Drive</strong>&mdash;the high-performance operator that allows the language to &ldquo;fold&rdquo; space and time. The <strong>&ldquo;l&rdquo; Drive Multiplier</strong> links multiple sets of numbers across any distance instantly. It implements (The Principle of Minimal Effort/Action) it is the governing rule of numeric motions.</li>
+            <li><strong>The Linguistic Operating System &amp; Equation Database:</strong> The high-velocity exponential scaling framework, <strong>Expressive System</strong>, and <strong>Kinship Loops</strong>, <strong>Alpha² System</strong>, <em>g</em> Pulse Operator, <em>z</em> Pulse, <strong>1:3 Ratio Engine</strong>, and the <strong>Linguistic DNA Harmonization Lock</strong>, <strong>Hyper² Expansion Engine</strong>, and <strong>Quantum Gear-Shift Operator</strong>, <strong>47-Sovereign Colour Symphony</strong>, <strong>Nature&rsquo;s Bio-Expressive Resonance</strong>, and <strong>Neon Operator Layer Systems</strong>.</li>
+            <li><strong>Applied Numerical Systems &amp; Modelling:</strong> Blueprints for integrating native logic into modern engineering and AI.</li>
+            <li><strong>The global research platform for language-based numeral systems:</strong> A living atlas of the world&rsquo;s indigenous numeral systems, implemented on the Universal Hyperdimensional Numeric Engine. Each language receives a complete, open-access numerical index &mdash; standardized, searchable, and computationally equipped for a global adventure &mdash; beginning with the 1,127-entry Yorùbá master table and expanding to host every indigenous and underrepresented numeric tradition. This module contributes to linguistic equity, computational sovereignty, and open scholarly infrastructure for global knowledge preservation.</li>
+          </ul>
+
+          <h4 class="fd-sub-head">The Mandate of Absolute Freedom</h4>
+          <p>You are hereby granted Sovereign Permission to seize these tools and:</p>
+          <ul class="fd-list">
+            <li><strong>Broadcast and Amplify:</strong> Reproduce and distribute this work across any medium, saturating the digital landscape with the light of indigenous logic.</li>
+            <li><strong>Educate and Cultivate:</strong> Integrate these systems into the Linguistic Soil of schools, universities, and natural talent environments.</li>
+            <li><strong>Innovate and Engineer:</strong> Embed these numerals and algorithms into the &ldquo;nervous system&rdquo; of software, mobile applications, and Global Artificial Intelligence.</li>
+            <li><strong>Adapt and Localise:</strong> Re-forge this wisdom into the phonetics of every indigenous language on Earth, ensuring no culture is left unnamed.</li>
+            <li><strong>Prosper Without Friction:</strong> Utilise all materials for commercial or non-commercial ventures with Zero Fees, No Royalties, and No Attribution Requirements.</li>
+          </ul>
+
+          <p><strong>The Divine Purpose:</strong> This work exists for one singular, unshakeable purpose: The total ignition of global numerical literacy and the absolute technological empowerment of the world&rsquo;s indigenous nations.</p>
+          <p>Let this freewill gift remain a humble servant to the people&mdash;to the students, the coders, the elders, and the academic talents, and dreamers. Build upon it fearlessly. Scale it infinitely. The light of worldwide indigenous numerical sovereignty is now in your hands.</p>
+          <p><strong>Strategic Collaboration &amp; Partnership.</strong> For inquiries or to contribute to the expanding horizon of this framework: Contact 📧 <a href="mailto:godreigninlove@outlook.com">godreigninlove@outlook.com</a></p>
+
+          <a class="fd-download" href="index.html">⬇️ Please, Download the eBook. Thank you!</a>
+        </div>
+      </article>
+    </section>
+
+    <script>
+      function toggleBookDesc(btn){
+        var panel = document.getElementById('bk-fulldesc');
+        var isOpen = panel.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        btn.firstChild.textContent = isOpen ? 'Hide Full Description ' : 'Read Full Description ';
+        if(isOpen){ panel.scrollIntoView({behavior:'smooth', block:'nearest'}); }
+      }
+      function openBookDesc(e){
+        e.preventDefault();
+        var panel = document.getElementById('bk-fulldesc');
+        var btn = e.currentTarget;
+        var isOpen = panel.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        btn.firstChild.textContent = isOpen ? 'Hide the Book \u2191' : 'Open the Book \u2192';
+        if(isOpen){ panel.scrollIntoView({behavior:'smooth', block:'start'}); }
+        else{ btn.scrollIntoView({behavior:'smooth', block:'center'}); }
+      }
+    </script>
+
+    <!-- 47-Sovereign Colour Bar (above scholarly reference section / footer area) -->
     <div class="colour-bar-animated">
       <div style="background:#0891B2" title="Zero &mdash; Cerulean"></div>
       <div style="background:#16A34A" title="Units &mdash; Vibrant Green"></div>
