@@ -1185,32 +1185,38 @@
     .why-opener strong{ color:#0f3460; }
 
     /* Research Foundations divider */
-    .rf-divider{ margin:38px 0 26px; padding:0; text-align:left; }
-    .rf-divider .rf-rule{
-        display:flex; align-items:center; gap:14px;
-        margin:0 0 14px; max-width:560px;
+    .rf-divider{
+        margin:36px 0; padding:32px 30px;
+        background:linear-gradient(135deg,#0a2447 0%,#0f3460 50%,#0a2447 100%);
+        border-top:3px solid #FFD700;
+        border-bottom:3px solid #FFD700;
+        border-radius:14px;
+        box-shadow:0 14px 32px rgba(10,20,46,.30);
+        text-align:left;
+        position:relative;
     }
-    .rf-divider .rf-rule::after{
-        content:""; flex:1; height:1px;
-        background:linear-gradient(90deg, rgba(255,215,0,.55) 0%, rgba(15,52,96,0) 100%);
-    }
-    .rf-divider .rf-mark{
-        font-size:.7rem; font-weight:800; color:#0f3460;
-        letter-spacing:4px; text-transform:uppercase; padding:0 4px 0 0;
+    .rf-divider::before{
+        content:""; position:absolute; inset:0;
+        background:radial-gradient(circle at 0% 0%, rgba(255,215,0,.12) 0%, transparent 60%);
+        border-radius:14px; pointer-events:none;
     }
     .rf-divider .rf-eyebrow{
-        display:inline-block; margin:0 0 8px; color:#0f3460;
-        padding:0 0 4px; border-bottom:2px solid #FFD700;
-        font-size:.78rem; letter-spacing:3.5px; font-weight:800; text-transform:uppercase;
+        display:inline-block; margin:0 0 10px;
+        color:#FFE873;
+        padding:0 0 5px; border-bottom:2px solid #FFD700;
+        font-size:.82rem; letter-spacing:4px; font-weight:800; text-transform:uppercase;
+        position:relative;
     }
     .rf-divider h3{
         font-family:'Playfair Display','Georgia',serif;
-        font-size:1.85rem; font-weight:700; color:#0a2447;
-        margin:8px 0 6px; letter-spacing:.4px; line-height:1.2;
+        font-size:2rem; font-weight:700; color:#FFE873;
+        margin:10px 0 10px; letter-spacing:.4px; line-height:1.2;
+        position:relative;
     }
     .rf-divider .rf-sub{
-        font-size:.95rem; color:#3a4a63; font-weight:500;
-        margin:0; max-width:640px; line-height:1.6; font-style:italic;
+        font-size:.97rem; color:#dde7f5; font-weight:500;
+        margin:0; max-width:640px; line-height:1.65; font-style:italic;
+        position:relative;
     }
 
     /* ============ Premium Research Foundations sub-sections ============ */
@@ -1355,37 +1361,6 @@
     </div>
 </section>
 
-<!-- ============ Institutional Impact ============ -->
-<section class="impact-section">
-    <span class="exec-eyebrow">Institutional Impact</span>
-    <h3>Designed for Cross-Sector Adoption</h3>
-    <p>UHNE is designed not only as a numerical framework but also as a platform for <strong>educational innovation</strong>, <strong>computational experimentation</strong>, <strong>linguistic preservation</strong>, and <strong>interdisciplinary research</strong>. Its modular structure invites adoption across formal and informal knowledge ecosystems.</p>
-    <div class="impact-grid">
-        <div class="impact-pill"><span class="icon">🏫</span><span class="label">Schools</span></div>
-        <div class="impact-pill"><span class="icon">🎓</span><span class="label">Universities</span></div>
-        <div class="impact-pill"><span class="icon">📚</span><span class="label">Libraries</span></div>
-        <div class="impact-pill"><span class="icon">🔬</span><span class="label">Researchers</span></div>
-        <div class="impact-pill"><span class="icon">🌍</span><span class="label">Communities</span></div>
-        <div class="impact-pill"><span class="icon">🤖</span><span class="label">AI &amp; Data</span></div>
-    </div>
-</section>
-
-<!-- ============ Research Gravity / Measurable Scope ============ -->
-<section class="stats-section">
-    <span class="exec-eyebrow">Research Gravity</span>
-    <h3 class="stats-head">Institutional Metrics</h3>
-    <p class="stats-sub">Measurable outputs of the engine — the living scope of UHNE’s research, linguistic, and computational architecture.</p>
-    <div class="stats-grid">
-        <div class="stat-card"><span class="stat-num">44</span><span class="stat-label">Jumps</span></div>
-        <div class="stat-card"><span class="stat-num">301</span><span class="stat-label">Pulses</span></div>
-        <div class="stat-card"><span class="stat-num">47</span><span class="stat-label">Colours</span></div>
-        <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Core Operators</span></div>
-        <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Database Architecture</span></div>
-        <div class="stat-card"><span class="stat-num">1,127</span><span class="stat-label">Master Index Entries</span></div>
-        <div class="stat-card"><span class="stat-num">833</span><span class="stat-label">Bilingual -illion Refs</span></div>
-    </div>
-</section>
-
 <!-- ============ Research Foundations Divider ============ -->
 <section class="rf-divider">
     <span class="rf-eyebrow">Research Foundations</span>
@@ -1414,6 +1389,21 @@
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is only the beginning. The primary indices are visible for immediate use, but the true heartbeat of our restoration pulses within the <strong>200 Volumes</strong> of our digital scroll books. Dive into these deep archives and rediscover the infinite capacity of a numeric system whose scaling soars upward past a <strong>Tredecillion</strong>. But &Ograve;nka Yor&ugrave;b&aacute; is more than a library&mdash;it is a <strong>living, breathing ecosystem</strong>. Our suite of indigenous software is engineered to be a lifelong companion for the Yor&ugrave;b&aacute; soul, delivering intellectual engagement that keeps the mind razor-sharp and the spirit ablaze.</p>
 </section>
 
+<!-- ============ Institutional Impact ============ -->
+<section class="impact-section">
+    <span class="exec-eyebrow">Institutional Impact</span>
+    <h3>Designed for Cross-Sector Adoption</h3>
+    <p>UHNE is designed not only as a numerical framework but also as a platform for <strong>educational innovation</strong>, <strong>computational experimentation</strong>, <strong>linguistic preservation</strong>, and <strong>interdisciplinary research</strong>. Its modular structure invites adoption across formal and informal knowledge ecosystems.</p>
+    <div class="impact-grid">
+        <div class="impact-pill"><span class="icon">🏫</span><span class="label">Schools</span></div>
+        <div class="impact-pill"><span class="icon">🎓</span><span class="label">Universities</span></div>
+        <div class="impact-pill"><span class="icon">📚</span><span class="label">Libraries</span></div>
+        <div class="impact-pill"><span class="icon">🔬</span><span class="label">Researchers</span></div>
+        <div class="impact-pill"><span class="icon">🌍</span><span class="label">Communities</span></div>
+        <div class="impact-pill"><span class="icon">🤖</span><span class="label">AI &amp; Data</span></div>
+    </div>
+</section>
+
 <section class="rf-section discover-section">
     <span class="rf-eyebrow-sm">🎯 Discover</span>
     <h3 class="rf-title">Innovative Software Lab</h3>
@@ -1440,8 +1430,24 @@
     <p class="rf-intro">These are not mere tools; they are <strong>hidden treasures</strong> designed to keep the brain busy, the heart full, and the mind far from the shadows of depression. Engage with the logic of your ancestors and discover that there is always more to learn, more to build, and more to celebrate.</p>
 </section>
 
+<!-- ============ Research Gravity / Measurable Scope ============ -->
+<section class="stats-section">
+    <span class="exec-eyebrow">Research Gravity</span>
+    <h3 class="stats-head">Institutional Metrics</h3>
+    <p class="stats-sub">Measurable outputs of the engine — the living scope of UHNE’s research, linguistic, and computational architecture.</p>
+    <div class="stats-grid">
+        <div class="stat-card"><span class="stat-num">44</span><span class="stat-label">Jumps</span></div>
+        <div class="stat-card"><span class="stat-num">301</span><span class="stat-label">Pulses</span></div>
+        <div class="stat-card"><span class="stat-num">47</span><span class="stat-label">Colours</span></div>
+        <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Core Operators</span></div>
+        <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Database Architecture</span></div>
+        <div class="stat-card"><span class="stat-num">1,127</span><span class="stat-label">Master Index Entries</span></div>
+        <div class="stat-card"><span class="stat-num">833</span><span class="stat-label">Bilingual -illion Refs</span></div>
+    </div>
+</section>
+
 <section class="rf-section join-section">
-    <span class="rf-eyebrow-sm">Join the Restoration</span>
+    <span class="rf-eyebrow-sm">House of Creative Research</span>
     <h3 class="rf-title">Become a Citizen of this Creative Sanctuary</h3>
     <p class="rf-intro">The journey does not end with the scrolls. We are assembling a global community of visionaries, creators, and thinkers who believe that the future of every nation should be built on its <em>own</em> indigenous logic. By joining our community, you are not merely signing up for updates — you are <strong>claiming your seat in the Godreign Digital Laboratory</strong>.</p>
 
