@@ -43,8 +43,9 @@
       border: 1px solid rgba(255,215,0,0.3); white-space: nowrap;
     }
     .menu-bar a:hover { background: rgba(255,215,0,0.2); border-color: #FFD700; box-shadow: 0 4px 15px rgba(255,215,0,0.3); }
+        .menu-bar a.current { background: rgba(255,215,0,0.18); border-color: #FFD700; box-shadow: 0 4px 15px rgba(255,215,0,0.3); }
 
-    .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; width: 0%; background: linear-gradient(90deg,#FFD700,#FF13F0,#27BCED); z-index: 1001; transition: width 0.1s ease; }
+    .scroll-progress { position: fixed; top: 0; left: 0; height: 4px; width: 0%; z-index: 2000; background: linear-gradient(90deg, #0891B2, #16A34A, #2563EB, #9333EA, #DC2626, #B59410, #4EAAE4, #8B4513, #DAA520, #EF6000, #000080, #FC5D8D, #808000, #8B008B, #6A5ACD, #FF6347, #1E90FF, #F59E0B, #8B0000, #047857, #A855F7, #D2691E, #6C0AC9, #B91C1C, #65A30D, #4B0082, #FA8072, #008B8B, #B8860B, #7B2D8E, #20B2AA, #B22222, #9370DB, #A0522D, #191970, #E11D48, #5F9EA0, #CD7F32, #9932CC, #228B22, #483D8B, #800000, #CD853F, #94AA00, #4682B4, #FF13F0, #808080); transition: width 0.1s linear; border-radius: 0 2px 2px 0; }
 
     .container { background: #fff; max-width: 1400px; margin: 0 auto; padding: 0 20px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
 
@@ -410,7 +411,7 @@
     <a href="05 Equation Engines.html">Equation Engines</a>
     <a href="06 Applied Systems.html">Applied Systems</a>
         <a href="07 Maths Symbols.html">Maths Symbols</a>
-        <a href="08 World Numerals.html">World Numerals</a>
+        <a class="current" href="08 World Numerals.html">World Numerals</a>
         <a href="09 Numeric Products.html">Numeric Products</a>
     <a href="10 About Us.html">About Us</a>
   </div>
