@@ -8,11 +8,27 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 
-    /* ── Top progress bar ── */
+    /* ── Top progress bar (47-Sovereign Colour Spectrum) ── */
     .scroll-progress{
-      position: fixed; top:0; left:0; width:0; height:4px; z-index:2000;
-      background: linear-gradient(90deg, #1E8CB8, #FFD700, #FF13F0);
-      transition: width .12s linear;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      z-index: 2000;
+      background: linear-gradient(90deg,
+        #0891B2, #16A34A, #2563EB, #9333EA, #DC2626,
+        #B59410, #4EAAE4, #8B4513, #DAA520, #EF6000,
+        #000080, #FC5D8D, #808000, #8B008B, #6A5ACD,
+        #FF6347, #1E90FF, #F59E0B, #8B0000, #047857,
+        #A855F7, #D2691E, #6C0AC9, #B91C1C, #65A30D,
+        #4B0082, #FA8072, #008B8B, #B8860B, #7B2D8E,
+        #20B2AA, #B22222, #9370DB, #A0522D, #191970,
+        #E11D48, #5F9EA0, #CD7F32, #9932CC, #228B22,
+        #483D8B, #800000, #CD853F, #94AA00, #4682B4, #FF13F0, #808080
+      );
+      transition: width 0.1s linear;
+      border-radius: 0 2px 2px 0;
     }
 
     /* ── Menu bar ── */
@@ -752,7 +768,57 @@
       </section>
 
     </div><!-- /.content -->
-  </div><!-- /.container -->
+
+    <!-- 47-Colour Bar -->
+    <div class="colour-bar-animated">
+      <div style="background:#0891B2" title="Zero &mdash; Cerulean"></div>
+      <div style="background:#16A34A" title="Units &mdash; Vibrant Green"></div>
+      <div style="background:#2563EB" title="Tens &mdash; Royal Blue"></div>
+      <div style="background:#9333EA" title="Hundreds &mdash; Purple"></div>
+      <div style="background:#DC2626" title="Thousands &mdash; Red"></div>
+      <div style="background:#B59410" title="Tens of Thousands &mdash; Dark Goldenrod"></div>
+      <div style="background:#4EAAE4" title="Hundreds of Thousands &mdash; Sky Blue"></div>
+      <div style="background:#8B4513" title="Millions &mdash; Saddle Brown"></div>
+      <div style="background:#228B22" title="Tens of Millions &mdash; Forest Green"></div>
+      <div style="background:#EF6000" title="Hundreds of Millions &mdash; Dark Orange"></div>
+      <div style="background:#000080" title="Billions &mdash; Navy Blue"></div>
+      <div style="background:#FC5D8D" title="Tens of Billions &mdash; Hot Pink"></div>
+      <div style="background:#808000" title="Hundreds of Billions &mdash; Olive"></div>
+      <div style="background:#CD853F" title="Trillions &mdash; Peru"></div>
+      <div style="background:#6A5ACD" title="Tens of Trillions &mdash; Slate Blue"></div>
+      <div style="background:#800000" title="Hundreds of Trillions &mdash; Maroon"></div>
+      <div style="background:#1E90FF" title="Quadrillions &mdash; Dodger Blue"></div>
+      <div style="background:#F59E0B" title="Tens of Quadrillions &mdash; Amber"></div>
+      <div style="background:#8B0000" title="Hundreds of Quadrillions &mdash; Dark Red"></div>
+      <div style="background:#047857" title="Quintillions &mdash; Emerald"></div>
+      <div style="background:#A855F7" title="Tens of Quintillions &mdash; Bright Violet"></div>
+      <div style="background:#D2691E" title="Hundreds of Quintillions &mdash; Chocolate"></div>
+      <div style="background:#6C0AC9" title="Sextillions &mdash; Electric Violet"></div>
+      <div style="background:#B91C1C" title="Tens of Sextillions &mdash; Crimson"></div>
+      <div style="background:#65A30D" title="Hundreds of Sextillions &mdash; Lime"></div>
+      <div style="background:#4B0082" title="Septillions &mdash; Indigo"></div>
+      <div style="background:#FA8072" title="Tens of Septillions &mdash; Salmon"></div>
+      <div style="background:#008B8B" title="Hundreds of Septillions &mdash; Dark Teal"></div>
+      <div style="background:#B8860B" title="Octillions &mdash; Dark Goldenrod"></div>
+      <div style="background:#7B2D8E" title="Tens of Octillions &mdash; Deep Violet"></div>
+      <div style="background:#20B2AA" title="Hundreds of Octillions &mdash; Light Sea Green"></div>
+      <div style="background:#B22222" title="Nonillions &mdash; Firebrick"></div>
+      <div style="background:#9370DB" title="Tens of Nonillions &mdash; Medium Purple"></div>
+      <div style="background:#A0522D" title="Hundreds of Nonillions &mdash; Sienna"></div>
+      <div style="background:#191970" title="Decillions &mdash; Midnight"></div>
+      <div style="background:#E11D48" title="Tens of Decillions &mdash; Rose"></div>
+      <div style="background:#5F9EA0" title="Hundreds of Decillions &mdash; Cadet"></div>
+      <div style="background:#CD7F32" title="Undecillions &mdash; Bronze"></div>
+      <div style="background:#9932CC" title="Tens of Undecillions &mdash; Dark Orchid"></div>
+      <div style="background:#DAA520" title="Hundreds of Undecillions &mdash; Goldenrod"></div>
+      <div style="background:#483D8B" title="Duodecillions &mdash; Dark Slate Blue"></div>
+      <div style="background:#FF6347" title="Tens of Duodecillions &mdash; Tomato"></div>
+      <div style="background:#8B008B" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
+      <div style="background:#94AA00" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div style="background:#808080" title="Unassigned State &mdash; Grey"></div>
+      <div style="background:#FF13F0" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
+      <div style="background:#4682B4" title="Large Numbers &mdash; Steel Blue"></div>
+    </div>
 
 <section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
 <style>
@@ -1006,5 +1072,4 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
-</body>
-</html>
+</div></body></html>
