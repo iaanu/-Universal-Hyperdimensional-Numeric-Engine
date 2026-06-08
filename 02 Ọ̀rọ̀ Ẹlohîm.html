@@ -1912,6 +1912,20 @@
         .g-photo.t-dove { background-image:url('Book3.jpg'); background-size: contain; background-color:#ffffff; }
         .g-photo.t-book1{ background-image:url('Book4.jpg'); background-size: contain; background-color:#ffffff; }
         .g-photo.t-book2{ background-image:url('Book5.jpg'); background-size: contain; background-color:#ffffff; }
+        .g-photo.t-book3{ background-image:url('Book6.jpg'); background-size: contain; background-color:#ffffff; }
+
+        /* Align book images to top so they sit level with the title */
+        #g-ch3 .g-photo-wrap,
+        #g-ch4 .g-photo-wrap{ align-self:flex-start; }
+        #g-ch3 .g-photo.t-book2,
+        #g-ch4 .g-photo.t-book3{ background-position: center top; }
+
+        /* Fine vertical positioning per chapter image */
+        #g-ch2 .g-photo-wrap{ margin-top: 60px; }   /* Book4 — come down */
+        #g-ch3 .g-photo-wrap{ margin-top: 60px; }   /* Book5 — come down equally */
+
+        /* Chapter IV — pin the title to the top of the panel so it aligns with the others */
+        #g-ch4 .g-text{ justify-content:flex-start; }
 
         /* ── Animation ONLY on the poster (logo + dove) ── */
         .g-photo-wrap.g-anim::before{
@@ -2210,6 +2224,19 @@
           <p>Language is not only read; it is heard, voiced, and remembered acoustically. <strong>Ọ̀RỌ̀ ẸLOHÎM</strong> therefore foregrounds source-to-speech transparency through Yorùbá tonal guidance, so that pronunciation remains disciplined by audible form rather than reduced to silent approximation.</p>
           <p>This acoustic discipline is complemented by a restrained visual logic. Within passages associated with life, restoration, covenant, and renewal, <span class="t-green" style="font-weight: 700;">green</span> operates as a restorative reading signal, while the UHNE numeric layer allows expressions such as <em>Ení, Éjì, Ẹ́ta, Ẹ́rin, Árǔn</em> to remain integrated within the textual flow.</p>
           <div class="quote-box">&ldquo;Phonetic precision and visual discipline work together to stabilize reception.&rdquo;</div>
+        </div>
+      </article>
+
+      <!-- ░░ Chapter IV — Book space preserved for Ọ̀RỌ̀ ẸLOHÎM Volume III ░░ -->
+      <article id="g-ch4" class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-photo t-book3" role="img" aria-label="Ọ̀RỌ̀ ẸLOHÎM Volume III — image space preserved"></div>
+        </div>
+        <div class="g-text">
+          <h2><span class="section-marker">IV</span>Chapter Title</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Chapter content placeholder &mdash; replace with the introductory paragraph for Volume III.</p>
+          <div class="quote-box">&ldquo;Pull-quote placeholder.&rdquo;</div>
         </div>
       </article>
 
