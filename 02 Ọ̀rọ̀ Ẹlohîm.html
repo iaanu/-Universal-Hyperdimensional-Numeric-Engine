@@ -2192,6 +2192,12 @@
         .g-collection p{
           color:#1a1a2e; line-height:1.72; margin-bottom:10px; font-size:1rem; text-align:justify;
         }
+        .g-collection.dropcap > p:first-of-type::first-letter{
+          float:left; font-size:3.4rem; line-height:.85;
+          padding:6px 12px 0 0; color:#0a2447; font-weight:700;
+          background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
+          -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+        }
         .g-collection-grid{
           display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.42fr);
           gap:24px; margin:18px 0 16px;
@@ -2292,7 +2298,7 @@
       </div>
 
       <!-- ░░ Collection architecture panel ░░ -->
-      <section class="g-collection" aria-label="The Living Sanctuary Collection">
+      <section class="g-collection dropcap" aria-label="The Living Sanctuary Collection">
         <h3>The Living Sanctuary Collection</h3>
         <div class="collection-descriptor"><strong>10 Sacred Scrolls &bull; 5 Companion Volumes &bull; One Restoration Library</strong></div>
         <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
