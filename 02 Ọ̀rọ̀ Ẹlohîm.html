@@ -2158,11 +2158,77 @@
           color:#0a2447; font-weight:700; font-style:italic;
         }
 
+        /* ── Collection architecture panel ── */
+        .g-collection{
+          margin: 28px 0 30px;
+          background: linear-gradient(135deg,#fbfffc 0%,#edf8fb 100%);
+          border-left: 4px solid #16A34A;
+          border-radius: 14px;
+          box-shadow: 0 8px 24px rgba(22,163,74,.12);
+          padding: 24px 28px;
+        }
+        .g-collection h3{
+          color:#000000; font-size:1.42rem; font-weight:800;
+          padding-left:0; border-left:0;
+          margin-bottom:8px; text-align:left; letter-spacing:.2px;
+        }
+        .g-collection p{
+          color:#1a1a2e; line-height:1.72; margin-bottom:10px; font-size:1rem; text-align:justify;
+        }
+        .g-collection-grid{
+          display:grid; grid-template-columns:minmax(0,.88fr) minmax(0,1.42fr);
+          gap:24px; margin:18px 0 16px;
+        }
+        .g-collection-column{
+          padding-left:18px;
+          border-left:3px solid rgba(30,140,184,.35);
+        }
+        .g-collection-column.study-series{ border-left-color:rgba(22,163,74,.45); }
+        .g-collection-column h4{
+          color:#0a2447; font-size:1.05rem; font-weight:800;
+          margin:0 0 8px; letter-spacing:.2px;
+        }
+        .g-collection .collection-label{
+          display:inline-block; margin:4px 0 10px;
+          color:#0f3460; font-weight:800; font-size:.95rem;
+        }
+        .g-collection .volume-list{
+          margin: 8px 0 0; padding:0; list-style:none;
+        }
+        .g-collection .volume-list li{
+          margin:0 0 10px; color:#1a1a2e; line-height:1.55; font-size:.96rem;
+        }
+        .g-collection .collection-summary{
+          margin-top:14px; padding-top:14px;
+          border-top:1px solid rgba(15,52,96,.14);
+        }
+        .g-collection .summary-lines{
+          margin:8px 0 12px; padding:0; list-style:none;
+        }
+        .g-collection .summary-lines li{
+          color:#1a1a2e; line-height:1.55; font-size:.98rem;
+          padding:4px 0 4px 18px; position:relative;
+        }
+        .g-collection .summary-lines li::before{
+          content:""; position:absolute; left:0; top:13px;
+          width:8px; height:8px; border-radius:50%;
+          background: linear-gradient(135deg,#16A34A,#FFD700);
+        }
+        .g-collection .summary-pill{
+          display:block; margin-top:14px; padding:6px 0 6px 14px;
+          background: transparent;
+          border:0; border-left: 3px solid #FFD700;
+          color:#0a2447; font-style:italic; font-weight:600;
+          font-size:.98rem; line-height:1.45; letter-spacing:.1px;
+          box-shadow:none;
+        }
+
         @media (max-width: 820px){
           .g-chapter, .g-chapter.reverse{ grid-template-columns:1fr; }
           .g-chapter.reverse .g-photo-wrap{ order:0; }
           .g-chapter.reverse .g-text{ order:1; }
           .g-photo-wrap{ position: static; }
+          .g-collection-grid{ grid-template-columns:1fr; gap:16px; }
           .g-text h2{ font-size:1.45rem; }
         }
       </style>
@@ -2185,6 +2251,42 @@
         <p>Written for scholars, translators, educators, worshippers, and every soul seeking the source breath of the sacred text, <strong>Ọ̀RỌ̀ ẸLOHÎM</strong> invites the reader into a stronger encounter with scripture: readable, speakable, memorable, and alive with preserved witness.</p>
         <div class="summary-pill">&ldquo;A book of preserved names, restored sound, living colour, sacred number, and one ancient breath carried forward.&rdquo;</div>
       </div>
+
+      <!-- ░░ Collection architecture panel ░░ -->
+      <section class="g-collection" aria-label="The Living Sanctuary Collection">
+        <h3>The Living Sanctuary Collection</h3>
+        <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p><strong>Ọ̀RỌ̀ ẸLOHÎM</strong> is designed as a complete restoration collection: a sacred text series supported by a growing study library.</p>
+
+        <div class="g-collection-grid">
+          <div class="g-collection-column">
+            <h4>Sacred Scrolls &mdash; Primary Texts</h4>
+            <span class="collection-label">Scroll Books 1&ndash;10</span>
+            <p>The main body of the work is preserved across ten Scroll Books, containing the primary reading text and arranged as a unified sacred scroll journey from <strong>B&rsquo;rẹshît</strong> to <strong>Hitgalut</strong>.</p>
+          </div>
+
+          <div class="g-collection-column study-series">
+            <h4>Sanctuary Studies Series &mdash; Companion Volumes</h4>
+            <p>Alongside the ten Scroll Books, a five-volume study series is planned to support deeper research, pronunciation, preservation, and commentary.</p>
+            <ul class="volume-list">
+              <li><strong>Volume I &mdash; Sacred Identifier Preservation</strong><br>Preserving divine identifiers such as <strong>ẸLOHÎM</strong>, <strong>YAWEH</strong>, <strong>ADONAI</strong>, and related sacred titles with clarity and continuity.</li>
+              <li><strong>Volume II &mdash; Source-to-Speech Phonetics</strong><br>Guiding readers from Hebrew source forms into Yorùbá tonal pronunciation with careful phonetic transparency.</li>
+              <li><strong>Volume III &mdash; Green Preservation Studies</strong><br>Explaining the Green Emission Restoration Design, the green words of Jesus, and the Little Green Î as the Green Witness of the Sanctuary.</li>
+              <li><strong>Volume IV &mdash; Restoration Commentary</strong><br>Providing explanatory notes, interpretive guidance, historical observations, and restoration-focused commentary.</li>
+              <li><strong>Volume V &mdash; Sanctuary Reference</strong><br>A reference companion containing identifiers, pronunciation aids, scroll structures, naming tables, and study indexes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="collection-summary">
+          <p><strong>The Living Sanctuary Collection</strong> contains:</p>
+          <ul class="summary-lines">
+            <li><strong>Scroll Books 1&ndash;10</strong> &mdash; the primary sacred text</li>
+            <li><strong>Sanctuary Studies Volumes I&ndash;V</strong> &mdash; the preservation, phonetic, commentary, and reference library</li>
+          </ul>
+          <div class="summary-pill">&ldquo;To preserve the ancient breath, restore sacred naming clarity, and carry the living text forward for future generations.&rdquo;</div>
+        </div>
+      </section>
 
       <!-- ░░ Chapter I — Dove (image preserved for Ọ̀RỌ̀ ẸLOHÎM) ░░ -->
       <article id="g-ch1" class="g-chapter t-portrait">
