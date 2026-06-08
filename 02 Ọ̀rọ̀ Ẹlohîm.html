@@ -1013,8 +1013,695 @@
 </style>
   <meta property="og:site_name" content="Universal Hyperdimensional Numeric Engine">
   <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
-  <link rel="stylesheet" href="tools/sovereign-colours.css">
-  <script src="tools/gear-pulse-tinter.js" defer></script>
+  <style>
+/* ════════════════════════════════════════════════════════════════════
+   ÒNKA YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
+   Ètò Àwọ̀ OgójìÉje
+   --------------------------------------------------------------------
+   THE SOVEREIGN COLOUR LAW
+   --------------------------------------------------------------------
+   1. Each of the 47 colours is bound to a magnitude TIER, not to a
+      digit. The colour rides with the position (Units, Tens, Hundreds,
+      Thousands, … Tredecillions+, plus the "l" Multiplier and
+      Unassigned), so any number wears the colour of its tier.
+   2. The 47 colours preserve their true value WHEREVER they appear —
+      Master Index, Scaling Engines, Calendar, Calculator, Posters,
+      Apps. One colour, one tier, one site.
+   3. Numbers whose magnitude exceeds the 47 named tiers all wear the
+      same Large-Number Steel Blue (#4682B4). We have no infinite
+      supply of distinguishable colours, so we admit it gracefully and
+      give every very-large magnitude a single shared uniform.
+   4. The "l" Drive Multiplier is ALWAYS Neon Pink (#FF13F0).
+   5. The Unassigned/Children/Contents state is ALWAYS Grey (#808080).
+   --------------------------------------------------------------------
+   SOURCE OF TRUTH
+   --------------------------------------------------------------------
+   The hex values, ordering, and colour names below are taken DIRECTLY
+   from the "47-Sovereign Colour Visual Protocol" table in
+   GitHub/03 Master Index.html (the protocol-table block, rows 01–47).
+   If the Master Index table changes, this file must be updated to
+   match — it is the only authoritative copy.
+   --------------------------------------------------------------------
+   HOW TO USE THIS FILE
+   --------------------------------------------------------------------
+   In any HTML page, add:
+       <link rel="stylesheet" href="tools/sovereign-colours.css">
+   Then reference colours in three equivalent ways:
+
+   (A) Semantic tier variables (preferred for new code):
+         color: var(--tier-tens);          → Royal Blue, any 10–99 ←
+         color: var(--tier-large);         → Steel Blue, any 10⁴⁵+ ←
+         color: var(--tier-l-drive);       → Neon Pink, the 'l' link ←
+
+   (B) Tier-N positional variables (for indexed loops/arrays):
+         color: var(--tier-03);            → same as --tier-tens   ←
+         color: var(--tier-47);            → same as --tier-large  ←
+
+   (C) Legacy class names (kept for backwards compatibility with
+       existing Master Index code):
+         <span class="t-blue">…</span>     → Royal Blue text       ←
+         <span class="c-purple">…</span>   → Purple background     ←
+         <span class="l-mult">l</span>     → Neon Pink — the link  ←
+   ════════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 1 — THE 47 SOVEREIGN COLOURS AS CSS VARIABLES
+   Defined on :root so every page that links this file inherits them.
+   Two parallel naming schemes resolve to the same hex:
+     --tier-NN    (positional, 01–47)
+     --tier-name  (semantic, e.g. --tier-tens)
+   Use whichever reads better in context.
+───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ── 01 · Zero · Cerulean ─────────────────────────────────────── */
+  --tier-01: #0891B2;
+  --tier-zero: var(--tier-01);
+
+  /* ── 02 · Units (1–9) · Vibrant Green ─────────────────────────── */
+  --tier-02: #16A34A;
+  --tier-units: var(--tier-02);
+
+  /* ── 03 · Tens (10–99) · Royal Blue ───────────────────────────── */
+  --tier-03: #2563EB;
+  --tier-tens: var(--tier-03);
+
+  /* ── 04 · Hundreds (100–999) · Purple ─────────────────────────── */
+  --tier-04: #9333EA;
+  --tier-hundreds: var(--tier-04);
+
+  /* ── 05 · Thousands · Red ─────────────────────────────────────── */
+  --tier-05: #DC2626;
+  --tier-thousands: var(--tier-05);
+
+  /* ── 06 · Tens of Thousands · Dark Goldenrod ──────────────────── */
+  --tier-06: #B59410;
+  --tier-tens-thou: var(--tier-06);
+
+  /* ── 07 · Hundreds of Thousands · Sky Blue ────────────────────── */
+  --tier-07: #4EAAE4;
+  --tier-hund-thou: var(--tier-07);
+
+  /* ── 08 · Millions · Saddle Brown ─────────────────────────────── */
+  --tier-08: #8B4513;
+  --tier-millions: var(--tier-08);
+
+  /* ── 09 · Tens of Millions · Forest Green ─────────────────────── */
+  --tier-09: #228B22;
+  --tier-tens-mill: var(--tier-09);
+
+  /* ── 10 · Hundreds of Millions · Dark Orange ──────────────────── */
+  --tier-10: #EF6000;
+  --tier-hund-mill: var(--tier-10);
+
+  /* ── 11 · Billions · Navy Blue ────────────────────────────────── */
+  --tier-11: #000080;
+  --tier-billions: var(--tier-11);
+
+  /* ── 12 · Tens of Billions · Hot Pink ─────────────────────────── */
+  --tier-12: #FC5D8D;
+  --tier-tens-bill: var(--tier-12);
+
+  /* ── 13 · Hundreds of Billions · Olive ────────────────────────── */
+  --tier-13: #808000;
+  --tier-hund-bill: var(--tier-13);
+
+  /* ── 14 · Trillions · Peru ────────────────────────────────────── */
+  --tier-14: #CD853F;
+  --tier-trillions: var(--tier-14);
+
+  /* ── 15 · Tens of Trillions · Slate Blue ──────────────────────── */
+  --tier-15: #6A5ACD;
+  --tier-tens-trill: var(--tier-15);
+
+  /* ── 16 · Hundreds of Trillions · Maroon ──────────────────────── */
+  --tier-16: #800000;
+  --tier-hund-trill: var(--tier-16);
+
+  /* ── 17 · Quadrillions · Dodger Blue ──────────────────────────── */
+  --tier-17: #1E90FF;
+  --tier-quadrillions: var(--tier-17);
+
+  /* ── 18 · Tens of Quadrillions · Amber ────────────────────────── */
+  --tier-18: #F59E0B;
+  --tier-tens-quad: var(--tier-18);
+
+  /* ── 19 · Hundreds of Quadrillions · Dark Red ─────────────────── */
+  --tier-19: #8B0000;
+  --tier-hund-quad: var(--tier-19);
+
+  /* ── 20 · Quintillions · Emerald ──────────────────────────────── */
+  --tier-20: #047857;
+  --tier-quintillions: var(--tier-20);
+
+  /* ── 21 · Tens of Quintillions · Bright Violet ────────────────── */
+  --tier-21: #A855F7;
+  --tier-tens-quint: var(--tier-21);
+
+  /* ── 22 · Hundreds of Quintillions · Chocolate ────────────────── */
+  --tier-22: #D2691E;
+  --tier-hund-quint: var(--tier-22);
+
+  /* ── 23 · Sextillions · Electric Violet ───────────────────────── */
+  --tier-23: #6C0AC9;
+  --tier-sextillions: var(--tier-23);
+
+  /* ── 24 · Tens of Sextillions · Crimson ───────────────────────── */
+  --tier-24: #B91C1C;
+  --tier-tens-sext: var(--tier-24);
+
+  /* ── 25 · Hundreds of Sextillions · Lime ──────────────────────── */
+  --tier-25: #65A30D;
+  --tier-hund-sext: var(--tier-25);
+
+  /* ── 26 · Septillions · Indigo ────────────────────────────────── */
+  --tier-26: #4B0082;
+  --tier-septillions: var(--tier-26);
+
+  /* ── 27 · Tens of Septillions · Salmon ────────────────────────── */
+  --tier-27: #FA8072;
+  --tier-tens-sept: var(--tier-27);
+
+  /* ── 28 · Hundreds of Septillions · Dark Teal ─────────────────── */
+  --tier-28: #008B8B;
+  --tier-hund-sept: var(--tier-28);
+
+  /* ── 29 · Octillions · Dark Goldenrod ─────────────────────────── */
+  --tier-29: #B8860B;
+  --tier-octillions: var(--tier-29);
+
+  /* ── 30 · Tens of Octillions · Deep Violet ────────────────────── */
+  --tier-30: #7B2D8E;
+  --tier-tens-oct: var(--tier-30);
+
+  /* ── 31 · Hundreds of Octillions · Light Sea Green ────────────── */
+  --tier-31: #20B2AA;
+  --tier-hund-oct: var(--tier-31);
+
+  /* ── 32 · Nonillions · Firebrick ──────────────────────────────── */
+  --tier-32: #B22222;
+  --tier-nonillions: var(--tier-32);
+
+  /* ── 33 · Tens of Nonillions · Medium Purple ──────────────────── */
+  --tier-33: #9370DB;
+  --tier-tens-non: var(--tier-33);
+
+  /* ── 34 · Hundreds of Nonillions · Sienna ─────────────────────── */
+  --tier-34: #A0522D;
+  --tier-hund-non: var(--tier-34);
+
+  /* ── 35 · Decillions · Midnight ───────────────────────────────── */
+  --tier-35: #191970;
+  --tier-decillions: var(--tier-35);
+
+  /* ── 36 · Tens of Decillions · Rose ───────────────────────────── */
+  --tier-36: #E11D48;
+  --tier-tens-dec: var(--tier-36);
+
+  /* ── 37 · Hundreds of Decillions · Cadet ──────────────────────── */
+  --tier-37: #5F9EA0;
+  --tier-hund-dec: var(--tier-37);
+
+  /* ── 38 · Undecillions · Bronze ───────────────────────────────── */
+  --tier-38: #CD7F32;
+  --tier-undecillions: var(--tier-38);
+
+  /* ── 39 · Tens of Undecillions · Dark Orchid ──────────────────── */
+  --tier-39: #9932CC;
+  --tier-tens-undec: var(--tier-39);
+
+  /* ── 40 · Hundreds of Undecillions · Goldenrod ────────────────── */
+  --tier-40: #DAA520;
+  --tier-hund-undec: var(--tier-40);
+
+  /* ── 41 · Duodecillions · Dark Slate Blue ─────────────────────── */
+  --tier-41: #483D8B;
+  --tier-duodecillions: var(--tier-41);
+
+  /* ── 42 · Tens of Duodecillions · Tomato ──────────────────────── */
+  --tier-42: #FF6347;
+  --tier-tens-duodec: var(--tier-42);
+
+  /* ── 43 · Hundreds of Duodecillions · Dark Magenta ────────────── */
+  --tier-43: #8B008B;
+  --tier-hund-duodec: var(--tier-43);
+
+  /* ── 44 · Tredecillions/Tredecillions Plus · Dark Olive ───────── */
+  --tier-44: #94AA00;
+  --tier-tredecillions: var(--tier-44);
+  --tier-tredec: var(--tier-44);
+
+  /* ── 45 · Unassigned State / Children / Contents · Grey ───────── */
+  --tier-45: #808080;
+  --tier-unassigned: var(--tier-45);
+
+  /* ── 46 · The "l" Drive Multiplier · Neon Pink (always) ───────── */
+  --tier-46: #FF13F0;
+  --tier-l-drive: var(--tier-46);
+  --tier-l-mult: var(--tier-46);
+
+  /* ── 47 · Large Numbers (10⁴⁵+ → ∞) · Steel Blue (the catch-all) ─ */
+  --tier-47: #4682B4;
+  --tier-large: var(--tier-47);
+  --tier-large-numbers: var(--tier-47);
+
+  /* ── BONUS · Infinity sibling (Light Steel Blue, bordered) ────── */
+  --tier-infinity: #B0C4DE;
+  --tier-infinity-border: #4682B4;
+  --tier-infinity-text: #1E4D6B;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 2 — TENS DECADE SUB-SYSTEM (10, 20, 30, … 90)
+   A separate, finer-grained palette of 9 distinct blue shades for
+   pages that want to colour each decade individually rather than
+   collapsing 10–99 into a single Royal Blue.
+
+   USE WITH CARE: this sub-system OVERRIDES the rule that "all of
+   10–99 is Royal Blue". Only enable it on pages that explicitly
+   teach decade-by-decade structure. Default pages should keep the
+   simple --tier-tens (Royal Blue) for consistency.
+───────────────────────────────────────────────────────────────────── */
+:root {
+  --tier-tens-10: #1E90FF;   /* Dodger Blue   */
+  --tier-tens-20: #4169E1;   /* Royal Blue    */
+  --tier-tens-30: #0000CD;   /* Medium Blue   */
+  --tier-tens-40: #0047AB;   /* Cobalt        */
+  --tier-tens-50: #4682B4;   /* Steel Blue    */
+  --tier-tens-60: #6495ED;   /* Cornflower    */
+  --tier-tens-70: #00008B;   /* Dark Blue     */
+  --tier-tens-80: #191970;   /* Midnight Blue */
+  --tier-tens-90: #483D8B;   /* Dark Slate    */
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 3 — TEXT-COLOUR CLASSES (.t-*)
+   Both the legacy descriptive names (kept for backwards compatibility
+   with existing Master Index, Scaling Engines, etc.) and the new
+   semantic tier names. All resolve to the same variables above.
+───────────────────────────────────────────────────────────────────── */
+
+/* Legacy descriptive names — DO NOT REMOVE (existing pages depend on these) */
+.t-teal        { color: var(--tier-01); }
+.t-green       { color: var(--tier-02); }
+.t-blue        { color: var(--tier-03); }
+.t-purple      { color: var(--tier-04); }
+.t-red         { color: var(--tier-05); }
+.t-sky         { color: var(--tier-06); }   /* note: legacy class .t-sky is actually Dark Goldenrod */
+.t-golden      { color: var(--tier-07); }   /* note: legacy class .t-golden is actually Sky Blue */
+.t-brown       { color: var(--tier-08); }
+.t-forestgreen { color: var(--tier-09); }
+.t-orange      { color: var(--tier-10); }
+.t-navy        { color: var(--tier-11); }
+.t-pink        { color: var(--tier-12); }
+.t-olive       { color: var(--tier-13); }
+.t-peru        { color: var(--tier-14); }
+.t-forest      { color: var(--tier-15); }
+.t-maroon      { color: var(--tier-16); }
+.t-steel       { color: var(--tier-17); }
+.t-amber       { color: var(--tier-18); }
+.t-darkred     { color: var(--tier-19); }
+.t-emerald     { color: var(--tier-20); }
+.t-violet      { color: var(--tier-21); }
+.t-chocolate   { color: var(--tier-22); }
+.t-dodger      { color: var(--tier-23); }
+.t-crimson     { color: var(--tier-24); }
+.t-lime        { color: var(--tier-25); }
+.t-indigo      { color: var(--tier-26); }
+.t-salmon      { color: var(--tier-27); }
+.t-darkcyan    { color: var(--tier-28); }
+.t-gold        { color: var(--tier-29); }
+.t-plum        { color: var(--tier-30); }
+.t-turquoise   { color: var(--tier-31); }
+.t-firebrick   { color: var(--tier-32); }
+.t-mpurple     { color: var(--tier-33); }
+.t-sienna      { color: var(--tier-34); }
+.t-midnight    { color: var(--tier-35); }
+.t-rose        { color: var(--tier-36); }
+.t-cadet       { color: var(--tier-37); }
+.t-bronze      { color: var(--tier-38); }
+.t-orchid      { color: var(--tier-39); }
+.t-goldenrod   { color: var(--tier-40); }
+.t-dslateblue  { color: var(--tier-41); }
+.t-tomato      { color: var(--tier-42); }
+.t-darkmagenta { color: var(--tier-43); }
+.t-deeppink    { color: var(--tier-44); }
+.t-grey        { color: var(--tier-45); }
+.t-neonpink    { color: var(--tier-46); }
+.l-mult        { color: var(--tier-46); font-weight: 700; }   /* the "l" link */
+.pulse         { color: var(--tier-46); font-weight: 700; font-size: 1.10em; }
+.t-largenumber { color: var(--tier-47); }
+
+/* Tens decade sub-system text colours */
+.t-tens-10 { color: var(--tier-tens-10); }
+.t-tens-20 { color: var(--tier-tens-20); }
+.t-tens-30 { color: var(--tier-tens-30); }
+.t-tens-40 { color: var(--tier-tens-40); }
+.t-tens-50 { color: var(--tier-tens-50); }
+.t-tens-60 { color: var(--tier-tens-60); }
+.t-tens-70 { color: var(--tier-tens-70); }
+.t-tens-80 { color: var(--tier-tens-80); }
+.t-tens-90 { color: var(--tier-tens-90); }
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 4 — BACKGROUND-COLOUR CLASSES (.c-*)
+   Same compatibility approach as Section 3. Each class also sets a
+   sensible foreground colour so light text is readable on dark
+   backgrounds and vice versa — matching the existing Master Index
+   defaults exactly.
+───────────────────────────────────────────────────────────────────── */
+.c-teal        { background: var(--tier-01); color: #fff; }
+.c-green       { background: var(--tier-02); color: #fff; }
+.c-blue        { background: var(--tier-03); color: #fff; }
+.c-purple      { background: var(--tier-04); color: #fff; }
+.c-red         { background: var(--tier-05); color: #fff; }
+.c-sky         { background: var(--tier-06); color: #fff; }
+.c-golden      { background: var(--tier-07); color: #333; }
+.c-brown       { background: var(--tier-08); color: #fff; }
+.c-forestgreen { background: var(--tier-09); color: #fff; }
+.c-orange      { background: var(--tier-10); color: #fff; }
+.c-navy        { background: var(--tier-11); color: #fff; }
+.c-pink        { background: var(--tier-12); color: #fff; }
+.c-olive       { background: var(--tier-13); color: #fff; }
+.c-peru        { background: var(--tier-14); color: #333; }
+.c-forest      { background: var(--tier-15); color: #fff; }
+.c-maroon      { background: var(--tier-16); color: #fff; }
+.c-steel       { background: var(--tier-17); color: #fff; }
+.c-amber       { background: var(--tier-18); color: #333; }
+.c-darkred     { background: var(--tier-19); color: #fff; }
+.c-emerald     { background: var(--tier-20); color: #fff; }
+.c-violet      { background: var(--tier-21); color: #fff; }
+.c-chocolate   { background: var(--tier-22); color: #fff; }
+.c-dodger      { background: var(--tier-23); color: #fff; }
+.c-crimson     { background: var(--tier-24); color: #fff; }
+.c-lime        { background: var(--tier-25); color: #fff; }
+.c-indigo      { background: var(--tier-26); color: #fff; }
+.c-salmon      { background: var(--tier-27); color: #333; }
+.c-darkcyan    { background: var(--tier-28); color: #fff; }
+.c-gold        { background: var(--tier-29); color: #fff; }
+.c-plum        { background: var(--tier-30); color: #fff; }
+.c-turquoise   { background: var(--tier-31); color: #fff; }
+.c-firebrick   { background: var(--tier-32); color: #fff; }
+.c-mpurple     { background: var(--tier-33); color: #fff; }
+.c-sienna      { background: var(--tier-34); color: #fff; }
+.c-midnight    { background: var(--tier-35); color: #fff; }
+.c-rose        { background: var(--tier-36); color: #fff; }
+.c-cadet       { background: var(--tier-37); color: #fff; }
+.c-bronze      { background: var(--tier-38); color: #fff; }
+.c-orchid      { background: var(--tier-39); color: #fff; }
+.c-goldenrod   { background: var(--tier-40); color: #fff; }
+.c-dslateblue  { background: var(--tier-41); color: #fff; }
+.c-tomato      { background: var(--tier-42); color: #fff; }
+.c-darkmagenta { background: var(--tier-43); color: #fff; }
+.c-deeppink    { background: var(--tier-44); color: #fff; }
+.c-grey        { background: var(--tier-45); color: #fff; }
+.c-neonpink    { background: var(--tier-46); color: #fff; }
+.c-largenumber { background: var(--tier-47); color: #fff; }
+.c-infinity    { background: var(--tier-infinity); color: var(--tier-infinity-text); border: 2px solid var(--tier-infinity-border); }
+
+
+/* ─────────────────────────────────────────────────────────────────────   SECTION 4.5 — BORDER-COLOUR CLASSES (.b-*)
+   Left + right border accents in the tier's colour. Used by Master
+   Index card grids and several scrolls/posters for visually framing
+   a row inside its sovereign-colour family.
+────────────────────────────────────────────────────────────────── */
+.b-teal        { border-left: 4px solid var(--tier-01); border-right: 4px solid var(--tier-01); }
+.b-green       { border-left: 4px solid var(--tier-02); border-right: 4px solid var(--tier-02); }
+.b-blue        { border-left: 4px solid var(--tier-03); border-right: 4px solid var(--tier-03); }
+.b-purple      { border-left: 4px solid var(--tier-04); border-right: 4px solid var(--tier-04); }
+.b-red         { border-left: 4px solid var(--tier-05); border-right: 4px solid var(--tier-05); }
+.b-sky         { border-left: 4px solid var(--tier-06); border-right: 4px solid var(--tier-06); }
+.b-golden      { border-left: 4px solid var(--tier-07); border-right: 4px solid var(--tier-07); }
+.b-brown       { border-left: 4px solid var(--tier-08); border-right: 4px solid var(--tier-08); }
+.b-forestgreen { border-left: 4px solid var(--tier-09); border-right: 4px solid var(--tier-09); }
+.b-orange      { border-left: 4px solid var(--tier-10); border-right: 4px solid var(--tier-10); }
+.b-navy        { border-left: 4px solid var(--tier-11); border-right: 4px solid var(--tier-11); }
+.b-pink        { border-left: 4px solid var(--tier-12); border-right: 4px solid var(--tier-12); }
+.b-olive       { border-left: 4px solid var(--tier-13); border-right: 4px solid var(--tier-13); }
+.b-peru        { border-left: 4px solid var(--tier-14); border-right: 4px solid var(--tier-14); }
+.b-forest      { border-left: 4px solid var(--tier-15); border-right: 4px solid var(--tier-15); }
+.b-maroon      { border-left: 4px solid var(--tier-16); border-right: 4px solid var(--tier-16); }
+.b-steel       { border-left: 4px solid var(--tier-17); border-right: 4px solid var(--tier-17); }
+.b-amber       { border-left: 4px solid var(--tier-18); border-right: 4px solid var(--tier-18); }
+.b-darkred     { border-left: 4px solid var(--tier-19); border-right: 4px solid var(--tier-19); }
+.b-emerald     { border-left: 4px solid var(--tier-20); border-right: 4px solid var(--tier-20); }
+.b-violet      { border-left: 4px solid var(--tier-21); border-right: 4px solid var(--tier-21); }
+.b-chocolate   { border-left: 4px solid var(--tier-22); border-right: 4px solid var(--tier-22); }
+.b-dodger      { border-left: 4px solid var(--tier-23); border-right: 4px solid var(--tier-23); }
+.b-crimson     { border-left: 4px solid var(--tier-24); border-right: 4px solid var(--tier-24); }
+.b-lime        { border-left: 4px solid var(--tier-25); border-right: 4px solid var(--tier-25); }
+.b-indigo      { border-left: 4px solid var(--tier-26); border-right: 4px solid var(--tier-26); }
+.b-salmon      { border-left: 4px solid var(--tier-27); border-right: 4px solid var(--tier-27); }
+.b-darkcyan    { border-left: 4px solid var(--tier-28); border-right: 4px solid var(--tier-28); }
+.b-gold        { border-left: 4px solid var(--tier-29); border-right: 4px solid var(--tier-29); }
+.b-plum        { border-left: 4px solid var(--tier-30); border-right: 4px solid var(--tier-30); }
+.b-turquoise   { border-left: 4px solid var(--tier-31); border-right: 4px solid var(--tier-31); }
+.b-firebrick   { border-left: 4px solid var(--tier-32); border-right: 4px solid var(--tier-32); }
+.b-mpurple     { border-left: 4px solid var(--tier-33); border-right: 4px solid var(--tier-33); }
+.b-sienna      { border-left: 4px solid var(--tier-34); border-right: 4px solid var(--tier-34); }
+.b-midnight    { border-left: 4px solid var(--tier-35); border-right: 4px solid var(--tier-35); }
+.b-rose        { border-left: 4px solid var(--tier-36); border-right: 4px solid var(--tier-36); }
+.b-cadet       { border-left: 4px solid var(--tier-37); border-right: 4px solid var(--tier-37); }
+.b-bronze      { border-left: 4px solid var(--tier-38); border-right: 4px solid var(--tier-38); }
+.b-orchid      { border-left: 4px solid var(--tier-39); border-right: 4px solid var(--tier-39); }
+.b-goldenrod   { border-left: 4px solid var(--tier-40); border-right: 4px solid var(--tier-40); }
+.b-dslateblue  { border-left: 4px solid var(--tier-41); border-right: 4px solid var(--tier-41); }
+.b-tomato      { border-left: 4px solid var(--tier-42); border-right: 4px solid var(--tier-42); }
+.b-darkmagenta { border-left: 4px solid var(--tier-43); border-right: 4px solid var(--tier-43); }
+.b-deeppink    { border-left: 4px solid var(--tier-44); border-right: 4px solid var(--tier-44); }
+.b-grey        { border-left: 4px solid var(--tier-45); border-right: 4px solid var(--tier-45); }
+.b-neonpink    { border-left: 4px solid var(--tier-46); border-right: 4px solid var(--tier-46); }
+.b-largenumber { border-left: 4px solid var(--tier-47); border-right: 4px solid var(--tier-47); }
+
+/* Tens decade sub-system border accents */
+.b-tens-10 { border-left: 4px solid var(--tier-tens-10); border-right: 4px solid var(--tier-tens-10); }
+.b-tens-20 { border-left: 4px solid var(--tier-tens-20); border-right: 4px solid var(--tier-tens-20); }
+.b-tens-30 { border-left: 4px solid var(--tier-tens-30); border-right: 4px solid var(--tier-tens-30); }
+.b-tens-40 { border-left: 4px solid var(--tier-tens-40); border-right: 4px solid var(--tier-tens-40); }
+.b-tens-50 { border-left: 4px solid var(--tier-tens-50); border-right: 4px solid var(--tier-tens-50); }
+.b-tens-60 { border-left: 4px solid var(--tier-tens-60); border-right: 4px solid var(--tier-tens-60); }
+.b-tens-70 { border-left: 4px solid var(--tier-tens-70); border-right: 4px solid var(--tier-tens-70); }
+.b-tens-80 { border-left: 4px solid var(--tier-tens-80); border-right: 4px solid var(--tier-tens-80); }
+.b-tens-90 { border-left: 4px solid var(--tier-tens-90); border-right: 4px solid var(--tier-tens-90); }
+
+
+/* ──────────────────────────────────────────────────────────────────   SECTION 5 — SEMANTIC TIER CLASSES (preferred for new code)
+   Use these whenever you write new HTML — they read like the rule
+   itself, so future readers immediately know which tier each element
+   represents. The legacy classes above keep working unchanged.
+
+   Examples:
+     <span class="tier-tens">Ẹ́wǎ</span>
+     <span class="tier-hundreds">Ọgọ́rǔn</span>
+     <span class="tier-l-drive">l</span>
+     <span class="tier-large">Àwọn Nọ́mbà Ńláńlá</span>
+───────────────────────────────────────────────────────────────────── */
+.tier-zero          { color: var(--tier-zero); }
+.tier-units         { color: var(--tier-units); }
+.tier-tens          { color: var(--tier-tens); }
+.tier-hundreds      { color: var(--tier-hundreds); }
+.tier-thousands     { color: var(--tier-thousands); }
+.tier-tens-thou     { color: var(--tier-tens-thou); }
+.tier-hund-thou     { color: var(--tier-hund-thou); }
+.tier-millions      { color: var(--tier-millions); }
+.tier-tens-mill     { color: var(--tier-tens-mill); }
+.tier-hund-mill     { color: var(--tier-hund-mill); }
+.tier-billions      { color: var(--tier-billions); }
+.tier-tens-bill     { color: var(--tier-tens-bill); }
+.tier-hund-bill     { color: var(--tier-hund-bill); }
+.tier-trillions     { color: var(--tier-trillions); }
+.tier-tens-trill    { color: var(--tier-tens-trill); }
+.tier-hund-trill    { color: var(--tier-hund-trill); }
+.tier-quadrillions  { color: var(--tier-quadrillions); }
+.tier-tens-quad     { color: var(--tier-tens-quad); }
+.tier-hund-quad     { color: var(--tier-hund-quad); }
+.tier-quintillions  { color: var(--tier-quintillions); }
+.tier-tens-quint    { color: var(--tier-tens-quint); }
+.tier-hund-quint    { color: var(--tier-hund-quint); }
+.tier-sextillions   { color: var(--tier-sextillions); }
+.tier-tens-sext     { color: var(--tier-tens-sext); }
+.tier-hund-sext     { color: var(--tier-hund-sext); }
+.tier-septillions   { color: var(--tier-septillions); }
+.tier-tens-sept     { color: var(--tier-tens-sept); }
+.tier-hund-sept     { color: var(--tier-hund-sept); }
+.tier-octillions    { color: var(--tier-octillions); }
+.tier-tens-oct      { color: var(--tier-tens-oct); }
+.tier-hund-oct      { color: var(--tier-hund-oct); }
+.tier-nonillions    { color: var(--tier-nonillions); }
+.tier-tens-non      { color: var(--tier-tens-non); }
+.tier-hund-non      { color: var(--tier-hund-non); }
+.tier-decillions    { color: var(--tier-decillions); }
+.tier-tens-dec      { color: var(--tier-tens-dec); }
+.tier-hund-dec      { color: var(--tier-hund-dec); }
+.tier-undecillions  { color: var(--tier-undecillions); }
+.tier-tens-undec    { color: var(--tier-tens-undec); }
+.tier-hund-undec    { color: var(--tier-hund-undec); }
+.tier-duodecillions { color: var(--tier-duodecillions); }
+.tier-tens-duodec   { color: var(--tier-tens-duodec); }
+.tier-hund-duodec   { color: var(--tier-hund-duodec); }
+.tier-tredec        { color: var(--tier-tredec); }
+.tier-unassigned    { color: var(--tier-unassigned); }
+.tier-l-drive       { color: var(--tier-l-drive); font-weight: 700; }
+.tier-large         { color: var(--tier-large); }
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 6 — UTILITY: COLOUR SWATCHES
+   Small inline circles used in legends and protocol tables to show
+   the colour next to its name. Keeps the markup consistent across
+   every page that displays the colour key.
+───────────────────────────────────────────────────────────────────── */
+.color-swatch {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 7 — GEAR PULSE  (the "g" in Ẹgbẹ̀rǔn)
+   Per Applied Systems §6: the letter "g" shares the Neon Pink of the
+   "l" Multiplier because it is the heartbeat of Ẹgbẹ̀rǔn (1,000) —
+   the G-Pulse / Gear Pulse Magnitude Operator. Auto-applied site-wide
+   by tools/gear-pulse-tinter.js, which wraps the "g" inside any
+   Ẹgbẹ̀rǔn-family word (Ẹgbẹ̀rǔn, Ẹ́gbẹ̀rǔn, ẹgbẹ̀rǔn, Ẹgbẹ̀rǔnlâádọ́ta…)
+   in <span class="gear-g">. You can also hand-author the span if a
+   page needs a single static occurrence.
+───────────────────────────────────────────────────────────────────── */
+.gear-g {
+  color: #FF13F0;
+  font-weight: 700;
+}
+
+/* Opt-out marker: any element carrying .no-gear-tint (or any descendant
+   text node within it) will be left untouched by the tinter — useful
+   for code samples, captions, and pages that hand-style the "g". */
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   END OF FILE — every page that wants the Sovereign Colour Law in
+   force needs only one line in its <head>:
+       <link rel="stylesheet" href="tools/sovereign-colours.css">
+   For pages outside GitHub/, adjust the path accordingly:
+       <link rel="stylesheet" href="../GitHub/tools/sovereign-colours.css">
+───────────────────────────────────────────────────────────────────── */
+
+</style>
+  <script>
+/* ════════════════════════════════════════════════════════════════════
+   GEAR PULSE TINTER  ·  Ònkà Yorùbá Sovereign Colour System
+   --------------------------------------------------------------------
+   Auto-tints the letter "g" inside every Ẹgbẹ̀rǔn-family word with
+   Neon Pink (#FF13F0) — the G-Pulse / Gear Pulse Magnitude Operator.
+
+   Per Applied Systems §6:
+       "The letter 'g' shares the Neon Pink colour because it tracks
+        the heartbeat of Ẹgbẹ̀rǔn (1,000). Its downward-pointing shape
+        acts as an arrow, marking exactly where the mathematical
+        power lands."
+
+   Words matched (case-insensitive, with or without tone marks):
+       Ẹgbẹ̀rǔn   Ẹ́gbẹ̀rǔn   ẹgbẹ̀rǔn   ẹ́gbẹ̀rǔn   Egberun
+       Ẹgbẹ̀rǔnlâádọ́ta  Ẹgbẹ̀rǔnlâádọ́rin  …compounds with "rǔn"/"run" tail
+
+   Wraps just the "g" in <span class="gear-g">…</span>. The colour
+   itself lives in tools/sovereign-colours.css so designers can retune
+   it in one place.
+
+   Skips:
+     • <script>, <style>, <noscript>, <title>, <textarea>, <input>,
+       <code>, <pre>
+     • Anything inside an element with class "gear-g" (already tinted)
+       or class "no-gear-tint" (opt-out)
+   ════════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+  if (typeof document === 'undefined') return;
+
+  var SKIP_TAGS = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TITLE: 1,
+                    TEXTAREA: 1, INPUT: 1, CODE: 1, PRE: 1 };
+
+  /* Pattern parts:
+       [1] Preface  — Ẹ / Ẹ̀ / Ẹ́ / E / ẹ / ẹ̀ / ẹ́ / e   (+ optional tone)
+       [2] The "g"  — the Gear Pulse character to wrap
+       [3] Tail     — b + ẹ-style + r + ǔ-style + n  (+ tone marks)        */
+  var PREFACE = '[\u1EB8\u1EB9Ee][\u0300\u0301]?';
+  var TAIL    = '[Bb][\u1EB8\u1EB9\u00C8\u00E8\u00C9\u00E9Ee][\u0300\u0301]?'
+              + '[Rr][\u01D3\u01D4\u00DA\u00FA\u00D9\u00F9\u00DB\u00FBUu][Nn]';
+  var SOURCE  = '(' + PREFACE + ')([Gg])(' + TAIL + ')';
+  var RX_FIND = new RegExp(SOURCE, 'gu');     // stateful — used for replacement
+  var RX_HAS  = new RegExp(SOURCE,  'u');     // stateless — used for tests
+
+  function isSkipped(el) {
+    while (el && el.nodeType === 1) {
+      if (SKIP_TAGS[el.tagName]) return true;
+      if (el.classList &&
+         (el.classList.contains('gear-g') ||
+          el.classList.contains('no-gear-tint'))) return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+
+  function processTextNode(node) {
+    var text = node.nodeValue;
+    if (!RX_HAS.test(text)) return;
+    if (isSkipped(node.parentElement)) return;
+
+    var frag = document.createDocumentFragment();
+    var lastIndex = 0;
+    var m;
+    RX_FIND.lastIndex = 0;
+    while ((m = RX_FIND.exec(text)) !== null) {
+      if (m.index > lastIndex) {
+        frag.appendChild(document.createTextNode(text.slice(lastIndex, m.index)));
+      }
+      frag.appendChild(document.createTextNode(m[1]));   // preface
+      var span = document.createElement('span');
+      span.className = 'gear-g';
+      span.textContent = m[2];                            // the Neon Pink "g"
+      frag.appendChild(span);
+      frag.appendChild(document.createTextNode(m[3]));   // tail
+      lastIndex = m.index + m[0].length;
+    }
+    if (lastIndex < text.length) {
+      frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+    }
+    node.parentNode.replaceChild(frag, node);
+  }
+
+  function tintTree(root) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var targets = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (n.nodeValue && RX_HAS.test(n.nodeValue)) targets.push(n);
+    }
+    for (var i = 0; i < targets.length; i++) processTextNode(targets[i]);
+  }
+
+  function run() {
+    try { tintTree(document.body); } catch (err) {
+      // Fail silently — never break the page over a cosmetic tinter.
+      if (window.console && console.warn) console.warn('[gear-pulse-tinter]', err);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
+})();
+
+</script>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
