@@ -358,38 +358,6 @@
       color: #1E8CB8;
     }
     .agbara-eq sup { font-size: 75%; }
-    .agbara-eq {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-top: 3px;
-      letter-spacing: 0.3px;
-    }
-    .num-card .word {
-      font-size: 1.05rem;
-      margin-top: 5px;
-      word-break: break-word;
-      font-weight: 600;
-    }
-
-    /* Sub Headers */
-    .sub-header {
-      padding: 8px 15px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    /* ═══════════════════════════════════════════════════════════════ */
-    /* INTRO SECTIONS STYLES                                          */
-    /* ═══════════════════════════════════════════════════════════════ */
-
-    .intro-section {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f8 100%);
-      border-radius: 15px;
-      padding: 30px;
-      margin-bottom: 30px;
       border-left: 5px solid #1E8CB8;
     }
     .intro-header h2 { color: #1E8CB8; font-size: 1.6rem; font-weight: 800; margin-bottom: 20px; }
@@ -1032,11 +1000,188 @@
         }
     .colour-cell { width: 70px; font-weight: 700; font-size: 1.15rem; }
     .colour-label { width: 70px; }
+    .gear-status {
+        display: block;
+        margin-top: 8px;
+        padding-top: 7px;
+        border-top: 1px solid rgba(15,52,96,0.18);
+        color: #0f3460;
+        font-size: 0.78rem;
+        font-weight: 800;
+        line-height: 1.3;
+      }
+    .gear-status .gear-drive { color: #FF13F0; }
     .g-count {
             display: block; margin-top: 8px;
             font-size: 1.05rem; font-weight: 700;
             color: #FF13F0; line-height: 1.4;
         }
+    .g-op {
+        color: #FF13F0;
+        font-weight: 700;
+        text-decoration: overline;
+        text-decoration-thickness: 2px;
+      }
+    .g-result-text {
+        font-weight: 700;
+      }
+    .practice-jump-section {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        margin: 34px 0 36px;
+        padding: 0;
+      }
+    .practice-jump-stage {
+        background: linear-gradient(135deg, #07182b 0%, #0f3460 42%, #1E8CB8 100%);
+        border: 1px solid rgba(255,215,0,0.35);
+        border-radius: 18px;
+        box-shadow: 0 18px 48px rgba(0,0,0,0.22);
+        color: #fff;
+        overflow: hidden;
+      }
+    .practice-jump-header {
+        padding: 28px 30px 20px;
+        background:
+          linear-gradient(90deg, rgba(238,0,0,0.28), rgba(255,192,0,0.22), rgba(0,176,80,0.24)),
+          radial-gradient(circle at 92% 18%, rgba(255,215,0,0.32), transparent 28%);
+      }
+    .practice-jump-kicker {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: #FFD700;
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+    .practice-jump-header h2 {
+        margin: 0 0 10px;
+        color: #fff;
+        font-size: 1.55rem;
+        font-weight: 900;
+        line-height: 1.25;
+      }
+    .practice-jump-header p {
+        max-width: 980px;
+        margin: 0;
+        color: rgba(255,255,255,0.9);
+        font-size: 0.98rem;
+        line-height: 1.65;
+      }
+    .practice-jump-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(190px, 1fr));
+        gap: 14px;
+        padding: 18px;
+      }
+    .practice-card {
+        --jump-colour: #1E8CB8;
+        background: rgba(255,255,255,0.96);
+        border-top: 6px solid var(--jump-colour);
+        border-radius: 12px;
+        color: #1a1a2e;
+        padding: 16px 15px 15px;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+      }
+    .practice-card h3 {
+        margin: 0 0 8px;
+        color: var(--jump-colour);
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.25;
+      }
+    .practice-route {
+        min-height: 44px;
+        color: #263241;
+        font-size: 0.82rem;
+        font-weight: 800;
+        line-height: 1.35;
+      }
+    .practice-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+        margin: 11px 0;
+      }
+    .practice-metric {
+        background: #f0f6fb;
+        border-radius: 8px;
+        padding: 8px;
+        text-align: center;
+      }
+    .practice-metric strong {
+        display: block;
+        color: #FF13F0;
+        font-size: 1rem;
+        font-weight: 900;
+      }
+    .practice-metric span {
+        display: block;
+        color: #52606e;
+        font-size: 0.66rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+    .root-strip {
+        display: grid;
+        gap: 6px;
+        margin: 12px 0;
+      }
+    .root-chip {
+        border-radius: 8px;
+        color: #fff;
+        padding: 7px 8px;
+        font-size: 0.72rem;
+        font-weight: 800;
+        line-height: 1.32;
+      }
+    .root-chip strong { display: block; font-size: 0.78rem; }
+    .root-head { background: #4682B4; }
+    .root-arm { background: #B38600; }
+    .root-leg { background: #00A04B; }
+    .practice-do {
+        border-top: 1px solid rgba(15,52,96,0.14);
+        margin-top: 11px;
+        padding-top: 10px;
+        color: #243447;
+        font-size: 0.83rem;
+        line-height: 1.55;
+      }
+    .practice-chant {
+        display: block;
+        margin-top: 8px;
+        color: #0f3460;
+        font-size: 0.82rem;
+        font-weight: 900;
+      }
+    .practice-jump-footer {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+        padding: 0 18px 20px;
+      }
+    .practice-note,
+    .practice-scoreboard {
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.22);
+        border-radius: 12px;
+        padding: 14px 16px;
+        color: rgba(255,255,255,0.92);
+        font-size: 0.9rem;
+        line-height: 1.55;
+      }
+    .practice-scoreboard strong { color: #FFD700; }
+    @media (max-width: 1100px) {
+        .practice-jump-grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+        .practice-jump-footer { grid-template-columns: 1fr; }
+      }
+    @media (max-width: 640px) {
+        .practice-jump-section { padding: 0; }
+        .practice-jump-header { padding: 24px 20px 18px; }
+        .practice-jump-grid { grid-template-columns: 1fr; padding: 14px; }
+      }
     .header-section {
             background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 33%, #1E8CB8 66%, #27BCED 100%);
             background-size: 300% 300%;
@@ -1077,6 +1222,28 @@
             width: 60px; text-align: center;
             color: #fff; font-weight: 700; font-size: 1.25rem;
         }
+    .ordinal-badge {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 42px;
+        min-height: 42px;
+        padding: 4px 5px;
+        border-radius: 999px;
+        color: #fff;
+        font-weight: 900;
+        line-height: 1.02;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 0 1px rgba(0,0,0,0.95);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.34), 0 2px 9px rgba(0,0,0,0.16);
+      }
+    .ordinal-badge .ord-main { font-size: 0.78rem; }
+    .ordinal-badge .ord-sub {
+        margin-top: 2px;
+        font-size: 0.48rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
     .pulse-cell { width: 372px; }
     .range-cell {
             width: 110px; font-size: 1.1rem;
@@ -1095,8 +1262,23 @@
     .stop-text {
             color: #EE0000; font-weight: 700; font-size: 1.3rem;
         }
-    .swatch-cell { width: 60px; }
-    .swatch-end { width: 60px; }
+    .swatch-cell { width: 60px; text-align: center; vertical-align: middle; }
+    .swatch-end { width: 60px; text-align: center; vertical-align: middle; }
+    .swatch-label {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 28px;
+        min-height: 24px;
+        padding: 2px 5px;
+        border-radius: 999px;
+        color: #fff;
+        font-size: 0.82rem;
+        font-weight: 900;
+        line-height: 1;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 0 1px rgba(0,0,0,0.95);
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.32);
+      }
     .traffic-img {
             display: block;
             width: 150px; height: 150px;
@@ -2498,7 +2680,7 @@
             </th>
             <th style="padding:8px 6px; border:1px solid #ccc;">
               <div style="font-size:0.72rem; font-weight:400; color:#d0eeff; margin-bottom:2px;">G-Pulse (Gear Pulse) Magnitude Operator</div>
-              <div>n × g (n × ẹ́gbẹ̀rǔn)</div>
+              <div>n × <span class="g-op">g</span> (n × ẹ́gbẹ̀rǔn)</div>
             </th>
           </tr>
         </thead>
@@ -2636,7 +2818,7 @@
             <td style="padding:7px 6px; border:1px solid #ccc; color:#94AA00; font-style:italic;">Tredecillion Plus &mdash; the Highway continues&hellip;</td>
             <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; font-size:0.95rem; font-weight:800; font-style:italic;"><span class="t-deeppink" style="font-weight: 800;">Égbẹ́ẹ́rǔn+</span></td>
             <td style="padding:7px 6px; border:1px solid #ccc; font-size:0.82rem; color:#94AA00; font-style:italic; word-break:break-all;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Expressive</div><span class="t-deeppink" style="font-weight: 700;">Ẹgbẹ̀rǔn</span><span class="t-deeppink" style="font-weight: 700;">(</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn)ⁿ</span> <span style="color:#888;">n &gt; 14</span></td>
-            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center;"><span style="color:#FF13F0; font-weight:700; font-style:italic;">gl</span><span style="color:#94AA00; font-weight:700; font-style:italic;">éwǎẹ́rin+</span></td>
+            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Operator</div><span style="color:#555;">14+ × <span class="g-op">g</span> <span style="color:#888; font-size:0.78rem;">(14+ × ẹ́gbẹ̀rǔn)</span> = </span><br><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Result</div><span class="g-op">g</span><span class="t-neonpink" style="font-weight:700;">l</span><span style="color:#94AA00; font-weight:700; font-style:italic;">éwǎẹ́rin+</span></td>
           </tr>
         </tbody>
       </table>
@@ -2765,13 +2947,35 @@ function buildY(i,h){
 
 /* Agbára Equations */
 const AGP = ['','ení','éjì','ẹ́ta','ẹ́rin','árǔn','ẹ́fà','éje','ẹ́jọ','ẹ́sǎn','éwǎ','éwǎéní','éwǎéjì','éwǎẹ́ta','éwǎẹ́rin','éwǎárǔn'];
+function gOpHTML(){ return '<span class="g-op">g</span>'; }
+function gOperatorHTML(count, extra=''){
+    return `${count} × ${gOpHTML()} (${count} × ẹ́gbẹ̀rǔn)${extra}`;
+}
+function gResultHTML(count, hx, extra=''){
+    const word=count===1?'Ẹ́ní':AGP[count];
+    const lPart=count===1?'':'<span class="t-neonpink" style="font-weight:700;">l</span>';
+    return `<span class="agbara-eq g-result-text">${gOpHTML()}${lPart}<span style="color:${hx}; font-weight:700;">${word}${extra}</span></span>`;
+}
+function gearOrdinal(n){
+    if(n===1) return '1st';
+    if(n===2) return '2nd';
+    if(n===3) return '3rd';
+    return `${n}th`;
+}
+function gearStatusHTML(i){
+    const early=['Zero','Ignition','Warming Up','Structural Lift'];
+    if(i<4) return `<span class="gear-status">${early[i]}</span>`;
+    const gear=gChains(i);
+    return `<span class="gear-status">${gearOrdinal(gear)} gear of the <span class="gear-drive">&quot;l&quot;</span> Drive</span>`;
+}
+function swatchNumber(i){ return i===0?'0':String(i); }
+function ordinalBadge(label){
+    return `<span class="ordinal-badge"><span class="ord-main">${label}</span><span class="ord-sub">Gear</span></span>`;
+}
 function buildAgbara(i,hx){
     if(i<4) return '';
-    const m=(i-4)%3;
     const ch=gChains(i);
-    const prefix=m===0?'Ení':m===1?'Ẹ́wǎ':'Ọgọ́rǔn';
-    const pwr=ch===1?AGP[ch]:sp(PINK,'l')+AGP[ch];
-    return `<span class="agbara-eq" style="color:${hx}">${prefix}·(ẹ́gbẹ̀rǔn)<sup>${pwr}</sup></span>`;
+    return gResultHTML(ch,hx);
 }
 
 /* ═══ RENDER ═══ */
@@ -2794,25 +2998,25 @@ function rEntry(i){
     h+=`<td class="range-label" style="background:${hx}; color:#fff;"><strong>Range</strong></td>`;
     h+=`<td class="colour-label" style="background:${hx}; color:#fff;"><strong>Colour</strong></td>`;
     h+=`<td class="hex-label" style="background:${hx}; color:#fff;"><strong>Hex</strong></td>`;
-    h+=`<td class="swatch-end" style="background:${hx}">&nbsp;</td>`;
+    h+=`<td class="swatch-end" style="background:${hx}"><strong>#</strong></td>`;
     h+=`</tr>`;
     // Data row — update running totals
     const gc=gChains(i);
     const zeros=ex<1?0:ex;
     runG+=gc; runZ+=zeros;
-    const gcHTML=gc>0?`<span class="g-count">${gc} × <span class="t-neonpink">g</span> (${gc} × ẹ́gbẹ̀rŭn)</span>`:'';
+    const gcHTML=gc>0?`<span class="g-count">${gOperatorHTML(gc)}</span>`:'';
     const agHTML=buildAgbara(i,hx);
     const scoreHTML=`<span class="score-g">${runG}g</span><br><span class="score-vs">vs</span><br><span class="score-z">${runZ} zeros</span>`;
     h+=`<tr class="data-row">`;
-    h+=`<td class="ordinal-cell" style="background:${tc}">${ord}</td>`;
-    h+=`<td class="level-cell"><span class="level-name" style="color:${hx}">${lv}</span><span class="jump-text">${jh}</span></td>`;
+    h+=`<td class="ordinal-cell" style="background:${tc}">${ordinalBadge(ord)}</td>`;
+    h+=`<td class="level-cell"><span class="level-name" style="color:${hx}">${lv}</span><span class="jump-text">${jh}</span>${gearStatusHTML(i)}</td>`;
     h+=`<td class="key-data">${chordHTML(b,i)}</td>`;
     h+=`<td class="number-cell"><span class="arabic-num">${ar}</span><span class="yoruba-name">${yr}</span>${gcHTML}${agHTML}</td>`;
     h+=`<td class="score-cell">${scoreHTML}</td>`;
     h+=`<td class="range-cell">${rn}</td>`;
     h+=`<td class="colour-cell" style="color:${hx}">${cn}</td>`;
     h+=`<td class="hex-cell" style="color:${hx}">${hx}</td>`;
-    h+=`<td class="swatch-cell" style="background:${hx}">&nbsp;</td>`;
+    h+=`<td class="swatch-cell" style="background:${hx}"><span class="swatch-label">${swatchNumber(i)}</span></td>`;
     h+=`</tr>`;
     // Separator
     h+=`<tr class="separator-row"><td style="background:${tc}">&nbsp;</td><td style="background:${tc}">&nbsp;</td><td colspan="7" style="background:${hx}">&nbsp;</td></tr>`;
@@ -2831,7 +3035,7 @@ function rTredPlus(){
     h+=`<td class="range-label" style="background:${hx}; color:#fff;"><strong>Range</strong></td>`;
     h+=`<td class="colour-label" style="background:${hx}; color:#fff;"><strong>Colour</strong></td>`;
     h+=`<td class="hex-label" style="background:${hx}; color:#fff;"><strong>Hex</strong></td>`;
-    h+=`<td class="swatch-end" style="background:${hx}">&nbsp;</td>`;
+    h+=`<td class="swatch-end" style="background:${hx}"><strong>#</strong></td>`;
     h+=`</tr>`;
 
     // Arabic: 10^42 + 1
@@ -2850,21 +3054,21 @@ function rTredPlus(){
     const tpScore=`<span class="score-g">${runG}g</span><br><span class="score-vs">vs</span><br><span class="score-z">${runZ} zeros</span>`;
 
     h+=`<tr class="data-row">`;
-    h+=`<td class="ordinal-cell" style="background:${tc}">14th</td>`;
-    h+=`<td class="level-cell"><span class="level-name" style="color:${hx}">TREDECILLION PLUS</span><span class="stop-text">STOP</span><br><span class="stop-text">STOP</span><br><span class="stop-text">TAKE A BREAK</span><img class="traffic-img" src="Red.jpg" alt="Red traffic light"></td>`;
+    h+=`<td class="ordinal-cell" style="background:${tc}">${ordinalBadge('14th+')}</td>`;
+    h+=`<td class="level-cell"><span class="level-name" style="color:${hx}">TREDECILLION PLUS</span><span class="stop-text">STOP</span><br><span class="stop-text">STOP</span><br><span class="stop-text">TAKE A BREAK</span><img class="traffic-img" src="Red.jpg" alt="Red traffic light"><span class="gear-status">14th + gear of the <span class="gear-drive">&quot;l&quot;</span> Drive</span></td>`;
     h+=`<td class="key-data"><span class="chord-main">G# Maj</span><span class="chord-sub">C# Maj<br>D# Maj<br>Fm</span><span class="chord-tempo">4/4<br>♪ 72</span></td>`;
-    h+=`<td class="number-cell"><span class="arabic-num">${ar42p1}</span><span class="yoruba-name">${yr}</span><span class="g-count">14 × <span class="t-neonpink">g</span> (14 × ẹ́gbẹ̀rŭn) Plus</span><span class="agbara-eq" style="color:${hx}">Ení·(ẹ́gbẹ̀rǔn)<sup>${sp(PINK,'l')}éwǎẹ́rin</sup></span></td>`;
+    h+=`<td class="number-cell"><span class="arabic-num">${ar42p1}</span><span class="yoruba-name">${yr}</span><span class="g-count">${gOperatorHTML('14+')}</span>${gResultHTML(14,hx,'+')}</td>`;
     h+=`<td class="score-cell">${tpScore}</td>`;
     h+=`<td class="range-cell">${rng}</td>`;
     h+=`<td class="colour-cell" style="color:${hx}">Dark Olive</td>`;
     h+=`<td class="hex-cell" style="color:${hx}">${hx}</td>`;
-    h+=`<td class="swatch-cell" style="background:${hx}">&nbsp;</td>`;
+    h+=`<td class="swatch-cell" style="background:${hx}"><span class="swatch-label">44 Plus</span></td>`;
     h+=`</tr>`;
     h+=`<tr class="separator-row"><td style="background:${tc}">&nbsp;</td><td style="background:${tc}">&nbsp;</td><td colspan="7" style="background:${hx}">&nbsp;</td></tr>`;
     return h;
 }
 
-function rSpecial(ord,title,desc,cn,hx){
+function rSpecial(ord,title,desc,cn,hx,swatchLabel=''){
     let h='';
     h+=`<tr class="separator-row"><td colspan="9" style="background:${hx}">&nbsp;</td></tr>`;
     h+=`<tr class="data-row">`;
@@ -2876,7 +3080,7 @@ function rSpecial(ord,title,desc,cn,hx){
     h+=`<td class="range-cell">&nbsp;</td>`;
     h+=`<td class="colour-cell" style="color:${hx}">${cn}</td>`;
     h+=`<td class="hex-cell" style="color:${hx}">${hx}</td>`;
-    h+=`<td class="swatch-cell" style="background:${hx}">&nbsp;</td>`;
+    h+=`<td class="swatch-cell" style="background:${hx}"><span class="swatch-label">${swatchLabel}</span></td>`;
     h+=`</tr>`;
     h+=`<tr class="separator-row"><td colspan="9" style="background:${hx}">&nbsp;</td></tr>`;
     return h;
@@ -2887,19 +3091,111 @@ let t='';
 for(let i=0;i<E.length;i++) t+=rEntry(i);
 t+=rTredPlus();
 t+=rSpecial('',
-    '<span class="t-largenumber">Large Numbers</span>',
-    'Beyond Tredecillions — The Infinite Frontier',
-    'Steel Blue','#4682B4');
-t+=rSpecial('',
-    '<span class="t-neonpink">\u201Cl\u201D Multiplier</span>',
-    'The Multiplication of Life Logic',
-    'Neon Pink','#FF13F0');
-t+=rSpecial('',
     '<span class="t-neonpink">\u201Cl\u201D Multiplier\u2019s </span><span class="t-grey">Contents <em>(<span class="t-neonpink">Children</span>)</em></span>',
     'The Unassigned State of <span class="t-neonpink">\u201Cl\u201D Multiplier\u2019s </span><span class="t-grey">Contents</span> <em><span class="t-neonpink">(</span><span class="t-grey">Children</span><span class="t-neonpink">)</span></em>',
-    'Gray','#808080');
+    'Gray','#808080','45');
+t+=rSpecial('',
+  '<span class="t-neonpink">\u201Cl\u201D Multiplier</span>',
+  'The Multiplication of Life Logic',
+  'Neon Pink','#FF13F0','46');
+t+=rSpecial('',
+  '<span class="t-largenumber">Large Numbers</span>',
+  'Beyond Tredecillions — The Infinite Frontier',
+  'Steel Blue','#4682B4','47');
 document.getElementById('tableBody').innerHTML=t;
 </script>
+
+      <section class="practice-jump-section" aria-labelledby="practice-jump-title">
+        <div class="practice-jump-stage">
+          <div class="practice-jump-header">
+            <span class="practice-jump-kicker">Jumping in Traffic · Learner Run-Through</span>
+            <h2 id="practice-jump-title">The Orchestral Highway Rainbow Traffic Practice Jumping Exercise: 5 Examples</h2>
+            <p>Use these five run-throughs after the colour blocks. Each example asks learners to see the colour, say the Yorùbá magnitude, conduct the Head Root Key, Arm Minor Key, and Leg Major Key, then compare the G-Pulse route against the long Yo vs Arab zero route.</p>
+          </div>
+
+          <div class="practice-jump-grid">
+            <article class="practice-card" style="--jump-colour:#DC2626;">
+              <h3>1. Ignition Jump</h3>
+              <div class="practice-route">ZERO Ódo → Units → Tens → Hundreds → Thousands</div>
+              <div class="practice-metrics">
+                <div class="practice-metric"><strong>1g</strong><span>Pulse target</span></div>
+                <div class="practice-metric"><strong>3 zeros</strong><span>Arab route</span></div>
+              </div>
+              <div class="root-strip">
+                <div class="root-chip root-head"><strong>Head Root Key</strong>Find the Red Thousands gate and name Ẹ<span class="t-neonpink" style="font-weight:900;">g</span>bẹ̀rǔn.</div>
+                <div class="root-chip root-arm"><strong>Arm Minor Key</strong>Tap Ódo, Ení, Ẹ́wǎ, Ọgọ́rǔn as the tension rises.</div>
+                <div class="root-chip root-leg"><strong>Leg Major Key</strong>Jump once: <span class="g-op">g</span>Ẹ́ní resolves the chord.</div>
+              </div>
+              <div class="practice-do">Call: ready, steady, jump. Learners clap once for the single Gear Pulse, then prepare the first Neon Pink <span class="t-neonpink" style="font-weight:700;">l</span> Drive entrance at Millions.<span class="practice-chant">Chant: see it, say it, pulse it.</span></div>
+            </article>
+
+            <article class="practice-card" style="--jump-colour:#8B4513;">
+              <h3>2. Three-Light Gear Cycle</h3>
+              <div class="practice-route">Millions → Billions → Trillions</div>
+              <div class="practice-metrics">
+                <div class="practice-metric"><strong>2g-4g</strong><span>Pulse ladder</span></div>
+                <div class="practice-metric"><strong>6-12 zeros</strong><span>Arab route</span></div>
+              </div>
+              <div class="root-strip">
+                <div class="root-chip root-head"><strong>Head Root Key</strong>Red: land on the root word and sing G# Maj.</div>
+                <div class="root-chip root-arm"><strong>Arm Minor Key</strong>Yellow: hold F#m and feel the counting tension.</div>
+                <div class="root-chip root-leg"><strong>Leg Major Key</strong>Green: release into D# Maj and move to the next gear.</div>
+              </div>
+              <div class="practice-do">Learners conduct red-yellow-green with hands while saying <span class="g-op">g</span><span class="t-neonpink" style="font-weight:700;">l</span>éjì, <span class="g-op">g</span><span class="t-neonpink" style="font-weight:700;">l</span>ẹ́ta, <span class="g-op">g</span><span class="t-neonpink" style="font-weight:700;">l</span>ẹ́rin. The ear hears each larger landing before the eyes count the zeros.</div>
+            </article>
+
+            <article class="practice-card" style="--jump-colour:#1E90FF;">
+              <h3>3. Tension Ladder Drill</h3>
+              <div class="practice-route">Quadrillions → Quintillions → Sextillions</div>
+              <div class="practice-metrics">
+                <div class="practice-metric"><strong>5g-7g</strong><span>Pulse ladder</span></div>
+                <div class="practice-metric"><strong>15-21 zeros</strong><span>Arab route</span></div>
+              </div>
+              <div class="root-strip">
+                <div class="root-chip root-head"><strong>Head Root Key</strong>State the root colour first, then breathe on beat one.</div>
+                <div class="root-chip root-arm"><strong>Arm Minor Key</strong>Whisper the middle tension in three small beats.</div>
+                <div class="root-chip root-leg"><strong>Leg Major Key</strong>Stamp the final beat and unlock the next magnitude.</div>
+              </div>
+              <div class="practice-do">Turn the class into a small orchestra: one group claps the pulses, one group speaks the Yorùbá name, and one group counts zeros silently. The G-Pulse team should finish faster and cleaner.</div>
+            </article>
+
+            <article class="practice-card" style="--jump-colour:#4B0082;">
+              <h3>4. Heritage Remix Relay</h3>
+              <div class="practice-route">Septillions → Octillions → Nonillions</div>
+              <div class="practice-metrics">
+                <div class="practice-metric"><strong>8g-10g</strong><span>Pulse ladder</span></div>
+                <div class="practice-metric"><strong>24-30 zeros</strong><span>Arab route</span></div>
+              </div>
+              <div class="root-strip">
+                <div class="root-chip root-head"><strong>Head Root Key</strong>Speaker 1 names the root in Yorùbá.</div>
+                <div class="root-chip root-arm"><strong>Arm Minor Key</strong>Speaker 2 repeats it in another heritage language.</div>
+                <div class="root-chip root-leg"><strong>Leg Major Key</strong>Speaker 3 returns to the colour and jumps the gear.</div>
+              </div>
+              <div class="practice-do">The relay proves the Highway is transferable: colour carries location, pulse carries scale, and every language can bring its own voice without losing the mathematics.</div>
+            </article>
+
+            <article class="practice-card" style="--jump-colour:#94AA00;">
+              <h3>5. Grand Conductor Challenge</h3>
+              <div class="practice-route">Decillions → Undecillions → Duodecillions → Tredecillions → Tredecillion Plus</div>
+              <div class="practice-metrics">
+                <div class="practice-metric"><strong>11g-14g+</strong><span>Final gears</span></div>
+                <div class="practice-metric"><strong>33-42+ zeros</strong><span>Arab route</span></div>
+              </div>
+              <div class="root-strip">
+                <div class="root-chip root-head"><strong>Head Root Key</strong>Conduct the crown landing with a slow G# Maj breath.</div>
+                <div class="root-chip root-arm"><strong>Arm Minor Key</strong>Hold the suspense before the Tredecillion Plus gate.</div>
+                <div class="root-chip root-leg"><strong>Leg Major Key</strong>Resolve, stop, and take a break before the next universe.</div>
+              </div>
+              <div class="practice-do">Learners race the 10-second challenge: one team performs the pulse chant, another writes the zero count. The conductor awards the win for accuracy, breath control, and musical timing.</div>
+            </article>
+          </div>
+
+          <div class="practice-jump-footer">
+            <div class="practice-note"><strong>Smart learner advantage:</strong> these exercises convert abstraction into movement. Colour becomes location, chord tension becomes memory, and the <span class="g-op">g</span> Pulse lets learners measure enormous scale without drowning in repeated zeros.</div>
+            <div class="practice-scoreboard"><strong>Full Highway score:</strong> from Thousands to Tredecillion Plus, the practice route compresses the journey into <strong>301 G-Pulses</strong> against <strong>942 Arab zeros</strong>. That is the fun: fewer symbols, stronger rhythm, better recall.</div>
+          </div>
+        </div>
+      </section>
 
     <hr aria-hidden="true" style="border:0; height:2px; max-width:calc(100% - 72px); margin:28px auto 26px; border-radius:999px; background:linear-gradient(90deg, transparent 0%, #0891B2 8%, #16A34A 22%, #2563EB 38%, #9333EA 52%, #DC2626 66%, #FFD700 82%, #0f3460 96%, transparent 100%); box-shadow:0 8px 18px rgba(8,145,178,.12);" />
 
