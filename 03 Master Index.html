@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Index | Universal Hyperdimensional Numeric Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
-    
         .menu-bar {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             padding: 14px 20px;
@@ -404,8 +406,11 @@
       top: 0;
       left: 0;
       height: 4px;
-      width: 0%;
+            width: 100%;
       z-index: 2000;
+            transform: scaleX(0);
+            transform-origin: left center;
+            will-change: transform;
       background: linear-gradient(90deg,
         #0891B2, #16A34A, #2563EB, #9333EA, #DC2626,
         #B59410, #4EAAE4, #8B4513, #228B22, #EF6000,
@@ -417,7 +422,7 @@
         #E11D48, #5F9EA0, #CD7F32, #9932CC, #DAA520,
         #483D8B, #FF6347, #8B008B, #94AA00, #4682B4, #FF13F0, #808080
       );
-      transition: width 0.1s linear;
+            transition: transform 0.1s linear;
       border-radius: 0 2px 2px 0;
     }
 
@@ -1661,15 +1666,48 @@
     node.parentNode.replaceChild(frag, node);
   }
 
-  function tintTree(root) {
-    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
-    var targets = [];
-    var n;
-    while ((n = walker.nextNode())) {
-      if (n.nodeValue && RX_HAS.test(n.nodeValue)) targets.push(n);
+    function scheduleIdleWork(task) {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(task, { timeout: 100 });
+        } else {
+            window.setTimeout(function () { task(null); }, 16);
+        }
     }
-    for (var i = 0; i < targets.length; i++) processTextNode(targets[i]);
-  }
+
+    function tintTree(root) {
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+        var targets = [];
+        var n;
+        while ((n = walker.nextNode())) {
+            if (n.nodeValue && RX_HAS.test(n.nodeValue)) targets.push(n);
+        }
+
+        var index = 0;
+        function processBatch(deadline) {
+            var processed = 0;
+            var sliceEnd = (window.performance && performance.now) ? performance.now() + 16 : 0;
+
+            try {
+                while (index < targets.length) {
+                    processTextNode(targets[index]);
+                    index += 1;
+                    processed += 1;
+
+                    if (processed >= 200) {
+                        if (deadline && deadline.timeRemaining && deadline.timeRemaining() < 4) break;
+                        if (!deadline && sliceEnd && performance.now() > sliceEnd) break;
+                    }
+                }
+            } catch (err) {
+                if (window.console && console.warn) console.warn('[gear-pulse-tinter]', err);
+                return;
+            }
+
+            if (index < targets.length) scheduleIdleWork(processBatch);
+        }
+
+        scheduleIdleWork(processBatch);
+    }
 
   function run() {
     try { tintTree(document.body); } catch (err) {
@@ -1678,11 +1716,23 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run, { once: true });
-  } else {
-    run();
-  }
+    function scheduleRun() {
+        var start = function () {
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(run, { timeout: 700 });
+            } else {
+                window.setTimeout(run, 0);
+            }
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', start, { once: true });
+        } else {
+            start();
+        }
+    }
+
+    scheduleRun();
 })();
 
 </script>
@@ -2204,11 +2254,23 @@
   // Expose for demo / debug pages that want to reshuffle on demand.
   window.borderHarmonyRun = run;
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', run);
-  } else {
-    run();
-  }
+    function scheduleRun() {
+        const start = () => {
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(run, { timeout: 900 });
+            } else {
+                window.setTimeout(run, 0);
+            }
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', start, { once: true });
+        } else {
+            start();
+        }
+    }
+
+    scheduleRun();
 })();
 
 </script>
@@ -8967,6 +9029,8 @@
 
       <script>
         (function autoFitV2Yor() {
+                    var fitQueued = false;
+
           function fit() {
             document.querySelectorAll('.v2-tile-yor').forEach(function (el) {
               el.style.fontSize = '';
@@ -8981,14 +9045,24 @@
               }
             });
           }
+
+                    function requestFit() {
+                        if (fitQueued) return;
+                        fitQueued = true;
+                        window.requestAnimationFrame(function () {
+                            fitQueued = false;
+                            fit();
+                        });
+                    }
+
           if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', fit);
+                        document.addEventListener('DOMContentLoaded', requestFit, { once: true });
           } else {
-            fit();
+                        requestFit();
           }
-          window.addEventListener('resize', fit);
+                    window.addEventListener('resize', requestFit, { passive: true });
           if (document.fonts && document.fonts.ready) {
-            document.fonts.ready.then(fit);
+                        document.fonts.ready.then(requestFit);
           }
         })();
       </script>
@@ -9307,31 +9381,39 @@
 </footer>
 
     <!-- Back to Top Button -->
-    <button class="back-to-top visible" id="backToTop" title="Back to Top" aria-label="Scroll to top">▲</button>
+    <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Scroll to top">▲</button>
 
     <!-- ═══════════════════ FUTURISTIC JS ═══════════════════ -->
     <script>
-      // --- Scroll Progress Bar ---
       const progressBar = document.getElementById('scrollProgress');
-      window.addEventListener('scroll', () => {
-        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-        progressBar.style.width = scrolled + '%';
-      }, { passive: true });
-
-      // --- Back-to-Top Button ---
       const topBtn = document.getElementById('backToTop');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 600) {
-          topBtn.classList.add('visible');
-        } else {
-          topBtn.classList.remove('visible');
-        }
-      }, { passive: true });
-      topBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+
+            if (progressBar && topBtn) {
+                let scrollTicking = false;
+
+                function updateScrollChrome() {
+                    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const progress = height > 0 ? Math.min(winScroll / height, 1) : 0;
+
+                    progressBar.style.transform = 'scaleX(' + progress + ')';
+                    topBtn.classList.toggle('visible', window.scrollY > 600);
+                    scrollTicking = false;
+                }
+
+                function requestScrollChromeUpdate() {
+                    if (scrollTicking) return;
+                    scrollTicking = true;
+                    window.requestAnimationFrame(updateScrollChrome);
+                }
+
+                window.addEventListener('scroll', requestScrollChromeUpdate, { passive: true });
+                requestScrollChromeUpdate();
+
+                topBtn.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
     </script>
 
 </div></body></html>
