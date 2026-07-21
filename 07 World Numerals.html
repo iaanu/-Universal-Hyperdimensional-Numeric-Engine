@@ -252,6 +252,74 @@
     table.master sup { font-size: 0.72em; color: #6C0AC9; }
     table.master tr.hidden { display: none; }
 
+    /* Living Orchard — chapter panels adapted from the Ọ̀RỌ̀ ẸLOHÎM design */
+    .methodology-flow { display: flex; flex-direction: column; }
+    .methodology-flow > .method-grid { order: 1; }
+    .methodology-flow > .adaptive-orchard { order: 2; }
+    .adaptive-orchard { max-width: 1220px; margin: 24px auto 0; }
+    .orchard-intro,
+    .orchard-chapter,
+    .orchard-harmony {
+      margin: 0 0 20px; padding: 22px 28px;
+      background: linear-gradient(135deg, #fafafa 0%, #f0f7fa 100%);
+      border-left: 4px solid #1E8CB8; border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(30,140,184,.10);
+    }
+    .orchard-harmony { margin-bottom: 0; border-left-color: #16A34A; background: linear-gradient(135deg, #f8fff9 0%, #eef8fb 100%); }
+    .orchard-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 10px; }
+    .orchard-tags span {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: .7rem; font-weight: 700; color: #0f3460;
+      background: rgba(30,140,184,.10); border: 1px solid rgba(30,140,184,.25);
+    }
+    .orchard-tags .gold { background: rgba(255,215,0,.18); border-color: #FFD700; }
+    .orchard-tags .green { color: #0b5d2b; background: rgba(22,163,74,.12); border-color: #16A34A; }
+    .orchard-tags .pink { color: #7a006e; background: rgba(255,19,240,.10); border-color: #FF13F0; }
+    .adaptive-orchard h3 {
+      margin: 0 0 9px; color: #000; font-size: 1.45rem;
+      line-height: 1.25; font-weight: 800; letter-spacing: 0;
+    }
+    .adaptive-orchard h3 .orchard-marker {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 32px; height: 32px; margin-right: 10px; padding: 0 8px;
+      border-radius: 18px; color: #fff; font-size: .78rem; line-height: 1;
+      background: linear-gradient(135deg, #16A34A 0%, #1E8CB8 100%);
+      box-shadow: 0 5px 12px rgba(22,163,74,.22); vertical-align: middle;
+    }
+    .orchard-subtitle { margin: -2px 0 12px; color: #0f3460; font-size: .92rem; font-weight: 700; }
+    .orchard-divider { display: flex; gap: 3px; width: 200px; max-width: 100%; height: 5px; margin: 4px 0 14px; overflow: hidden; border-radius: 4px; }
+    .orchard-divider i { flex: 1; }
+    .orchard-divider i:nth-child(1) { background: #0891B2; }
+    .orchard-divider i:nth-child(2) { background: #16A34A; }
+    .orchard-divider i:nth-child(3) { background: #2563EB; }
+    .orchard-divider i:nth-child(4) { background: #9333EA; }
+    .orchard-divider i:nth-child(5) { background: #DC2626; }
+    .orchard-divider i:nth-child(6) { background: #FFD700; }
+    .orchard-divider i:nth-child(7) { background: #FF13F0; }
+    .adaptive-orchard p { margin: 0 0 10px; color: #3a4a63; font-size: .95rem; line-height: 1.65; text-align: justify; }
+    .orchard-lines { margin: 8px 0 12px; padding: 0; list-style: none; }
+    .orchard-lines li { position: relative; padding: 3px 0 3px 18px; color: #1a1a2e; line-height: 1.55; }
+    .orchard-lines li::before { content: ""; position: absolute; left: 0; top: 11px; width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, #FFD700, #0f3460); }
+    .orchard-quote {
+      display: inline-block; margin-top: 7px; padding: 10px 20px;
+      color: #fff; background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%);
+      border-radius: 24px; box-shadow: 0 6px 16px rgba(30,140,184,.28);
+      font-size: .9rem; line-height: 1.45; font-weight: 700;
+    }
+    .orchard-life-label { margin-top: 12px !important; color: #0f3460 !important; font-weight: 800; text-align: left !important; }
+    .orchard-recap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .orchard-recap article { padding: 15px; background: #fff; border: 1px solid rgba(30,140,184,.22); border-top: 4px solid #16A34A; border-radius: 8px; }
+    .orchard-recap h4 { margin: 0 0 5px; color: #0f3460; font-size: .93rem; }
+    .orchard-recap p { margin: 0; font-size: .82rem; line-height: 1.5; text-align: left; font-style: italic; }
+    @media (max-width: 760px) {
+      .orchard-intro, .orchard-chapter, .orchard-harmony { padding: 19px 17px; }
+      .adaptive-orchard h3 { font-size: 1.2rem; }
+      .orchard-tags span { max-width: 100%; overflow-wrap: anywhere; }
+      .adaptive-orchard p, .orchard-subtitle, .orchard-quote { overflow-wrap: anywhere; }
+      .orchard-recap { grid-template-columns: 1fr; }
+      .orchard-quote { display: block; border-radius: 10px; }
+    }
+
     /* Methodology */
     .method-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin: 26px auto 8px; max-width: 1220px; }
     @media (max-width: 1080px) { .method-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -3119,6 +3187,128 @@
         <h2>How Any Indigenous Language Plugs In</h2>
         <p>Every language onboards the Numeric Engines, and builds the digital future in their ancestral tongues.</p>
       </div>
+
+      <div class="methodology-flow">
+      <section class="adaptive-orchard" aria-labelledby="living-orchard-title">
+        <article class="orchard-intro">
+          <div class="orchard-tags" aria-label="Living Orchard themes">
+            <span>Indigenous Knowledge</span><span class="gold">Human Flourishing</span><span class="green">Adaptive Intelligence</span><span>Living Systems</span><span class="pink">Future Generations</span>
+          </div>
+          <h3 id="living-orchard-title"><span class="orchard-marker">I</span>The Living Orchard of Adaptive Intelligence</h3>
+          <p class="orchard-subtitle">Six Universal Patterns for Human Flourishing</p>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Every indigenous language carries more than words. It carries ways of observing nature, understanding community, solving problems, and passing wisdom from one generation to the next.</p>
+          <p>The Universal Hyperdimensional Numeric Engine (UHNE) was developed as a computational framework for indigenous numerals. Yet as its six equation layers matured, they revealed something unexpected. Behind every computational function stood a pattern already written throughout life itself.</p>
+          <p>The Expressive Layer reminds us that every civilisation speaks before it calculates. The Alpha² Layer teaches that every transformation begins by awakening hidden potential. The Harmonic Knot demonstrates that lasting strength emerges through relationship rather than fragmentation. The Gear Box Layer reveals the wisdom of adaptive intelligence&mdash;not greater force, but better gearing for every new challenge. The Hyper² Layer reminds us that every horizon opens another horizon, inviting continual exploration and growth. The Vocalic Layer teaches that living systems endure by continual calibration, preserving identity while remaining responsive to change.</p>
+          <p>These are not presented as universal laws of nature or philosophy. Rather, they are reflective principles inspired by the architecture of the UHNE&mdash;an invitation to consider how computational design can illuminate familiar patterns of learning, adaptation, and human flourishing across cultures.</p>
+          <ul class="orchard-lines">
+            <li>Every language can recognise these patterns in its own voice.</li>
+            <li>Every culture can express them through its own history.</li>
+            <li>Every child can discover them through joyful learning.</li>
+          </ul>
+          <p>Like an orchard, every generation plants, cultivates, harvests, and leaves better soil for those who follow. Adaptive intelligence is therefore measured not simply by how much we know today, but by how faithfully we cultivate tomorrow.</p>
+          <p>The UHNE does not expand by accumulation; it expands by cultivation. Every new idea begins as a seed, matures into a branch, and, when its season arrives, grows into its own tree within the Living Orchard. Perhaps this is the deepest lesson of indigenous knowledge itself.</p>
+          <p>Wisdom is not inherited because it is old. Wisdom is inherited because each generation faithfully tends it until it bears fruit again. The little seed becomes the tree. The tree becomes the orchard. The orchard becomes a sanctuary.</p>
+          <div class="orchard-quote">&ldquo;Every sanctuary begins with someone willing to plant the first seed. Every enduring idea begins as a quiet seed. It grows through patient cultivation, finds its own season, and, when ready, offers fruit generous enough to nourish minds far beyond the one that first planted it.&rdquo;</div>
+        </article>
+
+        <article class="orchard-intro">
+          <div class="orchard-tags" aria-label="Six Laws themes">
+            <span>UHNE Philosophy</span><span class="gold">Six Equation Engines</span><span class="green">Learning</span><span>Leadership</span><span class="pink">Civilisation</span>
+          </div>
+          <h3><span class="orchard-marker">II</span>The Six Laws of Adaptive Intelligence</h3>
+          <p class="orchard-subtitle">A Philosophical Companion to the Universal Hyperdimensional Numeric Engine (UHNE)</p>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>The six equation engines of the UHNE do more than organise numerical computation. Read metaphorically, they reveal six complementary principles that also illuminate human learning, leadership, creativity, communication, and civilisation.</p>
+          <p>The equations therefore become more than computational structures; they become mirrors through which we may observe enduring patterns found throughout nature, culture, and intelligent adaptation. Together they form a Philosophy of Adaptive Intelligence.</p>
+        </article>
+
+        <article class="orchard-chapter">
+          <div class="orchard-tags"><span>Expression</span><span class="gold">Language</span><span class="green">Inheritance</span><span class="pink">Civilisation</span></div>
+          <h3><span class="orchard-marker">ē</span>The Law of Human Expression</h3>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p><strong>The first intelligence is expression.</strong></p>
+          <p>Every civilisation speaks before it calculates. Every child sings before writing. Every community tells stories before recording history. Language is humanity's first technology.</p>
+          <p>The Expressive Layer reminds us that every lasting system must first become speakable, memorable, and shareable. Knowledge that cannot be expressed cannot easily become culture. Like the human heartbeat, expressive intelligence gives rhythm to thought.</p>
+          <ul class="orchard-lines"><li>Without expression there is no teaching.</li><li>Without teaching there is no inheritance.</li><li>Without inheritance there is no civilisation.</li></ul>
+          <p class="orchard-life-label">Life Principle:</p>
+          <div class="orchard-quote">True intelligence first learns to speak with clarity before it seeks to calculate with complexity.</div>
+        </article>
+
+        <article class="orchard-chapter">
+          <div class="orchard-tags"><span>Awakening</span><span class="gold">Potential</span><span class="green">Growth</span><span class="pink">Discovery</span></div>
+          <h3><span class="orchard-marker">ā</span>The Law of Awakening</h3>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Every seed contains more than appears. Potential waits quietly until awakened. The Alpha² Layer represents the moment dormant possibility becomes active. Just as a tiny seed unfolds into a forest, exponential growth begins with a single act of ignition.</p>
+          <p>Nature rarely grows by addition. It grows through multiplication. Ideas behave the same way. Knowledge awakens knowledge. Curiosity awakens discovery. Hope awakens civilisation.</p>
+          <p class="orchard-life-label">Life Principle:</p>
+          <div class="orchard-quote">The greatest transformations begin when hidden potential is given permission to awaken.</div>
+        </article>
+
+        <article class="orchard-chapter">
+          <div class="orchard-tags"><span>Harmony</span><span class="gold">Relationship</span><span class="green">Unity</span><span class="pink">Diversity</span></div>
+          <h3><span class="orchard-marker">æ</span>The Law of Harmony</h3>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Nature does not survive through isolation. It survives through relationship. Every ecosystem depends upon countless invisible connections.</p>
+          <p>The Harmonic Knot teaches that true strength is found not by separating everything into fragments but by allowing differences to converge into coherent unity. A knot binds without breaking. A bridge connects without erasing difference. Harmony does not remove diversity. It organises diversity.</p>
+          <p class="orchard-life-label">Life Principle:</p>
+          <div class="orchard-quote">The highest intelligence is not domination, but harmonious integration.</div>
+        </article>
+
+        <article class="orchard-chapter">
+          <div class="orchard-tags"><span>Adaptation</span><span class="gold">Momentum</span><span class="green">Resilience</span><span class="pink">Right Timing</span></div>
+          <h3><span class="orchard-marker">ḡ</span>The Law of Adaptive Intelligence</h3>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>The strongest creature is rarely the largest. It is the one most capable of adaptation. Birds shift altitude. Fish change depth. Trees bend with the wind. The human mind changes strategy.</p>
+          <p>The Gear Box Layer teaches that intelligent systems do not apply constant force. They continually change gear. Every transition preserves momentum while preventing unnecessary strain. Nature succeeds not by resisting change, but by adapting intelligently to it.</p>
+          <p class="orchard-life-label">Life Principle:</p>
+          <div class="orchard-quote">Strength is measured not by constant power, but by the wisdom to shift at the right moment.</div>
+        </article>
+
+        <article class="orchard-chapter">
+          <div class="orchard-tags"><span>Ascent</span><span class="gold">Exploration</span><span class="green">Wonder</span><span class="pink">New Horizons</span></div>
+          <h3><span class="orchard-marker">ȳ</span>The Law of Infinite Ascent</h3>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Every horizon reveals another horizon. Exploration has no final page. The Hyper² Layer teaches that growth is never exhausted by achievement. Every summit becomes the base camp of another ascent.</p>
+          <p>The universe itself expands. Knowledge expands. Wonder expands. Human potential expands. The journey therefore has no final ceiling. Only new skies.</p>
+          <p class="orchard-life-label">Life Principle:</p>
+          <div class="orchard-quote">The purpose of achievement is not arrival, but the opening of the next horizon.</div>
+        </article>
+
+        <article class="orchard-chapter">
+          <div class="orchard-tags"><span>Calibration</span><span class="gold">Identity</span><span class="green">Renewal</span><span class="pink">Living Balance</span></div>
+          <h3><span class="orchard-marker">V·Ż</span>The Law of Living Calibration</h3>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Life survives because it continually adjusts. The heart regulates. The lungs regulate. The ear adjusts. The eye refocuses. Languages evolve. Civilisations renew themselves.</p>
+          <p>The Vocalic Layer reminds us that enduring systems are never rigid. They remain alive because they continuously calibrate while preserving identity. A violin remains in tune only because it is repeatedly tuned. Human life is no different.</p>
+          <p class="orchard-life-label">Life Principle:</p>
+          <div class="orchard-quote">The wisest systems preserve their identity by continually renewing their balance.</div>
+        </article>
+
+        <article class="orchard-harmony">
+          <div class="orchard-tags"><span>Living Harmony</span><span class="gold">Cultivation</span><span class="green">Future Generations</span><span class="pink">Faithful Seeds</span></div>
+          <h3><span class="orchard-marker">III</span>The Living Harmony</h3>
+          <div class="orchard-divider" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>When these six laws work together, adaptive intelligence becomes complete. Expression gives humanity its voice. Awakening releases its potential. Harmony preserves its unity. Adaptation sustains its journey. Ascent expands its horizon. Calibration keeps the whole system alive.</p>
+          <p>Together they describe not merely a numerical architecture, but a philosophy of continual growth. Like an orchard, every generation plants, cultivates, harvests, and leaves better soil for those who follow.</p>
+          <p>For adaptive intelligence is not measured by how much we know today, but by how faithfully we cultivate: Every seed becomes a tree. Every tree strengthens the orchard. Every orchard shelters future generations. Every generation inherits both the fruit and the responsibility to cultivate again.</p>
+          <div class="orchard-quote">&ldquo;The future is not inherited by chance. It is cultivated, one faithful seed at a time.&rdquo;</div>
+          <p style="margin-top:14px;"><em>&ldquo;Every garden welcomes visitors differently. Some come seeking fruit. Some come seeking shade. Some pause only to admire a single flower. Yet each leaves carrying something the garden quietly gave away.&rdquo;</em></p>
+
+          <div class="orchard-recap" aria-label="Six Laws summary">
+            <article><h4>ē Pulse · Human Expression</h4><p>A civilisation speaks before it calculates.</p></article>
+            <article><h4>ā Pulse · Awakening</h4><p>Every great transformation begins by awakening hidden potential.</p></article>
+            <article><h4>æ Pulse · Harmony</h4><p>Strength emerges through relationship.</p></article>
+            <article><h4>ḡ Pulse · Adaptive Intelligence</h4><p>True wisdom knows when to change gear.</p></article>
+            <article><h4>ȳ Pulse · Infinite Ascent</h4><p>Every horizon reveals another horizon.</p></article>
+            <article><h4>V·Ż Pulse · Living Calibration</h4><p>Life flourishes through continual renewal.</p></article>
+          </div>
+          <p style="margin-top:18px;">The six equation engines of the UHNE do more than organise numerical computation. Read metaphorically, they reveal six complementary principles that also illuminate human learning, leadership, creativity, communication, and civilisation. The equations therefore become more than computational structures; they become mirrors through which we may observe enduring patterns found throughout nature, culture, and intelligent adaptation. Together they form a Philosophy of Adaptive Intelligence.</p>
+          <div class="orchard-quote">Life's greatest progress is not always achieved by staying in the same gear. Sometimes wisdom is found in recognising when it is time to shift.</div>
+          <div class="orchard-quote">The wisest gear is not always the fastest one. It is the one that allows the journey to continue with purpose, clarity, and faithful cultivation.</div>
+        </article>
+      </section>
+
       <div class="method-grid">
         <div class="method-card">
           <span class="pulse-glyph"><span class="num">01</span><span class="sym">·</span><span>Expressive</span></span>
@@ -3170,6 +3360,7 @@
           <p class="principle">&ldquo;Vowels stretch and contract to carry the whole sky.&rdquo;</p>
           <div class="pulse-tags"><span>Vowel&#8209;Numeral DNA</span><span>Total Density</span><span>Sovereignty Shield</span></div>
         </div>
+      </div>
       </div>
     </div>
     <!-- /.content -->
