@@ -1,0 +1,2344 @@
+﻿<!DOCTYPE html>
+<html lang="yo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numeric Products | Universal Hyperdimensional Numeric Engine</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+    /* ── Top progress bar (47-Sovereign Colour Spectrum) ── */
+    .scroll-progress{
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      z-index: 2000;
+      background: linear-gradient(90deg,
+        #0891B2, #16A34A, #2563EB, #9333EA, #DC2626,
+        #B59410, #4EAAE4, #8B4513, #228B22, #EF6000,
+        #000080, #FC5D8D, #808000, #CD853F, #6A5ACD,
+        #800000, #1E90FF, #F59E0B, #8B0000, #047857,
+        #A855F7, #D2691E, #6C0AC9, #B91C1C, #65A30D,
+        #4B0082, #FA8072, #008B8B, #B8860B, #7B2D8E,
+        #20B2AA, #B22222, #9370DB, #A0522D, #191970,
+        #E11D48, #5F9EA0, #CD7F32, #9932CC, #DAA520,
+        #483D8B, #FF6347, #8B008B, #94AA00, #4682B4, #FF13F0, #808080
+      );
+      transition: width 0.1s linear;
+      border-radius: 0 2px 2px 0;
+    }
+
+    /* ── Menu bar ── */
+    .menu-bar {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 14px 20px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      border-bottom: 11px solid #6C6ACD;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .menu-bar a {
+      color: #FFD700; text-decoration: none;
+      padding: 8px 16px; border-radius: 25px;
+      font-size: 0.85rem; font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255,215,0,0.3);
+      white-space: nowrap;
+    }
+    .menu-bar a:hover {
+      background: rgba(255,215,0,0.2); border-color: #FFD700;
+      box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+    }
+    .menu-bar a.current{
+      background: rgba(255,215,0,0.18); border-color:#FFD700;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 28px 20px; margin: 0; border-bottom: 15px solid #6C6ACD;
+    }
+    .footer-content { text-align: center; max-width: 800px; margin: 0 auto; }
+    .footer-content .copyright { display: block; color: #ffeb3b; font-size: 1.1em; font-weight: 700; margin-bottom: 10px; }
+    .footer-content .english-mission { color: #e0e0e0; font-size: 0.95em; margin: 0; }
+
+    /* ── Base layout ── */
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%);
+      min-height: 100vh; margin: 0; padding: 0; color: #1a1a1a;
+    }
+    .container {
+      background: #fff; max-width: 1400px; margin: 0 auto;
+      padding: 0 20px; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    .header {
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%);
+      color: #fff; padding: 30px 40px; text-align: center;
+    }
+    .header h1 { font-size: 2.2rem; font-weight: 800; margin: 0 0 6px; letter-spacing: 1px; }
+    .header h2 { font-size: 1.15rem; font-weight: 600; opacity: 0.95; margin: 0; }
+    .content { padding: 40px; }
+
+    /* ── 47-colour bar ── */
+    .colour-bar-animated {
+      display: flex; height: 10px; overflow: hidden;
+      border-radius: 0 0 8px 8px; margin: 0; position: relative;
+    }
+    .colour-bar-animated > div {
+      flex: 1; transition: flex 0.4s ease, transform 0.4s ease;
+      cursor: pointer;
+    }
+    .colour-bar-animated:hover > div { flex: 0.7; }
+    .colour-bar-animated > div:hover { flex: 4; transform: scaleY(1.6); }
+    .colour-bar-animated::after {
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,.45) 50%, transparent 65%);
+      background-size:220% 100%;
+      animation: cb-shimmer 7s linear infinite;
+      pointer-events:none; mix-blend-mode:screen;
+    }
+    @keyframes cb-shimmer { 0%{background-position:200% 0} 100%{background-position:-100% 0} }
+
+    /* ── About the Products closing-style block ── */
+    .g-closing{
+      margin: 30px 0 14px;
+      background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+      border-left: 4px solid #1E8CB8; border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(30,140,184,.08);
+      padding: 22px 28px;
+    }
+    .g-closing.dropcap p:first-of-type::first-letter{
+      float:left; font-size:3.4rem; line-height:.85;
+      padding:6px 12px 0 0; color:#0a2447; font-weight:700;
+      background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .g-closing h3{
+      color:#000; font-size:1.45rem; font-weight:800;
+      margin:0 0 8px; letter-spacing:.2px;
+    }
+    .g-closing p{ color:#1a1a2e; line-height:1.78; margin-bottom:10px; font-size:1rem; text-align:justify; }
+    .g-closing ul.lead-lines{ margin: 6px 0 10px; padding-left: 22px; }
+    .g-closing ul.lead-lines li{ margin-bottom:6px; line-height:1.55; }
+    .g-closing .summary-pill{
+      display:block; margin-top:14px; padding:6px 0 6px 14px;
+      border-left: 3px solid #FFD700;
+      color:#0a2447; font-style:italic; font-weight:600;
+      font-size:.98rem; line-height:1.45;
+    }
+
+    /* ── Stripe divider ── */
+    .stripe-divider{
+      display:flex; gap:3px; height:5px; border-radius:4px; overflow:hidden;
+      margin: 5px 0 12px; max-width: 200px;
+    }
+    .stripe-divider i{ flex:1; }
+    .stripe-divider i:nth-child(1){ background:#0891B2; }
+    .stripe-divider i:nth-child(2){ background:#16A34A; }
+    .stripe-divider i:nth-child(3){ background:#2563EB; }
+    .stripe-divider i:nth-child(4){ background:#9333EA; }
+    .stripe-divider i:nth-child(5){ background:#DC2626; }
+    .stripe-divider i:nth-child(6){ background:#FFD700; }
+    .stripe-divider i:nth-child(7){ background:#FF13F0; }
+
+    /* ── Product thumbnail rows (image left, summary right) ── */
+    .g-chapter{
+      display:grid; grid-template-columns: 280px 1fr; gap:32px;
+      align-items:stretch; margin: 0 0 28px; padding: 0;
+      min-height: 240px;
+    }
+    .g-chapter .g-text{
+      background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+      border-left: 4px solid #1E8CB8; border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(30,140,184,.08);
+      padding: 24px 30px;
+      display:flex; flex-direction:column; justify-content:center;
+      align-items:flex-start; min-height: 240px;
+    }
+    .g-photo-wrap{
+      position:relative; width:280px; height:240px;
+      background:#0a2447;
+      border:2px solid #0f3460; border-radius:14px;
+      box-shadow:0 8px 22px rgba(10,36,71,.28);
+      overflow:hidden; align-self:center;
+    }
+    .g-photo-wrap .g-photo{
+      width:100%; height:100%;
+      background-repeat:no-repeat;
+      background-size: cover;
+      background-position: center center;
+      animation: g-rise 6s ease-in-out infinite;
+      transform-origin: 50% 60%;
+    }
+    .g-photo-wrap::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
+      background-size:220% 100%;
+      animation: g-shimmer 7s linear infinite;
+      pointer-events:none; mix-blend-mode:screen;
+    }
+    @keyframes g-rise{
+      0%,100%{ transform: scale(1)   translateY(0); }
+      50%    { transform: scale(1.03) translateY(-6px); }
+    }
+    @keyframes g-shimmer{ 0%{background-position:200% 0} 100%{background-position:-100% 0} }
+    .g-photo-wrap .g-badge{
+      position:absolute; top:12px; left:12px; z-index:5;
+      background:#FFD700; color:#0a2447;
+      padding:4px 11px; border-radius:18px;
+      font-size:.7rem; font-weight:800; letter-spacing:1.5px;
+      box-shadow:0 3px 8px rgba(10,36,71,.28);
+    }
+
+    /* per-product image */
+    .g-photo.p-numgen { background-image:url('Number%20Generator.jpg'); }
+    .g-photo.p-calc   { background-image:url('Calculator.jpg'); }
+    .g-photo.p-conv   { background-image:url('Converter.jpg'); }
+    .g-photo.p-age    { background-image:url('AgeCalculator.jpg'); }
+    .g-photo.p-cal    { background-image:url('Calendar.jpg'); }
+    .g-photo.p-drum   { background-image:url('TalkingDrum.jpg'); }
+    .g-photo.p-guitar { background-image:url('16Strings.jpg'); }
+
+    /* text column */
+    .g-text h3.product-eyebrow{
+      display:inline-block; align-self:flex-start; margin:0 0 6px;
+      background:transparent; color:#0f3460;
+      padding:0 0 4px 0; border-bottom:2px solid #FFD700;
+      font-size:.78rem; letter-spacing:3px; font-weight:800;
+      text-transform:uppercase;
+    }
+    .g-text h2{
+      display:flex; align-items:center; gap:10px;
+      color:#000; font-size:1.45rem; line-height:1.2;
+      margin:0 0 8px; padding:0; border-left:0;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .g-text h2 .section-marker{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:34px; height:34px; border-radius:50%;
+      background: linear-gradient(135deg,#16A34A 0%,#1E8CB8 100%);
+      color:#fff; font-size:.9rem; font-weight:900; line-height:1;
+      box-shadow:0 5px 12px rgba(22,163,74,.22);
+      flex-shrink:0;
+    }
+    .g-text .tagline{
+      color:#0a2447; font-weight:700; font-style:italic;
+      font-size:.95rem; margin: 0 0 8px;
+    }
+    .g-text p.summary{
+      color:#3a4a63; line-height:1.6; margin:0 0 14px;
+      font-size:.95rem; text-align: justify; width:100%;
+    }
+    .g-text .pulse-tags{
+      display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;
+    }
+    .g-text .pulse-tags span{
+      display:inline-block; padding:3px 10px; border-radius:20px;
+      font-size:.72rem; font-weight:700; letter-spacing:.4px;
+      background: rgba(30,140,184,.10); color:#0f3460;
+      border:1px solid rgba(30,140,184,.25);
+    }
+    .g-text .pulse-tags span.gold{
+      background: rgba(255,215,0,.18); color:#0a2447; border-color:#FFD700;
+    }
+    .g-text .pulse-tags span.pink{
+      background: rgba(255,19,240,.10); color:#7a006e; border-color:#FF13F0;
+    }
+    .g-launch{
+      display:inline-block; margin-top:auto;
+      padding:10px 22px; border-radius:30px;
+      background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+      color:#fff !important; font-weight:700; font-size:.92rem;
+      text-decoration:none; letter-spacing:.3px;
+      box-shadow:0 6px 16px rgba(30,140,184,.32);
+      transition: transform .15s ease, box-shadow .25s ease;
+    }
+    .g-launch:hover{
+      transform: translateY(-2px);
+      box-shadow:0 10px 22px rgba(30,140,184,.45);
+    }
+    .g-launch-row{
+      display:flex; flex-wrap:wrap; align-items:center; gap:14px;
+      margin-top:auto;
+    }
+    .g-secondary{
+      color:#0f3460; font-weight:700; font-size:.82rem;
+      text-decoration:none; letter-spacing:.2px;
+      padding: 8px 14px; border-radius: 20px;
+      border: 1px solid rgba(15,52,96,.25);
+      background: rgba(255,255,255,.6);
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
+    }
+    .g-secondary:hover{
+      background: rgba(255,215,0,.18);
+      border-color: #FFD700;
+      color:#0a2447;
+    }
+
+    /* ── Sticky in-page TOC (left edge) ── */
+    .ms-toc{
+      position: fixed;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 800;
+      display: flex; flex-direction: column; gap: 8px;
+      padding: 12px 8px;
+      background: rgba(10,36,71,.78);
+      border: 1px solid rgba(255,215,0,.3);
+      border-radius: 30px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 24px rgba(10,36,71,.30);
+    }
+    .ms-toc a{
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      color: #FFD700; text-decoration: none;
+      font-size: .72rem; font-weight: 800; letter-spacing: .3px;
+      border: 1px solid rgba(255,215,0,.22);
+      transition: all .2s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+    .ms-toc a:hover{
+      background: rgba(255,215,0,.22);
+      border-color: #FFD700;
+      transform: scale(1.08);
+      box-shadow: 0 4px 10px rgba(255,215,0,.28);
+    }
+    .ms-toc a.top{
+      background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+      color:#fff; border-color: rgba(255,255,255,.4);
+      font-size: .85rem;
+    }
+    .ms-toc a.top:hover{
+      box-shadow: 0 4px 10px rgba(30,140,184,.55);
+    }
+    .ms-toc::before{
+      content: "";
+      position: absolute; left: 50%; transform: translateX(-50%);
+      top: -8px; bottom: -8px; width: 2px;
+      background: linear-gradient(180deg, transparent 0%, rgba(255,215,0,.4) 50%, transparent 100%);
+      z-index: -1;
+    }
+    @media (max-width: 1100px){
+      .ms-toc{ display: none; }
+    }
+
+    /* ── Neutral divider ── */
+    .g-neutral-divider{
+      border:0; height:3px;
+      background: linear-gradient(90deg, transparent 0%, #0f3460 20%, #FFD700 50%, #0f3460 80%, transparent 100%);
+      margin: 36px auto 32px; max-width: 100%; border-radius:2px;
+    }
+
+    /* ── Full descriptions section ── */
+    .g-full{ margin: 0 0 30px; }
+    .g-full .full-bridge{
+      color:#1a1a2e; line-height:1.78; margin: 0 0 22px;
+      font-size:1.02rem; text-align:justify;
+      padding: 16px 22px;
+      background: linear-gradient(135deg,#f0f7fa 0%,#e6f3f9 100%);
+      border-left: 4px solid #FFD700; border-radius: 12px;
+    }
+    .full-chapter{
+      margin: 0 0 22px;
+      background: #fff;
+      border:1px solid rgba(30,140,184,.18);
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(30,140,184,.06);
+      padding: 22px 28px;
+    }
+    .full-chapter.dropcap p:first-of-type::first-letter{
+      float:left; font-size:3rem; line-height:.85;
+      padding:6px 12px 0 0; color:#0a2447; font-weight:700;
+      background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
+      -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    }
+    .full-chapter h3{
+      color:#0a2447; font-size:1.3rem; font-weight:800;
+      margin: 0 0 8px; letter-spacing:.2px;
+    }
+    .full-chapter p{
+      color:#1a1a2e; line-height:1.72; margin:0 0 10px;
+      font-size:.98rem; text-align:justify;
+    }
+    .full-chapter .summary-pill{
+      display:block; margin-top:14px; padding:6px 0 6px 14px;
+      border-left: 3px solid #FFD700;
+      color:#0a2447; font-style:italic; font-weight:600;
+      font-size:.96rem; line-height:1.45;
+    }
+
+    /* ── Back to top ── */
+    .back-to-top{
+      position: fixed; bottom: 28px; right: 28px;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
+      color: #fff; border: 0; font-size: 1rem;
+      cursor: pointer; opacity: 0; pointer-events: none;
+      transition: opacity .25s ease, transform .15s ease;
+      box-shadow: 0 8px 22px rgba(10,36,71,.35);
+      z-index: 1500;
+    }
+    .back-to-top.visible{ opacity:1; pointer-events:auto; }
+    .back-to-top:hover{ transform: translateY(-3px); }
+
+    /* ── Responsive ── */
+    @media (max-width: 880px){
+      .g-chapter{ grid-template-columns: 1fr; }
+      .g-photo-wrap{ width: 100%; max-width: 380px; height: 220px; margin: 0 auto; }
+      .header h1{ font-size: 1.7rem; }
+      .content{ padding: 24px 18px; }
+      .full-chapter{ padding: 18px 20px; }
+    }
+  </style>
+  <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
+  <style>
+/* ════════════════════════════════════════════════════════════════════
+   ÒNKA YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
+   Ètò Àwọ̀ OgójìÉje
+   --------------------------------------------------------------------
+   THE SOVEREIGN COLOUR LAW
+   --------------------------------------------------------------------
+   1. Each of the 47 colours is bound to a magnitude TIER, not to a
+      digit. The colour rides with the position (Units, Tens, Hundreds,
+      Thousands, … Tredecillions+, plus the "l" Multiplier and
+      Unassigned), so any number wears the colour of its tier.
+   2. The 47 colours preserve their true value WHEREVER they appear —
+      Master Index, Scaling Engines, Calendar, Calculator, Posters,
+      Apps. One colour, one tier, one site.
+   3. Numbers whose magnitude exceeds the 47 named tiers all wear the
+      same Large-Number Steel Blue (#4682B4). We have no infinite
+      supply of distinguishable colours, so we admit it gracefully and
+      give every very-large magnitude a single shared uniform.
+   4. The "l" Drive Multiplier is ALWAYS Neon Pink (#FF13F0).
+   5. The Unassigned/Children/Contents state is ALWAYS Grey (#808080).
+   --------------------------------------------------------------------
+   SOURCE OF TRUTH
+   --------------------------------------------------------------------
+   The hex values, ordering, and colour names below are taken DIRECTLY
+   from the "47-Sovereign Colour Visual Protocol" table in
+   GitHub/03 Master Index.html (the protocol-table block, rows 01–47).
+   If the Master Index table changes, this file must be updated to
+   match — it is the only authoritative copy.
+   --------------------------------------------------------------------
+   HOW TO USE THIS FILE
+   --------------------------------------------------------------------
+   In any HTML page, add:
+       <link rel="stylesheet" href="tools/sovereign-colours.css">
+   Then reference colours in three equivalent ways:
+
+   (A) Semantic tier variables (preferred for new code):
+         color: var(--tier-tens);          → Royal Blue, any 10–99 ←
+         color: var(--tier-large);         → Steel Blue, any 10⁴⁵+ ←
+         color: var(--tier-l-drive);       → Neon Pink, the 'l' link ←
+
+   (B) Tier-N positional variables (for indexed loops/arrays):
+         color: var(--tier-03);            → same as --tier-tens   ←
+         color: var(--tier-47);            → same as --tier-large  ←
+
+   (C) Legacy class names (kept for backwards compatibility with
+       existing Master Index code):
+         <span class="t-blue">…</span>     → Royal Blue text       ←
+         <span class="c-purple">…</span>   → Purple background     ←
+         <span class="l-mult">l</span>     → Neon Pink — the link  ←
+   ════════════════════════════════════════════════════════════════════ */
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 1 — THE 47 SOVEREIGN COLOURS AS CSS VARIABLES
+   Defined on :root so every page that links this file inherits them.
+   Two parallel naming schemes resolve to the same hex:
+     --tier-NN    (positional, 01–47)
+     --tier-name  (semantic, e.g. --tier-tens)
+   Use whichever reads better in context.
+───────────────────────────────────────────────────────────────────── */
+:root {
+  /* ── 01 · Zero · Cerulean ─────────────────────────────────────── */
+  --tier-01: #0891B2;
+  --tier-zero: var(--tier-01);
+
+  /* ── 02 · Units (1–9) · Vibrant Green ─────────────────────────── */
+  --tier-02: #16A34A;
+  --tier-units: var(--tier-02);
+
+  /* ── 03 · Tens (10–99) · Royal Blue ───────────────────────────── */
+  --tier-03: #2563EB;
+  --tier-tens: var(--tier-03);
+
+  /* ── 04 · Hundreds (100–999) · Purple ─────────────────────────── */
+  --tier-04: #9333EA;
+  --tier-hundreds: var(--tier-04);
+
+  /* ── 05 · Thousands · Red ─────────────────────────────────────── */
+  --tier-05: #DC2626;
+  --tier-thousands: var(--tier-05);
+
+  /* ── 06 · Tens of Thousands · Dark Goldenrod ──────────────────── */
+  --tier-06: #B59410;
+  --tier-tens-thou: var(--tier-06);
+
+  /* ── 07 · Hundreds of Thousands · Sky Blue ────────────────────── */
+  --tier-07: #4EAAE4;
+  --tier-hund-thou: var(--tier-07);
+
+  /* ── 08 · Millions · Saddle Brown ─────────────────────────────── */
+  --tier-08: #8B4513;
+  --tier-millions: var(--tier-08);
+
+  /* ── 09 · Tens of Millions · Forest Green ─────────────────────── */
+  --tier-09: #228B22;
+  --tier-tens-mill: var(--tier-09);
+
+  /* ── 10 · Hundreds of Millions · Dark Orange ──────────────────── */
+  --tier-10: #EF6000;
+  --tier-hund-mill: var(--tier-10);
+
+  /* ── 11 · Billions · Navy Blue ────────────────────────────────── */
+  --tier-11: #000080;
+  --tier-billions: var(--tier-11);
+
+  /* ── 12 · Tens of Billions · Hot Pink ─────────────────────────── */
+  --tier-12: #FC5D8D;
+  --tier-tens-bill: var(--tier-12);
+
+  /* ── 13 · Hundreds of Billions · Olive ────────────────────────── */
+  --tier-13: #808000;
+  --tier-hund-bill: var(--tier-13);
+
+  /* ── 14 · Trillions · Peru ────────────────────────────────────── */
+  --tier-14: #CD853F;
+  --tier-trillions: var(--tier-14);
+
+  /* ── 15 · Tens of Trillions · Slate Blue ──────────────────────── */
+  --tier-15: #6A5ACD;
+  --tier-tens-trill: var(--tier-15);
+
+  /* ── 16 · Hundreds of Trillions · Maroon ──────────────────────── */
+  --tier-16: #800000;
+  --tier-hund-trill: var(--tier-16);
+
+  /* ── 17 · Quadrillions · Dodger Blue ──────────────────────────── */
+  --tier-17: #1E90FF;
+  --tier-quadrillions: var(--tier-17);
+
+  /* ── 18 · Tens of Quadrillions · Amber ────────────────────────── */
+  --tier-18: #F59E0B;
+  --tier-tens-quad: var(--tier-18);
+
+  /* ── 19 · Hundreds of Quadrillions · Dark Red ─────────────────── */
+  --tier-19: #8B0000;
+  --tier-hund-quad: var(--tier-19);
+
+  /* ── 20 · Quintillions · Emerald ──────────────────────────────── */
+  --tier-20: #047857;
+  --tier-quintillions: var(--tier-20);
+
+  /* ── 21 · Tens of Quintillions · Bright Violet ────────────────── */
+  --tier-21: #A855F7;
+  --tier-tens-quint: var(--tier-21);
+
+  /* ── 22 · Hundreds of Quintillions · Chocolate ────────────────── */
+  --tier-22: #D2691E;
+  --tier-hund-quint: var(--tier-22);
+
+  /* ── 23 · Sextillions · Electric Violet ───────────────────────── */
+  --tier-23: #6C0AC9;
+  --tier-sextillions: var(--tier-23);
+
+  /* ── 24 · Tens of Sextillions · Crimson ───────────────────────── */
+  --tier-24: #B91C1C;
+  --tier-tens-sext: var(--tier-24);
+
+  /* ── 25 · Hundreds of Sextillions · Lime ──────────────────────── */
+  --tier-25: #65A30D;
+  --tier-hund-sext: var(--tier-25);
+
+  /* ── 26 · Septillions · Indigo ────────────────────────────────── */
+  --tier-26: #4B0082;
+  --tier-septillions: var(--tier-26);
+
+  /* ── 27 · Tens of Septillions · Salmon ────────────────────────── */
+  --tier-27: #FA8072;
+  --tier-tens-sept: var(--tier-27);
+
+  /* ── 28 · Hundreds of Septillions · Dark Teal ─────────────────── */
+  --tier-28: #008B8B;
+  --tier-hund-sept: var(--tier-28);
+
+  /* ── 29 · Octillions · Dark Goldenrod ─────────────────────────── */
+  --tier-29: #B8860B;
+  --tier-octillions: var(--tier-29);
+
+  /* ── 30 · Tens of Octillions · Deep Violet ────────────────────── */
+  --tier-30: #7B2D8E;
+  --tier-tens-oct: var(--tier-30);
+
+  /* ── 31 · Hundreds of Octillions · Light Sea Green ────────────── */
+  --tier-31: #20B2AA;
+  --tier-hund-oct: var(--tier-31);
+
+  /* ── 32 · Nonillions · Firebrick ──────────────────────────────── */
+  --tier-32: #B22222;
+  --tier-nonillions: var(--tier-32);
+
+  /* ── 33 · Tens of Nonillions · Medium Purple ──────────────────── */
+  --tier-33: #9370DB;
+  --tier-tens-non: var(--tier-33);
+
+  /* ── 34 · Hundreds of Nonillions · Sienna ─────────────────────── */
+  --tier-34: #A0522D;
+  --tier-hund-non: var(--tier-34);
+
+  /* ── 35 · Decillions · Midnight ───────────────────────────────── */
+  --tier-35: #191970;
+  --tier-decillions: var(--tier-35);
+
+  /* ── 36 · Tens of Decillions · Rose ───────────────────────────── */
+  --tier-36: #E11D48;
+  --tier-tens-dec: var(--tier-36);
+
+  /* ── 37 · Hundreds of Decillions · Cadet ──────────────────────── */
+  --tier-37: #5F9EA0;
+  --tier-hund-dec: var(--tier-37);
+
+  /* ── 38 · Undecillions · Bronze ───────────────────────────────── */
+  --tier-38: #CD7F32;
+  --tier-undecillions: var(--tier-38);
+
+  /* ── 39 · Tens of Undecillions · Dark Orchid ──────────────────── */
+  --tier-39: #9932CC;
+  --tier-tens-undec: var(--tier-39);
+
+  /* ── 40 · Hundreds of Undecillions · Goldenrod ────────────────── */
+  --tier-40: #DAA520;
+  --tier-hund-undec: var(--tier-40);
+
+  /* ── 41 · Duodecillions · Dark Slate Blue ─────────────────────── */
+  --tier-41: #483D8B;
+  --tier-duodecillions: var(--tier-41);
+
+  /* ── 42 · Tens of Duodecillions · Tomato ──────────────────────── */
+  --tier-42: #FF6347;
+  --tier-tens-duodec: var(--tier-42);
+
+  /* ── 43 · Hundreds of Duodecillions · Dark Magenta ────────────── */
+  --tier-43: #8B008B;
+  --tier-hund-duodec: var(--tier-43);
+
+  /* ── 44 · Tredecillions/Tredecillions Plus · Dark Olive ───────── */
+  --tier-44: #94AA00;
+  --tier-tredecillions: var(--tier-44);
+  --tier-tredec: var(--tier-44);
+
+  /* ── 45 · Unassigned State / Children / Contents · Grey ───────── */
+  --tier-45: #808080;
+  --tier-unassigned: var(--tier-45);
+
+  /* ── 46 · The "l" Drive Multiplier · Neon Pink (always) ───────── */
+  --tier-46: #FF13F0;
+  --tier-l-drive: var(--tier-46);
+  --tier-l-mult: var(--tier-46);
+
+  /* ── 47 · Large Numbers (10⁴⁵+ → ∞) · Steel Blue (the catch-all) ─ */
+  --tier-47: #4682B4;
+  --tier-large: var(--tier-47);
+  --tier-large-numbers: var(--tier-47);
+
+  /* ── BONUS · Infinity sibling (Light Steel Blue, bordered) ────── */
+  --tier-infinity: #B0C4DE;
+  --tier-infinity-border: #4682B4;
+  --tier-infinity-text: #1E4D6B;
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 2 — TENS DECADE SUB-SYSTEM (10, 20, 30, … 90)
+   A separate, finer-grained palette of 9 distinct blue shades for
+   pages that want to colour each decade individually rather than
+   collapsing 10–99 into a single Royal Blue.
+
+   USE WITH CARE: this sub-system OVERRIDES the rule that "all of
+   10–99 is Royal Blue". Only enable it on pages that explicitly
+   teach decade-by-decade structure. Default pages should keep the
+   simple --tier-tens (Royal Blue) for consistency.
+───────────────────────────────────────────────────────────────────── */
+:root {
+  --tier-tens-10: #1E90FF;   /* Dodger Blue   */
+  --tier-tens-20: #4169E1;   /* Royal Blue    */
+  --tier-tens-30: #0000CD;   /* Medium Blue   */
+  --tier-tens-40: #0047AB;   /* Cobalt        */
+  --tier-tens-50: #4682B4;   /* Steel Blue    */
+  --tier-tens-60: #6495ED;   /* Cornflower    */
+  --tier-tens-70: #00008B;   /* Dark Blue     */
+  --tier-tens-80: #191970;   /* Midnight Blue */
+  --tier-tens-90: #483D8B;   /* Dark Slate    */
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 3 — TEXT-COLOUR CLASSES (.t-*)
+   Both the legacy descriptive names (kept for backwards compatibility
+   with existing Master Index, Scaling Engines, etc.) and the new
+   semantic tier names. All resolve to the same variables above.
+───────────────────────────────────────────────────────────────────── */
+
+/* Legacy descriptive names — DO NOT REMOVE (existing pages depend on these) */
+.t-teal        { color: var(--tier-01); }
+.t-green       { color: var(--tier-02); }
+.t-blue        { color: var(--tier-03); }
+.t-purple      { color: var(--tier-04); }
+.t-red         { color: var(--tier-05); }
+.t-sky         { color: var(--tier-06); }   /* note: legacy class .t-sky is actually Dark Goldenrod */
+.t-golden      { color: var(--tier-07); }   /* note: legacy class .t-golden is actually Sky Blue */
+.t-brown       { color: var(--tier-08); }
+.t-forestgreen { color: var(--tier-09); }
+.t-orange      { color: var(--tier-10); }
+.t-navy        { color: var(--tier-11); }
+.t-pink        { color: var(--tier-12); }
+.t-olive       { color: var(--tier-13); }
+.t-peru        { color: var(--tier-14); }
+.t-forest      { color: var(--tier-15); }
+.t-maroon      { color: var(--tier-16); }
+.t-steel       { color: var(--tier-17); }
+.t-amber       { color: var(--tier-18); }
+.t-darkred     { color: var(--tier-19); }
+.t-emerald     { color: var(--tier-20); }
+.t-violet      { color: var(--tier-21); }
+.t-chocolate   { color: var(--tier-22); }
+.t-dodger      { color: var(--tier-23); }
+.t-crimson     { color: var(--tier-24); }
+.t-lime        { color: var(--tier-25); }
+.t-indigo      { color: var(--tier-26); }
+.t-salmon      { color: var(--tier-27); }
+.t-darkcyan    { color: var(--tier-28); }
+.t-gold        { color: var(--tier-29); }
+.t-plum        { color: var(--tier-30); }
+.t-turquoise   { color: var(--tier-31); }
+.t-firebrick   { color: var(--tier-32); }
+.t-mpurple     { color: var(--tier-33); }
+.t-sienna      { color: var(--tier-34); }
+.t-midnight    { color: var(--tier-35); }
+.t-rose        { color: var(--tier-36); }
+.t-cadet       { color: var(--tier-37); }
+.t-bronze      { color: var(--tier-38); }
+.t-orchid      { color: var(--tier-39); }
+.t-goldenrod   { color: var(--tier-40); }
+.t-dslateblue  { color: var(--tier-41); }
+.t-tomato      { color: var(--tier-42); }
+.t-darkmagenta { color: var(--tier-43); }
+.t-deeppink    { color: var(--tier-44); }
+.t-grey        { color: var(--tier-45); }
+.t-neonpink    { color: var(--tier-46); }
+.l-mult        { color: var(--tier-46); font-weight: 700; }   /* the "l" link */
+.pulse         { color: var(--tier-46); font-weight: 700; font-size: 1.10em; }
+.t-largenumber { color: var(--tier-47); }
+
+/* Tens decade sub-system text colours */
+.t-tens-10 { color: var(--tier-tens-10); }
+.t-tens-20 { color: var(--tier-tens-20); }
+.t-tens-30 { color: var(--tier-tens-30); }
+.t-tens-40 { color: var(--tier-tens-40); }
+.t-tens-50 { color: var(--tier-tens-50); }
+.t-tens-60 { color: var(--tier-tens-60); }
+.t-tens-70 { color: var(--tier-tens-70); }
+.t-tens-80 { color: var(--tier-tens-80); }
+.t-tens-90 { color: var(--tier-tens-90); }
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 4 — BACKGROUND-COLOUR CLASSES (.c-*)
+   Same compatibility approach as Section 3. Each class also sets a
+   sensible foreground colour so light text is readable on dark
+   backgrounds and vice versa — matching the existing Master Index
+   defaults exactly.
+───────────────────────────────────────────────────────────────────── */
+.c-teal        { background: var(--tier-01); color: #fff; }
+.c-green       { background: var(--tier-02); color: #fff; }
+.c-blue        { background: var(--tier-03); color: #fff; }
+.c-purple      { background: var(--tier-04); color: #fff; }
+.c-red         { background: var(--tier-05); color: #fff; }
+.c-sky         { background: var(--tier-06); color: #fff; }
+.c-golden      { background: var(--tier-07); color: #333; }
+.c-brown       { background: var(--tier-08); color: #fff; }
+.c-forestgreen { background: var(--tier-09); color: #fff; }
+.c-orange      { background: var(--tier-10); color: #fff; }
+.c-navy        { background: var(--tier-11); color: #fff; }
+.c-pink        { background: var(--tier-12); color: #fff; }
+.c-olive       { background: var(--tier-13); color: #fff; }
+.c-peru        { background: var(--tier-14); color: #333; }
+.c-forest      { background: var(--tier-15); color: #fff; }
+.c-maroon      { background: var(--tier-16); color: #fff; }
+.c-steel       { background: var(--tier-17); color: #fff; }
+.c-amber       { background: var(--tier-18); color: #333; }
+.c-darkred     { background: var(--tier-19); color: #fff; }
+.c-emerald     { background: var(--tier-20); color: #fff; }
+.c-violet      { background: var(--tier-21); color: #fff; }
+.c-chocolate   { background: var(--tier-22); color: #fff; }
+.c-dodger      { background: var(--tier-23); color: #fff; }
+.c-crimson     { background: var(--tier-24); color: #fff; }
+.c-lime        { background: var(--tier-25); color: #fff; }
+.c-indigo      { background: var(--tier-26); color: #fff; }
+.c-salmon      { background: var(--tier-27); color: #333; }
+.c-darkcyan    { background: var(--tier-28); color: #fff; }
+.c-gold        { background: var(--tier-29); color: #fff; }
+.c-plum        { background: var(--tier-30); color: #fff; }
+.c-turquoise   { background: var(--tier-31); color: #fff; }
+.c-firebrick   { background: var(--tier-32); color: #fff; }
+.c-mpurple     { background: var(--tier-33); color: #fff; }
+.c-sienna      { background: var(--tier-34); color: #fff; }
+.c-midnight    { background: var(--tier-35); color: #fff; }
+.c-rose        { background: var(--tier-36); color: #fff; }
+.c-cadet       { background: var(--tier-37); color: #fff; }
+.c-bronze      { background: var(--tier-38); color: #fff; }
+.c-orchid      { background: var(--tier-39); color: #fff; }
+.c-goldenrod   { background: var(--tier-40); color: #fff; }
+.c-dslateblue  { background: var(--tier-41); color: #fff; }
+.c-tomato      { background: var(--tier-42); color: #fff; }
+.c-darkmagenta { background: var(--tier-43); color: #fff; }
+.c-deeppink    { background: var(--tier-44); color: #fff; }
+.c-grey        { background: var(--tier-45); color: #fff; }
+.c-neonpink    { background: var(--tier-46); color: #fff; }
+.c-largenumber { background: var(--tier-47); color: #fff; }
+.c-infinity    { background: var(--tier-infinity); color: var(--tier-infinity-text); border: 2px solid var(--tier-infinity-border); }
+
+
+/* ─────────────────────────────────────────────────────────────────────   SECTION 4.5 — BORDER-COLOUR CLASSES (.b-*)
+   Left + right border accents in the tier's colour. Used by Master
+   Index card grids and several scrolls/posters for visually framing
+   a row inside its sovereign-colour family.
+────────────────────────────────────────────────────────────────── */
+.b-teal        { border-left: 4px solid var(--tier-01); border-right: 4px solid var(--tier-01); }
+.b-green       { border-left: 4px solid var(--tier-02); border-right: 4px solid var(--tier-02); }
+.b-blue        { border-left: 4px solid var(--tier-03); border-right: 4px solid var(--tier-03); }
+.b-purple      { border-left: 4px solid var(--tier-04); border-right: 4px solid var(--tier-04); }
+.b-red         { border-left: 4px solid var(--tier-05); border-right: 4px solid var(--tier-05); }
+.b-sky         { border-left: 4px solid var(--tier-06); border-right: 4px solid var(--tier-06); }
+.b-golden      { border-left: 4px solid var(--tier-07); border-right: 4px solid var(--tier-07); }
+.b-brown       { border-left: 4px solid var(--tier-08); border-right: 4px solid var(--tier-08); }
+.b-forestgreen { border-left: 4px solid var(--tier-09); border-right: 4px solid var(--tier-09); }
+.b-orange      { border-left: 4px solid var(--tier-10); border-right: 4px solid var(--tier-10); }
+.b-navy        { border-left: 4px solid var(--tier-11); border-right: 4px solid var(--tier-11); }
+.b-pink        { border-left: 4px solid var(--tier-12); border-right: 4px solid var(--tier-12); }
+.b-olive       { border-left: 4px solid var(--tier-13); border-right: 4px solid var(--tier-13); }
+.b-peru        { border-left: 4px solid var(--tier-14); border-right: 4px solid var(--tier-14); }
+.b-forest      { border-left: 4px solid var(--tier-15); border-right: 4px solid var(--tier-15); }
+.b-maroon      { border-left: 4px solid var(--tier-16); border-right: 4px solid var(--tier-16); }
+.b-steel       { border-left: 4px solid var(--tier-17); border-right: 4px solid var(--tier-17); }
+.b-amber       { border-left: 4px solid var(--tier-18); border-right: 4px solid var(--tier-18); }
+.b-darkred     { border-left: 4px solid var(--tier-19); border-right: 4px solid var(--tier-19); }
+.b-emerald     { border-left: 4px solid var(--tier-20); border-right: 4px solid var(--tier-20); }
+.b-violet      { border-left: 4px solid var(--tier-21); border-right: 4px solid var(--tier-21); }
+.b-chocolate   { border-left: 4px solid var(--tier-22); border-right: 4px solid var(--tier-22); }
+.b-dodger      { border-left: 4px solid var(--tier-23); border-right: 4px solid var(--tier-23); }
+.b-crimson     { border-left: 4px solid var(--tier-24); border-right: 4px solid var(--tier-24); }
+.b-lime        { border-left: 4px solid var(--tier-25); border-right: 4px solid var(--tier-25); }
+.b-indigo      { border-left: 4px solid var(--tier-26); border-right: 4px solid var(--tier-26); }
+.b-salmon      { border-left: 4px solid var(--tier-27); border-right: 4px solid var(--tier-27); }
+.b-darkcyan    { border-left: 4px solid var(--tier-28); border-right: 4px solid var(--tier-28); }
+.b-gold        { border-left: 4px solid var(--tier-29); border-right: 4px solid var(--tier-29); }
+.b-plum        { border-left: 4px solid var(--tier-30); border-right: 4px solid var(--tier-30); }
+.b-turquoise   { border-left: 4px solid var(--tier-31); border-right: 4px solid var(--tier-31); }
+.b-firebrick   { border-left: 4px solid var(--tier-32); border-right: 4px solid var(--tier-32); }
+.b-mpurple     { border-left: 4px solid var(--tier-33); border-right: 4px solid var(--tier-33); }
+.b-sienna      { border-left: 4px solid var(--tier-34); border-right: 4px solid var(--tier-34); }
+.b-midnight    { border-left: 4px solid var(--tier-35); border-right: 4px solid var(--tier-35); }
+.b-rose        { border-left: 4px solid var(--tier-36); border-right: 4px solid var(--tier-36); }
+.b-cadet       { border-left: 4px solid var(--tier-37); border-right: 4px solid var(--tier-37); }
+.b-bronze      { border-left: 4px solid var(--tier-38); border-right: 4px solid var(--tier-38); }
+.b-orchid      { border-left: 4px solid var(--tier-39); border-right: 4px solid var(--tier-39); }
+.b-goldenrod   { border-left: 4px solid var(--tier-40); border-right: 4px solid var(--tier-40); }
+.b-dslateblue  { border-left: 4px solid var(--tier-41); border-right: 4px solid var(--tier-41); }
+.b-tomato      { border-left: 4px solid var(--tier-42); border-right: 4px solid var(--tier-42); }
+.b-darkmagenta { border-left: 4px solid var(--tier-43); border-right: 4px solid var(--tier-43); }
+.b-deeppink    { border-left: 4px solid var(--tier-44); border-right: 4px solid var(--tier-44); }
+.b-grey        { border-left: 4px solid var(--tier-45); border-right: 4px solid var(--tier-45); }
+.b-neonpink    { border-left: 4px solid var(--tier-46); border-right: 4px solid var(--tier-46); }
+.b-largenumber { border-left: 4px solid var(--tier-47); border-right: 4px solid var(--tier-47); }
+
+/* Tens decade sub-system border accents */
+.b-tens-10 { border-left: 4px solid var(--tier-tens-10); border-right: 4px solid var(--tier-tens-10); }
+.b-tens-20 { border-left: 4px solid var(--tier-tens-20); border-right: 4px solid var(--tier-tens-20); }
+.b-tens-30 { border-left: 4px solid var(--tier-tens-30); border-right: 4px solid var(--tier-tens-30); }
+.b-tens-40 { border-left: 4px solid var(--tier-tens-40); border-right: 4px solid var(--tier-tens-40); }
+.b-tens-50 { border-left: 4px solid var(--tier-tens-50); border-right: 4px solid var(--tier-tens-50); }
+.b-tens-60 { border-left: 4px solid var(--tier-tens-60); border-right: 4px solid var(--tier-tens-60); }
+.b-tens-70 { border-left: 4px solid var(--tier-tens-70); border-right: 4px solid var(--tier-tens-70); }
+.b-tens-80 { border-left: 4px solid var(--tier-tens-80); border-right: 4px solid var(--tier-tens-80); }
+.b-tens-90 { border-left: 4px solid var(--tier-tens-90); border-right: 4px solid var(--tier-tens-90); }
+
+
+/* ──────────────────────────────────────────────────────────────────   SECTION 5 — SEMANTIC TIER CLASSES (preferred for new code)
+   Use these whenever you write new HTML — they read like the rule
+   itself, so future readers immediately know which tier each element
+   represents. The legacy classes above keep working unchanged.
+
+   Examples:
+     <span class="tier-tens">Ẹ́wǎ</span>
+     <span class="tier-hundreds">Ọgọ́rǔn</span>
+     <span class="tier-l-drive">l</span>
+     <span class="tier-large">Àwọn Nọ́mbà Ńláńlá</span>
+───────────────────────────────────────────────────────────────────── */
+.tier-zero          { color: var(--tier-zero); }
+.tier-units         { color: var(--tier-units); }
+.tier-tens          { color: var(--tier-tens); }
+.tier-hundreds      { color: var(--tier-hundreds); }
+.tier-thousands     { color: var(--tier-thousands); }
+.tier-tens-thou     { color: var(--tier-tens-thou); }
+.tier-hund-thou     { color: var(--tier-hund-thou); }
+.tier-millions      { color: var(--tier-millions); }
+.tier-tens-mill     { color: var(--tier-tens-mill); }
+.tier-hund-mill     { color: var(--tier-hund-mill); }
+.tier-billions      { color: var(--tier-billions); }
+.tier-tens-bill     { color: var(--tier-tens-bill); }
+.tier-hund-bill     { color: var(--tier-hund-bill); }
+.tier-trillions     { color: var(--tier-trillions); }
+.tier-tens-trill    { color: var(--tier-tens-trill); }
+.tier-hund-trill    { color: var(--tier-hund-trill); }
+.tier-quadrillions  { color: var(--tier-quadrillions); }
+.tier-tens-quad     { color: var(--tier-tens-quad); }
+.tier-hund-quad     { color: var(--tier-hund-quad); }
+.tier-quintillions  { color: var(--tier-quintillions); }
+.tier-tens-quint    { color: var(--tier-tens-quint); }
+.tier-hund-quint    { color: var(--tier-hund-quint); }
+.tier-sextillions   { color: var(--tier-sextillions); }
+.tier-tens-sext     { color: var(--tier-tens-sext); }
+.tier-hund-sext     { color: var(--tier-hund-sext); }
+.tier-septillions   { color: var(--tier-septillions); }
+.tier-tens-sept     { color: var(--tier-tens-sept); }
+.tier-hund-sept     { color: var(--tier-hund-sept); }
+.tier-octillions    { color: var(--tier-octillions); }
+.tier-tens-oct      { color: var(--tier-tens-oct); }
+.tier-hund-oct      { color: var(--tier-hund-oct); }
+.tier-nonillions    { color: var(--tier-nonillions); }
+.tier-tens-non      { color: var(--tier-tens-non); }
+.tier-hund-non      { color: var(--tier-hund-non); }
+.tier-decillions    { color: var(--tier-decillions); }
+.tier-tens-dec      { color: var(--tier-tens-dec); }
+.tier-hund-dec      { color: var(--tier-hund-dec); }
+.tier-undecillions  { color: var(--tier-undecillions); }
+.tier-tens-undec    { color: var(--tier-tens-undec); }
+.tier-hund-undec    { color: var(--tier-hund-undec); }
+.tier-duodecillions { color: var(--tier-duodecillions); }
+.tier-tens-duodec   { color: var(--tier-tens-duodec); }
+.tier-hund-duodec   { color: var(--tier-hund-duodec); }
+.tier-tredec        { color: var(--tier-tredec); }
+.tier-unassigned    { color: var(--tier-unassigned); }
+.tier-l-drive       { color: var(--tier-l-drive); font-weight: 700; }
+.tier-large         { color: var(--tier-large); }
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 6 — UTILITY: COLOUR SWATCHES
+   Small inline circles used in legends and protocol tables to show
+   the colour next to its name. Keeps the markup consistent across
+   every page that displays the colour key.
+───────────────────────────────────────────────────────────────────── */
+.color-swatch {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   SECTION 7 — GEAR PULSE  (the "g" in Ẹgbẹ̀rǔn)
+   Per Applied Systems §6: the letter "g" shares the Neon Pink of the
+   "l" Multiplier because it is the heartbeat of Ẹgbẹ̀rǔn (1,000) —
+   the G-Pulse / Gear Pulse Magnitude Operator. Auto-applied site-wide
+   by tools/gear-pulse-tinter.js, which wraps the "g" inside any
+   Ẹgbẹ̀rǔn-family word (Ẹgbẹ̀rǔn, Ẹ́gbẹ̀rǔn, ẹgbẹ̀rǔn, Ẹgbẹ̀rǔnlâádọ́ta…)
+   in <span class="gear-g">. You can also hand-author the span if a
+   page needs a single static occurrence.
+───────────────────────────────────────────────────────────────────── */
+.gear-g {
+  color: #FF13F0;
+  font-weight: 700;
+}
+
+/* Opt-out marker: any element carrying .no-gear-tint (or any descendant
+   text node within it) will be left untouched by the tinter — useful
+   for code samples, captions, and pages that hand-style the "g". */
+
+
+/* ─────────────────────────────────────────────────────────────────────
+   END OF FILE — every page that wants the Sovereign Colour Law in
+   force needs only one line in its <head>:
+       <link rel="stylesheet" href="tools/sovereign-colours.css">
+   For pages outside GitHub/, adjust the path accordingly:
+       <link rel="stylesheet" href="../GitHub/tools/sovereign-colours.css">
+───────────────────────────────────────────────────────────────────── */
+
+</style>
+  <script>
+/* ════════════════════════════════════════════════════════════════════
+   GEAR PULSE TINTER  ·  Ònkà Yorùbá Sovereign Colour System
+   --------------------------------------------------------------------
+   Auto-tints the letter "g" inside every Ẹgbẹ̀rǔn-family word with
+   Neon Pink (#FF13F0) — the G-Pulse / Gear Pulse Magnitude Operator.
+
+   Per Applied Systems §6:
+       "The letter 'g' shares the Neon Pink colour because it tracks
+        the heartbeat of Ẹgbẹ̀rǔn (1,000). Its downward-pointing shape
+        acts as an arrow, marking exactly where the mathematical
+        power lands."
+
+   Words matched (case-insensitive, with or without tone marks):
+       Ẹgbẹ̀rǔn   Ẹ́gbẹ̀rǔn   ẹgbẹ̀rǔn   ẹ́gbẹ̀rǔn   Egberun
+       Ẹgbẹ̀rǔnlâádọ́ta  Ẹgbẹ̀rǔnlâádọ́rin  …compounds with "rǔn"/"run" tail
+
+   Wraps just the "g" in <span class="gear-g">…</span>. The colour
+   itself lives in tools/sovereign-colours.css so designers can retune
+   it in one place.
+
+   Skips:
+     • <script>, <style>, <noscript>, <title>, <textarea>, <input>,
+       <code>, <pre>
+     • Anything inside an element with class "gear-g" (already tinted)
+       or class "no-gear-tint" (opt-out)
+   ════════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+  if (typeof document === 'undefined') return;
+
+  var SKIP_TAGS = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1, TITLE: 1,
+                    TEXTAREA: 1, INPUT: 1, CODE: 1, PRE: 1 };
+
+  /* Pattern parts:
+       [1] Preface  — Ẹ / Ẹ̀ / Ẹ́ / E / ẹ / ẹ̀ / ẹ́ / e   (+ optional tone)
+       [2] The "g"  — the Gear Pulse character to wrap
+       [3] Tail     — b + ẹ-style + r + ǔ-style + n  (+ tone marks)        */
+  var PREFACE = '[\u1EB8\u1EB9Ee][\u0300\u0301]?';
+  var TAIL    = '[Bb][\u1EB8\u1EB9\u00C8\u00E8\u00C9\u00E9Ee][\u0300\u0301]?'
+              + '[Rr][\u01D3\u01D4\u00DA\u00FA\u00D9\u00F9\u00DB\u00FBUu][Nn]';
+  var SOURCE  = '(' + PREFACE + ')([Gg])(' + TAIL + ')';
+  var RX_FIND = new RegExp(SOURCE, 'gu');     // stateful — used for replacement
+  var RX_HAS  = new RegExp(SOURCE,  'u');     // stateless — used for tests
+
+  function isSkipped(el) {
+    while (el && el.nodeType === 1) {
+      if (SKIP_TAGS[el.tagName]) return true;
+      if (el.classList &&
+         (el.classList.contains('gear-g') ||
+          el.classList.contains('no-gear-tint'))) return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
+
+  function processTextNode(node) {
+    var text = node.nodeValue;
+    if (!RX_HAS.test(text)) return;
+    if (isSkipped(node.parentElement)) return;
+
+    var frag = document.createDocumentFragment();
+    var lastIndex = 0;
+    var m;
+    RX_FIND.lastIndex = 0;
+    while ((m = RX_FIND.exec(text)) !== null) {
+      if (m.index > lastIndex) {
+        frag.appendChild(document.createTextNode(text.slice(lastIndex, m.index)));
+      }
+      frag.appendChild(document.createTextNode(m[1]));   // preface
+      var span = document.createElement('span');
+      span.className = 'gear-g';
+      span.textContent = m[2];                            // the Neon Pink "g"
+      frag.appendChild(span);
+      frag.appendChild(document.createTextNode(m[3]));   // tail
+      lastIndex = m.index + m[0].length;
+    }
+    if (lastIndex < text.length) {
+      frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+    }
+    node.parentNode.replaceChild(frag, node);
+  }
+
+  function tintTree(root) {
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var targets = [];
+    var n;
+    while ((n = walker.nextNode())) {
+      if (n.nodeValue && RX_HAS.test(n.nodeValue)) targets.push(n);
+    }
+    for (var i = 0; i < targets.length; i++) processTextNode(targets[i]);
+  }
+
+  function run() {
+    try { tintTree(document.body); } catch (err) {
+      // Fail silently — never break the page over a cosmetic tinter.
+      if (window.console && console.warn) console.warn('[gear-pulse-tinter]', err);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
+})();
+
+</script>
+  <style>
+/* ════════════════════════════════════════════════════════════════════
+   ÒNKA YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
+   --------------------------------------------------------------------
+   Three variants share the same 47-Sovereign tier identity but serve
+   different attention modes. Rotating them down a page keeps curiosity
+   alive — every section feels like the start of something new.
+
+     V1 — STICKER STACK   · "let me read this calmly"
+     V2 — TILE WALL       · "let me browse and compare"
+     V3 — SPOTLIGHT MOMENT· "pause and feel this one"
+
+   Suggested rhythm per page:
+     V3 (open) → V1 (calm) → V2 (browse) → V3 (close)
+   ════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Yoruba-text classes (v1-yor, v2-tile-yor, v3-spot-yor, v3-sib-y) are
+   routed to Gentium Plus first because Fraunces lacks the OpenType GPOS
+   mark / mkmk rules needed to stack tone marks over underdotted vowels
+   (ẹ̀ ẹ́ ọ̀ ọ́ ǔ). Gentium Plus is a serif designed by SIL for
+   African Latin and pairs visually with Fraunces. Numerals keep Fraunces. */
+
+/* ── 47-Sovereign tier accents (each tier its own perfume) ─────────── */
+.tier-zero     { --accent: #0891B2; --border: #0891B2; --tint-1: #d9f1f7; --tint-2: #b9e4ee; --tint-soft: #94d3e1; }
+.tier-units    { --accent: #16A34A; --border: #16A34A; --tint-1: #e7f7ec; --tint-2: #d4f0dd; --tint-soft: #c4e9d0; }
+.tier-tens     { --accent: #2563EB; --border: #2563EB; --tint-1: #e7eefc; --tint-2: #d0dffa; --tint-soft: #bdd0f5; }
+.tier-hundreds { --accent: #9333EA; --border: #9333EA; --tint-1: #f1e8fb; --tint-2: #e3d2f7; --tint-soft: #d4bff0; }
+.tier-thou     { --accent: #DC2626; --border: #DC2626; --tint-1: #fbe8e8; --tint-2: #f7d2d2; --tint-soft: #f0bfbf; }
+.tier-tenthou  { --accent: #B59410; --border: #DC2626; --tint-1: #faf2d9; --tint-2: #f3e6ad; --tint-soft: #ead97f; }
+.tier-hundthou { --accent: #4EAAE4; --border: #DC2626; --tint-1: #e6f3fb; --tint-2: #cce6f6; --tint-soft: #b1d6ee; }
+.tier-mill     { --accent: #8B4513; --border: #8B4513; --tint-1: #f4eae0; --tint-2: #ead4be; --tint-soft: #dcc1a4; }
+.tier-tenmill  { --accent: #228B22; --border: #8B4513; --tint-1: #e3f0e3; --tint-2: #c4e1c4; --tint-soft: #a4d1a4; }
+.tier-hundmill { --accent: #EF6000; --border: #8B4513; --tint-1: #fde8d6; --tint-2: #f9d2af; --tint-soft: #f1b889; }
+.tier-bill     { --accent: #000080; --border: #000080; --tint-1: #e1e1f0; --tint-2: #c8c8e2; --tint-soft: #b0b0d3; }
+.tier-tenbill  { --accent: #FC5D8D; --border: #000080; --tint-1: #fde0ec; --tint-2: #fcc1d8; --tint-soft: #f5a4c1; }
+.tier-hundbill { --accent: #808000; --border: #000080; --tint-1: #efeed1; --tint-2: #dfdba3; --tint-soft: #c5be75; }
+.tier-trill    { --accent: #CD853F; --border: #CD853F; --tint-1: #fbeed6; --tint-2: #f5dab0; --tint-soft: #e9c48a; }
+.tier-tentrill { --accent: #6A5ACD; --border: #CD853F; --tint-1: #e3e0f4; --tint-2: #cdc8ec; --tint-soft: #b0a9da; }
+.tier-hundtrill{ --accent: #800000; --border: #CD853F; --tint-1: #f0d4d4; --tint-2: #e0a8a8; --tint-soft: #ce7d7d; }
+.tier-quad     { --accent: #1E90FF; --border: #1E90FF; --tint-1: #e0f0fe; --tint-2: #c2e1fc; --tint-soft: #a3d0f8; }
+.tier-tenquad  { --accent: #F59E0B; --border: #1E90FF; --tint-1: #feefcd; --tint-2: #fcdc99; --tint-soft: #f7c563; }
+.tier-hundquad { --accent: #8B0000; --border: #1E90FF; --tint-1: #f3d4d4; --tint-2: #e6a8a8; --tint-soft: #d27d7d; }
+.tier-quint    { --accent: #047857; --tint-1: #ddefe7; --tint-2: #b9dccd; --tint-soft: #8fc6b1; }
+.tier-sext     { --accent: #6C0AC9; --tint-1: #ece0f8; --tint-2: #d6c0f0; --tint-soft: #ba9be4; }
+.tier-sept     { --accent: #4B0082; --tint-1: #e2d6ec; --tint-2: #c8b1da; --tint-soft: #a98bc4; }
+.tier-oct      { --accent: #B8860B; --tint-1: #f7ecc9; --tint-2: #efdb9a; --tint-soft: #e3c46d; }
+.tier-non      { --accent: #B22222; --tint-1: #f3d9d9; --tint-2: #ebbbbb; --tint-soft: #dd9595; }
+.tier-dec      { --accent: #191970; --tint-1: #d9d9ec; --tint-2: #b8b8da; --tint-soft: #9292c4; }
+.tier-undec    { --accent: #CD7F32; --tint-1: #f9e7d0; --tint-2: #f1d0a4; --tint-soft: #e3b577; }
+.tier-duodec   { --accent: #483D8B; --tint-1: #dcd8ec; --tint-2: #beb8db; --tint-soft: #9890c4; }
+.tier-tredec   { --accent: #94AA00; --tint-1: #eef3cf; --tint-2: #dde7a3; --tint-soft: #c5d473; }
+.tier-plus     { --accent: #4682B4; --tint-1: #dceaf4; --tint-2: #b9d2e7; --tint-soft: #91b7d6; }
+.tier-l-drive  { --accent: #FF13F0; --tint-1: #fee0fc; --tint-2: #fcb9f8; --tint-soft: #f88cf2; }
+
+/* ── Shared light stage (the "warm sunlight on paper" canvas) ─────── */
+.rhythm-section { margin: 32px 0; }
+.rhythm-section + .rhythm-section { margin-top: 22px; }
+
+.rhythm-stage {
+  background:
+    radial-gradient(ellipse 80% 60% at 18% 8%,  rgba(255,224,176,0.32), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 88% 14%, rgba(187,222,251,0.32), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 50% 110%, rgba(213,235,219,0.36), transparent 60%),
+    #FFFBF2;
+  border-radius: 22px;
+  padding: 28px 24px 32px;
+  color: #2a2a35;
+  box-shadow: 0 4px 22px rgba(0,0,0,0.08);
+}
+.rhythm-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #c026a8; margin: 0 0 6px;
+}
+.rhythm-h {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-weight: 800; font-size: 1.55rem; color: #2a5e8c;
+  margin: 0 0 4px; letter-spacing: -0.01em;
+}
+.rhythm-h-sub {
+  color: #c026a8; font-style: italic; font-size: 0.97rem;
+  margin: 0 0 18px;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   V1 — STICKER STACK · vertical column · sticker-shine highlight
+   ════════════════════════════════════════════════════════════════════ */
+.v1-stack { display: flex; flex-direction: column; gap: 14px; }
+
+.v1-card {
+  border-radius: 18px;
+  padding: 18px 20px 20px;
+  background: linear-gradient(135deg, var(--tint-2) 0%, var(--tint-1) 60%, #ffffff 100%);
+  border: 1px solid var(--tint-soft);
+  border-left: 5px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+  position: relative; overflow: hidden;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;
+}
+.v1-card::after {
+  /* sticker shine */
+  content: ''; position: absolute; top: -24px; left: -24px;
+  width: 90px; height: 90px;
+  background: radial-gradient(circle, rgba(255,255,255,0.55) 0%, transparent 65%);
+  pointer-events: none;
+}
+.v1-num {
+  font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 144;
+  font-weight: 800; font-size: 2.1rem; color: var(--accent);
+  line-height: 1; letter-spacing: -0.02em;
+}
+.v1-yor {
+  font-family: 'Gentium Plus', 'Fraunces', serif; font-weight: 700; font-size: 1.18rem;
+  margin-top: 7px; color: var(--accent);
+}
+.v1-eng { font-size: 0.86rem; color: #524d52; margin-top: 4px; font-weight: 500; line-height: 1.45; }
+.v1-power {
+  font-family: 'Fraunces', serif; font-size: 0.78rem; font-weight: 700;
+  background: rgba(255,255,255,0.55); color: var(--accent);
+  padding: 4px 10px; border-radius: 999px;
+  border: 1px solid var(--tint-soft);
+  flex-shrink: 0; white-space: nowrap;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   V2 — TILE WALL · 6-col grid · magnet-feel · 4px tier top edge
+   ════════════════════════════════════════════════════════════════════ */
+.v2-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+@media (max-width: 900px) { .v2-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 540px) { .v2-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.v2-tile {
+  background: linear-gradient(160deg, var(--tint-2) 0%, var(--tint-1) 100%);
+  border: 3px solid var(--accent);
+  border-radius: 14px;
+  padding: 12px 8px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 3px 0 var(--tint-soft), 0 6px 14px rgba(0,0,0,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.v2-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 0 var(--tint-soft), 0 10px 20px rgba(0,0,0,0.10);
+}
+.v2-tile-num {
+  display: inline-block;
+  align-self: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 0.62rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(70,130,180,0.12);
+  border: 1px solid rgba(70,130,180,0.40);
+  color: rgba(0,0,0,0.62);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.v2-tile-yor {
+  font-family: 'Gentium Plus', 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 1.45rem;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--accent);
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px 2px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.v2-tile-yor .yor-units { color: #16A34A; }
+.v2-tile-yor .yor-tens  { color: #2563EB; }
+.v2-tile-yor .yor-hund  { color: #9333EA; }
+.v2-tile-yor .yor-large { color: #4682B4; }
+.v2-tile-yor .yor-thou  { color: #DC2626; }
+.v2-tile-yor .yor-mill  { color: #8B4513; }
+.v2-tile-yor .yor-bill  { color: #000080; }
+.v2-tile-yor .yor-trill { color: #CD853F; }
+.v2-tile-yor .yor-quad  { color: #1E90FF; }
+.v2-tile-pow {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.v2-tile-pow .pow-base { color: var(--accent); }
+.v2-tile-pow .pow-exp  { color: #4682B4; font-size: 0.78em; vertical-align: super; line-height: 0; margin-left: 1px; }
+
+/* ════════════════════════════════════════════════════════════════════
+   V3 — SPOTLIGHT MOMENT · single hero · giant numeral · soft halo
+   ════════════════════════════════════════════════════════════════════ */
+.v3-spot {
+  position: relative;
+  border-radius: 26px;
+  padding: 38px 32px 36px;
+  background:
+    radial-gradient(circle at 78% 20%, var(--tint-1) 0%, transparent 55%),
+    radial-gradient(circle at 22% 80%, var(--tint-2) 0%, transparent 60%),
+    #fffdf8;
+  border: 1px solid var(--tint-soft);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8);
+  overflow: hidden;
+  color: #2a2a35;
+}
+.v3-spot::before {
+  /* the halo — large soft tier-coloured circle behind the numeral */
+  content: ''; position: absolute;
+  width: 360px; height: 360px;
+  right: -90px; top: -90px;
+  background: radial-gradient(circle,
+    color-mix(in srgb, var(--accent) 16%, transparent) 0%,
+    transparent 70%);
+  pointer-events: none;
+}
+.v3-spot > * { position: relative; }  /* lift content above halo */
+
+.v3-spot-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+}
+.v3-spot-num {
+  font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 144;
+  font-weight: 900; font-size: 5.2rem; color: var(--accent);
+  line-height: 0.95; letter-spacing: -0.04em;
+  margin: 0 0 8px;
+}
+.v3-spot-yor {
+  font-family: 'Gentium Plus', 'Fraunces', serif; font-weight: 700; font-size: 1.7rem;
+  color: var(--accent); margin: 0 0 6px;
+}
+.v3-spot-eng {
+  font-family: 'Poppins', sans-serif; font-style: italic;
+  color: #555; font-size: 0.97rem; margin: 0 0 18px; max-width: 720px;
+  line-height: 1.6;
+}
+.v3-spot-siblings {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--tint-soft);
+}
+.v3-sib {
+  flex: 0 0 auto;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--tint-soft);
+  border-radius: 12px;
+  padding: 8px 12px 9px;
+  text-align: center;
+  min-width: 78px;
+}
+.v3-sib-n {
+  font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.05rem;
+  color: var(--accent); line-height: 1;
+}
+.v3-sib-y {
+  font-family: 'Gentium Plus', 'Fraunces', serif; font-weight: 600; font-size: 0.78rem;
+  color: var(--accent); margin-top: 3px;
+}
+
+/* ── Mobile breath ────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .v3-spot       { padding: 28px 22px 26px; border-radius: 22px; }
+  .v3-spot-num   { font-size: 4rem; }
+  .v3-spot-yor   { font-size: 1.4rem; }
+  .v3-spot::before { width: 260px; height: 260px; right: -70px; top: -70px; }
+  .rhythm-stage  { padding: 22px 18px 26px; border-radius: 18px; }
+  .rhythm-h      { font-size: 1.3rem; }
+  .v1-num        { font-size: 1.8rem; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   V3 BLESSING · poetic ladder finale (multi-stanza spotlight)
+   --------------------------------------------------------------------
+   A specialised V3 layout that carries a multi-line poetic passage in
+   place of the giant numeral.  Use it as a closing card on long
+   documentation pages.
+   ════════════════════════════════════════════════════════════════════ */
+.v3-spot-blessing { padding: 44px 36px 40px; }
+.v3-spot-blessing .v3-spot-num {
+  font-size: 4.2rem;
+  margin: 0 0 4px;
+  font-style: normal;
+}
+.v3-spot-blessing .v3-spot-yor {
+  font-size: 1.45rem;
+  letter-spacing: -0.005em;
+  margin: 0 0 22px;
+}
+.v3-blessing-body {
+  max-width: none;
+  width: 100%;
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #2a2a35;
+}
+.v3-blessing-body p { margin: 0 0 14px; }
+.v3-blessing-body p:last-child { margin-bottom: 0; }
+.v3-blessing-line {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--accent);
+  padding: 14px 18px;
+  border-left: 4px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  border-radius: 4px 14px 14px 4px;
+  margin: 18px 0 !important;
+  line-height: 1.45;
+}
+.v3-blessing-coda {
+  font-style: italic;
+  color: #555;
+  font-size: 0.97rem;
+  border-top: 1px dashed var(--tint-soft);
+  padding-top: 14px;
+  margin-top: 18px !important;
+}
+.v3-blessing-body em { font-style: italic; color: var(--accent); font-weight: 600; }
+.v3-blessing-body strong { color: var(--accent); }
+
+@media (max-width: 640px) {
+  .v3-spot-blessing { padding: 32px 22px 30px; }
+  .v3-spot-blessing .v3-spot-num { font-size: 3.2rem; }
+  .v3-blessing-body { font-size: 0.97rem; }
+  .v3-blessing-line { font-size: 1.05rem; padding: 12px 14px; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   BORDER-HARMONY VARIANTS · five tier-aware skins for v1/v2/v3 cards
+   --------------------------------------------------------------------
+   The randomizer in tools/border-harmony.js sprinkles one of these
+   classes onto every `.v1-card`, `.v2-tile`, and `.v3-spot` on load.
+   Each variant pulls the tier accent from `--accent` and its tints
+   from `--tint-1` / `--tint-soft`, so any tier ports for free.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* 1 · Two-tone gradient border — satin trim along the perimeter */
+.bh-gradient {
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg,
+    var(--tint-soft) 0%,
+    var(--accent)    50%,
+    var(--tint-soft) 100%) 1;
+}
+/* v1 keeps its 5px tier rail on the left even when the rest is gradient */
+.v1-card.bh-gradient { border-left: 5px solid var(--accent); }
+/* v2 keeps its 4px tier crown on top */
+.v2-tile.bh-gradient { border-top: 4px solid var(--accent); }
+
+/* 2 · Tinted halo ring — 1px line + 5px translucent aura */
+.bh-halo {
+  box-shadow:
+    0 0 0 1px var(--tint-soft),
+    0 0 0 5px color-mix(in srgb, var(--accent) 14%, transparent),
+    0 10px 24px rgba(0,0,0,0.07),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* 3 · Conic-tinted edge — 2px conic gradient on the border-box.
+   Only safe to use on cards whose body has no padding-box-clipped
+   gradient already (we keep it for .v2-tile and .v1-card only;
+   .v3-spot has its own halo so we use a lighter cousin there). */
+.v1-card.bh-conic,
+.v2-tile.bh-conic {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, var(--tint-2) 0%, var(--tint-1) 60%, #ffffff 100%)
+      padding-box,
+    conic-gradient(from 210deg,
+      var(--tint-soft),
+      var(--accent),
+      var(--tint-1),
+      var(--accent),
+      var(--tint-soft))
+      border-box;
+}
+.v3-spot.bh-conic {
+  border: 2px solid transparent;
+  background:
+    radial-gradient(circle at 78% 20%, var(--tint-1) 0%, transparent 55%),
+    radial-gradient(circle at 22% 80%, var(--tint-2) 0%, transparent 60%),
+    #fffdf8
+      padding-box,
+    conic-gradient(from 210deg,
+      var(--tint-soft),
+      var(--accent),
+      var(--tint-1),
+      var(--accent),
+      var(--tint-soft))
+      border-box;
+}
+
+/* 4 · Contrast line — same hair-line width, drawn in the tier accent */
+.bh-contrast {
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.v1-card.bh-contrast { border-left: 5px solid var(--accent); }
+.v2-tile.bh-contrast { border-top: 4px solid var(--accent); }
+
+/* 5 · Contrast + halo — crisp tier line with a faint matching aura */
+.bh-contrast-halo {
+  border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent),
+    0 10px 24px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+.v1-card.bh-contrast-halo { border-left: 5px solid var(--accent); }
+.v2-tile.bh-contrast-halo { border-top: 4px solid var(--accent); }
+
+</style>
+  <script>
+/* ════════════════════════════════════════════════════════════════════
+   ÒNKA YORÙBÁ · BORDER-HARMONY RANDOMISER
+   --------------------------------------------------------------------
+   Sprinkles one of five tier-aware border skins onto every
+   `.v1-card`, `.v2-tile`, and `.v3-spot` on the page so the visual
+   experience is never the same twice.
+
+   The five skins live in tools/child-friendly-rhythm.css:
+     bh-gradient        · two-tone satin trim
+     bh-halo            · 1px hair-line + soft tinted aura
+     bh-conic           · 2px conic gradient on the border-box
+     bh-contrast        · crisp 1px tier-coloured hair-line
+     bh-contrast-halo   · contrast line + matching halo (combined)
+
+   STRATEGY
+     • For each card type we walk a shuffled deck of the five classes
+       so that no two consecutive cards ever land on the same skin.
+     • A new deck is shuffled on every page load → fresh choreography
+       on every refresh.
+     • Cards that already carry a `bh-*` class are LEFT ALONE so a
+       page can still pin a specific skin to a hero card.
+
+   USAGE
+     <script src="tools/border-harmony.js" defer><\/script>
+   ════════════════════════════════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  const SKINS = [
+    'bh-gradient',
+    'bh-halo',
+    'bh-conic',
+    'bh-contrast',
+    'bh-contrast-halo'
+  ];
+
+  function shuffled(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function nextNonRepeating(deck, lastSkin) {
+    if (deck.length === 0) {
+      const fresh = shuffled(SKINS);
+      // Avoid the new deck starting with the same skin we just placed
+      if (lastSkin && fresh[0] === lastSkin && fresh.length > 1) {
+        [fresh[0], fresh[1]] = [fresh[1], fresh[0]];
+      }
+      deck.push(...fresh);
+    }
+    return deck.shift();
+  }
+
+  function alreadySkinned(el) {
+    return SKINS.some((cls) => el.classList.contains(cls));
+  }
+
+  function sprinkle(selector) {
+    const cards = document.querySelectorAll(selector);
+    if (!cards.length) return;
+    let deck = shuffled(SKINS);
+    let last = null;
+    cards.forEach((card) => {
+      if (alreadySkinned(card)) {
+        last = SKINS.find((cls) => card.classList.contains(cls)) || last;
+        return;
+      }
+      const skin = nextNonRepeating(deck, last);
+      card.classList.add(skin);
+      last = skin;
+    });
+  }
+
+  function run() {
+    sprinkle('.v3-spot');
+    sprinkle('.v1-card');
+    sprinkle('.v2-tile');
+  }
+
+  // Expose for demo / debug pages that want to reshuffle on demand.
+  window.borderHarmonyRun = run;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+
+</script>
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <div class="menu-bar">
+    <a href="01 Godreign.html">Godreign</a>
+    <a href="02 Ọ̀rọ̀ Ẹlohîm.html">Ọ̀rọ̀ Ẹlohîm</a>
+    <a href="index.html">Numeric Engine</a>
+    <a href="03 Master Index.html">Master Index</a>
+    <a href="04 Scaling Engines.html">Scaling Engines</a>
+    <a href="05 Equation Engines.html">Equation Engines</a>
+    <a href="06 Applied Systems.html">Applied Systems</a>
+        <a href="07 World Numerals.html">World Numerals</a>
+      <a class="current" href="08 Numeric Products.html">Numeric Products</a>
+      <a href="09 About Us.html">About Us</a>
+  </div>
+
+  <!-- Sticky In-Page TOC (left edge, desktop only) -->
+  <nav class="ms-toc" aria-label="Jump to product">
+    <a class="top" href="#top" title="Back to top">&uarr;</a>
+    <a href="#prod-1" title="I · Number Generator">I</a>
+    <a href="#prod-2" title="II · Calculator">II</a>
+    <a href="#prod-3" title="III · Number Converter">III</a>
+    <a href="#prod-4" title="IV · Age Calculator">IV</a>
+    <a href="#prod-5" title="V · Kàlẹ́ndà">V</a>
+    <a href="#prod-6" title="VI · Talking Drum">VI</a>
+    <a href="#prod-7" title="VII · Acoustic Guitar">VII</a>
+  </nav>
+
+  <div class="container" id="top">
+    <div class="header">
+      <h1>NUMERIC PRODUCTS</h1>
+      <h2>The Living Suite of Ònka Yorùbá Tools</h2>
+      <h2 style="margin-top: 14px; font-size: 1.1rem; color: #FFD700; font-weight: 700;">Seven Sovereign Instruments &mdash; One 47-Colour Numeric Civilization</h2>
+      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">From recursive number generation to acoustic harmonic exploration &mdash; the Ònka Yorùbá engine, embodied in seven products.</p>
+      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published under the Godreign Numerical Civilization Project<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
+      <p style="font-size: 0.85rem; opacity: 0.9; margin-top: 14px; font-style: italic; text-align: justify; line-height: 1.7;">The Numeric Products suite is the practical embodiment of the Universal Hyperdimensional Numeric Engine. Where the Master Index, Scaling Engines, Equation Engines, and Applied Systems define the theoretical architecture, these seven instruments place that architecture into the hand of the user. Together they cover number generation, calculation, conversion, biographical time, calendrical sovereignty, percussive language, and harmonic exploration &mdash; each governed by the same 47-Colour visual protocol and the &ldquo;l&rdquo; multiplier logic that make Ònka Yorùbá a fully programmable numeric civilization for the 21st century.</p>
+    </div>
+
+    <!-- 47-Colour Bar -->
+    <div class="colour-bar-animated">
+      <div class="c-teal" title="Zero &mdash; Cerulean"></div>
+      <div class="c-green" title="Units &mdash; Vibrant Green"></div>
+      <div class="c-blue" title="Tens &mdash; Royal Blue"></div>
+      <div class="c-purple" title="Hundreds &mdash; Purple"></div>
+      <div class="c-red" title="Thousands &mdash; Red"></div>
+      <div class="c-sky" title="Tens of Thousands &mdash; Dark Goldenrod"></div>
+      <div class="c-golden" title="Hundreds of Thousands &mdash; Sky Blue"></div>
+      <div class="c-brown" title="Millions &mdash; Saddle Brown"></div>
+      <div class="c-forestgreen" title="Tens of Millions &mdash; Forest Green"></div>
+      <div class="c-orange" title="Hundreds of Millions &mdash; Dark Orange"></div>
+      <div class="c-navy" title="Billions &mdash; Navy Blue"></div>
+      <div class="c-pink" title="Tens of Billions &mdash; Hot Pink"></div>
+      <div class="c-olive" title="Hundreds of Billions &mdash; Olive"></div>
+      <div class="c-peru" title="Trillions &mdash; Peru"></div>
+      <div class="c-forest" title="Tens of Trillions &mdash; Slate Blue"></div>
+      <div class="c-maroon" title="Hundreds of Trillions &mdash; Maroon"></div>
+      <div class="c-steel" title="Quadrillions &mdash; Dodger Blue"></div>
+      <div class="c-amber" title="Tens of Quadrillions &mdash; Amber"></div>
+      <div class="c-darkred" title="Hundreds of Quadrillions &mdash; Dark Red"></div>
+      <div class="c-emerald" title="Quintillions &mdash; Emerald"></div>
+      <div class="c-violet" title="Tens of Quintillions &mdash; Bright Violet"></div>
+      <div class="c-chocolate" title="Hundreds of Quintillions &mdash; Chocolate"></div>
+      <div class="c-dodger" title="Sextillions &mdash; Electric Violet"></div>
+      <div class="c-crimson" title="Tens of Sextillions &mdash; Crimson"></div>
+      <div class="c-lime" title="Hundreds of Sextillions &mdash; Lime"></div>
+      <div class="c-indigo" title="Septillions &mdash; Indigo"></div>
+      <div class="c-salmon" title="Tens of Septillions &mdash; Salmon"></div>
+      <div class="c-darkcyan" title="Hundreds of Septillions &mdash; Dark Teal"></div>
+      <div class="c-gold" title="Octillions &mdash; Dark Goldenrod"></div>
+      <div class="c-plum" title="Tens of Octillions &mdash; Deep Violet"></div>
+      <div class="c-turquoise" title="Hundreds of Octillions &mdash; Light Sea Green"></div>
+      <div class="c-firebrick" title="Nonillions &mdash; Firebrick"></div>
+      <div class="c-mpurple" title="Tens of Nonillions &mdash; Medium Purple"></div>
+      <div class="c-sienna" title="Hundreds of Nonillions &mdash; Sienna"></div>
+      <div class="c-midnight" title="Decillions &mdash; Midnight"></div>
+      <div class="c-rose" title="Tens of Decillions &mdash; Rose"></div>
+      <div class="c-cadet" title="Hundreds of Decillions &mdash; Cadet"></div>
+      <div class="c-bronze" title="Undecillions &mdash; Bronze"></div>
+      <div class="c-orchid" title="Tens of Undecillions &mdash; Dark Orchid"></div>
+      <div class="c-goldenrod" title="Hundreds of Undecillions &mdash; Goldenrod"></div>
+      <div class="c-dslateblue" title="Duodecillions &mdash; Dark Slate Blue"></div>
+      <div class="c-tomato" title="Tens of Duodecillions &mdash; Tomato"></div>
+      <div class="c-darkmagenta" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
+      <div class="c-deeppink" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div class="c-grey" title="Unassigned State &mdash; Grey"></div>
+      <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
+      <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
+    </div>
+
+    <div class="content">
+
+      <!-- ░░ About the Products ░░ -->
+      <div class="g-closing dropcap">
+        <h3>About the Products</h3>
+        <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p><strong>The Numeric Products suite</strong> is a living, sovereign expression of the Ònka Yorùbá numeric system in seven coordinated digital instruments. Each product translates one face of the Universal Hyperdimensional Numeric Engine into a hands-on tool that anyone &mdash; child, elder, scholar, artist, engineer &mdash; can open and use immediately, online or offline, with no installation required.</p>
+        <p>This is not a marketplace of unrelated apps. It is a single computational civilization rendered seven ways:</p>
+        <ul class="lead-lines">
+          <li><strong>I &middot; Number Generator</strong> &mdash; recursive proof that any integer from <em>Ení</em> to <em>Ẹgbẹ̀rǔnlẹ́gbẹ̀rǔnléwǎ</em> can be spoken in modern Yorùbá.</li>
+          <li><strong>II &middot; Calculator</strong> &mdash; everyday arithmetic dressed in the 47-Colour System for accessibility and pride.</li>
+          <li><strong>III &middot; Number Converter</strong> &mdash; a portal turning any digit into a colour-coded Yorùbá phrase.</li>
+          <li><strong>IV &middot; Age Calculator</strong> &mdash; the mirror of your days, reading biography in ancestral tongue.</li>
+          <li><strong>V &middot; Kàlẹ́ndà</strong> &mdash; the digital-compliant 13-month, 28-day calendar of cultural sovereignty.</li>
+          <li><strong>VI &middot; Talking Drum Simulator</strong> &mdash; a VST that lets the Gangan and Shekere speak again.</li>
+          <li><strong>VII &middot; 16-String Acoustic Guitar Explorer</strong> &mdash; the world&rsquo;s first 47-Colour Infinite Circle of Fifths.</li>
+        </ul>
+        <p>Every instrument shares the same colour grammar, the same &ldquo;l&rdquo; multiplier logic, and the same 45-digit precision ceiling, so a learner who masters one tool already understands the syntax of the others. The thumbnails below provide quick summaries and direct launch links; the full descriptions that follow expand each product&rsquo;s philosophy, features, and cultural mission.</p>
+        <div class="summary-pill">&ldquo;Seven instruments, one Numeric Civilization &mdash; the same colour, the same logic, the same breath.&rdquo;</div>
+      </div>
+
+      <!-- ░░ Product I — Number Generator ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">I</div>
+          <div class="g-photo p-numgen" role="img" aria-label="Yorùbá Number Generator"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Recursive Generation</h3>
+          <h2><span class="section-marker">I</span>Yorùbá Number Generator</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">Algorithmic generation engine for Yorùbá numbers from 1 to 10,000,000.</p>
+          <p class="summary">Ten self-contained scroll books generating every Yorùbá number name from <em>Ení</em> to <em>Ẹgbẹ̀rǔnlẹ́gbẹ̀rǔnléwǎ</em> entirely offline. Each scroll covers one million numbers in twenty volumes of fifty thousand. A single recursive function &mdash; <code>genYoruba(n)</code> &mdash; decomposes any integer into base words, tens, hundreds, thousands, and millions, joined by the legendary &ldquo;l&rdquo; multiplier and rendered through the 47-Colour visual protocol.</p>
+          <div class="pulse-tags">
+            <span>10 Scrolls</span>
+            <span>10M Numbers</span>
+            <span class="gold">47-Colour</span>
+            <span class="pink">l Multiplier</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Number Generator.html">Open the Generator &rarr;</a>
+            <a class="g-secondary" href="#prod-1">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product II — Calculator ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">II</div>
+          <div class="g-photo p-calc" role="img" aria-label="Yorùbá Numerical Calculator"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Everyday Arithmetic</h3>
+          <h2><span class="section-marker">II</span>Yorùbá Numerical Calculator</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">A calculator built for everyone &mdash; the 47-Colour System made tactile.</p>
+          <p class="summary">Stunning orange design, large square keys, and a crystal-clear screen built for the curious child, the elder reconnecting with ancestral wisdom, and the professional demanding both beauty and precision. Each colour is a teacher: <em>Ọgọ́rǔn</em> glows purple, <em>Àádọ́ta</em> shines blue, <em>Ẹ́rin</em> stands proud in green &mdash; revealing the architecture of Yorùbá mathematical thought block by block.</p>
+          <div class="pulse-tags">
+            <span>Big Keys</span>
+            <span>47-Colour</span>
+            <span class="gold">Accessibility</span>
+            <span>BigInt 45-digit</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Calculator.html">Open the Calculator &rarr;</a>
+            <a class="g-secondary" href="#prod-2">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product III — Number Converter ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">III</div>
+          <div class="g-photo p-conv" role="img" aria-label="Yorùbá Number Converter"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Digit &rarr; Yorùbá Phrase</h3>
+          <h2><span class="section-marker">III</span>Yorùbá Number Conversion Tool</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">The portal in your pocket &mdash; forty-six colours, forty-six keys, one people.</p>
+          <p class="summary">Type any number from <em>Ódo</em> (0) to over a Tredecillion and watch the screen breathe life into digits once foreign. Thousands glow red like ancestral fire, hundreds pulse purple like royalty, units dance in green like new growth. Designed with deliberate curves, gradients of orange and amber, and the welcoming warmth of a grandparent&rsquo;s embrace.</p>
+          <div class="pulse-tags">
+            <span>0 &rarr; Tredecillion+</span>
+            <span class="gold">47-Colour</span>
+            <span>No Sign-up</span>
+            <span>Offline</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Converter.html">Open the Converter &rarr;</a>
+            <a class="g-secondary" href="#prod-3">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product IV — Age Calculator ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">IV</div>
+          <div class="g-photo p-age" role="img" aria-label="Yorùbá Age Calculator"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Time in Forty-Six Colours</h3>
+          <h2><span class="section-marker">IV</span>Yorùbá Age Calculator</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">The mirror of your days &mdash; biography in ancestral tongue.</p>
+          <p class="summary">Type your birthdate and your years become <em>Ogójìárǔn</em>, glowing blue like the steady tide of a life well-lived. Months become <em>Éje</em>, shimmering green like new growth. The total days lived &mdash; perhaps 16,437 &mdash; render in red, purple, blue, and green: every sunrise, every breath, every laugh and tear compressed into one magnificent colour-coded phrase.</p>
+          <div class="pulse-tags">
+            <span>Years &middot; Months &middot; Days</span>
+            <span class="gold">47-Colour</span>
+            <span>Heritage</span>
+            <span>Biographical</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Age Calculator.html">Open the Age Calculator &rarr;</a>
+            <a class="g-secondary" href="#prod-4">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product V — Kàlẹ́ndà ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">V</div>
+          <div class="g-photo p-cal" role="img" aria-label="Yorùbá Kàlẹ́ndà"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">13 Months · 28 Days</h3>
+          <h2><span class="section-marker">V</span>Yorùbá Kàlẹ́ndà</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">Reclaiming our time &mdash; the lunar cycle in a digital-compliant framework.</p>
+          <p class="summary">A pillar of cultural sovereignty grounding the global diaspora in over 10,068 years of recorded time. Maps the 4-day and 8-day market cycles (<em>Ọjọ́ Ọjà</em>), aligns the 13-month lunar rhythm with rainfall and the New Yam Festival, and synchronizes sacred days globally. The Yorùbá New Year (<em>Odun Ifa</em>) opens June 3, 2026, beginning the 10,068th year. Dates render in the Ètò Àwọ̀ colour system for instant readability.</p>
+          <div class="pulse-tags">
+            <span>13 &times; 28 = 364</span>
+            <span class="gold">Ètò Àwọ̀</span>
+            <span>Ọjọ́ Ọjà</span>
+            <span>Year 10,068</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Kàlẹ́ndà.html">Open the Kàlẹ́ndà &rarr;</a>
+            <a class="g-secondary" href="#prod-5">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product VI — Talking Drum Simulator ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">VI</div>
+          <div class="g-photo p-drum" role="img" aria-label="Yorùbá Talking Drum Simulator"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Spoken Percussion VST</h3>
+          <h2><span class="section-marker">VI</span>Yorùbá Talking Drum Simulator</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">The drum speaks again &mdash; restoring the spiritual frequency of our people.</p>
+          <p class="summary">A cultural time machine digitizing an ancient speaking technology. Sacred instruments live within: the <em>Gangan</em> &mdash; the master talking drum carrying messages, proverbs, and lineages &mdash; and the <em>Shekere</em>, the gourd rattle that keeps time. Seventeen variations per instrument, professional-grade audio, a reimagined Circle of Fifths in deep oranges and rich earth tones, full mixer, bus routing, FX chains, and real-time level meters.</p>
+          <div class="pulse-tags">
+            <span>Gangan</span>
+            <span>Shekere</span>
+            <span class="gold">17 Variations</span>
+            <span class="pink">Tonal Speech</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Talking Drum.html">Open the Drum Simulator &rarr;</a>
+            <a class="g-secondary" href="#prod-6">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Product VII — 16-String Acoustic Guitar Explorer ░░ -->
+      <article class="g-chapter">
+        <div class="g-photo-wrap">
+          <div class="g-badge">VII</div>
+          <div class="g-photo p-guitar" role="img" aria-label="16-String Acoustic Guitar Explorer"></div>
+        </div>
+        <div class="g-text">
+          <h3 class="product-eyebrow">Infinite Circle of Fifths</h3>
+          <h2><span class="section-marker">VII</span>16-String Acoustic Guitar Explorer</h2>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p class="tagline">Powered by Ònka Yorùbá 47-Colour Infinite Notation.</p>
+          <p class="summary">The world&rsquo;s first 3D Design and VST suite engineered with Visual Rescue Philosophy &mdash; navigate the harmonic universe from 0 to over a Tredecillion at light speed. The Infinite Circle of Fifths uses the 47-Colour Index for unique visual coordinates at every modulation. The Neon Pink &ldquo;l&rdquo; multiplier acts as a Harmonic Landmark, allowing instant transpositions across massive octaves. Sovereign Chord Detection groups complex 16-string voicings into colour-keyed Sovereign Families.</p>
+          <div class="pulse-tags">
+            <span>16 Strings</span>
+            <span>47-Colour CoF</span>
+            <span class="pink">Neon Pivot</span>
+            <span class="gold">Tredecillion+</span>
+          </div>
+          <div class="g-launch-row">
+            <a class="g-launch" href="tools/Acoustic Guitar.html">Open the Guitar Explorer &rarr;</a>
+            <a class="g-secondary" href="#prod-7">Read Full Description &darr;</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ░░ Neutral divider before full descriptions ░░ -->
+      <hr class="g-neutral-divider" aria-hidden="true" />
+
+      <!-- ░░ Full Descriptions Essay ░░ -->
+      <section class="g-full" aria-label="Full Descriptions of the Seven Numeric Products">
+        <p class="full-bridge">The thumbnails above present the seven products at a glance. The expanded descriptions that follow lay out each instrument&rsquo;s philosophy, signature features, and cultural mission in fuller form &mdash; written so a reader can understand not only <em>what</em> each product does, but <em>why</em> it exists within the larger Ònka Yorùbá numeric civilization.</p>
+
+        <div class="full-chapter dropcap" id="prod-1">
+          <h3>I &middot; Yorùbá Number Generator &mdash; A Living Recursive Engine</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>This is not a static database; it is a living recursive generation engine that proves the modern Ònka Yorùbá base-10 system can algorithmically produce any number name on demand, from <strong>Ení</strong> (1) to <strong>Ẹgbẹ̀rǔnlẹ́gbẹ̀rǔnléwǎ</strong> (10,000,000), using only nine base words and the legendary &ldquo;l&rdquo; multiplier. Each Scroll Book handles exactly one million numbers, and the ten scrolls together cover the complete range from 1 to 10,000,000 &mdash; ten million unique Yorùbá number names rendered in real time.</p>
+          <p>Every generated number is passed through a colorization engine that splits compound words at uppercase boundaries and wraps each component in a colour matching its mathematical magnitude. The 47-Colour Visual Protocol transforms what would otherwise be a wall of text into an instant visual map of the number&rsquo;s structure: thousands burn red, hundreds pulse purple, tens settle into royal blue, units glow vibrant green. At the heart of every Scroll Book lies a single recursive JavaScript function, <code>genYoruba(n)</code>, which decomposes any integer into base words, tens, hundreds, thousands, and millions, each connected by the &ldquo;l&rdquo; multiplier where required &mdash; an algorithm mirroring the organic structure of Yorùbá number-naming itself.</p>
+          <p>Each Scroll Book is a single self-contained HTML file with no build tools, no frameworks, and no server required. It runs entirely offline, employs zero dependencies, and uses async batch rendering with a visible progress bar to prevent UI freeze. Volume segmentation balances load time (about fifty thousand rows per batch) with navigational convenience, with each card clearly labeling its range.</p>
+          <div class="summary-pill">&ldquo;Ten million proofs that Yorùbá number-naming is fully programmable, fully visual, fully alive.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-2">
+          <h3>II &middot; Yorùbá Numerical Calculator &mdash; A Calculator Built for Everyone</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>With its stunning orange design radiating warmth and pride, a bigger screen for crystal-clear visibility, and large square keys that feel confident under the fingertips, this calculator was built for everyone: the curious child taking their first steps into numbers, the elder reconnecting with ancestral wisdom, and the professional who demands both beauty and precision. Every tap is effortless, every number is bold, and every Yorùbá word displayed is a reminder that our language was never meant to be silent in the world of mathematics.</p>
+          <p>The revolutionary 47-Colour System transforms how we learn and perceive numbers. Each colour is a visual guide, a teacher, and a companion. When you see <strong>Ọgọ́rǔn</strong> glow in purple, <strong>Àádọ́ta</strong> shine in blue, and <strong>Ẹ́rin</strong> stand proud in green, you are witnessing the architecture of Yorùbá mathematical thought, block by block, colour by colour. This is accessibility at its finest: children learn faster, adults retain longer, and for those with learning differences, the colours become bridges where words alone could not reach. The Yorùbá numerical structure is not primitive; it is profoundly logical, elegantly multiplicative, and deserves to stand alongside any numbering system in the world.</p>
+          <p>The calculator embodies what has been called Visual Rescue Philosophy &mdash; grounding the global diaspora in a history spanning over ten thousand years and fostering pride that transcends colonial borders. Every feature prioritizes digital compliance while maintaining cultural authenticity, a balance achieved through careful design and deep respect for heritage. Whether in Lagos, London, New York, or Toronto, this calculator speaks to the awakening of a people destined to count &mdash; and to count for something great.</p>
+          <div class="summary-pill">&ldquo;Forty-six colours, forty-six keys, one people learning to count in their own tongue.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-3">
+          <h3>III &middot; Yorùbá Number Conversion Tool &mdash; The Portal in Your Pocket</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Imagine standing at a market in Ibadan, and a price flashes: ₦47,500. In days past, that number would pass through your mind in borrowed tongue. But now, you pause, type, and watch the screen transform into <strong>Ẹgbẹ̀rǔnlógójìÉjeỌgọ́rǔnlárǔn</strong> &mdash; thousands glowing red like ancestral fire, hundreds pulsing purple like royalty. You are not just reading a price; you are reclaiming it.</p>
+          <p>This app was not designed in haste. Every curve, every gradient of orange and amber, every shadow and glow was crafted with one purpose: making the user feel at home. The moment you open it you are greeted not by complexity but by warmth, welcomed like a grandparent&rsquo;s embrace &mdash; familiar, safe, full of wisdom. The input field asks one simple question: &ldquo;What number lives in your heart today?&rdquo; Type any number from <em>Ódo</em> to over a Tredecillion, and watch the app breathe life into digits once foreign.</p>
+          <p>The 47-Colour System is not decoration; it is revelation. Cerulean speaks of zero&rsquo;s void before creation. Vibrant green echoes fresh leaves of new growth. Royal blue rises steady as the ocean. Purple announces royalty and significance. Red ignites the fire of thousands. Golden treasures shimmer like ancient Ilé-Ifẹ̀. Brown anchors the Tredecillions, rooted in heritage. The app asks nothing but curiosity &mdash; no registration, no passwords, no payments, no barriers. Just open, type, and witness.</p>
+          <div class="summary-pill">&ldquo;A door of light, colour, and ancestral memory turning cold digits into warm, living language.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-4">
+          <h3>IV &middot; Yorùbá Age Calculator &mdash; The Mirror of Your Days</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Type your birthdate and suddenly your forty-five years are no longer just &ldquo;45&rdquo; &mdash; they become <strong>Ogójìárǔn</strong>, glowing blue like the steady tide of a life well-lived. Your seven months become <strong>Éje</strong>, shimmering green like new growth. Your twenty-three days pulse with the same green vitality, <strong>Ogúnẹ́ta</strong>: each day a gift, each day counted, each day yours. Then comes the revelation &mdash; your total days lived. Not years, not decades, but every sunrise witnessed, every night survived, every breath compressed into one magnificent number.</p>
+          <p>Perhaps 16,437 days. In Yorùbá: <strong>Ẹgbẹ̀rǔnléwǎẹ́fàỌgọ́rǔnlẹ́rinỌgbọ̀néje</strong>. The thousands burn red with resilience. The hundreds glow purple with experience. Tens and units dance in royal blue and vibrant green &mdash; the ordinary days that compose an extraordinary life. This is not mathematics; this is biography told in your ancestral tongue. The elders say, &ldquo;We do not merely count a person&rsquo;s days; we count their deeds.&rdquo; But what if counting the days <em>itself</em> is a deed? What if every day acknowledged becomes an act of remembrance, resistance, and love?</p>
+          <p>The 47-Colour System illuminates rather than decorates. Cerulean breathes for zero, for the stillness before your first cry. Vibrant green celebrates units &mdash; single days that seem small but build mountains. Royal blue honours tens, weeks becoming months, patience becoming wisdom. Purple announces hundreds &mdash; you have entered a palace of experience. Red ignites thousands. Sky blue crowns those with 36,500 days or more &mdash; a century of sunrises, treasures richer than any vault. When a grandfather sees his age in these colours, something stirs. When a teenager sees five thousand days painted in red and purple, something awakens.</p>
+          <div class="summary-pill">&ldquo;Time wears forty-six colours; every sunrise belongs to a colour family.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-5">
+          <h3>V &middot; Yorùbá Kàlẹ́ndà &mdash; Reclaiming Our Time</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>The Ònka Yorùbá Kàlẹ́ndà is more than a tool for tracking days; it is a pillar of cultural sovereignty. By integrating the new Yorùbá numeric system, it transforms an ancient legacy into a digital-compliant, decimalized framework for the twenty-first century, removing the complexity of traditional subtraction and making indigenous logic ready for global computational use.</p>
+          <p>The calendar offers a restoration of cultural identity, grounding the global diaspora in a history spanning over 10,068 years and fostering pride that transcends colonial borders. Its digital efficiency allows Yorùbá logic to be programmed easily into modern software and apps. It maps the 4-day and 8-day market cycles (<em>Ọjọ́ Ọjà</em>) so entrepreneurs can calculate peak trade days with modern precision. Agricultural intelligence aligns the 13-month lunar cycle with rainfall patterns and the New Yam Festival, securing food heritage through precise seasonal tracking. The calendar also synchronizes sacred days globally, ensuring communities observe rituals in perfect unison.</p>
+          <p>Using the <em>Ètò Àwọ̀</em> colour system, dates become instantly readable: cerulean for zero, vibrant green for units, royal blue for tens. In the date <strong>Ẹ́wǎẸ́je</strong> (17), royal blue marks the second week-cycle and vibrant green marks the seventh day. The 364-day rhythm divides into thirteen months of exactly twenty-eight days each. The Yorùbá New Year (<em>Odun Ifa</em>) begins June 3, 2026, marking entry into the 10,068th year of recorded time. This calendar invites the listener to hear the rhythm of ancestors through the lens of modern digital logic.</p>
+          <div class="summary-pill">&ldquo;Thirteen months, twenty-eight days, one decimalized rhythm of cultural sovereignty.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-6">
+          <h3>VI &middot; Yorùbá Talking Drum Simulator &mdash; The Drum Speaks Again</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>This software is more than a sample pack of &ldquo;African sounds&rdquo;; it is restoration. Inside lives the authentic voice of sacred instruments. The <strong>Gangan</strong> &mdash; the master Talking Drum, the lead voice carrying messages. In traditional ensembles, the Gangan player knows not rhythm but language, making drums speak proverbs, recite lineages, call names. With seventeen variations, you hold seventeen different voices of this ancient messenger. The <strong>Shekere</strong> &mdash; the gourd rattle wrapped in beads, providing shimmering persistent rhythm; the timekeeper, the steady pulse beneath conversations.</p>
+          <p>The interface was designed with a choice: do we make it &ldquo;modern&rdquo; (which often means &ldquo;Western&rdquo;), or strip cultural identity for &ldquo;professionalism&rdquo;? We chose differently. We made the interface unmistakably, unapologetically, magnificently African. At the interface&rsquo;s heart sits a reimagined Circle of Fifths rendered with Yorùbá aesthetic sensibility, glowing in deep oranges and rich earth tones. It pulses with the colours that adorn traditional textiles, palace walls, and ceremonial robes. Dark panels honour the discipline of master drummers who train for years before earning the right to speak through the Gangan.</p>
+          <p>The professional mixer section meets every standard of world-class audio production &mdash; because excellence is not a Western invention; our ancestors were masters of precision. The VST includes individual instrument channels, bus routing (Main, FX, Aux), multiple instrument variations for studio layering, effects chains (Reverb, Delay, Compression, EQ presets), chord-type selectors and interval controls for harmonic exploration, and real-time level meters. Whether you have never produced a beat or already hold platinum records, this VST meets you where you are. The drums do not discriminate; rhythm does not judge; heritage belongs to everyone willing to receive it.</p>
+          <div class="summary-pill">&ldquo;The Gangan and Shekere, recorded in seventeen voices each, ready to speak any sentence Yorùbá tongues can shape.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap" id="prod-7">
+          <h3>VII &middot; 16-String Acoustic Guitar Explorer &mdash; Infinite 47-Colour Notation</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>The world&rsquo;s first 3D design and VST suite engineered with Visual Rescue Philosophy, allowing navigation of the harmonic universe from zero to over a Tredecillion at light speed. Unlike traditional twelve-tone systems that repeat, this Infinite Circle of Fifths uses the 47-Colour Index, providing unique visual coordinates for every harmonic modulation. Chromatic Sovereignty ensures musicians never get lost in complex frequencies. The Neon Pink Pivot implements the &ldquo;l&rdquo; multiplier logic as a Harmonic Landmark, allowing instant transpositions across massive octaves.</p>
+          <p>For beginners, the sixteen-string is no longer intimidating &mdash; it becomes a vibrant discovery map. Intuitive Chromatic Mapping visualizes relationships between tension and tone using 0-to-Tredecillion logic; if you lose your place, simply &ldquo;follow the colour&rdquo; back to the root. Sovereign Chord Detection groups notes into Sovereign Families using Ònka logic, making complex sixteen-string chords playable without years of finger-strength training. For professionals, this software provides a Universal Passport to unexplored sonic territories. Tredecillion-Scale Precision fine-tunes internal body resonances using databases scaling to Tredecillion-plus calculations, creating Signature Tones that are mathematically perfect.</p>
+          <p>The Infinite Notation Workflow uses the 47-Colour Sovereign Index instead of standard MIDI blocks, enabling hyper-precise microtonal compositions. Luthier-to-Logic Prototyping allows professional luthiers to export CNC-ready tool paths from Ònka numerical blueprints, ensuring physical sixteen-string guitars vibrate in perfect symmetry with the 47-Colour harmonic scale. The fretboard uses Visual Rescue design: always rooted in the primary colour of the chosen scale, extending to the full 47-Colour spectrum for the highest crystalline harmonics beyond standard human hearing, with a &ldquo;Found Myself&rdquo; toggle restoring clarity during complex solos.</p>
+          <div class="summary-pill">&ldquo;Sixteen strings, forty-six colours, one Infinite Circle of Fifths &mdash; harmonic sovereignty made visible.&rdquo;</div>
+        </div>
+
+        <div class="full-chapter dropcap">
+          <h3>One Civilization &middot; Seven Instruments</h3>
+          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <p>Although each product solves a distinct problem &mdash; generation, computation, conversion, biographical time, calendrical sovereignty, percussive language, harmonic exploration &mdash; all seven share the same colour grammar, the same &ldquo;l&rdquo; multiplier logic, and the same forty-five-digit precision ceiling enforced across the engine. A learner who masters the Calculator already reads the Number Converter; a producer who internalises the Talking Drum&rsquo;s tonal logic already understands the Guitar Explorer&rsquo;s 47-Colour Circle of Fifths.</p>
+          <p>Together they constitute a complete <strong>Numeric Civilization in your hand</strong>: a coherent, sovereign, hyper-accessible toolkit ready for the classroom, the studio, the marketplace, the temple, the laboratory, and the home. Open any one of them and you are not learning a language &mdash; you are <em>arriving</em> in it.</p>
+          <div class="summary-pill">&ldquo;Seven products. One numeric breath. Forty-six colours. Infinite reach.&rdquo;</div>
+        </div>
+      </section>
+
+    </div><!-- /.content -->
+
+    <hr aria-hidden="true" style="border:0; height:2px; max-width:calc(100% - 72px); margin:28px auto 26px; border-radius:999px; background:linear-gradient(90deg, transparent 0%, #0891B2 8%, #16A34A 22%, #2563EB 38%, #9333EA 52%, #DC2626 66%, #FFD700 82%, #0f3460 96%, transparent 100%); box-shadow:0 8px 18px rgba(8,145,178,.12);" />
+
+      <!-- ════════════════════════════════════════════════════════════
+           RHYTHM CLOSING · V1 sovereign mission → V2 the whole ladder → V3 breath
+           ════════════════════════════════════════════════════════════ -->
+      <section class="rhythm-section" style="max-width:1340px; margin:32px auto; padding:0 28px;">
+        <div class="rhythm-stage">
+          <p class="rhythm-eyebrow">Sovereign Mission · Indigenous tongues, digital sovereignty</p>
+          <h2 class="rhythm-h">A working prototype for every ancestral family worldwide</h2>
+          <p class="rhythm-h-sub">Èdè kọ̀ọ̀kan, ọ̀nà kọ̀ọ̀kan — every tongue, every counting word, alive and computable</p>
+
+          <div class="v1-stack">
+            <div class="v1-card tier-units"><div><div class="v1-num">1</div><div class="v1-yor">Ení</div><div class="v1-eng">Units · the seed of every count, in any tongue</div></div><span class="v1-power">10⁰</span></div>
+            <div class="v1-card tier-hundreds"><div><div class="v1-num">100</div><div class="v1-yor">Ọgọ́rǔn</div><div class="v1-eng">Hundreds · ten bundles make a basket</div></div><span class="v1-power">10²</span></div>
+            <div class="v1-card tier-tenthou"><div><div class="v1-num">10,000</div><div class="v1-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v1-eng">Tens of Thousands · where small numbers end and big ones begin</div></div><span class="v1-power">10⁴</span></div>
+            <div class="v1-card tier-mill"><div><div class="v1-num">1,000,000</div><div class="v1-yor">Ágbèẹ́rǔn</div><div class="v1-eng">Millions · a story takes shape, the prototype scales</div></div><span class="v1-power">10⁶</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rhythm-section" style="max-width:1340px; margin:32px auto; padding:0 28px;">
+        <div class="rhythm-stage">
+          <p class="rhythm-eyebrow">The whole ladder · Akàba pípé</p>
+          <h2 class="rhythm-h">Twelve magnitudes at a glance</h2>
+          <p class="rhythm-h-sub">Each tier its own colour — every ancestral tongue can apply this ladder in its own voice</p>
+
+          <div class="v2-grid">
+            <div class="v2-tile tier-units"><div class="v2-tile-num">1</div><div class="v2-tile-yor">Ení</div><div class="v2-tile-pow">10⁰</div></div>
+            <div class="v2-tile tier-tens"><div class="v2-tile-num">10</div><div class="v2-tile-yor">Ẹ́wǎ</div><div class="v2-tile-pow">10¹</div></div>
+            <div class="v2-tile tier-hundreds"><div class="v2-tile-num">100</div><div class="v2-tile-yor">Ọgọ́rǔn</div><div class="v2-tile-pow">10²</div></div>
+            <div class="v2-tile tier-thou"><div class="v2-tile-num">1K</div><div class="v2-tile-yor">Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10³</div></div>
+            <div class="v2-tile tier-tenthou"><div class="v2-tile-num">10K</div><div class="v2-tile-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10⁴</div></div>
+            <div class="v2-tile tier-hundthou"><div class="v2-tile-num">100K</div><div class="v2-tile-yor">Ọgọ́rǔn<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10⁵</div></div>
+            <div class="v2-tile tier-mill"><div class="v2-tile-num">1M</div><div class="v2-tile-yor">Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁶</div></div>
+            <div class="v2-tile tier-tenmill"><div class="v2-tile-num">10M</div><div class="v2-tile-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁷</div></div>
+            <div class="v2-tile tier-hundmill"><div class="v2-tile-num">100M</div><div class="v2-tile-yor">Ọgọ́rǔn<span class="t-neonpink" style="font-weight: 700;">l</span>Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁸</div></div>
+            <div class="v2-tile tier-bill"><div class="v2-tile-num">1B</div><div class="v2-tile-yor">Ágbòẹ́rǔn</div><div class="v2-tile-pow">10⁹</div></div>
+            <div class="v2-tile tier-trill"><div class="v2-tile-num">1T</div><div class="v2-tile-yor">Ágbòọ́rǔn</div><div class="v2-tile-pow">10¹²</div></div>
+            <div class="v2-tile tier-quad"><div class="v2-tile-num">1Qa</div><div class="v2-tile-yor">Ágbèérǔn</div><div class="v2-tile-pow">10¹⁵</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rhythm-section" style="max-width:1340px; margin:32px auto 48px; padding:0 28px;">
+        <div class="rhythm-stage">
+          <div class="v3-spot tier-tenthou">
+            <p class="v3-spot-eyebrow">Ìpari · Closing breath</p>
+            <p class="v3-spot-num">10,000</p>
+            <p class="v3-spot-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</p>
+            <p class="v3-spot-eng">Ten thousand learners, one scroll. These products were made to be touched, played with, learned through — in any ancestral tongue.</p>
+          </div>
+        </div>
+      </section>
+      <!-- ═════════════════ END RHYTHM CLOSING ═════════════════ -->
+
+    <!-- 47-Sovereign Colour Bar (above Research, Publications & Technology) -->
+    <div class="colour-bar-animated">
+      <div class="c-teal" title="Zero &mdash; Cerulean"></div>
+      <div class="c-green" title="Units &mdash; Vibrant Green"></div>
+      <div class="c-blue" title="Tens &mdash; Royal Blue"></div>
+      <div class="c-purple" title="Hundreds &mdash; Purple"></div>
+      <div class="c-red" title="Thousands &mdash; Red"></div>
+      <div class="c-sky" title="Tens of Thousands &mdash; Dark Goldenrod"></div>
+      <div class="c-golden" title="Hundreds of Thousands &mdash; Sky Blue"></div>
+      <div class="c-brown" title="Millions &mdash; Saddle Brown"></div>
+      <div class="c-forestgreen" title="Tens of Millions &mdash; Forest Green"></div>
+      <div class="c-orange" title="Hundreds of Millions &mdash; Dark Orange"></div>
+      <div class="c-navy" title="Billions &mdash; Navy Blue"></div>
+      <div class="c-pink" title="Tens of Billions &mdash; Hot Pink"></div>
+      <div class="c-olive" title="Hundreds of Billions &mdash; Olive"></div>
+      <div class="c-peru" title="Trillions &mdash; Peru"></div>
+      <div class="c-forest" title="Tens of Trillions &mdash; Slate Blue"></div>
+      <div class="c-maroon" title="Hundreds of Trillions &mdash; Maroon"></div>
+      <div class="c-steel" title="Quadrillions &mdash; Dodger Blue"></div>
+      <div class="c-amber" title="Tens of Quadrillions &mdash; Amber"></div>
+      <div class="c-darkred" title="Hundreds of Quadrillions &mdash; Dark Red"></div>
+      <div class="c-emerald" title="Quintillions &mdash; Emerald"></div>
+      <div class="c-violet" title="Tens of Quintillions &mdash; Bright Violet"></div>
+      <div class="c-chocolate" title="Hundreds of Quintillions &mdash; Chocolate"></div>
+      <div class="c-dodger" title="Sextillions &mdash; Electric Violet"></div>
+      <div class="c-crimson" title="Tens of Sextillions &mdash; Crimson"></div>
+      <div class="c-lime" title="Hundreds of Sextillions &mdash; Lime"></div>
+      <div class="c-indigo" title="Septillions &mdash; Indigo"></div>
+      <div class="c-salmon" title="Tens of Septillions &mdash; Salmon"></div>
+      <div class="c-darkcyan" title="Hundreds of Septillions &mdash; Dark Teal"></div>
+      <div class="c-gold" title="Octillions &mdash; Dark Goldenrod"></div>
+      <div class="c-plum" title="Tens of Octillions &mdash; Deep Violet"></div>
+      <div class="c-turquoise" title="Hundreds of Octillions &mdash; Light Sea Green"></div>
+      <div class="c-firebrick" title="Nonillions &mdash; Firebrick"></div>
+      <div class="c-mpurple" title="Tens of Nonillions &mdash; Medium Purple"></div>
+      <div class="c-sienna" title="Hundreds of Nonillions &mdash; Sienna"></div>
+      <div class="c-midnight" title="Decillions &mdash; Midnight"></div>
+      <div class="c-rose" title="Tens of Decillions &mdash; Rose"></div>
+      <div class="c-cadet" title="Hundreds of Decillions &mdash; Cadet"></div>
+      <div class="c-bronze" title="Undecillions &mdash; Bronze"></div>
+      <div class="c-orchid" title="Tens of Undecillions &mdash; Dark Orchid"></div>
+      <div class="c-goldenrod" title="Hundreds of Undecillions &mdash; Goldenrod"></div>
+      <div class="c-dslateblue" title="Duodecillions &mdash; Dark Slate Blue"></div>
+      <div class="c-tomato" title="Tens of Duodecillions &mdash; Tomato"></div>
+      <div class="c-darkmagenta" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
+      <div class="c-deeppink" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div class="c-grey" title="Unassigned State &mdash; Grey"></div>
+      <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
+      <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
+    </div>
+
+<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   GLASSMORPHISM NEON — Scholarly Reference Section
+   Deep-space background, frosted glass cards, neon accents
+══════════════════════════════════════════════════════════════ */
+.osp-wrap{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(160deg,#141c32 0%,#111830 50%,#0e1a38 100%);
+  padding:72px 28px 64px;
+  font-family:'Poppins','Segoe UI',sans-serif;
+}
+/* Floating particle dots */
+.osp-wrap::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(2px 2px at 15% 25%,rgba(255,215,0,0.3),transparent),
+    radial-gradient(2px 2px at 45% 70%,rgba(255,19,240,0.25),transparent),
+    radial-gradient(1px 1px at 75% 15%,rgba(37,99,235,0.4),transparent),
+    radial-gradient(1px 1px at 85% 85%,rgba(255,215,0,0.2),transparent),
+    radial-gradient(2px 2px at 55% 45%,rgba(147,51,234,0.2),transparent);
+  animation:driftParticles 20s linear infinite;
+  pointer-events:none;
+}
+@keyframes driftParticles{
+  0%  {transform:translateY(0);}
+  100%{transform:translateY(-30px);}
+}
+/* Neon glow line at top */
+.osp-wrap::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:10%;right:10%;height:2px;
+  background:linear-gradient(90deg,transparent,#FFD700,#FF13F0,#2563EB,transparent);
+  border-radius:2px;
+  box-shadow:0 0 20px rgba(255,215,0,0.4),0 0 40px rgba(255,19,240,0.2);
+}
+.osp-head{text-align:center;margin-bottom:42px;position:relative;z-index:1;}
+.osp-head h3{
+  color:#FFD700;font-size:.72rem;font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;margin:0 0 8px;
+  text-shadow:0 0 12px rgba(255,215,0,0.4);
+}
+.osp-head p{color:rgba(255,255,255,.75);font-size:.78rem;margin:0;font-weight:400;}
+/* Diamond divider */
+.osp-divider{
+  display:flex;align-items:center;gap:14px;max-width:440px;
+  margin:0 auto 38px;position:relative;z-index:1;
+}
+.osp-divider span{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,0.5),transparent);}
+.osp-divider em{
+  color:rgba(255,255,255,.85);font-size:.62rem;
+  font-style:normal;white-space:nowrap;letter-spacing:.08em;
+}
+/* Card grid */
+.osp-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+  gap:26px;max-width:1220px;margin:0 auto;position:relative;z-index:1;
+}
+/* Glassmorphism cards */
+.osp-card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:20px;padding:32px 28px;
+  position:relative;overflow:hidden;
+  transition:all .4s cubic-bezier(.4,0,.2,1);
+}
+.osp-card:hover{
+  border-color:rgba(255,215,0,0.5);
+  box-shadow:0 8px 40px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,215,0,0.15);
+  transform:translateY(-3px);
+}
+/* Neon accent stripe at card top */
+.osp-card::before{
+  content:'';position:absolute;
+  top:0;left:24px;right:24px;height:2px;
+  background:var(--card-accent,linear-gradient(90deg,#FFD700,#FF13F0));
+  border-radius:0 0 4px 4px;opacity:.7;transition:opacity .3s;
+}
+.osp-card:hover::before{opacity:1;}
+.osp-card:nth-child(1){--card-accent:linear-gradient(90deg,#FF13F0,#9333EA);}
+.osp-card:nth-child(2){--card-accent:linear-gradient(90deg,#FFD700,#EF6000);}
+.osp-card:nth-child(3){--card-accent:linear-gradient(90deg,#2563EB,#0891B2);}
+.osp-icon{
+  font-size:1.8rem;display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;border-radius:14px;
+  background:rgba(255,255,255,0.07);margin-bottom:14px;
+}
+.osp-label{
+  color:#FFD700;font-size:.66rem;font-weight:800;
+  letter-spacing:.18em;text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+  padding-bottom:12px;margin-bottom:18px;
+}
+/* ── Card ①: Classification Key ── */
+.osp-keytbl{width:100%;border-collapse:collapse;}
+.osp-keytbl tr+tr td{border-top:1px solid rgba(255,255,255,0.08);}
+.osp-keytbl td{padding:9px 0;font-size:.79rem;vertical-align:top;}
+.osp-ksym{
+  color:#FF13F0;font-weight:700;
+  padding-right:16px;min-width:72px;white-space:nowrap;font-size:.78rem;
+}
+.osp-kdesc{color:rgba(255,255,255,.88);line-height:1.6;}
+/* ── Card ②: Cite This Work ── */
+.osp-cite{
+  background:rgba(255,215,0,0.04);
+  border-left:3px solid #FFD700;
+  border-radius:0 12px 12px 0;
+  padding:16px 18px;font-size:.82rem;
+  color:rgba(255,255,255,.92);line-height:1.75;font-style:italic;
+}
+.osp-cite strong{color:#FFD700;font-style:normal;}
+.osp-cite-meta{
+  margin-top:12px;font-size:.7rem;
+  color:rgba(255,255,255,.6);font-style:normal;
+  padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);
+}
+/* ── Card ③: API Notice ── */
+.osp-badge{
+  display:inline-block;
+  background:linear-gradient(90deg,#A855F7,#2563EB);
+  color:#fff;font-size:.6rem;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 14px;border-radius:20px;margin-bottom:14px;
+  box-shadow:0 2px 12px rgba(168,85,247,0.3);
+}
+.osp-api-p{color:rgba(255,255,255,.88);font-size:.82rem;line-height:1.72;}
+.osp-api-p strong{color:#fff3b0;}
+.osp-endpoint{
+  margin-top:14px;
+  background:rgba(0,0,0,0.35);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:10px;padding:12px 16px;
+  font-family:'Courier New',monospace;
+  font-size:.74rem;color:#7FDBCA;
+  letter-spacing:.03em;line-height:1.7;
+}
+.osp-arrow{color:#FF13F0;}
+</style>
+
+<div class="osp-head">
+  <h3>Research, Publications &amp; Technology</h3>
+  <p>Academic standards, publication references, and technical guidance for the Universal Hyperdimensional Numeric Engine</p>
+</div>
+<div class="osp-divider">
+  <span></span><em>◆ Ìwé Ìmọ̀ Ònkà ◆</em><span></span>
+</div>
+
+<div class="osp-grid">
+
+  <!-- ① TABLE CLASSIFICATION KEY -->
+  <div class="osp-card">
+    <span class="osp-icon">🔑</span>
+    <div class="osp-label">Research Classification Framework</div>
+    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
+      <tbody><tr>
+        <td class="osp-ksym">Symbol</td>
+        <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Name</td>
+        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Scale</td>
+        <td class="osp-kdesc">Power-of-ten magnitude classification, for example 10&sup3; in the thousands tier and 10&sup6; in the millions tier</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym">Tier</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+      </tr>
+      <tr>
+        <td class="osp-ksym"><span class="t-neonpink" style="font-weight: 700;">l</span> Link</td>
+        <td class="osp-kdesc">The <em>l</em> multiplier connector, displayed in neon pink (#FF13F0), which governs chained magnitude extension across large-order expressions</td>
+      </tr>
+    </tbody></table>
+  </div>
+
+  <!-- ② CITATION STATEMENT -->
+  <div class="osp-card">
+    <span class="osp-icon">📜</span>
+    <div class="osp-label">Publications</div>
+    <div class="osp-cite">
+      <strong>Universal Hyperdimensional Numeric Engine Institute</strong> (2026).
+      <em>Numerical Index Database, v1.0.</em>
+      Godreign Digital Publishing.
+      <em>Universal Hyperdimensional Numeric Engine.</em>
+      <div class="osp-cite-meta">
+        ISBN (979-8-90148-351-0) &nbsp;·&nbsp;
+        Freely accessible for academic, educational &amp; research use &nbsp;·&nbsp;
+        © 2026 Godreign. Universal Hyperdimensional Numeric Engine.
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ FUTURE API NOTICE -->
+  <div class="osp-card">
+    <span class="osp-icon">⚡</span>
+    <div class="osp-label">Technology &amp; Implementation</div>
+    <span class="osp-badge">Coming Soon</span>
+    <p class="osp-api-p">
+      Public API access to the <strong>Yoruba Numerical Index Database</strong> is planned for a future
+      release, enabling developers, researchers, and digital platforms to programmatically
+      query more than a <strong>tredecillion</strong> Yorùbá number entries in real time for analytical and implementation purposes.
+    </p>
+    <div class="osp-endpoint">
+      GET /api/v1/onka-yoruba/number/{n}<br>
+      <span class="osp-arrow">→</span>&nbsp;{ yoruba: "…", tier: "…", colour: "…", power: "…" }
+    </div>
+  </div>
+
+</div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <span class="copyright">&copy; 2026 Godreign. The Universal Hyperdimensional Numeric Engine.</span>
+
+    <p class="english-mission">
+      Honouring the numerical heritage of humanity while advancing an open, language-independent path toward inclusive global computation.
+    </p>
+
+    </div>
+</footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Scroll to top">▲</button>
+
+  <script>
+    // --- Scroll Progress Bar ---
+    const progressBar = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+      progressBar.style.width = scrolled + '%';
+    }, { passive: true });
+
+    // --- Back-to-Top Button ---
+    const topBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) topBtn.classList.add('visible');
+      else topBtn.classList.remove('visible');
+    }, { passive: true });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</div></body></html>

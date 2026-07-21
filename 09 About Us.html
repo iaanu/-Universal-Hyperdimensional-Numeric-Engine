@@ -3,44 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Godreign | Universal Hyperdimensional Numeric Engine</title>
+  <title>About Us | Universal Hyperdimensional Numeric Engine</title>
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:wght@400;600;700&display=swap');
-
-    /* ── Yoruba Vocalic System: per-glyph routing ──
-       The synthetic 'Yoruba' family delegates ONLY diacritic-heavy ranges
-       (Latin Extended-A/B, combining marks, Latin Extended Additional)
-       to Gentium Plus / Noto Sans. Plain ASCII still falls through to
-       Poppins, preserving the modern aesthetic while giving Ẹ̀ Ẹ́ Ọ̀ Ọ́
-       ẹ̀ ẹ́ ọ̀ ọ́ ǔ ā proper combining-mark stacking via GPOS. */
-    @font-face {
-      font-family: 'Yoruba';
-      font-style: normal;
-      font-weight: 400 900;
-      src: local('Gentium Plus'), local('GentiumPlus'),
-           local('Noto Sans'), local('NotoSans-Regular');
-      unicode-range: U+0100-024F, U+0300-036F, U+1E00-1EFF;
-    }
-    @font-face {
-      font-family: 'Yoruba';
-      font-style: italic;
-      font-weight: 400 900;
-      src: local('Gentium Plus Italic'), local('GentiumPlus-Italic'),
-           local('Noto Sans Italic'), local('NotoSans-Italic');
-      unicode-range: U+0100-024F, U+0300-036F, U+1E00-1EFF;
-    }
-
-    /* Global typography: enable kerning, ligatures, and combining-mark
-       positioning (ccmp = glyph composition; mark / mkmk = base-to-mark
-       and mark-to-mark GPOS positioning, essential for stacked tones). */
-    html {
-      text-rendering: optimizeLegibility;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-feature-settings: "kern" 1, "liga" 1, "ccmp" 1, "mark" 1, "mkmk" 1;
-    }
-
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+    
         .menu-bar {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             padding: 14px 20px;
@@ -104,7 +71,7 @@
     * { box-sizing: border-box; }
     
     body {
-      font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 100%);
       min-height: 100vh;
       margin: 0;
@@ -182,7 +149,7 @@
     .c-dslateblue { background: #483D8B; color: #fff; }     /* 41 Duodecillions */
     .c-maroon { background: #FF6347; color: #fff; }     /* 42 Tens of Duodecillions — Tomato */
     .c-slateblue { background: #8B008B; color: #fff; }     /* 43 Hundreds of Duodecillions — Dark Magenta */
-    .c-deeppink { background: #94AA00; color: #fff; }     /* 44 Tredecillion Plus */
+    .c-deeppink { background: #94AA00; color: #fff; }     /* 44 Tredecillions/Tredecillions Plus */
     .c-neonpink { background: #FF13F0; color: #fff; }     /* 45 "l" Multiplier */
     .c-grey { background: #808080; color: #fff; }         /* 46 Unassigned/Contents */
     .c-largenumber { background: #4682B4; color: #fff; }    /* Large Numbers */
@@ -641,7 +608,7 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════ */
-    /* Alpha² SYSTEM STYLES                                           */
+    /* Alphα² SYSTEM STYLES                                           */
     /* ═══════════════════════════════════════════════════════════════ */
     .agbara-section {
       background: #1E8CB8;
@@ -830,7 +797,7 @@
         background: #4682B4 !important;
         color: #fff !important;
         font-weight: bold !important;
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
     }
     /* spans inside header cells (Word export wraps text in span) */
     .p00-tables table tr:first-child td span,
@@ -843,7 +810,7 @@
     .p00-text-sections table thead th span {
         color: #fff !important;
         background: transparent !important;
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
     }
 
     /* ── First column (data rows only): purple, white text ── */
@@ -852,14 +819,14 @@
         background: #4682B4 !important;
         color: #fff !important;
         font-weight: 600 !important;
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
     }
     /* spans inside first-column cells */
     .p00-tables table tr:not(:first-child) td:first-child span,
     .p00-text-sections table tr:not(:first-child) td:first-child span {
         color: #fff !important;
         background: transparent !important;
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
     }
 
     /* ── Alternating row shading (data rows, non-first-column) ── */
@@ -878,7 +845,7 @@
     .p00-text-sections table tr:not(:first-child) td:not(:first-child) span {
         color: #002244 !important;
         background: transparent !important;
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
         font-size: 0.9rem !important;
     }
 
@@ -886,7 +853,7 @@
     .p00-tables h2,
     .p00-text-sections h2 {
         color: #4682B4 !important;
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
         margin-top: 28px !important;
         margin-bottom: 8px !important;
         font-size: 1.15rem !important;
@@ -894,13 +861,13 @@
     .p00-tables h2 span,
     .p00-text-sections h2 span {
         color: #4682B4 !important;
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
     }
 
     /* ── Paragraphs ── */
     .p00-tables p,
     .p00-text-sections p {
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
         font-size: 0.92rem !important;
         color: #222 !important;
         line-height: 1.6 !important;
@@ -908,7 +875,7 @@
     }
     .p00-tables p span,
     .p00-text-sections p span {
-        font-family: 'Yoruba', 'Poppins', 'Segoe UI', sans-serif !important;
+        font-family: 'Poppins', 'Segoe UI', sans-serif !important;
         font-size: 0.92rem !important;
         color: #222 !important;
     }
@@ -1735,13 +1702,539 @@
 })();
 
 </script>
+  <style>
+/* ════════════════════════════════════════════════════════════════════
+   ÒNKA YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
+   --------------------------------------------------------------------
+   Three variants share the same 47-Sovereign tier identity but serve
+   different attention modes. Rotating them down a page keeps curiosity
+   alive — every section feels like the start of something new.
+
+     V1 — STICKER STACK   · "let me read this calmly"
+     V2 — TILE WALL       · "let me browse and compare"
+     V3 — SPOTLIGHT MOMENT· "pause and feel this one"
+
+   Suggested rhythm per page:
+     V3 (open) → V1 (calm) → V2 (browse) → V3 (close)
+   ════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Yoruba-text classes (v1-yor, v2-tile-yor, v3-spot-yor, v3-sib-y) are
+   routed to Gentium Plus first because Fraunces lacks the OpenType GPOS
+   mark / mkmk rules needed to stack tone marks over underdotted vowels
+   (ẹ̀ ẹ́ ọ̀ ọ́ ǔ). Gentium Plus is a serif designed by SIL for
+   African Latin and pairs visually with Fraunces. Numerals keep Fraunces. */
+
+/* ── 47-Sovereign tier accents (each tier its own perfume) ─────────── */
+.tier-zero     { --accent: #0891B2; --border: #0891B2; --tint-1: #d9f1f7; --tint-2: #b9e4ee; --tint-soft: #94d3e1; }
+.tier-units    { --accent: #16A34A; --border: #16A34A; --tint-1: #e7f7ec; --tint-2: #d4f0dd; --tint-soft: #c4e9d0; }
+.tier-tens     { --accent: #2563EB; --border: #2563EB; --tint-1: #e7eefc; --tint-2: #d0dffa; --tint-soft: #bdd0f5; }
+.tier-hundreds { --accent: #9333EA; --border: #9333EA; --tint-1: #f1e8fb; --tint-2: #e3d2f7; --tint-soft: #d4bff0; }
+.tier-thou     { --accent: #DC2626; --border: #DC2626; --tint-1: #fbe8e8; --tint-2: #f7d2d2; --tint-soft: #f0bfbf; }
+.tier-tenthou  { --accent: #B59410; --border: #DC2626; --tint-1: #faf2d9; --tint-2: #f3e6ad; --tint-soft: #ead97f; }
+.tier-hundthou { --accent: #4EAAE4; --border: #DC2626; --tint-1: #e6f3fb; --tint-2: #cce6f6; --tint-soft: #b1d6ee; }
+.tier-mill     { --accent: #8B4513; --border: #8B4513; --tint-1: #f4eae0; --tint-2: #ead4be; --tint-soft: #dcc1a4; }
+.tier-tenmill  { --accent: #228B22; --border: #8B4513; --tint-1: #e3f0e3; --tint-2: #c4e1c4; --tint-soft: #a4d1a4; }
+.tier-hundmill { --accent: #EF6000; --border: #8B4513; --tint-1: #fde8d6; --tint-2: #f9d2af; --tint-soft: #f1b889; }
+.tier-bill     { --accent: #000080; --border: #000080; --tint-1: #e1e1f0; --tint-2: #c8c8e2; --tint-soft: #b0b0d3; }
+.tier-tenbill  { --accent: #FC5D8D; --border: #000080; --tint-1: #fde0ec; --tint-2: #fcc1d8; --tint-soft: #f5a4c1; }
+.tier-hundbill { --accent: #808000; --border: #000080; --tint-1: #efeed1; --tint-2: #dfdba3; --tint-soft: #c5be75; }
+.tier-trill    { --accent: #CD853F; --border: #CD853F; --tint-1: #fbeed6; --tint-2: #f5dab0; --tint-soft: #e9c48a; }
+.tier-tentrill { --accent: #6A5ACD; --border: #CD853F; --tint-1: #e3e0f4; --tint-2: #cdc8ec; --tint-soft: #b0a9da; }
+.tier-hundtrill{ --accent: #800000; --border: #CD853F; --tint-1: #f0d4d4; --tint-2: #e0a8a8; --tint-soft: #ce7d7d; }
+.tier-quad     { --accent: #1E90FF; --border: #1E90FF; --tint-1: #e0f0fe; --tint-2: #c2e1fc; --tint-soft: #a3d0f8; }
+.tier-tenquad  { --accent: #F59E0B; --border: #1E90FF; --tint-1: #feefcd; --tint-2: #fcdc99; --tint-soft: #f7c563; }
+.tier-hundquad { --accent: #8B0000; --border: #1E90FF; --tint-1: #f3d4d4; --tint-2: #e6a8a8; --tint-soft: #d27d7d; }
+.tier-quint    { --accent: #047857; --tint-1: #ddefe7; --tint-2: #b9dccd; --tint-soft: #8fc6b1; }
+.tier-sext     { --accent: #6C0AC9; --tint-1: #ece0f8; --tint-2: #d6c0f0; --tint-soft: #ba9be4; }
+.tier-sept     { --accent: #4B0082; --tint-1: #e2d6ec; --tint-2: #c8b1da; --tint-soft: #a98bc4; }
+.tier-oct      { --accent: #B8860B; --tint-1: #f7ecc9; --tint-2: #efdb9a; --tint-soft: #e3c46d; }
+.tier-non      { --accent: #B22222; --tint-1: #f3d9d9; --tint-2: #ebbbbb; --tint-soft: #dd9595; }
+.tier-dec      { --accent: #191970; --tint-1: #d9d9ec; --tint-2: #b8b8da; --tint-soft: #9292c4; }
+.tier-undec    { --accent: #CD7F32; --tint-1: #f9e7d0; --tint-2: #f1d0a4; --tint-soft: #e3b577; }
+.tier-duodec   { --accent: #483D8B; --tint-1: #dcd8ec; --tint-2: #beb8db; --tint-soft: #9890c4; }
+.tier-tredec   { --accent: #94AA00; --tint-1: #eef3cf; --tint-2: #dde7a3; --tint-soft: #c5d473; }
+.tier-plus     { --accent: #4682B4; --tint-1: #dceaf4; --tint-2: #b9d2e7; --tint-soft: #91b7d6; }
+.tier-l-drive  { --accent: #FF13F0; --tint-1: #fee0fc; --tint-2: #fcb9f8; --tint-soft: #f88cf2; }
+
+/* ── Shared light stage (the "warm sunlight on paper" canvas) ─────── */
+.rhythm-section { margin: 32px 0; }
+.rhythm-section + .rhythm-section { margin-top: 22px; }
+
+.rhythm-stage {
+  background:
+    radial-gradient(ellipse 80% 60% at 18% 8%,  rgba(255,224,176,0.32), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 88% 14%, rgba(187,222,251,0.32), transparent 60%),
+    radial-gradient(ellipse 70% 60% at 50% 110%, rgba(213,235,219,0.36), transparent 60%),
+    #FFFBF2;
+  border-radius: 22px;
+  padding: 28px 24px 32px;
+  color: #2a2a35;
+  box-shadow: 0 4px 22px rgba(0,0,0,0.08);
+}
+.rhythm-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #c026a8; margin: 0 0 6px;
+}
+.rhythm-h {
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-weight: 800; font-size: 1.55rem; color: #2a5e8c;
+  margin: 0 0 4px; letter-spacing: -0.01em;
+}
+.rhythm-h-sub {
+  color: #c026a8; font-style: italic; font-size: 0.97rem;
+  margin: 0 0 18px;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   V1 — STICKER STACK · vertical column · sticker-shine highlight
+   ════════════════════════════════════════════════════════════════════ */
+.v1-stack { display: flex; flex-direction: column; gap: 14px; }
+
+.v1-card {
+  border-radius: 18px;
+  padding: 18px 20px 20px;
+  background: linear-gradient(135deg, var(--tint-2) 0%, var(--tint-1) 60%, #ffffff 100%);
+  border: 1px solid var(--tint-soft);
+  border-left: 5px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+  position: relative; overflow: hidden;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;
+}
+.v1-card::after {
+  /* sticker shine */
+  content: ''; position: absolute; top: -24px; left: -24px;
+  width: 90px; height: 90px;
+  background: radial-gradient(circle, rgba(255,255,255,0.55) 0%, transparent 65%);
+  pointer-events: none;
+}
+.v1-num {
+  font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 144;
+  font-weight: 800; font-size: 2.1rem; color: var(--accent);
+  line-height: 1; letter-spacing: -0.02em;
+}
+.v1-yor {
+  font-family: 'Gentium Plus', 'Fraunces', serif; font-weight: 700; font-size: 1.18rem;
+  margin-top: 7px; color: var(--accent);
+}
+.v1-eng { font-size: 0.86rem; color: #524d52; margin-top: 4px; font-weight: 500; line-height: 1.45; }
+.v1-power {
+  font-family: 'Fraunces', serif; font-size: 0.78rem; font-weight: 700;
+  background: rgba(255,255,255,0.55); color: var(--accent);
+  padding: 4px 10px; border-radius: 999px;
+  border: 1px solid var(--tint-soft);
+  flex-shrink: 0; white-space: nowrap;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   V2 — TILE WALL · 6-col grid · magnet-feel · 4px tier top edge
+   ════════════════════════════════════════════════════════════════════ */
+.v2-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+@media (max-width: 900px) { .v2-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 540px) { .v2-grid { grid-template-columns: repeat(2, 1fr); } }
+
+.v2-tile {
+  background: linear-gradient(160deg, var(--tint-2) 0%, var(--tint-1) 100%);
+  border: 3px solid var(--accent);
+  border-radius: 14px;
+  padding: 12px 8px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 3px 0 var(--tint-soft), 0 6px 14px rgba(0,0,0,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.v2-tile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 0 var(--tint-soft), 0 10px 20px rgba(0,0,0,0.10);
+}
+.v2-tile-num {
+  display: inline-block;
+  align-self: center;
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 0.62rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(70,130,180,0.12);
+  border: 1px solid rgba(70,130,180,0.40);
+  color: rgba(0,0,0,0.62);
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+.v2-tile-yor {
+  font-family: 'Gentium Plus', 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 1.45rem;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--accent);
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4px 2px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.v2-tile-yor .yor-units { color: #16A34A; }
+.v2-tile-yor .yor-tens  { color: #2563EB; }
+.v2-tile-yor .yor-hund  { color: #9333EA; }
+.v2-tile-yor .yor-large { color: #4682B4; }
+.v2-tile-yor .yor-thou  { color: #DC2626; }
+.v2-tile-yor .yor-mill  { color: #8B4513; }
+.v2-tile-yor .yor-bill  { color: #000080; }
+.v2-tile-yor .yor-trill { color: #CD853F; }
+.v2-tile-yor .yor-quad  { color: #1E90FF; }
+.v2-tile-pow {
+  font-family: 'Fraunces', serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-top: auto;
+  padding-top: 4px;
+}
+.v2-tile-pow .pow-base { color: var(--accent); }
+.v2-tile-pow .pow-exp  { color: #4682B4; font-size: 0.78em; vertical-align: super; line-height: 0; margin-left: 1px; }
+
+/* ════════════════════════════════════════════════════════════════════
+   V3 — SPOTLIGHT MOMENT · single hero · giant numeral · soft halo
+   ════════════════════════════════════════════════════════════════════ */
+.v3-spot {
+  position: relative;
+  border-radius: 26px;
+  padding: 38px 32px 36px;
+  background:
+    radial-gradient(circle at 78% 20%, var(--tint-1) 0%, transparent 55%),
+    radial-gradient(circle at 22% 80%, var(--tint-2) 0%, transparent 60%),
+    #fffdf8;
+  border: 1px solid var(--tint-soft);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.8);
+  overflow: hidden;
+  color: #2a2a35;
+}
+.v3-spot::before {
+  /* the halo — large soft tier-coloured circle behind the numeral */
+  content: ''; position: absolute;
+  width: 360px; height: 360px;
+  right: -90px; top: -90px;
+  background: radial-gradient(circle,
+    color-mix(in srgb, var(--accent) 16%, transparent) 0%,
+    transparent 70%);
+  pointer-events: none;
+}
+.v3-spot > * { position: relative; }  /* lift content above halo */
+
+.v3-spot-eyebrow {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+}
+.v3-spot-num {
+  font-family: 'Fraunces', serif; font-variation-settings: 'opsz' 144;
+  font-weight: 900; font-size: 5.2rem; color: var(--accent);
+  line-height: 0.95; letter-spacing: -0.04em;
+  margin: 0 0 8px;
+}
+.v3-spot-yor {
+  font-family: 'Gentium Plus', 'Fraunces', serif; font-weight: 700; font-size: 1.7rem;
+  color: var(--accent); margin: 0 0 6px;
+}
+.v3-spot-eng {
+  font-family: 'Poppins', sans-serif; font-style: italic;
+  color: #555; font-size: 0.97rem; margin: 0 0 18px; max-width: 720px;
+  line-height: 1.6;
+}
+.v3-spot-siblings {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--tint-soft);
+}
+.v3-sib {
+  flex: 0 0 auto;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--tint-soft);
+  border-radius: 12px;
+  padding: 8px 12px 9px;
+  text-align: center;
+  min-width: 78px;
+}
+.v3-sib-n {
+  font-family: 'Fraunces', serif; font-weight: 800; font-size: 1.05rem;
+  color: var(--accent); line-height: 1;
+}
+.v3-sib-y {
+  font-family: 'Gentium Plus', 'Fraunces', serif; font-weight: 600; font-size: 0.78rem;
+  color: var(--accent); margin-top: 3px;
+}
+
+/* ── Mobile breath ────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .v3-spot       { padding: 28px 22px 26px; border-radius: 22px; }
+  .v3-spot-num   { font-size: 4rem; }
+  .v3-spot-yor   { font-size: 1.4rem; }
+  .v3-spot::before { width: 260px; height: 260px; right: -70px; top: -70px; }
+  .rhythm-stage  { padding: 22px 18px 26px; border-radius: 18px; }
+  .rhythm-h      { font-size: 1.3rem; }
+  .v1-num        { font-size: 1.8rem; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   V3 BLESSING · poetic ladder finale (multi-stanza spotlight)
+   --------------------------------------------------------------------
+   A specialised V3 layout that carries a multi-line poetic passage in
+   place of the giant numeral.  Use it as a closing card on long
+   documentation pages.
+   ════════════════════════════════════════════════════════════════════ */
+.v3-spot-blessing { padding: 44px 36px 40px; }
+.v3-spot-blessing .v3-spot-num {
+  font-size: 4.2rem;
+  margin: 0 0 4px;
+  font-style: normal;
+}
+.v3-spot-blessing .v3-spot-yor {
+  font-size: 1.45rem;
+  letter-spacing: -0.005em;
+  margin: 0 0 22px;
+}
+.v3-blessing-body {
+  max-width: none;
+  width: 100%;
+  font-family: 'Fraunces', 'Playfair Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #2a2a35;
+}
+.v3-blessing-body p { margin: 0 0 14px; }
+.v3-blessing-body p:last-child { margin-bottom: 0; }
+.v3-blessing-line {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--accent);
+  padding: 14px 18px;
+  border-left: 4px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+  border-radius: 4px 14px 14px 4px;
+  margin: 18px 0 !important;
+  line-height: 1.45;
+}
+.v3-blessing-coda {
+  font-style: italic;
+  color: #555;
+  font-size: 0.97rem;
+  border-top: 1px dashed var(--tint-soft);
+  padding-top: 14px;
+  margin-top: 18px !important;
+}
+.v3-blessing-body em { font-style: italic; color: var(--accent); font-weight: 600; }
+.v3-blessing-body strong { color: var(--accent); }
+
+@media (max-width: 640px) {
+  .v3-spot-blessing { padding: 32px 22px 30px; }
+  .v3-spot-blessing .v3-spot-num { font-size: 3.2rem; }
+  .v3-blessing-body { font-size: 0.97rem; }
+  .v3-blessing-line { font-size: 1.05rem; padding: 12px 14px; }
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   BORDER-HARMONY VARIANTS · five tier-aware skins for v1/v2/v3 cards
+   --------------------------------------------------------------------
+   The randomizer in tools/border-harmony.js sprinkles one of these
+   classes onto every `.v1-card`, `.v2-tile`, and `.v3-spot` on load.
+   Each variant pulls the tier accent from `--accent` and its tints
+   from `--tint-1` / `--tint-soft`, so any tier ports for free.
+   ════════════════════════════════════════════════════════════════════ */
+
+/* 1 · Two-tone gradient border — satin trim along the perimeter */
+.bh-gradient {
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg,
+    var(--tint-soft) 0%,
+    var(--accent)    50%,
+    var(--tint-soft) 100%) 1;
+}
+/* v1 keeps its 5px tier rail on the left even when the rest is gradient */
+.v1-card.bh-gradient { border-left: 5px solid var(--accent); }
+/* v2 keeps its 4px tier crown on top */
+.v2-tile.bh-gradient { border-top: 4px solid var(--accent); }
+
+/* 2 · Tinted halo ring — 1px line + 5px translucent aura */
+.bh-halo {
+  box-shadow:
+    0 0 0 1px var(--tint-soft),
+    0 0 0 5px color-mix(in srgb, var(--accent) 14%, transparent),
+    0 10px 24px rgba(0,0,0,0.07),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* 3 · Conic-tinted edge — 2px conic gradient on the border-box.
+   Only safe to use on cards whose body has no padding-box-clipped
+   gradient already (we keep it for .v2-tile and .v1-card only;
+   .v3-spot has its own halo so we use a lighter cousin there). */
+.v1-card.bh-conic,
+.v2-tile.bh-conic {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(135deg, var(--tint-2) 0%, var(--tint-1) 60%, #ffffff 100%)
+      padding-box,
+    conic-gradient(from 210deg,
+      var(--tint-soft),
+      var(--accent),
+      var(--tint-1),
+      var(--accent),
+      var(--tint-soft))
+      border-box;
+}
+.v3-spot.bh-conic {
+  border: 2px solid transparent;
+  background:
+    radial-gradient(circle at 78% 20%, var(--tint-1) 0%, transparent 55%),
+    radial-gradient(circle at 22% 80%, var(--tint-2) 0%, transparent 60%),
+    #fffdf8
+      padding-box,
+    conic-gradient(from 210deg,
+      var(--tint-soft),
+      var(--accent),
+      var(--tint-1),
+      var(--accent),
+      var(--tint-soft))
+      border-box;
+}
+
+/* 4 · Contrast line — same hair-line width, drawn in the tier accent */
+.bh-contrast {
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+}
+.v1-card.bh-contrast { border-left: 5px solid var(--accent); }
+.v2-tile.bh-contrast { border-top: 4px solid var(--accent); }
+
+/* 5 · Contrast + halo — crisp tier line with a faint matching aura */
+.bh-contrast-halo {
+  border: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent),
+    0 10px 24px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+}
+.v1-card.bh-contrast-halo { border-left: 5px solid var(--accent); }
+.v2-tile.bh-contrast-halo { border-top: 4px solid var(--accent); }
+
+</style>
+  <script>
+/* ════════════════════════════════════════════════════════════════════
+   ÒNKA YORÙBÁ · BORDER-HARMONY RANDOMISER
+   --------------------------------------------------------------------
+   Sprinkles one of five tier-aware border skins onto every
+   `.v1-card`, `.v2-tile`, and `.v3-spot` on the page so the visual
+   experience is never the same twice.
+
+   The five skins live in tools/child-friendly-rhythm.css:
+     bh-gradient        · two-tone satin trim
+     bh-halo            · 1px hair-line + soft tinted aura
+     bh-conic           · 2px conic gradient on the border-box
+     bh-contrast        · crisp 1px tier-coloured hair-line
+     bh-contrast-halo   · contrast line + matching halo (combined)
+
+   STRATEGY
+     • For each card type we walk a shuffled deck of the five classes
+       so that no two consecutive cards ever land on the same skin.
+     • A new deck is shuffled on every page load → fresh choreography
+       on every refresh.
+     • Cards that already carry a `bh-*` class are LEFT ALONE so a
+       page can still pin a specific skin to a hero card.
+
+   USAGE
+     <script src="tools/border-harmony.js" defer><\/script>
+   ════════════════════════════════════════════════════════════════════ */
+
+(function () {
+  'use strict';
+
+  const SKINS = [
+    'bh-gradient',
+    'bh-halo',
+    'bh-conic',
+    'bh-contrast',
+    'bh-contrast-halo'
+  ];
+
+  function shuffled(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function nextNonRepeating(deck, lastSkin) {
+    if (deck.length === 0) {
+      const fresh = shuffled(SKINS);
+      // Avoid the new deck starting with the same skin we just placed
+      if (lastSkin && fresh[0] === lastSkin && fresh.length > 1) {
+        [fresh[0], fresh[1]] = [fresh[1], fresh[0]];
+      }
+      deck.push(...fresh);
+    }
+    return deck.shift();
+  }
+
+  function alreadySkinned(el) {
+    return SKINS.some((cls) => el.classList.contains(cls));
+  }
+
+  function sprinkle(selector) {
+    const cards = document.querySelectorAll(selector);
+    if (!cards.length) return;
+    let deck = shuffled(SKINS);
+    let last = null;
+    cards.forEach((card) => {
+      if (alreadySkinned(card)) {
+        last = SKINS.find((cls) => card.classList.contains(cls)) || last;
+        return;
+      }
+      const skin = nextNonRepeating(deck, last);
+      card.classList.add(skin);
+      last = skin;
+    });
+  }
+
+  function run() {
+    sprinkle('.v3-spot');
+    sprinkle('.v1-card');
+    sprinkle('.v2-tile');
+  }
+
+  // Expose for demo / debug pages that want to reshuffle on demand.
+  window.borderHarmonyRun = run;
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+
+</script>
 </head>
 <body>
     <!-- Scroll Progress Bar -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
         <div class="menu-bar">
-        <a class="current" href="01 Godreign.html">Godreign</a>
+        <a href="01 Godreign.html">Godreign</a>
         <a href="02 Ọ̀rọ̀ Ẹlohîm.html">Ọ̀rọ̀ Ẹlohîm</a>
         <a href="index.html">Numeric Engine</a>
         <a href="03 Master Index.html">Master Index</a>
@@ -1750,18 +2243,18 @@
         <a href="06 Applied Systems.html">Applied Systems</a>
         <a href="07 World Numerals.html">World Numerals</a>
         <a href="08 Numeric Products.html">Numeric Products</a>
-        <a href="09 About Us.html">About Us</a>
+        <a class="current" href="09 About Us.html">About Us</a>
     </div>
 
   <div class="container">
     <div class="header">
-      <h1>GODREIGN</h1>
-      <h2>A Divine Framework for Righteous Governance on Earth</h2>
-      <h2 style="margin-top: 15px; font-size: 1.2rem; color: #FFD700; font-weight: 700;">Restoring Heaven's Blueprint Through Righteous Governance and Numerical Sovereignty</h2>
-      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">Where heaven's blueprint governs science, civilization, and numerical sovereignty</p>
-      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published under the Godreign Numerical Civilization Project<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
-      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 8px;">Designed for nations, scholars, educators, and every soul seeking to realign with divine order.</p>
-    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">Godreign declares the realignment of earthly order with heaven's original blueprint: a sovereign framework anchored in righteousness, justice, mercy, and eternal truth. From this governing root proceeds the Universal Hyperdimensional Numeric Engine and its first complete language implementation, the Ònka Yorùbá numerical index, so that science, education, technology, and civilization itself may be disciplined by divine order, strengthened in purpose, and directed toward the healing of souls and the preparation of nations for heavenly royalty.</p>
+      <h1>ABOUT US</h1>
+      <h2>The Team Behind The Universal Hyperdimensional Numeric Engine</h2>
+      <p style="font-size: 1rem; color: #FFD700; margin: 6px auto 0; font-weight: 700; letter-spacing: .4px; max-width: 920px; line-height: 1.5;">A Research, Educational, and Linguistic Infrastructure for Indigenous Numerical Sovereignty</p>
+      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 12px; font-weight: 600;">The operating platform for language-independent numeric systems &mdash; with Ònka Yorùbá as its founding implementation.</p>
+      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published by the Universal Hyperdimensional Numeric Engine Research Initiative<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
+      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 8px;">Designed for researchers, educators, software developers, and digital humanities scholars.</p>
+    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">A universal engine for building number systems for science, education, AI, and global knowledge preservation &mdash; with the Yorùbá numerical index serving as its first complete language implementation. This module contributes to a broader international effort supporting linguistic equity, computational sovereignty, and open scholarly infrastructure for indigenous and underrepresented knowledge systems worldwide.</p>
     </div>
 
     <!-- 47-Colour Bar -->
@@ -1818,551 +2311,485 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
     <div class="content">
-      <style>
-        /* ════════════════════════════════════════════════════════════
-           GODREIGN MIDDLE-SECTION — Alternating Scripture Panels
-           Single source image (Godreign.jpg) cropped 3 ways via
-           background-position. Animated logo+dove poster. Two book
-           rows. Stripe dividers + drop caps for emotional cadence.
-           ════════════════════════════════════════════════════════════ */
-        .g-preview{
-          display:grid; grid-template-columns:repeat(3,1fr); gap:14px;
-          margin: 6px 0 28px; padding:14px;
-          background: linear-gradient(135deg,#f4f7fb 0%,#e6edf7 100%);
-          border-radius:14px; border:2px solid #0f3460;
-          box-shadow:0 6px 22px rgba(15,52,96,.12);
-        }
-        .g-prev{
-          display:flex; gap:12px; align-items:center;
-          padding:10px 12px; border-radius:10px; text-decoration:none;
-          background:#fff; border-left:5px solid #FFD700;
-          transition:transform .25s ease, box-shadow .25s ease;
-        }
-        .g-prev:hover{ transform:translateY(-3px); box-shadow:0 8px 22px rgba(10,36,71,.18); }
-        .g-prev-thumb{
-          flex:0 0 64px; width:64px; height:80px; border-radius:8px;
-          background-image:url('Godreign.jpg'); background-repeat:no-repeat;
-          background-size:100% 300%; border:2px solid #0a2447;
-          box-shadow:0 4px 10px rgba(0,0,0,.18);
-        }
-        .g-prev-thumb.t-poster{ background-position:50%   0%; }
-        .g-prev-thumb.t-book1 { background-position:50%  50%; }
-        .g-prev-thumb.t-book2 { background-position:50% 100%; }
-        .g-prev-meta span.num{
-          display:inline-block; background:#0a2447; color:#FFD700;
-          padding:2px 9px; border-radius:20px; font-weight:700; font-size:.72rem;
-          letter-spacing:1.5px;
-        }
-        .g-prev-meta h4{
-          color:#0a2447; margin:5px 0 3px; font-size:.98rem; line-height:1.2; font-weight:700;
-        }
-        .g-prev-meta em{
-          color:#0f3460; font-size:.78rem; line-height:1.3; display:block;
-          font-style:italic;
-        }
 
-        /* ── Chapter rows — image outside, pale-blue panel wraps text only ── */
-        .g-chapter{
-          display:grid; grid-template-columns: 240px 1fr; gap:32px;
-          align-items:stretch; margin: 0 0 28px;
-          padding: 0;
-          min-height: 240px;
-          background: transparent;
-          border:0; border-radius:0; box-shadow:none;
-        }
-        .g-chapter .g-text{
-          background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
-          border-left: 4px solid #1E8CB8;
-          border-radius: 14px;
-          box-shadow: 0 4px 16px rgba(30,140,184,.08);
-          padding: 22px 28px;
-          display:flex; flex-direction:column; justify-content:center;
-          align-items:flex-start;
-          min-height: 240px;
-        }
-        .g-chapter.t-portrait .g-text{ min-height: 340px; }
+        <div class="intro-text">
+            <div style="display:flex; flex-wrap:wrap; gap:28px; align-items:flex-start;">
+                <div style="flex:0 0 340px; max-width:400px;">
+                    <img src="Crown.jpg" alt="Ònka Yorùbá" style="width:100%; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.13);">
+                    <div class="founder-caption" style="margin-top:14px; padding:18px 22px; background:linear-gradient(135deg,#0a2447 0%,#0f3460 100%); border-left:4px solid #FFD700; border-radius:0 12px 12px 0; color:#fff; text-align:left; box-shadow:0 6px 22px rgba(10,36,71,.22);">
+                        <div style="font-family:'Playfair Display','Georgia',serif; font-size:1.55rem; font-weight:700; color:#FFD700; letter-spacing:.5px; line-height:1.1;">Godreign</div>
+                        <div style="width:48px; height:1px; background:linear-gradient(90deg,#FFD700,rgba(255,215,0,0)); margin:8px 0 10px;"></div>
+                        <div style="font-size:.78rem; font-weight:700; color:#ffffff; letter-spacing:1.4px; text-transform:uppercase;">Founder &amp; Chief Architect</div>
+                        <div style="font-size:.78rem; font-weight:500; color:rgba(255,255,255,0.82); margin-top:6px; letter-spacing:.4px; font-style:italic; line-height:1.45;">Universal Hyperdimensional Numeric Engine</div>
+                    </div>
+                </div>
+                <div style="flex:1; min-width:280px;">
 
-        /* Image — floating, no frame (like reference) */
-        .g-photo-wrap{
-          position:relative;
-          width:240px; height:240px;
-          background:transparent;
-          border:0;
-          border-radius:0;
-          box-shadow:none;
-          overflow:visible;
-          align-self:center;
-        }
-        /* Portrait variant — used for the dove so the image isn't cropped */
-        .g-chapter.t-portrait{ grid-template-columns: 240px 1fr; }
-        .g-chapter.t-portrait .g-photo-wrap{
-          width:240px; height:340px;
-          background:#0a2447;
-          border:2px solid #0f3460;
-          border-radius:12px;
-          box-shadow:0 8px 22px rgba(10,36,71,.28);
-          overflow:hidden;
-        }
-        .g-chapter.t-portrait .g-photo.t-dove{
-          background-size: cover; background-position:center center;
-          background-color:#0a2447;
-        }
+<style>
+    /* ============ Premium Research Institute Components ============ */
+    .exec-summary{
+        margin:0 0 22px; padding:22px 26px;
+        background:linear-gradient(135deg, rgba(30,140,184,0.08) 0%, rgba(39,188,237,0.05) 100%);
+        border-left:4px solid #1E8CB8; border-radius:0 14px 14px 0;
+        box-shadow:0 4px 16px rgba(30,140,184,.08);
+    }
+    .exec-eyebrow{
+        display:inline-block; margin:0 0 8px; color:#0f3460;
+        padding:0 0 4px; border-bottom:2px solid #FFD700;
+        font-size:.75rem; letter-spacing:3px; font-weight:800; text-transform:uppercase;
+    }
+    .exec-summary p{ margin:8px 0 0; color:#1a1a2e; line-height:1.75; font-size:.97rem; text-align:justify; }
+    .exec-summary p strong{ color:#0a2447; }
 
-        /* Glow + shimmer + rise for the dove only */
-        .g-chapter.t-portrait .g-photo-wrap::before{
-          content:""; position:absolute; inset:-20%;
-          background: radial-gradient(circle at 50% 30%, rgba(255,215,0,.45), transparent 55%);
-          animation: g-glow 4.5s ease-in-out infinite;
-          pointer-events:none; z-index:1;
-        }
-        .g-chapter.t-portrait .g-photo-wrap::after{
-          content:""; position:absolute; inset:0;
-          background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
-          background-size:220% 100%;
-          animation: g-shimmer 6s linear infinite;
-          pointer-events:none; z-index:2; mix-blend-mode:screen;
-        }
-        .g-chapter.t-portrait .g-photo.t-dove{
-          animation: g-rise 5s ease-in-out infinite;
-          transform-origin: 50% 60%;
-          position:relative; z-index:0;
-        }
-        @keyframes g-glow{
-          0%,100%{ opacity:.55; transform:scale(1); }
-          50%    { opacity:.95; transform:scale(1.06); }
-        }
-        @keyframes g-shimmer{
-          0%  { background-position: 200% 0; }
-          100%{ background-position: -100% 0; }
-        }
-        @keyframes g-rise{
-          0%,100%{ transform: scale(1)   translateY(0); }
-          50%    { transform: scale(1.025) translateY(-6px); }
-        }
+    /* Research Objectives */
+    .rsch-section{ margin:30px 0 24px; padding:24px 26px;
+        background:linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
+        border-left:4px solid #1E8CB8; border-radius:14px;
+        box-shadow:0 4px 16px rgba(30,140,184,.08);
+    }
+    .rsch-head{ color:#000; font-size:1.35rem; font-weight:800; margin:6px 0 12px; letter-spacing:.2px; }
+    .rsch-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:12px; }
+    .rsch-card{ padding:14px 16px; background:#fff; border-radius:10px; border:1px solid rgba(30,140,184,.18); box-shadow:0 2px 8px rgba(15,52,96,.06); }
+    .rsch-card .rsch-num{ display:inline-block; font-size:.72rem; font-weight:800; color:#0f3460; background:rgba(255,215,0,.20); padding:2px 8px; border-radius:12px; letter-spacing:.5px; }
+    .rsch-card h4{ margin:8px 0 4px; font-size:1rem; color:#0a2447; font-weight:800; }
+    .rsch-card p{ margin:0; font-size:.85rem; color:#3a4a63; line-height:1.55; }
 
-        /* Neutral divider between thumbnails and main essay */
-        .g-neutral-divider{
-          border:0; height:3px;
-          background: linear-gradient(90deg, transparent 0%, #0f3460 20%, #FFD700 50%, #0f3460 80%, transparent 100%);
-          margin: 32px auto 32px; max-width: 100%;
-          border-radius:2px;
-        }
-        .g-photo-wrap .g-photo{
-          width:100%; height:100%;
-          background-repeat:no-repeat;
-          background-size: cover;
-          background-position: center center;
-        }
-        .g-photo-wrap .g-badge{
-          position:absolute; top:14px; left:14px; z-index:5;
-          background:#FFD700; color:#0a2447;
-          padding:5px 12px; border-radius:18px;
-          font-size:.7rem; font-weight:800; letter-spacing:1.5px;
-          box-shadow:0 3px 8px rgba(10,36,71,.28);
-        }
+    /* Institutional Impact */
+    .impact-section{ margin:24px 0; padding:24px 26px;
+        background:linear-gradient(160deg,#0e1730 0%,#111c38 55%,#0d1a36 100%);
+        border:1px solid rgba(255,215,0,.22); border-radius:14px;
+        box-shadow:0 14px 32px rgba(10,20,46,.30);
+        color:#f2f6fd;
+    }
+    .impact-section .exec-eyebrow{ color:#FFE873; border-bottom-color:#FFD700; }
+    .impact-section h3{ color:#FFE873; font-size:1.35rem; font-weight:800; margin:6px 0 10px; letter-spacing:.2px; }
+    .impact-section p{ color:#dde7f5; line-height:1.75; margin:0 0 14px; font-size:.96rem; }
+    .impact-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:14px; }
+    .impact-pill{ padding:12px 14px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,215,0,.18); border-radius:10px; text-align:center; }
+    .impact-pill .icon{ font-size:1.6rem; display:block; margin-bottom:4px; }
+    .impact-pill .label{ font-size:.82rem; font-weight:700; color:#bfe6ff; letter-spacing:.3px; }
 
-        /* Per-chapter image */
-        .g-photo.t-book1{ background-image:url('Book02.jpg'); background-size: contain; background-color:#ffffff; }
-        .g-photo.t-book2{ background-image:url('Book03.jpg'); background-size: contain; background-color:#ffffff; }
-        .g-photo.t-dove { background-image:url('Dove01.jpg'); }
+    /* Research Gravity / Stats */
+    .stats-section{ margin:30px 0 34px; padding:34px 32px;
+        background:linear-gradient(135deg,#fff 0%,#f5fbff 100%);
+        border:1px solid rgba(30,140,184,.22); border-radius:14px;
+        box-shadow:0 4px 16px rgba(30,140,184,.10);
+    }
+    .stats-section .exec-eyebrow{ font-size:.82rem; letter-spacing:3.5px; }
+    .stats-head{ color:#0a2447; font-size:1.85rem; font-weight:800; margin:10px 0 6px; letter-spacing:.3px; line-height:1.2; }
+    .stats-sub{ color:#3a4a63; font-size:.95rem; font-weight:500; margin:0 0 22px; line-height:1.55; max-width:640px; }
+    .stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-top:10px; }
+    .stat-card{ padding:18px 14px; background:linear-gradient(135deg,#0a2447 0%,#0f3460 100%); border-radius:12px; text-align:center; color:#fff; box-shadow:0 6px 18px rgba(10,36,71,.20); }
+    .stat-card .stat-num{ display:block; font-size:1.8rem; font-weight:800; color:#FFE873; line-height:1.1; letter-spacing:.5px; }
+    .stat-card .stat-label{ display:block; font-size:.72rem; font-weight:700; color:#bfe6ff; margin-top:6px; letter-spacing:.5px; text-transform:uppercase; }
 
-        /* ── Animation ONLY on the poster (logo + dove) ── */
-        .g-photo-wrap.g-anim::before{
-          content:""; position:absolute; inset:-20%;
-          background: radial-gradient(circle at 50% 30%, rgba(255,215,0,.45), transparent 55%);
-          animation: g-glow 4.5s ease-in-out infinite;
-          pointer-events:none; z-index:1;
-        }
-        .g-photo-wrap.g-anim::after{
-          content:""; position:absolute; inset:0;
-          background: linear-gradient( 110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
-          background-size:220% 100%;
-          animation: g-shimmer 6s linear infinite;
-          pointer-events:none; z-index:2; mix-blend-mode:screen;
-        }
-        .g-photo-wrap.g-anim .g-photo{
-          animation: g-rise 5s ease-in-out infinite;
-          transform-origin: 50% 60%;
-          position:relative; z-index:0;
-        }
-        @keyframes g-glow{
-          0%,100%{ opacity:.55; transform:scale(1); }
-          50%    { opacity:.95; transform:scale(1.06); }
-        }
-        @keyframes g-shimmer{
-          0%  { background-position: 200% 0; }
-          100%{ background-position: -100% 0; }
-        }
-        @keyframes g-rise{
-          0%,100%{ transform: scale(1)   translateY(0); }
-          50%    { transform: scale(1.025) translateY(-6px); }
-        }
+    /* Academic opener */
+    .why-opener{
+        margin:6px 0 14px; padding:14px 18px;
+        background:rgba(255,215,0,0.08); border-left:3px solid #FFD700; border-radius:0 10px 10px 0;
+        font-size:.97rem; color:#0a2447; line-height:1.7; font-weight:500;
+    }
+    .why-opener strong{ color:#0f3460; }
 
-        /* ── Text column ── */
-        .g-text .eyebrow{
-          display:inline-block; align-self:flex-start;
-          background:transparent; color:#0f3460;
-          padding:0 0 4px 0; border-bottom:2px solid #FFD700;
-          font-size:.78rem; letter-spacing:3px; font-weight:800;
-          text-transform:uppercase;
-        }
-        .g-text h2{
-          display:block; background:transparent;
-          color:#000000; font-size:1.55rem; line-height:1.2;
-          margin:0 0 10px; padding:0;
-          border-left:0;
-          font-weight:800; letter-spacing:.2px;
-        }
-        .g-text h2 .section-marker{
-          display:inline-flex; align-items:center; justify-content:center;
-          width:32px; height:32px; margin-right:10px;
-          border-radius:50%;
-          background: linear-gradient(135deg,#16A34A 0%,#1E8CB8 100%);
-          color:#ffffff; font-size:.85rem; font-weight:900; line-height:1;
-          box-shadow:0 5px 12px rgba(22,163,74,.22);
-          vertical-align:middle;
-        }
-        .g-text h2 .accent{ color:#000000; font-style:normal; font-weight:800; }
-        .g-text .stripe-divider{ width:200px; max-width:200px; margin: 4px 0 12px; align-self:flex-start; }
-        .g-text p{
-          color:#3a4a63; line-height:1.55; margin-bottom:8px; font-size:.95rem;
-          text-align: justify; width:100%;
-        }
-        .g-text .lede{
-          color:#0a2447; font-weight:700; font-size:1rem; margin-bottom:10px;
-        }
-        .g-tags{
-          display:flex; flex-wrap:wrap; gap:6px;
-          margin:0 0 12px;
-        }
-        .g-tags span{
-          display:inline-block; padding:3px 10px; border-radius:20px;
-          font-size:.72rem; font-weight:700; letter-spacing:0;
-          background:rgba(30,140,184,.10); color:#0f3460; border:1px solid rgba(30,140,184,.25);
-        }
-        .g-tags span.gold{ background:rgba(255,215,0,.18); color:#0a2447; border-color:#FFD700; }
-        .g-tags span.pink{ background:rgba(255,19,240,.10); color:#7a006e; border-color:#FF13F0; }
-        .g-tags span.green{ background:rgba(22,163,74,.12); color:#0b5d2b; border-color:#16A34A; }
-        .g-text .quote-box{
-          display:inline-block; margin-top:8px; padding:10px 22px;
-          background: linear-gradient(135deg,#1E8CB8 0%,#27BCED 100%);
-          border:0; border-radius:30px;
-          color:#ffffff; font-style:normal; font-weight:700;
-          font-size:.92rem; line-height:1.3; letter-spacing:.2px;
-          box-shadow:0 6px 16px rgba(30,140,184,.32);
-        }
+    /* Research Foundations divider */
+    .rf-divider{
+        margin:36px 0; padding:32px 30px;
+        background:linear-gradient(135deg,#0a2447 0%,#0f3460 50%,#0a2447 100%);
+        border-top:3px solid #FFD700;
+        border-bottom:3px solid #FFD700;
+        border-radius:14px;
+        box-shadow:0 14px 32px rgba(10,20,46,.30);
+        text-align:left;
+        position:relative;
+    }
+    .rf-divider::before{
+        content:""; position:absolute; inset:0;
+        background:radial-gradient(circle at 0% 0%, rgba(255,215,0,.12) 0%, transparent 60%);
+        border-radius:14px; pointer-events:none;
+    }
+    .rf-divider .rf-eyebrow{
+        display:inline-block; margin:0 0 10px;
+        color:#FFE873;
+        padding:0 0 5px; border-bottom:2px solid #FFD700;
+        font-size:.82rem; letter-spacing:4px; font-weight:800; text-transform:uppercase;
+        position:relative;
+    }
+    .rf-divider h3{
+        font-family:'Playfair Display','Georgia',serif;
+        font-size:2rem; font-weight:700; color:#FFE873;
+        margin:10px 0 10px; letter-spacing:.4px; line-height:1.2;
+        position:relative;
+    }
+    .rf-divider .rf-sub{
+        font-size:.97rem; color:#dde7f5; font-weight:500;
+        margin:0; max-width:640px; line-height:1.65; font-style:italic;
+        position:relative;
+    }
 
-        /* Stripe divider (used in full essay / closing block) */
-        .stripe-divider{
-          display:flex; gap:3px; height:5px; border-radius:4px; overflow:hidden;
-          margin: 5px 0 9px; max-width: 200px;
-        }
-        .stripe-divider i{ flex:1; }
-        .stripe-divider i:nth-child(1){ background:#0891B2; }
-        .stripe-divider i:nth-child(2){ background:#16A34A; }
-        .stripe-divider i:nth-child(3){ background:#2563EB; }
-        .stripe-divider i:nth-child(4){ background:#9333EA; }
-        .stripe-divider i:nth-child(5){ background:#DC2626; }
-        .stripe-divider i:nth-child(6){ background:#FFD700; }
-        .stripe-divider i:nth-child(7){ background:#FF13F0; }
-        .g-text .lead-lines{
-          margin: 4px 0 8px; padding: 0;
-          list-style: none;
-        }
-        .g-text .lead-lines li{
-          color:#1a1a2e; line-height:1.5; font-size:.95rem;
-          padding: 3px 0 3px 18px; position: relative;
-        }
-        .g-text .lead-lines li::before{
-          content:""; position:absolute; left:0; top:11px;
-          width:8px; height:8px; border-radius:50%;
-          background: linear-gradient(135deg,#FFD700,#0f3460);
-        }
+    /* ============ Premium Research Foundations sub-sections ============ */
+    .rf-section{
+        margin:0 0 28px; padding:28px 30px;
+        background:linear-gradient(135deg,#ffffff 0%,#f8fbfe 100%);
+        border:1px solid rgba(30,140,184,.16);
+        border-radius:14px;
+        box-shadow:0 4px 16px rgba(30,140,184,.06);
+    }
+    .rf-section .rf-eyebrow-sm{
+        display:inline-block; margin:0 0 6px; color:#0f3460;
+        padding:0 0 4px; border-bottom:2px solid #FFD700;
+        font-size:.72rem; letter-spacing:3px; font-weight:800; text-transform:uppercase;
+    }
+    .rf-section .rf-title{
+        font-family:'Playfair Display','Georgia',serif;
+        font-size:1.6rem; font-weight:700; color:#0a2447;
+        margin:6px 0 14px; letter-spacing:.3px; line-height:1.25;
+    }
+    .rf-section .rf-intro{
+        color:#3a4a63; font-size:.97rem; line-height:1.7; margin:0 0 14px;
+    }
 
-        /* ── FULL ESSAY (text-only, image-1 style) ── */
-        .g-full{
-          margin: 30px 0 14px; padding: 0;
-          background: transparent;
-          border: 0;
-          border-radius: 0;
-          box-shadow: none;
-        }
-        .g-full > h2.full-title{
-          text-align:center; color:#000000; font-size:1.55rem; font-weight:800;
-          margin: 0 0 22px; padding: 0;
-          letter-spacing:.3px;
-        }
-        .g-full > .full-eyebrow{
-          display:block; text-align:center;
-          color:#0f3460; font-size:.78rem; letter-spacing:4px;
-          font-weight:800; text-transform:uppercase;
-          margin: 0 0 6px;
-        }
-        .g-full > .full-bridge{
-          margin: 0 0 22px;
-          background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
-          border-left: 4px solid #1E8CB8;
-          border-radius: 14px;
-          box-shadow: 0 4px 16px rgba(30,140,184,.08);
-          padding: 18px 28px;
-          color:#0a2447; font-style:italic; font-weight:600;
-          font-size:1rem; line-height:1.6; letter-spacing:.2px;
-          text-align:justify;
-        }
-        .g-full > .full-flourish{
-          display:flex; align-items:center; justify-content:center; gap:10px;
-          margin: 0 auto 26px; max-width:260px;
-        }
-        .g-full > .full-flourish::before,
-        .g-full > .full-flourish::after{
-          content:""; flex:1; height:2px;
-          background: linear-gradient(90deg, transparent 0%, #1E8CB8 50%, transparent 100%);
-        }
-        .g-full > .full-flourish .dot{
-          width:8px; height:8px; border-radius:50%;
-          background: linear-gradient(135deg,#FFD700 0%,#0f3460 130%);
-          box-shadow:0 0 6px rgba(255,215,0,.55);
-        }
-        .g-full .full-chapter{
-          margin-bottom: 22px;
-          background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
-          border-left: 4px solid #1E8CB8;
-          border-radius: 14px;
-          box-shadow: 0 4px 16px rgba(30,140,184,.08);
-          padding: 22px 28px;
-        }
-        .g-full .full-chapter h3{
-          color:#000000; font-size:1.4rem; font-weight:800;
-          padding-left:0; border-left:0;
-          margin-bottom:8px; letter-spacing:.2px;
-        }
-        .g-full .full-chapter .stripe-divider{ max-width:200px; margin: 6px 0 12px; }
-        .g-full .full-chapter p{
-          color:#1a1a2e; line-height:1.78; margin-bottom:10px; font-size:1rem; text-align:justify;
-        }
-        .g-full .full-chapter.framework-declaration{
-          border-left-color:#16A34A;
-          background: linear-gradient(135deg,#f8fff9 0%,#eef8fb 100%);
-          box-shadow:0 8px 24px rgba(22,163,74,.12);
-        }
-        .g-full .full-chapter.framework-declaration > h3:first-child{
-          color:#0a2447;
-          text-transform:uppercase;
-          letter-spacing:1.2px;
-        }
-        .g-full .full-chapter.dropcap p:first-of-type::first-letter{
-          float:left; font-size:3.4rem; line-height:.85;
-          padding:6px 12px 0 0; color:#0a2447; font-weight:700;
-          background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
-          -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-        }
+    /* FAQ — gold-rule emphasis on each question */
+    .faq-section > p:has(> strong:only-child){
+        margin:18px 0 4px !important;
+        padding:6px 0 6px 14px !important;
+        border-left:3px solid #FFD700 !important;
+        color:#0a2447 !important;
+        font-size:1.02rem !important;
+        line-height:1.5 !important;
+    }
+    .faq-section > p:has(> strong:only-child) strong{
+        color:#0a2447 !important; font-weight:800 !important;
+    }
+    .faq-section > p{ color:#3a4a63; line-height:1.75 !important; }
 
-        /* ── Looped short rainbow divider (between chapters and full essay) ── */
-        .g-loop-divider{
-          display:flex; gap:4px; height:6px; border-radius:4px; overflow:hidden;
-          margin: 22px auto 22px; max-width: 100%;
-        }
-        .g-loop-divider span{ flex:1; }
-        .g-loop-divider span:nth-child(7n+1){ background:#0891B2; }
-        .g-loop-divider span:nth-child(7n+2){ background:#16A34A; }
-        .g-loop-divider span:nth-child(7n+3){ background:#2563EB; }
-        .g-loop-divider span:nth-child(7n+4){ background:#9333EA; }
-        .g-loop-divider span:nth-child(7n+5){ background:#DC2626; }
-        .g-loop-divider span:nth-child(7n+6){ background:#FFD700; }
-        .g-loop-divider span:nth-child(7n+7){ background:#FF13F0; }
+    /* Discovery card grid */
+    .discover-grid{
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+        gap:14px; margin:14px 0 12px;
+    }
+    .discover-card{
+        padding:18px; background:#fff; border-radius:12px;
+        border:1px solid rgba(30,140,184,.18);
+        box-shadow:0 2px 8px rgba(15,52,96,.06);
+    }
+    .discover-card .icon{ font-size:1.6rem; display:block; margin-bottom:6px; }
+    .discover-card h4{ margin:4px 0 6px; color:#0a2447; font-size:1rem; font-weight:800; }
+    .discover-card p{ margin:0; font-size:.88rem; color:#3a4a63; line-height:1.6; }
 
-        /* ── Closing manifesto block (same look as a chapter panel) ── */
-        .g-closing{
-          margin: 30px 0 14px;
-          background: linear-gradient(135deg,#fafafa 0%,#f0f7fa 100%);
-          border-left: 4px solid #1E8CB8;
-          border-radius: 14px;
-          box-shadow: 0 4px 16px rgba(30,140,184,.08);
-          padding: 22px 28px;
-        }
-        .g-closing.dropcap p:first-of-type::first-letter{
-          float:left; font-size:3.4rem; line-height:.85;
-          padding:6px 12px 0 0; color:#0a2447; font-weight:700;
-          background: linear-gradient(135deg,#FFD700 0%,#FFE873 60%,#0f3460 130%);
-          -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-        }
-        .g-closing h3{
-          color:#000000; font-size:1.4rem; font-weight:800;
-          padding-left:0; border-left:0;
-          margin-bottom:8px; text-align:left; letter-spacing:.2px;
-        }
-        .g-closing .stripe-divider{ max-width:200px; margin: 6px 0 12px; }
-        .g-closing p{ color:#1a1a2e; line-height:1.78; margin-bottom:10px; font-size:1rem; text-align:justify; }
-        .g-closing .lead-lines{
-          margin: 6px 0 10px; padding: 0;
-          list-style: none;
-        }
-        .g-closing .lead-lines li{
-          color:#1a1a2e; line-height:1.55; font-size:1rem;
-          padding: 4px 0 4px 20px; position: relative;
-        }
-        .g-closing .lead-lines li::before{
-          content:""; position:absolute; left:0; top:13px;
-          width:8px; height:8px; border-radius:50%;
-          background: linear-gradient(135deg,#FFD700,#0f3460);
-        }
+    /* Join — dark institutional CTA */
+    .join-section{
+        background:linear-gradient(160deg,#0e1730 0%,#111c38 55%,#0d1a36 100%);
+        border:1px solid rgba(255,215,0,.22);
+        color:#f2f6fd;
+        box-shadow:0 14px 32px rgba(10,20,46,.30);
+    }
+    .join-section .rf-eyebrow-sm{ color:#FFE873; border-bottom-color:#FFD700; }
+    .join-section .rf-title{ color:#FFE873; }
+    .join-section .rf-intro{ color:#dde7f5; }
+    .join-section p{ color:#dde7f5 !important; line-height:1.75 !important; }
+    .join-section p strong{ color:#FFE873 !important; }
+    .join-section .rf-subhead{
+        display:block; margin:18px 0 8px;
+        color:#FFE873; font-size:1rem; font-weight:800; letter-spacing:.4px;
+        text-transform:uppercase;
+    }
+    .join-features{
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+        gap:12px; margin:8px 0 16px;
+    }
+    .join-feature{
+        padding:16px 18px;
+        background:rgba(255,255,255,0.06);
+        border:1px solid rgba(255,215,0,.18);
+        border-radius:10px;
+    }
+    .join-feature .icon{ font-size:1.4rem; display:block; margin-bottom:4px; }
+    .join-feature h5{ margin:4px 0 4px; color:#FFE873; font-size:.92rem; font-weight:800; letter-spacing:.2px; }
+    .join-feature p{ margin:0 !important; font-size:.82rem; color:#bfe6ff !important; line-height:1.55 !important; }
+    .join-feature p strong{ color:#fff !important; }
 
-        /* Summary line, mirrors the thumbnail quote tone but without the cyan pill */
-        .g-full .summary-pill,
-        .g-closing .summary-pill{
-          display:block; margin-top:14px; padding:6px 0 6px 14px;
-          background: transparent;
-          border:0; border-left: 3px solid #FFD700;
-          color:#0a2447; font-style:italic; font-weight:600;
-          font-size:.98rem; line-height:1.45; letter-spacing:.1px;
-          box-shadow:none;
-        }
-        .g-closing .verdict{
-          margin-top:14px; text-align:left; font-size:1.05rem;
-          color:#0a2447; font-weight:700; font-style:italic;
-        }
+    .join-cta-line{ margin:14px 0 8px !important; font-size:1rem !important; }
+    .join-cta{
+        display:inline-block; margin:6px 0;
+        padding:12px 22px;
+        background:linear-gradient(135deg,#FFD700,#FFE873);
+        color:#0a2447 !important; text-decoration:none !important;
+        font-weight:800; border-radius:10px; letter-spacing:.5px;
+        box-shadow:0 6px 18px rgba(255,215,0,.35);
+        transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .join-cta:hover{ transform:translateY(-1px); box-shadow:0 10px 24px rgba(255,215,0,.45); }
 
-        @media (max-width: 820px){
-          .g-chapter, .g-chapter.reverse{ grid-template-columns:1fr; }
-          .g-chapter.reverse .g-photo-wrap{ order:0; }
-          .g-chapter.reverse .g-text{ order:1; }
-          .g-photo-wrap{ position: static; }
-          .g-text h2{ font-size:1.45rem; }
-        }
-      </style>
+    .closing-quote{
+        margin:22px 0 0; padding:22px 26px;
+        background:rgba(255,215,0,.08);
+        border-left:4px solid #FFD700;
+        border-radius:0 14px 14px 0;
+        color:#FFE873;
+        font-family:'Playfair Display','Georgia',serif;
+        font-style:italic;
+        font-size:1.05rem; line-height:1.65;
+    }
+</style>
 
-      <!-- ░░ About This Book — Back Cover Declaration ░░ -->
-      <div class="g-closing full-chapter dropcap">
-        <h3>About This Book</h3>
-        <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <p><strong>Godreign</strong> is a sovereign manifesto for the restoration of earthly order under heaven's original blueprint. It begins where ordinary policy cannot begin: with the soul, the conscience, and the eternal destiny of nations.</p>
-        <p>This book presents governance as sacred responsibility, not public performance. It calls science, education, technology, family, and civic life back beneath righteousness, justice, mercy, truth, and the law of love.</p>
-        <p>At the heart of this work stands a threefold charge:</p>
-        <ul class="lead-lines">
-          <li><strong>Governance</strong> &mdash; restoring righteousness to public order</li>
-          <li><strong>Science</strong> &mdash; disciplining innovation by divine purpose</li>
-          <li><strong>Destiny</strong> &mdash; preparing souls and nations for heavenly royalty</li>
-        </ul>
-        <p><strong>Godreign</strong> is not merely a political idea. It is a constitutional call to realign civilization with eternal truth, so that power serves mercy, knowledge serves wisdom, and progress remembers the soul.</p>
-        <div class="summary-pill">&ldquo;A sovereign manifesto for heaven's blueprint, righteous science, numerical order, and the preparation of nations for eternal purpose.&rdquo;</div>
-      </div>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>The <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong> is a sovereign computational platform built to give <em>any</em> indigenous language the power to count, compute, and scale without ceiling. Its founding implementation&mdash;<strong>&Ograve;nka Yor&ugrave;b&aacute; 1.0</strong>&mdash;is a working prototype: a fully named, fully coloured, fully computable base-10 ladder running from <strong>1 to over a Tredecillion&nbsp;</strong>and still climbing. Where Godreign&rsquo;s parallel mandate addresses the social fabric and spirituality of humanity, this engine strengthens its <em>numeric destiny</em>: a monumental digital infrastructure dedicated to preserving, documenting, and unleashing the full complexity of every indigenous numerical ecosystem on Earth.</p>
 
-      <!-- ░░ Chapter I — Dove (image left) ░░ -->
-      <article id="g-ch1" class="g-chapter t-portrait">
-        <div class="g-photo-wrap">
-          <div class="g-photo t-dove" role="img" aria-label="Dove — Heaven's blueprint"></div>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>The Yor&ugrave;b&aacute; implementation proves the architecture; the architecture is offered to all. One language proves the concept&mdash;every language that follows fulfils the mandate.</p>
+
+<div class="exec-summary">
+    <span class="exec-eyebrow">Executive Summary</span>
+    <p>The <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong> is a research-driven numerical infrastructure designed to advance indigenous language computation, large-number representation, educational accessibility, and linguistic preservation. Developed through the pioneering work of <strong>Godreign</strong>, UHNE seeks to establish a scalable framework through which any language can participate in the future of numerical expression, computation, and cultural continuity.</p>
+</div>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>🎯</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Founder&rsquo;s Vision</span><span style="color:#1E8CB8;"> </span></strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Our mission ignites with the Yor&ugrave;b&aacute; people&mdash;but its flame is destined for the heart of <em>every</em> indigenous language on Earth. By restoring the infinite logic of the <strong>&Ograve;nka Yor&ugrave;b&aacute;</strong> system, we are forging a <strong>repeatable model of linguistic liberation</strong>&mdash;a blueprint that any nation can seize, adapt, and deploy. One language restored proves the concept; a global language restored fulfils the mandate.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>👁️</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Our Vision</span><span style="color:#1E8CB8;"> </span></strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>We envision a world in which Yor&ugrave;b&aacute; mathematics <strong>controls its own destiny</strong> through the &Ograve;nka Yor&ugrave;b&aacute; Project&mdash;and in which every indigenous nation follows the same sovereign path. A world where numbers speak in <em>every</em> native dialect. Where what was once scattered is being <strong>gathered</strong>; what was nearly forgotten is now <strong>numbered, named, and returned to its rightful people</strong>. The New Numbering System is a digital nation-building at its most profound.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>💡</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Why This Matters</span></strong></p>
+<p class="why-opener">Despite extraordinary advances in science and computation, many indigenous languages remain excluded from large-scale numerical infrastructure. <strong>UHNE</strong> addresses this challenge by exploring methods through which linguistic identity and computational scalability may coexist within a unified framework.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Language is identity. Numbers are the bedrock of science, technology, commerce, and the entire A.I. revolution. By preserving the Yor&ugrave;b&aacute; numerical system&mdash;and extending that same generosity to indigenous languages around the globe&mdash;we are:</p>
+<ul style="margin-bottom:0cm;margin-top:0cm;" type="disc">
+    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Reconnecting generations</strong> with their ancestral mathematical heritage</li>
+    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Enabling Yor&ugrave;b&aacute; and all other indigenous language learning</strong> through the universal gateway of numbers</li>
+    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Championing global linguistic diversity</strong> in the age of artificial intelligence</li>
+    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Building sovereign tools</strong> for education, research, and indigenous software development</li>
+    <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Guaranteeing children around the world</strong> inherit a complete, infinite numerical vocabulary.</li>
+</ul>
+
+<!-- ============ Research Objectives ============ -->
+<section class="rsch-section">
+    <span class="exec-eyebrow">Research Objectives</span>
+    <h3 class="rsch-head">Core Mandates Guiding UHNE</h3>
+    <div class="rsch-grid">
+        <div class="rsch-card"><span class="rsch-num">RO 01</span><h4>Numerical Scalability</h4><p>Engineering a base-10 architecture that scales without ceiling — from <em>Íƹkẹní</em> (1) past Tredecillion and into transfinite operator territory.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 02</span><h4>Indigenous Language Integration</h4><p>Providing a portable framework any indigenous language can adopt, map, and deploy without sacrificing phonetic or cultural specificity.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 03</span><h4>Educational Accessibility</h4><p>Producing scroll books, calculators, and learning tools that are free, offline-ready, and pedagogically progressive for every classroom.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 04</span><h4>Computational Efficiency</h4><p>Reducing complexity through native scientific notation and the &lsquo;l&rsquo; Multiplier engine for high-velocity algorithmic implementation.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 05</span><h4>Cultural Preservation</h4><p>Archiving ancestral counting traditions in machine-readable form to ensure intergenerational continuity beyond oral transmission.</p></div>
+        <div class="rsch-card"><span class="rsch-num">RO 06</span><h4>Global Linguistic Implementation</h4><p>Establishing partnerships and protocols to extend UHNE’s logic blueprint across continents, communities, and curricula worldwide.</p></div>
+    </div>
+</section>
+
+<!-- ============ Research Foundations Divider ============ -->
+<section class="rf-divider">
+    <span class="rf-eyebrow">Research Foundations</span>
+    <h3>Research Narrative &amp; Rationale</h3>
+    <p class="rf-sub">The questions, principles, and scholarly commitments that ground the Universal Hyperdimensional Numeric Engine.</p>
+</section>
+
+<section class="rf-section faq-section">
+    <span class="rf-eyebrow-sm">Frequently Asked Questions</span>
+    <h3 class="rf-title">Common Questions, Considered Answers</h3>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>What is the purpose of this site?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is the public home of the <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong>&mdash;a research-grade infrastructure that gives any human language the power to count, compute, and scale without ceiling. Its founding implementation is the New Ònka Yor&ugrave;b&aacute; Numeric System, where ancestral counting meets twenty-first-century precision. We have digitised an indigenous numerical legacy so that it delivers the exhaustive base-10 accuracy demanded by modern algorithms, sovereign coding frameworks, and advanced global finance. Here, an indigenous tongue is not a relic of the past; it is the <em>literal source code</em> for a self-determined future. Every number on this site is a declaration: <strong>our languages compute.</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>My language is different from Yor&ugrave;b&aacute;, and we face similar historical limitations that disconnect our culture from modern digital scaling. Is the 47-Colour System adaptable for other indigenous nations?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Absolutely&mdash;and that is precisely why it was built.</strong> This journey ignited with &Ograve;nka Yor&ugrave;b&aacute;, but its flame now reaches toward <em>every</em> indigenous language on Earth. For centuries, thousands of native tongues have been shackled by numbering systems that could not scale for modern science, computing, or the exponential demands of the A.I. era. The <strong>47-Colour Sovereign System</strong> shatters that ceiling. It is not merely a Yor&ugrave;b&aacute; project&mdash;it is a <strong>Universal Logic Blueprint</strong>, an open-armed gift to every nation whose ancestral language deserves a seat at the digital table.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>We have engineered a framework that scales by index from <strong>one to over a Tredecillion</strong>&mdash;a number so vast it dwarfs the stars in the observable universe. We now extend our arms of generosity to global leaders, educators, linguists, A.I. researchers, and indigenous knowledge-keepers of <em>every</em> language: <strong>adopt this 47-Colour framework</strong>. Map your own native words onto this high-speed index. Bypass the historical limitations that held your ancestors back and leap&mdash;in a single generation&mdash;to the absolute forefront of the digital age. You do not have to trade your culture for technology. You can <em>use</em> this system to transform your ancestral tongue into a <strong>mathematical superpower</strong>. Let us unite as a global <strong>&lsquo;&Ograve;nka Generation,&rsquo;</strong> wielding all <strong>47 sovereign colours</strong> to guarantee that no language&mdash;from the highlands of Papua New Guinea to the river deltas of Bangladesh, from the tundra of Sib&eacute;ria to the savannahs of East Africa&mdash;is ever left behind in the boundless reach toward infinity.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Can I download the entire collection?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Yes&mdash;every last scroll, every last tool.</strong> We believe in <em>radical accessibility</em>. Download all <strong>10 Scroll Books</strong> using the buttons above and carry a treasury of over a <strong>Tredecillion</strong> numbers in your pocket&mdash;ready for offline study in the most remote classroom, the busiest research lab, or the quietest corner of your home. But our generosity goes far beyond data. Alongside the scrolls, our full suite of educational apps and indigenous software treasures is available for <strong>instant download</strong>. These tools are designed as lifelong companions for the Yor&ugrave;b&aacute; soul&mdash;and for every soul that honours their ancestral tongue. They keep the brain engaged, the spirit vibrant, and the cultural heartbeat strong. By fusing technical logic with ancestral resonance, we provide a digital sanctuary that nourishes the health of both the mind and the soul.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How can I use these new numbering systems?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>These numbers are <strong>&ldquo;liberated resources&rdquo;</strong>&mdash;free, sovereign, and yours to deploy without restriction. Teach the next generation the thunder of their own numerals. Fuel groundbreaking academic research. Localise software into any indigenous language of choice. Translate technical and scientific masterworks. Build A.I. datasets rooted in indigenous logic. Whether you are a scientist, a poet, a classroom teacher, or a software developer, these numbers are your instruments&mdash;precision-forged for <strong>excellence without compromise</strong>.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How do I share this resource with others?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Be a&nbsp;<strong>multiplier of this light</strong>. Share the link below across social media, personal blogs, university forums, developer communities, and professional circles. Every share is a strike against the &ldquo;Dark Enterprise&rdquo; of cultural erasure&mdash;and a torch lit for the thousands of indigenous languages that are longing to perform technological exploits with their ancestral tongues in this A.I. era.<br><span style='font-family:"Segoe UI Emoji",sans-serif;'>🔗</span> <a href="https://iaanu.github.io/-Universal-Hyperdimensional-Numeric-Engine/index.html"><strong>https://iaanu.github.io/-Universal-Hyperdimensional-Numeric-Engine/index.html</strong></a></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Will search engines be able to find these numbers?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Yes.</strong> Every key number, every colour index, and the full architecture of the <strong>47-Colour System</strong> is optimised for global search-engine indexing. We have strategically positioned our data so that when the world searches for mathematical truth in an indigenous language, it finds it here, and progressively in every native tongue that embraces this new numbering technology. The goal is simple: when humanity types a number, an indigenous voice must answer.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Is there more to explore beyond the main page?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><em>Beyond the Horizon: The Infinite Depth of the Universal Hyperdimensional Numeric Engine</em></strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is only the beginning. The primary indices are visible for immediate use, but the true heartbeat of our restoration pulses within the <strong>200 Volumes</strong> of our digital scroll books. Dive into these deep archives and rediscover the infinite capacity of a numeric system whose scaling soars upward past a <strong>Tredecillion</strong>. But the Universal Hyperdimensional Numeric Engine is more than a library&mdash;it is a <strong>living, breathing ecosystem</strong>. Our suite of indigenous software is engineered to be a lifelong companion for every soul that honours its ancestral tongue, delivering intellectual engagement that keeps the mind razor-sharp and the spirit ablaze.</p>
+<!-- ============ Inspired Companion Questions ============ -->
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Why colours? Aren&rsquo;t numbers enough?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Numbers are abstract; <strong>colours are felt</strong>. A child who has not yet read a single digit can still distinguish purple from gold. The <strong>47-Colour Sovereign System</strong> turns magnitude into vision&mdash;every power of ten gets its own tint, so a learner sees the difference between a Thousand and a Tredecillion as a colour before they ever spell it. The eye learns what the tongue is still practising. That is why this engine teaches numeracy through pattern recognition, not memorisation: the ladder becomes <em>visible</em>, and visible ladders get climbed.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How long does it take to learn?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>A motivated child can master the first ladder&mdash;Units through Thousands&mdash;in a single afternoon. The colours do the heavy lifting; the rhymes of <em>Ení</em>, <em>&Eacute;j&igrave;</em>, <em>&Ecirc;ta</em> do the rest. A teacher can guide a classroom through the full <strong>10 Scroll Books</strong> in a week of joyful lessons. Researchers and software developers can integrate the Master Index in an afternoon: every magnitude arrives <em>already named, already coloured, already computable</em>. The slowest part of adopting UHNE is choosing what to build with it first.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Can other languages really plug into this as easily as it sounds?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Yes&mdash;by design. UHNE separates the <strong>logic</strong> (the base-10 ladder, the 47 colours, the &lsquo;l&rsquo; Drive Multiplier, the Gear-Pulse &lsquo;g&rsquo; operator, the scientific notation rails) from the <strong>names</strong> (the words a community already loves). To onboard a new language, you keep the entire engine and swap only the lexicon: name the 47 tiers in your own tongue, and every calculator, age tool, kàlẹ́ndà, scientific notation, and large-number table runs unchanged. One language proves the concept; every language that follows proves the mandate.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Where should I start?</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Three doors&mdash;pick whichever fits your day:</p>
+<ul style="margin-bottom:0cm;margin-top:0cm;" type="disc">
+  <li style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Children &amp; teachers</strong> &rarr; the <strong>Master Index</strong>: one number to a card, the full 47-colour ladder rendered from zero to a Tredecillion.</li>
+  <li style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Researchers &amp; linguists</strong> &rarr; the <strong>Scroll Books</strong> and the <strong>World Numerals</strong> page, where the canonical Vocalic forms are tabulated against their global -illion equivalents.</li>
+  <li style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Developers &amp; A.I. teams</strong> &rarr; the <strong>Calculator</strong>, <strong>Number Converter</strong>, and the open <code>CalculatorColours.ts</code> schema, ready to fork into any indigenous numeric module you wish to build.</li>
+</ul>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Whichever door you walk through, the engine greets you the same way: <em>your language counts</em>.</p>
+</section>
+
+<!-- ============ Institutional Impact ============ -->
+<section class="impact-section">
+    <span class="exec-eyebrow">Institutional Impact</span>
+    <h3>Designed for Cross-Sector Adoption</h3>
+    <p>UHNE is designed not only as a numerical framework but also as a platform for <strong>educational innovation</strong>, <strong>computational experimentation</strong>, <strong>linguistic preservation</strong>, and <strong>interdisciplinary research</strong>. Its modular structure invites adoption across formal and informal knowledge ecosystems.</p>
+    <div class="impact-grid">
+        <div class="impact-pill"><span class="icon">🏫</span><span class="label">Schools</span></div>
+        <div class="impact-pill"><span class="icon">🎓</span><span class="label">Universities</span></div>
+        <div class="impact-pill"><span class="icon">📚</span><span class="label">Libraries</span></div>
+        <div class="impact-pill"><span class="icon">🔬</span><span class="label">Researchers</span></div>
+        <div class="impact-pill"><span class="icon">🌍</span><span class="label">Communities</span></div>
+        <div class="impact-pill"><span class="icon">🤖</span><span class="label">AI &amp; Data</span></div>
+    </div>
+</section>
+
+<section class="rf-section discover-section">
+    <span class="rf-eyebrow-sm">🎯 Discover</span>
+    <h3 class="rf-title">Innovative Software Lab</h3>
+    <p class="rf-intro">A growing suite of tools, instruments, and digital scholarship — designed as lifelong companions for the Yorùbá soul, and for every soul that honours their ancestral tongue.</p>
+
+    <div class="discover-grid">
+        <div class="discover-card">
+            <span class="icon">🧮</span>
+            <h4>The Utility Suite</h4>
+            <p>Master daily life with the Yorùbá Calculator, Number Converter, Age Calculator, and the ancient precision of the Kàlẹ́ndà Yorùbá.</p>
         </div>
-        <div class="g-text">
-          <div class="g-tags" aria-label="Godreign themes">
-            <span>Heaven's Blueprint</span>
-            <span class="gold">Divine Order</span>
-            <span class="green">Soul Governance</span>
-            <span>Kingdom Alignment</span>
-            <span class="pink">Numerical Sovereignty</span>
+        <div class="discover-card">
+            <span class="icon">🥁</span>
+            <h4>The Musical Frontier</h4>
+            <p>Experience the Yorùbá Talking Drum 3D Design and our custom VST Software — emulate and modulate the sacred language of the drum in pure digital form.</p>
+        </div>
+        <div class="discover-card">
+            <span class="icon">🎸</span>
+            <h4>The Future of Sound</h4>
+            <p>Preview the upcoming 16-String Acoustic Guitar 3D Design and VST software — a digital masterclass in string theory and tonal harmony.</p>
+        </div>
+    </div>
+
+    <p class="rf-intro">These are not mere tools; they are <strong>hidden treasures</strong> designed to keep the brain busy, the heart full, and the mind far from the shadows of depression. Engage with the logic of your ancestors and discover that there is always more to learn, more to build, and more to celebrate.</p>
+</section>
+
+<!-- ============ Research Gravity / Measurable Scope ============ -->
+<section class="stats-section">
+    <span class="exec-eyebrow">Research Gravity</span>
+    <h3 class="stats-head">Institutional Metrics</h3>
+    <p class="stats-sub">Measurable outputs of the engine — the living scope of UHNE’s research, linguistic, and computational architecture.</p>
+    <div class="stats-grid">
+        <div class="stat-card"><span class="stat-num">44</span><span class="stat-label">Jumps</span></div>
+        <div class="stat-card"><span class="stat-num">301</span><span class="stat-label">Pulses</span></div>
+        <div class="stat-card"><span class="stat-num">47</span><span class="stat-label">Colours</span></div>
+        <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Core Operators</span></div>
+        <div class="stat-card"><span class="stat-num">5</span><span class="stat-label">Database Architecture</span></div>
+        <div class="stat-card"><span class="stat-num">1,127</span><span class="stat-label">Master Index Entries</span></div>
+        <div class="stat-card"><span class="stat-num">833</span><span class="stat-label">Bilingual -illion Refs</span></div>
+    </div>
+</section>
+
+<section class="rf-section join-section">
+    <span class="rf-eyebrow-sm">House of Creative Research</span>
+    <h3 class="rf-title">Become a Citizen of this Creative Sanctuary</h3>
+    <p class="rf-intro">The journey does not end with the scrolls. We are assembling a global community of visionaries, creators, and thinkers who believe that the future of every nation should be built on its <em>own</em> indigenous logic. By joining our community, you are not merely signing up for updates — you are <strong>claiming your seat in the Godreign Digital Laboratory</strong>.</p>
+
+    <span class="rf-subhead">Stay in the loop as the mandate unfolds</span>
+    <div class="join-features">
+        <div class="join-feature">
+            <span class="icon">🥁</span>
+            <h5>First Access</h5>
+            <p>Be the first to know when the <strong>Yorùbá Talking Drum VST</strong> and <strong>3D Design</strong> officially launch.</p>
+        </div>
+        <div class="join-feature">
+            <span class="icon">🎸</span>
+            <h5>Development Insights</h5>
+            <p>Get behind-the-scenes updates on the <strong>16-String Acoustic Guitar</strong> and our <strong>musical software suite</strong>.</p>
+        </div>
+        <div class="join-feature">
+            <span class="icon">📱</span>
+            <h5>App Drops</h5>
+            <p>Receive instant notifications for new versions of the <strong>Yorùbá Calculator</strong> and <strong>Kàlẹ́ndà</strong>.</p>
+        </div>
+        <div class="join-feature">
+            <span class="icon">🌟</span>
+            <h5>Sacred Logic</h5>
+            <p>Exclusive insights into the &ldquo;hidden treasures&rdquo; within our 200-volume archive — your hands are welcome on this plough.</p>
+        </div>
+    </div>
+
+    <p class="join-cta-line"><strong>Don’t just watch history happen — help us count it.</strong></p>
+    <p style="font-size:.88rem; opacity:.85;">Your privacy is a sacred trust. We only send messages that nourish the mind and soul.</p>
+    <p style="margin-top:14px;"><a href="mailto:godreigninlove@outlook.com" class="join-cta">📩 Become a Multiplier — godreigninlove@outlook.com</a></p>
+
+    <blockquote class="closing-quote">“One language restored is a victory; a global language restored is the mandate. Let every indigenous tongue count its way into digital sovereignty.”</blockquote>
+</section>
+
+</div>
+              
+                               
+                </div>
+            </div>
+        </div>
+
+          <hr aria-hidden="true" style="border:0; height:2px; max-width:calc(100% - 72px); margin:28px auto 26px; border-radius:999px; background:linear-gradient(90deg, transparent 0%, #0891B2 8%, #16A34A 22%, #2563EB 38%, #9333EA 52%, #DC2626 66%, #FFD700 82%, #0f3460 96%, transparent 100%); box-shadow:0 8px 18px rgba(8,145,178,.12);" />
+
+      <!-- ════════════════════════════════════════════════════════════
+           RHYTHM CLOSING · V1 sovereign mission → V2 the whole ladder → V3 breath
+           ════════════════════════════════════════════════════════════ -->
+      <section class="rhythm-section" style="max-width:1340px; margin:32px auto; padding:0 28px;">
+        <div class="rhythm-stage">
+          <p class="rhythm-eyebrow">Sovereign Mission · Indigenous tongues, digital sovereignty</p>
+          <h2 class="rhythm-h">A working prototype for every ancestral family worldwide</h2>
+          <p class="rhythm-h-sub">Èdè kọ̀ọ̀kan, ọ̀nà kọ̀ọ̀kan — every tongue, every counting word, alive and computable</p>
+
+          <div class="v1-stack">
+            <div class="v1-card tier-units"><div><div class="v1-num">1</div><div class="v1-yor">Ení</div><div class="v1-eng">Units · the seed of every count, in any tongue</div></div><span class="v1-power">10⁰</span></div>
+            <div class="v1-card tier-hundreds"><div><div class="v1-num">100</div><div class="v1-yor">Ọgọ́rǔn</div><div class="v1-eng">Hundreds · ten bundles make a basket</div></div><span class="v1-power">10²</span></div>
+            <div class="v1-card tier-tenthou"><div><div class="v1-num">10,000</div><div class="v1-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v1-eng">Tens of Thousands · where small numbers end and big ones begin</div></div><span class="v1-power">10⁴</span></div>
+            <div class="v1-card tier-mill"><div><div class="v1-num">1,000,000</div><div class="v1-yor">Ágbèẹ́rǔn</div><div class="v1-eng">Millions · a story takes shape, the prototype scales</div></div><span class="v1-power">10⁶</span></div>
           </div>
-          <h2><span class="section-marker">I</span>A Long-Awaited Solution From Above</h2>
-          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <p>After the towers have risen and the machines have mastered the language of algorithms, one question still governs the age: what becomes of a civilization whose soul is left unruled by truth? Humanity has amassed power, scale, and speed, yet the inner life of nations remains unstable and disoriented.</p>
-          <p>Godreign enters that crisis not as ornament, but as answer: the return of heaven&rsquo;s governing order to the center of earthly destiny.</p>
-          <div class="quote-box">&ldquo;Heaven&rsquo;s order returns to govern what human power alone cannot heal.&rdquo;</div>
-        </div>
-      </article>
-
-      <!-- ░░ Chapter II — Manifesto (image left) ░░ -->
-      <article id="g-ch2" class="g-chapter">
-        <div class="g-photo-wrap">
-          <div class="g-photo t-book1" role="img" aria-label="Godreign Manifesto Volume I"></div>
-        </div>
-        <div class="g-text">
-          <div class="g-tags" aria-label="Godreign governance themes">
-            <span>Righteous Governance</span>
-            <span class="gold">Law of Love</span>
-            <span class="green">Mercy + Justice</span>
-            <span>Sacred Discipline</span>
-            <span class="pink">Kingdom Constitution</span>
-          </div>
-          <h2><span class="section-marker">II</span>Heaven Revealed, Not Democracy Re-dressed</h2>
-          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <p>This is not democracy dressed in new language. Godreign presents itself as heaven revealed in governing form: a divine order rooted in righteousness, justice, mercy, and eternal truth, and sustained by a law of love that governs with compassion, purity, and sacred discipline.</p>
-          <div class="quote-box">&ldquo;Thy kingdom come, Thy will be done, on earth as it is in heaven.&rdquo; &mdash; Matthew 6:10</div>
-        </div>
-      </article>
-
-      <!-- ░░ Chapter III — Crown (image left) ░░ -->
-      <article id="g-ch3" class="g-chapter">
-        <div class="g-photo-wrap">
-          <div class="g-photo t-book2" role="img" aria-label="Godreign Manifesto Volume II"></div>
-        </div>
-        <div class="g-text">
-          <div class="g-tags" aria-label="Godreign national themes">
-            <span>Call to Nations</span>
-            <span class="gold">Family Restoration</span>
-            <span class="green">Moral Clarity</span>
-            <span>Holy Submission</span>
-            <span class="pink">Eternal Roadmap</span>
-          </div>
-          <h2><span class="section-marker">III</span>The Call to the Nations</h2>
-          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <p>Where earthly systems dissolve covenant, Godreign restores family. Where public authority legitimizes disorder, Godreign restores identity, hierarchy, and moral clarity. Where the age trades truth for fashion, Godreign holds fast to the eternal roadmap.</p>
-          <p>Let the nations therefore rise &mdash; not in rebellion, but in holy submission to the reign of God upon the earth.</p>
-          <div class="quote-box">&ldquo;Rise &mdash; not in rebellion, but in holy submission to the reign of God.&rdquo;</div>
-        </div>
-      </article>
-
-      <!-- ░░ Neutral divider between thumbnails and full essay ░░ -->
-      <hr class="g-neutral-divider" aria-hidden="true" />
-
-      <!-- ░░ Full Manifesto Essay — text-only, image-1 style ░░ -->
-      <section class="g-full" aria-label="Full Godreign Manifesto">
-        <p class="full-bridge">From the three pillars above, the call now unfolds in fuller measure — a closer look at heaven’s blueprint for the nations, the doctrine that re-aligns governance with the eternal, and the charge laid upon every people who would walk in the light of the kingdom yet to come.</p>
-        <div class="full-chapter dropcap">
-          <h3>I &middot; A Long-Awaited Solution From Above</h3>
-          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <p>After all the skyscrapers have risen, after roads have stretched across deserts and rivers, after satellites have mapped the heavens and machines have whispered the language of algorithms, what remains of a soul untouched by truth? What becomes of a nation with brilliant cities but broken spirits? What is the value of progress that leads nowhere beyond the grave? In a world obsessed with advancement, humanity has built towering economies, engineered cities of steel and glass, and crafted technologies that pierce the clouds, yet the soul remains disoriented and wandering.</p>
-          <p>The glory of technological and economic growth, while dazzling, becomes hollow when severed from eternal purpose. The modern world has neglected the one crown that gives meaning to all other achievements: spiritual development. What profit is there in building the future, if the soul is unprepared for eternity? What legacy can a nation truly leave behind if its people inherit the earth, but lose their place in heaven? It is here that Godreign emerges &mdash; not as a theory, not as a rebranded ideology, but as a prophetic alignment with heaven&rsquo;s original blueprint for Earth. It is the embodiment of Christ&rsquo;s prayer in Matthew 6:10: &ldquo;Thy kingdom come, Thy will be done, on earth as it is in heaven.&rdquo;</p>
-          <div class="summary-pill">&ldquo;Heaven&rsquo;s blueprint, returning at last to align Earth with its source.&rdquo;</div>
-        </div>
-
-        <div class="full-chapter dropcap framework-declaration">
-          <h3>II &middot; Heaven Revealed, Not Democracy Re-dressed</h3>
-          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <p>This is not democracy dressed in new language. It is not human ideology upgraded. Godreign is heaven revealed &mdash; a divine system of governance rooted in righteousness, justice, mercy, and eternal truth. Where democracy exalts public opinion, Godreign exalts divine instruction. Where earthly governments cater to personal freedom at any cost, Godreign is anchored in spiritual order and the eternal destiny of every soul. Godreign is built on the divine science of love &mdash; not abstract sentiment, but love that governs with justice, compassion, humility, and sacred discipline. It is not driven by personal gain, party loyalty, or fleeting applause, but by spiritual brotherhood and radical selflessness.</p>
-          <p>It is justice with purity, power with compassion, leadership that kneels to serve. In a world drowning in vanity and vice, where politics has become performance, and policy a tool of indulgence, Godreign walks a narrow road: higher, holy, and eternally relevant. This is a governance where Love becomes law &mdash; the law of morality flowing from hearts of love. Purity becomes power. Every policy considers not just earthly consequence, but eternal placement. Where democracy builds cities of lust and industries of moral confusion, Godreign moralizes science and sanctifies innovation, directing every advancement &mdash; digital, medical, technological &mdash; toward the healing of souls, the upliftment of the poor, and the preparation of nations for heavenly royalty.</p>
-          <div class="summary-pill">&ldquo;Love becomes law. Purity becomes power.&rdquo;</div>
-        </div>
-
-        <div class="full-chapter dropcap">
-          <h3>III &middot; The Call to the Nations</h3>
-          <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <p>The earth is being infiltrated by antichrist systems, demonic ideologies, and even manipulated beings &mdash; unauthorized intrusions from extraterrestrial and spiritual realms, designed to distort the divine image in humanity. Through corrupted pregnancies and systemic social engineering, these agents now parade immorality under the protection of law. They promote identity confusion, glorify sexual perversion, and redefine what it means to be human. Make no mistake: these are not simply social trends. They are spiritual assaults, strategies of deception and eternal sabotage. Behind the curtain of &ldquo;freedom&rdquo; lies a sinister agenda, designed to disconnect the soul from its Creator and derail heaven&rsquo;s inheritance for God&rsquo;s children.</p>
-          <p>But God is not silent. He is not threatened; He permits it to eventually transform the enemy&rsquo;s plans to His ultimate glory. He is positioning a remnant &mdash; a kingdom people. Those who do not merely survive, but shine. Those who carry the fragrance of heaven into the polluted streets of Babylon. Those who will not imitate Babylon but embody Zion. Godreign does not simply seek to replace a government; it seeks to restore a kingdom &mdash; a call for nations to rise into their prophetic identity as builders of holy culture, defenders of divine design, and guardians of generational destiny.</p>
-          <p>Just as BRICS nations are breaking free from dollar dependency, Godreign calls the nations to dump the democracy that costs souls their eternity &mdash; the democracy that silences God, that legalizes what heaven calls sin, that wins elections but loses souls. Where democracy dissolves marriages, Godreign rebuilds family. Where governments legalize confusion, Godreign restores order and identity. Where the world trades truth for trends, Godreign holds the eternal roadmap firmly in hand. Let those who have ears, hear. Let those who have hearts, choose. The kingdoms of this world are fading &mdash; but the kingdom of God shall stand forever.</p>
-          <div class="summary-pill">&ldquo;Rise &mdash; not in rebellion, but in holy submission to the reign of God.&rdquo;</div>
         </div>
       </section>
 
-      <!-- ░░ Closing manifesto — golden charge ░░ -->
-      <div class="g-closing full-chapter dropcap">
-        <h3>IV &middot; The Final Charge</h3>
-        <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <p>Godreign does not simply seek to replace a government; it calls for the restoration of kingdom order. It is a call for nations to stop drinking from the cup of Sodom and Gomorrah, to stop funding destruction with taxpayers’ gold, to reject moral collapse as policy, and to rise into prophetic responsibility as builders of holy culture, defenders of divine design, and guardians of generational destiny.</p>
-        <p>Godreign is not merely an alternative among alternatives. It is the answer. Not just for today’s justice, but for tomorrow’s eternity. Not just for policy, but for paradise. The world has reached the edge. This is the terminal hour of unrighteous dominion — and only one door leads forward: the door of righteousness, and the door of divine order for the success of human souls.</p>
-        <p class="verdict">Let those who have ears, hear. Let those who have hearts, choose.<br>The kingdoms of this world are fading &mdash; but the kingdom of God shall stand forever.</p>
-        <div class="g-tags" aria-label="Godreign final themes">
-          <span>Heaven's Blueprint</span>
-          <span class="gold">Righteous Governance</span>
-          <span class="green">Kingdom Order</span>
-          <span>Holy Culture</span>
-          <span class="pink">Soul Restoration</span>
-          <span>Generational Destiny</span>
-          <span class="gold">Eternal Purpose</span>
+      <section class="rhythm-section" style="max-width:1340px; margin:32px auto; padding:0 28px;">
+        <div class="rhythm-stage">
+          <p class="rhythm-eyebrow">The whole ladder · Akàba pípé</p>
+          <h2 class="rhythm-h">Twelve magnitudes at a glance</h2>
+          <p class="rhythm-h-sub">Each tier its own colour — every ancestral tongue can apply this ladder in its own voice</p>
+
+          <div class="v2-grid">
+            <div class="v2-tile tier-units"><div class="v2-tile-num">1</div><div class="v2-tile-yor">Ení</div><div class="v2-tile-pow">10⁰</div></div>
+            <div class="v2-tile tier-tens"><div class="v2-tile-num">10</div><div class="v2-tile-yor">Ẹ́wǎ</div><div class="v2-tile-pow">10¹</div></div>
+            <div class="v2-tile tier-hundreds"><div class="v2-tile-num">100</div><div class="v2-tile-yor">Ọgọ́rǔn</div><div class="v2-tile-pow">10²</div></div>
+            <div class="v2-tile tier-thou"><div class="v2-tile-num">1K</div><div class="v2-tile-yor">Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10³</div></div>
+            <div class="v2-tile tier-tenthou"><div class="v2-tile-num">10K</div><div class="v2-tile-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10⁴</div></div>
+            <div class="v2-tile tier-hundthou"><div class="v2-tile-num">100K</div><div class="v2-tile-yor">Ọgọ́rǔn<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10⁵</div></div>
+            <div class="v2-tile tier-mill"><div class="v2-tile-num">1M</div><div class="v2-tile-yor">Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁶</div></div>
+            <div class="v2-tile tier-tenmill"><div class="v2-tile-num">10M</div><div class="v2-tile-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁷</div></div>
+            <div class="v2-tile tier-hundmill"><div class="v2-tile-num">100M</div><div class="v2-tile-yor">Ọgọ́rǔn<span class="t-neonpink" style="font-weight: 700;">l</span>Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁸</div></div>
+            <div class="v2-tile tier-bill"><div class="v2-tile-num">1B</div><div class="v2-tile-yor">Ágbòẹ́rǔn</div><div class="v2-tile-pow">10⁹</div></div>
+            <div class="v2-tile tier-trill"><div class="v2-tile-num">1T</div><div class="v2-tile-yor">Ágbòọ́rǔn</div><div class="v2-tile-pow">10¹²</div></div>
+            <div class="v2-tile tier-quad"><div class="v2-tile-num">1Qa</div><div class="v2-tile-yor">Ágbèérǔn</div><div class="v2-tile-pow">10¹⁵</div></div>
+          </div>
         </div>
-        <div class="summary-pill">&ldquo;The door of righteousness. The door of divine order. The door that leads nations unto heaven's eternity.&rdquo;</div>
-      </div>
+      </section>
 
-    </div>
+      <section class="rhythm-section" style="max-width:1340px; margin:32px auto 48px; padding:0 28px;">
+        <div class="rhythm-stage">
+          <div class="v3-spot tier-units">
+            <p class="v3-spot-eyebrow">Ìpari · Closing breath</p>
+            <p class="v3-spot-num">1</p>
+            <p class="v3-spot-yor">Ení</p>
+            <p class="v3-spot-eng">We open the door. Generations have waited; the children are ready. Walk with us, in your own ancestral tongue.</p>
+          </div>
+        </div>
+      </section>
 
-    <!-- 47-Colour Bar -->
+      <!-- ════════════════════════════════════════════════════════════
+           BLESSING · the colourful ladder (poetic finale)
+           ════════════════════════════════════════════════════════════ -->
+      <section class="rhythm-section" style="max-width:1340px; margin:32px auto 56px; padding:0 28px;">
+        <div class="rhythm-stage">
+          <div class="v3-spot v3-spot-blessing tier-hundreds">
+            <p class="v3-spot-eyebrow">Àkàbà Àwọ̀ · The Colourful Ladder</p>
+            <p class="v3-spot-num">∞</p>
+            <p class="v3-spot-yor">Wíwà Títí Láé · A Living Inheritance</p>
+            <div class="v3-blessing-body">
+              <p>A numeric system survives by being <strong>picked up</strong>, not by being argued for.</p>
+              <p>Researchers, theorists, and linguists each get their own door — but children are the ones who decide whether the language lives.</p>
+              <p class="v3-blessing-line">Make the numbering ladder colourful enough in your own tongues that your children climb it for fun — forever.</p>
+              <p>Do that, and one generation later it is no longer a system at all. It is simply <em>how numbers feel</em>.</p>
+              <p class="v3-blessing-coda">That is what no proof or paper can buy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ═════════════════ END BLESSING ═════════════════ -->
+      <!-- ═════════════════ END RHYTHM CLOSING ═════════════════ -->
+
+    <!-- 47-Sovereign Colour Bar (above Research, Publications & Technology) -->
     <div class="colour-bar-animated">
       <div class="c-teal" title="Zero &mdash; Cerulean"></div>
       <div class="c-green" title="Units &mdash; Vibrant Green"></div>
@@ -2412,6 +2839,7 @@
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
+
 <section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
 <style>
 /* ══════════════════════════════════════════════════════════════
@@ -2423,7 +2851,7 @@
   overflow:hidden;
   background:linear-gradient(160deg,#141c32 0%,#111830 50%,#0e1a38 100%);
   padding:72px 28px 64px;
-  font-family:'Yoruba','Poppins','Segoe UI',sans-serif;
+  font-family:'Poppins','Segoe UI',sans-serif;
 }
 /* Floating particle dots */
 .osp-wrap::before{
@@ -2476,11 +2904,7 @@
 }
 /* Glassmorphism cards */
 .osp-card{
-  --chamber-edge:linear-gradient(180deg,rgba(127,219,202,.76) 0%,rgba(39,188,237,.7) 48%,rgba(8,145,178,.78) 100%);
-  background:
-    var(--chamber-edge) left top/3px 100% no-repeat,
-    var(--chamber-edge) right top/3px 100% no-repeat,
-    rgba(255,255,255,0.05);
+  background:rgba(255,255,255,0.05);
   backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,0.12);
   border-radius:20px;padding:32px 28px;
@@ -2561,99 +2985,74 @@
 </style>
 
 <div class="osp-head">
-  <h3>Godreign Knowledge Framework &nbsp;·&nbsp; Scholarly Reference</h3>
-  <p>Authoritative standards, governance instruments, and reference documentation for the Godreign Numerical Civilization Project</p>
+  <h3>Research, Publications &amp; Technology</h3>
+  <p>Academic standards, publication references, and technical guidance for the Universal Hyperdimensional Numeric Engine</p>
 </div>
 <div class="osp-divider">
-  <span></span><em>◆ Ìwé Ìmọ̀ ◆</em><span></span>
+  <span></span><em>◆ Ìwé Ìmọ̀ Ònkà ◆</em><span></span>
 </div>
 
 <div class="osp-grid">
 
-  <!-- ① GOVERNANCE & TERMINOLOGY INDEX -->
+  <!-- ① TABLE CLASSIFICATION KEY -->
   <div class="osp-card">
     <span class="osp-icon">🔑</span>
-    <div class="osp-label">Governance &amp; Terminology Index</div>
-    <p style="color:rgba(255,255,255,.88);font-size:.82rem;line-height:1.72;margin-bottom:16px;">
-      A structured glossary defining the spiritual, mathematical, and civic-governance vocabulary governing the Godreign framework.
-      Its function is to secure interpretive consistency across education, research, technology, and public policy so that the framework speaks with disciplined conceptual clarity.
-    </p>
-    <table class="osp-keytbl" aria-label="Godreign Terminology Index">
+    <div class="osp-label">Research Classification Framework</div>
+    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
       <tbody><tr>
-        <td class="osp-ksym">UHNE Engines</td>
-        <td class="osp-kdesc">Exponential numerical architecture designed for planetary-scale computation and large-order magnitude governance</td>
+        <td class="osp-ksym">Symbol</td>
+        <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
       </tr>
       <tr>
-        <td class="osp-ksym">Expressive System</td>
-        <td class="osp-kdesc">A linguistic revitalization layer intended to align numerical expression with human communication, memory, and civilizational continuity</td>
+        <td class="osp-ksym">Name</td>
+        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
       </tr>
       <tr>
-        <td class="osp-ksym">Quantum Gearshift</td>
-        <td class="osp-kdesc">Magnitude-navigation architecture and scientific-notation bridge for traversing extreme numerical scales with continuity</td>
+        <td class="osp-ksym">Scale</td>
+        <td class="osp-kdesc">Power-of-ten magnitude classification, for example 10&sup3; in the thousands tier and 10&sup6; in the millions tier</td>
       </tr>
       <tr>
-        <td class="osp-ksym">Mantissa Governance</td>
-        <td class="osp-kdesc">Normalization rules that preserve mathematical compatibility, interoperability, and structural consistency</td>
+        <td class="osp-ksym">Tier</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
       </tr>
       <tr>
-        <td class="osp-ksym">Civilization Interface</td>
-        <td class="osp-kdesc">The ethical alignment layer governing the relation between knowledge systems, institutions, and social order</td>
+        <td class="osp-ksym"><span class="t-neonpink" style="font-weight: 700;">l</span> Link</td>
+        <td class="osp-kdesc">The <em>l</em> multiplier connector, displayed in neon pink (#FF13F0), which governs chained magnitude extension across large-order expressions</td>
       </tr>
     </tbody></table>
   </div>
 
-  <!-- ② CANONICAL PAPERS & FOUNDATIONAL TEXTS -->
+  <!-- ② CITATION STATEMENT -->
   <div class="osp-card">
     <span class="osp-icon">📜</span>
-    <div class="osp-label">Canonical Papers &amp; Foundational Texts</div>
-    <p style="color:rgba(255,255,255,.88);font-size:.82rem;line-height:1.72;margin-bottom:16px;">
-      This panel identifies the primary research documents, foundational papers, and formal releases through which the Godreign Numerical Civilization initiative establishes its intellectual and institutional basis.
-    </p>
-    <table class="osp-keytbl" aria-label="Godreign Canonical Papers">
-      <tbody><tr>
-        <td class="osp-ksym">📄</td>
-        <td class="osp-kdesc"><strong style="color:#FFD700;">The Universal UHNE Number Formula</strong><br>Primary mathematical specification, formal derivation, and proof framework.</td>
-      </tr>
-      <tr>
-        <td class="osp-ksym">📄</td>
-        <td class="osp-kdesc"><strong style="color:#FFD700;">The Expressive Yoruba Numeric System</strong><br>Linguistic architecture and cultural-restoration model with implications for broader indigenous language systems.</td>
-      </tr>
-      <tr>
-        <td class="osp-ksym">📄</td>
-        <td class="osp-kdesc"><strong style="color:#FFD700;">Global Adoption &amp; Education Framework</strong><br>Policy model, curricular structure, and international deployment strategy.</td>
-      </tr>
-      <tr>
-        <td class="osp-ksym">📄</td>
-        <td class="osp-kdesc"><strong style="color:#FFD700;">Open Technical Documentation</strong><br>Public technical standards, implementation references, and institutional guidance.</td>
-      </tr>
-    </tbody></table>
+    <div class="osp-label">Publications</div>
+    <div class="osp-cite">
+      <strong>Universal Hyperdimensional Numeric Engine Institute</strong> (2026).
+      <em>Numerical Index Database, v1.0.</em>
+      Godreign Digital Publishing.
+      <em>Universal Hyperdimensional Numeric Engine.</em>
+      <div class="osp-cite-meta">
+        ISBN (979-8-90148-351-0) &nbsp;·&nbsp;
+        Freely accessible for academic, educational &amp; research use &nbsp;·&nbsp;
+        © 2026 Godreign. Universal Hyperdimensional Numeric Engine.
+      </div>
+    </div>
   </div>
 
-  <!-- ③ RESEARCH, COLLABORATION & IMPLEMENTATION -->
+  <!-- ③ FUTURE API NOTICE -->
   <div class="osp-card">
     <span class="osp-icon">⚡</span>
-    <div class="osp-label">Research, Collaboration &amp; Implementation</div>
-    <p style="color:rgba(255,255,255,.88);font-size:.82rem;line-height:1.72;margin-bottom:16px;">
-      Public access pathways into the Godreign knowledge infrastructure, including developer resources, governance notices, and formal channels for research participation and implementation.
+    <div class="osp-label">Technology &amp; Implementation</div>
+    <span class="osp-badge">Coming Soon</span>
+    <p class="osp-api-p">
+      Public API access to the <strong>Yoruba Numerical Index Database</strong> is planned for a future
+      release, enabling developers, researchers, and digital platforms to programmatically
+      query more than a <strong>tredecillion</strong> Yorùbá number entries in real time for analytical and implementation purposes.
     </p>
-    <table class="osp-keytbl" aria-label="Godreign Collaboration Resources">
-      <tbody><tr>
-        <td class="osp-ksym">🔬</td>
-        <td class="osp-kdesc"><strong style="color:#FFD700;">Open Research Repository</strong> — datasets, models, simulation environments, and reproducible research materials</td>
-      </tr>
-      <tr>
-        <td class="osp-ksym">💻</td>
-        <td class="osp-kdesc"><strong style="color:#FFD700;">Developer Integration Guides</strong> — APIs, technical standards, and implementation guidance for interoperable adoption</td>
-      </tr>
-      <tr>
-        <td class="osp-ksym">🏛️</td>
-        <td class="osp-kdesc"><strong style="color:#FFD700;">Institutional Partnership Program</strong> — collaboration pathways for universities, policy laboratories, and research centers</td>
-      </tr>
-      <tr>
-        <td class="osp-ksym">📢</td>
-        <td class="osp-kdesc"><strong style="color:#FFD700;">Governance Notices &amp; Updates</strong> — official releases, procedural notices, and milestone communications</td>
-      </tr>
-    </tbody></table>
+    <div class="osp-endpoint">
+      GET /api/v1/onka-yoruba/number/{n}<br>
+      <span class="osp-arrow">→</span>&nbsp;{ yoruba: "…", tier: "…", colour: "…", power: "…" }
+    </div>
   </div>
 
 </div>
@@ -2661,12 +3060,13 @@
 
 <footer>
   <div class="footer-content">
-    <span class="copyright">© 2026 Godreign. The Universal Hyperdimensional Numeric Engine.</span>
+    <span class="copyright">&copy; 2026 Godreign. The Universal Hyperdimensional Numeric Engine.</span>
 
     <p class="english-mission">
       Honouring the numerical heritage of humanity while advancing an open, language-independent path toward inclusive global computation.
     </p>
-  </div>
+
+    </div>
 </footer>
 
     <!-- Back to Top Button -->
