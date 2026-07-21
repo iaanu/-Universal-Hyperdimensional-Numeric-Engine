@@ -654,25 +654,14 @@
     }
     .agbara-eq sup { font-size: 75%; }
     .agbara-eq {
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      transition: max-height 0.35s ease, opacity 0.35s ease, margin-top 0.35s ease;
       font-size: 0.95rem;
       font-weight: 600;
-      margin-top: 0;
+      margin-top: 6px;
       letter-spacing: 0.3px;
       font-family: 'Cambria Math','Cambria','Georgia',serif;
     }
-    .mult-card { position: relative; }
-    .mult-card:hover .agbara-eq,
-    .num-card:hover .agbara-eq {
-      max-height: 110px;
-      opacity: 1;
-      margin-top: 6px;
-    }
 
-    /* Gear-equation hover form on each card */
+    /* Gear-equation form on each card */
     /* Each card sets --rc to its section color via inline style; the equation adopts it. */
     .gear-eq { color: var(--rc, #1a4d7a); font-family: 'Cambria Math','Cambria','Georgia',serif; line-height: 1.35; }
     .gear-eq .ge-row { display: block; }
@@ -5647,7 +5636,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
 
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- Gear-Equation Auto-Renderer                                      -->
-    <!-- Replaces every card's hidden .agbara-eq with the ḡ gear form:    -->
+    <!-- Replaces every card's .agbara-eq with the ḡ gear form:           -->
     <!--   m · ḡⁿ  =  m × 10³ⁿ                                            -->
     <!-- where (m, n) is the unique decomposition of the ×N value.        -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
