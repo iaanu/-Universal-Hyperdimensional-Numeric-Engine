@@ -113,15 +113,27 @@
     /* Search bar */
     .search-wrap { background: linear-gradient(135deg, #0f3460 0%, #1E8CB8 100%); padding: 22px 24px; border-radius: 14px; margin: 10px 0 20px; color: #fff; }
     .search-wrap label { display: block; font-size: 0.92rem; font-weight: 800; color: #FFE873; margin-bottom: 8px; letter-spacing: 0.07em; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.35); }
+    .search-wrap .lang-row label { display: flex; align-items: center; min-height: 24px; }
+    .search-wrap .dataset-select-label { display: flex; flex-wrap: nowrap; align-items: center; justify-content: flex-start; gap: 18px; min-height: 24px; white-space: nowrap; font-size: 0.72rem; letter-spacing: 0.025em; }
+    .dataset-label-title, .search-label-title { display: inline-flex; align-items: center; gap: 5px; }
+    .dataset-label-icon { font-size: 1.08rem; line-height: 1; }
+    .search-label-icon { font-size: 1.18rem; line-height: 1; }
+    .dataset-select-prompt { display: inline-flex; align-items: center; gap: 4px; padding: 3px 6px; border-radius: 999px; background: #FFD700; color: #0f3460; font-size: 0.56rem; line-height: 1.2; letter-spacing: 0.015em; text-shadow: none; box-shadow: 0 3px 9px rgba(0,0,0,0.2); }
+    .dataset-select-prompt .arrow { font-size: 1rem; line-height: 0.7; }
     .search-wrap input[type="text"] { width: 100%; padding: 12px 16px; font-size: 1rem; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; background: rgba(255,255,255,0.95); color: #1a1a2e; font-family: inherit; }
     .search-wrap input[type="text"]:focus { outline: none; border-color: #FFD700; box-shadow: 0 0 0 3px rgba(255,215,0,0.3); }
     .search-wrap input[type="text"]:disabled { background: rgba(255,255,255,0.55); cursor: not-allowed; }
-    .search-wrap select { width: 100%; padding: 12px 16px; font-size: 1rem; border: 2px solid rgba(255,255,255,0.3); border-radius: 10px; background: rgba(255,255,255,0.95); color: #1a1a2e; font-family: inherit; font-weight: 600; cursor: pointer; }
+    .search-wrap select { width: 100%; padding: 12px 16px; font-size: 1rem; border: 2px solid #FFD700; border-radius: 10px; background: rgba(255,255,255,0.95); color: #1a1a2e; font-family: inherit; font-weight: 600; cursor: pointer; animation: dataset-select-glow 2.2s ease-in-out infinite; }
     .search-wrap select:focus { outline: none; border-color: #FFD700; box-shadow: 0 0 0 3px rgba(255,215,0,0.3); }
+    @keyframes dataset-select-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,215,0,0.12); } 50% { box-shadow: 0 0 0 4px rgba(255,215,0,0.28); } }
+    @media (prefers-reduced-motion: reduce) { .search-wrap select { animation: none; } }
     .search-stats { margin-top: 10px; font-size: 0.85rem; color: rgba(255,255,255,0.85); }
     .search-stats strong { color: #FFD700; }
-    .lang-row { display: grid; grid-template-columns: 1fr 2fr; gap: 14px; margin-bottom: 14px; }
-    @media (max-width: 700px) { .lang-row { grid-template-columns: 1fr; } }
+    .lang-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 14px; }
+    @media (max-width: 700px) {
+      .lang-row { grid-template-columns: 1fr; }
+      .search-wrap .dataset-select-label { flex-wrap: wrap; white-space: normal; }
+    }
     .soon-notice { display: none; margin-top: 14px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color: #1a1a2e; padding: 14px 18px; border-radius: 10px; border-left: 4px solid #FFD700; font-size: 0.92rem; line-height: 1.55; }
     .soon-notice.show { display: block; }
     .soon-notice strong { color: #0f3460; }
@@ -1962,8 +1974,11 @@
       <div class="search-wrap" id="datasetControls">
         <div class="lang-row">
           <div>
-            <label for="langSelect">🌍 Active Dataset Release</label>
-            <select id="langSelect" aria-label="Select a language to search its numbers">
+            <label for="langSelect" class="dataset-select-label">
+              <span class="dataset-label-title"><span class="dataset-label-icon" aria-hidden="true">🌍</span> Active Dataset Release</span>
+              <span class="dataset-select-prompt">Click to select a language <span class="arrow" aria-hidden="true">↓</span></span>
+            </label>
+            <select id="langSelect" aria-label="Click to select a language and search its numbers">
               <optgroup label="🟢 Active Release">
                 <option value="yo" selected>Yorùbá — Dataset v1.127 (Active Release · Africa / Nigeria)</option>
               </optgroup>
@@ -2014,7 +2029,7 @@
             </select>
           </div>
           <div>
-            <label for="searchBox">🔍 Search the Atlas</label>
+            <label for="searchBox"><span class="search-label-title"><span class="search-label-icon" aria-hidden="true">🔍</span> Search the Atlas</span></label>
             <input type="text" id="searchBox" placeholder="Search by Yor&ugrave;b&aacute; name, English name, root, or row number&hellip;" autocomplete="off">
           </div>
         </div>
