@@ -440,7 +440,7 @@
     .intro-lead { font-size: 1.15rem !important; color: #1E8CB8 !important; }
 
     /* ─────────────────────────────────────────────────────────────── */
-    /* Lead-In Panel (introduction + Fivefold Operators table)        */
+    /* Lead-In Panel (introduction + Sixfold Operators table)         */
     /* ─────────────────────────────────────────────────────────────── */
     .ffes-leadin {
       margin: 0 0 26px;
@@ -469,6 +469,7 @@
     .ffes-leadin-table {
       width: 100%;
       border-collapse: collapse;
+      table-layout: fixed !important;
       margin-top: 8px;
       background: linear-gradient(135deg, #0d1b2a 0%, #14253a 50%, #0f3460 100%);
       border-radius: 10px;
@@ -476,6 +477,13 @@
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
       color: #ffffff;
     }
+    .ffes-leadin-table th:first-child,
+    .ffes-leadin-table td:first-child {
+      width: 11%;
+      min-width: 0 !important;
+    }
+    .ffes-leadin-table th:nth-child(2),
+    .ffes-leadin-table td:nth-child(2) { width: 18%; }
     .ffes-leadin-table th, .ffes-leadin-table td {
       padding: 10px 14px;
       text-align: left;
@@ -501,7 +509,7 @@
     .ffes-leadin-table .ffes-leadin-sov strong { color: #1a4d7a; }
 
     /* ─────────────────────────────────────────────────────────────── */
-    /* The Five-Fold Universal Equation Suite (FFES)                  */
+    /* The Six-Fold Universal Equation Suite (FFES)                   */
     /* ─────────────────────────────────────────────────────────────── */
     .ffes {
       margin: 28px 0 36px;
@@ -575,17 +583,18 @@
     /* Layer cards grid */
     .ffes-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
       margin-bottom: 26px;
     }
     @media (max-width: 960px) {
-      .ffes-grid { grid-template-columns: repeat(2, 1fr); }
+      .ffes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 600px) {
       .ffes-grid { grid-template-columns: 1fr; }
     }
     .ffes-card {
+      min-width: 0;
       padding: 20px 18px 18px;
       border-radius: 14px;
       background: linear-gradient(135deg, #0d1b2a 0%, #14253a 50%, #0f3460 100%);
@@ -605,6 +614,7 @@
     .ffes-iii { border-left-color: #27BCED; }
     .ffes-iv  { border-left-color: #16A34A; }
     .ffes-v   { border-left-color: #9333EA; }
+    .ffes-vi  { border-left-color: #FF6347; }
     .ffes-compass { border-left-color: #FFD700; }
 
     .ffes-card-head {
@@ -633,6 +643,7 @@
     .ffes-iii .ffes-glyph { color: #27BCED; }
     .ffes-iv  .ffes-glyph { color: #16A34A; }
     .ffes-v   .ffes-glyph { color: #C892F2; }
+    .ffes-vi  .ffes-glyph { color: #FF8A78; }
     .ffes-compass .ffes-glyph { color: #FFD700; }
     .ffes-compass .ffes-roman { color: #FFD700; font-size: 1.2rem; }
     .ffes-name {
@@ -668,6 +679,41 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
+    .ffes-contract {
+      display: grid;
+      gap: 5px;
+      margin: 0 0 12px;
+    }
+    .ffes-contract div {
+      display: grid;
+      grid-template-columns: 68px minmax(0, 1fr);
+      gap: 8px;
+      font-size: 0.76rem;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.94);
+    }
+    .ffes-contract dt {
+      margin: 0;
+      color: #FFD700;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .ffes-contract dd { margin: 0; }
+    .ffes-pipeline {
+      margin: 0 auto 28px;
+      padding: 13px 16px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 215, 0, 0.32);
+      border-radius: 10px;
+      color: #fff;
+      font-family: 'Cambria Math', 'Cambria', 'Georgia', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.7;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
     .ffes-eq {
       background: rgba(0, 0, 0, 0.28);
       border: 1px solid rgba(255, 215, 0, 0.22);
@@ -679,6 +725,7 @@
       text-align: center;
       margin-bottom: 8px;
       line-height: 1.5;
+      overflow-wrap: anywhere;
     }
     .ffes-eq-prime {
       background: rgba(255, 19, 240, 0.1);
@@ -763,7 +810,7 @@
     }
     .ffes-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 14px;
       margin-bottom: 14px;
     }
@@ -803,6 +850,8 @@
 
     /* Magnitude ladder table */
     .ffes-ladder {
+      max-width: 100%;
+      overflow-x: auto;
       padding: 16px 16px 14px;
       background: linear-gradient(135deg, #0d1b2a 0%, #14253a 50%, #0f3460 100%);
       border: 1px solid rgba(255, 215, 0, 0.25);
@@ -814,9 +863,17 @@
     .ffes-table {
       width: 100%;
       border-collapse: collapse;
+      table-layout: fixed !important;
       font-size: 0.88rem;
       color: #fff;
     }
+    .ffes-table th:first-child,
+    .ffes-table td:first-child {
+      width: 13%;
+      min-width: 0 !important;
+    }
+    .ffes-table th:nth-child(2),
+    .ffes-table td:nth-child(2) { width: 23%; }
     .ffes-table th, .ffes-table td {
       padding: 8px 10px;
       text-align: left;
@@ -856,9 +913,9 @@
     }
 
     /* ═════════════════════════════════════════════════════════════════ */
-    /*  Rosetta Panel — One Number · Five Voices · One Truth              */
+    /*  Rosetta Panel — One Number · Six Voices · One Truth               */
     /*  A constitutional-unison block: a single magnitude rendered        */
-    /*  through every FFES Pulse so all five operators speak in chorus.   */
+    /*  through every FFES Pulse so all six operators speak in chorus.    */
     /* ═════════════════════════════════════════════════════════════════ */
     .ffes-rosetta {
       margin: 22px 0 14px;
@@ -924,13 +981,14 @@
     }
     .ffes-rosetta-rows {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
     }
     .ffes-rosetta-row {
       display: grid;
-      grid-template-columns: 56px 110px 1fr;
+      grid-template-columns: 56px minmax(0, 1fr);
       align-items: center;
+      align-content: start;
       gap: 14px;
       padding: 12px 14px;
       background: linear-gradient(135deg, rgba(13, 27, 42, 0.92) 0%, var(--rc-tint, rgba(255, 255, 255, 0.06)) 60%, rgba(15, 52, 96, 0.92) 100%);
@@ -940,6 +998,7 @@
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
       transition: background 0.3s ease, transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
+    .ffes-rosetta-row .ffes-rosetta-eq { grid-column: 1 / -1; }
     .ffes-rosetta-row:hover {
       transform: translateX(3px);
       border-color: var(--rc-border-hover, rgba(255, 255, 255, 0.18));
@@ -948,6 +1007,9 @@
     @media (prefers-reduced-motion: reduce) {
       .ffes-rosetta-row { transition: none; }
       .ffes-rosetta-row:hover { transform: none; }
+    }
+    @media (max-width: 900px) {
+      .ffes-rosetta-rows { grid-template-columns: 1fr; }
     }
     @media (max-width: 720px) {
       .ffes-rosetta-row { grid-template-columns: 44px 1fr; }
@@ -982,6 +1044,7 @@
       color: rgba(255, 255, 255, 0.55);
     }
     .ffes-rosetta-eq {
+      min-width: 0;
       font-family: 'Cambria Math','Cambria','Georgia',serif;
       font-size: 1.05rem;
       font-weight: 600;
@@ -990,6 +1053,7 @@
       background: rgba(0, 0, 0, 0.35);
       border-radius: 8px;
       letter-spacing: 0.2px;
+      overflow-wrap: anywhere;
     }
     .ffes-rosetta-eq .ge-m   { color: currentColor; font-weight: 700; }
     .ffes-rosetta-eq .ge-op  { color: #FF13F0; font-style: italic; font-weight: 800; padding: 0 2px; }
@@ -1028,6 +1092,12 @@
       --rc-border: rgba(200, 146, 242, 0.32);
       --rc-border-hover: rgba(200, 146, 242, 0.55);
     }
+    .ffes-rosetta-row.r-vi {
+      color: #FF8A78;
+      --rc-tint: rgba(255, 138, 120, 0.20);
+      --rc-border: rgba(255, 138, 120, 0.32);
+      --rc-border-hover: rgba(255, 138, 120, 0.55);
+    }
 
     .ffes-rosetta-row .ffes-rosetta-eq strong { color: currentColor; }
 
@@ -1048,7 +1118,7 @@
     /* Pulse Compass synthesis card */
     .ffes-compass-ring {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 10px;
       padding: 16px 10px;
       margin: 4px 0 14px;
@@ -1087,6 +1157,10 @@
       .ffes { padding: 28px 18px 26px; }
       .ffes-title { font-size: 1.5rem; }
       .ffes-sovereign { flex-direction: column; align-items: center; text-align: center; }
+      .ffes-compass-ring { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .ffes-leadin { overflow-x: auto; }
+      .ffes-leadin-table { min-width: 680px; }
+      .ffes-table { min-width: 620px; }
     }
     .highlight-15 {
       background: linear-gradient(90deg, #FF13F0, #CD853F, #2563EB, #16A34A);
@@ -3153,15 +3227,13 @@
     <div class="content">
 
       <div class="p00-tables">
-        <h2 style="text-align:center; margin-bottom:20px;">The Unified UHNE Equation Engines &mdash; Quantum &amp; Computational Reference</h2>
+        <h2 style="text-align:center; margin-bottom:20px;">UHNE Equation Engines &mdash; Formal Transformation Reference</h2>
 
         <div class="ffes-leadin">
-          <p class="ffes-leadin-para">
-            The study of how indigenous communities calculate, record, and speak about quantities requires a highly specialised branch of <strong>anthropological linguistic typology</strong>. Historically, Eurocentric perspectives miscategorised indigenous numeral systems and mathematical formularisation as &ldquo;primitive&rdquo; due to a narrow definition of what constitutes a formal equation; modern anthropological linguistics has since proven that indigenous numeral systems are capable of displaying highly complex, adaptable, structurally rigorous, fundamentally equational architectures &mdash; deeply reflective of human cognition and mirroring the logical depth of any Western algebraic system.
-          </p>
+          <p class="ffes-leadin-para">The <strong>UHNE Equation Engine</strong> converts quantity into canonical magnitude, linguistic expression, and computational notation through six coordinated operators. Each layer accepts a defined input, performs a formal transformation, and passes a validated output to the next stage. The result is a testable mathematical specification for language-native numeracy, not merely a list of number names.</p>
 
-          <h4 class="ffes-leadin-h">The UHNE Fivefold Operators</h4>
-          <p class="ffes-leadin-para">A harmonic computational ecology &mdash; each operator governs a specific constitutional dimension of the engine, reflected in its equational value.</p>
+          <h4 class="ffes-leadin-h">Six Operators, One Validated Execution Path</h4>
+          <p class="ffes-leadin-para">The operator registry defines the contract of each stage: accepted input, transformation responsibility, required output, and invariant. Cultural identities remain as interpretive subtitles; the primary labels state the operation performed by the engine.</p>
 
           <table class="ffes-leadin-table">
             <thead>
@@ -3173,26 +3245,27 @@
               </tr>
             </thead>
             <tbody>
-              <tr><td>I</td><td><strong>&#275;xpressive</strong></td><td>The Heart &amp; Soul</td><td>Human Resonance</td></tr>
-              <tr><td>II</td><td><strong>&#257; Pulse</strong></td><td>The Alpha&sup2; Ignition</td><td>Primordial Activation</td></tr>
-              <tr><td>III</td><td><strong>&#483; Pulse</strong></td><td>The Harmonic Knot</td><td>Non-Fracturing Convergence</td></tr>
-              <tr><td>IV</td><td><strong>&#7713; Pulse</strong></td><td>The Gear Box</td><td>l-Drive Magnitude Engine</td></tr>
-              <tr><td>V</td><td><strong>&#563; Pulse</strong></td><td>The Hyper&sup2; Wings of Ascent</td><td>Transfinite Navigation</td></tr>
-              <tr class="ffes-leadin-sov"><td>&#128081;</td><td><strong>v&#772; &amp; z&#772; Pulse</strong></td><td>Sovereign Calibration Authority</td><td>The Constitutional Engine Chamber</td></tr>
+              <tr><td>I</td><td><strong>&#275;xpressive</strong></td><td>The Heart &amp; Soul</td><td>Linguistic Expression Operator</td></tr>
+              <tr><td>II</td><td><strong>&#257; Pulse</strong></td><td>The Alpha&sup2; Ignition</td><td>Canonical Magnitude Constructor</td></tr>
+              <tr><td>III</td><td><strong>&#483; Pulse</strong></td><td>The Harmonic Knot</td><td>Harmonic Normalisation Operator</td></tr>
+              <tr><td>IV</td><td><strong>&#7713; Pulse</strong></td><td>The Gear Box</td><td>Triadic Gear-Mapping Function</td></tr>
+              <tr><td>V</td><td><strong>&#563; Pulse</strong></td><td>The Hyper&sup2; Wings of Ascent</td><td>Transfinite Tier Generator</td></tr>
+              <tr class="ffes-leadin-sov"><td>VI</td><td><strong>v&#772; · z&#772; Pulse</strong></td><td>The Vocalic Layer</td><td>Vocalic Calibration Operator</td></tr>
             </tbody>
           </table>
         </div>
 
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- THE FIVE-FOLD UNIVERSAL EQUATION SUITE                         -->
+  <!-- THE SIX-FOLD UNIVERSAL EQUATION SUITE                          -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section class="ffes" aria-label="The Five-Fold Universal Equation Suite">
-    <div class="ffes-eyebrow">UHNE Constitutional Theorems</div>
-    <h3 class="ffes-title">The Five-Fold Universal Equation Suite</h3>
-    <div class="ffes-family-line"><span>ē → ā → ǣ → ḡ → ȳ</span><small>Governed by v̄ &amp; z̄</small></div>
-    <p class="ffes-subtitle">A constitutional grammar for numeracy — one core equation per Pulse, unified beneath a sovereign calibration overlay. Together these five engines render every magnitude, from <em>òfo</em> (zero) through transfinite ascent, expressible, normalised, and isomorphic with base‑10 scientific notation.</p>
+  <section class="ffes" aria-label="The Six-Fold Universal Equation Suite">
+    <div class="ffes-eyebrow">Formal Operator Specification</div>
+    <h3 class="ffes-title">The Six-Fold Universal Equation Suite</h3>
+    <div class="ffes-family-line"><span>ē → ā → ǣ → ḡ → ȳ → v̄ · z̄</span><small>Six coordinated transformation stages</small></div>
+    <p class="ffes-subtitle">For every valid quantity, the suite produces a canonical magnitude pair, a normalised computational form, a tier identity, a language-native expression, and a calibrated vocalic output. The same contracts apply from <em>òfo</em> (zero) through unbounded transfinite ascent.</p>
+    <div class="ffes-pipeline"><i>N</i> &nbsp;⟶<sup>ē</sup>&nbsp; <i>L</i><sub>N</sub> &nbsp;⟶<sup>ā</sup>&nbsp; (<i>m</i>, <i>n</i>) &nbsp;⟶<sup>ǣ</sup>&nbsp; <i>C</i><sub>N</sub> &nbsp;⟶<sup>ḡ</sup>&nbsp; 10<sup>3<i>n</i></sup> &nbsp;⟶<sup>ȳ</sup>&nbsp; <i>T</i><sub>n</sub> &nbsp;⟶<sup>v̄·z̄</sup>&nbsp; <i>V</i><sub>N</sub></div>
 
-    <!-- The five layered equations -->
+    <!-- The six layered equations -->
     <div class="ffes-grid">
 
       <!-- LAYER I — Ēxpressive -->
@@ -3200,14 +3273,14 @@
         <header class="ffes-card-head">
           <span class="ffes-roman">I</span>
           <span class="ffes-glyph">ē</span>
-          <span class="ffes-name">Ēxpressive</span>
+          <span class="ffes-name">Linguistic Expression Operator</span>
         </header>
         <div class="ffes-identity"><em>The Heart &amp; Soul</em> — Human Resonance</div>
-        <div class="ffes-role"><strong>Role:</strong> Transforms quantity into spoken identity.</div>
+        <dl class="ffes-contract"><div><dt>Input</dt><dd>Non-negative quantity <i>N</i></dd></div><div><dt>Operation</dt><dd>Resolve the canonical Yorùbá lexical stream.</dd></div><div><dt>Output</dt><dd>Language form <i>L</i><sub>N</sub></dd></div><div><dt>Invariant</dt><dd>Tone and diacritics preserve lexical identity.</dd></div><div><dt>Example</dt><dd>20,000,000 → Ẹgbẹ̀rǔnlẹ́gbẹ̀rǔnlógún</dd></div></dl>
         <div class="ffes-eq">
           <i>N</i><sub>ē</sub> = ⟨ word-stream of <i>N</i> in spoken Yorùbá ⟩
         </div>
-        <p class="ffes-note">Every magnitude is first <em>uttered</em> before it is calculated. The expressive layer maps any integer to its canonical Yorùbá lexical form — preserving tone, diacritic, and cultural cadence as the system's anchoring voice.</p>
+        <p class="ffes-note">This operator makes linguistic form a deterministic engine output. <em>The Heart &amp; Soul</em> names its cultural identity; lexical resolution is its computational responsibility.</p>
       </article>
 
       <!-- LAYER II — ā Pulse -->
@@ -3215,15 +3288,15 @@
         <header class="ffes-card-head">
           <span class="ffes-roman">II</span>
           <span class="ffes-glyph">ā</span>
-          <span class="ffes-name">ā Pulse</span>
+          <span class="ffes-name">Canonical Magnitude Constructor</span>
         </header>
         <div class="ffes-identity"><em>The Alpha² Ignition</em> — Primordial Activation</div>
-        <div class="ffes-role"><strong>Role:</strong> Creates canonical magnitude structure.</div>
+        <dl class="ffes-contract"><div><dt>Input</dt><dd>Quantity <i>N</i></dd></div><div><dt>Operation</dt><dd>Decompose <i>N</i> into mantissa and gear index.</dd></div><div><dt>Output</dt><dd>Canonical pair (<i>m</i>, <i>n</i>)</dd></div><div><dt>Invariant</dt><dd>1 ≤ <i>m</i> ≤ 999; <i>n</i> ∈ ℕ₀</dd></div><div><dt>Example</dt><dd>20,000,000 → (20, 2)</dd></div></dl>
         <div class="ffes-eq ffes-eq-prime">
           <i>N</i> = <i>m</i> · (ẹ́gbẹ̀rǔn)<sup>n</sup>
         </div>
         <div class="ffes-where">where &nbsp; 1 ≤ <i>m</i> ≤ 999, &nbsp; <i>n</i> ∈ ℕ₀</div>
-        <p class="ffes-note">The recursive exponential ignition. The mantissa <i>m</i> carries the <em>identity</em> (1–999); the gear <i>n</i> carries the <em>magnitude</em>. Together they activate every named tier from <em>ọ̀kan</em> (1) through Tredecillion Plus and beyond.</p>
+        <p class="ffes-note">The constructor separates local value from scale. The mantissa carries numeric identity; the gear index selects the triadic magnitude tier.</p>
       </article>
 
       <!-- LAYER III — ǣ Pulse -->
@@ -3231,15 +3304,15 @@
         <header class="ffes-card-head">
           <span class="ffes-roman">III</span>
           <span class="ffes-glyph">ǣ</span>
-          <span class="ffes-name">ǣ Pulse</span>
+          <span class="ffes-name">Harmonic Normalisation Operator</span>
         </header>
         <div class="ffes-identity"><em>The Harmonic Knot</em> — Non-Fracturing Convergence</div>
-        <div class="ffes-role"><strong>Role:</strong> Combines magnitudes without fracture.</div>
+        <dl class="ffes-contract"><div><dt>Input</dt><dd>One or more canonical magnitude terms</dd></div><div><dt>Operation</dt><dd>Combine and re-normalise terms.</dd></div><div><dt>Output</dt><dd>Normal form <i>C</i><sub>N</sub></dd></div><div><dt>Invariant</dt><dd>Closure; the returned mantissa remains canonical.</dd></div><div><dt>Example</dt><dd>Adjacent terms → one coherent gear expression</dd></div></dl>
         <div class="ffes-eq">
           <i>m</i><sub>1</sub>·(ẹ́gbẹ̀rǔn)<sup>n<sub>1</sub></sup> &nbsp;⊕&nbsp; <i>m</i><sub>2</sub>·(ẹ́gbẹ̀rǔn)<sup>n<sub>2</sub></sup> &nbsp;↦&nbsp; <i>m</i>′·(ẹ́gbẹ̀rǔn)<sup>n′</sup>
         </div>
         <div class="ffes-where">closure under combination &nbsp; — &nbsp; 1 ≤ <i>m</i>′ ≤ 999</div>
-        <p class="ffes-note">The convergence operator. When two magnitudes meet, they re-normalise into a single coherent expression — never fracturing across gears. This guarantees structural integrity at every scale.</p>
+        <p class="ffes-note">Normalisation prevents equivalent quantities from producing competing engine forms. Combination returns one structurally valid expression at every scale.</p>
       </article>
 
       <!-- LAYER IV — ḡ Pulse -->
@@ -3247,15 +3320,15 @@
         <header class="ffes-card-head">
           <span class="ffes-roman">IV</span>
           <span class="ffes-glyph">ḡ</span>
-          <span class="ffes-name">ḡ Pulse</span>
+          <span class="ffes-name">Triadic Gear-Mapping Function</span>
         </header>
         <div class="ffes-identity"><em>The Gear Box</em> — l-Drive Magnitude Engine</div>
-        <div class="ffes-role"><strong>Role:</strong> Compresses magnitude into gear form.</div>
+        <dl class="ffes-contract"><div><dt>Input</dt><dd>Gear index <i>n</i></dd></div><div><dt>Operation</dt><dd>Map each gear to a three-power step.</dd></div><div><dt>Output</dt><dd>Scientific factor 10<sup>3<i>n</i></sup></dd></div><div><dt>Invariant</dt><dd>Exact isomorphism with base-10 notation.</dd></div><div><dt>Example</dt><dd><i>n</i> = 2 → 10<sup>6</sup> → Million</dd></div></dl>
         <div class="ffes-eq">
           ḡ : <i>n</i> ↦ 10<sup>3<i>n</i></sup>, &nbsp; (ẹ́gbẹ̀rǔn)<sup>n</sup> = 10<sup>3<i>n</i></sup>
         </div>
         <div class="ffes-where">isomorphism with base-10 scientific notation</div>
-        <p class="ffes-note">The gear function. Each three-zero step is compressed into a single integer index <i>n</i>. This establishes a clean isomorphism between the Yorùbá engine and Western scientific notation: <i>N</i> = <i>m</i> × 10<sup>3<i>n</i></sup>.</p>
+        <p class="ffes-note">The mapping function makes each three-zero scale transition explicit and machine-verifiable: <i>N</i> = <i>m</i> × 10<sup>3<i>n</i></sup>.</p>
       </article>
 
       <!-- LAYER V — ȳ Pulse -->
@@ -3263,72 +3336,56 @@
         <header class="ffes-card-head">
           <span class="ffes-roman">V</span>
           <span class="ffes-glyph">ȳ</span>
-          <span class="ffes-name">ȳ Pulse</span>
+          <span class="ffes-name">Transfinite Tier Generator</span>
         </header>
         <div class="ffes-identity"><em>The Hyper² Wings of Ascent</em> — Transfinite Navigation</div>
-        <div class="ffes-role"><strong>Role:</strong> Extends the ladder beyond finite tiers.</div>
+        <dl class="ffes-contract"><div><dt>Input</dt><dd>Canonical gear index <i>n</i></dd></div><div><dt>Operation</dt><dd>Resolve the tier-specific Vocalic Pulse stem.</dd></div><div><dt>Output</dt><dd>Tier identity <i>T</i><sub>n</sub></dd></div><div><dt>Invariant</dt><dd>No finite upper bound on valid tiers.</dd></div><div><dt>Example</dt><dd><i>n</i> = 2 → Áèẹ́ tier stem</dd></div></dl>
         <div class="ffes-eq">
           ȳ<sub>n</sub> = ⟨ Áèẹ́, Áòẹ́, Áòọ́, Áèé, Áẹ̀ẹ̀, … ⟩<sub>n</sub> &nbsp;·&nbsp; (ẹ́gbẹ̀rǔn)<sup>n</sup>
         </div>
         <div class="ffes-where">sup { <i>m</i> · (ẹ́gbẹ̀rǔn)<sup>n</sup> } = ∞</div>
-        <p class="ffes-note">The transfinite operator. Each magnitude carries a unique per-tier <strong>Vocalic Pulse stem</strong> — its DNA-fingerprint — supporting recursion well beyond named tiers. The ladder is unbounded; ascent never terminates.</p>
+        <p class="ffes-note">The generator assigns a stable tier identity at every gear. Recursive generation extends the naming system beyond the currently catalogued scale.</p>
       </article>
 
-      <!-- THE PULSE COMPASS — synthesis card -->
-      <article class="ffes-card ffes-compass">
+      <!-- LAYER VI — v̄ · z̄ Pulse -->
+      <article class="ffes-card ffes-vi">
         <header class="ffes-card-head">
-          <span class="ffes-roman">✦</span>
-          <span class="ffes-glyph">⊛</span>
-          <span class="ffes-name">The Pulse Compass</span>
+          <span class="ffes-roman">VI</span>
+          <span class="ffes-glyph">v̄·z̄</span>
+          <span class="ffes-name">Vocalic Calibration Operator</span>
         </header>
-        <div class="ffes-identity"><em>Five-Fold Harmony</em> — Constitutional Synthesis</div>
-
-        <div class="ffes-compass-ring">
-          <div class="ffes-compass-pulse"><span class="cp-dot" style="background:#FFD700;"></span><span class="cp-glyph" style="color:#FFD700;">ē</span><span class="cp-name">Ēxpressive</span></div>
-          <div class="ffes-compass-pulse"><span class="cp-dot c-neonpink"></span><span class="cp-glyph t-neonpink">ā</span><span class="cp-name">Alpha² Ignition</span></div>
-          <div class="ffes-compass-pulse"><span class="cp-dot" style="background:#27BCED;"></span><span class="cp-glyph" style="color:#27BCED;">ǣ</span><span class="cp-name">Harmonic Knot</span></div>
-          <div class="ffes-compass-pulse"><span class="cp-dot c-green"></span><span class="cp-glyph t-green">ḡ</span><span class="cp-name">Gear Box</span></div>
-          <div class="ffes-compass-pulse"><span class="cp-dot" style="background:#C892F2;"></span><span class="cp-glyph" style="color:#C892F2;">ȳ</span><span class="cp-name">Hyper² Ascent</span></div>
+        <div class="ffes-identity"><em>The Vocalic Layer</em> — Universal Vowel Calibration</div>
+        <dl class="ffes-contract"><div><dt>Input</dt><dd>Normalised lexical and tier outputs</dd></div><div><dt>Operation</dt><dd>Apply language-specific phonological constraints.</dd></div><div><dt>Output</dt><dd>Calibrated vocalic form <i>V</i><sub>N</sub></dd></div><div><dt>Invariant</dt><dd>Numeric equivalence survives phonetic adaptation.</dd></div><div><dt>Example</dt><dd>Canonical form → validated Yorùbá vocalic identity</dd></div></dl>
+        <div class="ffes-eq">
+          𝒰<sub>UHNE</sub> = ⨁<sub>ℓ ∈ {ē, ā, ǣ, ḡ, ȳ}</sub> ℒ<sub>ℓ</sub> ⊨ Σ<sub>v̄,z̄</sub>
         </div>
-
-        <p class="ffes-note">One voice, five operators, one magnitude. <strong>Ēxpressive</strong> utters, <strong>ā</strong> ignites, <strong>ǣ</strong> harmonises, <strong>ḡ</strong> compresses, <strong>ȳ</strong> ascends — together rendering every magnitude both spoken and computed.</p>
+        <div class="ffes-where">universal vowel calibration · linguistic sovereignty</div>
+        <p class="ffes-note">The calibrator preserves language-specific vowel, tone, and naming constraints while maintaining equivalence with the canonical numeric structure. Linguistic sovereignty is therefore enforced as an output condition.</p>
       </article>
 
-    </div>
-
-    <!-- Sovereign overlay — v̄ + z̄ Pulse -->
-    <div class="ffes-sovereign" aria-label="Sovereign Calibration Authority">
-      <span class="ffes-crown">👑</span>
-      <div class="ffes-sov-body">
-        <div class="ffes-sov-title">v̄ Pulse · z̄ Pulse — Sovereign Calibration Authority</div>
-        <div class="ffes-sov-eq">
-          𝒰<sub>UHNE</sub> &nbsp;=&nbsp; ⨁<sub>ℓ ∈ {ē, ā, ǣ, ḡ, ȳ}</sub> &nbsp;ℒ<sub>ℓ</sub> &nbsp;⊨&nbsp; Σ<sub>v̄, z̄</sub>
-        </div>
-        <p class="ffes-sov-note">Above all five layers stands the Constitutional Engine Chamber — the meta-equation that calibrates, harmonises, and ratifies every Pulse. Without v̄ &amp; z̄, the suite is mechanism; with them, it is sovereign mathematics.</p>
-      </div>
     </div>
 
     <!-- Supporting framework -->
     <div class="ffes-frame">
-      <h4 class="ffes-frame-title">Foundational Definitions &amp; Theorems</h4>
+      <h4 class="ffes-frame-title">Engine Domain, Constraints &amp; System Invariants</h4>
 
       <!-- Domain & Mantissa Normalization -->
       <div class="ffes-row">
         <div class="ffes-cell">
-          <div class="ffes-cell-h">Domain Definition</div>
+          <div class="ffes-cell-h">Input Domain</div>
           <div class="ffes-cell-eq"><i>m</i> ∈ ℕ, &nbsp; 1 ≤ <i>m</i> ≤ 999 &nbsp;·&nbsp; <i>n</i> ∈ ℕ₀</div>
-          <div class="ffes-cell-note">Mantissa is a natural number; the exponent is a non-negative integer.</div>
+          <div class="ffes-cell-note">The engine accepts non-negative integer quantities; canonical decomposition returns a natural mantissa and non-negative gear index.</div>
         </div>
         <div class="ffes-cell">
-          <div class="ffes-cell-h">Mantissa Normalisation Rule</div>
+          <div class="ffes-cell-h">Canonical Normalisation Constraint</div>
           <div class="ffes-cell-eq">1 ≤ <i>m</i> ≤ 999</div>
           <div class="ffes-cell-note">Every number is rewritten so its mantissa fits within a single Yorùbá triadic block — the system's normalisation invariant.</div>
         </div>
       </div>
 
-      <!-- Magnitude Ladder -->
+      <!-- Gear-Mapping Function -->
       <div class="ffes-ladder">
-        <div class="ffes-cell-h">Magnitude Ladder &nbsp;·&nbsp; Gear Function &nbsp;·&nbsp; <i>n</i> ↦ 10<sup>3<i>n</i></sup></div>
+        <div class="ffes-cell-h">Gear-Mapping Function &nbsp;·&nbsp; <i>n</i> ↦ 10<sup>3<i>n</i></sup></div>
         <table class="ffes-table">
           <thead>
             <tr>
@@ -3353,40 +3410,40 @@
       <!-- Uniqueness & Examples -->
       <div class="ffes-row">
         <div class="ffes-cell">
-          <div class="ffes-cell-h">Uniqueness Theorem</div>
+          <div class="ffes-cell-h">Uniqueness &amp; Reversibility</div>
           <div class="ffes-cell-eq"><i>N</i> = <i>m</i> · (ẹ́gbẹ̀rǔn)<sup>n</sup></div>
-          <div class="ffes-cell-note">Every positive integer <i>N</i> has a <strong>unique</strong> representation in this form, with 1 ≤ <i>m</i> ≤ 999.</div>
+          <div class="ffes-cell-note">Every positive integer has one canonical representation. Numeric and validated linguistic forms remain bidirectionally traceable through the operator pipeline.</div>
         </div>
         <div class="ffes-cell">
-          <div class="ffes-cell-h">Zero &amp; Unbounded Magnitude</div>
+          <div class="ffes-cell-h">Scale Invariance &amp; Unboundedness</div>
           <div class="ffes-cell-eq">0 = 0 · (ẹ́gbẹ̀rǔn)<sup>n</sup> &nbsp; ∀ <i>n</i></div>
           <div class="ffes-cell-eq">sup { <i>m</i> · (ẹ́gbẹ̀rǔn)<sup>n</sup> } = ∞</div>
-          <div class="ffes-cell-note">Zero is invariant across all gears. The magnitude function has no upper bound — the engine ascends without ceiling.</div>
+          <div class="ffes-cell-note">Zero remains invariant across gears; the same contracts apply at every scale; and the tier-generation function has no finite upper bound.</div>
         </div>
       </div>
 
       <!-- Worked Examples -->
       <div class="ffes-row">
         <div class="ffes-cell">
-          <div class="ffes-cell-h">Example 1 &nbsp;·&nbsp; 45,000,000</div>
+          <div class="ffes-cell-h">Validated Execution Example 1 &nbsp;·&nbsp; 45,000,000</div>
           <div class="ffes-cell-eq">45 × 10<sup>6</sup> &nbsp;=&nbsp; 45 · (ẹ́gbẹ̀rǔn)<sup>2</sup></div>
           <div class="ffes-cell-note">Mantissa <i>m</i> = 45 &nbsp;·&nbsp; Gear <i>n</i> = 2 &nbsp;·&nbsp; Tier: Million</div>
         </div>
         <div class="ffes-cell">
-          <div class="ffes-cell-h">Example 2 &nbsp;·&nbsp; 7,200,000,000</div>
+          <div class="ffes-cell-h">Validated Execution Example 2 &nbsp;·&nbsp; 7,200,000,000</div>
           <div class="ffes-cell-eq">7.2 × 10<sup>9</sup> &nbsp;=&nbsp; 720 · (ẹ́gbẹ̀rǔn)<sup>3</sup></div>
           <div class="ffes-cell-note">Re-normalised so 1 ≤ <i>m</i> ≤ 999 &nbsp;·&nbsp; Mantissa <i>m</i> = 720 &nbsp;·&nbsp; Gear <i>n</i> = 3 &nbsp;·&nbsp; Tier: Billion</div>
         </div>
       </div>
 
       <!-- ═══════════════════════════════════════════════════════════════ -->
-      <!-- ROSETTA PANEL — One Number · Five Voices · One Truth             -->
+      <!-- ROSETTA PANEL — One Number · Six Voices · One Truth              -->
       <!-- A constitutional unison: a single magnitude rendered through    -->
-      <!-- every FFES Pulse, so all five operators speak in chorus.        -->
+      <!-- every FFES Pulse, so all six operators speak in chorus.         -->
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <div class="ffes-rosetta">
-        <div class="ffes-rosetta-h">One Number · Five Voices · One Truth</div>
-        <div class="ffes-rosetta-sub"><strong>A constitutional demonstration of magnitude across the Fivefold Operator Suite.</strong><span>Five witnesses · One testimony · Five instruments · One melody</span></div>
+        <div class="ffes-rosetta-h">Six-Stage Engine Execution Trace</div>
+        <div class="ffes-rosetta-sub"><strong>Trace input: <i>N</i> = 20,000,000 through every operator contract.</strong><span>Input → decomposition → normalisation → gear mapping → tier generation → vocalic calibration</span></div>
 
         <div class="ffes-rosetta-anchor">
           <span class="ffes-rosetta-anchor-label">Arabic</span>
@@ -3399,52 +3456,59 @@
           <!-- I · ē Pulse — Expressive -->
           <div class="ffes-rosetta-row r-i">
             <div class="ffes-rosetta-glyph">ē</div>
-            <div class="ffes-rosetta-name"><strong>Ēxpressive</strong><span>I · ē Pulse</span></div>
+            <div class="ffes-rosetta-name"><strong>Lexical output <i>L</i><sub>N</sub></strong><span>I · Linguistic Expression</span></div>
             <div class="ffes-rosetta-eq"><strong>Ẹgbẹ̀rǔn<span class="ge-op">l</span>ẹ́gbẹ̀rǔn<span class="ge-op">l</span>ógún</strong></div>
           </div>
 
           <!-- II · ā Pulse — Alpha² Ignition -->
           <div class="ffes-rosetta-row r-ii">
             <div class="ffes-rosetta-glyph">ā</div>
-            <div class="ffes-rosetta-name"><strong>Alpha² Ignition</strong><span>II · ā Pulse</span></div>
+            <div class="ffes-rosetta-name"><strong>Canonical pair (20, 2)</strong><span>II · Magnitude Constructor</span></div>
             <div class="ffes-rosetta-eq"><strong>Ogún</strong> · <span class="ge-paren">(</span><span class="ge-op">ā</span><span class="ge-paren">)</span><span class="ge-suf"><span class="ge-op">l</span>éjì</span></div>
           </div>
 
           <!-- III · ǣ Pulse — Harmonic Knot -->
           <div class="ffes-rosetta-row r-iii">
             <div class="ffes-rosetta-glyph">ǣ</div>
-            <div class="ffes-rosetta-name"><strong>Harmonic Knot</strong><span>III · ǣ Pulse</span></div>
+            <div class="ffes-rosetta-name"><strong>Normal form <i>C</i><sub>N</sub></strong><span>III · Normalisation</span></div>
             <div class="ffes-rosetta-eq"><strong>Ogún</strong> · <span class="ge-paren">(</span><span class="ge-op">ǣ</span><span class="ge-paren">)</span><span class="ge-suf"><span class="ge-op">l</span>éjì</span></div>
           </div>
 
           <!-- IV · ḡ Pulse — Gear Box -->
           <div class="ffes-rosetta-row r-iv">
             <div class="ffes-rosetta-glyph">ḡ</div>
-            <div class="ffes-rosetta-name"><strong>Gear Box</strong><span>IV · ḡ Pulse</span></div>
+            <div class="ffes-rosetta-name"><strong>Scientific mapping</strong><span>IV · Gear Function</span></div>
             <div class="ffes-rosetta-eq"><strong>Ogún</strong> · <span class="ge-paren">(</span><span class="ge-op">ḡ</span><span class="ge-paren">)</span><span class="ge-suf"><span class="ge-op">l</span>éjì</span> &nbsp;=&nbsp; <span class="ge-arabic"><strong>Ogún</strong> × 10<sup>6</sup></span></div>
           </div>
 
           <!-- V · ȳ Pulse — Hyper² Ascent -->
           <div class="ffes-rosetta-row r-v">
             <div class="ffes-rosetta-glyph">ȳ</div>
-            <div class="ffes-rosetta-name"><strong>Hyper² Ascent</strong><span>V · ȳ Pulse</span></div>
+            <div class="ffes-rosetta-name"><strong>Tier identity <i>T</i><sub>2</sub></strong><span>V · Tier Generator</span></div>
             <div class="ffes-rosetta-eq"><strong>Ogún</strong> · <span class="ge-paren">(</span><span class="ge-op">Áèẹ́</span><span class="ge-paren">)</span><span class="ge-suf"><span class="ge-op">l</span>éjì</span></div>
+          </div>
+
+          <!-- VI · v̄ · z̄ Pulse — Vocalic Layer -->
+          <div class="ffes-rosetta-row r-vi">
+            <div class="ffes-rosetta-glyph">v̄·z̄</div>
+            <div class="ffes-rosetta-name"><strong>Validated output <i>V</i><sub>N</sub></strong><span>VI · Vocalic Calibration</span></div>
+            <div class="ffes-rosetta-eq">Σ<sub>v̄,z̄</sub>(<strong>Ẹgbẹ̀rǔn<span class="ge-op">l</span>ẹ́gbẹ̀rǔn<span class="ge-op">l</span>ógún</strong>) = <span class="ge-arabic">calibrated vocalic identity</span></div>
           </div>
 
         </div>
 
         <div class="ffes-rosetta-coda">
-          Five operators, one magnitude. <strong>Ēxpressive</strong> utters it, <strong>Alpha²</strong> ignites it, <strong>Harmonic Knot</strong> binds it, <strong>Gear Box</strong> compresses it, <strong>Hyper² Ascent</strong> lifts it — and the sovereign overlay <strong>v̄ · z̄</strong> ratifies that the chorus speaks one truth.
+          <strong>Trace result:</strong> the input quantity retains one numeric identity across all six transformations. Every stage exposes a verifiable intermediate value, and the final language-native output remains equivalent to 20 × 10<sup>6</sup>.
         </div>
       </div>
 
       <!-- Capstone Theorem -->
       <div class="ffes-capstone">
-        <div class="ffes-cell-h ffes-capstone-h">Five-Fold Representation Theorem</div>
+        <div class="ffes-cell-h ffes-capstone-h">UHNE Canonical Representation Theorem</div>
         <div class="ffes-cell-eq ffes-cell-eq-lg">
           ∀ <i>N</i> ∈ ℕ₀, &nbsp; ∃! &nbsp;(<i>m</i>, <i>n</i>) &nbsp; such that &nbsp; <i>N</i> = <i>m</i> · (ẹ́gbẹ̀rǔn)<sup>n</sup>
         </div>
-        <div class="ffes-cell-note ffes-capstone-note">Every non-negative integer is expressible uniquely through the Alpha² ignition (ā Pulse), normalised within the mantissa domain (0 ≤ <i>m</i> ≤ 999), gear-mapped through ḡ, harmonised through ǣ, ascended through ȳ, and uttered through ē — the full Five-Fold suite, ratified by v̄ &amp; z̄.</div>
+        <div class="ffes-cell-note ffes-capstone-note">Every non-negative integer is expressible uniquely through the Alpha² ignition (ā Pulse), normalised within the mantissa domain (0 ≤ <i>m</i> ≤ 999), gear-mapped through ḡ, harmonised through ǣ, ascended through ȳ, uttered through ē, and vocalically calibrated through v̄ · z̄ — the full Six-Fold suite.</div>
       </div>
 
     </div>

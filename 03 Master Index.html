@@ -1677,15 +1677,34 @@
     function tintTree(root) {
         var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
         var targets = [];
-        var n;
-        while ((n = walker.nextNode())) {
-            if (n.nodeValue && RX_HAS.test(n.nodeValue)) targets.push(n);
+        var index = 0;
+
+        function scanBatch(deadline) {
+            var scanned = 0;
+            var n;
+            var sliceEnd = (window.performance && performance.now) ? performance.now() + 8 : 0;
+
+            while ((n = walker.nextNode())) {
+                if (n.nodeValue && RX_HAS.test(n.nodeValue)) targets.push(n);
+                scanned += 1;
+
+                if (scanned >= 400) {
+                    if (deadline && deadline.timeRemaining && deadline.timeRemaining() >= 4 && scanned < 2000) continue;
+                    if (sliceEnd && performance.now() <= sliceEnd && scanned < 2000) continue;
+                    break;
+                }
+            }
+
+            if (n) {
+                scheduleIdleWork(scanBatch);
+            } else {
+                scheduleIdleWork(processBatch);
+            }
         }
 
-        var index = 0;
         function processBatch(deadline) {
             var processed = 0;
-            var sliceEnd = (window.performance && performance.now) ? performance.now() + 16 : 0;
+            var sliceEnd = (window.performance && performance.now) ? performance.now() + 8 : 0;
 
             try {
                 while (index < targets.length) {
@@ -1693,9 +1712,10 @@
                     index += 1;
                     processed += 1;
 
-                    if (processed >= 200) {
-                        if (deadline && deadline.timeRemaining && deadline.timeRemaining() < 4) break;
-                        if (!deadline && sliceEnd && performance.now() > sliceEnd) break;
+                    if (processed >= 100) {
+                        if (deadline && deadline.timeRemaining && deadline.timeRemaining() >= 4 && processed < 500) continue;
+                        if (sliceEnd && performance.now() <= sliceEnd && processed < 500) continue;
+                        break;
                     }
                 }
             } catch (err) {
@@ -1706,7 +1726,7 @@
             if (index < targets.length) scheduleIdleWork(processBatch);
         }
 
-        scheduleIdleWork(processBatch);
+        scheduleIdleWork(scanBatch);
     }
 
   function run() {
@@ -2294,13 +2314,13 @@
 
   <div class="container">
     <div class="header">
-      <h1>Index Numbers Database</h1>
-      <h2>From Zero through Tredecillion and Beyond — Embracing the Largest Numbers in Human Language</h2>
+    <h1>MASTER NUMERIC INDEX</h1>
+        <h2>Canonical Record Registry from Zero through Tredecillion and Beyond</h2>
       <h2 style="margin-top: 15px; font-size: 1.2rem; color: #FFD700; font-weight: 700;">Universal Hyperdimensional Numeric Engine</h2>
-      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">The operating platform for language-independent numeric systems</p>
+            <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">The authoritative data dictionary for every indexed magnitude</p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published by the Universal Hyperdimensional Numeric Engine Research Initiative<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 8px;">Designed for researchers, educators, software developers, and digital humanities scholars.</p>
-    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">A universal engine for building number systems for science, education, AI, and global knowledge preservation &mdash; with the Yorùbá numerical index serving as its first complete language implementation. This module contributes to a broader international effort supporting linguistic equity, computational sovereignty, and open scholarly infrastructure for indigenous and underrepresented knowledge systems worldwide.</p>
+    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">This module governs numeric identity across UHNE. Every record binds one value to a stable index, lexical form, tier, scientific equivalent, and colour identity; downstream Scaling, Equation, and Applied Systems must resolve that value to this same canonical record.</p>
     </div>
 
     <!-- 47-Sovereign Colour Bar -->
@@ -2361,12 +2381,13 @@
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <div class="intro-section">
         <div class="intro-header">
-          <h2>📖 The New Yorùbá Numeric System's Index Database Dictionary</h2>
+          <h2>Canonical Numeric Registry &amp; Data Dictionary</h2>
         </div>
         <div class="intro-content">
-          <p class="intro-lead">The new <strong>Ònkà Yorùbá Numeric System</strong> is a digital sanctuary with <em>Infinite Scalability</em> — a base-10 framework designed as a universal protocol for indigenous numeric expression worldwide.</p>
-          <p>This project digitises the Yorùbá numerical legacy to provide the exhaustive base-10 precision required for modern algorithms, coding, and advanced finance — serving as a transferable blueprint that any indigenous language community can adopt, adapt, and implement. It demonstrates that indigenous tongues are not relics of the past but the <strong>structural foundation for a sovereign numeric future</strong>.</p>
-          <p>The framework is organically driven by its <span class="highlight-15">47-Sovereign Colour Legendary System</span> — a visual protocol that helps readers of any linguistic background identify both the <span class="l-mult">"l" Drive Multiplier</span> and number colour groups at a glance, block by block. This colour-coded architecture is language-agnostic: each community need only map its own phonology onto the structural rules documented here.</p>
+          <p class="intro-lead">The <strong>Ònkà Yorùbá Master Index</strong> is the platform&rsquo;s canonical base-10 data dictionary. Each row is an addressable numeric record, not merely a display entry: it binds one magnitude to its unique identifier, lexical form, tier, power representation, and colour protocol state.</p>
+          <p><strong>Record contract:</strong> verified Yorùbá forms and scale rules enter the registry; spelling and diacritics are normalised; magnitude, tier, power, and colour metadata are assigned; continuity is tested against adjacent records; and one ordered, machine-resolvable record is returned.</p>
+          <p><strong>Registry invariants:</strong> identifiers remain unique, numeric order remains continuous, equivalent forms remain traceable to one value, and no downstream module may silently redefine a registered tier.</p>
+          <p>The <span class="highlight-15">47-Sovereign Colour Protocol</span> functions as metadata rather than decoration. Each colour identifies a numeric tier; the <span class="l-mult">"l" Drive Multiplier</span> retains its operator identity; and every downstream module must resolve the same value to the same indexed record.</p>
         </div>
       </div>
 
@@ -2778,7 +2799,7 @@
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <div class="analysis-section">
         <div class="analysis-header">
-          <h2>📊 Analysis of Table 1: Key Pattern Breakdown</h2>
+          <h2>Registry Validation: Structural Pattern Analysis</h2>
           <p>The systematic framework of the modernized Yorùbá decimal number system.</p>
         </div>
 
@@ -2836,7 +2857,7 @@
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <div class="rules-section">
         <div class="rules-header">
-          <h2>📐 Formation Rules</h2>
+          <h2>Canonical Record Formation Rules</h2>
         </div>
 
         <div class="rule-box">
@@ -2887,7 +2908,7 @@
       <!-- DATABASE BEGINS -->
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <div class="database-start">
-        <h2>📚 Index Numbers Database</h2>
+        <h2>Canonical Index Records</h2>
         <p>Table 1 lists out all the indexes for the current publication, ranging from <strong>0 to 1 Tredecillion+</strong> numbers.</p>
       </div>
 
