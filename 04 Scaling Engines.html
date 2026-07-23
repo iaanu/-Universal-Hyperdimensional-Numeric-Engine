@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="yo">
 <head>
   <meta charset="UTF-8">
@@ -149,10 +149,10 @@
     .c-dslateblue { background: #483D8B; color: #fff; }     /* 41 Duodecillions */
     .c-maroon { background: #FF6347; color: #fff; }     /* 42 Tens of Duodecillions — Tomato */
     .c-slateblue { background: #8B008B; color: #fff; }     /* 43 Hundreds of Duodecillions — Dark Magenta */
-    .c-deeppink { background: #94AA00; color: #fff; }     /* 44 Tredecillion Plus */
-    .c-neonpink { background: #FF13F0; color: #fff; }     /* 45 "l" Drive Multiplier */
-    .c-grey { background: #808080; color: #fff; }         /* 46 Unassigned/Contents */
-    .c-largenumber { background: #4682B4; color: #fff; }    /* Large Numbers */
+    .c-deeppink { background: #94AA00; color: #fff; }     /* 44 Tredecillions */
+    .c-neonpink { background: #FF13F0; color: #fff; }     /* 46 "l" Drive Multiplier */
+    .c-grey { background: #808080; color: #fff; }         /* 45 Unassigned/Contents */
+    .c-largenumber { background: #4682B4; color: #fff; }    /* 47 Large Numbers */
 
     /* Text Color Classes */
     .t-teal { color: #0891B2; }
@@ -799,7 +799,7 @@
         #4B0082, #FA8072, #008B8B, #B8860B, #7B2D8E,
         #20B2AA, #B22222, #9370DB, #A0522D, #191970,
         #E11D48, #5F9EA0, #CD7F32, #9932CC, #DAA520,
-        #483D8B, #FF6347, #8B008B, #94AA00, #4682B4, #FF13F0, #808080
+        #483D8B, #FF6347, #8B008B, #94AA00, #808080, #FF13F0, #4682B4
       );
       transition: width 0.1s linear;
       border-radius: 0 2px 2px 0;
@@ -1631,7 +1631,7 @@
    --------------------------------------------------------------------
    1. Each of the 47 colours is bound to a magnitude TIER, not to a
       digit. The colour rides with the position (Units, Tens, Hundreds,
-      Thousands, … Tredecillions+, plus the "l" Multiplier and
+      Thousands, … Tredecillions, plus the "l" Multiplier and
       Unassigned), so any number wears the colour of its tier.
    2. The 47 colours preserve their true value WHEREVER they appear —
       Master Index, Scaling Engines, Calendar, Calculator, Posters,
@@ -1855,7 +1855,7 @@
   --tier-43: #8B008B;
   --tier-hund-duodec: var(--tier-43);
 
-  /* ── 44 · Tredecillions/Tredecillions Plus · Dark Olive ───────── */
+  /* ── 44 · Tredecillions · Dark Olive ───────────────────────────── */
   --tier-44: #94AA00;
   --tier-tredecillions: var(--tier-44);
   --tier-tredec: var(--tier-44);
@@ -2364,7 +2364,6 @@
 .tier-undec    { --accent: #CD7F32; --tint-1: #f9e7d0; --tint-2: #f1d0a4; --tint-soft: #e3b577; }
 .tier-duodec   { --accent: #483D8B; --tint-1: #dcd8ec; --tint-2: #beb8db; --tint-soft: #9890c4; }
 .tier-tredec   { --accent: #94AA00; --tint-1: #eef3cf; --tint-2: #dde7a3; --tint-soft: #c5d473; }
-.tier-plus     { --accent: #4682B4; --tint-1: #dceaf4; --tint-2: #b9d2e7; --tint-soft: #91b7d6; }
 .tier-l-drive  { --accent: #FF13F0; --tint-1: #fee0fc; --tint-2: #fcb9f8; --tint-soft: #f88cf2; }
 
 /* ── Shared light stage (the "warm sunlight on paper" canvas) ─────── */
@@ -2911,7 +2910,7 @@
       <div class="c-dslateblue" title="Duodecillions &mdash; Dark Slate Blue"></div>
       <div class="c-tomato" title="Tens of Duodecillions &mdash; Tomato"></div>
       <div class="c-darkmagenta" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
-      <div class="c-deeppink" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div class="c-deeppink" title="Tredecillions &mdash; Dark Olive"></div>
       <div class="c-grey" title="Unassigned State &mdash; Grey"></div>
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
@@ -3027,7 +3026,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
       &nbsp;·&nbsp;
       2 chains = (<span style="color:#fff;">ẹ́gbẹ̀rǔn</span>)<sup style="color:#fff;">léjì</sup> = 10⁶ = Million
       &nbsp;·&nbsp;
-      14 chains = (<span style="color:#fff;">ẹ́gbẹ̀rǔn</span>)<sup style="color:#fff;">léwǎẹ́rin</sup> = 10⁴² = Tredecillion Plus
+      14 chains = (<span style="color:#fff;">ẹ́gbẹ̀rǔn</span>)<sup style="color:#fff;">léwǎẹ́rin</sup> = 10⁴² = Tredecillion
     </li>
     <li><b>Scope:</b> These rules activates from ×1,000 upward only. The Pure Expressive System governs ×1 to ×999 — single-chain vocabulary, no exponent pattern.</li>
    
@@ -3103,7 +3102,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
             <div class="gp-step"><div class="gp-step-n">n = 11</div><div class="gp-step-pow">10³³</div><div class="gp-step-tier">Decillion</div></div>
             <div class="gp-step"><div class="gp-step-n">n = 12</div><div class="gp-step-pow">10³⁶</div><div class="gp-step-tier">Undecillion</div></div>
             <div class="gp-step"><div class="gp-step-n">n = 13</div><div class="gp-step-pow">10³⁹</div><div class="gp-step-tier">Duodecillion</div></div>
-            <div class="gp-step"><div class="gp-step-n">n = 14</div><div class="gp-step-pow">10⁴²</div><div class="gp-step-tier">Tredecillion +</div></div>
+            <div class="gp-step"><div class="gp-step-n">n = 14</div><div class="gp-step-pow">10⁴²</div><div class="gp-step-tier">Tredecillion</div></div>
             <div class="gp-step"><div class="gp-step-n">n → ∞</div><div class="gp-step-pow">⤴</div><div class="gp-step-tier">ȳ Ascent</div></div>
           </div>
         </div>
@@ -5371,7 +5370,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
       <div class="c-dslateblue" title="Duodecillions &mdash; Dark Slate Blue"></div>
       <div class="c-tomato" title="Tens of Duodecillions &mdash; Tomato"></div>
       <div class="c-darkmagenta" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
-      <div class="c-deeppink" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div class="c-deeppink" title="Tredecillions &mdash; Dark Olive"></div>
       <div class="c-grey" title="Unassigned State &mdash; Grey"></div>
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>

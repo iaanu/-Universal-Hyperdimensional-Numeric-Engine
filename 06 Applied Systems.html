@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="yo">
 <head>
   <meta charset="UTF-8">
@@ -149,10 +149,10 @@
     .c-dslateblue { background: #483D8B; color: #fff; }     /* 41 Duodecillions */
     .c-maroon { background: #FF6347; color: #fff; }     /* 42 Tens of Duodecillions — Tomato */
     .c-slateblue { background: #8B008B; color: #fff; }     /* 43 Hundreds of Duodecillions — Dark Magenta */
-    .c-deeppink { background: #94AA00; color: #fff; }     /* 44 Tredecillion Plus */
-    .c-neonpink { background: #FF13F0; color: #fff; }     /* 45 "l" Drive Multiplier */
-    .c-grey { background: #808080; color: #fff; }         /* 46 Unassigned/Contents */
-    .c-largenumber { background: #4682B4; color: #fff; }    /* Large Numbers */
+    .c-deeppink { background: #94AA00; color: #fff; }     /* 44 Tredecillions */
+    .c-neonpink { background: #FF13F0; color: #fff; }     /* 46 "l" Drive Multiplier */
+    .c-grey { background: #808080; color: #fff; }         /* 45 Unassigned/Contents */
+    .c-largenumber { background: #4682B4; color: #fff; }    /* 47 Large Numbers */
 
     /* Text Color Classes */
     .t-teal { color: #0891B2; }
@@ -487,7 +487,7 @@
         #4B0082, #FA8072, #008B8B, #B8860B, #7B2D8E,
         #20B2AA, #B22222, #9370DB, #A0522D, #191970,
         #E11D48, #5F9EA0, #CD7F32, #9932CC, #DAA520,
-        #483D8B, #FF6347, #8B008B, #94AA00, #4682B4, #FF13F0, #808080
+        #483D8B, #FF6347, #8B008B, #94AA00, #808080, #FF13F0, #4682B4
       );
       transition: width 0.1s linear;
       border-radius: 0 2px 2px 0;
@@ -1784,7 +1784,7 @@
    --------------------------------------------------------------------
    1. Each of the 47 colours is bound to a magnitude TIER, not to a
       digit. The colour rides with the position (Units, Tens, Hundreds,
-      Thousands, … Tredecillions+, plus the "l" Multiplier and
+      Thousands, … Tredecillions, plus the "l" Multiplier and
       Unassigned), so any number wears the colour of its tier.
    2. The 47 colours preserve their true value WHEREVER they appear —
       Master Index, Scaling Engines, Calendar, Calculator, Posters,
@@ -2008,7 +2008,7 @@
   --tier-43: #8B008B;
   --tier-hund-duodec: var(--tier-43);
 
-  /* ── 44 · Tredecillions/Tredecillions Plus · Dark Olive ───────── */
+  /* ── 44 · Tredecillions · Dark Olive ───────────────────────────── */
   --tier-44: #94AA00;
   --tier-tredecillions: var(--tier-44);
   --tier-tredec: var(--tier-44);
@@ -2517,7 +2517,6 @@
 .tier-undec    { --accent: #CD7F32; --tint-1: #f9e7d0; --tint-2: #f1d0a4; --tint-soft: #e3b577; }
 .tier-duodec   { --accent: #483D8B; --tint-1: #dcd8ec; --tint-2: #beb8db; --tint-soft: #9890c4; }
 .tier-tredec   { --accent: #94AA00; --tint-1: #eef3cf; --tint-2: #dde7a3; --tint-soft: #c5d473; }
-.tier-plus     { --accent: #4682B4; --tint-1: #dceaf4; --tint-2: #b9d2e7; --tint-soft: #91b7d6; }
 .tier-l-drive  { --accent: #FF13F0; --tint-1: #fee0fc; --tint-2: #fcb9f8; --tint-soft: #f88cf2; }
 
 /* ── Shared light stage (the "warm sunlight on paper" canvas) ─────── */
@@ -3015,7 +3014,7 @@
             <h1>APPLIED NUMERIC SYSTEMS</h1>
       <h2 style="margin-top: 15px; font-size: 1.2rem; color: #FFD700; font-weight: 700;">Universal Hyperdimensional Numeric Engine</h2>
             <h3 style="font-weight:400; font-size:1.15rem; margin-bottom:8px; opacity:0.95;">Deployment Laboratory for Numeric Interfaces &amp; Human-Factor Validation</h3>
-            <p style="font-size: 1.15rem; color: #FFD700; font-weight: 700; margin-top:10px;">44 Jumps &bull; 301 Pulses &bull; 47 Colours &bull; Powered by the 1:3 Ratio Engine &bull; The G-Pulse (Gear Pulse) Magnitude Operator</p>
+            <p style="font-size: 1.15rem; color: #FFD700; font-weight: 700; margin-top:10px;">44 Jumps &bull; 287 Pulses &bull; 47 Colours &bull; Powered by the 1:3 Ratio Engine &bull; The G-Pulse (Gear Pulse) Magnitude Operator</p>
             <p style="font-weight:400; font-size:1.15rem; margin-bottom:8px; opacity:0.95;">Deploying canonical numeric rules as measurable workflows for reading, teaching, software interaction, accessibility, and cultural continuity.</p>
         </div>
         <div style="flex:0 0 auto; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:10px 24px;">
@@ -3072,7 +3071,7 @@
       <div class="c-dslateblue" title="Duodecillions &mdash; Dark Slate Blue"></div>
       <div class="c-tomato" title="Tens of Duodecillions &mdash; Tomato"></div>
       <div class="c-darkmagenta" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
-      <div class="c-deeppink" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div class="c-deeppink" title="Tredecillions &mdash; Dark Olive"></div>
       <div class="c-grey" title="Unassigned State &mdash; Grey"></div>
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
@@ -3084,11 +3083,11 @@
     <div class="intro-text applied-intro-panel">
         <p style="font-size:1.15rem;"><strong>The Applied Systems module is the platform&rsquo;s deployment and validation layer.</strong> It converts canonical records, scaling rules, and equation outputs into visual, vocal, pedagogical, and software-facing interfaces. Each implementation is evaluated against measurable outcomes: can a user identify the tier, preserve numeric equivalence, recover the source form, and correct an error without losing position? The Orchestral Rainbow Highway Traffic is the principal Yorùbá implementation of this application contract.</p>
 
-        <h3 style="color:#1E8CB8; margin-top:24px;">1. Compression Benchmark: 942 Zeros vs. 301 Pulses</h3>
+        <h3 style="color:#1E8CB8; margin-top:24px;">1. Compression Benchmark: 900 Zeros vs. 287 Pulses</h3>
         <p>This benchmark compares literal zero scanning with triadic Pulse navigation over the same magnitude range.</p>
         <ul>
-            <li><strong>Input burden:</strong> Literal notation exposes <strong>942 zero positions</strong> across the documented range.</li>
-            <li><strong>Transformation:</strong> The 1:3 Ratio Engine groups every three decimal positions into one gear step, represented by <strong>301 Neon Pink "g" Pulses</strong>.</li>
+            <li><strong>Input burden:</strong> Literal notation exposes <strong>900 zero positions</strong> across the documented range.</li>
+            <li><strong>Transformation:</strong> The 1:3 Ratio Engine groups every three decimal positions into one gear step, represented by <strong>287 Neon Pink "g" Pulses</strong>.</li>
             <li><strong>Validation target:</strong> Readers should identify the same magnitude with fewer visual units while preserving exact correspondence to 10<sup>3n</sup>. Timing and cognitive-load claims require controlled user testing.</li>
         </ul>
         <h3 style="color:#1E8CB8; margin-top:24px;">2. Multiplier Integration: The "l" Drive Operator</h3>
@@ -3107,7 +3106,7 @@
                 <ul>
                     <li><span class="t-red" style="font-weight: 700;">&#9632; Red</span> = Thousands</li>
                     <li><span class="t-navy" style="font-weight: 700;">&#9632; Navy Blue</span> = Billions</li>
-                    <li><span class="t-deeppink" style="font-weight: 700;">&#9632; Dark Olive</span> = Tredecillion Plus</li>
+                    <li><span class="t-deeppink" style="font-weight: 700;">&#9632; Dark Olive</span> = Tredecillions</li>
                 </ul>
             </li>
             <li><strong>The 46th Colour (Dark Goldenrod):</strong> This breakthrough destroys the visual gap for Tens of Thousands, delivering a seamless chromatic transition across the entire Highway.</li>
@@ -3206,7 +3205,7 @@
             <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; color:#FF13F0; font-weight:700; border-left:3px solid #1E90FF;">5</td>
             <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; color:#888;">10¹⁵</td>
             <td style="padding:7px 6px; border:1px solid #ccc;"><span style="background:#1E90FF; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700;">QUADRILLIONS</span></td>
-            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; font-size:0.95rem; font-weight:800;"><span class="t-steel" style="font-weight: 800;">Ágbèérǔn</span></td>
+            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; font-size:0.95rem; font-weight:800;"><span class="t-steel" style="font-weight: 800;">Ágbèérǔn</span></td>
             <td style="padding:7px 6px; border:1px solid #ccc; font-size:0.88rem; word-break:break-all;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Expressive</div><span class="t-steel" style="font-weight: 700;">Ẹgbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-steel" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-steel" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-steel" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-steel" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span></td>
             <td style="padding:7px 6px; border:1px solid #ccc; text-align:center;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Operator</div><span style="color:#555;">5 × <span style="color:#FF13F0; font-weight:700; text-decoration:overline; text-decoration-thickness:2px;">g</span> <span style="color:#888; font-size:0.78rem;">(5 × ẹ́gbẹ̀rǔn)</span> = </span><br><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Result</div><span style="color:#FF13F0; font-weight:700; text-decoration:overline; text-decoration-thickness:2px;">g</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-steel" style="font-weight: 700;">árǔn</span></td>
           </tr>
@@ -3269,7 +3268,7 @@
             <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; color:#FF13F0; font-weight:700; border-left:3px solid #CD7F32;">12</td>
             <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; color:#888;">10³⁶</td>
             <td style="padding:7px 6px; border:1px solid #ccc;"><span style="background:#CD7F32; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700;">UNDECILLIONS</span></td>
-            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; font-size:0.95rem; font-weight:800;"><span class="t-bronze" style="font-weight: 800;">Égbèérǔn</span></td>
+            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; font-size:0.95rem; font-weight:800;"><span class="t-bronze" style="font-weight: 800;">Égbèérǔn</span></td>
             <td style="padding:7px 6px; border:1px solid #ccc; font-size:0.82rem; word-break:break-all;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Expressive</div><span class="t-bronze" style="font-weight: 700;">Ẹgbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span></td>
             <td style="padding:7px 6px; border:1px solid #ccc; text-align:center;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Operator</div><span style="color:#555;">12 × <span style="color:#FF13F0; font-weight:700; text-decoration:overline; text-decoration-thickness:2px;">g</span> <span style="color:#888; font-size:0.78rem;">(12 × ẹ́gbẹ̀rǔn)</span> = </span><br><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Result</div><span style="color:#FF13F0; font-weight:700; text-decoration:overline; text-decoration-thickness:2px;">g</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-bronze" style="font-weight: 700;">éwǎéjì</span></td>
           </tr>
@@ -3290,15 +3289,6 @@
             <td style="padding:7px 6px; border:1px solid #555; text-align:center; font-size:0.95rem; font-weight:800;"><span class="t-deeppink" style="font-weight: 800;">Égbẹ́ẹ́rǔn</span></td>
             <td style="padding:7px 6px; border:1px solid #ccc; font-size:0.75rem; word-break:break-all;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Expressive</div><span class="t-deeppink" style="font-weight: 700;">Ẹgbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn</span></td>
             <td style="padding:7px 6px; border:1px solid #555; text-align:center;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Operator</div><span style="color:#555;">14 × <span style="color:#FF13F0; font-weight:700; text-decoration:overline; text-decoration-thickness:2px;">g</span> <span style="color:#888; font-size:0.78rem;">(14 × ẹ́gbẹ̀rǔn)</span> = </span><br><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Result</div><span style="color:#FF13F0; font-weight:700; text-decoration:overline; text-decoration-thickness:2px;">g</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 800;">éwǎẹ́rin</span></td>
-          </tr>
-          <!-- g14+ — Beyond Tredecillions -->
-          <tr style="background:#e8f2fd;">
-            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; color:#FF13F0; font-weight:700; border-left:3px solid #94AA00;">14+</td>
-            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; color:#888;">10⁴²⁺</td>
-            <td style="padding:7px 6px; border:1px solid #ccc; color:#94AA00; font-style:italic;">Tredecillion Plus &mdash; the Highway continues&hellip;</td>
-            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center; font-size:0.95rem; font-weight:800; font-style:italic;"><span class="t-deeppink" style="font-weight: 800;">Égbẹ́ẹ́rǔn+</span></td>
-            <td style="padding:7px 6px; border:1px solid #ccc; font-size:0.82rem; color:#94AA00; font-style:italic; word-break:break-all;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Expressive</div><span class="t-deeppink" style="font-weight: 700;">Ẹgbẹ̀rǔn</span><span class="t-deeppink" style="font-weight: 700;">(</span><span class="t-neonpink" style="font-weight: 700;">l</span><span class="t-deeppink" style="font-weight: 700;">ẹ́gbẹ̀rǔn)ⁿ</span> <span style="color:#888;">n &gt; 14</span></td>
-            <td style="padding:7px 6px; border:1px solid #ccc; text-align:center;"><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Operator</div><span style="color:#555;">14+ × <span class="g-op">g</span> <span style="color:#888; font-size:0.78rem;">(14+ × ẹ́gbẹ̀rǔn)</span> = </span><br><div style="font-size:0.6rem; font-weight:700; color:#808080; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:3px;">Result</div><span class="g-op">g</span><span class="t-neonpink" style="font-weight:700;">l</span><span style="color:#94AA00; font-weight:700; font-style:italic;">éwǎẹ́rin+</span></td>
           </tr>
         </tbody>
       </table>
@@ -3626,51 +3616,6 @@ function rEntry(i){
     return h;
 }
 
-function rTredPlus(){
-    const hx='#94AA00', tc=TRAFFIC.head;
-    let h='';
-    h+=`<tr class="header-bar">`;
-    h+=`<td class="traffic-light" style="background:${tc}">&nbsp;</td>`;
-    h+=`<td class="body-label" style="background:${tc}"><span class="body-name">Head</span> <span class="key-label">Root Key</span></td>`;
-    h+=`<td class="key-cell" style="background:${hx}; color:#fff;"><strong>G# Maj</strong></td>`;
-    h+=`<td class="pulse-cell" style="background:${hx}; color:#fff;"><strong>10\u2074\u00B2\u207A = 14 Pulses Plus</strong></td>`;
-    h+=`<td class="score-label" style="background:${hx}; color:#fff;"><strong>Yo vs Arab</strong></td>`;
-    h+=`<td class="range-label" style="background:${hx}; color:#fff;"><strong>Range</strong></td>`;
-    h+=`<td class="colour-label" style="background:${hx}; color:#fff;"><strong>Colour</strong></td>`;
-    h+=`<td class="hex-label" style="background:${hx}; color:#fff;"><strong>Hex</strong></td>`;
-    h+=`<td class="swatch-end" style="background:${hx}"><strong>#</strong></td>`;
-    h+=`</tr>`;
-
-    // Arabic: 10^42 + 1
-    const ar42p1 = addC('1'+'0'.repeat(42)).replace(/,000$/,',001');
-    // Yorùbá: 14 chains + lEní
-    let yr='';
-    yr+=sp(hx,'\u1EB8')+sp(PINK,'g')+sp(hx,'b\u1EB9\u0300r\u016Dn');
-    for(let j=1;j<14;j++) yr+=sp(PINK,'l')+sp(hx,'\u1EB9\u0301')+sp(PINK,'g')+sp(hx,'b\u1EB9\u0300r\u016Dn');
-    yr+=sp(hx,'En\u00ED');
-
-    // Range
-    const rng = ar42p1+'\u2013'+addC('9'.repeat(43));
-
-    // Running total for Tredecillion Plus
-    runG+=14; runZ+=42;
-    const tpScore=`<span class="score-g">${runG}g</span><br><span class="score-vs">vs</span><br><span class="score-z">${runZ} zeros</span>`;
-
-    h+=`<tr class="data-row">`;
-    h+=`<td class="ordinal-cell" style="background:${tc}">${ordinalBadge('14th+')}</td>`;
-    h+=`<td class="level-cell"><span class="level-name" style="color:${hx}">TREDECILLION PLUS</span><span class="stop-text">STOP</span><br><span class="stop-text">STOP</span><br><span class="stop-text">TAKE A BREAK</span><img class="traffic-img" src="Red.jpg" alt="Red traffic light"><span class="gear-status">14th + gear of the <span class="gear-drive">&quot;l&quot;</span> Drive</span></td>`;
-    h+=`<td class="key-data"><span class="chord-main">G# Maj</span><span class="chord-sub">C# Maj<br>D# Maj<br>Fm</span><span class="chord-tempo">4/4<br>♪ 72</span></td>`;
-    h+=`<td class="number-cell"><span class="arabic-num">${ar42p1}</span><span class="yoruba-name">${yr}</span><span class="g-count">${gOperatorHTML('14+')}</span>${gResultHTML(14,hx,'+')}</td>`;
-    h+=`<td class="score-cell">${tpScore}</td>`;
-    h+=`<td class="range-cell">${rng}</td>`;
-    h+=`<td class="colour-cell" style="color:${hx}">Dark Olive</td>`;
-    h+=`<td class="hex-cell" style="color:${hx}">${hx}</td>`;
-    h+=`<td class="swatch-cell" style="background:${hx}"><span class="swatch-label">44 Plus</span></td>`;
-    h+=`</tr>`;
-    h+=`<tr class="separator-row"><td style="background:${tc}">&nbsp;</td><td style="background:${tc}">&nbsp;</td><td colspan="7" style="background:${hx}">&nbsp;</td></tr>`;
-    return h;
-}
-
 function rSpecial(ord,title,desc,cn,hx,swatchLabel=''){
     let h='';
     h+=`<tr class="separator-row"><td colspan="9" style="background:${hx}">&nbsp;</td></tr>`;
@@ -3692,7 +3637,6 @@ function rSpecial(ord,title,desc,cn,hx,swatchLabel=''){
 /* ═══ BUILD ═══ */
 let t='';
 for(let i=0;i<E.length;i++) t+=rEntry(i);
-t+=rTredPlus();
 t+=grandLandingHTML();
 t+=rSpecial('',
     '<span class="t-neonpink">\u201Cl\u201D Multiplier\u2019s </span><span class="t-grey">Contents <em>(<span class="t-neonpink">Children</span>)</em></span>',
@@ -3780,15 +3724,15 @@ document.getElementById('tableBody').innerHTML=t;
 
             <article class="practice-card" style="--jump-colour:#94AA00;">
               <h3>5. Final Traffic Lane Challenge</h3>
-              <div class="practice-route">Decillions → Undecillions → Duodecillions → Tredecillions → Tredecillion Plus</div>
+              <div class="practice-route">Decillions → Undecillions → Duodecillions → Tredecillions</div>
               <div class="practice-metrics">
-                <div class="practice-metric"><strong>11g-14g+</strong><span>Gear pulses</span></div>
-                <div class="practice-metric"><strong>33-42+ zeros</strong><span>Zeros to count</span></div>
+                <div class="practice-metric"><strong>11g-14g</strong><span>Gear pulses</span></div>
+                <div class="practice-metric"><strong>33-42 zeros</strong><span>Zeros to count</span></div>
               </div>
               <div class="root-strip">
-                <div class="root-chip root-head"><strong>1. Look At The Final Lanes</strong>Point from Decillions to Tredecillion Plus and keep your place on the Highway.</div>
-                <div class="root-chip root-arm"><strong>2. Say The Last Gear Pulses</strong>Call 11g, 12g, 13g, and 14g+ with a joyful conductor voice.</div>
-                <div class="root-chip root-leg"><strong>3. Joy Engine Landing Celebration</strong>Smile, clap, and open the next discovery after Tredecillion Plus.</div>
+                <div class="root-chip root-head"><strong>1. Look At The Final Lanes</strong>Point from Decillions to Tredecillions and keep your place on the Highway.</div>
+                <div class="root-chip root-arm"><strong>2. Say The Last Gear Pulses</strong>Call 11g, 12g, 13g, and 14g with a joyful conductor voice.</div>
+                <div class="root-chip root-leg"><strong>3. Joy Engine Landing Celebration</strong>Smile and clap when the route reaches Tredecillions.</div>
               </div>
               <div class="practice-do">Learners race the 10-second challenge: one team performs the pulse chant, another writes the zero count. The conductor awards the win for accuracy, breath control, musical timing, and the joyful courage to begin again.</div>
             </article>
@@ -3796,7 +3740,7 @@ document.getElementById('tableBody').innerHTML=t;
 
           <div class="practice-jump-footer">
             <div class="practice-note"><span class="practice-note-smiley" role="img" aria-label="Smart learner joy">🤓</span><span><strong>Smart learner advantage:</strong> the Joy Engine converts abstraction into joyful movement. Learners see it, speak it, clap it, travel it, conduct it, enjoy it, and return to discover more.</span></div>
-            <div class="practice-scoreboard"><strong>Full Highway score:</strong> from Thousands to Tredecillion Plus, the route compresses the journey into <strong>301 G-Pulses</strong> against <strong>942 Arab zeros</strong>. Learning enjoyed becomes joyful repetition. Joyful repetition becomes mastery. Mastery becomes lifelong discovery. <strong>Count Joyfully!</strong></div>
+            <div class="practice-scoreboard"><strong>Full Highway score:</strong> from Thousands to Tredecillions, the route compresses the journey into <strong>287 G-Pulses</strong> against <strong>900 Arabic zero positions</strong>. Learning enjoyed becomes joyful repetition. Joyful repetition becomes mastery. Mastery becomes lifelong discovery. <strong>Count Joyfully!</strong></div>
           </div>
         </div>
       </section>
@@ -3905,7 +3849,7 @@ document.getElementById('tableBody').innerHTML=t;
               <ul class="performance-list">
                 <li>✅ Identify Colour Zone</li>
                 <li>✅ Engage <span class="t-neonpink" style="font-weight:700;">l</span>-Drive Gear</li>
-                <li>✅ Fire ḡ-Pulse Count</li>
+                <li>✅ Fire ḡ-Pulse Count</li>
                 <li>✅ Declare Magnitude Name</li>
                 <li>🔥 <strong>BONUS:</strong> Explain the underlying structural law!</li>
                 <li><strong>🎯 Cognitive Goal:</strong> Maximum calculation velocity married to deep conceptual clarity.</li>
@@ -4097,7 +4041,7 @@ document.getElementById('tableBody').innerHTML=t;
       <div class="c-dslateblue" title="Duodecillions &mdash; Dark Slate Blue"></div>
       <div class="c-tomato" title="Tens of Duodecillions &mdash; Tomato"></div>
       <div class="c-darkmagenta" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
-      <div class="c-deeppink" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div class="c-deeppink" title="Tredecillions &mdash; Dark Olive"></div>
       <div class="c-grey" title="Unassigned State &mdash; Grey"></div>
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>

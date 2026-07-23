@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="yo">
 <head>
   <meta charset="UTF-8">
@@ -25,7 +25,7 @@
         #4B0082, #FA8072, #008B8B, #B8860B, #7B2D8E,
         #20B2AA, #B22222, #9370DB, #A0522D, #191970,
         #E11D48, #5F9EA0, #CD7F32, #9932CC, #DAA520,
-        #483D8B, #FF6347, #8B008B, #94AA00, #4682B4, #FF13F0, #808080
+        #483D8B, #FF6347, #8B008B, #94AA00, #808080, #FF13F0, #4682B4
       );
       transition: width 0.1s linear;
       border-radius: 0 2px 2px 0;
@@ -409,7 +409,7 @@
    --------------------------------------------------------------------
    1. Each of the 47 colours is bound to a magnitude TIER, not to a
       digit. The colour rides with the position (Units, Tens, Hundreds,
-      Thousands, … Tredecillions+, plus the "l" Multiplier and
+      Thousands, … Tredecillions, plus the "l" Multiplier and
       Unassigned), so any number wears the colour of its tier.
    2. The 47 colours preserve their true value WHEREVER they appear —
       Master Index, Scaling Engines, Calendar, Calculator, Posters,
@@ -633,7 +633,7 @@
   --tier-43: #8B008B;
   --tier-hund-duodec: var(--tier-43);
 
-  /* ── 44 · Tredecillions/Tredecillions Plus · Dark Olive ───────── */
+  /* ── 44 · Tredecillions · Dark Olive ───────────────────────────── */
   --tier-44: #94AA00;
   --tier-tredecillions: var(--tier-44);
   --tier-tredec: var(--tier-44);
@@ -1142,7 +1142,6 @@
 .tier-undec    { --accent: #CD7F32; --tint-1: #f9e7d0; --tint-2: #f1d0a4; --tint-soft: #e3b577; }
 .tier-duodec   { --accent: #483D8B; --tint-1: #dcd8ec; --tint-2: #beb8db; --tint-soft: #9890c4; }
 .tier-tredec   { --accent: #94AA00; --tint-1: #eef3cf; --tint-2: #dde7a3; --tint-soft: #c5d473; }
-.tier-plus     { --accent: #4682B4; --tint-1: #dceaf4; --tint-2: #b9d2e7; --tint-soft: #91b7d6; }
 .tier-l-drive  { --accent: #FF13F0; --tint-1: #fee0fc; --tint-2: #fcb9f8; --tint-soft: #f88cf2; }
 
 /* ── Shared light stage (the "warm sunlight on paper" canvas) ─────── */
@@ -1700,7 +1699,7 @@
       <div class="c-dslateblue" title="Duodecillions &mdash; Dark Slate Blue"></div>
       <div class="c-tomato" title="Tens of Duodecillions &mdash; Tomato"></div>
       <div class="c-darkmagenta" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
-      <div class="c-deeppink" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div class="c-deeppink" title="Tredecillions &mdash; Dark Olive"></div>
       <div class="c-grey" title="Unassigned State &mdash; Grey"></div>
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
@@ -1746,7 +1745,7 @@
             <span class="pink">l Multiplier</span>
           </div>
           <div class="g-launch-row">
-            <a class="g-launch" href="tools/Number Generator.html">Open the Generator &rarr;</a>
+            <a class="g-launch" href="tools/Number Generator.zip" download>Download the Yorùbá Number Generator &darr;</a>
             <a class="g-secondary" href="#prod-1">Read Full Description &darr;</a>
           </div>
         </div>
@@ -1763,7 +1762,7 @@
           <h2><span class="section-marker">II</span>Yorùbá Numerical Calculator</h2>
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p class="tagline">A calculator built for everyone &mdash; the 47-Colour System made tactile.</p>
-          <p class="summary">Stunning orange design, large square keys, and a crystal-clear screen built for the curious child, the elder reconnecting with ancestral wisdom, and the professional demanding both beauty and precision. Each colour is a teacher: <em>Ọgọ́rǔn</em> glows purple, <em>Àádọ́ta</em> shines blue, <em>Ẹ́rin</em> stands proud in green &mdash; revealing the architecture of Yorùbá mathematical thought block by block.</p>
+          <p class="summary">Stunning orange design, large square keys, and a crystal-clear screen built for the curious child, the elder reconnecting with ancestral wisdom, and the professional demanding both beauty and precision. Each colour is a teacher: <em>Ọgọ́rǔn</em> glows purple, <em>Àádọ́ta</em> shines blue, <em>Ẹ́rin</em> stands proud in green &mdash; revealing the architecture of Yorùbá mathematical thought block by block. Integer arithmetic retains 45-digit <code>BigInt</code> precision, while division by zero returns the explicit <em>Àṣìṣe</em> state.</p>
           <div class="pulse-tags">
             <span>Big Keys</span>
             <span>47-Colour</span>
@@ -1771,7 +1770,7 @@
             <span>BigInt 45-digit</span>
           </div>
           <div class="g-launch-row">
-            <a class="g-launch" href="tools/Calculator.html">Open the Calculator &rarr;</a>
+            <a class="g-launch" href="tools/Calculator.html" download>Download the Yorùbá Numerical Calculator &darr;</a>
             <a class="g-secondary" href="#prod-2">Read Full Description &darr;</a>
           </div>
         </div>
@@ -1787,16 +1786,16 @@
           <h3 class="product-eyebrow">Digit &rarr; Yorùbá Phrase</h3>
           <h2><span class="section-marker">III</span>Yorùbá Number Conversion Tool</h2>
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <p class="tagline">The portal in your pocket &mdash; forty-six colours, forty-six keys, one people.</p>
+          <p class="tagline">The portal in your pocket &mdash; forty-seven sovereign colours, one people.</p>
           <p class="summary">Type any number from <em>Ódo</em> (0) to over a Tredecillion and watch the screen breathe life into digits once foreign. Thousands glow red like ancestral fire, hundreds pulse purple like royalty, units dance in green like new growth. Designed with deliberate curves, gradients of orange and amber, and the welcoming warmth of a grandparent&rsquo;s embrace.</p>
           <div class="pulse-tags">
-            <span>0 &rarr; Tredecillion+</span>
+            <span>0 &rarr; Tredecillion and Beyond</span>
             <span class="gold">47-Colour</span>
             <span>No Sign-up</span>
             <span>Offline</span>
           </div>
           <div class="g-launch-row">
-            <a class="g-launch" href="tools/Converter.html">Open the Converter &rarr;</a>
+            <a class="g-launch" href="tools/Converter.html" download>Download the Yorùbá Number Converter &darr;</a>
             <a class="g-secondary" href="#prod-3">Read Full Description &darr;</a>
           </div>
         </div>
@@ -1809,7 +1808,7 @@
           <div class="g-photo p-age" role="img" aria-label="Yorùbá Age Calculator"></div>
         </div>
         <div class="g-text">
-          <h3 class="product-eyebrow">Time in Forty-Six Colours</h3>
+          <h3 class="product-eyebrow">Time in Forty-Seven Colours</h3>
           <h2><span class="section-marker">IV</span>Yorùbá Age Calculator</h2>
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p class="tagline">The mirror of your days &mdash; biography in ancestral tongue.</p>
@@ -1821,7 +1820,7 @@
             <span>Biographical</span>
           </div>
           <div class="g-launch-row">
-            <a class="g-launch" href="tools/Age Calculator.html">Open the Age Calculator &rarr;</a>
+            <a class="g-launch" href="tools/Age Calculator.html" download>Download the Yorùbá Age Calculator &darr;</a>
             <a class="g-secondary" href="#prod-4">Read Full Description &darr;</a>
           </div>
         </div>
@@ -1846,7 +1845,7 @@
             <span>Year 10,068</span>
           </div>
           <div class="g-launch-row">
-            <a class="g-launch" href="tools/Kàlẹ́ndà.html">Open the Kàlẹ́ndà &rarr;</a>
+            <a class="g-launch" href="tools/Kàlẹ́ndà.html" download>Download the Kàlẹ́ndà Yorùbá &darr;</a>
             <a class="g-secondary" href="#prod-5">Read Full Description &darr;</a>
           </div>
         </div>
@@ -1871,7 +1870,7 @@
             <span class="pink">Tonal Speech</span>
           </div>
           <div class="g-launch-row">
-            <a class="g-launch" href="tools/Talking Drum.html">Open the Drum Simulator &rarr;</a>
+            <a class="g-launch" href="tools/Talking Drum.html" download>Download the Yorùbá Talking Drum Simulator &darr;</a>
             <a class="g-secondary" href="#prod-6">Read Full Description &darr;</a>
           </div>
         </div>
@@ -1893,10 +1892,10 @@
             <span>16 Strings</span>
             <span>47-Colour CoF</span>
             <span class="pink">Neon Pivot</span>
-            <span class="gold">Tredecillion+</span>
+            <span class="gold">Tredecillion and Beyond</span>
           </div>
           <div class="g-launch-row">
-            <a class="g-launch" href="tools/Acoustic Guitar.html">Open the Guitar Explorer &rarr;</a>
+            <span class="g-launch" role="status" aria-label="16-String Acoustic Guitar Explorer coming soon">Coming Soon</span>
             <a class="g-secondary" href="#prod-7">Read Full Description &darr;</a>
           </div>
         </div>
@@ -1923,8 +1922,9 @@
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p>With its stunning orange design radiating warmth and pride, a bigger screen for crystal-clear visibility, and large square keys that feel confident under the fingertips, this calculator was built for everyone: the curious child taking their first steps into numbers, the elder reconnecting with ancestral wisdom, and the professional who demands both beauty and precision. Every tap is effortless, every number is bold, and every Yorùbá word displayed is a reminder that our language was never meant to be silent in the world of mathematics.</p>
           <p>The revolutionary 47-Colour System transforms how we learn and perceive numbers. Each colour is a visual guide, a teacher, and a companion. When you see <strong>Ọgọ́rǔn</strong> glow in purple, <strong>Àádọ́ta</strong> shine in blue, and <strong>Ẹ́rin</strong> stand proud in green, you are witnessing the architecture of Yorùbá mathematical thought, block by block, colour by colour. This is accessibility at its finest: children learn faster, adults retain longer, and for those with learning differences, the colours become bridges where words alone could not reach. The Yorùbá numerical structure is not primitive; it is profoundly logical, elegantly multiplicative, and deserves to stand alongside any numbering system in the world.</p>
+          <p>Its arithmetic engine preserves integer precision with <code>BigInt</code> up to the 45-digit input ceiling, supports decimal and division paths, and reports division by zero as <strong>Àṣìṣe</strong> rather than silently returning zero. Automated checks now cover arithmetic, conversion, the digit ceiling, scientific notation, and the ordered 47-tier colour contract sourced from the Master Index.</p>
           <p>The calculator embodies what has been called Visual Rescue Philosophy &mdash; grounding the global diaspora in a history spanning over ten thousand years and fostering pride that transcends colonial borders. Every feature prioritizes digital compliance while maintaining cultural authenticity, a balance achieved through careful design and deep respect for heritage. Whether in Lagos, London, New York, or Toronto, this calculator speaks to the awakening of a people destined to count &mdash; and to count for something great.</p>
-          <div class="summary-pill">&ldquo;Forty-six colours, forty-six keys, one people learning to count in their own tongue.&rdquo;</div>
+          <div class="summary-pill">&ldquo;Forty-seven sovereign colours, one people learning to count in their own tongue.&rdquo;</div>
         </div>
 
         <div class="full-chapter dropcap" id="prod-3">
@@ -1932,7 +1932,7 @@
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p>Imagine standing at a market in Ibadan, and a price flashes: ₦47,500. In days past, that number would pass through your mind in borrowed tongue. But now, you pause, type, and watch the screen transform into <strong>Ẹgbẹ̀rǔnlógójìÉjeỌgọ́rǔnlárǔn</strong> &mdash; thousands glowing red like ancestral fire, hundreds pulsing purple like royalty. You are not just reading a price; you are reclaiming it.</p>
           <p>This app was not designed in haste. Every curve, every gradient of orange and amber, every shadow and glow was crafted with one purpose: making the user feel at home. The moment you open it you are greeted not by complexity but by warmth, welcomed like a grandparent&rsquo;s embrace &mdash; familiar, safe, full of wisdom. The input field asks one simple question: &ldquo;What number lives in your heart today?&rdquo; Type any number from <em>Ódo</em> to over a Tredecillion, and watch the app breathe life into digits once foreign.</p>
-          <p>The 47-Colour System is not decoration; it is revelation. Cerulean speaks of zero&rsquo;s void before creation. Vibrant green echoes fresh leaves of new growth. Royal blue rises steady as the ocean. Purple announces royalty and significance. Red ignites the fire of thousands. Golden treasures shimmer like ancient Ilé-Ifẹ̀. Brown anchors the Tredecillions, rooted in heritage. The app asks nothing but curiosity &mdash; no registration, no passwords, no payments, no barriers. Just open, type, and witness.</p>
+          <p>The 47-Colour System is not decoration; it is revelation. Cerulean speaks of zero&rsquo;s void before creation. Vibrant green echoes fresh leaves of new growth. Royal blue rises steady as the ocean. Purple announces royalty and significance. Red ignites the fire of thousands. Dark Olive anchors the Tredecillions, while Steel Blue carries Large Numbers from 10<sup>45</sup> onward. The app asks nothing but curiosity &mdash; no registration, no passwords, no payments, no barriers. Just open, type, and witness.</p>
           <div class="summary-pill">&ldquo;A door of light, colour, and ancestral memory turning cold digits into warm, living language.&rdquo;</div>
         </div>
 
@@ -1942,7 +1942,7 @@
           <p>Type your birthdate and suddenly your forty-five years are no longer just &ldquo;45&rdquo; &mdash; they become <strong>Ogójìárǔn</strong>, glowing blue like the steady tide of a life well-lived. Your seven months become <strong>Éje</strong>, shimmering green like new growth. Your twenty-three days pulse with the same green vitality, <strong>Ogúnẹ́ta</strong>: each day a gift, each day counted, each day yours. Then comes the revelation &mdash; your total days lived. Not years, not decades, but every sunrise witnessed, every night survived, every breath compressed into one magnificent number.</p>
           <p>Perhaps 16,437 days. In Yorùbá: <strong>Ẹgbẹ̀rǔnléwǎẹ́fàỌgọ́rǔnlẹ́rinỌgbọ̀néje</strong>. The thousands burn red with resilience. The hundreds glow purple with experience. Tens and units dance in royal blue and vibrant green &mdash; the ordinary days that compose an extraordinary life. This is not mathematics; this is biography told in your ancestral tongue. The elders say, &ldquo;We do not merely count a person&rsquo;s days; we count their deeds.&rdquo; But what if counting the days <em>itself</em> is a deed? What if every day acknowledged becomes an act of remembrance, resistance, and love?</p>
           <p>The 47-Colour System illuminates rather than decorates. Cerulean breathes for zero, for the stillness before your first cry. Vibrant green celebrates units &mdash; single days that seem small but build mountains. Royal blue honours tens, weeks becoming months, patience becoming wisdom. Purple announces hundreds &mdash; you have entered a palace of experience. Red ignites thousands. Sky blue crowns those with 36,500 days or more &mdash; a century of sunrises, treasures richer than any vault. When a grandfather sees his age in these colours, something stirs. When a teenager sees five thousand days painted in red and purple, something awakens.</p>
-          <div class="summary-pill">&ldquo;Time wears forty-six colours; every sunrise belongs to a colour family.&rdquo;</div>
+          <div class="summary-pill">&ldquo;Time wears forty-seven colours; every sunrise belongs to a colour family.&rdquo;</div>
         </div>
 
         <div class="full-chapter dropcap" id="prod-5">
@@ -1969,7 +1969,7 @@
           <p>The world&rsquo;s first 3D design and VST suite engineered with Visual Rescue Philosophy, allowing navigation of the harmonic universe from zero to over a Tredecillion at light speed. Unlike traditional twelve-tone systems that repeat, this Infinite Circle of Fifths uses the 47-Colour Index, providing unique visual coordinates for every harmonic modulation. Chromatic Sovereignty ensures musicians never get lost in complex frequencies. The Neon Pink Pivot implements the &ldquo;l&rdquo; multiplier logic as a Harmonic Landmark, allowing instant transpositions across massive octaves.</p>
           <p>For beginners, the sixteen-string is no longer intimidating &mdash; it becomes a vibrant discovery map. Intuitive Chromatic Mapping visualizes relationships between tension and tone using 0-to-Tredecillion logic; if you lose your place, simply &ldquo;follow the colour&rdquo; back to the root. Sovereign Chord Detection groups notes into Sovereign Families using Ònka logic, making complex sixteen-string chords playable without years of finger-strength training. For professionals, this software provides a Universal Passport to unexplored sonic territories. Tredecillion-Scale Precision fine-tunes internal body resonances using databases scaling to Tredecillion-plus calculations, creating Signature Tones that are mathematically perfect.</p>
           <p>The Infinite Notation Workflow uses the 47-Colour Sovereign Index instead of standard MIDI blocks, enabling hyper-precise microtonal compositions. Luthier-to-Logic Prototyping allows professional luthiers to export CNC-ready tool paths from Ònka numerical blueprints, ensuring physical sixteen-string guitars vibrate in perfect symmetry with the 47-Colour harmonic scale. The fretboard uses Visual Rescue design: always rooted in the primary colour of the chosen scale, extending to the full 47-Colour spectrum for the highest crystalline harmonics beyond standard human hearing, with a &ldquo;Found Myself&rdquo; toggle restoring clarity during complex solos.</p>
-          <div class="summary-pill">&ldquo;Sixteen strings, forty-six colours, one Infinite Circle of Fifths &mdash; harmonic sovereignty made visible.&rdquo;</div>
+          <div class="summary-pill">&ldquo;Sixteen strings, forty-seven colours, one Infinite Circle of Fifths &mdash; harmonic sovereignty made visible.&rdquo;</div>
         </div>
 
         <div class="full-chapter dropcap">
@@ -1977,7 +1977,7 @@
           <div class="stripe-divider"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
           <p>Although each product solves a distinct problem &mdash; generation, computation, conversion, biographical time, calendrical sovereignty, percussive language, harmonic exploration &mdash; all seven share the same colour grammar, the same &ldquo;l&rdquo; multiplier logic, and the same forty-five-digit precision ceiling enforced across the engine. A learner who masters the Calculator already reads the Number Converter; a producer who internalises the Talking Drum&rsquo;s tonal logic already understands the Guitar Explorer&rsquo;s 47-Colour Circle of Fifths.</p>
           <p>Together they constitute a complete <strong>Numeric Civilization in your hand</strong>: a coherent, sovereign, hyper-accessible toolkit ready for the classroom, the studio, the marketplace, the temple, the laboratory, and the home. Open any one of them and you are not learning a language &mdash; you are <em>arriving</em> in it.</p>
-          <div class="summary-pill">&ldquo;Seven products. One numeric breath. Forty-six colours. Infinite reach.&rdquo;</div>
+          <div class="summary-pill">&ldquo;Seven products. One numeric breath. Forty-seven colours. Infinite reach.&rdquo;</div>
         </div>
       </section>
 
@@ -2083,7 +2083,7 @@
       <div class="c-dslateblue" title="Duodecillions &mdash; Dark Slate Blue"></div>
       <div class="c-tomato" title="Tens of Duodecillions &mdash; Tomato"></div>
       <div class="c-darkmagenta" title="Hundreds of Duodecillions &mdash; Dark Magenta"></div>
-      <div class="c-deeppink" title="Tredecillions/Tredecillions Plus &mdash; Dark Olive"></div>
+      <div class="c-deeppink" title="Tredecillions &mdash; Dark Olive"></div>
       <div class="c-grey" title="Unassigned State &mdash; Grey"></div>
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
