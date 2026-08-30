@@ -2225,6 +2225,9 @@
 
         @media (max-width: 820px){
           .g-chapter, .g-chapter.reverse{ grid-template-columns:1fr; }
+          .g-chapter.t-portrait{ grid-template-columns:minmax(0, 1fr); }
+          .g-chapter.t-portrait .g-photo-wrap{ justify-self:center; }
+          .g-chapter.t-portrait .g-photo-wrap::before{ inset:0; }
           .g-chapter.reverse .g-photo-wrap{ order:0; }
           .g-chapter.reverse .g-text{ order:1; }
           .g-photo-wrap{ position: static; }
