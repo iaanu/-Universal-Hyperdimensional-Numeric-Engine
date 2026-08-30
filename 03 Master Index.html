@@ -346,6 +346,11 @@
     .protocol-table th { color: #fff; padding: 10px 8px; text-align: left; font-weight: 700; }
     .protocol-table td { padding: 8px; border-bottom: 1px solid #e0e0e0; vertical-align: middle; }
     .protocol-table tbody tr:hover { background: #f5f9fc; }
+        .protocol-table tbody tr:nth-child(3n + 5):nth-child(-n + 44) td {
+            border-top: 2px solid rgba(30, 140, 184, 0.14);
+            padding-top: 10px;
+        }
+        .protocol-table tbody tr:nth-child(47) { white-space: nowrap; }
     .color-swatch { display: inline-block; width: 18px; height: 18px; border-radius: 4px; margin-right: 6px; vertical-align: middle; border: 1px solid rgba(0,0,0,0.1); }
     .num-col { font-weight: 700; color: #1E8CB8; }
     .hex-code { font-family: 'Courier New', monospace; background: #f0f0f0; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; }
@@ -1486,7 +1491,7 @@
      <span class="tier-tens">Ẹ́wǎ</span>
      <span class="tier-hundreds">Ọgọ́rǔn</span>
      <span class="tier-l-drive">l</span>
-     <span class="tier-large">Àwọn Nọ́mbà Ńláńlá</span>
+    <span class="tier-large">Nọ́mbà tó ju Égbẹ́ẹ́rǔn</span>
 ───────────────────────────────────────────────────────────────────── */
 .tier-zero          { color: var(--tier-zero); }
 .tier-units         { color: var(--tier-units); }
@@ -2293,6 +2298,7 @@
 })();
 
 </script>
+    <link rel="stylesheet" href="data/footer-ribbon.css">
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -2474,7 +2480,7 @@
                 <td>Millions</td>
                 <td>1,000,000–9,999,999</td>
                 <td class="hex-code">#8B4513</td>
-                <td><span class="example-text t-brown">Míllíọ̀n</span></td>
+                                <td><span class="example-text t-brown">Ágbèẹ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">09</td>
@@ -2482,7 +2488,7 @@
                 <td>Tens of Millions</td>
                 <td>10,000,000–99,999,999</td>
                 <td class="hex-code">#228B22</td>
-                <td><span class="example-text t-forestgreen">Míllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-forestgreen">Ágbèẹ́rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">10</td>
@@ -2490,7 +2496,7 @@
                 <td>Hundreds of Millions</td>
                 <td>100,000,000–999,999,999</td>
                 <td class="hex-code">#EF6000</td>
-                <td><span class="example-text t-orange">Míllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-orange">Ágbèẹ́rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">11</td>
@@ -2498,7 +2504,7 @@
                 <td>Billions</td>
                 <td>1,000,000,000–9,999,999,999</td>
                 <td class="hex-code">#000080</td>
-                <td><span class="example-text t-navy">Bíllíọ̀n</span></td>
+                <td><span class="example-text t-navy">Ágbòẹ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">12</td>
@@ -2506,7 +2512,7 @@
                 <td>Tens of Billions</td>
                 <td>10,000,000,000–99,999,999,999</td>
                 <td class="hex-code">#FC5D8D</td>
-                <td><span class="example-text t-pink">Bíllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-pink">Ágbòẹ́rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">13</td>
@@ -2514,7 +2520,7 @@
                 <td>Hundreds of Billions</td>
                 <td>100,000,000,000–999,999,999,999</td>
                 <td class="hex-code">#808000</td>
-                <td><span class="example-text t-olive">Bíllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-olive">Ágbòẹ́rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">14</td>
@@ -2522,7 +2528,7 @@
                 <td>Trillions</td>
                 <td>1,000,000,000,000–9,999,999,999,999</td>
                 <td class="hex-code">#CD853F</td>
-                <td><span class="example-text t-peru">Tíríllíọ̀n</span></td>
+                <td><span class="example-text t-peru">Ágbòọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">15</td>
@@ -2530,7 +2536,7 @@
                 <td>Tens of Trillions</td>
                 <td>10,000,000,000,000–99,999,999,999,999</td>
                 <td class="hex-code">#6A5ACD</td>
-                <td><span class="example-text t-forest">Tíríllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-forest">Ágbòọ́rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">16</td>
@@ -2538,7 +2544,7 @@
                 <td>Hundreds of Trillions</td>
                 <td>100,000,000,000,000–999,999,999,999,999</td>
                 <td class="hex-code">#800000</td>
-                <td><span class="example-text t-maroon">Tíríllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-maroon">Ágbòọ́rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">17</td>
@@ -2546,7 +2552,7 @@
                 <td>Quadrillions</td>
                 <td>10¹⁵–10¹⁶</td>
                 <td class="hex-code">#1E90FF</td>
-                <td><span class="example-text t-steel">Kuàdríllíọ̀n</span></td>
+                <td><span class="example-text t-steel">Ágbèérǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">18</td>
@@ -2554,7 +2560,7 @@
                 <td>Tens of Quadrillions</td>
                 <td>10¹⁶–10¹⁷</td>
                 <td class="hex-code">#F59E0B</td>
-                <td><span class="example-text t-amber">Kuàdríllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-amber">Ágbèérǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">19</td>
@@ -2562,7 +2568,7 @@
                 <td>Hundreds of Quadrillions</td>
                 <td>10¹⁷–10¹⁸</td>
                 <td class="hex-code">#8B0000</td>
-                <td><span class="example-text t-darkred">Kuàdríllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-darkred">Ágbèérǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">20</td>
@@ -2570,7 +2576,7 @@
                 <td>Quintillions</td>
                 <td>10¹⁸–10¹⁹</td>
                 <td class="hex-code">#047857</td>
-                <td><span class="example-text t-emerald">Kuìntíllíọ̀n</span></td>
+                <td><span class="example-text t-emerald">Ágbẹ̀ẹ̀rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">21</td>
@@ -2578,7 +2584,7 @@
                 <td>Tens of Quintillions</td>
                 <td>10¹⁹–10²⁰</td>
                 <td class="hex-code">#A855F7</td>
-                <td><span class="example-text t-violet">Kuìntíllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-violet">Ágbẹ̀ẹ̀rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">22</td>
@@ -2586,7 +2592,7 @@
                 <td>Hundreds of Quintillions</td>
                 <td>10²⁰–10²¹</td>
                 <td class="hex-code">#D2691E</td>
-                <td><span class="example-text t-chocolate">Kuìntíllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-chocolate">Ágbẹ̀ẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">23</td>
@@ -2594,7 +2600,7 @@
                 <td>Sextillions</td>
                 <td>10²¹–10²²</td>
                 <td class="hex-code">#6C0AC9</td>
-                <td><span class="example-text t-dodger">Sẹ̀kstíllíọ̀n</span></td>
+                <td><span class="example-text t-dodger">Ágbẹ́ẹ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">24</td>
@@ -2602,7 +2608,7 @@
                 <td>Tens of Sextillions</td>
                 <td>10²²–10²³</td>
                 <td class="hex-code">#B91C1C</td>
-                <td><span class="example-text t-crimson">Sẹ̀kstíllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-crimson">Ágbẹ́ẹ́rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">25</td>
@@ -2610,7 +2616,7 @@
                 <td>Hundreds of Sextillions</td>
                 <td>10²³–10²⁴</td>
                 <td class="hex-code">#65A30D</td>
-                <td><span class="example-text t-lime">Sẹ̀kstíllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-lime">Ágbẹ́ẹ́rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">26</td>
@@ -2618,7 +2624,7 @@
                 <td>Septillions</td>
                 <td>10²⁴–10²⁵</td>
                 <td class="hex-code">#4B0082</td>
-                <td><span class="example-text t-indigo">Sẹ̀ptíllíọ̀n</span></td>
+                <td><span class="example-text t-indigo">Ágbéẹ̀rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">27</td>
@@ -2626,7 +2632,7 @@
                 <td>Tens of Septillions</td>
                 <td>10²⁵–10²⁶</td>
                 <td class="hex-code">#FA8072</td>
-                <td><span class="example-text t-salmon">Sẹ̀ptíllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-salmon">Ágbéẹ̀rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">28</td>
@@ -2634,7 +2640,7 @@
                 <td>Hundreds of Septillions</td>
                 <td>10²⁶–10²⁷</td>
                 <td class="hex-code">#008B8B</td>
-                <td><span class="example-text t-darkcyan">Sẹ̀ptíllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-darkcyan">Ágbéẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">29</td>
@@ -2642,7 +2648,7 @@
                 <td>Octillions</td>
                 <td>10²⁷–10²⁸</td>
                 <td class="hex-code">#B8860B</td>
-                <td><span class="example-text t-gold">Ọ̀ctíllíọ̀n</span></td>
+                <td><span class="example-text t-gold">Égbèẹ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">30</td>
@@ -2650,7 +2656,7 @@
                 <td>Tens of Octillions</td>
                 <td>10²⁸–10²⁹</td>
                 <td class="hex-code">#7B2D8E</td>
-                <td><span class="example-text t-plum">Ọ̀ctíllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-plum">Égbèẹ́rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">31</td>
@@ -2658,7 +2664,7 @@
                 <td>Hundreds of Octillions</td>
                 <td>10²⁹–10³⁰</td>
                 <td class="hex-code">#20B2AA</td>
-                <td><span class="example-text t-turquoise">Ọ̀ctíllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-turquoise">Égbèẹ́rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">32</td>
@@ -2666,7 +2672,7 @@
                 <td>Nonillions</td>
                 <td>10³⁰–10³¹</td>
                 <td class="hex-code">#B22222</td>
-                <td><span class="example-text t-firebrick">Nọ̀níllíọ̀n</span></td>
+                <td><span class="example-text t-firebrick">Égbòẹ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">33</td>
@@ -2674,7 +2680,7 @@
                 <td>Tens of Nonillions</td>
                 <td>10³¹–10³²</td>
                 <td class="hex-code">#9370DB</td>
-                <td><span class="example-text t-mpurple">Nọ̀níllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-mpurple">Égbòẹ́rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">34</td>
@@ -2682,7 +2688,7 @@
                 <td>Hundreds of Nonillions</td>
                 <td>10³²–10³³</td>
                 <td class="hex-code">#A0522D</td>
-                <td><span class="example-text t-sienna">Nọ̀níllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-sienna">Égbòẹ́rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">35</td>
@@ -2690,7 +2696,7 @@
                 <td>Decillions</td>
                 <td>10³³–10³⁴</td>
                 <td class="hex-code">#191970</td>
-                <td><span class="example-text t-midnight">Dẹ̀síllíọ̀n</span></td>
+                <td><span class="example-text t-midnight">Égbòọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">36</td>
@@ -2698,7 +2704,7 @@
                 <td>Tens of Decillions</td>
                 <td>10³⁴–10³⁵</td>
                 <td class="hex-code">#E11D48</td>
-                <td><span class="example-text t-rose">Dẹ̀síllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-rose">Égbòọ́rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">37</td>
@@ -2706,7 +2712,7 @@
                 <td>Hundreds of Decillions</td>
                 <td>10³⁵–10³⁶</td>
                 <td class="hex-code">#5F9EA0</td>
-                <td><span class="example-text t-cadet">Dẹ̀síllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-cadet">Égbòọ́rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">38</td>
@@ -2714,7 +2720,7 @@
                 <td>Undecillions</td>
                 <td>10³⁶–10³⁷</td>
                 <td class="hex-code">#CD7F32</td>
-                <td><span class="example-text t-bronze">Ọ́ndẹ̀sílíọ̀n</span></td>
+                <td><span class="example-text t-bronze">Égbèérǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">39</td>
@@ -2722,7 +2728,7 @@
                 <td>Tens of Undecillions</td>
                 <td>10³⁷–10³⁸</td>
                 <td class="hex-code">#9932CC</td>
-                <td><span class="example-text t-orchid">Ọ́ndẹ̀sílíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-orchid">Égbèérǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">40</td>
@@ -2730,7 +2736,7 @@
                 <td>Hundreds of Undecillions</td>
                 <td>10³⁸–10³⁹</td>
                 <td class="hex-code">#DAA520</td>
-                <td><span class="example-text t-goldenrod">Ọ́ndẹ̀sílíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-goldenrod">Égbèérǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">41</td>
@@ -2738,7 +2744,7 @@
                 <td>Duodecillions</td>
                 <td>10³⁹–10⁴⁰</td>
                 <td class="hex-code">#483D8B</td>
-                <td><span class="example-text t-dslateblue">Dúódẹ̀síllíọ̀n</span></td>
+                <td><span class="example-text t-dslateblue">Égbẹ̀ẹ̀rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">42</td>
@@ -2746,7 +2752,7 @@
                 <td>Tens of Duodecillions</td>
                 <td>10⁴⁰–10⁴¹</td>
                 <td class="hex-code">#FF6347</td>
-                <td><span class="example-text t-tomato">Dúódẹ̀síllíọ̀n léwǎ</span></td>
+                <td><span class="example-text t-tomato">Égbẹ̀ẹ̀rǔn<span class="l-mult">l</span>éwǎ</span></td>
               </tr>
               <tr>
                 <td class="num-col">43</td>
@@ -2754,7 +2760,7 @@
                 <td>Hundreds of Duodecillions</td>
                 <td>10⁴¹–10⁴²</td>
                 <td class="hex-code">#8B008B</td>
-                <td><span class="example-text t-darkmagenta">Dúódẹ̀síllíọ̀n lọ́gọ́rǔn</span></td>
+                <td><span class="example-text t-darkmagenta">Égbẹ̀ẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</span></td>
               </tr>
               <tr>
                 <td class="num-col">44</td>
@@ -2780,13 +2786,13 @@
                 <td class="hex-code">#FF13F0</td>
                 <td><span class="example-text t-neonpink">l</span><span class="t-green">éjì</span>, <span class="example-text t-neonpink">l</span><span class="t-green">ẹ́ta</span></td>
               </tr>
-              <tr>
+                            <tr>
                 <td class="num-col">47</td>
                 <td><span class="color-swatch c-largenumber"></span> Steel Blue</td>
-                <td>Large Numbers</td>
+                                <td>Beyond Tredecillion</td>
                 <td>10⁴⁵+ ∞</td>
                 <td class="hex-code">#4682B4</td>
-                <td><span class="example-text t-largenumber">Àwọn Nọ́mbà Ńláńlá</span></td>
+                                <td><span class="example-text t-largenumber">Nọ́mbà tó ju Égbẹ́ẹ́rǔn</span></td>
               </tr>
             </tbody>
           </table>
@@ -2963,7 +2969,7 @@
         <div class="color-box c-deeppink"><div>Égbẹ́ẹ́rǔn</div><div class="num">Tredecillions</div></div>
         <div class="color-box c-grey"><div>Contents</div><div class="num">Unassigned</div></div>
         <div class="color-box c-neonpink"><div>l</div><div class="num">"l" Drive Multiplier</div></div>
-        <div class="color-box c-largenumber"><div>Àwọn Nọ́mbà Ńláńlá</div><div class="num">Large Numbers</div></div>
+        <div class="color-box c-largenumber"><div>Nọ́mbà tó ju Égbẹ́ẹ́rǔn</div><div class="num">Beyond Tredecillion</div></div>
         <div class="color-box c-infinity"><div>Àìlópin</div><div class="num">Infinity (∞)</div></div>
       </div>
 
@@ -10917,6 +10923,19 @@
   </div>
 
 </div>
+</section>
+
+<section class="footer-ribbon" aria-labelledby="index-ribbon-title">
+    <h2 id="index-ribbon-title">🧭 Navigate the Master Index</h2>
+    <div class="footer-ribbon-route" aria-label="Locate magnitude, read exponent, identify tier, match colour, verify Yoruba, trace scaling, and cite the permanent ID">
+        <span class="footer-ribbon-step" style="--route-colour:#0B6E4F;">🔎 Locate Magnitude</span>
+        <span class="footer-ribbon-step" style="--route-colour:#1E8CB8;">🔢 Read the Exponent</span>
+        <span class="footer-ribbon-step" style="--route-colour:#2563EB;">🪜 Identify the Tier</span>
+        <span class="footer-ribbon-step" style="--route-colour:#6C0AC9;">🎨 Match the Colour</span>
+        <span class="footer-ribbon-step" style="--route-colour:#B00075;">🗣️ Verify Yorùbá</span>
+        <span class="footer-ribbon-step" style="--route-colour:#B45309;">📈 Trace the Scaling</span>
+        <span class="footer-ribbon-step" style="--route-colour:#7A8C00;">🔗 Cite the Permanent ID</span>
+    </div>
 </section>
 
 <footer>
