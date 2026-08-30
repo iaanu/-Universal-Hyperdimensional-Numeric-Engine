@@ -1,0 +1,151 @@
+{
+  "contractId": "oyn-canonical-contract",
+  "contractVersion": "1.2.0",
+  "updated": "2026-08-21",
+  "encoding": {
+    "charset": "UTF-8",
+    "normalization": "NFC",
+    "bomAllowed": false
+  },
+  "scope": {
+    "sourceExtensions": [
+      ".html",
+      ".json",
+      ".js",
+      ".mjs",
+      ".cjs",
+      ".ts",
+      ".tsx",
+      ".css",
+      ".md"
+    ],
+    "excludedDirectories": [
+      "node_modules",
+      "dist",
+      ".git"
+    ]
+  },
+  "terminology": {
+    "forbiddenPattern": "Tredecillion(?:s)?\\s*(?:Plus|\\+)",
+    "power42Label": "Tredecillions",
+    "magnitudeCopies": [
+      "Numeric Products/Ònka Yorùbá Apps/Calculator.html"
+    ]
+  },
+  "colourProtocol": {
+    "name": "The 47-Sovereign Colour Visual Protocol",
+    "yorubaName": "Ètò Àwọ̀ OgójìÉje",
+    "expectedTierCount": 47,
+    "labels": [
+      "Zero", "Units", "Tens", "Hundreds", "Thousands",
+      "Tens of Thousands", "Hundreds of Thousands", "Millions", "Tens of Millions", "Hundreds of Millions",
+      "Billions", "Tens of Billions", "Hundreds of Billions", "Trillions", "Tens of Trillions",
+      "Hundreds of Trillions", "Quadrillions", "Tens of Quadrillions", "Hundreds of Quadrillions", "Quintillions",
+      "Tens of Quintillions", "Hundreds of Quintillions", "Sextillions", "Tens of Sextillions", "Hundreds of Sextillions",
+      "Septillions", "Tens of Septillions", "Hundreds of Septillions", "Octillions", "Tens of Octillions",
+      "Hundreds of Octillions", "Nonillions", "Tens of Nonillions", "Hundreds of Nonillions", "Decillions",
+      "Tens of Decillions", "Hundreds of Decillions", "Undecillions", "Tens of Undecillions", "Hundreds of Undecillions",
+      "Duodecillions", "Tens of Duodecillions", "Hundreds of Duodecillions", "Tredecillions", "Unassigned State",
+      "The \"l\" Drive Multiplier", "Beyond Tredecillion"
+    ],
+    "hexValues": [
+      "#0891B2", "#16A34A", "#2563EB", "#9333EA", "#DC2626", "#B59410", "#4EAAE4", "#8B4513", "#228B22", "#EF6000",
+      "#000080", "#FC5D8D", "#808000", "#CD853F", "#6A5ACD", "#800000", "#1E90FF", "#F59E0B", "#8B0000", "#047857",
+      "#A855F7", "#D2691E", "#6C0AC9", "#B91C1C", "#65A30D", "#4B0082", "#FA8072", "#008B8B", "#B8860B", "#7B2D8E",
+      "#20B2AA", "#B22222", "#9370DB", "#A0522D", "#191970", "#E11D48", "#5F9EA0", "#CD7F32", "#9932CC", "#DAA520",
+      "#483D8B", "#FF6347", "#8B008B", "#94AA00", "#808080", "#FF13F0", "#4682B4"
+    ],
+    "cssCopies": [
+      "GitHub Web Pages/01 Godreign.html",
+      "GitHub Web Pages/02 Ọ̀rọ̀ Ẹlohîm.html",
+      "GitHub Web Pages/03 Master Index.html",
+      "GitHub Web Pages/04 Scaling Engines.html",
+      "GitHub Web Pages/05 Equation Engines.html",
+      "GitHub Web Pages/06 Applied Systems.html",
+      "GitHub Web Pages/07 World Numerals.html",
+      "GitHub Web Pages/08 Numeric Products.html",
+      "GitHub Web Pages/09 About Us.html",
+      "GitHub Web Pages/index.html"
+    ],
+    "dataCopies": [
+      "Numeric Products/Ònka Yorùbá Apps/Calculator.html"
+    ],
+    "headingCopies": [
+      "Numeric Products/Ònka Yorùbá Apps/Calculator.html"
+    ],
+    "semanticColours": {
+      "largeNumbers": {
+        "label": "Beyond Tredecillion",
+        "minimumExponent": 45,
+        "hex": "#4682B4"
+      },
+      "lDrive": {
+        "label": "The \"l\" Drive Multiplier",
+        "glyph": "l",
+        "hex": "#FF13F0"
+      },
+      "gPulse": {
+        "label": "G-Pulse",
+        "glyph": "g",
+        "hex": "#FF13F0"
+      },
+      "generatedGlyphCopies": [
+        "Numeric Products/Ònka Yorùbá Apps/Age-Calculator.html",
+        "Numeric Products/Ònka Yorùbá Apps/Number-Converter.html"
+      ]
+    }
+  },
+  "masterIndex": {
+    "path": "GitHub Web Pages/03 Master Index.html",
+    "expectedRecordCount": 1540,
+    "idPrefix": "oyn-v-"
+  },
+  "worldNumerals": {
+    "path": "GitHub Web Pages/07 World Numerals.html",
+    "expectedRowCount": 1127,
+    "exponentMultiplier": 3,
+    "exponentOffset": 3,
+    "canonicalCorrections": [
+      {
+        "rowIndex": 103,
+        "exponent": 312,
+        "englishName": "Trescentillion"
+      },
+      {
+        "rowIndex": 300,
+        "exponent": 903,
+        "englishName": "Trecentillion"
+      }
+    ]
+  },
+  "appliedSystems": {
+    "path": "GitHub Web Pages/06 Applied Systems.html",
+    "expectedJumps": 44,
+    "expectedPulses": 287,
+    "expectedZeroPositions": 900
+  },
+  "calendar": {
+    "copies": [
+      "Numeric Products/Ònka Yorùbá Apps/Kàlẹ́ndà Yorùbá.html"
+    ],
+    "colourClasses": [
+      { "class": "zero", "hex": "#0891B2" },
+      { "class": "units", "hex": "#16A34A" },
+      { "class": "tens", "hex": "#2563EB" },
+      { "class": "hundreds", "hex": "#9333EA" },
+      { "class": "thousands", "hex": "#DC2626" }
+    ]
+  },
+  "scrollBooks": {
+    "expectedBooksPerCollection": 10,
+    "fileNamePrefix": "Ònka Yorùbá Scroll Book ",
+    "collections": [
+      {
+        "path": "Numeric Products/Ònka Yorùbá Apps/Ònka Yorùbá Scroll Book 1-10",
+        "assetPrefix": ""
+      }
+    ],
+    "stylePath": "Numeric Products/Ònka Yorùbá Apps/Ònka Yorùbá Scroll Book 1-10/scroll-book.css",
+    "protocolPath": "Numeric Products/Ònka Yorùbá Apps/Ònka Yorùbá Scroll Book 1-10/scroll-book-protocol.js"
+  }
+}
