@@ -326,6 +326,39 @@
     /* ─────────────────────────────────────────────────────────────── */
     /* Equation Canvas — Operator × Operand → Unified Block           */
     /* ─────────────────────────────────────────────────────────────── */
+    .operator-state-stage {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      margin: -40px 0 36px;
+      padding: 50px 24px 38px;
+      border-top: 1px solid rgba(255, 255, 255, 0.42);
+      border-bottom: 2px solid #4682B4;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+        radial-gradient(circle at 50% 42%, rgba(191, 230, 255, 0.82) 0, rgba(191, 230, 255, 0.18) 35%, transparent 62%),
+        linear-gradient(135deg, #315f86 0%, #4682B4 50%, #274e70 100%);
+      background-size: 32px 32px, 32px 32px, auto, auto;
+      box-shadow:
+        inset 0 14px 28px rgba(15, 52, 96, 0.2),
+        inset 0 -12px 24px rgba(15, 52, 96, 0.24),
+        0 16px 34px rgba(70, 130, 180, 0.2);
+    }
+    .operator-state-stage::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 18px 12%;
+      border: 1px solid rgba(255, 215, 0, 0.22);
+      border-radius: 28px;
+      box-shadow: 0 0 36px rgba(255, 215, 0, 0.12);
+      pointer-events: none;
+    }
+    .operator-state-stage .canvas {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
     .canvas {
       margin: 10px auto 36px;
       max-width: 760px;
@@ -2922,26 +2955,28 @@
     <div class="content">
 
       <!-- Two Foundational Boxes -->
-      <div class="canvas" aria-label="The Multiplier Junction">
-        <div class="canvas-eyebrow">Operator State Definition</div>
+      <div class="operator-state-stage">
+        <div class="canvas" aria-label="The Multiplier Junction">
+          <div class="canvas-eyebrow">Operator State Definition</div>
 
-        <div class="canvas-equation">
-          <article class="canvas-tile canvas-pink">
-            <div class="canvas-glyph">l</div>
-            <div class="canvas-label">The “l” Drive Multiplier</div>
-            <div class="canvas-meta">
-              <span class="canvas-name">From <em>lọ́nà</em> — the Yorùbá ×</span>
-              <span class="canvas-hex">#FF13F0 · Neon Pink</span>
-            </div>
-          </article>
+          <div class="canvas-equation">
+            <article class="canvas-tile canvas-pink">
+              <div class="canvas-glyph">l</div>
+              <div class="canvas-label">The “l” Drive Multiplier</div>
+              <div class="canvas-meta">
+                <span class="canvas-name">From <em>lọ́nà</em> — the Yorùbá ×</span>
+                <span class="canvas-hex">#FF13F0 · Neon Pink</span>
+              </div>
+            </article>
 
-          <article class="canvas-tile canvas-grey">
-            <div class="canvas-label canvas-label-lg">Contents / Children</div>
-            <div class="canvas-meta">
-              <span class="canvas-name">Unassigned — awaiting a Parent</span>
-              <span class="canvas-hex">#808080 · Grey</span>
-            </div>
-          </article>
+            <article class="canvas-tile canvas-grey">
+              <div class="canvas-label canvas-label-lg">Contents / Children</div>
+              <div class="canvas-meta">
+                <span class="canvas-name">Unassigned — awaiting a Parent</span>
+                <span class="canvas-hex">#808080 · Grey</span>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
       
@@ -5270,64 +5305,8 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
       </div>
 
     </div>
-
-    <hr aria-hidden="true" style="border:0; height:2px; max-width:calc(100% - 72px); margin:28px auto 26px; border-radius:999px; background:linear-gradient(90deg, transparent 0%, #0891B2 8%, #16A34A 22%, #2563EB 38%, #9333EA 52%, #DC2626 66%, #FFD700 82%, #0f3460 96%, transparent 100%); box-shadow:0 8px 18px rgba(8,145,178,.12);" />
-
-      <!-- ════════════════════════════════════════════════════════════
-           RHYTHM CLOSING · V1 sovereign mission → V2 the whole ladder → V3 breath
-           ════════════════════════════════════════════════════════════ -->
-      <section class="rhythm-section" style="max-width:1340px; margin:32px auto; padding:0 28px;">
-        <div class="rhythm-stage">
-          <p class="rhythm-eyebrow">Sovereign Mission · Indigenous tongues, digital sovereignty</p>
-          <h2 class="rhythm-h">A working prototype for every ancestral family worldwide</h2>
-          <p class="rhythm-h-sub">Èdè kọ̀ọ̀kan, ọ̀nà kọ̀ọ̀kan — every tongue, every counting word, alive and computable</p>
-
-          <div class="v1-stack">
-            <div class="v1-card tier-units"><div><div class="v1-num">1</div><div class="v1-yor">Ení</div><div class="v1-eng">Units · the seed of every count, in any tongue</div></div><span class="v1-power">10⁰</span></div>
-            <div class="v1-card tier-hundreds"><div><div class="v1-num">100</div><div class="v1-yor">Ọgọ́rǔn</div><div class="v1-eng">Hundreds · ten bundles make a basket</div></div><span class="v1-power">10²</span></div>
-            <div class="v1-card tier-tenthou"><div><div class="v1-num">10,000</div><div class="v1-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v1-eng">Tens of Thousands · where small numbers end and big ones begin</div></div><span class="v1-power">10⁴</span></div>
-            <div class="v1-card tier-mill"><div><div class="v1-num">1,000,000</div><div class="v1-yor">Ágbèẹ́rǔn</div><div class="v1-eng">Millions · a story takes shape, the prototype scales</div></div><span class="v1-power">10⁶</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="rhythm-section" style="max-width:1340px; margin:32px auto; padding:0 28px;">
-        <div class="rhythm-stage">
-          <p class="rhythm-eyebrow">The whole ladder · Akàba pípé</p>
-          <h2 class="rhythm-h">Twelve magnitudes at a glance</h2>
-          <p class="rhythm-h-sub">Each tier its own colour — every ancestral tongue can apply this ladder in its own voice</p>
-
-          <div class="v2-grid">
-            <div class="v2-tile tier-units"><div class="v2-tile-num">1</div><div class="v2-tile-yor">Ení</div><div class="v2-tile-pow">10⁰</div></div>
-            <div class="v2-tile tier-tens"><div class="v2-tile-num">10</div><div class="v2-tile-yor">Ẹ́wǎ</div><div class="v2-tile-pow">10¹</div></div>
-            <div class="v2-tile tier-hundreds"><div class="v2-tile-num">100</div><div class="v2-tile-yor">Ọgọ́rǔn</div><div class="v2-tile-pow">10²</div></div>
-            <div class="v2-tile tier-thou"><div class="v2-tile-num">1K</div><div class="v2-tile-yor">Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10³</div></div>
-            <div class="v2-tile tier-tenthou"><div class="v2-tile-num">10K</div><div class="v2-tile-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10⁴</div></div>
-            <div class="v2-tile tier-hundthou"><div class="v2-tile-num">100K</div><div class="v2-tile-yor">Ọgọ́rǔn<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10⁵</div></div>
-            <div class="v2-tile tier-mill"><div class="v2-tile-num">1M</div><div class="v2-tile-yor">Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁶</div></div>
-            <div class="v2-tile tier-tenmill"><div class="v2-tile-num">10M</div><div class="v2-tile-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁷</div></div>
-            <div class="v2-tile tier-hundmill"><div class="v2-tile-num">100M</div><div class="v2-tile-yor">Ọgọ́rǔn<span class="t-neonpink" style="font-weight: 700;">l</span>Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁸</div></div>
-            <div class="v2-tile tier-bill"><div class="v2-tile-num">1B</div><div class="v2-tile-yor">Ágbòẹ́rǔn</div><div class="v2-tile-pow">10⁹</div></div>
-            <div class="v2-tile tier-trill"><div class="v2-tile-num">1T</div><div class="v2-tile-yor">Ágbòọ́rǔn</div><div class="v2-tile-pow">10¹²</div></div>
-            <div class="v2-tile tier-quad"><div class="v2-tile-num">1Qa</div><div class="v2-tile-yor">Ágbèérǔn</div><div class="v2-tile-pow">10¹⁵</div></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="rhythm-section" style="max-width:1340px; margin:32px auto 48px; padding:0 28px;">
-        <div class="rhythm-stage">
-          <div class="v3-spot tier-hundreds">
-            <p class="v3-spot-eyebrow">Ìpari · Closing breath</p>
-            <p class="v3-spot-num">100</p>
-            <p class="v3-spot-yor">Ọgọ́rǔn</p>
-            <p class="v3-spot-eng">One hundred. Ten bundles become a basket. The engine has done its first revolution — and there are forty-five more turns to go, in any ancestral tongue.</p>
-          </div>
-        </div>
-      </section>
-      <!-- ═════════════════ END RHYTHM CLOSING ═════════════════ -->
-
     <!-- 47-Sovereign Colour Bar (above Research, Publications & Technology) -->
-    <div class="colour-bar-animated">
+    <div class="colour-bar-animated body-research-bridge soft-ice-research-bridge">
       <div class="c-teal" title="Zero &mdash; Cerulean"></div>
       <div class="c-green" title="Units &mdash; Vibrant Green"></div>
       <div class="c-blue" title="Tens &mdash; Royal Blue"></div>

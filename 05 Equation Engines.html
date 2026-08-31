@@ -100,6 +100,14 @@
     .header h2 { font-size: 1.1rem; font-weight: 600; opacity: 0.9; }
     
     .content { padding: 40px 0; }
+    .equation-top-steel-bridge {
+      width: 100%;
+      height: 40px;
+      border-top: 1px solid #4682B4;
+      border-bottom: 1px solid #4682B4;
+      background: linear-gradient(180deg, #e8f2fd 0 50%, #d4e8fa 50% 100%);
+    }
+    .equation-main-content { padding-top: 0; }
 
     /* ═══════════════════════════════════════════════════════════════ */
     /* 47-COLOUR SYSTEM CSS CLASSES                                   */
@@ -1886,7 +1894,12 @@
       background: #e8f5fb;
       outline: none;
     }
-    .symbol-poster-list { display: grid; gap: 28px; margin-top: 34px; }
+    .symbol-poster-list {
+      display: grid;
+      gap: 28px;
+      margin-top: 34px;
+      background: #4682B4;
+    }
     .symbol-poster {
       scroll-margin-top: 92px;
       overflow: hidden;
@@ -3222,9 +3235,11 @@
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
 
+    <div class="equation-top-steel-bridge" aria-hidden="true"></div>
+
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <div class="content">
+    <div class="content equation-main-content">
 
       <div class="p00-tables">
         <h2 style="text-align:center; margin-bottom:20px;">UHNE Equation Engines &mdash; Formal Transformation Reference</h2>
@@ -11815,67 +11830,47 @@
               </template>
             </div>
           </article>        </div>
+        <script>
+          document.querySelectorAll('.symbol-poster-body').forEach((posterBody) => {
+            const shadowRoot = posterBody.shadowRoot;
+            if (!shadowRoot) return;
+
+            const steelBlueTableStyle = document.createElement('style');
+            steelBlueTableStyle.textContent = `
+              table:not([style*="border:none"]) { border-collapse: collapse !important; }
+              table:not([style*="border:none"]) th,
+              table:not([style*="border:none"]) td { border-color: #4682B4 !important; }
+              table:not([style*="border:none"]) th {
+                background: #4682B4 !important;
+                color: #fff !important;
+                font-family: 'Poppins', 'Segoe UI', sans-serif !important;
+                font-weight: 700 !important;
+              }
+              table:not([style*="border:none"]) td:first-child {
+                background: #4682B4 !important;
+                color: #fff !important;
+                font-family: 'Poppins', 'Segoe UI', sans-serif !important;
+                font-weight: 600 !important;
+              }
+              table:not([style*="border:none"]) tr:nth-child(odd) td:not(:first-child) {
+                background: #e8f2fd !important;
+                color: #002244 !important;
+              }
+              table:not([style*="border:none"]) tr:nth-child(even) td:not(:first-child) {
+                background: #d4e8fa !important;
+                color: #002244 !important;
+              }
+              table:not([style*="border:none"]) th *,
+              table:not([style*="border:none"]) td:first-child * { color: inherit !important; }
+            `;
+            shadowRoot.appendChild(steelBlueTableStyle);
+          });
+        </script>
       </section>
 
     </div>
-
-    <hr aria-hidden="true" style="border:0; height:2px; max-width:calc(100% - 72px); margin:28px auto 26px; border-radius:999px; background:linear-gradient(90deg, transparent 0%, #0891B2 8%, #16A34A 22%, #2563EB 38%, #9333EA 52%, #DC2626 66%, #FFD700 82%, #0f3460 96%, transparent 100%); box-shadow:0 8px 18px rgba(8,145,178,.12);" />
-
-      <!-- ════════════════════════════════════════════════════════════
-           RHYTHM CLOSING · V1 sovereign mission → V2 the whole ladder → V3 breath
-           ════════════════════════════════════════════════════════════ -->
-      <section class="rhythm-section" style="max-width:1340px; margin:32px auto; padding:0 28px;">
-        <div class="rhythm-stage">
-          <p class="rhythm-eyebrow">Sovereign Mission · Indigenous tongues, digital sovereignty</p>
-          <h2 class="rhythm-h">A working prototype for every ancestral family worldwide</h2>
-          <p class="rhythm-h-sub">Èdè kọ̀ọ̀kan, ọ̀nà kọ̀ọ̀kan — every tongue, every counting word, alive and computable</p>
-
-          <div class="v1-stack">
-            <div class="v1-card tier-units"><div><div class="v1-num">1</div><div class="v1-yor">Ení</div><div class="v1-eng">Units · the seed of every count, in any tongue</div></div><span class="v1-power">10⁰</span></div>
-            <div class="v1-card tier-hundreds"><div><div class="v1-num">100</div><div class="v1-yor">Ọgọ́rǔn</div><div class="v1-eng">Hundreds · ten bundles make a basket</div></div><span class="v1-power">10²</span></div>
-            <div class="v1-card tier-tenthou"><div><div class="v1-num">10,000</div><div class="v1-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v1-eng">Tens of Thousands · where small numbers end and big ones begin</div></div><span class="v1-power">10⁴</span></div>
-            <div class="v1-card tier-mill"><div><div class="v1-num">1,000,000</div><div class="v1-yor">Ágbèẹ́rǔn</div><div class="v1-eng">Millions · a story takes shape, the prototype scales</div></div><span class="v1-power">10⁶</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="rhythm-section" style="max-width:1340px; margin:32px auto; padding:0 28px;">
-        <div class="rhythm-stage">
-          <p class="rhythm-eyebrow">The whole ladder · Akàba pípé</p>
-          <h2 class="rhythm-h">Twelve magnitudes at a glance</h2>
-          <p class="rhythm-h-sub">Each tier its own colour — every ancestral tongue can apply this ladder in its own voice</p>
-
-          <div class="v2-grid">
-            <div class="v2-tile tier-units"><div class="v2-tile-num">1</div><div class="v2-tile-yor">Ení</div><div class="v2-tile-pow">10⁰</div></div>
-            <div class="v2-tile tier-tens"><div class="v2-tile-num">10</div><div class="v2-tile-yor">Ẹ́wǎ</div><div class="v2-tile-pow">10¹</div></div>
-            <div class="v2-tile tier-hundreds"><div class="v2-tile-num">100</div><div class="v2-tile-yor">Ọgọ́rǔn</div><div class="v2-tile-pow">10²</div></div>
-            <div class="v2-tile tier-thou"><div class="v2-tile-num">1K</div><div class="v2-tile-yor">Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10³</div></div>
-            <div class="v2-tile tier-tenthou"><div class="v2-tile-num">10K</div><div class="v2-tile-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10⁴</div></div>
-            <div class="v2-tile tier-hundthou"><div class="v2-tile-num">100K</div><div class="v2-tile-yor">Ọgọ́rǔn<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</div><div class="v2-tile-pow">10⁵</div></div>
-            <div class="v2-tile tier-mill"><div class="v2-tile-num">1M</div><div class="v2-tile-yor">Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁶</div></div>
-            <div class="v2-tile tier-tenmill"><div class="v2-tile-num">10M</div><div class="v2-tile-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁷</div></div>
-            <div class="v2-tile tier-hundmill"><div class="v2-tile-num">100M</div><div class="v2-tile-yor">Ọgọ́rǔn<span class="t-neonpink" style="font-weight: 700;">l</span>Ágbèẹ́rǔn</div><div class="v2-tile-pow">10⁸</div></div>
-            <div class="v2-tile tier-bill"><div class="v2-tile-num">1B</div><div class="v2-tile-yor">Ágbòẹ́rǔn</div><div class="v2-tile-pow">10⁹</div></div>
-            <div class="v2-tile tier-trill"><div class="v2-tile-num">1T</div><div class="v2-tile-yor">Ágbòọ́rǔn</div><div class="v2-tile-pow">10¹²</div></div>
-            <div class="v2-tile tier-quad"><div class="v2-tile-num">1Qa</div><div class="v2-tile-yor">Ágbèérǔn</div><div class="v2-tile-pow">10¹⁵</div></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="rhythm-section" style="max-width:1340px; margin:32px auto 48px; padding:0 28px;">
-        <div class="rhythm-stage">
-          <div class="v3-spot tier-tenthou">
-            <p class="v3-spot-eyebrow">Ìpari · Closing breath</p>
-            <p class="v3-spot-num">10,000</p>
-            <p class="v3-spot-yor">Ẹ́wǎ<span class="t-neonpink" style="font-weight: 700;">l</span>Ẹgbẹ̀rǔn</p>
-            <p class="v3-spot-eng">Multiplication — the amplifier. Where one becomes ten thousand, where a single seed becomes a forest — in any ancestral tongue.</p>
-          </div>
-        </div>
-      </section>
-      <!-- ═════════════════ END RHYTHM CLOSING ═════════════════ -->
-
     <!-- 47-Sovereign Colour Bar (above Research, Publications & Technology) -->
-    <div class="colour-bar-animated">
+    <div class="colour-bar-animated body-research-bridge soft-ice-research-bridge">
       <div class="c-teal" title="Zero &mdash; Cerulean"></div>
       <div class="c-green" title="Units &mdash; Vibrant Green"></div>
       <div class="c-blue" title="Tens &mdash; Royal Blue"></div>
