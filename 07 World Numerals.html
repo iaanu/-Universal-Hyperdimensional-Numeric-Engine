@@ -495,13 +495,42 @@
     .dataset-end .de-btn.ghost { background: transparent; color: #FFE873; border-color: rgba(255,215,0,0.55); }
     .dataset-end .de-btn.ghost:hover { background: rgba(255,215,0,0.15); border-color: #FFD700; color: #fff; }
 
+    /* Sovereign Colours interactive globe */
+    .sovereign-globe-section { position: relative; width: calc(100% + 72px); margin: 8px -36px 52px; padding: 42px 36px 28px; overflow: hidden; color: #fff; background: radial-gradient(circle at 50% 48%, rgba(39,188,237,0.16) 0, rgba(39,188,237,0.04) 27%, transparent 52%), linear-gradient(150deg, #07172d 0%, #0f3460 58%, #09203d 100%); border-top: 2px solid #FFD700; border-bottom: 2px solid #FFD700; box-sizing: border-box; }
+    .sovereign-globe-section::before { content: ""; position: absolute; inset: 0; opacity: 0.18; pointer-events: none; background-image: linear-gradient(rgba(191,230,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(191,230,255,0.14) 1px, transparent 1px); background-size: 48px 48px; mask-image: linear-gradient(to bottom, #000, transparent 88%); }
+    .globe-heading { position: relative; z-index: 1; max-width: 850px; margin: 0 auto 8px; text-align: center; }
+    .globe-heading .eyebrow { margin: 0 0 7px; color: #BFE6FF; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; }
+    .globe-heading h2 { margin: 0 0 10px; color: #fff; font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.15; }
+    .globe-heading p { max-width: 720px; margin: 0 auto; color: #dbeeff; font-size: 0.96rem; line-height: 1.65; }
+    .globe-stage { position: relative; z-index: 1; width: min(100%, 980px); height: clamp(430px, 62vw, 680px); margin: 6px auto 0; touch-action: none; cursor: grab; }
+    .globe-render { position: absolute; inset: 0; }
+    .globe-stage:active { cursor: grabbing; }
+    .globe-render canvas { display: block; outline: none; }
+    .globe-status { position: absolute; inset: 50% auto auto 50%; z-index: 2; width: min(90%, 420px); transform: translate(-50%, -50%); color: #BFE6FF; text-align: center; line-height: 1.55; pointer-events: none; }
+    .globe-status.error { padding: 16px 18px; color: #fff; background: rgba(7,23,45,0.9); border: 1px solid #FFD700; }
+    .globe-controls { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px; margin: -18px auto 0; }
+    .globe-control { display: inline-flex; min-height: 42px; align-items: center; gap: 8px; padding: 9px 15px; color: #fff; background: rgba(7,23,45,0.78); border: 1px solid rgba(191,230,255,0.55); border-radius: 6px; font: 700 0.82rem/1 inherit; cursor: pointer; transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease; }
+    .globe-control:hover, .globe-control:focus-visible { color: #07172d; background: #FFD700; border-color: #FFD700; outline: none; }
+    .globe-control .control-icon { font-size: 1rem; line-height: 1; }
+    .globe-note { position: relative; z-index: 1; max-width: 820px; margin: 16px auto 0; color: #b9d6eb; text-align: center; font-size: 0.78rem; line-height: 1.55; }
+    .globe-note a { color: #FFD700; }
+    .globe-tooltip { padding: 9px 11px; color: #fff; background: rgba(7,23,45,0.94); border: 1px solid rgba(255,215,0,0.75); border-radius: 4px; font-family: Poppins, sans-serif; font-size: 0.82rem; line-height: 1.45; box-shadow: 0 5px 18px rgba(0,0,0,0.35); }
+    .globe-tooltip strong { display: block; color: #FFD700; font-size: 0.9rem; }
+
     @media (max-width: 700px) {
       .adaptive-orchard { width: calc(100% + 32px); margin-right: -16px; margin-left: -16px; }
       .method-grid { width: calc(100% + 32px); margin-right: -16px; margin-left: -16px; }
+      .sovereign-globe-section { width: calc(100% + 32px); margin-right: -16px; margin-left: -16px; padding: 32px 12px 24px; }
+      .globe-stage { height: min(118vw, 530px); min-height: 390px; }
+      .globe-controls { margin-top: -8px; }
       .container { margin: 10px; }
       .content { padding: 24px 16px; }
       .header h1 { font-size: 1.5rem; }
       table.master { font-size: 0.78rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .globe-control { transition: none; }
     }
   </style>
   <meta property="og:site_name" content="Universal Hyperdimensional Numeric Engine">
@@ -1886,6 +1915,23 @@
           <p>Only reviewed records are marked active. Machine-readable formatting enables comparison, research, and NLP, but never substitutes for linguistic evidence, contributor attribution, or community review.</p>
         </div>
       </div>
+
+      <section class="sovereign-globe-section" aria-labelledby="sovereignGlobeTitle">
+        <div class="globe-heading">
+          <p class="eyebrow">Global Chromatic Atlas</p>
+          <h2 id="sovereignGlobeTitle">One World, 47 Sovereign Colours</h2>
+          <p>Drag to turn the globe, scroll to zoom, and point to a country to reveal its place in the canonical colour cycle. Together, the world&rsquo;s countries carry all 47 magnitude colours.</p>
+        </div>
+        <div class="globe-stage" role="img" aria-label="Interactive three-dimensional globe with individual countries coloured through the 47-Sovereign Colour Visual Protocol">
+          <div class="globe-render" id="sovereignGlobe" aria-hidden="true"></div>
+          <p class="globe-status" id="globeStatus" role="status" aria-live="polite">Loading the chromatic world&hellip;</p>
+        </div>
+        <div class="globe-controls" aria-label="Globe controls">
+          <button class="globe-control" id="globeRotation" type="button" aria-pressed="false"><span class="control-icon" aria-hidden="true">Ⅱ</span><span class="control-label">Pause rotation</span></button>
+          <button class="globe-control" id="globeReset" type="button"><span class="control-icon" aria-hidden="true">&#8634;</span><span>Reset view</span></button>
+        </div>
+        <p class="globe-note">Colours are a visual expression of the numeric protocol, not national designations. Country geometry: <a href="https://github.com/holtzy/D3-graph-gallery/blob/master/DATA/world.geojson" target="_blank" rel="noopener noreferrer">Natural Earth via D3 Graph Gallery</a>.</p>
+      </section>
 
       <!-- LANGUAGE REGISTRY -->
       <div class="sec-head" id="worldwide-map">
@@ -3786,7 +3832,106 @@
   <button class="back-to-top" id="backToTop" title="Back to Top" aria-label="Scroll to top">▲</button>
   <a href="#datasetControls" class="back-to-controls" id="backToControls" title="Back to Dataset Controls" aria-label="Back to Dataset Controls"><span aria-hidden="true">↑</span> Dataset Controls</a>
 
+  <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.41.4/dist/globe.gl.min.js"></script>
   <script>
+    // Interactive 47-Sovereign Colours globe
+    (() => {
+      const globeElement = document.getElementById('sovereignGlobe');
+      const statusElement = document.getElementById('globeStatus');
+      const rotationButton = document.getElementById('globeRotation');
+      const resetButton = document.getElementById('globeReset');
+      if (!globeElement || !statusElement || !rotationButton || !resetButton) return;
+
+      const colourNames = [
+        'Cerulean', 'Vibrant Green', 'Royal Blue', 'Purple', 'Red', 'Dark Goldenrod',
+        'Sky Blue', 'Saddle Brown', 'Forest Green', 'Dark Orange', 'Navy Blue', 'Hot Pink',
+        'Olive', 'Peru', 'Slate Blue', 'Maroon', 'Dodger Blue', 'Amber', 'Dark Red',
+        'Emerald', 'Bright Violet', 'Chocolate', 'Electric Violet', 'Crimson', 'Lime',
+        'Indigo', 'Salmon', 'Dark Teal', 'Dark Goldenrod', 'Deep Violet', 'Light Sea Green',
+        'Firebrick', 'Medium Purple', 'Sienna', 'Midnight', 'Rose', 'Cadet', 'Bronze',
+        'Dark Orchid', 'Goldenrod', 'Dark Slate Blue', 'Tomato', 'Dark Magenta', 'Dark Olive',
+        'Grey', 'Neon Pink', 'Steel Blue'
+      ];
+      const computedStyles = getComputedStyle(document.documentElement);
+      const sovereignColours = colourNames.map((_, index) =>
+        computedStyles.getPropertyValue('--tier-' + String(index + 1).padStart(2, '0')).trim()
+      );
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let globe;
+      let rotationPaused = prefersReducedMotion;
+
+      function setRotationState(paused) {
+        rotationPaused = paused;
+        if (globe) globe.controls().autoRotate = !paused;
+        rotationButton.setAttribute('aria-pressed', paused ? 'true' : 'false');
+        rotationButton.querySelector('.control-icon').textContent = paused ? '▶' : 'Ⅱ';
+        rotationButton.querySelector('.control-label').textContent = paused ? 'Resume rotation' : 'Pause rotation';
+      }
+
+      function sizeGlobe() {
+        if (!globe) return;
+        globe.width(globeElement.clientWidth).height(globeElement.clientHeight);
+      }
+
+      if (typeof Globe !== 'function') {
+        statusElement.classList.add('error');
+        statusElement.textContent = 'The interactive globe could not load. Check your connection and refresh this page.';
+        rotationButton.disabled = true;
+        resetButton.disabled = true;
+        return;
+      }
+
+      globe = Globe()(globeElement)
+        .backgroundColor('rgba(0,0,0,0)')
+        .showAtmosphere(true)
+        .atmosphereColor('#27BCED')
+        .atmosphereAltitude(0.18)
+        .polygonAltitude(0.012)
+        .polygonCapColor(feature => sovereignColours[feature.__sovereignIndex])
+        .polygonSideColor(() => 'rgba(4,18,36,0.72)')
+        .polygonStrokeColor(() => 'rgba(255,255,255,0.68)')
+        .polygonLabel(feature => {
+          const number = String(feature.__sovereignIndex + 1).padStart(2, '0');
+          return '<div class="globe-tooltip"><strong>' + feature.properties.name + '</strong>Sovereign Colour ' + number + ' &middot; ' + colourNames[feature.__sovereignIndex] + '</div>';
+        })
+        .onPolygonHover(feature => {
+          globeElement.style.cursor = feature ? 'pointer' : 'grab';
+          globe.polygonAltitude(item => item === feature ? 0.045 : 0.012);
+        });
+
+      globe.globeMaterial().color.set('#07172d');
+      globe.globeMaterial().emissive.set('#06182f');
+      globe.globeMaterial().emissiveIntensity = 0.42;
+      globe.controls().enableDamping = true;
+      globe.controls().dampingFactor = 0.08;
+      globe.controls().autoRotateSpeed = 0.38;
+      globe.pointOfView({ lat: 16, lng: 8, altitude: 1.65 }, 0);
+      setRotationState(rotationPaused);
+      sizeGlobe();
+
+      fetch('https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@500804b443d6f12d8cdffd0b95ff2181de69f891/DATA/world.geojson')
+        .then(response => {
+          if (!response.ok) throw new Error('Country geometry request failed');
+          return response.json();
+        })
+        .then(data => {
+          const features = data.features
+            .slice()
+            .sort((first, second) => first.properties.name.localeCompare(second.properties.name));
+          features.forEach((feature, index) => { feature.__sovereignIndex = index % sovereignColours.length; });
+          globe.polygonsData(features);
+          statusElement.hidden = true;
+        })
+        .catch(() => {
+          statusElement.classList.add('error');
+          statusElement.textContent = 'Country geometry is unavailable right now. The World Numerals registry remains available below.';
+        });
+
+      rotationButton.addEventListener('click', () => setRotationState(!rotationPaused));
+      resetButton.addEventListener('click', () => globe.pointOfView({ lat: 16, lng: 8, altitude: 1.65 }, 800));
+      new ResizeObserver(sizeGlobe).observe(globeElement);
+    })();
+
     // Scroll progress
     const progressBar = document.getElementById('scrollProgress');
     const topBtn = document.getElementById('backToTop');
