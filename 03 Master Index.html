@@ -2332,6 +2332,17 @@
             filter: brightness(1.08);
             transform: translateY(-3px);
         }
+        .footer-ribbon-step { overflow: hidden; pointer-events: none; transition: none; }
+        .footer-ribbon-step:hover { z-index: auto; border-color: rgba(255, 255, 255, 0.3); box-shadow: none; filter: none; transform: none; }
+        .footer-ribbon-step::before { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.55) 50%, transparent 80%); opacity: 0; transform: translateX(-100%); pointer-events: none; animation: footerRibbonTravel 7s ease-in-out infinite; animation-delay: calc(var(--step-index) * 1s); }
+        .footer-ribbon-step:nth-child(1) { --step-index: 0; }
+        .footer-ribbon-step:nth-child(2) { --step-index: 1; }
+        .footer-ribbon-step:nth-child(3) { --step-index: 2; }
+        .footer-ribbon-step:nth-child(4) { --step-index: 3; }
+        .footer-ribbon-step:nth-child(5) { --step-index: 4; }
+        .footer-ribbon-step:nth-child(6) { --step-index: 5; }
+        .footer-ribbon-step:nth-child(7) { --step-index: 6; }
+        @keyframes footerRibbonTravel { 0%, 10% { opacity: 0; transform: translateX(-100%); } 14% { opacity: 0.85; } 22% { opacity: 0; transform: translateX(100%); } 100% { opacity: 0; transform: translateX(100%); } }
     .footer-ribbon-step:not(:last-child)::after { content: '\203A'; position: absolute; right: 6px; color: #ffd700; font-size: 1.35rem; }
     @media (max-width: 1100px) {
       .footer-ribbon-route { flex-wrap: wrap; gap: 6px; }
@@ -2341,6 +2352,7 @@
       .footer-ribbon { padding: 18px 6px; }
       .footer-ribbon-step { flex-basis: 100%; }
     }
+        @media (prefers-reduced-motion: reduce) { .footer-ribbon-step::before { animation: none; } }
     .colour-bar-animated.body-research-bridge { isolation: isolate; z-index: 3; height: 9px; margin-top: 36px; overflow: visible; background: #111830; box-shadow: 0 -10px 22px rgba(39, 188, 237, 0.16), 0 8px 20px rgba(8, 145, 178, 0.12), 0 0 12px rgba(255, 215, 0, 0.12); }
     .colour-bar-animated.body-research-bridge > div { position: relative; z-index: 2; }
     .colour-bar-animated.body-research-bridge::before { content: ''; position: absolute; z-index: 1; inset: -36px 0 0; background: linear-gradient(108deg, transparent 0 9%, rgba(8, 145, 178, 0.14) 13%, transparent 18% 100%), linear-gradient(72deg, transparent 0 29%, rgba(255, 215, 0, 0.13) 33%, transparent 38% 100%), linear-gradient(110deg, transparent 0 52%, rgba(22, 163, 74, 0.11) 56%, transparent 61% 100%), linear-gradient(70deg, transparent 0 74%, rgba(255, 19, 240, 0.10) 78%, transparent 83% 100%), linear-gradient(180deg, #eaf8fc 0%, #f4fbfd 55%, #e6f4f9 100%); pointer-events: none; animation: bridgeLights 7s ease-in-out infinite alternate; }
@@ -2458,7 +2470,7 @@
           <p class="intro-lead">The <strong>Ònkà Yorùbá Master Index</strong> is the platform&rsquo;s canonical base-10 data dictionary. Each row is an addressable numeric record, not merely a display entry: it binds one magnitude to its unique identifier, lexical form, tier, power representation, and colour protocol state.</p>
           <p><strong>Record contract:</strong> verified Yorùbá forms and scale rules enter the registry; spelling and diacritics are normalised; magnitude, tier, power, and colour metadata are assigned; continuity is tested against adjacent records; and one ordered, machine-resolvable record is returned.</p>
           <p><strong>Registry invariants:</strong> identifiers remain unique, numeric order remains continuous, equivalent forms remain traceable to one value, and no downstream module may silently redefine a registered tier.</p>
-          <p>The <span class="highlight-15">47-Sovereign Colour Protocol</span> functions as metadata rather than decoration. Each colour identifies a numeric tier; the <span class="l-mult">"l" Drive Multiplier</span> retains its operator identity; and every downstream module must resolve the same value to the same indexed record.</p>
+          <p>The <span class="highlight-15">47-Colour Sovereign Protocol</span> functions as metadata rather than decoration. Each of the 47 Canonical Sovereign Colours identifies a numeric tier; the <span class="l-mult">"l" Drive Multiplier</span> retains its operator identity; and every downstream module must resolve the same value to the same indexed record.</p>
         </div>
       </div>
 
@@ -2467,7 +2479,7 @@
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <div class="protocol-section">
         <div class="protocol-header" style="display:flex;align-items:baseline;flex-wrap:wrap;gap:0.5em;">
-          <h2 style="margin:0;">🎨 The 47-Sovereign Colour Visual Protocol</h2>
+          <h2 style="margin:0;">🎨 The 47 Canonical Sovereign Colours</h2>
           <p class="yoruba-subtitle" style="margin:0;">Ètò Àwọ̀ <span class="t-blue">Ogójì</span><span class="t-green">Éje</span></p>
         </div>
         
@@ -10596,7 +10608,7 @@
 
     <div class="footer">
       <p><strong>Index Numbers Database</strong> — From Zero through Tredecillion and Beyond, Embracing the Largest Numbers in Human Language</p>
-      <p>👑 Eight Hundred and Thirty-Three Magnitudes of Number — From Ódo (0) to Tretrigintoctingentillion, and Beyond. FREE for the World! • The New Ònkà Yorùbá Numeric System • 47-Sovereign Colour Coded Reference</p>
+    <p>👑 Eight Hundred and Thirty-Three Magnitudes of Number — From Ódo (0) to Tretrigintoctingentillion, and Beyond. FREE for the World! • The New Ònkà Yorùbá Numeric System • Reference Coded with the 47 Canonical Sovereign Colours</p>
     </div>
   </div>
     <!-- 47-Sovereign Colour Bar (above Research, Publications & Technology) -->
@@ -10823,7 +10835,7 @@
       </tr>
       <tr>
         <td class="osp-ksym">Tier</td>
-        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Colour Sovereign Protocol used for visual and structural organization</td>
       </tr>
       <tr>
         <td class="osp-ksym"><span class="t-neonpink" style="font-weight: 700;">l</span> Link</td>

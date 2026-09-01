@@ -100,6 +100,17 @@
     .header h2 { font-size: 1.1rem; font-weight: 600; opacity: 0.9; }
     
     .content { padding: 40px 0; }
+    .scaling-ice-bridge {
+      width: 100%;
+      height: 36px;
+      margin: 0;
+      background: #BFE6FF;
+    }
+    .scaling-ice-bridge.top-bridge { height: 14px; }
+    .operator-state-stage:has(+ .scaling-ice-bridge) { margin-bottom: 0; }
+    .scaling-ice-bridge + .gear-panel { margin-top: 0; }
+    .gear-panel:has(+ .scaling-ice-bridge) { margin-bottom: 0; }
+    .scaling-ice-bridge + .section-title { margin-top: 0; }
 
     /* ═══════════════════════════════════════════════════════════════ */
     /* 47-COLOUR SYSTEM CSS CLASSES                                   */
@@ -331,7 +342,7 @@
       isolation: isolate;
       overflow: hidden;
       margin: -40px 0 36px;
-      padding: 50px 24px 38px;
+      padding: 18px 24px 11px;
       border-top: 1px solid rgba(255, 255, 255, 0.42);
       border-bottom: 2px solid #4682B4;
       background:
@@ -344,16 +355,6 @@
         inset 0 14px 28px rgba(15, 52, 96, 0.2),
         inset 0 -12px 24px rgba(15, 52, 96, 0.24),
         0 16px 34px rgba(70, 130, 180, 0.2);
-    }
-    .operator-state-stage::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      inset: 18px 12%;
-      border: 1px solid rgba(255, 215, 0, 0.22);
-      border-radius: 28px;
-      box-shadow: 0 0 36px rgba(255, 215, 0, 0.12);
-      pointer-events: none;
     }
     .operator-state-stage .canvas {
       margin-top: 0;
@@ -2903,6 +2904,17 @@
       filter: brightness(1.08);
       transform: translateY(-3px);
     }
+    .footer-ribbon-step { overflow: hidden; pointer-events: none; transition: none; }
+    .footer-ribbon-step:hover { z-index: auto; border-color: rgba(255, 255, 255, 0.3); box-shadow: none; filter: none; transform: none; }
+    .footer-ribbon-step::before { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.55) 50%, transparent 80%); opacity: 0; transform: translateX(-100%); pointer-events: none; animation: footerRibbonTravel 7s ease-in-out infinite; animation-delay: calc(var(--step-index) * 1s); }
+    .footer-ribbon-step:nth-child(1) { --step-index: 0; }
+    .footer-ribbon-step:nth-child(2) { --step-index: 1; }
+    .footer-ribbon-step:nth-child(3) { --step-index: 2; }
+    .footer-ribbon-step:nth-child(4) { --step-index: 3; }
+    .footer-ribbon-step:nth-child(5) { --step-index: 4; }
+    .footer-ribbon-step:nth-child(6) { --step-index: 5; }
+    .footer-ribbon-step:nth-child(7) { --step-index: 6; }
+    @keyframes footerRibbonTravel { 0%, 10% { opacity: 0; transform: translateX(-100%); } 14% { opacity: 0.85; } 22% { opacity: 0; transform: translateX(100%); } 100% { opacity: 0; transform: translateX(100%); } }
     .footer-ribbon-step:not(:last-child)::after { content: '\203A'; position: absolute; right: 6px; color: #ffd700; font-size: 1.35rem; }
     @media (max-width: 1100px) {
       .footer-ribbon-route { flex-wrap: wrap; gap: 6px; }
@@ -2912,6 +2924,7 @@
       .footer-ribbon { padding: 18px 6px; }
       .footer-ribbon-step { flex-basis: 100%; }
     }
+    @media (prefers-reduced-motion: reduce) { .footer-ribbon-step::before { animation: none; } }
     .colour-bar-animated.body-research-bridge { isolation: isolate; z-index: 3; height: 9px; margin-top: 36px; overflow: visible; background: #111830; box-shadow: 0 -10px 22px rgba(39, 188, 237, 0.16), 0 8px 20px rgba(8, 145, 178, 0.12), 0 0 12px rgba(255, 215, 0, 0.12); }
     .colour-bar-animated.body-research-bridge > div { position: relative; z-index: 2; }
     .colour-bar-animated.body-research-bridge::before { content: ''; position: absolute; z-index: 1; inset: -36px 0 0; background: linear-gradient(108deg, transparent 0 9%, rgba(8, 145, 178, 0.14) 13%, transparent 18% 100%), linear-gradient(72deg, transparent 0 29%, rgba(255, 215, 0, 0.13) 33%, transparent 38% 100%), linear-gradient(110deg, transparent 0 52%, rgba(22, 163, 74, 0.11) 56%, transparent 61% 100%), linear-gradient(70deg, transparent 0 74%, rgba(255, 19, 240, 0.10) 78%, transparent 83% 100%), linear-gradient(180deg, #eaf8fc 0%, #f4fbfd 55%, #e6f4f9 100%); pointer-events: none; animation: bridgeLights 7s ease-in-out infinite alternate; }
@@ -3015,6 +3028,7 @@
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
+    <div class="scaling-ice-bridge top-bridge" aria-hidden="true"></div>
 
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
@@ -3045,6 +3059,7 @@
           </div>
         </div>
       </div>
+      <div class="scaling-ice-bridge" aria-hidden="true"></div>
       
       <!-- The Chameleon Protocol -->
 <section style="background:#2188AE; color:#fff; padding:2rem; border-radius:16px; font-family:'Segoe UI', Arial, sans-serif; box-shadow:0 4px 24px rgba(33,136,174,0.15);">
@@ -3135,6 +3150,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
   </ul>
 
 </section>
+  <div class="scaling-ice-bridge" aria-hidden="true"></div>
 
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <!-- GEAR MECHANICS — Educational Interlude                          -->
@@ -3214,6 +3230,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
           So when you read <span class="gp-pulse-pink">l</span><i>árǔn</i> on a card, you are reading <strong>"engage Gear 5"</strong> — the engine clicks up to <strong>10¹⁵</strong> (the quadrillion seat), and the mantissa rides for the journey. The <strong>l</strong>-chain is the lever, <strong>ḡ</strong> is the cog, and the magnitude is the road that opens beneath them.
         </p>
       </section>
+      <div class="scaling-ice-bridge" aria-hidden="true"></div>
 
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <!-- UNIT MULTIPLIERS ×2 to ×9 -->
@@ -5595,7 +5612,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
       </tr>
       <tr>
         <td class="osp-ksym">Tier</td>
-        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Colour Sovereign Protocol used for visual and structural organization</td>
       </tr>
       <tr>
         <td class="osp-ksym"><span class="t-neonpink" style="font-weight: 700;">l</span> Link</td>

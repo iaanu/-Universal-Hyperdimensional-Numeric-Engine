@@ -1783,6 +1783,17 @@
       filter: brightness(1.08);
       transform: translateY(-3px);
     }
+    .footer-ribbon-step { overflow: hidden; pointer-events: none; transition: none; }
+    .footer-ribbon-step:hover { z-index: auto; border-color: rgba(255, 255, 255, 0.3); box-shadow: none; filter: none; transform: none; }
+    .footer-ribbon-step::before { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.55) 50%, transparent 80%); opacity: 0; transform: translateX(-100%); pointer-events: none; animation: footerRibbonTravel 7s ease-in-out infinite; animation-delay: calc(var(--step-index) * 1s); }
+    .footer-ribbon-step:nth-child(1) { --step-index: 0; }
+    .footer-ribbon-step:nth-child(2) { --step-index: 1; }
+    .footer-ribbon-step:nth-child(3) { --step-index: 2; }
+    .footer-ribbon-step:nth-child(4) { --step-index: 3; }
+    .footer-ribbon-step:nth-child(5) { --step-index: 4; }
+    .footer-ribbon-step:nth-child(6) { --step-index: 5; }
+    .footer-ribbon-step:nth-child(7) { --step-index: 6; }
+    @keyframes footerRibbonTravel { 0%, 10% { opacity: 0; transform: translateX(-100%); } 14% { opacity: 0.85; } 22% { opacity: 0; transform: translateX(100%); } 100% { opacity: 0; transform: translateX(100%); } }
     .footer-ribbon-step:not(:last-child)::after { content: '\203A'; position: absolute; right: 6px; color: #ffd700; font-size: 1.35rem; }
     @media (max-width: 1100px) {
       .footer-ribbon-route { flex-wrap: wrap; gap: 6px; }
@@ -1792,6 +1803,7 @@
       .footer-ribbon { padding: 18px 6px; }
       .footer-ribbon-step { flex-basis: 100%; }
     }
+    @media (prefers-reduced-motion: reduce) { .footer-ribbon-step::before { animation: none; } }
     .colour-bar-animated.body-research-bridge { isolation: isolate; z-index: 3; height: 9px; margin-top: 36px; overflow: visible; background: #111830; box-shadow: 0 -10px 22px rgba(39, 188, 237, 0.16), 0 8px 20px rgba(8, 145, 178, 0.12), 0 0 12px rgba(255, 215, 0, 0.12); }
     .colour-bar-animated.body-research-bridge > div { position: relative; z-index: 2; }
     .colour-bar-animated.body-research-bridge::before { content: ''; position: absolute; z-index: 1; inset: -36px 0 0; background: linear-gradient(108deg, transparent 0 9%, rgba(8, 145, 178, 0.14) 13%, transparent 18% 100%), linear-gradient(72deg, transparent 0 29%, rgba(255, 215, 0, 0.13) 33%, transparent 38% 100%), linear-gradient(110deg, transparent 0 52%, rgba(22, 163, 74, 0.11) 56%, transparent 61% 100%), linear-gradient(70deg, transparent 0 74%, rgba(255, 19, 240, 0.10) 78%, transparent 83% 100%), linear-gradient(180deg, #eaf8fc 0%, #f4fbfd 55%, #e6f4f9 100%); pointer-events: none; animation: bridgeLights 7s ease-in-out infinite alternate; }
@@ -1838,7 +1850,7 @@
       <h1>WORLD NUMERALS ATLAS</h1>
       <h2>Comparative Registry of Indigenous and Language-Native Numeric Systems</h2>
       <h2 style="margin-top: 15px; font-size: 1.2rem; color: #FFD700; font-weight: 700;">Universal Hyperdimensional Numeric Engine</h2>
-      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">A provenance-led atlas for comparing how the world counts</p>
+      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">A visual laboratory for the world&rsquo;s numerical diversity</p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published by the Universal Hyperdimensional Numeric Engine Research Initiative<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 &middot; 2026 Public Release</strong></p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 8px;">Designed for researchers, educators, software developers, and digital humanities scholars.</p>
       <p style="font-size: 0.85rem; opacity: 0.85; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">The World Numerals Atlas registers distinct counting traditions under a shared comparative schema without flattening their differences. Every implementation records source authority, lexical forms, arithmetic structure, scale behaviour, orthography, phonological constraints, licence, and validation status. The 1,127-entry Yor&ugrave;b&aacute; index is the first complete release; planned datasets remain visibly separate from reviewed evidence.</p>
@@ -1894,7 +1906,6 @@
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
-
     <div class="content">
 
       <!-- WHY A WORLD ATLAS -->
@@ -1922,7 +1933,7 @@
           <h2 id="sovereignGlobeTitle">One World, 47 Sovereign Colours</h2>
           <p>Drag to turn the globe, scroll to zoom, and point to a country to reveal its place in the canonical colour cycle. Countries cycle through all 47 magnitude colours for maximum richness.</p>
         </div>
-        <div class="globe-stage" role="img" aria-label="Interactive three-dimensional globe with individual countries coloured through the 47-Sovereign Colour Visual Protocol">
+        <div class="globe-stage" role="img" aria-label="Interactive three-dimensional globe with individual countries coloured through the 47-Colour Sovereign Protocol">
           <div class="globe-render" id="sovereignGlobe" aria-hidden="true"></div>
           <p class="globe-status" id="globeStatus" role="status" aria-live="polite">Loading the chromatic world&hellip;</p>
         </div>
@@ -3759,7 +3770,7 @@
       </tr>
       <tr>
         <td class="osp-ksym">Tier</td>
-        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Colour Sovereign Protocol used for visual and structural organization</td>
       </tr>
       <tr>
         <td class="osp-ksym"><span class="t-neonpink" style="font-weight: 700;">l</span> Link</td>

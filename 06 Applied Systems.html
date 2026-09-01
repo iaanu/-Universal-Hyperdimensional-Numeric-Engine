@@ -1422,8 +1422,22 @@
         padding: 8px 20px 8px 12px;
         border: 1px solid rgba(255,255,255,0.3);
         background: var(--route-colour);
+        color: #fff;
+        font-family: inherit;
         font-size: 0.8rem;
         font-weight: 800;
+        overflow: hidden;
+      }
+    .joy-highway-step::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.55) 50%, transparent 80%);
+        opacity: 0;
+        transform: translateX(-100%);
+        pointer-events: none;
+        animation: joyHighwayTravel 7s ease-in-out infinite;
+        animation-delay: calc(var(--step-index) * 1s);
       }
     .joy-highway-step:not(:last-child)::after {
         content: '›';
@@ -1431,6 +1445,15 @@
         right: 6px;
         color: #FFD700;
         font-size: 1.35rem;
+      }
+    @keyframes joyHighwayTravel {
+        0%, 10% { opacity: 0; transform: translateX(-100%); }
+        14% { opacity: 0.85; }
+        22% { opacity: 0; transform: translateX(100%); }
+        100% { opacity: 0; transform: translateX(100%); }
+      }
+    @media (prefers-reduced-motion: reduce) {
+        .joy-highway-step::before { animation: none; }
       }
     @media (max-width: 1100px) {
         .practice-jump-grid { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
@@ -3183,8 +3206,8 @@
             <li><strong>The &ldquo;g&rdquo; Pulse (Gear Pulse):</strong> The letter &ldquo;g&rdquo; shares the Neon Pink colour because it tracks the heartbeat of <strong>&#x1EB8;gb&#x1EB9;&#x0300;r&#x01D4;n</strong> (1,000). Its downward-pointing shape acts as an arrow, marking <em>exactly</em> where the mathematical power lands.</li>
         </ul>
 
-        <h3 style="color:#1E8CB8; margin-top:24px;">3. Tier Recognition: The 47-Colour Protocol</h3>
-        <p>The <strong>Sovereign 47-Colour Protocol</strong> assigns stable visual metadata to magnitude tiers. Its application contract is simple: the same tier must retain the same colour in tables, calculators, teaching materials, and exported datasets.</p>
+        <h3 style="color:#1E8CB8; margin-top:24px;">3. Tier Recognition: The 47-Colour Sovereign Protocol</h3>
+        <p>The <strong>47-Colour Sovereign Protocol</strong> assigns stable visual metadata to magnitude tiers. Its application contract is simple: the same tier must retain the same colour in tables, calculators, teaching materials, and exported datasets.</p>
         <ul>
             <li><strong>The Zero Column (Cerulean):</strong> Representing the &ldquo;Silence from which all infinite numbers are born,&rdquo; it serves as the Tonic Root of the Universe.</li>
             <li><strong>Instant Recognition:</strong>
@@ -4251,7 +4274,7 @@ document.getElementById('tableBody').innerHTML=t;
       </tr>
       <tr>
         <td class="osp-ksym">Tier</td>
-        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Colour Sovereign Protocol used for visual and structural organization</td>
       </tr>
       <tr>
         <td class="osp-ksym"><span class="t-neonpink" style="font-weight: 700;">l</span> Link</td>
@@ -4299,13 +4322,13 @@ document.getElementById('tableBody').innerHTML=t;
 <section class="joy-highway-ribbon" aria-labelledby="joy-highway-ribbon-title">
   <h2 id="joy-highway-ribbon-title">🚦 Count Joyfully on the Joy Highway</h2>
   <div class="joy-highway-route" aria-label="Discover, practice, improve, remember, share, celebrate, and inspire others">
-    <span class="joy-highway-step" style="--route-colour:#0B6E4F;">🙂 Discover</span>
-    <span class="joy-highway-step" style="--route-colour:#1E8CB8;">😊 Practice</span>
-    <span class="joy-highway-step" style="--route-colour:#2563EB;">😄 Improve</span>
-    <span class="joy-highway-step" style="--route-colour:#6C0AC9;">😁 Remember</span>
-    <span class="joy-highway-step" style="--route-colour:#B00075;">🤗 Share</span>
-    <span class="joy-highway-step" style="--route-colour:#B45309;">🥳 Celebrate</span>
-    <span class="joy-highway-step" style="--route-colour:#7A8C00;">🤩 Inspire Others</span>
+    <span class="joy-highway-step" style="--route-colour:#0B6E4F; --step-index:0;">🙂 Discover</span>
+    <span class="joy-highway-step" style="--route-colour:#1E8CB8; --step-index:1;">😊 Practice</span>
+    <span class="joy-highway-step" style="--route-colour:#2563EB; --step-index:2;">😄 Improve</span>
+    <span class="joy-highway-step" style="--route-colour:#6C0AC9; --step-index:3;">😁 Remember</span>
+    <span class="joy-highway-step" style="--route-colour:#B00075; --step-index:4;">🤗 Share</span>
+    <span class="joy-highway-step" style="--route-colour:#B45309; --step-index:5;">🥳 Celebrate</span>
+    <span class="joy-highway-step" style="--route-colour:#7A8C00; --step-index:6;">🤩 Inspire Others</span>
   </div>
 </section>
 
@@ -4346,6 +4369,7 @@ document.getElementById('tableBody').innerHTML=t;
       topBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+
     </script>
 
 </div></body></html>

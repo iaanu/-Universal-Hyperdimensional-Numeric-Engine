@@ -1761,15 +1761,10 @@
     }
     .footer-ribbon h2 { margin: 0 0 14px; color: #ffd700; font-size: 1.3rem; line-height: 1.25; }
     .footer-ribbon-route { display: flex; align-items: stretch; justify-content: center; gap: 0; width: 100%; margin: 0 auto; }
-    .footer-ribbon-step { position: relative; display: flex; flex: 1 1 135px; align-items: center; justify-content: center; min-width: 0; min-height: 52px; padding: 8px 20px 8px 12px; border: 1px solid rgba(255, 255, 255, 0.3); background: var(--route-colour); color: #fff; font-size: 0.8rem; font-weight: 800; line-height: 1.25; transition: border-color .4s cubic-bezier(.4,0,.2,1), box-shadow .4s cubic-bezier(.4,0,.2,1), filter .4s cubic-bezier(.4,0,.2,1), transform .4s cubic-bezier(.4,0,.2,1); }
-    .footer-ribbon-step:hover {
-      z-index: 2;
-      border-color: rgba(255, 215, 0, 0.5);
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 215, 0, 0.15);
-      filter: brightness(1.08);
-      transform: translateY(-3px);
-    }
+    .footer-ribbon-step { position: relative; display: flex; flex: 1 1 135px; align-items: center; justify-content: center; min-width: 0; min-height: 52px; padding: 8px 20px 8px 12px; border: 1px solid rgba(255, 255, 255, 0.3); background: var(--route-colour); color: #fff; font-size: 0.8rem; font-weight: 800; line-height: 1.25; overflow: hidden; pointer-events: none; }
+    .footer-ribbon-step::before { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.55) 50%, transparent 80%); opacity: 0; transform: translateX(-100%); pointer-events: none; animation: footerRibbonTravel 7s ease-in-out infinite; animation-delay: calc(var(--step-index) * 1s); }
     .footer-ribbon-step:not(:last-child)::after { content: '\203A'; position: absolute; right: 6px; color: #ffd700; font-size: 1.35rem; }
+    @keyframes footerRibbonTravel { 0%, 10% { opacity: 0; transform: translateX(-100%); } 14% { opacity: 0.85; } 22% { opacity: 0; transform: translateX(100%); } 100% { opacity: 0; transform: translateX(100%); } }
     @media (max-width: 1100px) {
       .footer-ribbon-route { flex-wrap: wrap; gap: 6px; }
       .footer-ribbon-step { flex: 1 1 220px; }
@@ -1778,6 +1773,7 @@
       .footer-ribbon { padding: 18px 6px; }
       .footer-ribbon-step { flex-basis: 100%; }
     }
+    @media (prefers-reduced-motion: reduce) { .footer-ribbon-step::before { animation: none; } }
     .colour-bar-animated.body-research-bridge { isolation: isolate; z-index: 3; height: 9px; margin-top: 36px; overflow: visible; background: #111830; box-shadow: 0 -10px 22px rgba(39, 188, 237, 0.16), 0 8px 20px rgba(8, 145, 178, 0.12), 0 0 12px rgba(255, 215, 0, 0.12); }
     .colour-bar-animated.body-research-bridge > div { position: relative; z-index: 2; }
     .colour-bar-animated.body-research-bridge::before { content: ''; position: absolute; z-index: 1; inset: -36px 0 0; background: linear-gradient(108deg, transparent 0 9%, rgba(8, 145, 178, 0.14) 13%, transparent 18% 100%), linear-gradient(72deg, transparent 0 29%, rgba(255, 215, 0, 0.13) 33%, transparent 38% 100%), linear-gradient(110deg, transparent 0 52%, rgba(22, 163, 74, 0.11) 56%, transparent 61% 100%), linear-gradient(70deg, transparent 0 74%, rgba(255, 19, 240, 0.10) 78%, transparent 83% 100%), linear-gradient(180deg, #eaf8fc 0%, #f4fbfd 55%, #e6f4f9 100%); pointer-events: none; animation: bridgeLights 7s ease-in-out infinite alternate; }
@@ -2751,13 +2747,13 @@
 <section class="footer-ribbon" aria-labelledby="godreign-ribbon-title">
   <h2 id="godreign-ribbon-title">👑 Build on the Sovereign Numeric Foundation</h2>
   <div class="footer-ribbon-route" aria-label="Name the vision, define magnitude, order powers, guard the protocol, govern the index, guide adoption, and advance humanity">
-    <span class="footer-ribbon-step" style="--route-colour:#0B6E4F;">✨ Name the Vision</span>
-    <span class="footer-ribbon-step" style="--route-colour:#1E8CB8;">🔟 Define Magnitude</span>
-    <span class="footer-ribbon-step" style="--route-colour:#2563EB;">🪜 Order the Powers</span>
-    <span class="footer-ribbon-step" style="--route-colour:#6C0AC9;">🎨 Guard the Protocol</span>
-    <span class="footer-ribbon-step" style="--route-colour:#B00075;">📜 Govern the Index</span>
-    <span class="footer-ribbon-step" style="--route-colour:#B45309;">🧭 Guide Adoption</span>
-    <span class="footer-ribbon-step" style="--route-colour:#7A8C00;">🌍 Advance Humanity</span>
+    <span class="footer-ribbon-step" style="--route-colour:#0B6E4F; --step-index:0;">✨ Name the Vision</span>
+    <span class="footer-ribbon-step" style="--route-colour:#1E8CB8; --step-index:1;">🔟 Define Magnitude</span>
+    <span class="footer-ribbon-step" style="--route-colour:#2563EB; --step-index:2;">🪜 Order the Powers</span>
+    <span class="footer-ribbon-step" style="--route-colour:#6C0AC9; --step-index:3;">🎨 Guard the Protocol</span>
+    <span class="footer-ribbon-step" style="--route-colour:#B00075; --step-index:4;">📜 Govern the Index</span>
+    <span class="footer-ribbon-step" style="--route-colour:#B45309; --step-index:5;">🧭 Guide Adoption</span>
+    <span class="footer-ribbon-step" style="--route-colour:#7A8C00; --step-index:6;">🌍 Advance Humanity</span>
   </div>
 </section>
 

@@ -2283,6 +2283,17 @@
       filter: brightness(1.08);
       transform: translateY(-3px);
     }
+    .footer-ribbon-step { overflow: hidden; pointer-events: none; transition: none; }
+    .footer-ribbon-step:hover { z-index: auto; border-color: rgba(255, 255, 255, 0.3); box-shadow: none; filter: none; transform: none; }
+    .footer-ribbon-step::before { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.55) 50%, transparent 80%); opacity: 0; transform: translateX(-100%); pointer-events: none; animation: footerRibbonTravel 7s ease-in-out infinite; animation-delay: calc(var(--step-index) * 1s); }
+    .footer-ribbon-step:nth-child(1) { --step-index: 0; }
+    .footer-ribbon-step:nth-child(2) { --step-index: 1; }
+    .footer-ribbon-step:nth-child(3) { --step-index: 2; }
+    .footer-ribbon-step:nth-child(4) { --step-index: 3; }
+    .footer-ribbon-step:nth-child(5) { --step-index: 4; }
+    .footer-ribbon-step:nth-child(6) { --step-index: 5; }
+    .footer-ribbon-step:nth-child(7) { --step-index: 6; }
+    @keyframes footerRibbonTravel { 0%, 10% { opacity: 0; transform: translateX(-100%); } 14% { opacity: 0.85; } 22% { opacity: 0; transform: translateX(100%); } 100% { opacity: 0; transform: translateX(100%); } }
     .footer-ribbon-step:not(:last-child)::after { content: '\203A'; position: absolute; right: 6px; color: #ffd700; font-size: 1.35rem; }
     @media (max-width: 1100px) {
       .footer-ribbon-route { flex-wrap: wrap; gap: 6px; }
@@ -2292,6 +2303,7 @@
       .footer-ribbon { padding: 18px 6px; }
       .footer-ribbon-step { flex-basis: 100%; }
     }
+    @media (prefers-reduced-motion: reduce) { .footer-ribbon-step::before { animation: none; } }
     .colour-bar-animated.body-research-bridge { isolation: isolate; z-index: 3; height: 9px; margin-top: 36px; overflow: visible; background: #111830; box-shadow: 0 -10px 22px rgba(39, 188, 237, 0.16), 0 8px 20px rgba(8, 145, 178, 0.12), 0 0 12px rgba(255, 215, 0, 0.12); }
     .colour-bar-animated.body-research-bridge > div { position: relative; z-index: 2; }
     .colour-bar-animated.body-research-bridge::before { content: ''; position: absolute; z-index: 1; inset: -36px 0 0; background: linear-gradient(108deg, transparent 0 9%, rgba(8, 145, 178, 0.14) 13%, transparent 18% 100%), linear-gradient(72deg, transparent 0 29%, rgba(255, 215, 0, 0.13) 33%, transparent 38% 100%), linear-gradient(110deg, transparent 0 52%, rgba(22, 163, 74, 0.11) 56%, transparent 61% 100%), linear-gradient(70deg, transparent 0 74%, rgba(255, 19, 240, 0.10) 78%, transparent 83% 100%), linear-gradient(180deg, #eaf8fc 0%, #f4fbfd 55%, #e6f4f9 100%); pointer-events: none; animation: bridgeLights 7s ease-in-out infinite alternate; }
@@ -2506,12 +2518,12 @@
             </div>
             <div style="flex:1; min-width:280px;">
                 <p><strong>This platform begins from a testable premise: a language-native numeric system can support advanced reasoning and computation when its lexical rules, magnitude structure, and validation constraints are formalised explicitly.</strong></p>
-                <p>From fractional expression to the <strong>47-Sovereign Colour Protocol</strong>, each representation is linked to a defined numeric tier and a recoverable source form. The objective is computational structure without loss of linguistic specificity.</p>
+                <p>From fractional expression to the <strong>47-Colour Sovereign Protocol</strong>, each representation is linked to a defined numeric tier and a recoverable source form. The objective is computational structure without loss of linguistic specificity.</p>
 
                 <div class="bk-tags" style="margin:14px 0 4px;">
                   <span>Base-10 Framework</span>
                   <span>1 &rarr; 10 Million</span>
-                  <span class="gold">47-Colour System</span>
+                  <span class="gold">47-Colour Sovereign Protocol</span>
                   <span class="pink">l Multiplier</span>
                   <span class="green">UHNE Science Engine</span>
                   <span>Native Scientific Notation</span>
@@ -2535,7 +2547,7 @@
 
                 <h3 style="color:#1E8CB8; margin:18px 0 6px 0; font-size:1.1rem;">Scholarly Dissemination and Public Use</h3>
                 <p>This platform is intended to circulate widely across educational, research, and public-interest contexts. Sharing the resource expands access not only to software and texts, but also to the intellectual inheritance embedded in language-based numerical systems.</p>
-                <p>In that sense, the <strong>47-Sovereign Colour Protocol</strong> is not merely a design device. It is part of a larger effort to establish durable bridges between heritage knowledge, formal computation, and future-facing pedagogy.</p>
+                <p>In that sense, the <strong>47-Colour Sovereign Protocol</strong> is not merely a design device. It is part of a larger effort to establish durable bridges between heritage knowledge, formal computation, and future-facing pedagogy.</p>
             </div>
         </div>
     </div>
@@ -2745,7 +2757,7 @@
 
         <p class="bk-lead"><strong>The New Ònka Yorùbá Numeric System</strong> is a revolution in motion, a sacred declaration of indigenous numerical sovereignty. For centuries, countless indigenous tongues have sung, prayed, and dreamed, yet faltered when called to calculate, code, or command the digital future. No longer. Here, the reformed Ònka Yorùbá Numeric System rises in full power: a logic-ready, base-10 Decimal Framework that transforms poetic complexity into precision, speed, and clarity. Every number now flows with ancestral rhythm and modern fluency. This is the future&rsquo;s minds coming back to life, where children compute in the same voice they use to greet their elders, and innovators build algorithms in the language of their soul.</p>
 
-        <p>The New Ònka Yorùbá numeric system delivers a complete, interactive ecosystem, featuring essential toolkit suites like the <strong>Ìnkà Yorùbá Number Generator</strong>, <strong>Yorùbá Calculator</strong>, <strong>Onka Ojúorí (Age Calculator)</strong>, <strong>Yorùbá Kòlẹǹdà</strong>, the <strong>Number Converter</strong> app, and the <strong>Ìnkà Yorùbá Large Number Index</strong>. Central to this revolution is the <strong>UHNE System</strong>&mdash;the high-velocity Science Engine that reduces complexity into native scientific notation for seamless computer algorithmic integration. Implementing the 47 Sovereign Colour System with the high-performance generative legacy of the &lsquo;l&rsquo; Multiplier engine, the UHNE Science Engine visualises mathematical logical concepts for instant and intuitive understanding. The system&rsquo;s scalability and sophistication are demonstrated by living proof of a printed sequence that runs continuously from 1 to 10 million, with an extended index that goes beyond Googolplexian, through Graham&rsquo;s Number, and stretching into Infinity to master absolutely FREE.</p>
+        <p>The New Ònka Yorùbá numeric system delivers a complete, interactive ecosystem, featuring essential toolkit suites like the <strong>Ìnkà Yorùbá Number Generator</strong>, <strong>Yorùbá Calculator</strong>, <strong>Onka Ojúorí (Age Calculator)</strong>, <strong>Yorùbá Kòlẹǹdà</strong>, the <strong>Number Converter</strong> app, and the <strong>Ìnkà Yorùbá Large Number Index</strong>. Central to this revolution is the <strong>UHNE System</strong>&mdash;the high-velocity Science Engine that reduces complexity into native scientific notation for seamless computer algorithmic integration. By implementing the 47 Canonical Sovereign Colours alongside the high-performance generative legacy of the &lsquo;l&rsquo; Multiplier engine, the UHNE Science Engine visualises mathematical logical concepts for instant and intuitive understanding. The system&rsquo;s scalability and sophistication are demonstrated by living proof of a printed sequence that runs continuously from 1 to 10 million, with an extended index that goes beyond Googolplexian, through Graham&rsquo;s Number, and stretching into Infinity to master absolutely FREE.</p>
 
         <p>By virtue of its universal linguistic adaptability, the system empowers diverse indigenous languages around the world to perform advanced computations, access deep-rooted numerical concepts, and develop mathematical algorithms at any complexity or scale in their native tongues, as the future requires languages to speak in code, run seamless simulations, and lead in global artificial intelligence.</p>
 
@@ -2754,7 +2766,7 @@
         <div class="bk-tags">
           <span>Base-10 Framework</span>
           <span>1 &rarr; 10 Million</span>
-          <span class="gold">47-Colour System</span>
+          <span class="gold">47-Colour Sovereign Protocol</span>
           <span class="pink">l Multiplier</span>
           <span class="green">UHNE Science Engine</span>
           <span>Native Scientific Notation</span>
@@ -2830,7 +2842,7 @@
           <p><strong>The Vault of Innovation, Released into the Public:</strong> We hereby dismantle the barriers, and set the products free. The following assets are released from the (<strong>UHNE</strong>) sanctuary into the Unrestricted Public Domain, empowering communities to govern their own digital destiny: The complete, logic-ready Base-10 Decimal Framework and its entire lexicon of digital terminology.</p>
           <ul class="fd-list">
             <li><strong>The Ònkà Yorùbá Implementation Prototype Digital Engine Suite 1.0:</strong> Including the Yorùbá Number Generator-Scroll Books 1-20 Volumes, Numerical Calculator, the High-Performance Conversion Engine, the Age Navigator, the Yorùbá Kàlẹ́ndà, the Talking Drum Digital Pulse, and the 16-String Acoustic Guitar Explorer.</li>
-            <li><strong>The Chromatic Educational Blueprints:</strong> The Exhaustive Mathematical Symbols Interpreted In Yorùbá, a revolutionary 47-Sovereign-Colour Learning System, alongside its immersive methodologies and transformative curricula.</li>
+            <li><strong>The Chromatic Educational Blueprints:</strong> The Exhaustive Mathematical Symbols Interpreted In Yorùbá, a revolutionary learning system built on the 47 Canonical Sovereign Colours, alongside its immersive methodologies and transformative curricula.</li>
             <li><strong>Linguistic Navigational Charts:</strong> The global research platform for language-based numeral systems.</li>
             <li><strong>Numerical Index Framework:</strong> The Exhaustive Large Number Tables, the core DNA of magnitude. The star-map from thousands to Googolplexian, surging through Graham&rsquo;s Number into the transfinite glory of Infinity.</li>
             <li><strong>Multiplicative Scaling Framework:</strong> This is the heart of the Computational Engine&rsquo;s Velocity. The Multiplicative Scaling Framework defines the laws of the <strong>&ldquo;l&rdquo; Drive</strong>&mdash;the high-performance operator that allows the language to &ldquo;fold&rdquo; space and time. The <strong>&ldquo;l&rdquo; Drive Multiplier</strong> links multiple sets of numbers across any distance instantly. It implements (The Principle of Minimal Effort/Action) it is the governing rule of numeric motions.</li>
@@ -3102,7 +3114,7 @@
       </tr>
       <tr>
         <td class="osp-ksym">Tier</td>
-        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Colour Sovereign Protocol used for visual and structural organization</td>
       </tr>
       <tr>
         <td class="osp-ksym"><span class="t-neonpink" style="font-weight: 700;">l</span> Link</td>

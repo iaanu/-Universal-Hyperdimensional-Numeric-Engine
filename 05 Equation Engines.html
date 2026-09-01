@@ -100,14 +100,10 @@
     .header h2 { font-size: 1.1rem; font-weight: 600; opacity: 0.9; }
     
     .content { padding: 40px 0; }
-    .equation-top-steel-bridge {
-      width: 100%;
-      height: 40px;
-      border-top: 1px solid #4682B4;
-      border-bottom: 1px solid #4682B4;
-      background: linear-gradient(180deg, #e8f2fd 0 50%, #d4e8fa 50% 100%);
+    .equation-main-content {
+      padding-top: 0;
+      background: #BFE6FF;
     }
-    .equation-main-content { padding-top: 0; }
 
     /* ═══════════════════════════════════════════════════════════════ */
     /* 47-COLOUR SYSTEM CSS CLASSES                                   */
@@ -451,13 +447,20 @@
     /* Lead-In Panel (introduction + Sixfold Operators table)         */
     /* ─────────────────────────────────────────────────────────────── */
     .ffes-leadin {
-      margin: 0 0 26px;
+      margin: 0;
       padding: 28px 28px 22px;
       background: linear-gradient(135deg, #0F6B8E 0%, #15779C 50%, #1A82A8 100%);
       border: 1px solid rgba(255, 215, 0, 0.45);
       border-radius: 18px;
       box-shadow: 0 18px 48px rgba(15, 60, 90, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
       color: #ffffff;
+    }
+    .equation-table-ice-bridge {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 28px;
+      background: #BFE6FF;
     }
     .ffes-leadin-para {
       font-size: 1rem;
@@ -520,7 +523,7 @@
     /* The Six-Fold Universal Equation Suite (FFES)                   */
     /* ─────────────────────────────────────────────────────────────── */
     .ffes {
-      margin: 28px 0 36px;
+      margin: 0 0 36px;
       padding: 36px 30px 32px;
       background: linear-gradient(135deg, #0F6B8E 0%, #15779C 50%, #1A82A8 100%);
       border: 1px solid rgba(255, 215, 0, 0.45);
@@ -1619,7 +1622,7 @@
     /* ── h2 headings ── */
     .p00-tables h2,
     .p00-text-sections h2 {
-        color: #4682B4 !important;
+      color: #0f3460 !important;
         font-family: 'Poppins', 'Segoe UI', sans-serif !important;
         margin-top: 28px !important;
         margin-bottom: 8px !important;
@@ -1627,8 +1630,26 @@
     }
     .p00-tables h2 span,
     .p00-text-sections h2 span {
-        color: #4682B4 !important;
+      color: #0f3460 !important;
         font-family: 'Poppins', 'Segoe UI', sans-serif !important;
+    }
+
+    .equation-main-content > .p00-tables > h2 {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding: 14px 12px 12px;
+      background: #BFE6FF;
+      font-size: 1.25rem !important;
+      font-weight: 800;
+    }
+
+    .equation-main-content > .p00-tables {
+      background: #BFE6FF;
+    }
+
+    .equation-main-content .ffes-leadin-para {
+      font-size: 1.02rem !important;
+      line-height: 1.75 !important;
     }
 
     /* ── Paragraphs ── */
@@ -3188,6 +3209,17 @@
       filter: brightness(1.08);
       transform: translateY(-3px);
     }
+    .footer-ribbon-step { overflow: hidden; pointer-events: none; transition: none; }
+    .footer-ribbon-step:hover { z-index: auto; border-color: rgba(255, 255, 255, 0.3); box-shadow: none; filter: none; transform: none; }
+    .footer-ribbon-step::before { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,0.55) 50%, transparent 80%); opacity: 0; transform: translateX(-100%); pointer-events: none; animation: footerRibbonTravel 7s ease-in-out infinite; animation-delay: calc(var(--step-index) * 1s); }
+    .footer-ribbon-step:nth-child(1) { --step-index: 0; }
+    .footer-ribbon-step:nth-child(2) { --step-index: 1; }
+    .footer-ribbon-step:nth-child(3) { --step-index: 2; }
+    .footer-ribbon-step:nth-child(4) { --step-index: 3; }
+    .footer-ribbon-step:nth-child(5) { --step-index: 4; }
+    .footer-ribbon-step:nth-child(6) { --step-index: 5; }
+    .footer-ribbon-step:nth-child(7) { --step-index: 6; }
+    @keyframes footerRibbonTravel { 0%, 10% { opacity: 0; transform: translateX(-100%); } 14% { opacity: 0.85; } 22% { opacity: 0; transform: translateX(100%); } 100% { opacity: 0; transform: translateX(100%); } }
     .footer-ribbon-step:not(:last-child)::after { content: '\203A'; position: absolute; right: 6px; color: #ffd700; font-size: 1.35rem; }
     @media (max-width: 1100px) {
       .footer-ribbon-route { flex-wrap: wrap; gap: 6px; }
@@ -3197,6 +3229,7 @@
       .footer-ribbon { padding: 18px 6px; }
       .footer-ribbon-step { flex-basis: 100%; }
     }
+    @media (prefers-reduced-motion: reduce) { .footer-ribbon-step::before { animation: none; } }
     .colour-bar-animated.body-research-bridge { isolation: isolate; z-index: 3; height: 9px; margin-top: 36px; overflow: visible; background: #111830; box-shadow: 0 -10px 22px rgba(39, 188, 237, 0.16), 0 8px 20px rgba(8, 145, 178, 0.12), 0 0 12px rgba(255, 215, 0, 0.12); }
     .colour-bar-animated.body-research-bridge > div { position: relative; z-index: 2; }
     .colour-bar-animated.body-research-bridge::before { content: ''; position: absolute; z-index: 1; inset: -36px 0 0; background: linear-gradient(108deg, transparent 0 9%, rgba(8, 145, 178, 0.14) 13%, transparent 18% 100%), linear-gradient(72deg, transparent 0 29%, rgba(255, 215, 0, 0.13) 33%, transparent 38% 100%), linear-gradient(110deg, transparent 0 52%, rgba(22, 163, 74, 0.11) 56%, transparent 61% 100%), linear-gradient(70deg, transparent 0 74%, rgba(255, 19, 240, 0.10) 78%, transparent 83% 100%), linear-gradient(180deg, #eaf8fc 0%, #f4fbfd 55%, #e6f4f9 100%); pointer-events: none; animation: bridgeLights 7s ease-in-out infinite alternate; }
@@ -3245,9 +3278,9 @@
       <h2>The Exponential Power Engine of Ònka Yorùbá</h2>
       <h2 style="margin-top: 15px; font-size: 1.2rem; color: #FFD700; font-weight: 700;">Universal Hyperdimensional Numeric Engine</h2>
       <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">The operating platform for language-independent numeric systems</p>
-      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published by the Universal Hyperdimensional Numeric Engine Research Initiative<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
-      <p style="font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 8px;">Designed for researchers, educators, software developers, and digital humanities scholars.</p>
-    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">A universal engine for building number systems for science, education, AI, and global knowledge preservation &mdash; with the Yorùbá numerical index serving as its first complete language implementation. This module contributes to a broader international effort supporting linguistic equity, computational sovereignty, and open scholarly infrastructure for indigenous and underrepresented knowledge systems worldwide.</p>
+      <p style="font-size: 0.9rem; color: #ffffff; margin-top: 10px; font-weight: 500;">Published by the Universal Hyperdimensional Numeric Engine Research Initiative<br><strong style="color: #FFD700;">Version 1.0 · 2026 Public Release</strong></p>
+      <p style="font-size: 0.9rem; color: #ffffff; margin-top: 8px; font-weight: 500;">Designed for researchers, educators, software developers, and digital humanities scholars.</p>
+    <p style="max-width: 1120px; font-size: 0.95rem; color: #ffffff; opacity: 1; margin: 12px auto 0; font-weight: 500; font-style: italic; text-align: left; line-height: 1.7;">A universal engine for building number systems for science, education, AI, and global knowledge preservation &mdash; with the Yorùbá numerical index serving as its first complete language implementation. This module contributes to a broader international effort supporting linguistic equity, computational sovereignty, and open scholarly infrastructure for indigenous and underrepresented knowledge systems worldwide.</p>
     </div>
 
     <!-- 47-Colour Bar -->
@@ -3301,8 +3334,6 @@
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
 
-    <div class="equation-top-steel-bridge" aria-hidden="true"></div>
-
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
     <div class="content equation-main-content">
@@ -3335,6 +3366,8 @@
             </tbody>
           </table>
         </div>
+
+        <div class="equation-table-ice-bridge" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <!-- THE SIX-FOLD UNIVERSAL EQUATION SUITE                          -->
@@ -12159,7 +12192,7 @@
       </tr>
       <tr>
         <td class="osp-ksym">Tier</td>
-        <td class="osp-kdesc">Hierarchical classification level within the 47-Sovereign Colour Protocol used for visual and structural organization</td>
+        <td class="osp-kdesc">Hierarchical classification level within the 47-Colour Sovereign Protocol used for visual and structural organization</td>
       </tr>
       <tr>
         <td class="osp-ksym"><span class="t-neonpink" style="font-weight: 700;">l</span> Link</td>
