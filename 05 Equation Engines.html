@@ -3180,7 +3180,14 @@
     }
     .footer-ribbon h2 { margin: 0 0 14px; color: #ffd700; font-size: 1.3rem; line-height: 1.25; }
     .footer-ribbon-route { display: flex; align-items: stretch; justify-content: center; gap: 0; width: 100%; margin: 0 auto; }
-    .footer-ribbon-step { position: relative; display: flex; flex: 1 1 135px; align-items: center; justify-content: center; min-width: 0; min-height: 52px; padding: 8px 20px 8px 12px; border: 1px solid rgba(255, 255, 255, 0.3); background: var(--route-colour); color: #fff; font-size: 0.8rem; font-weight: 800; line-height: 1.25; }
+    .footer-ribbon-step { position: relative; display: flex; flex: 1 1 135px; align-items: center; justify-content: center; min-width: 0; min-height: 52px; padding: 8px 20px 8px 12px; border: 1px solid rgba(255, 255, 255, 0.3); background: var(--route-colour); color: #fff; font-size: 0.8rem; font-weight: 800; line-height: 1.25; transition: border-color .4s cubic-bezier(.4,0,.2,1), box-shadow .4s cubic-bezier(.4,0,.2,1), filter .4s cubic-bezier(.4,0,.2,1), transform .4s cubic-bezier(.4,0,.2,1); }
+    .footer-ribbon-step:hover {
+      z-index: 2;
+      border-color: rgba(255, 215, 0, 0.5);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 215, 0, 0.15);
+      filter: brightness(1.08);
+      transform: translateY(-3px);
+    }
     .footer-ribbon-step:not(:last-child)::after { content: '\203A'; position: absolute; right: 6px; color: #ffd700; font-size: 1.35rem; }
     @media (max-width: 1100px) {
       .footer-ribbon-route { flex-wrap: wrap; gap: 6px; }
