@@ -1920,9 +1920,9 @@
         <div class="globe-heading">
           <p class="eyebrow">Global Chromatic Atlas</p>
           <h2 id="sovereignGlobeTitle">One World, 47 Sovereign Colours</h2>
-          <p>Drag to turn the globe, scroll to zoom, and point to a country to reveal its place in the canonical colour cycle. Together, the world&rsquo;s countries carry all 47 magnitude colours.</p>
+          <p>Drag to turn the globe, scroll to zoom, and point to a country to reveal its place in the regional colour cycle. Fixed geographic regions carry all 47 magnitude colours independently of country names.</p>
         </div>
-        <div class="globe-stage" role="img" aria-label="Interactive three-dimensional globe with individual countries coloured through the 47-Sovereign Colour Visual Protocol">
+        <div class="globe-stage" role="img" aria-label="Interactive three-dimensional globe with colours cycled spatially across fixed geographic regions through the 47-Sovereign Colour Visual Protocol">
           <div class="globe-render" id="sovereignGlobe" aria-hidden="true"></div>
           <p class="globe-status" id="globeStatus" role="status" aria-live="polite">Loading the chromatic world&hellip;</p>
         </div>
@@ -3873,6 +3873,38 @@
         globe.width(globeElement.clientWidth).height(globeElement.clientHeight);
       }
 
+      function getRepresentativePoint(feature) {
+        const points = [];
+        const collectPoints = coordinates => {
+          if (typeof coordinates[0] === 'number') {
+            points.push(coordinates);
+            return;
+          }
+          coordinates.forEach(collectPoints);
+        };
+        collectPoints(feature.geometry.coordinates);
+
+        const vector = points.reduce((total, point) => {
+          const longitude = point[0] * Math.PI / 180;
+          const latitude = point[1] * Math.PI / 180;
+          const latitudeRadius = Math.cos(latitude);
+          total.x += latitudeRadius * Math.cos(longitude);
+          total.y += latitudeRadius * Math.sin(longitude);
+          total.z += Math.sin(latitude);
+          return total;
+        }, { x: 0, y: 0, z: 0 });
+
+        const longitude = Math.atan2(vector.y, vector.x) * 180 / Math.PI;
+        const latitude = Math.atan2(vector.z, Math.hypot(vector.x, vector.y)) * 180 / Math.PI;
+        return { latitude, longitude };
+      }
+
+      function getGeographicRegion(point) {
+        const latitudeBand = Math.min(5, Math.floor((point.latitude + 90) / 30));
+        const longitudeBand = Math.min(5, Math.floor((point.longitude + 180) / 60));
+        return latitudeBand * 6 + longitudeBand;
+      }
+
       if (typeof Globe !== 'function') {
         statusElement.classList.add('error');
         statusElement.textContent = 'The interactive globe could not load. Check your connection and refresh this page.';
@@ -3917,8 +3949,19 @@
         .then(data => {
           const features = data.features
             .slice()
-            .sort((first, second) => first.properties.name.localeCompare(second.properties.name));
-          features.forEach((feature, index) => { feature.__sovereignIndex = index % sovereignColours.length; });
+            .map(feature => {
+              feature.__representativePoint = getRepresentativePoint(feature);
+              feature.__geographicRegion = getGeographicRegion(feature.__representativePoint);
+              return feature;
+            })
+            .sort((first, second) =>
+              first.__geographicRegion - second.__geographicRegion ||
+              second.__representativePoint.latitude - first.__representativePoint.latitude ||
+              first.__representativePoint.longitude - second.__representativePoint.longitude
+            );
+          features.forEach((feature, index) => {
+            feature.__sovereignIndex = (index * 19) % sovereignColours.length;
+          });
           globe.polygonsData(features);
           statusElement.hidden = true;
         })
