@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="uhne-release" content="2026-09-03-restored-3">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>About Us | Universal Hyperdimensional Numeric Engine</title>
   
   <style>
@@ -2435,11 +2439,63 @@
     }
     .exec-eyebrow{
         display:inline-block; margin:0 0 8px; color:#0f3460;
-        padding:0 0 4px; border-bottom:2px solid #FFD700;
+      padding:0 0 4px; border-bottom:2px solid #FFD700;
         font-size:.75rem; letter-spacing:3px; font-weight:800; text-transform:uppercase;
+    }
+    .exec-summary .exec-eyebrow{
+      padding:5px 12px; border:0; border-radius:999px;
+      background:#4682B4; color:#fff;
     }
     .exec-summary p{ margin:8px 0 0; color:#1a1a2e; line-height:1.75; font-size:.97rem; text-align:justify; }
     .exec-summary p strong{ color:#0a2447; }
+
+    /* Attachment-inspired colour themes for the About Us narrative */
+    .about-text-theme{
+      --theme-colour:#4682B4;
+      --theme-deep:#315f84;
+      --theme-tint:rgba(70,130,180,.08);
+      margin:0 0 18px; padding:17px 20px;
+      background:linear-gradient(90deg,var(--theme-tint),rgba(255,255,255,.72));
+      border-left:4px solid var(--theme-colour);
+      border-radius:0 10px 10px 0;
+      box-shadow:0 3px 12px rgba(15,52,96,.05);
+    }
+    .about-text-theme > :last-child{ margin-bottom:0 !important; }
+    .about-text-theme p,
+    .about-text-theme li{
+      color:#26364b; line-height:1.72 !important;
+      font-family:'Poppins',sans-serif !important;
+      font-size:.95rem !important;
+    }
+    .about-theme-label{
+      display:inline-block; margin:0 0 9px;
+      padding:4px 11px; border-radius:5px;
+      background:var(--theme-colour); color:#fff;
+      font-size:.7rem; font-weight:800; letter-spacing:.7px;
+      line-height:1.25; text-transform:uppercase;
+    }
+    .about-theme-heading{
+      display:inline-block; max-width:100%;
+      margin:0 0 9px !important; padding:5px 13px;
+      border-radius:999px; background:var(--theme-colour);
+      color:#fff !important;
+      font-family:'Poppins',sans-serif !important;
+      font-size:1.18rem !important; font-weight:800;
+      line-height:1.35 !important; overflow-wrap:anywhere;
+    }
+    .about-theme-heading span{ color:inherit !important; font:inherit !important; }
+    .about-theme-blue{ --theme-colour:#4682B4; --theme-deep:#315f84; --theme-tint:rgba(70,130,180,.11); }
+    .about-theme-green{ --theme-colour:#279b70; --theme-deep:#167653; --theme-tint:rgba(39,155,112,.10); }
+    .about-theme-gold{ --theme-colour:#c59620; --theme-deep:#8c6810; --theme-tint:rgba(197,150,32,.11); }
+    .about-theme-purple{ --theme-colour:#7b3fa0; --theme-deep:#5d2b7c; --theme-tint:rgba(123,63,160,.09); }
+    .about-theme-red{ --theme-colour:#cf4d4d; --theme-deep:#9f3030; --theme-tint:rgba(207,77,77,.09); }
+    .about-text-theme ul{ margin:8px 0 0; padding-left:0; list-style:none; }
+    .about-text-theme li{ padding-left:2px; }
+
+    @media (max-width:760px){
+      .about-text-theme{ padding:15px 14px; }
+      .about-theme-heading{ font-size:1.08rem !important; }
+    }
 
     /* Research Objectives */
     .rsch-section{ margin:30px 0 24px; padding:24px 26px;
@@ -2557,16 +2613,26 @@
         font-size:1.02rem !important;
         line-height:1.5 !important;
     }
-    .faq-section > .faq-theme-yellow{
-      background:rgba(255,215,0,0.08);
-      border-left:3px solid #FFD700 !important;
-    }
-    .faq-section > .faq-theme-blue{
-      background:rgba(30,140,184,0.08);
-      border-left:3px solid #1E8CB8 !important;
+    .faq-section > .faq-theme-blue{ --faq-colour:#4682B4; --faq-deep:#315f84; --faq-tint:rgba(70,130,180,.11); }
+    .faq-section > .faq-theme-green{ --faq-colour:#279b70; --faq-deep:#167653; --faq-tint:rgba(39,155,112,.10); }
+    .faq-section > .faq-theme-gold{ --faq-colour:#c59620; --faq-deep:#8c6810; --faq-tint:rgba(197,150,32,.11); }
+    .faq-section > .faq-theme-purple{ --faq-colour:#7b3fa0; --faq-deep:#5d2b7c; --faq-tint:rgba(123,63,160,.09); }
+    .faq-section > .faq-theme-red{ --faq-colour:#cf4d4d; --faq-deep:#9f3030; --faq-tint:rgba(207,77,77,.09); }
+    .faq-section > [class*="faq-theme-"]{
+      background:linear-gradient(90deg,var(--faq-tint),rgba(255,255,255,.72));
+      border-left:4px solid var(--faq-colour) !important;
+      box-shadow:0 3px 12px rgba(15,52,96,.05);
     }
     .faq-section > .faq-question strong{
-        color:#0a2447 !important; font-weight:800 !important;
+        display:inline-block;
+        max-width:100%;
+        padding:5px 13px;
+        border-radius:999px;
+        background:var(--faq-colour,#4682B4);
+        color:#fff !important;
+        font-weight:800 !important;
+        line-height:1.45;
+        overflow-wrap:anywhere;
     }
     .faq-section > p{ color:#3a4a63; line-height:1.75 !important; }
 
@@ -2580,9 +2646,54 @@
         border:1px solid rgba(30,140,184,.18);
         box-shadow:0 2px 8px rgba(15,52,96,.06);
     }
+    .discover-card.about-theme-blue,
+    .discover-card.about-theme-green,
+    .discover-card.about-theme-gold,
+    .discover-card.about-theme-purple,
+    .discover-card.about-theme-red{
+      background:linear-gradient(145deg,var(--theme-tint),#fff 72%);
+      border-color:var(--theme-colour);
+      border-left:4px solid var(--theme-colour);
+    }
     .discover-card .icon{ font-size:1.6rem; display:block; margin-bottom:6px; }
-    .discover-card h4{ margin:4px 0 6px; color:#0a2447; font-size:1rem; font-weight:800; }
+    .discover-card h4{ margin:4px 0 6px; color:var(--theme-deep,#0a2447); font-size:1rem; font-weight:800; }
+    .discover-card[class*="about-theme-"] h4{
+      display:inline-block;
+      max-width:100%;
+      padding:4px 11px;
+      border-radius:999px;
+      background:var(--theme-colour);
+      color:#fff;
+      line-height:1.4;
+      overflow-wrap:anywhere;
+    }
     .discover-card p{ margin:0; font-size:.88rem; color:#3a4a63; line-height:1.6; }
+
+    /* Core Mandates — alternating shaded panels with title pills */
+    .rsch-card.about-theme-blue,
+    .rsch-card.about-theme-green,
+    .rsch-card.about-theme-gold,
+    .rsch-card.about-theme-purple,
+    .rsch-card.about-theme-red{
+      background:linear-gradient(145deg,var(--theme-tint),#fff 76%);
+      border-color:var(--theme-colour);
+      border-left:4px solid var(--theme-colour);
+    }
+    .rsch-card[class*="about-theme-"] h4{
+      display:inline-block;
+      max-width:100%;
+      margin:8px 0 7px;
+      padding:4px 11px;
+      border-radius:999px;
+      background:var(--theme-colour);
+      color:#fff;
+      line-height:1.4;
+      overflow-wrap:anywhere;
+    }
+    .rsch-card[class*="about-theme-"] .rsch-num{
+      color:var(--theme-deep);
+      background:var(--theme-tint);
+    }
 
     .about-wide-section{
       box-sizing:border-box;
@@ -2673,41 +2784,53 @@
     }
 </style>
 
-<p class="why-opener" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>The <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong> is a sovereign computational platform built to give <em>any</em> indigenous language the power to count, compute, and scale without ceiling. Its founding implementation&mdash;<strong>&Ograve;nka Yor&ugrave;b&aacute; 1.0</strong>&mdash;is a working prototype: a fully named, fully coloured, fully computable base-10 ladder running from <strong>1 to over a Tredecillion&nbsp;</strong>and still climbing. Where Godreign&rsquo;s parallel mandate addresses the social fabric and spirituality of humanity, this engine strengthens its <em>numeric destiny</em>: a monumental digital infrastructure dedicated to preserving, documenting, and unleashing the full complexity of every indigenous numerical ecosystem on Earth.</p>
+<div class="about-text-theme about-theme-blue">
+  <span class="about-theme-label">Master Reference</span>
+  <p>The <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong> is a sovereign computational platform built to give <em>any</em> indigenous language the power to count, compute, and scale without ceiling. Its founding implementation&mdash;<strong>&Ograve;nka Yor&ugrave;b&aacute; 1.0</strong>&mdash;is a working prototype: a fully named, fully coloured, fully computable base-10 ladder running from <strong>1 to over a Tredecillion&nbsp;</strong>and still climbing. Where Godreign&rsquo;s parallel mandate addresses the social fabric and spirituality of humanity, this engine strengthens its <em>numeric destiny</em>: a monumental digital infrastructure dedicated to preserving, documenting, and unleashing the full complexity of every indigenous numerical ecosystem on Earth.</p>
+</div>
 
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>The Yor&ugrave;b&aacute; implementation proves the architecture; the architecture is offered to all. One language proves the concept&mdash;every language that follows fulfils the mandate.</p>
+<div class="about-text-theme about-theme-green">
+  <span class="about-theme-label">Global Framework</span>
+  <p>The Yor&ugrave;b&aacute; implementation proves the architecture; the architecture is offered to all. One language proves the concept&mdash;every language that follows fulfils the mandate.</p>
+</div>
 
 <div class="exec-summary">
     <span class="exec-eyebrow">Executive Summary</span>
     <p>The <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong> is a research-driven numerical infrastructure designed to advance indigenous language computation, large-number representation, educational accessibility, and linguistic preservation. Developed through the pioneering work of <strong>Godreign</strong>, UHNE seeks to establish a scalable framework through which any language can participate in the future of numerical expression, computation, and cultural continuity.</p>
 </div>
 
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>🎯</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Founder&rsquo;s Vision</span><span style="color:#1E8CB8;"> </span></strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Our mission ignites with the Yor&ugrave;b&aacute; people&mdash;but its flame is destined for the heart of <em>every</em> indigenous language on Earth. By restoring the infinite logic of the <strong>&Ograve;nka Yor&ugrave;b&aacute;</strong> system, we are forging a <strong>repeatable model of linguistic liberation</strong>&mdash;a blueprint that any nation can seize, adapt, and deploy. One language restored proves the concept; a global language restored fulfils the mandate.</p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>👁️</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Our Vision</span><span style="color:#1E8CB8;"> </span></strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>We envision a world in which Yor&ugrave;b&aacute; mathematics <strong>controls its own destiny</strong> through the &Ograve;nka Yor&ugrave;b&aacute; Project&mdash;and in which every indigenous nation follows the same sovereign path. A world where numbers speak in <em>every</em> native dialect. Where what was once scattered is being <strong>gathered</strong>; what was nearly forgotten is now <strong>numbered, named, and returned to its rightful people</strong>. The New Numbering System is a digital nation-building at its most profound.</p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><span style='font-family:"Segoe UI Emoji",sans-serif;'>💡</span>&nbsp;</strong><strong><span style="font-size:19px;line-height:115%;color:#1E8CB8;">Why This Matters</span></strong></p>
-<p class="why-opener">Despite extraordinary advances in science and computation, many indigenous languages remain excluded from large-scale numerical infrastructure. <strong>UHNE</strong> addresses this challenge by exploring methods through which linguistic identity and computational scalability may coexist within a unified framework.</p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Language is identity. Numbers are the bedrock of science, technology, commerce, and the entire A.I. revolution. By preserving the Yor&ugrave;b&aacute; numerical system&mdash;and extending that same generosity to indigenous languages around the globe&mdash;we are:</p>
-<ul style="margin-bottom:0cm;margin-top:0cm;" type="disc">
+<div class="about-text-theme about-theme-gold">
+  <p class="about-theme-heading"><span>🎯</span>&nbsp; Founder&rsquo;s Vision</p>
+  <p>Our mission ignites with the Yor&ugrave;b&aacute; people&mdash;but its flame is destined for the heart of <em>every</em> indigenous language on Earth. By restoring the infinite logic of the <strong>&Ograve;nka Yor&ugrave;b&aacute;</strong> system, we are forging a <strong>repeatable model of linguistic liberation</strong>&mdash;a blueprint that any nation can seize, adapt, and deploy. One language restored proves the concept; a global language restored fulfils the mandate.</p>
+</div>
+<div class="about-text-theme about-theme-purple">
+  <p class="about-theme-heading"><span>👁️</span>&nbsp; Our Vision</p>
+  <p>We envision a world in which Yor&ugrave;b&aacute; mathematics <strong>controls its own destiny</strong> through the &Ograve;nka Yor&ugrave;b&aacute; Project&mdash;and in which every indigenous nation follows the same sovereign path. A world where numbers speak in <em>every</em> native dialect. Where what was once scattered is being <strong>gathered</strong>; what was nearly forgotten is now <strong>numbered, named, and returned to its rightful people</strong>. The New Numbering System is a digital nation-building at its most profound.</p>
+</div>
+<div class="about-text-theme about-theme-red">
+  <p class="about-theme-heading"><span>💡</span>&nbsp; Why This Matters</p>
+  <p>Despite extraordinary advances in science and computation, many indigenous languages remain excluded from large-scale numerical infrastructure. <strong>UHNE</strong> addresses this challenge by exploring methods through which linguistic identity and computational scalability may coexist within a unified framework.</p>
+  <p>Language is identity. Numbers are the bedrock of science, technology, commerce, and the entire A.I. revolution. By preserving the Yor&ugrave;b&aacute; numerical system&mdash;and extending that same generosity to indigenous languages around the globe&mdash;we are:</p>
+<ul type="disc">
     <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Reconnecting generations</strong> with their ancestral mathematical heritage</li>
     <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Enabling Yor&ugrave;b&aacute; and all other indigenous language learning</strong> through the universal gateway of numbers</li>
     <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Championing global linguistic diversity</strong> in the age of artificial intelligence</li>
     <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Building sovereign tools</strong> for education, research, and indigenous software development</li>
     <li style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><span style='font-family:"Segoe UI Emoji",sans-serif;'>✔️</span> <strong>Guaranteeing children around the world</strong> inherit a complete, infinite numerical vocabulary.</li>
 </ul>
+  </div>
 
 <!-- ============ Research Objectives ============ -->
 <section class="rsch-section about-wide-section">
     <span class="exec-eyebrow">Research Objectives</span>
     <h3 class="rsch-head">Core Mandates Guiding UHNE</h3>
     <div class="rsch-grid">
-        <div class="rsch-card"><span class="rsch-num">RO 01</span><h4>Numerical Scalability</h4><p>Engineering a base-10 architecture that scales without ceiling — from <em>Íƹkẹní</em> (1) past Tredecillion and into transfinite operator territory.</p></div>
-        <div class="rsch-card"><span class="rsch-num">RO 02</span><h4>Indigenous Language Integration</h4><p>Providing a portable framework any indigenous language can adopt, map, and deploy without sacrificing phonetic or cultural specificity.</p></div>
-        <div class="rsch-card"><span class="rsch-num">RO 03</span><h4>Educational Accessibility</h4><p>Producing scroll books, calculators, and learning tools that are free, offline-ready, and pedagogically progressive for every classroom.</p></div>
-        <div class="rsch-card"><span class="rsch-num">RO 04</span><h4>Computational Efficiency</h4><p>Reducing complexity through native scientific notation and the &lsquo;l&rsquo; Multiplier engine for high-velocity algorithmic implementation.</p></div>
-        <div class="rsch-card"><span class="rsch-num">RO 05</span><h4>Cultural Preservation</h4><p>Archiving ancestral counting traditions in machine-readable form to ensure intergenerational continuity beyond oral transmission.</p></div>
-        <div class="rsch-card"><span class="rsch-num">RO 06</span><h4>Global Linguistic Implementation</h4><p>Establishing partnerships and protocols to extend UHNE’s logic blueprint across continents, communities, and curricula worldwide.</p></div>
+        <div class="rsch-card about-theme-blue"><span class="rsch-num">RO 01</span><h4>Numerical Scalability</h4><p>Engineering a base-10 architecture that scales without ceiling — from <em>Íƹkẹní</em> (1) past Tredecillion and into transfinite operator territory.</p></div>
+        <div class="rsch-card about-theme-green"><span class="rsch-num">RO 02</span><h4>Indigenous Language Integration</h4><p>Providing a portable framework any indigenous language can adopt, map, and deploy without sacrificing phonetic or cultural specificity.</p></div>
+        <div class="rsch-card about-theme-gold"><span class="rsch-num">RO 03</span><h4>Educational Accessibility</h4><p>Producing scroll books, calculators, and learning tools that are free, offline-ready, and pedagogically progressive for every classroom.</p></div>
+        <div class="rsch-card about-theme-purple"><span class="rsch-num">RO 04</span><h4>Computational Efficiency</h4><p>Reducing complexity through native scientific notation and the &lsquo;l&rsquo; Multiplier engine for high-velocity algorithmic implementation.</p></div>
+        <div class="rsch-card about-theme-red"><span class="rsch-num">RO 05</span><h4>Cultural Preservation</h4><p>Archiving ancestral counting traditions in machine-readable form to ensure intergenerational continuity beyond oral transmission.</p></div>
+        <div class="rsch-card about-theme-blue"><span class="rsch-num">RO 06</span><h4>Global Linguistic Implementation</h4><p>Establishing partnerships and protocols to extend UHNE’s logic blueprint across continents, communities, and curricula worldwide.</p></div>
     </div>
 </section>
 
@@ -2721,30 +2844,30 @@
 <section class="rf-section faq-section">
     <span class="rf-eyebrow-sm">Frequently Asked Questions</span>
     <h3 class="rf-title">Common Questions, Considered Answers</h3>
-<p class="faq-question faq-theme-yellow" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>What is the purpose of this site?</strong></p>
+<p class="faq-question faq-theme-blue" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>What is the purpose of this site?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is the public home of the <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong>&mdash;a research-grade infrastructure that gives any human language the power to count, compute, and scale without ceiling. Its founding implementation is the New Ònka Yor&ugrave;b&aacute; Numeric System, where ancestral counting meets twenty-first-century precision. We have digitised an indigenous numerical legacy so that it delivers the exhaustive base-10 accuracy demanded by modern algorithms, sovereign coding frameworks, and advanced global finance. Here, an indigenous tongue is not a relic of the past; it is the <em>literal source code</em> for a self-determined future. Every number on this site is a declaration: <strong>our languages compute.</strong></p>
-<p class="faq-question faq-theme-blue" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>My language is different from Yor&ugrave;b&aacute;, and we face similar historical limitations that disconnect our culture from modern digital scaling. Is the 47-Colour Sovereign Protocol adaptable for other indigenous nations?</strong></p>
+<p class="faq-question faq-theme-green" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>My language is different from Yor&ugrave;b&aacute;, and we face similar historical limitations that disconnect our culture from modern digital scaling. Is the 47-Colour Sovereign Protocol adaptable for other indigenous nations?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Absolutely&mdash;and that is precisely why it was built.</strong> This journey ignited with &Ograve;nka Yor&ugrave;b&aacute;, but its flame now reaches toward <em>every</em> indigenous language on Earth. For centuries, thousands of native tongues have been shackled by numbering systems that could not scale for modern science, computing, or the exponential demands of the A.I. era. The <strong>47 Canonical Sovereign Colours</strong> shatter that ceiling. They are not merely a Yor&ugrave;b&aacute; innovation&mdash;they form part of a <strong>Universal Logic Blueprint</strong>, an open-armed gift to every nation whose ancestral language deserves a seat at the digital table.</p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>We have engineered a framework that scales by index from <strong>one to over a Tredecillion</strong>&mdash;a number so vast it dwarfs the stars in the observable universe. We now extend our arms of generosity to global leaders, educators, linguists, A.I. researchers, and indigenous knowledge-keepers of <em>every</em> language: <strong>adopt this 47-Colour Sovereign Protocol</strong>. Map your own native words onto this high-speed index. Bypass the historical limitations that held your ancestors back and leap&mdash;in a single generation&mdash;to the absolute forefront of the digital age. You do not have to trade your culture for technology. You can <em>use</em> this system to transform your ancestral tongue into a <strong>mathematical superpower</strong>. Let us unite as a global <strong>&lsquo;&Ograve;nka Generation,&rsquo;</strong> wielding all <strong>47 Canonical Sovereign Colours</strong> to guarantee that no language&mdash;from the highlands of Papua New Guinea to the river deltas of Bangladesh, from the tundra of Sib&eacute;ria to the savannahs of East Africa&mdash;is ever left behind in the boundless reach toward infinity.</p>
-<p class="faq-question faq-theme-yellow" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Can I download the entire collection?</strong></p>
+<p class="faq-question faq-theme-gold" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Can I download the entire collection?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Yes&mdash;every last scroll, every last tool.</strong> We believe in <em>radical accessibility</em>. Download all <strong>10 Scroll Books</strong> using the buttons above and carry a treasury of over a <strong>Tredecillion</strong> numbers in your pocket&mdash;ready for offline study in the most remote classroom, the busiest research lab, or the quietest corner of your home. But our generosity goes far beyond data. Alongside the scrolls, our full suite of educational apps and indigenous software treasures is available for <strong>instant download</strong>. These tools are designed as lifelong companions for the Yor&ugrave;b&aacute; soul&mdash;and for every soul that honours their ancestral tongue. They keep the brain engaged, the spirit vibrant, and the cultural heartbeat strong. By fusing technical logic with ancestral resonance, we provide a digital sanctuary that nourishes the health of both the mind and the soul.</p>
-<p class="faq-question faq-theme-blue" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How can I use these new numbering systems?</strong></p>
+<p class="faq-question faq-theme-purple" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How can I use these new numbering systems?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>These numbers are <strong>&ldquo;liberated resources&rdquo;</strong>&mdash;free, sovereign, and yours to deploy without restriction. Teach the next generation the thunder of their own numerals. Fuel groundbreaking academic research. Localise software into any indigenous language of choice. Translate technical and scientific masterworks. Build A.I. datasets rooted in indigenous logic. Whether you are a scientist, a poet, a classroom teacher, or a software developer, these numbers are your instruments&mdash;precision-forged for <strong>excellence without compromise</strong>.</p>
-<p class="faq-question faq-theme-yellow" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How do I share this resource with others?</strong></p>
+<p class="faq-question faq-theme-red" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How do I share this resource with others?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Be a&nbsp;<strong>multiplier of this light</strong>. Share the link below across social media, personal blogs, university forums, developer communities, and professional circles. Every share is a strike against the &ldquo;Dark Enterprise&rdquo; of cultural erasure&mdash;and a torch lit for the thousands of indigenous languages that are longing to perform technological exploits with their ancestral tongues in this A.I. era.<br><span style='font-family:"Segoe UI Emoji",sans-serif;'>🔗</span> <a href="https://iaanu.github.io/-Universal-Hyperdimensional-Numeric-Engine/index.html"><strong>https://iaanu.github.io/-Universal-Hyperdimensional-Numeric-Engine/index.html</strong></a></p>
 <p class="faq-question faq-theme-blue" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Will search engines be able to find these numbers?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Yes.</strong> Every key number, every colour index, and the full architecture of the <strong>47-Colour Sovereign Protocol</strong> is optimised for global search-engine indexing. We have strategically positioned our data so that when the world searches for mathematical truth in an indigenous language, it finds it here, and progressively in every native tongue that embraces this new numbering technology. The goal is simple: when humanity types a number, an indigenous voice must answer.</p>
-<p class="faq-question faq-theme-yellow" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Is there more to explore beyond the main page?</strong></p>
+<p class="faq-question faq-theme-green" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Is there more to explore beyond the main page?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong><em>Beyond the Horizon: The Infinite Depth of the Universal Hyperdimensional Numeric Engine</em></strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is only the beginning. The primary indices are visible for immediate use, but the true heartbeat of our restoration pulses within the <strong>200 Volumes</strong> of our digital scroll books. Dive into these deep archives and rediscover the infinite capacity of a numeric system whose scaling soars upward past a <strong>Tredecillion</strong>. But the Universal Hyperdimensional Numeric Engine is more than a library&mdash;it is a <strong>living, breathing ecosystem</strong>. Our suite of indigenous software is engineered to be a lifelong companion for every soul that honours its ancestral tongue, delivering intellectual engagement that keeps the mind razor-sharp and the spirit ablaze.</p>
 <!-- ============ Inspired Companion Questions ============ -->
-<p class="faq-question faq-theme-blue" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Why colours? Aren&rsquo;t numbers enough?</strong></p>
+<p class="faq-question faq-theme-gold" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Why colours? Aren&rsquo;t numbers enough?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Numbers are abstract; <strong>colours are felt</strong>. A child who has not yet read a single digit can still distinguish purple from gold. The <strong>47 Canonical Sovereign Colours</strong> turn magnitude into vision&mdash;every power of ten gets its own tint, so a learner sees the difference between a Thousand and a Tredecillion as a colour before they ever spell it. The eye learns what the tongue is still practising. That is why this engine teaches numeracy through pattern recognition, not memorisation: the ladder becomes <em>visible</em>, and visible ladders get climbed.</p>
-<p class="faq-question faq-theme-yellow" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How long does it take to learn?</strong></p>
+<p class="faq-question faq-theme-purple" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How long does it take to learn?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>A motivated child can master the first ladder&mdash;Units through Thousands&mdash;in a single afternoon. The colours do the heavy lifting; the rhymes of <em>Ení</em>, <em>&Eacute;j&igrave;</em>, <em>&Ecirc;ta</em> do the rest. A teacher can guide a classroom through the full <strong>10 Scroll Books</strong> in a week of joyful lessons. Researchers and software developers can integrate the Master Index in an afternoon: every magnitude arrives <em>already named, already coloured, already computable</em>. The slowest part of adopting UHNE is choosing what to build with it first.</p>
-<p class="faq-question faq-theme-blue" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Can other languages really plug into this as easily as it sounds?</strong></p>
+<p class="faq-question faq-theme-red" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Can other languages really plug into this as easily as it sounds?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Yes&mdash;by design. UHNE separates the <strong>logic</strong> (the base-10 ladder, the 47 colours, the &lsquo;l&rsquo; Drive Multiplier, the Gear-Pulse &lsquo;g&rsquo; operator, the scientific notation rails) from the <strong>names</strong> (the words a community already loves). To onboard a new language, you keep the entire engine and swap only the lexicon: name the 47 tiers in your own tongue, and every calculator, age tool, kàlẹ́ndà, scientific notation, and large-number table runs unchanged. One language proves the concept; every language that follows proves the mandate.</p>
-<p class="faq-question faq-theme-yellow" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Where should I start?</strong></p>
+<p class="faq-question faq-theme-blue" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Where should I start?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>Three doors&mdash;pick whichever fits your day:</p>
 <ul style="margin-bottom:0cm;margin-top:0cm;" type="disc">
   <li style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Children &amp; teachers</strong> &rarr; the <strong>Master Index</strong>: one number to a card, the full 47-colour ladder rendered from zero to a Tredecillion.</li>
@@ -2775,17 +2898,17 @@
     <p class="rf-intro">A growing suite of tools, instruments, and digital scholarship — designed as lifelong companions for the Yorùbá soul, and for every soul that honours their ancestral tongue.</p>
 
     <div class="discover-grid">
-        <div class="discover-card">
+        <div class="discover-card about-theme-blue">
             <span class="icon">🧮</span>
             <h4>The Utility Suite</h4>
             <p>Master daily life with the Yorùbá Calculator, Number Converter, Age Calculator, and the ancient precision of the Kàlẹ́ndà Yorùbá.</p>
         </div>
-        <div class="discover-card">
+        <div class="discover-card about-theme-green">
             <span class="icon">🥁</span>
             <h4>The Musical Frontier</h4>
             <p>Experience the Yorùbá Talking Drum 3D Design and our custom VST Software — emulate and modulate the sacred language of the drum in pure digital form.</p>
         </div>
-        <div class="discover-card">
+        <div class="discover-card about-theme-gold">
             <span class="icon">🎸</span>
             <h4>The Future of Sound</h4>
             <p>Preview the upcoming 16-String Acoustic Guitar 3D Design and VST software — a digital masterclass in string theory and tonal harmony.</p>
