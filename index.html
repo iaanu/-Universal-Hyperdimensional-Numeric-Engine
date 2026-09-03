@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="uhne-release" content="2026-09-03-restored-3">
+  <meta name="uhne-release" content="2026-09-03-ebook-resource-link">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
@@ -2871,7 +2871,7 @@
           <p>Let this freewill gift remain a humble servant to the people&mdash;to the students, the coders, the elders, and the academic talents, and dreamers. Build upon it fearlessly. Scale it infinitely. The light of worldwide indigenous numerical sovereignty is now in your hands.</p>
           <p><strong>Strategic Collaboration &amp; Partnership.</strong> For inquiries or to contribute to the expanding horizon of this framework: Contact 📧 <a href="mailto:godreigninlove@outlook.com">godreigninlove@outlook.com</a></p>
 
-          <a class="fd-download" href="#ebook-downloads">⬇️ Please, Download the eBook. Thank you!</a>
+          <a class="fd-download" href="#ebook-downloads" onclick="goToEbookDownloads(event)">⬇️ Please, Download the eBook. Thank you!</a>
         </div>
       </article>
     </section>
@@ -2893,6 +2893,20 @@
         btn.firstChild.textContent = isOpen ? 'Hide the Concise Edition \u2191' : 'Read the Concise Edition \u2192';
         if(isOpen){ panel.scrollIntoView({behavior:'smooth', block:'start'}); }
         else{ btn.scrollIntoView({behavior:'smooth', block:'center'}); }
+      }
+      function goToEbookDownloads(e){
+        e.preventDefault();
+        var panel = document.getElementById('bk-fulldesc');
+        var btn = document.querySelector('.bk-launch[aria-controls="bk-fulldesc"]');
+        var target = document.getElementById('ebook-downloads');
+        panel.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.firstChild.textContent = 'Read the Concise Edition \u2192';
+        history.replaceState(null, '', '#ebook-downloads');
+        requestAnimationFrame(function(){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          target.focus({preventScroll:true});
+        });
       }
     </script>
 
