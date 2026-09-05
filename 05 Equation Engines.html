@@ -1611,8 +1611,8 @@
         color: #002244 !important;
     }
     /* spans inside alternating data cells */
-    .p00-tables table tbody tr td:not(:first-child) span,
-    .p00-text-sections table tbody tr td:not(:first-child) span {
+    .p00-tables table tbody tr td:not(:first-child) span:not(.gear-g),
+    .p00-text-sections table tbody tr td:not(:first-child) span:not(.gear-g) {
         color: #002244 !important;
         background: transparent !important;
         font-family: 'Poppins', 'Segoe UI', sans-serif !important;
@@ -2524,7 +2524,7 @@
    page needs a single static occurrence.
 ───────────────────────────────────────────────────────────────────── */
 .gear-g {
-  color: #FF13F0;
+  color: #FF13F0 !important;
   font-weight: 700;
 }
 
