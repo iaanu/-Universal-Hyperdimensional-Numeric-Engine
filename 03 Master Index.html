@@ -195,10 +195,71 @@
         .vocalic-continuation {
             margin: 18px 0 28px;
         }
+        .vocalic-continuation-kicker {
+          margin: 0 0 5px;
+          color: #0f3460;
+          font-size: 0.72rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-align: center;
+          text-transform: uppercase;
+        }
         .vocalic-continuation-copy {
-            margin: 0 0 12px;
+          max-width: 980px;
+          margin: 0 auto 16px;
             color: #334155;
             line-height: 1.6;
+          text-align: center;
+        }
+        .vocalic-mode-path {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+          align-items: stretch;
+          margin: 16px 0 14px;
+          border-block: 1px solid #cbd5e1;
+          background: #f8fafc;
+        }
+        .vocalic-mode-stage {
+          min-width: 0;
+          padding: 14px 16px;
+          text-align: center;
+        }
+        .vocalic-mode-label {
+          display: block;
+          margin-bottom: 4px;
+          color: #64748b;
+          font-size: 0.65rem;
+          font-weight: 800;
+          text-transform: uppercase;
+        }
+        .vocalic-mode-stage strong {
+          display: block;
+          color: #0f3460;
+          font-size: 0.9rem;
+          line-height: 1.4;
+        }
+        .vocalic-mode-stage span:last-child {
+          display: block;
+          margin-top: 3px;
+          color: #475569;
+          font-size: 0.74rem;
+          line-height: 1.4;
+        }
+        .vocalic-mode-arrow {
+          align-self: center;
+          color: #1e90ff;
+          font-size: 1.25rem;
+          font-weight: 800;
+        }
+        @media (max-width: 760px) {
+          .vocalic-mode-path {
+            grid-template-columns: 1fr;
+          }
+          .vocalic-mode-arrow {
+            padding: 0;
+            transform: rotate(90deg);
+            text-align: center;
+          }
         }
         .vocalic-continuation-wrap {
             max-height: 72vh;
@@ -7217,8 +7278,28 @@
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <div class="section-title c-largenumber">🌌 ÀWỌN NỌMBÀ ŃLÁNLÁ — Large Numbers Beyond Novemquadragintillion <span class="alpha2-badge" style="--rc:#4682B4">Alpha²: (<span class="pulse">ā</span>)<sup><span class="l-mult">l</span>àádọ́taéní</sup> = 10¹⁵³+ ∞</span></div>
             <section class="vocalic-continuation" aria-labelledby="vocalic-continuation-title">
-                <h2 id="vocalic-continuation-title" class="ln-h2">Vocalic System Equation Continuation</h2>
-                <p class="vocalic-continuation-copy">Canonical magnitude, root, tens, and hundreds equations continue from Quinquagintillion through entry 1,127.</p>
+            <p class="vocalic-continuation-kicker">Presentation Junction</p>
+            <h2 id="vocalic-continuation-title" class="ln-h2">Vocalic System Equations Continue in Compact Mode</h2>
+            <div class="vocalic-mode-path" aria-label="Transition from Expanded Equation Mode to Compact Mode">
+              <div class="vocalic-mode-stage">
+                <span class="vocalic-mode-label">Expanded Equation Mode Ends</span>
+                <strong>49 · Úgbéẹ̀rǔn</strong>
+                <span>Novemquadragintillion · 10<sup>150</sup></span>
+              </div>
+              <span class="vocalic-mode-arrow" aria-hidden="true">→</span>
+              <div class="vocalic-mode-stage">
+                <span class="vocalic-mode-label">Compact Mode Begins</span>
+                <strong>50 · Bágbèẹ́rǔn</strong>
+                <span>Quinquagintillion · 10<sup>153</sup></span>
+              </div>
+              <span class="vocalic-mode-arrow" aria-hidden="true">→</span>
+              <div class="vocalic-mode-stage">
+                <span class="vocalic-mode-label">Canonical Sequence Concludes</span>
+                <strong>1,127 · Zúgbéẹ̀rǔn</strong>
+                <span>Septenvigintcentimillinillion · 10<sup>3384</sup></span>
+              </div>
+            </div>
+            <p class="vocalic-continuation-copy">The mathematical sequence is continuous: only its presentation changes. After entry 49, the compact table preserves each canonical Yorùbá magnitude and its root, tens, and hundreds equations while avoiding repetition of the increasingly long expanded card forms. Read downward from entry 50 to follow the sequence without interruption through entry 1,127.</p>
                 <div class="vocalic-continuation-wrap">
                     <table class="vocalic-continuation-table" id="vocalicContinuationTable">
                         <thead>
