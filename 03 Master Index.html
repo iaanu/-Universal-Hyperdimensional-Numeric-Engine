@@ -211,6 +211,40 @@
             line-height: 1.6;
           text-align: center;
         }
+        .vocalic-scroll-guide {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          padding: 10px 14px;
+          border: 1px solid #cbd5e1;
+          border-bottom: 0;
+          border-radius: 8px 8px 0 0;
+          background: #eef6ff;
+          color: #334155;
+          font-size: 0.76rem;
+          line-height: 1.45;
+        }
+        .vocalic-scroll-guide strong {
+          flex: 0 0 auto;
+          color: #0f3460;
+          font-size: 0.72rem;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        }
+        .vocalic-scroll-guide span {
+          text-align: right;
+        }
+        @media (max-width: 760px) {
+          .vocalic-scroll-guide {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 4px;
+          }
+          .vocalic-scroll-guide span {
+            text-align: left;
+          }
+        }
         .vocalic-mode-path {
           display: grid;
           grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
@@ -265,7 +299,7 @@
             max-height: 72vh;
             overflow: auto;
             border: 1px solid #cbd5e1;
-            border-radius: 8px;
+          border-radius: 0 0 8px 8px;
             background: #fff;
         }
         .vocalic-continuation-table {
@@ -7300,8 +7334,12 @@
               </div>
             </div>
             <p class="vocalic-continuation-copy">The mathematical sequence is continuous: only its presentation changes. After entry 49, the compact table preserves each canonical Yorùbá magnitude and its root, tens, and hundreds equations while avoiding repetition of the increasingly long expanded card forms. Read downward from entry 50 to follow the sequence without interruption through entry 1,127.</p>
+              <div class="vocalic-scroll-guide" id="vocalic-scroll-guide">
+                <strong>Table Type: Scrollable Data Table</strong>
+                <span>Scroll inside the framed window to browse entries 50–1,127. To continue down the main page, move outside the table and resume normal page scrolling.</span>
+              </div>
                 <div class="vocalic-continuation-wrap">
-                    <table class="vocalic-continuation-table" id="vocalicContinuationTable">
+                <table class="vocalic-continuation-table" id="vocalicContinuationTable" aria-describedby="vocalic-scroll-guide">
                         <thead>
                             <tr><th>#</th><th>Yorùbá</th><th>English</th><th>Magnitude</th><th>Root</th><th>Tens of</th><th>Hundreds of</th></tr>
                         </thead>
