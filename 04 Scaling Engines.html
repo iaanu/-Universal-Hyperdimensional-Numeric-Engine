@@ -5,8 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scaling Engines | Universal Hyperdimensional Numeric Engine</title>
   
+  <!-- Fonts load in the background so the page appears at once; text switches to these fonts as they arrive. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </noscript>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
     
         .menu-bar {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -107,9 +115,9 @@
       background: #BFE6FF;
     }
     .scaling-ice-bridge.top-bridge { height: 14px; }
-    .operator-state-stage:has(+ .scaling-ice-bridge) { margin-bottom: 0; }
+    .operator-state-stage.pre-ice-bridge { margin-bottom: 0; }
     .scaling-ice-bridge + .gear-panel { margin-top: 0; }
-    .gear-panel:has(+ .scaling-ice-bridge) { margin-bottom: 0; }
+    .gear-panel.pre-ice-bridge { margin-bottom: 0; }
     .scaling-ice-bridge + .section-title { margin-top: 0; }
 
     /* ═══════════════════════════════════════════════════════════════ */
@@ -881,17 +889,15 @@
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
+        left: -50%;
         width: 50%;
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
         animation: shimmerSweep 4s ease-in-out infinite;
         pointer-events: none;
     }
-    @keyframes shimmerSweep {
-        0% { left: -50%; }
-        100% { left: 150%; }
-    }
+    /* Moved with transform (handled by the graphics chip) instead of left: same path, from -50% to 150% of the bar. */
+    @keyframes shimmerSweep { 0% { transform: translateX(0); } 100% { transform: translateX(400%); } }
 
     /* --- Back-to-Top Button --- */
     .back-to-top {
@@ -1658,7 +1664,7 @@
   <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
+   ÒNKÀ YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
    Ètò Àwọ̀ OgójìÉje
    --------------------------------------------------------------------
    THE SOVEREIGN COLOUR LAW
@@ -2347,7 +2353,7 @@
 </script>
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
+   ÒNKÀ YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
    --------------------------------------------------------------------
    Three variants share the same 47-Sovereign tier identity but serve
    different attention modes. Rotating them down a page keeps curiosity
@@ -2361,7 +2367,6 @@
      V3 (open) → V1 (calm) → V2 (browse) → V3 (close)
    ════════════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Yoruba-text classes (v1-yor, v2-tile-yor, v3-spot-yor, v3-sib-y) are
    routed to Gentium Plus first because Fraunces lacks the OpenType GPOS
@@ -2776,7 +2781,7 @@
 </style>
   <script>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · BORDER-HARMONY RANDOMISER
+   ÒNKÀ YORÙBÁ · BORDER-HARMONY RANDOMISER
    --------------------------------------------------------------------
    Sprinkles one of five tier-aware border skins onto every
    `.v1-card`, `.v2-tile`, and `.v3-spot` on the page so the visual
@@ -2935,19 +2940,39 @@
     .colour-bar-animated.body-research-bridge.about-research-bridge::before,
     .colour-bar-animated.body-research-bridge.world-research-bridge::before,
     .colour-bar-animated.body-research-bridge.soft-ice-research-bridge::before { background: #bfe6ff; animation: none; }
-    :where(div, section):has(+ .body-research-bridge) { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-    :where(div, section):has(+ .body-research-bridge) > :last-child { margin-bottom: 0 !important; }
-    .bk-feature:has(+ script + .body-research-bridge) { padding-bottom: 0 !important; }
+    .pre-bridge { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+    .pre-bridge > :last-child { margin-bottom: 0 !important; }
+    .bk-feature.pre-bridge-feature { padding-bottom: 0 !important; }
     .body-ending-stretch { box-sizing: border-box; width: calc(100% + (2 * var(--body-ending-gutter, 40px))); max-width: none; margin-right: calc(-1 * var(--body-ending-gutter, 40px)) !important; margin-left: calc(-1 * var(--body-ending-gutter, 40px)) !important; }
     @media (max-width: 880px) {
       .body-ending-stretch.products-ending-stretch { --body-ending-gutter: 18px; }
     }
     @keyframes bridgeLights { from { opacity: 0.58; transform: translateX(-1.5%); } to { opacity: 0.9; transform: translateX(1.5%); } }
-    @keyframes bridgeSweep { 0%, 12% { left: -35%; opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { left: 107%; opacity: 0; } }
+    /* Same path as before (the 28%-wide sheen travels from -35% to 107% of the bar = 507.142857% of its own width), moved with transform. */
+    @keyframes bridgeSweep { 0%, 12% { transform: translateX(0); opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { transform: translateX(507.142857%); opacity: 0; } }
     @media (prefers-reduced-motion: reduce) {
       .colour-bar-animated.body-research-bridge::before,
       .colour-bar-animated.body-research-bridge::after { animation: none; }
     }
+  </style>
+  <style>
+    /* Speed: endless decorative animations pause while off-screen (class set by the script at the end of the page). */
+    .anim-offscreen, .anim-offscreen::before, .anim-offscreen::after { animation-play-state: paused !important; }
+  </style>
+  <script>
+    /* Speed: run a scroll handler at most once per screen refresh. */
+    function onScrollFrame(fn) { let queued = 0; return () => { if (queued) return; queued = requestAnimationFrame(() => { queued = 0; fn(); }); }; }
+  </script>
+  <style>
+    /* Speed: the header's moving gradient slides on its own layer (moved by the graphics chip) instead of being repainted every frame.
+       Same colours and the same 8-second path: the 300%-wide gradient travels two header-widths to the left and back. */
+    :root .header, :root .header-section { position: relative; isolation: isolate; overflow: hidden; animation: none; }
+    :root .header::before, :root .header-section::before {
+      content: ''; position: absolute; z-index: -1; top: -100%; left: 0; width: 300%; height: 300%;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 33%, #1E8CB8 66%, #27BCED 100%);
+      animation: headerGlide 8s ease-in-out infinite; pointer-events: none;
+    }
+    @keyframes headerGlide { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-66.666667%); } }
   </style>
 </head>
 <body class="standard-expressive-mode no-gear-tint">
@@ -3032,10 +3057,10 @@
 
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <div class="content">
+    <div class="content pre-bridge">
 
       <!-- Two Foundational Boxes -->
-      <div class="operator-state-stage">
+      <div class="operator-state-stage pre-ice-bridge">
         <div class="canvas" aria-label="The Multiplier Junction">
           <div class="canvas-eyebrow">Operator State Definition</div>
 
@@ -3085,7 +3110,7 @@
     <li><b>The Mother–Child Connection: The Multiplication of Life Logic.</b> •	The “l” Drive multiplier’s color (neon pink) symbolizes femininity as an active, nurturing force—one that supplies scale, growth, and expansion within the infinite numbering system.
 •	The multiplier’s contents are designated as children because children sit at the heart of this numerical philosophy. When combined, the mother’s "l" Drive Multiplier's power brings the children's expanded potential to life. 
 •	The result: A modular generative legacy that transcends numerical scales beyond the moon and the stars.
-This framework reveals that the Ònka Yorùbá system’s Sovereign philosophy is not just cold, hard math, but a living reflection of natural law, expressing the strength and generative power of the land itself.
+This framework reveals that the Ònkà Yorùbá system’s Sovereign philosophy is not just cold, hard math, but a living reflection of natural law, expressing the strength and generative power of the land itself.
 </li>
    
   </ol>
@@ -3155,7 +3180,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
       <!-- ═══════════════════════════════════════════════════════════════ -->
       <!-- GEAR MECHANICS — Educational Interlude                          -->
       <!-- ═══════════════════════════════════════════════════════════════ -->
-      <section class="gear-panel" aria-label="Gear Mechanics of the l-Drive Multiplier">
+      <section class="gear-panel pre-ice-bridge" aria-label="Gear Mechanics of the l-Drive Multiplier">
         <div class="gp-eyebrow">Inside the Multiplier Junction</div>
         <h3 class="gp-title">The <span class="gp-g">ḡ</span> Gear of the <span class="t-neonpink">l</span>-Drive Multiplier</h3>
         <p class="gp-subtitle">Every <span style="color:#FF13F0;font-weight:700;font-style:normal;">l</span>-chain you read on this page is one <strong style="color:#FFD700;font-style:normal;">turn of a gear</strong>. The mantissa supplies the teeth (1 – 999); the gear function <span class="gp-g">ḡ</span> supplies the magnitude. Together they convert spoken Yorùbá into base-10 scientific notation — and back — without ever fracturing across triadic blocks.</p>
@@ -5439,7 +5464,7 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
 
-<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<section class="osp-wrap" aria-label="Ònkà Yorùbá Scholarly Reference Panels">
 <style>
 /* ══════════════════════════════════════════════════════════════
    GLASSMORPHISM NEON — Scholarly Reference Section
@@ -5597,14 +5622,14 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
   <div class="osp-card">
     <span class="osp-icon">🔑</span>
     <div class="osp-label">Research Classification Framework</div>
-    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
+    <table class="osp-keytbl" aria-label="Column guide for Ònkà Yorùbá tables">
       <tbody><tr>
         <td class="osp-ksym">Symbol</td>
         <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
       </tr>
       <tr>
         <td class="osp-ksym">Name</td>
-        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
+        <td class="osp-kdesc">Official Ònkà Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
       </tr>
       <tr>
         <td class="osp-ksym">Scale</td>
@@ -5688,22 +5713,22 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
     <script>
       // --- Scroll Progress Bar ---
       const progressBar = document.getElementById('scrollProgress');
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', onScrollFrame(() => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
         progressBar.style.width = scrolled + '%';
-      }, { passive: true });
+      }), { passive: true });
 
       // --- Back-to-Top Button ---
       const topBtn = document.getElementById('backToTop');
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', onScrollFrame(() => {
         if (window.scrollY > 600) {
           topBtn.classList.add('visible');
         } else {
           topBtn.classList.remove('visible');
         }
-      }, { passive: true });
+      }), { passive: true });
       topBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
@@ -5828,6 +5853,22 @@ The Leap: If the Parent is a unit of "The Stars" (1,000+), the "l" is a Rocket (
         eqEl.classList.add('gear-eq');
       });
     })();
+    </script>
+
+    <script>
+      // --- Pause endless decorative animations while they are off-screen ---
+      // They look identical on screen; off-screen they stop using the phone's processor and battery.
+      if ('IntersectionObserver' in window && document.getAnimations) {
+        window.addEventListener('load', () => {
+          const animated = new Set(document.getAnimations()
+            .filter((a) => a.animationName && a.effect && a.effect.target && a.effect.getTiming().iterations === Infinity)
+            .map((a) => a.effect.target));
+          const watcher = new IntersectionObserver((entries) => {
+            for (const entry of entries) entry.target.classList.toggle('anim-offscreen', !entry.isIntersecting);
+          }, { rootMargin: '200px 0px' });
+          animated.forEach((element) => watcher.observe(element));
+        });
+      }
     </script>
 
 </div></body></html>

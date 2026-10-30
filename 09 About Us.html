@@ -9,8 +9,16 @@
   <meta http-equiv="Expires" content="0">
   <title>About Us | Universal Hyperdimensional Numeric Engine</title>
   
+  <!-- Fonts load in the background so the page appears at once; text switches to these fonts as they arrive. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </noscript>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
     
         .menu-bar {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -560,17 +568,15 @@
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
+        left: -50%;
         width: 50%;
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
         animation: shimmerSweep 4s ease-in-out infinite;
         pointer-events: none;
     }
-    @keyframes shimmerSweep {
-        0% { left: -50%; }
-        100% { left: 150%; }
-    }
+    /* Moved with transform (handled by the graphics chip) instead of left: same path, from -50% to 150% of the bar. */
+    @keyframes shimmerSweep { 0% { transform: translateX(0); } 100% { transform: translateX(400%); } }
 
     /* --- Back-to-Top Button --- */
     .back-to-top {
@@ -1040,7 +1046,7 @@
   <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
+   ÒNKÀ YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
    Ètò Àwọ̀ OgójìÉje
    --------------------------------------------------------------------
    THE SOVEREIGN COLOUR LAW
@@ -1729,7 +1735,7 @@
 </script>
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
+   ÒNKÀ YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
    --------------------------------------------------------------------
    Three variants share the same 47-Sovereign tier identity but serve
    different attention modes. Rotating them down a page keeps curiosity
@@ -1743,7 +1749,6 @@
      V3 (open) → V1 (calm) → V2 (browse) → V3 (close)
    ════════════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Yoruba-text classes (v1-yor, v2-tile-yor, v3-spot-yor, v3-sib-y) are
    routed to Gentium Plus first because Fraunces lacks the OpenType GPOS
@@ -2158,7 +2163,7 @@
 </style>
   <script>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · BORDER-HARMONY RANDOMISER
+   ÒNKÀ YORÙBÁ · BORDER-HARMONY RANDOMISER
    --------------------------------------------------------------------
    Sprinkles one of five tier-aware border skins onto every
    `.v1-card`, `.v2-tile`, and `.v3-spot` on the page so the visual
@@ -2317,19 +2322,39 @@
     .colour-bar-animated.body-research-bridge.about-research-bridge::before,
     .colour-bar-animated.body-research-bridge.world-research-bridge::before,
     .colour-bar-animated.body-research-bridge.soft-ice-research-bridge::before { background: #bfe6ff; animation: none; }
-    :where(div, section):has(+ .body-research-bridge) { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-    :where(div, section):has(+ .body-research-bridge) > :last-child { margin-bottom: 0 !important; }
-    .bk-feature:has(+ script + .body-research-bridge) { padding-bottom: 0 !important; }
+    .pre-bridge { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+    .pre-bridge > :last-child { margin-bottom: 0 !important; }
+    .bk-feature.pre-bridge-feature { padding-bottom: 0 !important; }
     .body-ending-stretch { box-sizing: border-box; width: calc(100% + (2 * var(--body-ending-gutter, 40px))); max-width: none; margin-right: calc(-1 * var(--body-ending-gutter, 40px)) !important; margin-left: calc(-1 * var(--body-ending-gutter, 40px)) !important; }
     @media (max-width: 880px) {
       .body-ending-stretch.products-ending-stretch { --body-ending-gutter: 18px; }
     }
     @keyframes bridgeLights { from { opacity: 0.58; transform: translateX(-1.5%); } to { opacity: 0.9; transform: translateX(1.5%); } }
-    @keyframes bridgeSweep { 0%, 12% { left: -35%; opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { left: 107%; opacity: 0; } }
+    /* Same path as before (the 28%-wide sheen travels from -35% to 107% of the bar = 507.142857% of its own width), moved with transform. */
+    @keyframes bridgeSweep { 0%, 12% { transform: translateX(0); opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { transform: translateX(507.142857%); opacity: 0; } }
     @media (prefers-reduced-motion: reduce) {
       .colour-bar-animated.body-research-bridge::before,
       .colour-bar-animated.body-research-bridge::after { animation: none; }
     }
+  </style>
+  <style>
+    /* Speed: endless decorative animations pause while off-screen (class set by the script at the end of the page). */
+    .anim-offscreen, .anim-offscreen::before, .anim-offscreen::after { animation-play-state: paused !important; }
+  </style>
+  <script>
+    /* Speed: run a scroll handler at most once per screen refresh. */
+    function onScrollFrame(fn) { let queued = 0; return () => { if (queued) return; queued = requestAnimationFrame(() => { queued = 0; fn(); }); }; }
+  </script>
+  <style>
+    /* Speed: the header's moving gradient slides on its own layer (moved by the graphics chip) instead of being repainted every frame.
+       Same colours and the same 8-second path: the 300%-wide gradient travels two header-widths to the left and back. */
+    :root .header, :root .header-section { position: relative; isolation: isolate; overflow: hidden; animation: none; }
+    :root .header::before, :root .header-section::before {
+      content: ''; position: absolute; z-index: -1; top: -100%; left: 0; width: 300%; height: 300%;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 33%, #1E8CB8 66%, #27BCED 100%);
+      animation: headerGlide 8s ease-in-out infinite; pointer-events: none;
+    }
+    @keyframes headerGlide { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-66.666667%); } }
   </style>
 </head>
 <body class="standard-expressive-mode no-gear-tint">
@@ -2354,7 +2379,7 @@
       <h1>ABOUT US</h1>
       <h2>The Team Behind The Universal Hyperdimensional Numeric Engine</h2>
       <p style="font-size: 1rem; color: #FFD700; margin: 6px auto 0; font-weight: 700; letter-spacing: .4px; max-width: 920px; line-height: 1.5;">A Research, Educational, and Linguistic Infrastructure for Indigenous Numerical Sovereignty</p>
-      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 12px; font-weight: 600;">The operating platform for language-independent numeric systems &mdash; with Ònka Yorùbá as its founding implementation.</p>
+      <p style="font-size: 0.95rem; color: #FFD700; margin-top: 12px; font-weight: 600;">The operating platform for language-independent numeric systems &mdash; with Ònkà Yorùbá as its founding implementation.</p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published by the Universal Hyperdimensional Numeric Engine Research Initiative<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 8px;">Designed for researchers, educators, software developers, and digital humanities scholars.</p>
     <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">A universal engine for building number systems for science, education, AI, and global knowledge preservation &mdash; with the Yorùbá numerical index serving as its first complete language implementation. This module contributes to a broader international effort supporting linguistic equity, computational sovereignty, and open scholarly infrastructure for indigenous and underrepresented knowledge systems worldwide.</p>
@@ -2413,12 +2438,12 @@
 
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <div class="content">
+    <div class="content pre-bridge">
 
-        <div class="intro-text">
+        <div class="intro-text has-join-section">
           <div class="about-flow">
             <div class="founder-profile">
-                    <img src="Crown.jpg" alt="Ònka Yorùbá" style="width:100%; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.13);">
+                    <img src="Crown-700.jpg" alt="Ònkà Yorùbá" decoding="async" style="width:100%; border-radius:14px; box-shadow:0 8px 32px rgba(0,0,0,0.13);">
                     <div class="founder-caption" style="margin-top:14px; padding:18px 22px; background:linear-gradient(135deg,#0a2447 0%,#0f3460 100%); border-left:4px solid #FFD700; border-radius:0 12px 12px 0; color:#fff; text-align:left; box-shadow:0 6px 22px rgba(10,36,71,.22);">
                         <div style="font-family:'Playfair Display','Georgia',serif; font-size:1.55rem; font-weight:700; color:#FFD700; letter-spacing:.5px; line-height:1.1;">Godreign</div>
                         <div style="width:48px; height:1px; background:linear-gradient(90deg,#FFD700,rgba(255,215,0,0)); margin:8px 0 10px;"></div>
@@ -2726,7 +2751,7 @@
         color:#f2f6fd;
         box-shadow:0 14px 32px rgba(10,20,46,.30);
     }
-    .intro-text:has(.join-section){ padding-bottom:0; }
+    .intro-text.has-join-section{ padding-bottom:0; }
     @media (max-width:760px){
       .join-section{
         width:calc(100% + 48px);
@@ -2786,7 +2811,7 @@
 
 <div class="about-text-theme about-theme-blue">
   <span class="about-theme-label">Master Reference</span>
-  <p>The <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong> is a sovereign computational platform built to give <em>any</em> indigenous language the power to count, compute, and scale without ceiling. Its founding implementation&mdash;<strong>&Ograve;nka Yor&ugrave;b&aacute; 1.0</strong>&mdash;is a working prototype: a fully named, fully coloured, fully computable base-10 ladder running from <strong>1 to over a Tredecillion&nbsp;</strong>and still climbing. Where Godreign&rsquo;s parallel mandate addresses the social fabric and spirituality of humanity, this engine strengthens its <em>numeric destiny</em>: a monumental digital infrastructure dedicated to preserving, documenting, and unleashing the full complexity of every indigenous numerical ecosystem on Earth.</p>
+  <p>The <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong> is a sovereign computational platform built to give <em>any</em> indigenous language the power to count, compute, and scale without ceiling. Its founding implementation&mdash;<strong>Ònkà Yor&ugrave;b&aacute; 1.0</strong>&mdash;is a working prototype: a fully named, fully coloured, fully computable base-10 ladder running from <strong>1 to over a Tredecillion&nbsp;</strong>and still climbing. Where Godreign&rsquo;s parallel mandate addresses the social fabric and spirituality of humanity, this engine strengthens its <em>numeric destiny</em>: a monumental digital infrastructure dedicated to preserving, documenting, and unleashing the full complexity of every indigenous numerical ecosystem on Earth.</p>
 </div>
 
 <div class="about-text-theme about-theme-green">
@@ -2801,11 +2826,11 @@
 
 <div class="about-text-theme about-theme-gold">
   <p class="about-theme-heading"><span>🎯</span>&nbsp; Founder&rsquo;s Vision</p>
-  <p>Our mission ignites with the Yor&ugrave;b&aacute; people&mdash;but its flame is destined for the heart of <em>every</em> indigenous language on Earth. By restoring the infinite logic of the <strong>&Ograve;nka Yor&ugrave;b&aacute;</strong> system, we are forging a <strong>repeatable model of linguistic liberation</strong>&mdash;a blueprint that any nation can seize, adapt, and deploy. One language restored proves the concept; a global language restored fulfils the mandate.</p>
+  <p>Our mission ignites with the Yor&ugrave;b&aacute; people&mdash;but its flame is destined for the heart of <em>every</em> indigenous language on Earth. By restoring the infinite logic of the <strong>Ònkà Yor&ugrave;b&aacute;</strong> system, we are forging a <strong>repeatable model of linguistic liberation</strong>&mdash;a blueprint that any nation can seize, adapt, and deploy. One language restored proves the concept; a global language restored fulfils the mandate.</p>
 </div>
 <div class="about-text-theme about-theme-purple">
   <p class="about-theme-heading"><span>👁️</span>&nbsp; Our Vision</p>
-  <p>We envision a world in which Yor&ugrave;b&aacute; mathematics <strong>controls its own destiny</strong> through the &Ograve;nka Yor&ugrave;b&aacute; Project&mdash;and in which every indigenous nation follows the same sovereign path. A world where numbers speak in <em>every</em> native dialect. Where what was once scattered is being <strong>gathered</strong>; what was nearly forgotten is now <strong>numbered, named, and returned to its rightful people</strong>. The New Numbering System is a digital nation-building at its most profound.</p>
+  <p>We envision a world in which Yor&ugrave;b&aacute; mathematics <strong>controls its own destiny</strong> through the Ònkà Yor&ugrave;b&aacute; Project&mdash;and in which every indigenous nation follows the same sovereign path. A world where numbers speak in <em>every</em> native dialect. Where what was once scattered is being <strong>gathered</strong>; what was nearly forgotten is now <strong>numbered, named, and returned to its rightful people</strong>. The New Numbering System is a digital nation-building at its most profound.</p>
 </div>
 <div class="about-text-theme about-theme-red">
   <p class="about-theme-heading"><span>💡</span>&nbsp; Why This Matters</p>
@@ -2845,10 +2870,10 @@
     <span class="rf-eyebrow-sm">Frequently Asked Questions</span>
     <h3 class="rf-title">Common Questions, Considered Answers</h3>
 <p class="faq-question faq-theme-blue" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>What is the purpose of this site?</strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is the public home of the <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong>&mdash;a research-grade infrastructure that gives any human language the power to count, compute, and scale without ceiling. Its founding implementation is the New Ònka Yor&ugrave;b&aacute; Numeric System, where ancestral counting meets twenty-first-century precision. We have digitised an indigenous numerical legacy so that it delivers the exhaustive base-10 accuracy demanded by modern algorithms, sovereign coding frameworks, and advanced global finance. Here, an indigenous tongue is not a relic of the past; it is the <em>literal source code</em> for a self-determined future. Every number on this site is a declaration: <strong>our languages compute.</strong></p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>This is the public home of the <strong>Universal Hyperdimensional Numeric Engine (UHNE)</strong>&mdash;a research-grade infrastructure that gives any human language the power to count, compute, and scale without ceiling. Its founding implementation is the New Ònkà Yor&ugrave;b&aacute; Numeric System, where ancestral counting meets twenty-first-century precision. We have digitised an indigenous numerical legacy so that it delivers the exhaustive base-10 accuracy demanded by modern algorithms, sovereign coding frameworks, and advanced global finance. Here, an indigenous tongue is not a relic of the past; it is the <em>literal source code</em> for a self-determined future. Every number on this site is a declaration: <strong>our languages compute.</strong></p>
 <p class="faq-question faq-theme-green" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>My language is different from Yor&ugrave;b&aacute;, and we face similar historical limitations that disconnect our culture from modern digital scaling. Is the 47-Colour Sovereign Protocol adaptable for other indigenous nations?</strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Absolutely&mdash;and that is precisely why it was built.</strong> This journey ignited with &Ograve;nka Yor&ugrave;b&aacute;, but its flame now reaches toward <em>every</em> indigenous language on Earth. For centuries, thousands of native tongues have been shackled by numbering systems that could not scale for modern science, computing, or the exponential demands of the A.I. era. The <strong>47 Canonical Sovereign Colours</strong> shatter that ceiling. They are not merely a Yor&ugrave;b&aacute; innovation&mdash;they form part of a <strong>Universal Logic Blueprint</strong>, an open-armed gift to every nation whose ancestral language deserves a seat at the digital table.</p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>We have engineered a framework that scales by index from <strong>one to over a Tredecillion</strong>&mdash;a number so vast it dwarfs the stars in the observable universe. We now extend our arms of generosity to global leaders, educators, linguists, A.I. researchers, and indigenous knowledge-keepers of <em>every</em> language: <strong>adopt this 47-Colour Sovereign Protocol</strong>. Map your own native words onto this high-speed index. Bypass the historical limitations that held your ancestors back and leap&mdash;in a single generation&mdash;to the absolute forefront of the digital age. You do not have to trade your culture for technology. You can <em>use</em> this system to transform your ancestral tongue into a <strong>mathematical superpower</strong>. Let us unite as a global <strong>&lsquo;&Ograve;nka Generation,&rsquo;</strong> wielding all <strong>47 Canonical Sovereign Colours</strong> to guarantee that no language&mdash;from the highlands of Papua New Guinea to the river deltas of Bangladesh, from the tundra of Sib&eacute;ria to the savannahs of East Africa&mdash;is ever left behind in the boundless reach toward infinity.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Absolutely&mdash;and that is precisely why it was built.</strong> This journey ignited with Ònkà Yor&ugrave;b&aacute;, but its flame now reaches toward <em>every</em> indigenous language on Earth. For centuries, thousands of native tongues have been shackled by numbering systems that could not scale for modern science, computing, or the exponential demands of the A.I. era. The <strong>47 Canonical Sovereign Colours</strong> shatter that ceiling. They are not merely a Yor&ugrave;b&aacute; innovation&mdash;they form part of a <strong>Universal Logic Blueprint</strong>, an open-armed gift to every nation whose ancestral language deserves a seat at the digital table.</p>
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'>We have engineered a framework that scales by index from <strong>one to over a Tredecillion</strong>&mdash;a number so vast it dwarfs the stars in the observable universe. We now extend our arms of generosity to global leaders, educators, linguists, A.I. researchers, and indigenous knowledge-keepers of <em>every</em> language: <strong>adopt this 47-Colour Sovereign Protocol</strong>. Map your own native words onto this high-speed index. Bypass the historical limitations that held your ancestors back and leap&mdash;in a single generation&mdash;to the absolute forefront of the digital age. You do not have to trade your culture for technology. You can <em>use</em> this system to transform your ancestral tongue into a <strong>mathematical superpower</strong>. Let us unite as a global <strong>&lsquo;Ònkà Generation,&rsquo;</strong> wielding all <strong>47 Canonical Sovereign Colours</strong> to guarantee that no language&mdash;from the highlands of Papua New Guinea to the river deltas of Bangladesh, from the tundra of Sib&eacute;ria to the savannahs of East Africa&mdash;is ever left behind in the boundless reach toward infinity.</p>
 <p class="faq-question faq-theme-gold" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Can I download the entire collection?</strong></p>
 <p style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>Yes&mdash;every last scroll, every last tool.</strong> We believe in <em>radical accessibility</em>. Download all <strong>10 Scroll Books</strong> using the buttons above and carry a treasury of over a <strong>Tredecillion</strong> numbers in your pocket&mdash;ready for offline study in the most remote classroom, the busiest research lab, or the quietest corner of your home. But our generosity goes far beyond data. Alongside the scrolls, our full suite of educational apps and indigenous software treasures is available for <strong>instant download</strong>. These tools are designed as lifelong companions for the Yor&ugrave;b&aacute; soul&mdash;and for every soul that honours their ancestral tongue. They keep the brain engaged, the spirit vibrant, and the cultural heartbeat strong. By fusing technical logic with ancestral resonance, we provide a digital sanctuary that nourishes the health of both the mind and the soul.</p>
 <p class="faq-question faq-theme-purple" style='margin-top:0cm;margin-right:0cm;margin-bottom:10.0pt;margin-left:0cm;line-height:115%;font-size:15px;font-family:"Calibri",sans-serif;'><strong>How can I use these new numbering systems?</strong></p>
@@ -3029,7 +3054,7 @@
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
 
-<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<section class="osp-wrap" aria-label="Ònkà Yorùbá Scholarly Reference Panels">
 <style>
 /* ══════════════════════════════════════════════════════════════
    GLASSMORPHISM NEON — Scholarly Reference Section
@@ -3187,14 +3212,14 @@
   <div class="osp-card">
     <span class="osp-icon">🔑</span>
     <div class="osp-label">Research Classification Framework</div>
-    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
+    <table class="osp-keytbl" aria-label="Column guide for Ònkà Yorùbá tables">
       <tbody><tr>
         <td class="osp-ksym">Symbol</td>
         <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
       </tr>
       <tr>
         <td class="osp-ksym">Name</td>
-        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
+        <td class="osp-kdesc">Official Ònkà Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
       </tr>
       <tr>
         <td class="osp-ksym">Scale</td>
@@ -3278,25 +3303,41 @@
     <script>
       // --- Scroll Progress Bar ---
       const progressBar = document.getElementById('scrollProgress');
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', onScrollFrame(() => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
         progressBar.style.width = scrolled + '%';
-      }, { passive: true });
+      }), { passive: true });
 
       // --- Back-to-Top Button ---
       const topBtn = document.getElementById('backToTop');
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', onScrollFrame(() => {
         if (window.scrollY > 600) {
           topBtn.classList.add('visible');
         } else {
           topBtn.classList.remove('visible');
         }
-      }, { passive: true });
+      }), { passive: true });
       topBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    </script>
+
+    <script>
+      // --- Pause endless decorative animations while they are off-screen ---
+      // They look identical on screen; off-screen they stop using the phone's processor and battery.
+      if ('IntersectionObserver' in window && document.getAnimations) {
+        window.addEventListener('load', () => {
+          const animated = new Set(document.getAnimations()
+            .filter((a) => a.animationName && a.effect && a.effect.target && a.effect.getTiming().iterations === Infinity)
+            .map((a) => a.effect.target));
+          const watcher = new IntersectionObserver((entries) => {
+            for (const entry of entries) entry.target.classList.toggle('anim-offscreen', !entry.isIntersecting);
+          }, { rootMargin: '200px 0px' });
+          animated.forEach((element) => watcher.observe(element));
+        });
+      }
     </script>
 
 </div></body></html>

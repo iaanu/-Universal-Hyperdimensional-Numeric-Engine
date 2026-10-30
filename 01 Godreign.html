@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Godreign | Universal Hyperdimensional Numeric Engine</title>
   
+  <!-- Fonts load in the background so the page appears at once; text switches to these fonts as they arrive. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  </noscript>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:wght@400;600;700&display=swap');
 
     /* ── Yoruba Vocalic System: per-glyph routing ──
        The synthetic 'Yoruba' family delegates ONLY diacritic-heavy ranges
@@ -568,17 +574,15 @@
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
+        left: -50%;
         width: 50%;
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
         animation: shimmerSweep 4s ease-in-out infinite;
         pointer-events: none;
     }
-    @keyframes shimmerSweep {
-        0% { left: -50%; }
-        100% { left: 150%; }
-    }
+    /* Moved with transform (handled by the graphics chip) instead of left: same path, from -50% to 150% of the bar. */
+    @keyframes shimmerSweep { 0% { transform: translateX(0); } 100% { transform: translateX(400%); } }
 
     /* --- Back-to-Top Button --- */
     .back-to-top {
@@ -1048,7 +1052,7 @@
   <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
+   ÒNKÀ YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
    Ètò Àwọ̀ OgójìÉje
    --------------------------------------------------------------------
    THE SOVEREIGN COLOUR LAW
@@ -1784,19 +1788,39 @@
     .colour-bar-animated.body-research-bridge.about-research-bridge::before,
     .colour-bar-animated.body-research-bridge.world-research-bridge::before,
     .colour-bar-animated.body-research-bridge.soft-ice-research-bridge::before { background: #bfe6ff; animation: none; }
-    :where(div, section):has(+ .body-research-bridge) { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-    :where(div, section):has(+ .body-research-bridge) > :last-child { margin-bottom: 0 !important; }
-    .bk-feature:has(+ script + .body-research-bridge) { padding-bottom: 0 !important; }
+    .pre-bridge { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+    .pre-bridge > :last-child { margin-bottom: 0 !important; }
+    .bk-feature.pre-bridge-feature { padding-bottom: 0 !important; }
     .body-ending-stretch { box-sizing: border-box; width: calc(100% + (2 * var(--body-ending-gutter, 40px))); max-width: none; margin-right: calc(-1 * var(--body-ending-gutter, 40px)) !important; margin-left: calc(-1 * var(--body-ending-gutter, 40px)) !important; }
     @media (max-width: 880px) {
       .body-ending-stretch.products-ending-stretch { --body-ending-gutter: 18px; }
     }
     @keyframes bridgeLights { from { opacity: 0.58; transform: translateX(-1.5%); } to { opacity: 0.9; transform: translateX(1.5%); } }
-    @keyframes bridgeSweep { 0%, 12% { left: -35%; opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { left: 107%; opacity: 0; } }
+    /* Same path as before (the 28%-wide sheen travels from -35% to 107% of the bar = 507.142857% of its own width), moved with transform. */
+    @keyframes bridgeSweep { 0%, 12% { transform: translateX(0); opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { transform: translateX(507.142857%); opacity: 0; } }
     @media (prefers-reduced-motion: reduce) {
       .colour-bar-animated.body-research-bridge::before,
       .colour-bar-animated.body-research-bridge::after { animation: none; }
     }
+  </style>
+  <style>
+    /* Speed: endless decorative animations pause while off-screen (class set by the script at the end of the page). */
+    .anim-offscreen, .anim-offscreen::before, .anim-offscreen::after { animation-play-state: paused !important; }
+  </style>
+  <script>
+    /* Speed: run a scroll handler at most once per screen refresh. */
+    function onScrollFrame(fn) { let queued = 0; return () => { if (queued) return; queued = requestAnimationFrame(() => { queued = 0; fn(); }); }; }
+  </script>
+  <style>
+    /* Speed: the header's moving gradient slides on its own layer (moved by the graphics chip) instead of being repainted every frame.
+       Same colours and the same 8-second path: the 300%-wide gradient travels two header-widths to the left and back. */
+    :root .header, :root .header-section { position: relative; isolation: isolate; overflow: hidden; animation: none; }
+    :root .header::before, :root .header-section::before {
+      content: ''; position: absolute; z-index: -1; top: -100%; left: 0; width: 300%; height: 300%;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 33%, #1E8CB8 66%, #27BCED 100%);
+      animation: headerGlide 8s ease-in-out infinite; pointer-events: none;
+    }
+    @keyframes headerGlide { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-66.666667%); } }
   </style>
 </head>
 <body class="standard-expressive-mode no-gear-tint">
@@ -1824,7 +1848,7 @@
       <p style="font-size: 0.95rem; color: #FFD700; margin-top: 8px; font-weight: 600;">Where heaven's blueprint governs science, civilization, and numerical sovereignty</p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 10px;">Published under the Godreign Numerical Civilization Project<br><strong style="color: rgba(255,215,0,0.85);">Version 1.0 · 2026 Public Release</strong></p>
       <p style="font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 8px;">Designed for nations, scholars, educators, and every soul seeking to realign with divine order.</p>
-    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">Godreign declares the realignment of earthly order with heaven's original blueprint: a sovereign framework anchored in righteousness, justice, mercy, and eternal truth. From this governing root proceeds the Universal Hyperdimensional Numeric Engine and its first complete language implementation, the Ònka Yorùbá numerical index, so that science, education, technology, and civilization itself may be disciplined by divine order, strengthened in purpose, and directed toward the healing of souls and the preparation of nations for heavenly royalty.</p>
+    <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px; font-style: italic; text-align: justify; line-height: 1.7;">Godreign declares the realignment of earthly order with heaven's original blueprint: a sovereign framework anchored in righteousness, justice, mercy, and eternal truth. From this governing root proceeds the Universal Hyperdimensional Numeric Engine and its first complete language implementation, the Ònkà Yorùbá numerical index, so that science, education, technology, and civilization itself may be disciplined by divine order, strengthened in purpose, and directed toward the healing of souls and the preparation of nations for heavenly royalty.</p>
     </div>
 
     <!-- 47-Colour Bar -->
@@ -1880,7 +1904,7 @@
 
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <div class="content">
+    <div class="content pre-bridge">
       <style>
         /* ════════════════════════════════════════════════════════════
            GODREIGN MIDDLE-SECTION — Alternating Scripture Panels
@@ -2497,7 +2521,7 @@
       <div class="c-neonpink" title="&quot;l&quot; Drive Multiplier &mdash; Neon Pink"></div>
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
-<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<section class="osp-wrap" aria-label="Ònkà Yorùbá Scholarly Reference Panels">
 <style>
 /* ══════════════════════════════════════════════════════════════
    GLASSMORPHISM NEON — Scholarly Reference Section
@@ -2774,25 +2798,41 @@
     <script>
       // --- Scroll Progress Bar ---
       const progressBar = document.getElementById('scrollProgress');
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', onScrollFrame(() => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
         progressBar.style.width = scrolled + '%';
-      }, { passive: true });
+      }), { passive: true });
 
       // --- Back-to-Top Button ---
       const topBtn = document.getElementById('backToTop');
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', onScrollFrame(() => {
         if (window.scrollY > 600) {
           topBtn.classList.add('visible');
         } else {
           topBtn.classList.remove('visible');
         }
-      }, { passive: true });
+      }), { passive: true });
       topBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+    </script>
+
+    <script>
+      // --- Pause endless decorative animations while they are off-screen ---
+      // They look identical on screen; off-screen they stop using the phone's processor and battery.
+      if ('IntersectionObserver' in window && document.getAnimations) {
+        window.addEventListener('load', () => {
+          const animated = new Set(document.getAnimations()
+            .filter((a) => a.animationName && a.effect && a.effect.target && a.effect.getTiming().iterations === Infinity)
+            .map((a) => a.effect.target));
+          const watcher = new IntersectionObserver((entries) => {
+            for (const entry of entries) entry.target.classList.toggle('anim-offscreen', !entry.isIntersecting);
+          }, { rootMargin: '200px 0px' });
+          animated.forEach((element) => watcher.observe(element));
+        });
+      }
     </script>
 
 </div></body></html>

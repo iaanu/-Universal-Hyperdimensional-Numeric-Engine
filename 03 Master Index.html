@@ -9,6 +9,11 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"></noscript>
   
+  <!-- Fonts load in the background so the page appears at once; text switches to these fonts as they arrive. -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </noscript>
   <style>
         .menu-bar {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -650,17 +655,15 @@
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
+        left: -50%;
         width: 50%;
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
         animation: shimmerSweep 4s ease-in-out infinite;
         pointer-events: none;
     }
-    @keyframes shimmerSweep {
-        0% { left: -50%; }
-        100% { left: 150%; }
-    }
+    /* Moved with transform (handled by the graphics chip) instead of left: same path, from -50% to 150% of the bar. */
+    @keyframes shimmerSweep { 0% { transform: translateX(0); } 100% { transform: translateX(400%); } }
 
     /* --- Back-to-Top Button --- */
     .back-to-top {
@@ -1222,7 +1225,7 @@
   <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
+   ÒNKÀ YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
    Ètò Àwọ̀ OgójìÉje
    --------------------------------------------------------------------
    THE SOVEREIGN COLOUR LAW
@@ -1976,7 +1979,7 @@
 </script>
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
+   ÒNKÀ YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
    --------------------------------------------------------------------
    Three variants share the same 47-Sovereign tier identity but serve
    different attention modes. Rotating them down a page keeps curiosity
@@ -1990,7 +1993,6 @@
      V3 (open) → V1 (calm) → V2 (browse) → V3 (close)
    ════════════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Yoruba-text classes (v1-yor, v2-tile-yor, v3-spot-yor, v3-sib-y) are
    routed to Gentium Plus first because Fraunces lacks the OpenType GPOS
@@ -2405,7 +2407,7 @@
 </style>
   <script>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · BORDER-HARMONY RANDOMISER
+   ÒNKÀ YORÙBÁ · BORDER-HARMONY RANDOMISER
    --------------------------------------------------------------------
    Sprinkles one of five tier-aware border skins onto every
    `.v1-card`, `.v2-tile`, and `.v3-spot` on the page so the visual
@@ -2576,19 +2578,53 @@
     .colour-bar-animated.body-research-bridge.about-research-bridge::before,
     .colour-bar-animated.body-research-bridge.world-research-bridge::before,
     .colour-bar-animated.body-research-bridge.soft-ice-research-bridge::before { background: #bfe6ff; animation: none; }
-    :where(div, section):has(+ .body-research-bridge) { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-    :where(div, section):has(+ .body-research-bridge) > :last-child { margin-bottom: 0 !important; }
-    .bk-feature:has(+ script + .body-research-bridge) { padding-bottom: 0 !important; }
+    .pre-bridge { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+    .pre-bridge > :last-child { margin-bottom: 0 !important; }
+    .bk-feature.pre-bridge-feature { padding-bottom: 0 !important; }
     .body-ending-stretch { box-sizing: border-box; width: calc(100% + (2 * var(--body-ending-gutter, 40px))); max-width: none; margin-right: calc(-1 * var(--body-ending-gutter, 40px)) !important; margin-left: calc(-1 * var(--body-ending-gutter, 40px)) !important; }
     @media (max-width: 880px) {
       .body-ending-stretch.products-ending-stretch { --body-ending-gutter: 18px; }
     }
     @keyframes bridgeLights { from { opacity: 0.58; transform: translateX(-1.5%); } to { opacity: 0.9; transform: translateX(1.5%); } }
-    @keyframes bridgeSweep { 0%, 12% { left: -35%; opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { left: 107%; opacity: 0; } }
+    /* Same path as before (the 28%-wide sheen travels from -35% to 107% of the bar = 507.142857% of its own width), moved with transform. */
+    @keyframes bridgeSweep { 0%, 12% { transform: translateX(0); opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { transform: translateX(507.142857%); opacity: 0; } }
     @media (prefers-reduced-motion: reduce) {
       .colour-bar-animated.body-research-bridge::before,
       .colour-bar-animated.body-research-bridge::after { animation: none; }
     }
+  </style>
+  <style>
+    /* Speed: endless decorative animations pause while off-screen (class set by the script at the end of the page). */
+    .anim-offscreen, .anim-offscreen::before, .anim-offscreen::after { animation-play-state: paused !important; }
+  </style>
+  <script>
+    /* Speed: run a scroll handler at most once per screen refresh. */
+    function onScrollFrame(fn) { let queued = 0; return () => { if (queued) return; queued = requestAnimationFrame(() => { queued = 0; fn(); }); }; }
+  </script>
+  <style>
+    /* Speed: the browser skips drawing these very long sections until they come near the screen.
+       "auto" remembers each section's real height once it has been shown. */
+    .container > .content, .container > .card-grid, .container > .card-grid-1, .container > .card-grid-2, .container > .card-grid-3,
+    .vocalic-continuation, .container > .p00-text-sections, .container > .osp-wrap,
+    .container > .p00-tables { content-visibility: auto; contain-intrinsic-size: auto 600px; overflow-clip-margin: 40px; }
+    .container > .card-grid { contain-intrinsic-size: auto 1100px; }
+    .container > .card-grid-1, .container > .card-grid-2, .container > .card-grid-3 { contain-intrinsic-size: auto 3000px; }
+    .container > .p00-tables { contain-intrinsic-size: auto 36000px; }
+    .container > .p00-text-sections { contain-intrinsic-size: auto 4000px; }
+    .container > .osp-wrap { contain-intrinsic-size: auto 1900px; }
+    .container > .content { contain-intrinsic-size: auto 7000px; }
+    .vocalic-continuation { contain-intrinsic-size: auto 1300px; }
+  </style>
+  <style>
+    /* Speed: the header's moving gradient slides on its own layer (moved by the graphics chip) instead of being repainted every frame.
+       Same colours and the same 8-second path: the 300%-wide gradient travels two header-widths to the left and back. */
+    :root .header, :root .header-section { position: relative; isolation: isolate; overflow: hidden; animation: none; }
+    :root .header::before, :root .header-section::before {
+      content: ''; position: absolute; z-index: -1; top: -100%; left: 0; width: 300%; height: 300%;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 33%, #1E8CB8 66%, #27BCED 100%);
+      animation: headerGlide 8s ease-in-out infinite; pointer-events: none;
+    }
+    @keyframes headerGlide { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-66.666667%); } }
   </style>
 </head>
 <body class="standard-expressive-mode no-gear-tint">
@@ -3563,23 +3599,23 @@
       <div class="sub-header c-red">1,000-9,000</div>
       <div class="card-grid">
         <div class="num-card b-red" id="oyn-v-1e3" data-record-id="oyn-v-1e3">
-        <div class="num">1,000</div><div class="word t-red">Ẹgbẹ̀rǔn</div><div class="alpha2-eq t-red">Ení·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">1,000</div><div class="word t-red">Ẹgbẹ̀rǔn</div><div class="alpha2-eq t-red">Ení·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Ení·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Ení·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Ení·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-red" id="oyn-v-2e3" data-record-id="oyn-v-2e3">
-        <div class="num">2,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éjì</div><div class="alpha2-eq t-red">Éjì·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">2,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éjì</div><div class="alpha2-eq t-red">Éjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Éjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Éjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Éjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-red" id="oyn-v-3e3" data-record-id="oyn-v-3e3">
-        <div class="num">3,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́ta</div><div class="alpha2-eq t-red">Ẹ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">3,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́ta</div><div class="alpha2-eq t-red">Ẹ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Ẹ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Ẹ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Ẹ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-red" id="oyn-v-4e3" data-record-id="oyn-v-4e3">
-        <div class="num">4,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́rin</div><div class="alpha2-eq t-red">Ẹ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">4,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́rin</div><div class="alpha2-eq t-red">Ẹ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Ẹ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Ẹ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Ẹ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-red" id="oyn-v-5e3" data-record-id="oyn-v-5e3">
-        <div class="num">5,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>árǔn</div><div class="alpha2-eq t-red">Árǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">5,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>árǔn</div><div class="alpha2-eq t-red">Árǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Árǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Árǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Árǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-red" id="oyn-v-6e3" data-record-id="oyn-v-6e3">
-        <div class="num">6,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́fà</div><div class="alpha2-eq t-red">Ẹ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">6,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́fà</div><div class="alpha2-eq t-red">Ẹ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Ẹ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Ẹ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Ẹ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-red" id="oyn-v-7e3" data-record-id="oyn-v-7e3">
-        <div class="num">7,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éje</div><div class="alpha2-eq t-red">Éje·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">7,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éje</div><div class="alpha2-eq t-red">Éje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Éje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Éje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Éje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-red" id="oyn-v-8e3" data-record-id="oyn-v-8e3">
-        <div class="num">8,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́jọ</div><div class="alpha2-eq t-red">Ẹ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">8,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́jọ</div><div class="alpha2-eq t-red">Ẹ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Ẹ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Ẹ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Ẹ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-red" id="oyn-v-9e3" data-record-id="oyn-v-9e3">
-        <div class="num">9,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́sǎn</div><div class="alpha2-eq t-red">Ẹ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">9,000</div><div class="word t-red">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ẹ́sǎn</div><div class="alpha2-eq t-red">Ẹ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-red">Ẹ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-red">Ẹ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-red">Ẹ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 10,000-19,000 -->
@@ -3592,227 +3628,227 @@
       <div class="sub-header c-sky">10,000-19,000</div>
       <div class="card-grid">
         <div class="num-card b-sky" id="oyn-v-1e4" data-record-id="oyn-v-1e4">
-        <div class="num">10,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎ</div><div class="alpha2-eq t-sky">Ẹ́wǎ·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">10,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎ</div><div class="alpha2-eq t-sky">Ẹ́wǎ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-11e3" data-record-id="oyn-v-11e3">
-        <div class="num">11,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎení</div></div>
+        <div class="num">11,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎení</div><div class="alpha2-eq t-sky">Ẹ́wǎEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-12e3" data-record-id="oyn-v-12e3">
-        <div class="num">12,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎéjì</div></div>
+        <div class="num">12,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎéjì</div><div class="alpha2-eq t-sky">Ẹ́wǎÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-13e3" data-record-id="oyn-v-13e3">
-        <div class="num">13,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́ta</div></div>
+        <div class="num">13,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́ta</div><div class="alpha2-eq t-sky">Ẹ́wǎẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-14e3" data-record-id="oyn-v-14e3">
-        <div class="num">14,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́rin</div></div>
+        <div class="num">14,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́rin</div><div class="alpha2-eq t-sky">Ẹ́wǎẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-15e3" data-record-id="oyn-v-15e3">
-        <div class="num">15,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎárǔn</div></div>
+        <div class="num">15,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎárǔn</div><div class="alpha2-eq t-sky">Ẹ́wǎÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-16e3" data-record-id="oyn-v-16e3">
-        <div class="num">16,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́fà</div></div>
+        <div class="num">16,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́fà</div><div class="alpha2-eq t-sky">Ẹ́wǎẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-17e3" data-record-id="oyn-v-17e3">
-        <div class="num">17,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎéje</div></div>
+        <div class="num">17,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎéje</div><div class="alpha2-eq t-sky">Ẹ́wǎÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-18e3" data-record-id="oyn-v-18e3">
-        <div class="num">18,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́jọ</div></div>
+        <div class="num">18,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́jọ</div><div class="alpha2-eq t-sky">Ẹ́wǎẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-19e3" data-record-id="oyn-v-19e3">
-        <div class="num">19,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́sǎn</div></div>
+        <div class="num">19,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>éwǎẹ́sǎn</div><div class="alpha2-eq t-sky">Ẹ́wǎẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ẹ́wǎẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ẹ́wǎẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ẹ́wǎẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 20,000-29,000 -->
       <div class="sub-header c-sky">20,000-29,000</div>
       <div class="card-grid">
         <div class="num-card b-sky" id="oyn-v-2e4" data-record-id="oyn-v-2e4">
-        <div class="num">20,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógún</div><div class="alpha2-eq t-sky">Ogún·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">20,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógún</div><div class="alpha2-eq t-sky">Ogún·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ogún·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ogún·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ogún·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-21e3" data-record-id="oyn-v-21e3">
-        <div class="num">21,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnení</div></div>
+        <div class="num">21,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnení</div><div class="alpha2-eq t-sky">OgúnEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-22e3" data-record-id="oyn-v-22e3">
-        <div class="num">22,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnéjì</div></div>
+        <div class="num">22,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnéjì</div><div class="alpha2-eq t-sky">OgúnÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-23e3" data-record-id="oyn-v-23e3">
-        <div class="num">23,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́ta</div></div>
+        <div class="num">23,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́ta</div><div class="alpha2-eq t-sky">OgúnẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-24e3" data-record-id="oyn-v-24e3">
-        <div class="num">24,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́rin</div></div>
+        <div class="num">24,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́rin</div><div class="alpha2-eq t-sky">OgúnẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-25e3" data-record-id="oyn-v-25e3">
-        <div class="num">25,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnárǔn</div></div>
+        <div class="num">25,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnárǔn</div><div class="alpha2-eq t-sky">OgúnÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-26e3" data-record-id="oyn-v-26e3">
-        <div class="num">26,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́fà</div></div>
+        <div class="num">26,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́fà</div><div class="alpha2-eq t-sky">OgúnẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-27e3" data-record-id="oyn-v-27e3">
-        <div class="num">27,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnéje</div></div>
+        <div class="num">27,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnéje</div><div class="alpha2-eq t-sky">OgúnÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-28e3" data-record-id="oyn-v-28e3">
-        <div class="num">28,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́jọ</div></div>
+        <div class="num">28,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́jọ</div><div class="alpha2-eq t-sky">OgúnẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-29e3" data-record-id="oyn-v-29e3">
-        <div class="num">29,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́sǎn</div></div>
+        <div class="num">29,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógúnẹ́sǎn</div><div class="alpha2-eq t-sky">OgúnẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgúnẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgúnẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgúnẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 30,000-39,000 -->
       <div class="sub-header c-sky">30,000-39,000</div>
       <div class="card-grid">
         <div class="num-card b-sky" id="oyn-v-3e4" data-record-id="oyn-v-3e4">
-        <div class="num">30,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀n</div><div class="alpha2-eq t-sky">Ọgbọ̀n·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">30,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀n</div><div class="alpha2-eq t-sky">Ọgbọ̀n·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀n·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀n·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀n·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-31e3" data-record-id="oyn-v-31e3">
-        <div class="num">31,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀není</div></div>
+        <div class="num">31,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀není</div><div class="alpha2-eq t-sky">Ọgbọ̀nEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-32e3" data-record-id="oyn-v-32e3">
-        <div class="num">32,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀néjì</div></div>
+        <div class="num">32,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀néjì</div><div class="alpha2-eq t-sky">Ọgbọ̀nÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-33e3" data-record-id="oyn-v-33e3">
-        <div class="num">33,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́ta</div></div>
+        <div class="num">33,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́ta</div><div class="alpha2-eq t-sky">Ọgbọ̀nẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-34e3" data-record-id="oyn-v-34e3">
-        <div class="num">34,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́rin</div></div>
+        <div class="num">34,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́rin</div><div class="alpha2-eq t-sky">Ọgbọ̀nẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-35e3" data-record-id="oyn-v-35e3">
-        <div class="num">35,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nárǔn</div></div>
+        <div class="num">35,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nárǔn</div><div class="alpha2-eq t-sky">Ọgbọ̀nÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-36e3" data-record-id="oyn-v-36e3">
-        <div class="num">36,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́fà</div></div>
+        <div class="num">36,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́fà</div><div class="alpha2-eq t-sky">Ọgbọ̀nẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-37e3" data-record-id="oyn-v-37e3">
-        <div class="num">37,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀néje</div></div>
+        <div class="num">37,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀néje</div><div class="alpha2-eq t-sky">Ọgbọ̀nÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-38e3" data-record-id="oyn-v-38e3">
-        <div class="num">38,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́jọ</div></div>
+        <div class="num">38,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́jọ</div><div class="alpha2-eq t-sky">Ọgbọ̀nẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-39e3" data-record-id="oyn-v-39e3">
-        <div class="num">39,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́sǎn</div></div>
+        <div class="num">39,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọgbọ̀nẹ́sǎn</div><div class="alpha2-eq t-sky">Ọgbọ̀nẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgbọ̀nẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgbọ̀nẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgbọ̀nẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 40,000-49,000 -->
       <div class="sub-header c-sky">40,000-49,000</div>
       <div class="card-grid">
         <div class="num-card b-sky" id="oyn-v-4e4" data-record-id="oyn-v-4e4">
-        <div class="num">40,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójì</div><div class="alpha2-eq t-sky">Ogójì·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">40,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójì</div><div class="alpha2-eq t-sky">Ogójì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ogójì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ogójì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ogójì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-41e3" data-record-id="oyn-v-41e3">
-        <div class="num">41,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìení</div></div>
+        <div class="num">41,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìení</div><div class="alpha2-eq t-sky">OgójìEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-42e3" data-record-id="oyn-v-42e3">
-        <div class="num">42,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìéjì</div></div>
+        <div class="num">42,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìéjì</div><div class="alpha2-eq t-sky">OgójìÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-43e3" data-record-id="oyn-v-43e3">
-        <div class="num">43,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́ta</div></div>
+        <div class="num">43,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́ta</div><div class="alpha2-eq t-sky">OgójìẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-44e3" data-record-id="oyn-v-44e3">
-        <div class="num">44,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́rin</div></div>
+        <div class="num">44,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́rin</div><div class="alpha2-eq t-sky">OgójìẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-45e3" data-record-id="oyn-v-45e3">
-        <div class="num">45,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìárǔn</div></div>
+        <div class="num">45,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìárǔn</div><div class="alpha2-eq t-sky">OgójìÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-46e3" data-record-id="oyn-v-46e3">
-        <div class="num">46,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́fà</div></div>
+        <div class="num">46,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́fà</div><div class="alpha2-eq t-sky">OgójìẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-47e3" data-record-id="oyn-v-47e3">
-        <div class="num">47,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìéje</div></div>
+        <div class="num">47,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìéje</div><div class="alpha2-eq t-sky">OgójìÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-48e3" data-record-id="oyn-v-48e3">
-        <div class="num">48,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́jọ</div></div>
+        <div class="num">48,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́jọ</div><div class="alpha2-eq t-sky">OgójìẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-49e3" data-record-id="oyn-v-49e3">
-        <div class="num">49,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́sǎn</div></div>
+        <div class="num">49,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ógójìẹ́sǎn</div><div class="alpha2-eq t-sky">OgójìẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">OgójìẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">OgójìẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">OgójìẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 50,000-59,000 -->
       <div class="sub-header c-sky">50,000-59,000</div>
       <div class="card-grid">
         <div class="num-card b-sky" id="oyn-v-5e4" data-record-id="oyn-v-5e4">
-        <div class="num">50,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́ta</div><div class="alpha2-eq t-sky">Àádọ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">50,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́ta</div><div class="alpha2-eq t-sky">Àádọ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-51e3" data-record-id="oyn-v-51e3">
-        <div class="num">51,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taení</div></div>
+        <div class="num">51,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taení</div><div class="alpha2-eq t-sky">Àádọ́taEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-52e3" data-record-id="oyn-v-52e3">
-        <div class="num">52,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taéjì</div></div>
+        <div class="num">52,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taéjì</div><div class="alpha2-eq t-sky">Àádọ́taÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-53e3" data-record-id="oyn-v-53e3">
-        <div class="num">53,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́ta</div></div>
+        <div class="num">53,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́ta</div><div class="alpha2-eq t-sky">Àádọ́taẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-54e3" data-record-id="oyn-v-54e3">
-        <div class="num">54,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́rin</div></div>
+        <div class="num">54,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́rin</div><div class="alpha2-eq t-sky">Àádọ́taẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-55e3" data-record-id="oyn-v-55e3">
-        <div class="num">55,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taárǔn</div></div>
+        <div class="num">55,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taárǔn</div><div class="alpha2-eq t-sky">Àádọ́taÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-56e3" data-record-id="oyn-v-56e3">
-        <div class="num">56,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́fà</div></div>
+        <div class="num">56,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́fà</div><div class="alpha2-eq t-sky">Àádọ́taẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-57e3" data-record-id="oyn-v-57e3">
-        <div class="num">57,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taéje</div></div>
+        <div class="num">57,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taéje</div><div class="alpha2-eq t-sky">Àádọ́taÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-58e3" data-record-id="oyn-v-58e3">
-        <div class="num">58,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́jọ</div></div>
+        <div class="num">58,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́jọ</div><div class="alpha2-eq t-sky">Àádọ́taẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-59e3" data-record-id="oyn-v-59e3">
-        <div class="num">59,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́sǎn</div></div>
+        <div class="num">59,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́taẹ́sǎn</div><div class="alpha2-eq t-sky">Àádọ́taẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́taẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́taẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́taẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 60,000-69,000 -->
       <div class="sub-header c-sky">60,000-69,000</div>
       <div class="card-grid">
         <div class="num-card b-sky" id="oyn-v-6e4" data-record-id="oyn-v-6e4">
-        <div class="num">60,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́ta</div><div class="alpha2-eq t-sky">Ọgọ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">60,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́ta</div><div class="alpha2-eq t-sky">Ọgọ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-61e3" data-record-id="oyn-v-61e3">
-        <div class="num">61,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taení</div></div>
+        <div class="num">61,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taení</div><div class="alpha2-eq t-sky">Ọgọ́taEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-62e3" data-record-id="oyn-v-62e3">
-        <div class="num">62,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taéjì</div></div>
+        <div class="num">62,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taéjì</div><div class="alpha2-eq t-sky">Ọgọ́taÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-63e3" data-record-id="oyn-v-63e3">
-        <div class="num">63,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́ta</div></div>
+        <div class="num">63,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́ta</div><div class="alpha2-eq t-sky">Ọgọ́taẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-64e3" data-record-id="oyn-v-64e3">
-        <div class="num">64,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́rin</div></div>
+        <div class="num">64,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́rin</div><div class="alpha2-eq t-sky">Ọgọ́taẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-65e3" data-record-id="oyn-v-65e3">
-        <div class="num">65,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taárǔn</div></div>
+        <div class="num">65,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taárǔn</div><div class="alpha2-eq t-sky">Ọgọ́taÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-66e3" data-record-id="oyn-v-66e3">
-        <div class="num">66,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́fà</div></div>
+        <div class="num">66,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́fà</div><div class="alpha2-eq t-sky">Ọgọ́taẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-67e3" data-record-id="oyn-v-67e3">
-        <div class="num">67,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taéje</div></div>
+        <div class="num">67,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taéje</div><div class="alpha2-eq t-sky">Ọgọ́taÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-68e3" data-record-id="oyn-v-68e3">
-        <div class="num">68,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́jọ</div></div>
+        <div class="num">68,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́jọ</div><div class="alpha2-eq t-sky">Ọgọ́taẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-69e3" data-record-id="oyn-v-69e3">
-        <div class="num">69,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́sǎn</div></div>
+        <div class="num">69,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́taẹ́sǎn</div><div class="alpha2-eq t-sky">Ọgọ́taẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́taẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́taẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́taẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 70,000-79,000 -->
       <div class="sub-header c-sky">70,000-79,000</div>
       <div class="card-grid">
         <div class="num-card b-sky" id="oyn-v-7e4" data-record-id="oyn-v-7e4">
-        <div class="num">70,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rin</div><div class="alpha2-eq t-sky">Àádọ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">70,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rin</div><div class="alpha2-eq t-sky">Àádọ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-71e3" data-record-id="oyn-v-71e3">
-        <div class="num">71,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinení</div></div>
+        <div class="num">71,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinení</div><div class="alpha2-eq t-sky">Àádọ́rinEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-72e3" data-record-id="oyn-v-72e3">
-        <div class="num">72,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinéjì</div></div>
+        <div class="num">72,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinéjì</div><div class="alpha2-eq t-sky">Àádọ́rinÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-73e3" data-record-id="oyn-v-73e3">
-        <div class="num">73,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́ta</div></div>
+        <div class="num">73,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́ta</div><div class="alpha2-eq t-sky">Àádọ́rinẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-74e3" data-record-id="oyn-v-74e3">
-        <div class="num">74,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́rin</div></div>
+        <div class="num">74,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́rin</div><div class="alpha2-eq t-sky">Àádọ́rinẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-75e3" data-record-id="oyn-v-75e3">
-        <div class="num">75,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinárǔn</div></div>
+        <div class="num">75,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinárǔn</div><div class="alpha2-eq t-sky">Àádọ́rinÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-76e3" data-record-id="oyn-v-76e3">
-        <div class="num">76,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́fà</div></div>
+        <div class="num">76,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́fà</div><div class="alpha2-eq t-sky">Àádọ́rinẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-77e3" data-record-id="oyn-v-77e3">
-        <div class="num">77,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinéje</div></div>
+        <div class="num">77,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinéje</div><div class="alpha2-eq t-sky">Àádọ́rinÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-78e3" data-record-id="oyn-v-78e3">
-        <div class="num">78,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́jọ</div></div>
+        <div class="num">78,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́jọ</div><div class="alpha2-eq t-sky">Àádọ́rinẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-79e3" data-record-id="oyn-v-79e3">
-        <div class="num">79,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́sǎn</div></div>
+        <div class="num">79,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rinẹ́sǎn</div><div class="alpha2-eq t-sky">Àádọ́rinẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rinẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rinẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rinẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 80,000-89,000 -->
       <div class="sub-header c-sky">80,000-89,000</div>
       <div class="card-grid">
         <div class="num-card b-sky" id="oyn-v-8e4" data-record-id="oyn-v-8e4">
-        <div class="num">80,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rin</div><div class="alpha2-eq t-sky">Ọgọ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">80,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rin</div><div class="alpha2-eq t-sky">Ọgọ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-81e3" data-record-id="oyn-v-81e3">
-        <div class="num">81,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinení</div></div>
+        <div class="num">81,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinení</div><div class="alpha2-eq t-sky">Ọgọ́rinEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-82e3" data-record-id="oyn-v-82e3">
-        <div class="num">82,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinéjì</div></div>
+        <div class="num">82,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinéjì</div><div class="alpha2-eq t-sky">Ọgọ́rinÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-83e3" data-record-id="oyn-v-83e3">
-        <div class="num">83,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́ta</div></div>
+        <div class="num">83,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́ta</div><div class="alpha2-eq t-sky">Ọgọ́rinẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-84e3" data-record-id="oyn-v-84e3">
-        <div class="num">84,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́rin</div></div>
+        <div class="num">84,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́rin</div><div class="alpha2-eq t-sky">Ọgọ́rinẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-85e3" data-record-id="oyn-v-85e3">
-        <div class="num">85,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinárǔn</div></div>
+        <div class="num">85,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinárǔn</div><div class="alpha2-eq t-sky">Ọgọ́rinÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-86e3" data-record-id="oyn-v-86e3">
-        <div class="num">86,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́fà</div></div>
+        <div class="num">86,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́fà</div><div class="alpha2-eq t-sky">Ọgọ́rinẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-87e3" data-record-id="oyn-v-87e3">
-        <div class="num">87,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinéje</div></div>
+        <div class="num">87,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinéje</div><div class="alpha2-eq t-sky">Ọgọ́rinÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-88e3" data-record-id="oyn-v-88e3">
-        <div class="num">88,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́jọ</div></div>
+        <div class="num">88,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́jọ</div><div class="alpha2-eq t-sky">Ọgọ́rinẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-89e3" data-record-id="oyn-v-89e3">
-        <div class="num">89,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́sǎn</div></div>
+        <div class="num">89,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rinẹ́sǎn</div><div class="alpha2-eq t-sky">Ọgọ́rinẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Ọgọ́rinẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Ọgọ́rinẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Ọgọ́rinẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       
       <!-- 90,000-99,000 -->
       <div class="sub-header c-sky">90,000-99,000</div>
       <div class="card-grid-3">
         <div class="num-card b-sky" id="oyn-v-9e4" data-record-id="oyn-v-9e4">
-        <div class="num">90,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔn</div><div class="alpha2-eq t-sky">Àádọ́rǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">90,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔn</div><div class="alpha2-eq t-sky">Àádọ́rǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-91e3" data-record-id="oyn-v-91e3">
-        <div class="num">91,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnení</div></div>
+        <div class="num">91,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnení</div><div class="alpha2-eq t-sky">Àádọ́rǔnEní·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnEní·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnEní·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnEní·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-92e3" data-record-id="oyn-v-92e3">
-        <div class="num">92,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnéjì</div></div>
+        <div class="num">92,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnéjì</div><div class="alpha2-eq t-sky">Àádọ́rǔnÉjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnÉjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnÉjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnÉjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-93e3" data-record-id="oyn-v-93e3">
-        <div class="num">93,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́ta</div></div>
+        <div class="num">93,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́ta</div><div class="alpha2-eq t-sky">Àádọ́rǔnẸ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnẸ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnẸ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnẸ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-94e3" data-record-id="oyn-v-94e3">
-        <div class="num">94,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́rin</div></div>
+        <div class="num">94,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́rin</div><div class="alpha2-eq t-sky">Àádọ́rǔnẸ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnẸ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnẸ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnẸ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-95e3" data-record-id="oyn-v-95e3">
-        <div class="num">95,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnárǔn</div></div>
+        <div class="num">95,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnárǔn</div><div class="alpha2-eq t-sky">Àádọ́rǔnÁrǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnÁrǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnÁrǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnÁrǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-96e3" data-record-id="oyn-v-96e3">
-        <div class="num">96,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́fà</div></div>
+        <div class="num">96,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́fà</div><div class="alpha2-eq t-sky">Àádọ́rǔnẸ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnẸ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnẸ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnẸ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-97e3" data-record-id="oyn-v-97e3">
-        <div class="num">97,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnéje</div></div>
+        <div class="num">97,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnéje</div><div class="alpha2-eq t-sky">Àádọ́rǔnÉje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnÉje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnÉje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnÉje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-sky" id="oyn-v-98e3" data-record-id="oyn-v-98e3">
-        <div class="num">98,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́jọ</div></div>
+        <div class="num">98,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́jọ</div><div class="alpha2-eq t-sky">Àádọ́rǔnẸ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnẸ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnẸ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnẸ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
       <div style="display: flex; justify-content: center; margin-bottom: 20px;">
         <div class="num-card b-sky" id="oyn-v-99e3" data-record-id="oyn-v-99e3">
-        <div class="num">99,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́sǎn</div></div>
+        <div class="num">99,000</div><div class="word t-sky">Ẹgbẹ̀rǔn<span class="l-mult">l</span>âádọ́rǔnẹ́sǎn</div><div class="alpha2-eq t-sky">Àádọ́rǔnẸ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-sky">Àádọ́rǔnẸ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-sky">Àádọ́rǔnẸ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-sky">Àádọ́rǔnẸ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
 
       <!-- ═══════════════════════════════════════════════════════════════ -->
@@ -3822,23 +3858,23 @@
       <div class="section-title c-golden">🟡 ẸGBẸ̀RǓNLỌ́GỌ́RǓN — Hundreds of Thousands (100,000-900,000)</div>
       <div class="card-grid">
         <div class="num-card b-golden" id="oyn-v-1e5" data-record-id="oyn-v-1e5">
-        <div class="num">100,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</div><div class="alpha2-eq t-golden">Ọgọ́rǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">100,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn</div><div class="alpha2-eq t-golden">Ọgọ́rǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-golden" id="oyn-v-2e5" data-record-id="oyn-v-2e5">
-        <div class="num">200,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>éjì</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éjì·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">200,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>éjì</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éjì·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éjì·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éjì·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éjì·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-golden" id="oyn-v-3e5" data-record-id="oyn-v-3e5">
-        <div class="num">300,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́ta</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">300,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́ta</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́ta·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́ta·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́ta·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́ta·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-golden" id="oyn-v-4e5" data-record-id="oyn-v-4e5">
-        <div class="num">400,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́rin</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">400,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́rin</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́rin·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́rin·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́rin·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́rin·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-golden" id="oyn-v-5e5" data-record-id="oyn-v-5e5">
-        <div class="num">500,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>árǔn</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>árǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">500,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>árǔn</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>árǔn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>árǔn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>árǔn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>árǔn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-golden" id="oyn-v-6e5" data-record-id="oyn-v-6e5">
-        <div class="num">600,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́fà</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">600,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́fà</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́fà·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́fà·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́fà·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́fà·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-golden" id="oyn-v-7e5" data-record-id="oyn-v-7e5">
-        <div class="num">700,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>éje</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éje·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">700,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>éje</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éje·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éje·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éje·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>éje·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-golden" id="oyn-v-8e5" data-record-id="oyn-v-8e5">
-        <div class="num">800,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́jọ</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">800,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́jọ</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́jọ·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́jọ·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́jọ·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́jọ·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
         <div class="num-card b-golden" id="oyn-v-9e5" data-record-id="oyn-v-9e5">
-        <div class="num">900,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́sǎn</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div></div>
+        <div class="num">900,000</div><div class="word t-golden">Ẹgbẹ̀rǔn<span class="l-mult">l</span>ọ́gọ́rǔn<span class="l-mult">l</span>ẹ́sǎn</div><div class="alpha2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́sǎn·(<span class="pulse">ā</span>)<sup>ení</sup></div><div class="harmonic-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́sǎn·(<span class="pulse">ǣ</span>)<sup>ení</sup></div><div class="gpulse-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́sǎn·(<span class="pulse">ḡ</span>)<sup>ení</sup></div><div class="hyper2-eq t-golden">Ọgọ́rǔn<span class="l-mult">l</span>ẹ́sǎn·(<span class="pulse">ȳ</span>)<sup>ení</sup></div></div>
       </div>
 
       <!-- ═══════════════════════════════════════════════════════════════ -->
@@ -11846,7 +11882,7 @@
 <h2 class="ln-h2">Àtẹ Ìtàn Ìnfínitì — The Master Hierarchy of Numbers</h2>
 <div class="p05-caption" style="--tier:#4682B4; --tier-tint:rgba(70,130,180,0.22);"><span class="sc-tier">Master Hierarchy</span> The full hierarchy at a glance — finite, transfinite, absolute — the indigenous ladder that mirrors the universal structure of mathematics itself.</div>
 <div class="themed-copy" style="--tier:#4682B4; --tier-tint:rgba(70,130,180,0.22);">
-<p style="margin:0cm;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;line-height:150%;"><span style="font-size:15px;line-height:150%;font-family:Calibri;">From the countable to the uncountable, from the computable to the forbidden — this master table charts every landmark in the landscape of mathematical magnitude, each rendered in the living tradition of <strong>Ònka Yorùbá</strong>. Colour bands reveal the journey: <span style="color:rgb(4,100,34);font-weight:bold;">Blue&nbsp;=&nbsp;Finite</span> &nbsp;|&nbsp; <span style="color:rgb(0,80,130);font-weight:bold;">Green&nbsp;=&nbsp;Infinite</span> &nbsp;|&nbsp; <span style="color:rgb(168,16,16);font-weight:bold;">Rose&nbsp;=&nbsp;Large Cardinals</span> &nbsp;|&nbsp; <span style="color:rgb(138,92,0);font-weight:bold;">Gold&nbsp;=&nbsp;Forbidden &amp; Philosophical</span>.</span></p>
+<p style="margin:0cm;font-size:16px;font-family:&quot;Times New Roman&quot;,serif;line-height:150%;"><span style="font-size:15px;line-height:150%;font-family:Calibri;">From the countable to the uncountable, from the computable to the forbidden — this master table charts every landmark in the landscape of mathematical magnitude, each rendered in the living tradition of <strong>Ònkà Yorùbá</strong>. Colour bands reveal the journey: <span style="color:rgb(4,100,34);font-weight:bold;">Blue&nbsp;=&nbsp;Finite</span> &nbsp;|&nbsp; <span style="color:rgb(0,80,130);font-weight:bold;">Green&nbsp;=&nbsp;Infinite</span> &nbsp;|&nbsp; <span style="color:rgb(168,16,16);font-weight:bold;">Rose&nbsp;=&nbsp;Large Cardinals</span> &nbsp;|&nbsp; <span style="color:rgb(138,92,0);font-weight:bold;">Gold&nbsp;=&nbsp;Forbidden &amp; Philosophical</span>.</span></p>
 </div>
 <table style="margin-left:-0.25pt;border-collapse:collapse;border:none;width:100%;"> <tbody>
  <tr><td style="background:rgb(30, 144, 255);color:white;font-weight:bold;font-family:Calibri," segoe="" ui="" emoji",sans-serif;font-size:14px;padding:5pt="" 5.4pt;vertical-align:top;"="">Yorùbá hyper²</td><td style="width:12%;background:rgb(30, 144, 255);color:white;font-weight:bold;font-family:Calibri," segoe="" ui="" emoji",sans-serif;font-size:14px;padding:5pt="" 5.4pt;vertical-align:top;"="">English Name</td><td style="width:9.45%;background:rgb(30, 144, 255);color:white;font-weight:bold;font-family:Calibri," segoe="" ui="" emoji",sans-serif;font-size:14px;padding:5pt="" 5.4pt;vertical-align:top;"="">Value / Symbol</td><td style="width:12.15%;background:rgb(30, 144, 255);color:white;font-weight:bold;font-family:Calibri," segoe="" ui="" emoji",sans-serif;font-size:14px;padding:5pt="" 5.4pt;vertical-align:top;text-align:center;"="">Category</td><td style="background:rgb(30, 144, 255);color:white;font-weight:bold;font-family:Calibri," segoe="" ui="" emoji",sans-serif;font-size:14px;padding:5pt="" 5.4pt;vertical-align:top;"="">Description</td> </tr>
@@ -11885,7 +11921,7 @@
 
       </div>
 
-      <div style="overflow-x:auto; margin-top:8px;" class="p00-text-sections">
+      <div style="overflow-x:auto; margin-top:8px;" class="p00-text-sections pre-bridge">
 <h2 class="ln-h2">Scientific Applications</h2>
 <div class="p05-caption" style="--tier:#16A34A; --tier-tint:rgba(22,163,74,0.22);"><span class="sc-tier">Working Prototype</span> This framework enables any indigenous language to express quantum mechanics, cosmology, cryptography, combinatorics and computational theory — in its own ancestral tongue.</div>
 <div class="themed-copy" style="--tier:#16A34A; --tier-tint:rgba(22,163,74,0.22);">
@@ -12005,7 +12041,7 @@
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
 
-<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<section class="osp-wrap" aria-label="Ònkà Yorùbá Scholarly Reference Panels">
 <style>
 /* ══════════════════════════════════════════════════════════════
    GLASSMORPHISM NEON — Scholarly Reference Section
@@ -12163,14 +12199,14 @@
   <div class="osp-card">
     <span class="osp-icon">🔑</span>
     <div class="osp-label">Research Classification Framework</div>
-    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
+    <table class="osp-keytbl" aria-label="Column guide for Ònkà Yorùbá tables">
       <tbody><tr>
         <td class="osp-ksym">Symbol</td>
         <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
       </tr>
       <tr>
         <td class="osp-ksym">Name</td>
-        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
+        <td class="osp-kdesc">Official Ònkà Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
       </tr>
       <tr>
         <td class="osp-ksym">Scale</td>
@@ -12255,10 +12291,9 @@
       const progressBar = document.getElementById('scrollProgress');
       const topBtn = document.getElementById('backToTop');
 
-            document.querySelectorAll('.num-card').forEach(card => {
-                const arabicNumber = card.querySelector(':scope > .num');
-                if (arabicNumber) arabicNumber.style.color = getComputedStyle(card).borderLeftColor;
-            });
+            // Read every card colour first, then write them all: one style pass instead of 1,540.
+            const numColours = [...document.querySelectorAll('.num-card')].map(card => [card.querySelector(':scope > .num'), getComputedStyle(card).borderLeftColor]);
+            numColours.forEach(([arabicNumber, colour]) => { if (arabicNumber) arabicNumber.style.color = colour; });
 
             if (progressBar && topBtn) {
                 let scrollTicking = false;
@@ -12286,6 +12321,22 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
+    </script>
+
+    <script>
+      // --- Pause endless decorative animations while they are off-screen ---
+      // They look identical on screen; off-screen they stop using the phone's processor and battery.
+      if ('IntersectionObserver' in window && document.getAnimations) {
+        window.addEventListener('load', () => {
+          const animated = new Set(document.getAnimations()
+            .filter((a) => a.animationName && a.effect && a.effect.target && a.effect.getTiming().iterations === Infinity)
+            .map((a) => a.effect.target));
+          const watcher = new IntersectionObserver((entries) => {
+            for (const entry of entries) entry.target.classList.toggle('anim-offscreen', !entry.isIntersecting);
+          }, { rootMargin: '200px 0px' });
+          animated.forEach((element) => watcher.observe(element));
+        });
+      }
     </script>
 
 </div></body></html>

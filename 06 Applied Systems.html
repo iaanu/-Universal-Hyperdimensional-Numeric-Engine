@@ -5,8 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Applied Systems | Universal Hyperdimensional Numeric Engine</title>
   
+  <!-- Fonts load in the background so the page appears at once; text switches to these fonts as they arrive. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </noscript>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
     
         .menu-bar {
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -535,17 +543,15 @@
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
+        left: -50%;
         width: 50%;
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
         animation: shimmerSweep 4s ease-in-out infinite;
         pointer-events: none;
     }
-    @keyframes shimmerSweep {
-        0% { left: -50%; }
-        100% { left: 150%; }
-    }
+    /* Moved with transform (handled by the graphics chip) instead of left: same path, from -50% to 150% of the bar. */
+    @keyframes shimmerSweep { 0% { transform: translateX(0); } 100% { transform: translateX(400%); } }
 
     /* --- Back-to-Top Button --- */
     .back-to-top {
@@ -1079,8 +1085,8 @@
         background: #BFE6FF;
       }
     .applied-section-bridge + .practice-jump-section { margin-top: 0; }
-    .practice-jump-section:has(+ .applied-section-bridge) { margin-bottom: 0; }
-    #mainTable:has(~ .applied-section-bridge) { margin-bottom: 0; }
+    .practice-jump-section.pre-applied-bridge { margin-bottom: 0; }
+    #mainTable.pre-applied-bridge { margin-bottom: 0; }
     .practice-jump-stage {
         background: linear-gradient(135deg, #07182b 0%, #0f3460 42%, #1E8CB8 100%);
         border: 1px solid rgba(255,215,0,0.35);
@@ -1818,7 +1824,7 @@
   <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
+   ÒNKÀ YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
    Ètò Àwọ̀ OgójìÉje
    --------------------------------------------------------------------
    THE SOVEREIGN COLOUR LAW
@@ -2507,7 +2513,7 @@
 </script>
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
+   ÒNKÀ YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
    --------------------------------------------------------------------
    Three variants share the same 47-Sovereign tier identity but serve
    different attention modes. Rotating them down a page keeps curiosity
@@ -2521,7 +2527,6 @@
      V3 (open) → V1 (calm) → V2 (browse) → V3 (close)
    ════════════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Yoruba-text classes (v1-yor, v2-tile-yor, v3-spot-yor, v3-sib-y) are
    routed to Gentium Plus first because Fraunces lacks the OpenType GPOS
@@ -2936,7 +2941,7 @@
 </style>
   <script>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · BORDER-HARMONY RANDOMISER
+   ÒNKÀ YORÙBÁ · BORDER-HARMONY RANDOMISER
    --------------------------------------------------------------------
    Sprinkles one of five tier-aware border skins onto every
    `.v1-card`, `.v2-tile`, and `.v3-spot` on the page so the visual
@@ -3083,19 +3088,39 @@
     .colour-bar-animated.body-research-bridge.about-research-bridge::before,
     .colour-bar-animated.body-research-bridge.world-research-bridge::before,
     .colour-bar-animated.body-research-bridge.soft-ice-research-bridge::before { background: #bfe6ff; animation: none; }
-    :where(div, section):has(+ .body-research-bridge) { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-    :where(div, section):has(+ .body-research-bridge) > :last-child { margin-bottom: 0 !important; }
-    .bk-feature:has(+ script + .body-research-bridge) { padding-bottom: 0 !important; }
+    .pre-bridge { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+    .pre-bridge > :last-child { margin-bottom: 0 !important; }
+    .bk-feature.pre-bridge-feature { padding-bottom: 0 !important; }
     .body-ending-stretch { box-sizing: border-box; width: calc(100% + (2 * var(--body-ending-gutter, 40px))); max-width: none; margin-right: calc(-1 * var(--body-ending-gutter, 40px)) !important; margin-left: calc(-1 * var(--body-ending-gutter, 40px)) !important; }
     @media (max-width: 880px) {
       .body-ending-stretch.products-ending-stretch { --body-ending-gutter: 18px; }
     }
     @keyframes bridgeLights { from { opacity: 0.58; transform: translateX(-1.5%); } to { opacity: 0.9; transform: translateX(1.5%); } }
-    @keyframes bridgeSweep { 0%, 12% { left: -35%; opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { left: 107%; opacity: 0; } }
+    /* Same path as before (the 28%-wide sheen travels from -35% to 107% of the bar = 507.142857% of its own width), moved with transform. */
+    @keyframes bridgeSweep { 0%, 12% { transform: translateX(0); opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { transform: translateX(507.142857%); opacity: 0; } }
     @media (prefers-reduced-motion: reduce) {
       .colour-bar-animated.body-research-bridge::before,
       .colour-bar-animated.body-research-bridge::after { animation: none; }
     }
+  </style>
+  <style>
+    /* Speed: endless decorative animations pause while off-screen (class set by the script at the end of the page). */
+    .anim-offscreen, .anim-offscreen::before, .anim-offscreen::after { animation-play-state: paused !important; }
+  </style>
+  <script>
+    /* Speed: run a scroll handler at most once per screen refresh. */
+    function onScrollFrame(fn) { let queued = 0; return () => { if (queued) return; queued = requestAnimationFrame(() => { queued = 0; fn(); }); }; }
+  </script>
+  <style>
+    /* Speed: the header's moving gradient slides on its own layer (moved by the graphics chip) instead of being repainted every frame.
+       Same colours and the same 8-second path: the 300%-wide gradient travels two header-widths to the left and back. */
+    :root .header, :root .header-section { position: relative; isolation: isolate; overflow: hidden; animation: none; }
+    :root .header::before, :root .header-section::before {
+      content: ''; position: absolute; z-index: -1; top: -100%; left: 0; width: 300%; height: 300%;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 33%, #1E8CB8 66%, #27BCED 100%);
+      animation: headerGlide 8s ease-in-out infinite; pointer-events: none;
+    }
+    @keyframes headerGlide { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-66.666667%); } }
   </style>
 </head>
 <body>
@@ -3127,9 +3152,9 @@
         </div>
         <div style="flex:0 0 auto; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:10px 24px;">
             <div style="background:#1a1a2e; border-radius:18px; padding:14px 12px; display:flex; flex-direction:column; align-items:center; gap:10px; box-shadow:0 8px 32px rgba(0,0,0,0.4); border:3px solid #333;">
-                <img src="Red.jpg" alt="Red Light" style="width:70px; height:70px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 0 20px 8px rgba(238,0,0,0.6);">
-                <img src="Yellow.jpg" alt="Yellow Light" style="width:70px; height:70px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 0 20px 8px rgba(255,215,0,0.6);">
-                <img src="Green.jpg" alt="Green Light" style="width:70px; height:70px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 0 20px 8px rgba(0,204,0,0.6);">
+                <img src="Red-450.jpg" alt="Red Light" loading="lazy" decoding="async" style="width:70px; height:70px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 0 20px 8px rgba(238,0,0,0.6);">
+                <img src="Yellow-450.jpg" alt="Yellow Light" loading="lazy" decoding="async" style="width:70px; height:70px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 0 20px 8px rgba(255,215,0,0.6);">
+                <img src="Green-450.jpg" alt="Green Light" loading="lazy" decoding="async" style="width:70px; height:70px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 0 20px 8px rgba(0,204,0,0.6);">
             </div>
         </div>
     </div>
@@ -3192,10 +3217,10 @@
         <p style="font-size:1.15rem;"><strong>The Applied Systems module is the platform&rsquo;s deployment and validation layer.</strong> It converts canonical records, scaling rules, and equation outputs into visual, vocal, pedagogical, and software-facing interfaces. Each implementation is evaluated against measurable outcomes: can a user identify the tier, preserve numeric equivalence, recover the source form, and correct an error without losing position? The Orchestral Rainbow Highway Traffic is the principal Yorùbá implementation of this application contract. Because its multisensory features make magnitude families approachable through guided exploration, learners have informally nicknamed it <strong>&ldquo;The Magnitude Toy.&rdquo;</strong> In educational terms, it functions as an <strong>interactive digital mathematical manipulative</strong>: a playful learner-facing interface supported by rigorous numerical architecture.</p>
       <p><strong>Expressive Numeracy</strong> treats magnitude not only as an abstract quantity to calculate, but as a structure that can be seen, spoken, heard, remembered, moved with, and eventually expressed creatively. The learning field expands through <strong>recognition &rarr; repetition &rarr; internalisation &rarr; expression &rarr; discovery</strong>: the Magnitude Toy provides guided discovery, <strong>Nonstop Magnitude Jam</strong> provides continuous rhythmic rehearsal, and the Yorùbá Talking Drum provides an advanced, learner-directed environment for musical exploration.</p>
       <p>In Nonstop Magnitude Jam, a learner selects an available principal magnitude and the application repeats that human voice-and-drum recording through one uninterrupted native media loop. The approach supports voluntary listening, movement, recitation, pronunciation practice, pattern familiarity, and recall without adding synthetic accompaniment or replacing deliberate mathematical instruction. Learners who want greater creative freedom can then use the Talking Drum as a backing environment: choosing magnitude-mapped keys and drum variations, pressing Play, and shaping the performance through faders, Mute/Solo, Reverb, Delay, Compression, and EQ. This progression opens a path from following the structure to discovering what the learner can create with it; it does not prescribe a fixed mastery outcome. Its effects on mastery rate and long-term retention remain appropriate subjects for classroom and usability study.</p>
-        <h3 style="color:#1E8CB8; margin-top:24px;">1. Compression Benchmark: 900 Zeros vs. 287 Pulses</h3>
+        <h3 style="color:#1E8CB8; margin-top:24px;">1. Compression Benchmark: 903 Zeros vs. 287 Pulses</h3>
         <p>This benchmark compares literal zero scanning with triadic Pulse navigation over the same magnitude range.</p>
         <ul>
-            <li><strong>Input burden:</strong> Literal notation exposes <strong>900 zero positions</strong> across the documented range.</li>
+            <li><strong>Input burden:</strong> Literal notation exposes <strong>903 zero positions</strong> across the full 44-row jump, from Zero to Tredecillions (900 from Thousands to Tredecillions, the range used by the magnitude learning apps).</li>
             <li><strong>Transformation:</strong> The 1:3 Ratio Engine groups every three decimal positions into one gear step, represented by <strong>287 Neon Pink "g" Pulses</strong>.</li>
             <li><strong>Validation target:</strong> Readers should identify the same magnitude with fewer visual units while preserving exact correspondence to 10<sup>3n</sup>. Timing and cognitive-load claims require controlled user testing.</li>
         </ul>
@@ -3418,7 +3443,7 @@
     <div class="joy-engine-signature" aria-label="Powered by the Joy Engine">😂 <span>Powered by the Joy Engine™</span></div>
 
     <!-- Table -->
-    <table id="mainTable">
+    <table class="pre-applied-bridge" id="mainTable">
         <tbody id="tableBody"></tbody>
     </table>
 
@@ -3512,10 +3537,10 @@ function chordHTML(b,i){
 /* Running totals */
 let runG=0, runZ=0;
 
-const TIMG={head:'Red.jpg',arm:'Yellow.jpg',leg:'Green.jpg'};
+const TIMG={head:'Red-450.jpg',arm:'Yellow-450.jpg',leg:'Green-450.jpg'};
 function jHTML(b,i){
     const c=JUMP_C[b];
-    const img=`<img class="traffic-img" src="${TIMG[b]}" alt="${b} traffic light">`;
+    const img=`<img class="traffic-img" src="${TIMG[b]}" alt="${b} traffic light" loading="lazy" decoding="async">`;
     if(i<4) return `<span class="jump-italic" style="color:${c}">READY STEADY</span> <span class="jump-bold" style="color:${c}">UMP JUMP JUMP</span>${img}`;
     if(b==='head') return `<span class="jump-italic" style="color:${c}">READY</span> <span class="jump-bold" style="color:${c}">JUMP</span>${img}`;
     if(b==='arm') return `<span class="jump-italic" style="color:${c}">STEADY</span> <span class="jump-bold" style="color:${c}">JUMP</span>${img}`;
@@ -3668,7 +3693,8 @@ function gearStatusHTML(i){
     const gear=gChains(i);
     return `<span class="gear-status">${gearOrdinal(gear)} gear of the <span class="gear-drive">&quot;l&quot;</span> Drive</span>`;
 }
-function swatchNumber(i){ return i===0?'0':String(i); }
+// Numbers follow The 47 Canonical Sovereign Colours chart: Zero is 1, Tredecillions is 44 (45–47 are the special rows below).
+function swatchNumber(i){ return String(i + 1); }
 function ordinalBadge(label){
     return `<span class="ordinal-badge"><span class="ord-main">${label}</span><span class="ord-sub">Gear</span></span>`;
 }
@@ -3763,7 +3789,7 @@ document.getElementById('tableBody').innerHTML=t;
 </script>
 
   <div class="applied-section-bridge" aria-hidden="true"></div>
-      <section class="practice-jump-section" aria-labelledby="practice-jump-title">
+      <section class="practice-jump-section pre-applied-bridge" aria-labelledby="practice-jump-title">
         <div class="practice-jump-stage">
           <div class="practice-jump-header">
             <span class="practice-jump-kicker">Joy Engine · Learner Run-Through</span>
@@ -3856,7 +3882,7 @@ document.getElementById('tableBody').innerHTML=t;
       </section>
 
       <div class="applied-section-bridge" aria-hidden="true"></div>
-      <section class="practice-jump-section" aria-labelledby="performance-journey-title">
+      <section class="practice-jump-section pre-bridge" aria-labelledby="performance-journey-title">
         <div class="practice-jump-stage">
           <div class="practice-jump-header">
             <span class="practice-jump-kicker">The Joy Engine · 17-Station Emotional Arc</span>
@@ -4044,7 +4070,7 @@ document.getElementById('tableBody').innerHTML=t;
               <div>🥁 PERFORM IT!<br>🤓 → 🫡</div>
               <div>👑 MASTER IT!<br>😇 → 🥹 → 🤩</div>
             </div>
-            <p>The class locks arms and sings the soaring anthem line of the <strong>Òǹkà Yorùbá Theme:</strong></p>
+            <p>The class locks arms and sings the soaring anthem line of the <strong>Ònkà Yorùbá Theme:</strong></p>
             <p class="emotion-arc">🎵 “Kò sẹ́ni kẹ́ni tó le kàá tán o...”</p>
             <p>The Conductor smiles at the room glittering in total stardom (🤩) and declares: <strong>“Mathematics is no longer a silent mountain to climb—it is a radiant, 17-station emotional highway home!”</strong></p>
             <p class="emotion-arc finale-joy-callout"><span class="practice-note-smiley" role="img" aria-label="Joyful celebration">🥳</span><span>COUNT JOYFULLY! Ó TI YÁ! BÁ WA KÁ LỌ!</span></p>
@@ -4102,7 +4128,7 @@ document.getElementById('tableBody').innerHTML=t;
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
 
-<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<section class="osp-wrap" aria-label="Ònkà Yorùbá Scholarly Reference Panels">
 <style>
 /* ══════════════════════════════════════════════════════════════
    GLASSMORPHISM NEON — Scholarly Reference Section
@@ -4260,14 +4286,14 @@ document.getElementById('tableBody').innerHTML=t;
   <div class="osp-card">
     <span class="osp-icon">🔑</span>
     <div class="osp-label">Research Classification Framework</div>
-    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
+    <table class="osp-keytbl" aria-label="Column guide for Ònkà Yorùbá tables">
       <tbody><tr>
         <td class="osp-ksym">Symbol</td>
         <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
       </tr>
       <tr>
         <td class="osp-ksym">Name</td>
-        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
+        <td class="osp-kdesc">Official Ònkà Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
       </tr>
       <tr>
         <td class="osp-ksym">Scale</td>
@@ -4351,26 +4377,42 @@ document.getElementById('tableBody').innerHTML=t;
     <script>
       // --- Scroll Progress Bar ---
       const progressBar = document.getElementById('scrollProgress');
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', onScrollFrame(() => {
         const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
         progressBar.style.width = scrolled + '%';
-      }, { passive: true });
+      }), { passive: true });
 
       // --- Back-to-Top Button ---
       const topBtn = document.getElementById('backToTop');
-      window.addEventListener('scroll', () => {
+      window.addEventListener('scroll', onScrollFrame(() => {
         if (window.scrollY > 600) {
           topBtn.classList.add('visible');
         } else {
           topBtn.classList.remove('visible');
         }
-      }, { passive: true });
+      }), { passive: true });
       topBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
+    </script>
+
+    <script>
+      // --- Pause endless decorative animations while they are off-screen ---
+      // They look identical on screen; off-screen they stop using the phone's processor and battery.
+      if ('IntersectionObserver' in window && document.getAnimations) {
+        window.addEventListener('load', () => {
+          const animated = new Set(document.getAnimations()
+            .filter((a) => a.animationName && a.effect && a.effect.target && a.effect.getTiming().iterations === Infinity)
+            .map((a) => a.effect.target));
+          const watcher = new IntersectionObserver((entries) => {
+            for (const entry of entries) entry.target.classList.toggle('anim-offscreen', !entry.isIntersecting);
+          }, { rootMargin: '200px 0px' });
+          animated.forEach((element) => watcher.observe(element));
+        });
+      }
     </script>
 
 </div></body></html>

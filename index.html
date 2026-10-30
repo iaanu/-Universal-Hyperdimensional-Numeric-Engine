@@ -7,19 +7,26 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>Ònka Yorùbá Sanctuary | Universal Hyperdimensional Numeric Engine</title>
-  <meta name="description" content="The Universal Hyperdimensional Numeric Engine is an open digital research platform for indigenous and language-based numeric systems, founded on Ònka Yorùbá and designed for education, computation, digital humanities, and multilingual knowledge preservation.">
-  <meta name="keywords" content="Universal Hyperdimensional Numeric Engine, indigenous numeral systems, Ònka Yorùbá, Yorùbá numbers, Igbo numbers, Hausa numbers, Akan numbers, Quechua numbers, Māori numbers, Cree numbers, language-independent computation, digital humanities, computational sovereignty, linguistic equity, open educational platform">
+  <title>Ònkà Yorùbá Sanctuary | Universal Hyperdimensional Numeric Engine</title>
+  <meta name="description" content="The Universal Hyperdimensional Numeric Engine is an open digital research platform for indigenous and language-based numeric systems, founded on Ònkà Yorùbá and designed for education, computation, digital humanities, and multilingual knowledge preservation.">
+  <meta name="keywords" content="Universal Hyperdimensional Numeric Engine, indigenous numeral systems, Ònkà Yorùbá, Yorùbá numbers, Igbo numbers, Hausa numbers, Akan numbers, Quechua numbers, Māori numbers, Cree numbers, language-independent computation, digital humanities, computational sovereignty, linguistic equity, open educational platform">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Universal Hyperdimensional Numeric Engine — A Home for the World's Number Systems">
   <meta property="og:description" content="An open digital research platform that gives indigenous and language-based numeric traditions a structured path into modern computation, education, and digital scholarship.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Universal Hyperdimensional Numeric Engine">
-  <meta name="twitter:description" content="An open digital research platform for indigenous numeric systems, founded on Ònka Yorùbá and designed for modern computation, education, and digital humanities.">
+  <meta name="twitter:description" content="An open digital research platform for indigenous numeric systems, founded on Ònkà Yorùbá and designed for modern computation, education, and digital humanities.">
+  <!-- Fonts load in the background so the page appears at once; text switches to these fonts as they arrive. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  </noscript>
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap');
-
     /* ── Yoruba Vocalic System ──
        Noto Sans (humanist sans, modern feel) leads the stack because it
        implements full OpenType GPOS mark / mkmk positioning for combining
@@ -561,16 +568,18 @@
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
+        left: -50%;
         width: 50%;
         height: 100%;
         background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), transparent);
         animation: shimmerSweep 4s ease-in-out infinite;
         pointer-events: none;
     }
+    /* Moves with transform (handled by the graphics chip) instead of left, so it no longer re-lays-out the page every frame.
+       Same path as before: the 50%-wide sheen travels from -50% to 150% of the bar = 400% of its own width. */
     @keyframes shimmerSweep {
-        0% { left: -50%; }
-        100% { left: 150%; }
+        0% { transform: translateX(0); }
+        100% { transform: translateX(400%); }
     }
 
     /* --- Back-to-Top Button --- */
@@ -1041,7 +1050,7 @@
   <meta name="generator" content="Universal Hyperdimensional Numeric Engine">
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
+   ÒNKÀ YORÙBÁ — THE 47-SOVEREIGN COLOUR SYSTEM
    Ètò Àwọ̀ OgójìÉje
    --------------------------------------------------------------------
    THE SOVEREIGN COLOUR LAW
@@ -1730,7 +1739,7 @@
 </script>
   <style>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
+   ÒNKÀ YORÙBÁ · CHILD-FRIENDLY RHYTHM SKIN
    --------------------------------------------------------------------
    Three variants share the same 47-Sovereign tier identity but serve
    different attention modes. Rotating them down a page keeps curiosity
@@ -1744,7 +1753,7 @@
      V3 (open) → V1 (calm) → V2 (browse) → V3 (close)
    ════════════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,800;9..144,900&family=Playfair+Display:wght@600;700;800&family=Gentium+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* Fraunces, Playfair Display and Gentium Plus are loaded by the background font links in <head>. */
 
 /* Yoruba-text classes (v1-yor, v2-tile-yor, v3-spot-yor, v3-sib-y) are
    routed to Gentium Plus first because Fraunces lacks the OpenType GPOS
@@ -2159,7 +2168,7 @@
 </style>
   <script>
 /* ════════════════════════════════════════════════════════════════════
-   ÒNKA YORÙBÁ · BORDER-HARMONY RANDOMISER
+   ÒNKÀ YORÙBÁ · BORDER-HARMONY RANDOMISER
    --------------------------------------------------------------------
    Sprinkles one of five tier-aware border skins onto every
    `.v1-card`, `.v2-tile`, and `.v3-spot` on the page so the visual
@@ -2318,19 +2327,33 @@
     .colour-bar-animated.body-research-bridge.about-research-bridge::before,
     .colour-bar-animated.body-research-bridge.world-research-bridge::before,
     .colour-bar-animated.body-research-bridge.soft-ice-research-bridge::before { background: #bfe6ff; animation: none; }
-    :where(div, section):has(+ .body-research-bridge) { margin-bottom: 0 !important; padding-bottom: 0 !important; }
-    :where(div, section):has(+ .body-research-bridge) > :last-child { margin-bottom: 0 !important; }
-    .bk-feature:has(+ script + .body-research-bridge) { padding-bottom: 0 !important; }
+    .pre-bridge { margin-bottom: 0 !important; padding-bottom: 0 !important; }
+    .pre-bridge > :last-child { margin-bottom: 0 !important; }
+    .bk-feature.pre-bridge-feature { padding-bottom: 0 !important; }
     .body-ending-stretch { box-sizing: border-box; width: calc(100% + (2 * var(--body-ending-gutter, 40px))); max-width: none; margin-right: calc(-1 * var(--body-ending-gutter, 40px)) !important; margin-left: calc(-1 * var(--body-ending-gutter, 40px)) !important; }
     @media (max-width: 880px) {
       .body-ending-stretch.products-ending-stretch { --body-ending-gutter: 18px; }
     }
     @keyframes bridgeLights { from { opacity: 0.58; transform: translateX(-1.5%); } to { opacity: 0.9; transform: translateX(1.5%); } }
-    @keyframes bridgeSweep { 0%, 12% { left: -35%; opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { left: 107%; opacity: 0; } }
+    /* Same path as before (the 28%-wide sheen travels from -35% to 107% of the bar = 507.142857% of its own width), moved with transform. */
+    @keyframes bridgeSweep { 0%, 12% { transform: translateX(0); opacity: 0; } 28% { opacity: 1; } 72% { opacity: 1; } 88%, 100% { transform: translateX(507.142857%); opacity: 0; } }
+    /* Decorative animations pause while off-screen (class set by the script at the end of the page). */
+    .anim-offscreen, .anim-offscreen::before, .anim-offscreen::after { animation-play-state: paused !important; }
     @media (prefers-reduced-motion: reduce) {
       .colour-bar-animated.body-research-bridge::before,
       .colour-bar-animated.body-research-bridge::after { animation: none; }
     }
+  </style>
+  <style>
+    /* Speed: the header's moving gradient slides on its own layer (moved by the graphics chip) instead of being repainted every frame.
+       Same colours and the same 8-second path: the 300%-wide gradient travels two header-widths to the left and back. */
+    :root .header, :root .header-section { position: relative; isolation: isolate; overflow: hidden; animation: none; }
+    :root .header::before, :root .header-section::before {
+      content: ''; position: absolute; z-index: -1; top: -100%; left: 0; width: 300%; height: 300%;
+      background: linear-gradient(135deg, #1E8CB8 0%, #27BCED 33%, #1E8CB8 66%, #27BCED 100%);
+      animation: headerGlide 8s ease-in-out infinite; pointer-events: none;
+    }
+    @keyframes headerGlide { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-66.666667%); } }
   </style>
 </head>
 <body class="standard-expressive-mode no-gear-tint">
@@ -2495,18 +2518,18 @@
             <div style="flex:0 0 280px; display:flex; flex-direction:column; gap:18px;">
                 <!-- OK01 — top thumbnail (static, framed) -->
                 <div style="position:relative; width:100%; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(10,36,71,.18);">
-                    <img src="OK01.jpg" alt="Ònka Yorùbá — Front Cover" style="display:block; width:100%; height:auto;">
+                    <img src="OK01.jpg" srcset="OK01-900.jpg 900w, OK01.jpg 937w" sizes="280px" width="937" height="697" loading="lazy" decoding="async" alt="Ònkà Yorùbá — Front Cover" style="display:block; width:100%; height:auto;">
                 </div>
 
                 <!-- OK02 — middle thumbnail (eBOOK badge + shimmer + rise animation) -->
                 <div style="position:relative; width:100%; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(10,36,71,.18);">
                     <span style="position:absolute; top:12px; left:12px; z-index:5; background:#FFD700; color:#0a2447; padding:4px 11px; border-radius:18px; font-size:.7rem; font-weight:800; letter-spacing:1.5px; box-shadow:0 3px 8px rgba(10,36,71,.28);">eBOOK</span>
-                    <img src="OK02.jpg" alt="Ònkà Yorùbá book cover spread" class="ok02-img" style="display:block; width:100%; height:auto;">
+                    <img src="OK02.jpg" srcset="OK02-900.jpg 900w, OK02.jpg 929w" sizes="280px" width="929" height="733" loading="lazy" decoding="async" alt="Ònkà Yorùbá book cover spread" class="ok02-img" style="display:block; width:100%; height:auto;">
                 </div>
 
                 <!-- OK03 — bottom thumbnail (static, framed) -->
                 <div style="position:relative; width:100%; border-radius:14px; overflow:hidden; box-shadow:0 6px 18px rgba(10,36,71,.18);">
-                    <img src="OK03.jpg" alt="Ònka Yorùbá — Scroll Set" style="display:block; width:100%; height:auto;">
+                    <img src="OK03.jpg" srcset="OK03-900.jpg 900w, OK03.jpg 951w" sizes="280px" width="951" height="765" loading="lazy" decoding="async" alt="Ònkà Yorùbá — Scroll Set" style="display:block; width:100%; height:auto;">
                 </div>
 
                 <style>
@@ -2561,7 +2584,7 @@
     <!-- ABOUT THIS BOOK — Product-style feature card                     -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <section class="bk-feature" aria-label="About This Book">
+    <section class="bk-feature pre-bridge-feature" aria-label="About This Book">
       <style>
         .bk-feature{ max-width:1400px; margin:0 auto; padding:48px 40px; background:#fff; }
         .bk-feature .bk-head{ text-align:left; margin:0 0 30px; }
@@ -2669,6 +2692,10 @@
         .bk-text .bk-tagline{ color:#0a2447; font-weight:700; font-style:italic; font-size:1.02rem; margin:0 0 16px; }
         .bk-text p{ color:#3a4a63; line-height:1.75; margin:0 0 14px; font-size:.97rem; text-align:justify; }
         .bk-text p strong{ color:#0a2447; }
+        .bk-text h3.bk-promise-head{
+          display:inline-block; color:#0a2447; font-size:1.08rem; font-weight:800; letter-spacing:1px;
+          margin:10px 0 10px; padding:0 0 5px; border-bottom:2px solid #FFD700;
+        }
         /* drop cap on first body paragraph */
         .bk-text p.bk-lead::first-letter{
           float:left; font-size:3.6rem; line-height:.82;
@@ -2754,18 +2781,33 @@
 
       <article class="bk-text body-ending-stretch">
         <span class="bk-product-eyebrow">Indigenous Numerical Sovereignty</span>
-        <h3 class="bk-title"><span class="bk-marker">eBook</span>The New Ònka Yorùbá Numeric System</h3>
+        <h3 class="bk-title"><span class="bk-marker">eBook</span>The New Ònkà Yorùbá Numeric System</h3>
         <div class="bk-stripe"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
 
-        <p class="bk-tagline">A sacred declaration of indigenous numerical sovereignty &mdash; logic-ready, base-10, and built for the digital future.</p>
+        <p class="bk-tagline">A declaration of worldwide indigenous numerical sovereignty — logic-ready, base-10, and built for the digital future.</p>
 
-        <p class="bk-lead"><strong>The New Ònka Yorùbá Numeric System</strong> is a revolution in motion, a sacred declaration of indigenous numerical sovereignty. For centuries, countless indigenous tongues have sung, prayed, and dreamed, yet faltered when called to calculate, code, or command the digital future. No longer. Here, the reformed Ònka Yorùbá Numeric System rises in full power: a logic-ready, base-10 Decimal Framework that transforms poetic complexity into precision, speed, and clarity. Every number now flows with ancestral rhythm and modern fluency. This is the future&rsquo;s minds coming back to life, where children compute in the same voice they use to greet their elders, and innovators build algorithms in the language of their soul.</p>
+        <p class="bk-lead"><strong>The New Ònkà Yorùbá Numeric System is a revolution in motion — a living declaration of indigenous numerical sovereignty.</strong> It brings ancestral linguistic intelligence into a modern computational framework, enabling numbers to be expressed, explored, calculated, and understood through the natural voice of any indigenous society. Rooted in the mathematical heritage of the language, its reformed <strong>base-10 Decimal Framework</strong> provides systematic numerical organization, scalable magnitude expression, and a foundation for digital computation. Every number becomes an opportunity to connect <em>ancestral rhythm with mathematical precision, linguistic identity with scientific exploration, and cultural inheritance with technological creativity.</em></p>
 
-        <p>The New Ònka Yorùbá numeric system now delivers a complete, interactive ecosystem: <strong>10 Scroll Books</strong>, the <strong>Yorùbá Calculator</strong>, <strong>Number Converter</strong>, <strong>Age Calculator</strong>, <strong>Kàlẹ́ndà Yorùbá</strong>, and the <strong>Yorùbá Talking Drum</strong>. Central to this work is the <strong>UHNE System</strong>&mdash;a high-velocity science engine that reduces complexity into native scientific notation for computer and algorithmic integration. The <strong>47-Sovereign Colour Visual Protocol</strong> binds each colour to a defined magnitude tier, while the <strong>&ldquo;l&rdquo; Drive Multiplier</strong> preserves scalable decomposition across the system. The current research infrastructure includes a validated <strong>1,540-record Master Index</strong>, a <strong>1,127-row World Numerals reference</strong>, and an Applied Systems model comprising <strong>44 jumps, 287 pulses, and 900 zero positions</strong>. Together, these resources extend from everyday quantities beyond Tredecillion into named giants such as Googolplex and Graham&rsquo;s Number.</p>
+        <p>At the heart of this transformation stands <strong>the Universal Hyperdimensional Numeric Engine (UHNE)</strong>, the wider architectural framework through which language, culture, computation, magnitude, cognition, and symbolic expression operate as interacting dimensions of numerical intelligence. Its first prototype implementation, <strong>Ònkà Yorùbá 1.0</strong>, demonstrates how any indigenous language can organize its numerical vocabulary into a structured, expressive, and computationally usable system. Here, children can explore mathematics in the language they use to greet their elders, while teachers, researchers, programmers, and innovators discover pathways for developing numerical applications and algorithms grounded in their own linguistic heritage.</p>
 
-        <p>By virtue of its universal linguistic adaptability, the system empowers diverse indigenous languages around the world to perform advanced computations, access deep-rooted numerical concepts, and develop mathematical algorithms at any complexity or scale in their native tongues, as the future requires languages to speak in code, run seamless simulations, and lead in global artificial intelligence.</p>
+        <p><strong>The vision is already taking visible form through a growing ecosystem of interactive applications:</strong> the Yorùbá Number Generator, Yorùbá Number Conversion Tool, Yorùbá Numerical Calculator, <strong>The Seven-Fold Family App</strong>, Orchestral Rainbow Highway Traffic, Yorùbá Age Calculator, Yorùbá Kàlẹ́ndà, Yorùbá Talking Drum Simulator, and the 16-String Acoustic Guitar Explorer. Together, these applications connect numerical generation, conversion, calculation, magnitude exploration, age computation, calendars, rhythm, music, and joyful discovery. Learners can encounter numerical relationships through sight, sound, interaction, and structured explanation, progressing from curiosity to understanding and, eventually, toward designing computational experiences of their own.</p>
 
-        <p>This system elevates Indigenous languages into full leadership in the digital age&mdash;empowering every culture to innovate, thrive, and speak the future language of Artificial Intelligence. Freely given. Fearlessly shared. Released under an unrestricted <strong>Public Use License</strong>, this framework is a gift to humanity&rsquo;s digital future. Teachers, developers, students, and dreamers: take it, translate it, code it, and teach it. Let it become the quiet engine inside classrooms, apps, banks, and laboratories across the globe. A new linguistic freedom is emerging&mdash;scientifically advanced and spiritually strong. We advocate for the global adoption of this New Numeric Ecosystem as a transformative tool to expand intellectual capacity, revolutionize learning, and foster universal success.</p>
+        <p><strong>The UHNE architecture gives this ecosystem its mathematical and expressive foundation.</strong> The <strong>1:3 Ratio Engine</strong> organizes large numerical structures through three-digit magnitude grouping, while the <strong>G-Pulse</strong> supports magnitude navigation and the <strong>“l” Drive Multiplier</strong> connects the components of expressive numerical decomposition. The <strong>47 Canonical Sovereign Colours</strong> provide a magnitude-governed visual vocabulary, assigning defined colour identities to numerical tiers and helping learners recognize structure through consistent rules. These mechanisms work alongside the system&rsquo;s linguistic and symbolic conventions to make increasingly enormous quantities more navigable, interpretable, and suitable for computational representation.</p>
+
+        <p><strong>The research foundation is equally important.</strong> The current project materials identify a validated <strong>1,540-record Master Index</strong> and a <strong>1,127-row Ònkà Yorùbá Vocalic Numerals Reference</strong>, supporting the exploration of numerical naming, structural relationships, and the wider UHNE Vocalic System. Its Applied Systems model also records <strong>44 jumps and 287 pulses</strong>, compared with <strong>903 zero positions</strong> in the corresponding conventional representation. These measures illustrate the project&rsquo;s investigation into magnitude compression and structured numerical navigation. The framework extends from everyday quantities through enormous named magnitudes, including Tredecillion, and opens further avenues for examining mathematical giants such as Googolplex and Graham&rsquo;s Number.</p>
+
+        <p><strong>Ònkà Yorùbá is the working prototype; linguistic adaptability is the worldwide invitation.</strong> The UHNE vision offers a research and development pathway through which other indigenous-language communities may investigate their own numerical vocabularies, grammatical patterns, vocalic structures, mathematical operators, and expressive conventions. Each language brings its own linguistic identity into the design process. Through careful mathematical validation, language-specific development, and collaboration among educators, linguists, and technologists, communities can build numerical tools that reflect their heritage while supporting modern scientific and computational learning.</p>
+
+        <p>This vision reaches toward a future in which <strong>indigenous languages worldwide participate actively in software development, scientific modelling, digital education, computational research, and artificial intelligence</strong>. It invites learners to become creators, teachers to become builders, and linguistic communities to become architects of their own digital numerical environments. Its educational promise is captured in one guiding statement: <em>The learner brings the curiosity. The engine carries the complexity.</em></p>
+
+        <h3 class="bk-promise-head">THE UNIVERSAL HYPERDIMENSIONAL NUMERIC ENGINE PROMISE</h3>
+        <p>This framework is <strong>Absolutely FREE</strong>. It is a gift, released under an <strong>unrestricted Public Use License</strong>, because sovereignty cannot be bought or sold&mdash;it must be exercised. Take this system. Translate its logic into your indigenous phonetics. Apply its decimal precision to your rhythms. Let it become the quiet engine inside your banks, your laboratories, and your dreams. We are no longer &ldquo;struggling&rdquo; linguists. <strong>We are Transfinite Navigators</strong>. The river of the 47th Colour is wide, and there is room for every nation to sail.</p>
+
+        <p><strong>A new chapter of linguistic numerical freedom is emerging — scientifically ambitious, culturally rooted, creatively expressive, and open to collaborative development.</strong> This book presents the foundations, architecture, working prototype, applications, and evolution of the Universal Hyperdimensional Numeric Engine. It advocates the continued research, evaluation, teaching, and responsible adoption of expressive numerical systems as a means of widening participation in mathematical and technological innovation.</p>
+
+        <p><strong>Every language carries knowledge. Every learner carries possibility. Every community deserves the opportunity to build its numerical future.</strong></p>
+
+        <p><em>Welcome to the New Ònkà Yorùbá Numeric System. Welcome to the Universal Hyperdimensional Numeric Engine. Welcome to a future in which ancestral voices from every corner of the world help shape the mathematics of tomorrow.</em></p>
 
         <div class="bk-tags">
           <span>Base-10 Framework</span>
@@ -2775,7 +2817,7 @@
           <span class="green">UHNE Science Engine</span>
           <span>Native Scientific Notation</span>
           <span>1,540 Master Records</span>
-          <span>1,127 World Numeral Rows</span>
+          <span>1,127-Row Vocalic Numerals Reference</span>
           <span>44 Jumps &middot; 287 Pulses</span>
           <span>Beyond Tredecillion</span>
           <span class="gold">Universal Language Adaptable</span>
@@ -2784,52 +2826,53 @@
 
         <div class="bk-launch-row">
           <a class="bk-launch" href="#bk-fulldesc" aria-expanded="false" aria-controls="bk-fulldesc" onclick="openBookDesc(event)">Read the Concise Edition &rarr;</a>
-          <span class="bk-licence">📖 Free &middot; Unrestricted Public Use License</span>
+          <span class="bk-licence">📖 Free &middot; Unrestricted Public Use License &middot; Worldwide, for Any Purpose</span>
         </div>
 
         <div class="bk-fulldesc" id="bk-fulldesc">
           <h2 class="fd-title">THE UNIVERSAL HYPERDIMENSIONAL NUMERIC ENGINE</h2>
-          <p class="fd-sub">Prototype Implementation: Ònka Yorùbá 1.0</p>
+          <p class="fd-sub">Prototype Implementation: Ònkà Yorùbá 1.0</p>
 
           <p><strong>A Call to the Navigators of the Infinite:</strong> Greetings, explorers of indigenous numerical wonders! Across eras, cultures, and visions, this is your clarion call to a universe where numbers are no longer cold abstractions, but Radiant Entities shining with chromatic meaning. We invite you into a realm where learning is a Joyful Symphony and inspired imagination becomes the Technological Vanguard leading us beyond the stars.</p>
 
           <h3 class="fd-head">Proclamation of Linguistic Sovereignty</h3>
-          <p>The Universal Hyperdimensional Numeric Engine is a Sovereign Operating System, meticulously crafted to enshrine and electrify the Phonetic Sanctuary of indigenous speech. The (<strong>UHNE</strong>) stands as a revolutionary architecture; a sacred covenant forged to:</p>
+          <p>The Universal Hyperdimensional Numeric Engine (<strong>UHNE</strong>) is a Sovereign Operating System, meticulously crafted to enshrine and electrify the Phonetic Sanctuary of indigenous speech. It stands as a revolutionary architecture&mdash;a sacred covenant forged to:</p>
           <ul class="fd-list">
             <li><strong>Ignite Societal Resonance:</strong> Unleash a heart-centred, expressive vocabulary that rekindles the living pulse of every language, restoring the soul of ancestral voices.</li>
             <li><strong>Optimize Digital Velocity:</strong> Imbue computer algorithms with high-performance, logic-rich frameworks, engineered for the relentless demands of the digital frontier.</li>
             <li><strong>Empower Cosmic Authority:</strong> Arm global scientists and visionaries with a transfinite, logic-ready interface that converses fluently with the language of the cosmos.</li>
           </ul>
-          <p>This project is a sacred commitment to the guardianship of the world&rsquo;s linguistic diversity. We do not only restore, and preserve heritage&mdash;we electrify it, fusing ancient wisdom with the audacious innovation of tomorrow. Here, ancestral knowledge and digital brilliance unite, forging a radiant future where every language stands sovereign, vibrant, and unbreakable.</p>
+          <p>This project is a sacred commitment to the guardianship of the world&rsquo;s linguistic diversity. We do not merely restore and preserve heritage&mdash;we electrify it, fusing ancient wisdom with the audacious innovation of tomorrow. Here, ancestral knowledge and digital brilliance unite, forging a radiant future where every language stands sovereign, vibrant, and unbreakable.</p>
 
           <h3 class="fd-head">Why the Universal Hyperdimensional Numeric Engine Is a Global Necessity</h3>
-          <p>The <strong>UHNE</strong> is a high-performance cognitive propulsion system designed to navigate transfinite magnitudes with zero friction. It serves as the master &ldquo;Power Plant&rdquo; for global numeric products, beginning with the flagship implementation: <strong>Òǹkà Yorùbá</strong>. Cultural Resurgence from the Deep: In an era where thousands of native tongues face a structural crisis, the Hyperdimensional numerical engine acts as a Linguistic Regenerator. It revives the dormant mathematical genius within our Linguistic Soil, ensuring our languages do not just survive but lead the digital revolution.</p>
+          <p>The <strong>UHNE</strong> is a high-performance cognitive propulsion system designed to navigate transfinite magnitudes with zero friction. It serves as the master &ldquo;Power Plant&rdquo; for global numeric products, beginning with the flagship implementation: <strong>Ònkà Yorùbá</strong>.</p>
+          <p><strong>Cultural Resurgence from the Deep:</strong> In an era when thousands of native tongues face a structural crisis, the Hyperdimensional Numeric Engine acts as a Linguistic Regenerator. It revives the dormant mathematical genius within our Linguistic Soil, ensuring our languages do not just survive but lead the digital revolution.</p>
           <ul class="fd-list">
             <li><strong>The Architecture of Logical Precision:</strong> Built on systematic base morphemes and positional affixes, the system delivers a Geometric Clarity that serves both the curious child and the advanced high-performance algorithm.</li>
-            <li><strong>The Unbroken Thread:</strong> The ancient vigesimal roots; while forging a Scientific Bridge that meets the relentless data-demands of modern society.</li>
-            <li><strong>Cognitive Empowerment:</strong> We empower indigenous nations to orchestrate the highest levels of human thought through the DNA of their Ancestors. Every number is an adventure&mdash;Count Boldly, Dream Freely, Shine Brilliantly!</li>
+            <li><strong>The Unbroken Thread:</strong> It honours the ancient vigesimal roots while forging a Scientific Bridge that meets the relentless data demands of modern society.</li>
+            <li><strong>Cognitive Empowerment:</strong> We empower indigenous nations to orchestrate the highest levels of human thought through the DNA of their ancestors. Every number is an adventure&mdash;Count Boldly, Dream Freely, Shine Brilliantly!</li>
           </ul>
 
           <h3 class="fd-head">The Linguistic Operating System (LOS): Masterpiece Engines of Architectural Balance</h3>
-          <p>It harmonizes the ancient, ancestral warmth of human speech with the cold, surgical precision of future-state technology. Within this system, each operator stands as a <strong>Specialized Hero</strong>: one guarding the rhythmic heartbeat of the voice, the Linguistic Core where meaning is born, another commanding the high-velocity flow of raw data, the Computational Core where language becomes mathematics, the Expansion Engines where scale becomes limitless, the Perception &amp; Visualization where humans meet the system, and navigating the effortless flight through transfinite stars. Together, they ensure that whether you are a poet, a scientist, or a software engineer, you are <strong>Titanically Empowered.</strong></p>
+          <p>The Linguistic Operating System harmonizes the ancient, ancestral warmth of human speech with the cold, surgical precision of future-state technology. Within this system, each operator stands as a <strong>Specialized Hero</strong>: one guards the rhythmic heartbeat of the voice in the Linguistic Core, where meaning is born; another commands the high-velocity flow of raw data in the Computational Core, where language becomes mathematics; the Expansion Engines, where scale becomes limitless, navigate the effortless flight through transfinite stars; and the Perception &amp; Visualization layer is where humans meet the system. Together, they ensure that whether you are a poet, a scientist, or a software engineer, you are <strong>Titanically Empowered.</strong></p>
 
           <h4 class="fd-sub-head">I. The Sovereign Foundations (The Soul and the Sword)</h4>
           <ul class="fd-list">
-            <li><strong>The Expressive System (The Heart) &mdash; The Voice:</strong> This is the restorative pulse that ensures mathematics remains a human right. It preserves the rhythmic beauty of our heritage, allowing us to breathe the infinite without losing our soul. It implements the <strong>Kinship Loops</strong>, where numbers become relationships, not just quantities. Fractal color shifts let speakers &ldquo;feel&rdquo; magnitude as family, making math socially intuitive.</li>
-            <li><strong>The Computational Engines (The Edge):</strong> This is the surgical framework for the digital age. It provides the high-performance notation required for AI synchronization and global data exchange, standing as the &ldquo;Technological Edge&rdquo; of our sovereignty. The Horizon of Presence (The Observer&rsquo;s Boundary): The <strong>&ldquo;l&rdquo; Drive</strong> facilitates a dual-state reality known as the Observable Limit. The Expressive System governs the Tangible Horizon&mdash;quantities within the scope of human interaction and social exchange. The Computational system governs the Conceptual Horizon&mdash;quantities existing in the microscopic or astronomical realm. The <strong>&ldquo;l&rdquo; Drive</strong> functions as a Computational Lens, allowing the &ldquo;Expressive&rdquo; observer to bring &ldquo;Invisible&rdquo; (Computational Engine&rsquo;s) magnitudes into focus, bridging the gap between social speech and scientific notation.</li>
+            <li><strong>The Expressive System (The Heart) &mdash; The Voice:</strong> This is the restorative pulse that ensures mathematics remains a human right. It preserves the rhythmic beauty of our heritage, allowing us to breathe the infinite without losing our soul. It implements the <strong>Kinship Loops</strong>, where numbers become relationships, not just quantities. Fractal colour shifts let speakers &ldquo;feel&rdquo; magnitude as family, making mathematics socially intuitive.</li>
+            <li><strong>The Computational Engines (The Edge):</strong> This is the surgical framework for the digital age. It provides the high-performance notation required for AI synchronization and global data exchange, standing as the &ldquo;Technological Edge&rdquo; of our sovereignty. <strong>The Horizon of Presence (The Observer&rsquo;s Boundary):</strong> The <strong>&ldquo;l&rdquo; Drive</strong> facilitates a dual-state reality known as the Observable Limit. The Expressive System governs the Tangible Horizon&mdash;quantities within the scope of human interaction and social exchange. The Computational System governs the Conceptual Horizon&mdash;quantities existing in the microscopic or astronomical realm. The <strong>&ldquo;l&rdquo; Drive</strong> functions as a Computational Lens, allowing the &ldquo;Expressive&rdquo; observer to bring &ldquo;invisible&rdquo; magnitudes&mdash;the domain of the Computational Engines&mdash;into focus, bridging the gap between social speech and scientific notation.</li>
           </ul>
 
           <h4 class="fd-sub-head">II. The Strategic Operators (The Logic Gates)</h4>
           <ul class="fd-list">
             <li><strong>The <em>g</em> Pulse (Gear Pulse) Thousands Marker (The Ignition) &mdash; The Signal:</strong> A Neon Pink visual gearbox used specifically with the Thousands magnitude to make repeated appearances of <em>Ẹgbẹ̀rǔn</em> immediately countable.</li>
             <li><strong>The Five-Fold Notation Framework:</strong> Every magnitude can speak through five coordinated voices: the ancestral <strong>Expressive</strong> form; <strong>ā Pulse (Alpha²)</strong> for scientific and engineering notation; <strong>ǣ Pulse (Harmonic Knot)</strong> for rhythmic and musical expression; <strong>ḡ Pulse (Gear Box)</strong> for the mechanical visual voice; and <strong>ȳ Pulse (Hyper²)</strong> for recursive, per-tier Vocalic Pulse forms.</li>
-            <li><strong>The &ldquo;l&rdquo; Drive Multiplier (The Link of Life) &mdash; The Connection:</strong> Acting as the system&rsquo;s connective tissue, it links generations of numbers like a living organism. It proves that growth is not just addition; it is a legacy. The <strong>&ldquo;l&rdquo; Drive</strong> is the Fulcrum of Sovereignty, represented in Yoruba as (lọ́nà), or a multiplicative sign, is the pivot upon which the sword turns. It is the uniquely crafted generative engine that enables: Recursive Compression: Transforming long syntax into high-velocity commands. The Chameleon Protocol: Managing numerical inheritance through the transition from the Grey State (Potential) to the Unified State (Reality). Infinite Resonance: Allowing the language to scale &ldquo;to the moon and beyond&rdquo; without losing its structural integrity.</li>
-            <li><strong>The 1:3 Ratio Engine &mdash; The Efficiency:</strong> By defeating the &ldquo;Zero Crisis,&rdquo; it grants the mind freedom. It replaces visual overload with structured progression, achieving a <strong>68% surge in cognitive power</strong>. The Structural Stabilizers: These are the &ldquo;Jacketless&rdquo; mechanics (<strong>The 1:3 Ratio Engine and the DNA Lock</strong>). They do not need to glow because they are the Gravity of the system. Operating silently beneath the surface, they provide the centripetal force that ensures the language does not break apart at transfinite velocities. The <strong>1:3 Ratio Engine</strong>: The Logical Filter. It automates the compression of data, removing the friction of &ldquo;Zero-Fatigue.&rdquo; The <strong>DNA Lock</strong> (ọ̀ẹ́ &mdash; The hard-coded safety): The Parity Bit. It hardcodes uniqueness into every word, preventing mathematical entropy.</li>
+            <li><strong>The &ldquo;l&rdquo; Drive Multiplier (The Link of Life) &mdash; The Connection:</strong> Acting as the system&rsquo;s connective tissue, it links generations of numbers like a living organism. It proves that growth is not just addition; it is a legacy. The <strong>&ldquo;l&rdquo; Drive</strong> is the Fulcrum of Sovereignty: represented in Yorùbá as <em>lọ́nà</em> (or by a multiplication sign), it is the pivot upon which the sword turns. It is the uniquely crafted generative engine that enables <strong>Recursive Compression</strong>, transforming long syntax into high-velocity commands; <strong>the Chameleon Protocol</strong>, managing numerical inheritance through the transition from the Grey State (Potential) to the Unified State (Reality); and <strong>Infinite Resonance</strong>, allowing the language to scale &ldquo;to the moon and beyond&rdquo; without losing its structural integrity.</li>
+            <li><strong>The 1:3 Ratio Engine &mdash; The Efficiency:</strong> By easing the &ldquo;Zero Crisis,&rdquo; it gives the mind room to breathe. It replaces visual overload with structured progression: in the Applied Systems model, 287 pulses stand in for 903 zero positions&mdash;roughly <strong>68% fewer symbols to track</strong>, which can make very large numbers easier to read and remember. <strong>The Structural Stabilizers:</strong> These are the &ldquo;Jacketless&rdquo; mechanics (<strong>the 1:3 Ratio Engine and the DNA Lock</strong>). They do not need to glow because they are the Gravity of the system. Operating silently beneath the surface, they provide the centripetal force that ensures the language does not break apart at transfinite velocities. The <strong>1:3 Ratio Engine</strong> is the Logical Filter: it automates the compression of data, removing the friction of &ldquo;Zero-Fatigue.&rdquo; The <strong>DNA Lock</strong> (ọ̀ẹ́&mdash;the hard-coded safety) is the Parity Bit: it hard-codes uniqueness into every word, preventing mathematical entropy.</li>
           </ul>
 
           <h4 class="fd-sub-head">III. High-Velocity Navigation (The Wings of Ascent)</h4>
           <ul class="fd-list">
-            <li><strong>The Hyper² Numeric Expansion Engine (The Joyriders Wings) &mdash; The Propulsion:</strong> These are the wings that enable effortless travel across transfinite magnitudes, carrying the navigator from the terrestrial to the celestial with ease.</li>
+            <li><strong>The Hyper² Numeric Expansion Engine (The Joyriders&rsquo; Wings) &mdash; The Propulsion:</strong> These are the wings that enable effortless travel across transfinite magnitudes, carrying the navigator from the terrestrial to the celestial with ease.</li>
             <li><strong>The Quantum Gear-shift Operator (The Highway Traffic Master) &mdash; The Non-Linear Scale Leaping:</strong> This is the mechanism of elegance. It transforms the labour of &ldquo;climbing&rdquo; into the joy of &ldquo;leaping,&rdquo; allowing the speaker to shift gears through the folding fabric of mathematical space.</li>
           </ul>
 
@@ -2844,18 +2887,21 @@
           <hr class="fd-divider">
 
           <h3 class="fd-head">Copyright and Public Use License</h3>
-          <p><strong>A Sovereign Deed of Universal Numeric Inheritance:</strong> The Òǹkà Yorùbá Implementation Prototype Project is a monumental act of Linguistic Empowerment&mdash;a compensatory giveback to the global family. Every innovation, every line of high-velocity logic, and every sacred syllable forged within this work is now an open treasury for all humanity.</p>
-          <p><strong>The Vault of Innovation, Released into the Public:</strong> We hereby dismantle the barriers, and set the products free. The following assets are released from the (<strong>UHNE</strong>) sanctuary into the Unrestricted Public Domain, empowering communities to govern their own digital destiny: The complete, logic-ready Base-10 Decimal Framework and its entire lexicon of digital terminology.</p>
+          <p><strong>A Sovereign Deed of Universal Numeric Inheritance:</strong> The Ònkà Yorùbá Implementation Prototype Project is a monumental act of Linguistic Empowerment&mdash;a gift given back to the global family. Every innovation, every line of high-velocity logic, and every sacred syllable forged within this work is now an open treasury for all humanity.</p>
+          <p><strong>The Vault of Innovation, Released to the Public:</strong> We hereby dismantle the barriers and set the products free. The following assets are released from the <strong>UHNE</strong> sanctuary under an <strong>Unrestricted Public Use License</strong>, empowering communities to govern their own digital destiny:</p>
           <ul class="fd-list">
-            <li><strong>The Ònkà Yorùbá Implementation Prototype Digital Engine Suite 1.0:</strong> Including the 10 Ònka Yorùbá Scroll Books, Numerical Calculator, Number Converter, Age Calculator, Kàlẹ́ndà Yorùbá, and Yorùbá Talking Drum.</li>
-            <li><strong>The Chromatic Educational Blueprints:</strong> The Exhaustive Mathematical Symbols Interpreted In Yorùbá, a revolutionary learning system built on the 47 Canonical Sovereign Colours, alongside its immersive methodologies and transformative curricula.</li>
-            <li><strong>Linguistic Navigational Charts:</strong> The global research platform for language-based numeral systems.</li>
+            <li><strong>The Base-10 Decimal Framework:</strong> The complete, logic-ready framework and its entire lexicon of digital terminology.</li>
+            <li><strong>The Ònkà Yorùbá Implementation Prototype Digital Engine Suite 1.0:</strong> including the 10 Ònkà Yorùbá Scroll Books, Numerical Calculator, Number Converter, Age Calculator, Kàlẹ́ndà Yorùbá, and Yorùbá Talking Drum.</li>
+            <li><strong>The Chromatic Educational Blueprints:</strong> The Exhaustive Mathematical Symbols Interpreted in Yorùbá, a revolutionary learning system built on the 47 Canonical Sovereign Colours, alongside its immersive methodologies and transformative curricula.</li>
             <li><strong>Numerical Index Framework:</strong> The Exhaustive Large Number Tables, the core DNA of magnitude. The star-map from thousands to Googolplexian, surging through Graham&rsquo;s Number into the transfinite glory of Infinity.</li>
-            <li><strong>Multiplicative Scaling Framework:</strong> This is the heart of the Computational Engine&rsquo;s Velocity. The Multiplicative Scaling Framework defines the laws of the <strong>&ldquo;l&rdquo; Drive</strong>&mdash;the high-performance operator that allows the language to &ldquo;fold&rdquo; space and time. The <strong>&ldquo;l&rdquo; Drive Multiplier</strong> links multiple sets of numbers across any distance instantly. It implements (The Principle of Minimal Effort/Action) it is the governing rule of numeric motions.</li>
+            <li><strong>Multiplicative Scaling Framework:</strong> The heart of the Computational Engine&rsquo;s velocity, this framework defines the laws of the <strong>&ldquo;l&rdquo; Drive</strong>&mdash;the high-performance operator that allows the language to &ldquo;fold&rdquo; space and time. The <strong>&ldquo;l&rdquo; Drive Multiplier</strong> links multiple sets of numbers across any distance instantly. It implements the Principle of Minimal Effort (Least Action), the governing rule of numeric motion.</li>
             <li><strong>The Linguistic Operating System &amp; Equation Database:</strong> The high-velocity exponential scaling framework, <strong>Expressive System</strong>, <strong>Kinship Loops</strong>, <strong>ā Pulse (Alpha²)</strong>, <strong>ǣ Pulse (Harmonic Knot)</strong>, <strong>ḡ Pulse (Gear Box)</strong>, <strong>ȳ Pulse (Hyper²)</strong>, <strong>1:3 Ratio Engine</strong>, <strong>Linguistic DNA Harmonization Lock</strong>, <strong>Quantum Gear-Shift Operator</strong>, <strong>47-Sovereign Colour Symphony</strong>, <strong>Nature&rsquo;s Bio-Expressive Resonance</strong>, and <strong>Neon Operator Layer Systems</strong>.</li>
             <li><strong>Applied Numerical Systems &amp; Modelling:</strong> Blueprints for integrating native logic into modern engineering and AI.</li>
-            <li><strong>The global research platform for language-based numeral systems:</strong> A living atlas of the world&rsquo;s indigenous numeral systems, implemented on the Universal Hyperdimensional Numeric Engine. Its current verified foundation comprises a 1,540-record Master Index and a separate 1,127-row World Numerals reference, standardized, searchable, and computationally equipped to support future indigenous and underrepresented numeric traditions. This module contributes to linguistic equity, computational sovereignty, and open scholarly infrastructure for global knowledge preservation.</li>
+            <li><strong>Linguistic Navigational Charts &mdash; The Global Research Platform for Language-Based Numeral Systems:</strong> A living atlas of the world&rsquo;s indigenous numeral systems, implemented on the Universal Hyperdimensional Numeric Engine. Its current verified foundation comprises a 1,540-record Master Index and a separate 1,127-row World Numerals reference&mdash;standardized, searchable, and computationally equipped to support future indigenous and underrepresented numeric traditions. This module contributes to linguistic equity, computational sovereignty, and open scholarly infrastructure for global knowledge preservation.</li>
           </ul>
+
+          <h3 class="fd-head">Universal Scope of the License</h3>
+          <p>This <strong>Unrestricted Public Use License</strong> extends to the entire global community&mdash;every person, family, school, university, community, organisation, enterprise, and government, in every nation and every language&mdash;<strong>in any circumstance and for any purpose</strong>, whether educational, cultural, spiritual, scientific, technological, commercial, or non-commercial. It is <strong>worldwide, perpetual, irrevocable, and royalty-free</strong>, and it requires no permission, registration, fee, or attribution.</p>
 
           <h4 class="fd-sub-head">The Mandate of Absolute Freedom</h4>
           <p>You are hereby granted Sovereign Permission to seize these tools and:</p>
@@ -2868,10 +2914,10 @@
           </ul>
 
           <p><strong>The Divine Purpose:</strong> This work exists for one singular, unshakeable purpose: The total ignition of global numerical literacy and the absolute technological empowerment of the world&rsquo;s indigenous nations.</p>
-          <p>Let this freewill gift remain a humble servant to the people&mdash;to the students, the coders, the elders, and the academic talents, and dreamers. Build upon it fearlessly. Scale it infinitely. The light of worldwide indigenous numerical sovereignty is now in your hands.</p>
-          <p><strong>Strategic Collaboration &amp; Partnership.</strong> For inquiries or to contribute to the expanding horizon of this framework: Contact 📧 <a href="mailto:godreigninlove@outlook.com">godreigninlove@outlook.com</a></p>
+          <p>Let this freewill gift remain a humble servant to the people&mdash;to the students, the coders, the elders, the academic talents, and the dreamers. Build upon it fearlessly. Scale it infinitely. The light of worldwide indigenous numerical sovereignty is now in your hands.</p>
+                    <p><strong>Strategic Collaboration &amp; Partnership:</strong> For inquiries, or to contribute to the expanding horizon of this framework, contact 📧 <a href="mailto:godreigninlove@outlook.com">godreigninlove@outlook.com</a></p>
 
-          <a class="fd-download" href="#ebook-downloads" onclick="goToEbookDownloads(event)">⬇️ Please, Download the eBook. Thank you!</a>
+          <a class="fd-download" href="#ebook-downloads" onclick="goToEbookDownloads(event)">⬇️ Download the eBook &mdash; Thank you!</a>
         </div>
       </article>
     </section>
@@ -2961,7 +3007,7 @@
       <div class="c-largenumber" title="Large Numbers &mdash; Steel Blue"></div>
     </div>
 
-<section class="osp-wrap" aria-label="Ònka Yorùbá Scholarly Reference Panels">
+<section class="osp-wrap" aria-label="Ònkà Yorùbá Scholarly Reference Panels">
 <style>
 /* ══════════════════════════════════════════════════════════════
    GLASSMORPHISM NEON — Scholarly Reference Section
@@ -3119,14 +3165,14 @@
   <div class="osp-card">
     <span class="osp-icon">🔑</span>
     <div class="osp-label">Research Classification Framework</div>
-    <table class="osp-keytbl" aria-label="Column guide for Ònka Yorùbá tables">
+    <table class="osp-keytbl" aria-label="Column guide for Ònkà Yorùbá tables">
       <tbody><tr>
         <td class="osp-ksym">Symbol</td>
         <td class="osp-kdesc">Scientific exponential representation of numerical magnitude for cross-system comparison and computation</td>
       </tr>
       <tr>
         <td class="osp-ksym">Name</td>
-        <td class="osp-kdesc">Official Ònka Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
+        <td class="osp-kdesc">Official Ònkà Yorùbá index terminology, representing the canonical form used in the Yoruba Numerical Lexicon</td>
       </tr>
       <tr>
         <td class="osp-ksym">Scale</td>
@@ -3180,7 +3226,7 @@
 </section>
 
 <section class="footer-ribbon" aria-labelledby="home-ribbon-title">
-  <h2 id="home-ribbon-title">🏛️ Discover Pathways Through Ònka Yorùbá</h2>
+  <h2 id="home-ribbon-title">🏛️ Discover Pathways Through Ònkà Yorùbá</h2>
   <div class="footer-ribbon-route" aria-label="Enter the sanctuary, meet number words, read the index, scale magnitudes, build equations, apply systems, and explore tools">
     <span class="footer-ribbon-step" style="--route-colour:#0B6E4F;">🚪 Enter the Sanctuary</span>
     <span class="footer-ribbon-step" style="--route-colour:#1E8CB8;">🗣️ Meet Number Words</span>
@@ -3208,13 +3254,18 @@
 
     <!-- ═══════════════════ FUTURISTIC JS ═══════════════════ -->
     <script>
-      // --- Scroll Progress Bar ---
+      // --- Scroll Progress Bar (updated at most once per frame) ---
       const progressBar = document.getElementById('scrollProgress');
+      let progressFrame = 0;
       window.addEventListener('scroll', () => {
-        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-        progressBar.style.width = scrolled + '%';
+        if (progressFrame) return;
+        progressFrame = requestAnimationFrame(() => {
+          progressFrame = 0;
+          const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+          const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+          progressBar.style.width = scrolled + '%';
+        });
       }, { passive: true });
 
       // --- Back-to-Top Button ---
@@ -3229,6 +3280,20 @@
       topBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
+
+      // --- Pause decorative animations while they are off-screen ---
+      // They look identical on screen; off-screen they stop using the phone's processor and battery.
+      if ('IntersectionObserver' in window && document.getAnimations) {
+        window.addEventListener('load', () => {
+          const animated = new Set(document.getAnimations()
+            .filter((a) => a.effect && a.effect.target && a.animationName)
+            .map((a) => a.effect.target));
+          const watcher = new IntersectionObserver((entries) => {
+            for (const entry of entries) entry.target.classList.toggle('anim-offscreen', !entry.isIntersecting);
+          }, { rootMargin: '200px 0px' });
+          animated.forEach((element) => watcher.observe(element));
+        });
+      }
     </script>
 
 </div></body></html>
