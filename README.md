@@ -1,8 +1,4 @@
-About This Book
-Indigenous Numerical Sovereignty
-eBook
-The New Ònkà Yorùbá Numeric System
-A declaration of worldwide indigenous numerical sovereignty — logic-ready, base-10, and built for the digital future.
+The New Ònkà Yorùbá Numeric System: A declaration of worldwide indigenous numerical sovereignty — logic-ready, base-10, and built for the digital future.
 
 The New Ònkà Yorùbá Numeric System is a revolution in motion — a living declaration of indigenous numerical sovereignty. It brings ancestral linguistic intelligence into a modern computational framework, enabling numbers to be expressed, explored, calculated, and understood through the natural voice of any indigenous society. Rooted in the mathematical heritage of the language, its reformed base-10 Decimal Framework provides systematic numerical organization, scalable magnitude expression, and a foundation for digital computation. Every number becomes an opportunity to connect ancestral rhythm with mathematical precision, linguistic identity with scientific exploration, and cultural inheritance with technological creativity.
 
