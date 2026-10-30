@@ -1,4 +1,8 @@
-# Universal Hyperdimensional Numeric Engine (UHNE)
+**UHNE Computational Architecture — C# / .NET**
+
+The Universal Hyperdimensional Numeric Engine (UHNE) is developing a reusable computational architecture for indigenous-language numerical expression, magnitude navigation, and mathematical reasoning. Its C# / .NET implementation is intended to translate language-specific lexical rules, magnitude-compression structures, and vocalic conventions into explicit, testable computational operations. Ònka Yorùbá 1.0 serves as the pioneering implementation, while the wider architecture is designed to support future language-specific extensions.
+**Universal Architecture. Indigenous Expression. Computational Precision.**
+**Official project identity:** @UhneEngine
 
 Welcome to the official repository for the Universal Hyperdimensional Numeric Engine. 
 
