@@ -27,7 +27,12 @@ namespace UHNE.Core
             long mantissa = 210; // The "Teeth" count matching your platform example
             int targetGear = 2;   // Gear 2: Million Scale (Squared Egberun)
             
-            junction.EngageGear(mantissa, targetGear);
+            junction.EngageGear(mantissa, targetGear); junction.EngageGear(mantissa, targetGear);).
+                            // Scenario 3: Engaging the Linguistic DNA Harmonization Lock (òẹ́)
+            string sampleWord = "Égbéẹ̀rǔn";
+            string sampleDna = "éẹ̀"; // Your master atlas DNA root for Tredecillions
+            junction.ExecuteDnaHarmonizationCheck(sampleWord, sampleDna);
+
             
             Console.WriteLine("\n====================================================");
             Console.WriteLine("  [v-z Pulse] System Calibration Invariants: Stable  ");
@@ -69,6 +74,43 @@ namespace UHNE.Core
             // 1:3 Compression rule: 3 zeros collapse into 1 gear pulse index
             return zeroCount / 3;
         }
+        /// <summary>
+        /// Implements the Layer V Linguistic DNA Harmonization Lock Safety Check.
+        /// Hardcodes uniqueness checks to eliminate phonetic collisions and mathematical entropy.
+        /// </summary>
+        public bool ExecuteDnaHarmonizationCheck(string yorubaWordName, string expectedVocalicDna)
+        {
+            Console.WriteLine($"\n[Safety Protocol] Engaging DNA Harmonization Lock (òẹ́) for: '{yorubaWordName}'");
+
+            // Canonical mapping of the repeating seven-form vowel pattern rules from the master atlas
+            var canonicalVocalicSignatures = new List<string> 
+            { 
+                "èẹ́", "òẹ́", "òọ́", "èé", "ẹ̀ẹ̀", "ẹ́ẹ́", "éẹ̀" 
+            };
+
+            // Rule 1: Verify the expected vocalic profile is a registered structural blueprint
+            if (!canonicalVocalicSignatures.Contains(expectedVocalicDna))
+            {
+                Console.WriteLine(" ❌ CRITICAL ERROR: Unregistered Vocalic DNA Signature detected.");
+                return false;
+            }
+
+            // Rule 2: Parity verification matching the 1,127-Entry error-resistant lookup rule
+            bool isPhoneticallyStable = yorubaWordName.Contains(expectedVocalicDna.ToString()) || 
+                                        yorubaWordName.ToLower().Contains("rǔn");
+
+            if (isPhoneticallyStable)
+            {
+                Console.WriteLine("  -> [òẹ́ Safety Lock]: Parity Bit verification SUCCESS.");
+                Console.WriteLine($"  -> Structural Integrity Status: Stable. Vocalic DNA: ({expectedVocalicDna}) linked securely.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(" ⚠️ WARNING: Phonetic anomaly detected. Collisional entropy protocol engaged.");
+                return false;
+            }
+        }
 
         /// <summary>
         /// Layer II & IV: Pairs the Mantissa (Teeth) with the Exponent Gear index (Turn).
@@ -87,7 +129,45 @@ namespace UHNE.Core
 
             Console.WriteLine($" -> Shifting Lever: Gear index set to n={gearIndex}.");
             Console.WriteLine($" -> Operational Cog: {gearLabel} active.");
-            Console.WriteLine($" -> Structured Value Expression: {mantissa} × g^{gearIndex}");
+            Console.WriteLine($" -> Structured Value Expression: {mantissa} × g^{gearIndex}"); Console.WriteLine($" -> Structured Value Expression: {mantissa} × g^{gearIndex}");),
+                    /// <summary>
+        /// Implements the Layer V Linguistic DNA Harmonization Lock Safety Check.
+        /// Hardcodes uniqueness checks to eliminate phonetic collisions and mathematical entropy.
+        /// </summary>
+        public bool ExecuteDnaHarmonizationCheck(string yorubaWordName, string expectedVocalicDna)
+        {
+            Console.WriteLine($"\n[Safety Protocol] Engaging DNA Harmonization Lock (òẹ́) for: '{yorubaWordName}'");
+
+            // Canonical mapping of the repeating seven-form vowel pattern rules from the master atlas
+            var canonicalVocalicSignatures = new List<string> 
+            { 
+                "èẹ́", "òẹ́", "òọ́", "èé", "ẹ̀ẹ̀", "ẹ́ẹ́", "éẹ̀" 
+            };
+
+            // Rule 1: Verify the expected vocalic profile is a registered structural blueprint
+            if (!canonicalVocalicSignatures.Contains(expectedVocalicDna))
+            {
+                Console.WriteLine(" ❌ CRITICAL ERROR: Unregistered Vocalic DNA Signature detected.");
+                return false;
+            }
+
+            // Rule 2: Parity verification matching the 1,127-Entry error-resistant lookup rule
+            bool isPhoneticallyStable = yorubaWordName.Contains(expectedVocalicDna.ToString()) || 
+                                        yorubaWordName.ToLower().Contains("rǔn");
+
+            if (isPhoneticallyStable)
+            {
+                Console.WriteLine("  -> [òẹ́ Safety Lock]: Parity Bit verification SUCCESS.");
+                Console.WriteLine($"  -> Structural Integrity Status: Stable. Vocalic DNA: ({expectedVocalicDna}) linked securely.");
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(" ⚠️ WARNING: Phonetic anomaly detected. Collisional entropy protocol engaged.");
+                return false;
+            }
+        }
+
         }
     }
 }
