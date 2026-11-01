@@ -32,6 +32,12 @@ namespace UHNE.Core
             string sampleWord = "Égbéẹ̀rǔn";
             string sampleDna = "éẹ̀"; // Your master atlas DNA root for Tredecillions
             junction.ExecuteDnaHarmonizationCheck(sampleWord, sampleDna);
+            // Scenario 5: Initializing the 47-Sovereign Colour Symphony Visual GPS
+            var symphony = new SovereignColourSymphony();
+            Console.WriteLine("\n[Layer VI - Visualization] Resolving Chromatic Spatial Metadata...");
+            symphony.ResolveTierColor(5);  // Thousands Red
+            symphony.ResolveTierColor(44); // Tredecillions Dark Olive
+            symphony.ResolveTierColor(46); // l-Drive Invariant Neon Pink
 
                         // Scenario 4: Activating Layer V Vocalic Wings & Transfinite Navigation
             double[] baseHyperspaceVector = engine.CreateVector("TransfiniteBase");
@@ -204,3 +210,48 @@ namespace UHNE.Core
             Console.WriteLine("  -> [y̅ Pulse] Transfinite Propulsion active. Scalar Sovereignty: Stable.");
             return transfiniteOutput;
         }
+    /// <summary>
+    /// Implements the 47-Sovereign Colour Visual Protocol (Ètò Àwọ̀ OgójìÉje).
+    /// Assigns immutable hexadecimal spatial parameters to structural tiers.
+    /// </summary>
+    public class SovereignColourSymphony
+    {
+        private readonly Dictionary<int, (string Name, string Hex)> _colourRegistry;
+
+        public SovereignColourSymphony()
+        {
+            // Initializing core structural anchor points matching the master data dictionary
+            _colourRegistry = new Dictionary<int, (string, string)>
+            {
+                { 1,  ("Cerulean (Zero - Ódo)", "#0891B2") },
+                { 2,  ("Vibrant Green (Units - Ení/Èjì)", "#16A34A") },
+                { 3,  ("Royal Blue (Tens - Ẹ́wǎ/Ogún)", "#2563EB") },
+                { 4,  ("Purple (Hundreds - Ọgọ́rǔn)", "#9333EA") },
+                { 5,  ("Red (Thousands - Ẹgbẹ̀rǔn)", "#DC2626") },
+                { 6,  ("Dark Goldenrod (Tens of Thousands)", "#B59410") },
+                { 7,  ("Sky Blue (Hundreds of Thousands)", "#4EAAE4") },
+                { 8,  ("Saddle Brown (Millions)", "#8B4313") },
+                { 44, ("Dark Olive (Tredecillions - Ẹgbẹ̀rǔn^14)", "#94AA00") },
+                { 45, ("Grey (Unassigned Resting State)", "#808080") },
+                { 46, ("Neon Pink (l-Drive Multiplier Engine)", "#FF13F0") },
+                { 47, ("Steel Blue (The Infinite Frontier)", "#4682B4") }
+            };
+        }
+
+        /// <summary>
+        /// Resolves the strict systemic hexadecimal color metadata for an active tier.
+        /// </summary>
+        public string ResolveTierColor(int tierIndex)
+        {
+            if (_colourRegistry.ContainsKey(tierIndex))
+            {
+                var target = _colourRegistry[tierIndex];
+                Console.WriteLine($"  -> [Visual HUD] Active Tier {tierIndex}: {target.Name} -> Hex: {target.Hex}");
+                return target.Hex;
+            }
+            
+            // Default to Steel Blue for unmapped transfinite realms beyond Tredecillions
+            Console.WriteLine($"  -> [Visual HUD] Navigating Infinite Frontier (Tier {tierIndex}) -> Hex: #4682B4");
+            return "#4682B4";
+        }
+    }
